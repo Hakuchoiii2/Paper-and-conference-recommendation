@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source": {
+      "enum": [
+        "csfcube",
+        "scifact"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "paper_id": {
+      "type": "string",
+      "pattern": "^P[0-9]{6}$"
+    },
+    "identifiers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "primary": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source",
+    "source_id",
+    "paper_id",
+    "identifiers",
+    "content_sha256",
+    "active",
+    "primary"
+  ],
+  "additionalProperties": false
+}
