@@ -1,5 +1,14 @@
 # DS300 — README triển khai giai đoạn Data-first
 
+> Cập nhật ngày 2026-10-03 theo yêu cầu Khải: mọi exp đọc trực tiếp
+> `data/processed/papers.jsonl`; đã bỏ thư mục mẫu bài và script lấy mẫu.
+> Yêu cầu mới nhất: chạy A bằng Qwen3 local để trích facet thật trước. B–E dùng
+> `data/exp_a/generated/facets_silver.jsonl`; mock query/intent/nhãn theo rule/users/hành vi.
+> B/C/D làm song song sau silver; E còn cần danh sách users D.
+> Nội dung bên dưới lưu kế hoạch lịch sử; các hướng dẫn tạo fixture/corpus mock
+> và lệnh build_fixture không còn áp dụng. Dùng [README hiện tại](../README.md)
+> và [contract](../DATA_CONTRACT.md) làm hướng dẫn thực hiện.
+
 > Tài liệu bàn giao cho GPT Work/Codex để bootstrap repository ở local, chuẩn bị dữ liệu cho Experiments A–E và tạo đợt push GitHub đầu tiên. Chỉ triển khai phần dữ liệu; chưa triển khai embedding, ranking model hoặc chạy thực nghiệm mô hình.
 
 ## 1. Nguồn, phạm vi và nguyên tắc thực hiện
@@ -299,7 +308,7 @@ Ví dụ thứ tự lệnh sau khi đã ở đúng repository và biết remote:
 git status
 git remote -v
 python scripts/build_fixture.py --seed 42
-python scripts/build_exp_a.py --dataset-kind mock --seed 42
+python data/exp_a/build_exp_a.py --dataset-kind mock --seed 42
 python scripts/build_exp_b.py --dataset-kind mock --seed 42
 python scripts/build_exp_c.py --dataset-kind mock --seed 42
 python scripts/build_exp_d.py --dataset-kind mock --seed 42

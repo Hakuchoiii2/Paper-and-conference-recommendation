@@ -1,4 +1,4 @@
-"""Validate the delivered real corpus/fixture; absent experiments never silent-pass."""
+"""Validate the delivered main real corpus; absent experiments never silent-pass."""
 import argparse
 import datetime
 import json
@@ -142,18 +142,7 @@ def validate_corpus():
     for source,counts in report['source_counts'].items():
         source_audit = [r for r in audit if r['source']==source]
         require(counts['total']==len(source_audit) and counts['included']==sum(r['included'] for r in source_audit), f'{source}: report scope counts incorrect')
-    fixture_dir = ROOT / 'data/fixtures'
-    fixture_manifest = checked_manifest(fixture_dir)
-    fixture = read_jsonl(fixture_dir / 'papers.jsonl')
-    validate_papers(fixture)
-    validate_refs(fixture, ids, 'fixtures/papers.jsonl')
-    original = {r['paper_id']:r for r in papers}
-    require(all(r == original[r['paper_id']] for r in fixture), 'fixture content differs from corpus')
-    require(len(fixture)==config['fixture_size']==fixture_manifest['record_counts']['papers'], 'fixture size incorrect')
-    require(fixture_manifest['input_corpus_sha256']==sha256(directory / 'papers.jsonl'), 'fixture is stale')
-    require(fixture_manifest['generator_sha256']==sha256(ROOT / 'scripts/build_fixture.py'), 'fixture generator changed; rebuild required')
-    require(not (fixture_dir / 'facets.jsonl').exists(), 'unreviewed fixture facets are not part of this ingestion phase')
-    print(f'PASS: {len(papers)} real IT-scoped papers, {len(active)} active source refs, {len(audit)} audited records, {len(fixture)} real sample papers')
+    print(f'PASS: {len(papers)} real IT-scoped papers, {len(active)} active source refs, {len(audit)} audited records')
 
 
 def main():

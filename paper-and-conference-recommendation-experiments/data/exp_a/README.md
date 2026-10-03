@@ -1,124 +1,151 @@
-# Thực nghiệm A — Gán nhãn các khía cạnh của bài báo
+# Thực nghiệm A — Trích năm facet bằng Qwen3 local
 
-Người phụ trách: **Kiên**. Trạng thái: đặc tả dữ liệu cho giai đoạn tiếp
-theo; chưa sinh dataset hoặc chạy mô hình của thực nghiệm. Khải chốt quy ước chung.
+Cả nhóm 5 người cùng chạy trích facet trên 4.210 title/abstract, chia thành
+5 phần không trùng nhau, mỗi người 842 bài. Chạy Qwen3 trên máy, không dùng
+API key. Corpus thật và schema năm facet vẫn dùng chung B–E.
 
-## 1. Mục đích và câu hỏi thực nghiệm
+## 1. Mục đích
 
-A chuẩn bị và đánh giá chất lượng thông tin năm facet được trích từ title/abstract.
-Câu hỏi là: nhãn tự động có xác định đúng `problem`, `task`, `method`, `dataset`,
-`contribution` so với nhãn được người kiểm tra không? Đây là nguồn facet cho
-dataset tùy chỉnh B/C và bộ mô phỏng D/E, không phải thực nghiệm xếp hạng bài.
+Trích problem, task, method, dataset, contribution từ title/abstract thật.
+Output tự động là silver, cần review chất lượng; không tự tạo human gold.
+Không thay năm facet bằng ba nhãn câu gốc CSFCube hoặc facet mock.
 
-Ví dụ: cần phân biệt “giải quyết thiếu dữ liệu người dùng mới” là vấn đề,
-“khuyến nghị” là tác vụ, và một thuật toán cụ thể là phương pháp. Tên phương pháp
-không tự chứng minh bài có đóng góp mới. Tất cả phải có căn cứ trong văn bản.
+## 2. Đầu vào
 
-## 2. Định dạng đầu vào
-
-Dùng corpus chung hoặc bộ mẫu thật, cùng phiên bản guideline/prompt đã chốt.
-Đầu vào dự đoán là `paper_id`, `title`, `abstract`; ID dùng liên kết, không mang ý
-nghĩa nhãn. Xem [guideline](../../docs/FACET_GUIDELINE.md) và
-[prompt dự thảo](../../docs/ANNOTATION_PROMPT.md). Không đưa gold, nhãn relevance
-hoặc kết quả kiểm tra của nguồn vào prompt dự đoán. Giữ abstract gốc trong raw.
-
-Dùng `../processed/papers.jsonl` cho corpus đầy đủ;
-`../fixtures/papers.jsonl` là bộ 50 bài thật tùy chọn để kiểm tra nhanh.
-Tuân thủ [contract dùng chung](../../DATA_CONTRACT.md); không cấp ID riêng.
-
-## 3. Định dạng đầu ra
-
-| Tệp dự kiến | Nội dung và vai trò |
+| Input | Đường dẫn/giá trị |
 |---|---|
-| `generated/facets_silver.jsonl` | Nhãn facet tự động, chưa mặc định được con người duyệt |
-| `generated/facets_gold.jsonl` | Nhãn facet đã được người review, trên một subset của corpus |
-| `generated/annotation_metadata.jsonl` | Nguồn nhãn, tier, phiên bản guideline/prompt và trạng thái review |
+| Corpus | `data/processed/papers.jsonl`, toàn bộ 4.210 bài |
+| Config | `data/exp_a/config.json` |
+| Khoảng bài | `paper_range: [bài_đầu, bài_cuối]`, mặc định `[1, 842]` |
+| Thư mục kết quả | `output_dir`, mặc định `data/exp_a/generated/part_1` |
+| Model | `Qwen/Qwen3-4B-Instruct-2507`, revision cố định trong config |
+| Thiết bị | `cuda`; đã kiểm tra máy có RTX 4060 Laptop 8 GB |
+| Prompt/guideline | `docs/ANNOTATION_PROMPT.md`, `docs/FACET_GUIDELINE.md` |
+| Trọng số/cache | `models/huggingface/`, Git bỏ qua |
 
-Mỗi tệp facet có một bản ghi cho mỗi bài. Silver và gold có thể trùng `paper_id`
-để so sánh; không chép lại abstract. Dữ liệu gán nhãn tự động không được đổi tên
-thành gold để đủ chỉ tiêu.
+Trọng số tải từ Hugging Face lần đầu. Suy luận chạy trên máy; title/abstract
+không gửi tới dịch vụ annotation. Bản Instruct này không có thinking. Dùng NF4 4-bit (bitsandbytes), tính toán float16 trên GPU.
 
-`samples/` lưu mẫu nhỏ được review khi dataset tồn tại; `generated/` lưu output
-đầy đủ. Manifest ghi contract version, real/mock, seed, generator/input hashes
-và số lượng thực tế. Nhãn, hồ sơ ẩn và dữ liệu tương lai tách khỏi đầu vào.
+### Chia 4.210 bài cho 5 người
 
-## 4. Định nghĩa trường dữ liệu
+Số thứ tự bắt đầu từ **1**, sau khi sắp corpus tăng dần theo `paper_id`;
+**lấy cả bài đầu và bài cuối**. Giữ nguyên corpus, không cắt thành năm tệp.
 
-| Trường | Kiểu/ý nghĩa |
-|---|---|
-| `paper_id` | ID canonical `P` + 6 chữ số; thuộc corpus đang dùng |
-| `problem`, `task`, `method`, `dataset`, `contribution` | Mỗi trường là list string; nhiều giá trị nếu có bằng chứng; thiếu = `[]` |
-| `tier` trong metadata | Phân biệt silver/gold |
-| `dataset_kind` | Phân biệt real/mock; không tính nhãn mock vào gold thật |
-| `annotator_type`, `review_status` | Nguồn gán nhãn và mức kiểm tra thực tế |
-| `guideline_version`, `prompt_version` | Truy được quy tắc đã dùng để annotation |
+| Phần chạy | `paper_range` | Paper IDs | Số bài | `output_dir` |
+|---|---|---|---|---|
+| Phần 1 | `[1, 842]` | `P000001`–`P000842` | 842 | `data/exp_a/generated/part_1` | Khải
+| Phần 2 | `[843, 1684]` | `P000843`–`P001684` | 842 | `data/exp_a/generated/part_2` | Quỳnh
+| Phần 3 | `[1685, 2526]` | `P001685`–`P002526` | 842 | `data/exp_a/generated/part_3` | Kiên
+| Phần 4 | `[2527, 3368]` | `P002527`–`P003368` | 842 | `data/exp_a/generated/part_4` | Phi
+| Phần 5 | `[3369, 4210]` | `P003369`–`P004210` | 842 | `data/exp_a/generated/part_5` | Phú
 
-Khóa duy nhất: `paper_id` trong mỗi tier; metadata liên kết theo `(paper_id,tier)`.
-Không có tệp annotation khác với có bản ghi toàn `[]`. Các nhãn câu gốc của
-CSFCube không được chép trực tiếp sang năm danh sách concept này.
-
-## 5. Ví dụ đầu vào và đầu ra
-
-Các ID bài dưới đây lấy từ bộ mẫu thật, nhưng nhãn/hành vi/hồ sơ là **ví dụ
-minh họa schema, chưa phải dữ liệu được release hoặc đáp án đã kiểm chứng**.
-Giữ nguyên title/abstract nguồn trong ví dụ JSON; không dịch nội dung corpus.
-
-Đầu vào quan sát được:
+Mỗi người chọn một phần và sửa **hai giá trị** `paper_range`, `output_dir`
+trong config trên máy mình. Ví dụ phần 2 (chỉ trích hai trường cần sửa):
 
 ```json
-{"abstract": "We propose a hybrid model for automatically acquiring a policy for a complex game, which combines online learning with mining knowledge from a corpus of human game play. Our hypothesis is that a player that learns its policies by combining (online) exploration with biases towards human behaviour that's attested in a corpus of humans playing the game will outperform any agent that uses only one of the knowledge sources. During game play, the agent extracts similar moves made by players in the corpus in similar situations, and approximates their utility alongside other possible options by performing simulations from its current state. We implement and assess our model in an agent playing the complex win-lose board game Settlers of Catan, which lacks an implementation that would challenge a human expert. The results from the preliminary set of experiments illustrate the potential of such a joint model.", "domain": "information_technology", "paper_id": "P000054", "scope_evidence": ["CSFCube datasheet: ACL query papers and candidate papers sampled from computer-science arXiv papers in S2ORC."], "source": "csfcube", "source_id": "1030020", "title": "Online learning and mining human play in complex games", "year": 2015}
+{
+  "paper_range": [843, 1684],
+  "output_dir": "data/exp_a/generated/part_2"
+}
 ```
 
-Đơn vị đầu ra dự kiến:
+Giữ các trường config còn lại. `[1, null]` chọn toàn corpus; `[3369, null]`
+chọn từ bài 3.369 tới cuối. Bỏ `paper_range` cũng chọn toàn corpus để tương thích
+config cũ. Khoảng đảo ngược, ngoài corpus hoặc không phải số nguyên sẽ báo lỗi
+trước khi nạp model. Khi corpus thay đổi phải chia lại khoảng theo số bài thực tế.
 
-```json
-{"paper_id":"P000054","problem":[],"task":[],"method":[],"dataset":[],"contribution":[]}
-```
+## 3. Đầu ra
 
-Với A, các list rỗng chỉ minh họa kiểu dữ liệu, không phải annotation thực tế.
-Với B/C, không suy rằng ứng viên thật sự phù hợp từ nhãn ví dụ. Với D/E, user
-và sở thích là minh họa; profile E nằm trong truth, không phải input mô hình.
+Tệp của từng phần nằm trong `output_dir` tương ứng, ví dụ
+`data/exp_a/generated/part_1/`:
 
-## 6. Quy tắc tạo dữ liệu và hướng đánh giá
+| Tệp | Vai trò |
+|---|---|
+| `facets_silver.jsonl` | ID và đúng năm list concept string |
+| `annotation_metadata.jsonl` | Câu dẫn chứng nguyên văn, model/revision/runtime, token count, seed/attempt |
+| `manifest.json` | Hashes, coverage, missing IDs, partial/complete |
+| `.exp_a_checkpoint.sqlite3` | Lưu từng bài hợp lệ để tiếp tục; không commit Git |
+| `last_failure.json` nếu lỗi | Paper ID, lỗi kiểm tra và output cuối để rà lại |
 
-1. Chọn một pilot bài thật có abstract đủ dùng; hai người review độc lập một
-   subset chung để phát hiện nhầm problem/task và method/contribution.
-2. Kiên đề xuất định nghĩa và alias; Khải chốt vocabulary/contract trước khi nhóm
-   mở rộng. Chỉ chuẩn hóa tên concept, không sửa abstract nguồn.
-3. Sinh silver theo prompt/guideline có phiên bản; ghi đúng annotator/model và
-   metadata. Chưa gọi API hàng loạt khi chưa có cấu hình và ngân sách.
-4. Gold cần human review và quy trình giải quyết bất đồng. Giữ split gold độc lập
-   với việc chỉnh prompt; không dùng held-out gold làm ví dụ hoặc tối ưu prompt.
-5. Mục tiêu: 400 bài gold, khoảng 300–500; silver trên toàn corpus đủ điều kiện.
-   Corpus hiện có 4.210 bản ghi tạm thời, nên không tự ghi đã có 6.000 silver.
+Manifest giữ `corpus_count: 4210` và coverage của **toàn corpus**; một phần đủ
+842 bài vẫn có `status: partial`, các ID ngoài khoảng vẫn nằm trong `missing_ids`.
+Kiểm tra từng phần bằng `--validate-only --allow-partial`; đối chiếu các ID còn
+thiếu **trong khoảng được giao** để biết phần đó đã xong chưa. Khi gom năm phần,
+ghép cả silver và metadata theo `paper_id`, kiểm tra không trùng/thiếu và tạo
+manifest cho bộ đầy đủ ở `data/exp_a/generated/` trước khi bàn giao B–E.
+Không dùng manifest của một phần làm manifest toàn corpus.
 
-Khi thực nghiệm mô hình được triển khai, có thể so độ đúng/đủ của concept theo
-từng facet và mức thống nhất giữa người gán nhãn. Quy tắc matching concept,
-alias và chỉ số cụ thể phải được chốt trước khi đánh giá; hiện chưa có điểm số.
+Lượt gọi API cũ chưa tạo annotation nào; checkpoint/output lỗi được giữ tại
+`generated/api_attempt_backup/`. Qwen không trộn provenance API vào silver mới. Pilot v1.3 bị loại do nhãn
+chép định nghĩa; giữ để audit ở `generated/pilot_rejected_v13/`. Các pilot trước khi chỉnh prompt/feedback nằm trong `pilot_rejected_v14/` và `pilot_before_feedback/`; không trộn vào silver hiện tại.
 
-**Trạng thái triển khai:** chưa có generator cho thực nghiệm này. Các lệnh đang
-chạy được từ thư mục gốc chỉ chuẩn bị corpus/bộ mẫu:
+## 4. Quy tắc nhãn
+
+Qwen chọn concept và evidence_id từ các câu đánh số T0/A0/A1... của bài.
+Code lấy nguyên văn câu đã chọn và xác định source title/abstract, không yêu cầu
+model chép lại câu dài. Metadata giữ cả sentence selections. Concept phải là cụm từ thực sự xuất hiện
+trong câu đã chọn (so khớp sau chuẩn hóa case/dấu câu); không chấp nhận định nghĩa
+chung hoặc diễn đạt lại. Đây là chế độ trích cụm từ, không sinh nhãn tùy ý. Code kiểm tra
+đúng ID/khóa/list, không trùng concept và câu dẫn chứng có trong bài. Không có
+bằng chứng dùng `[]`; chưa xử lý không được chèn nhãn rỗng giả. Metadata ghi
+`annotator_type: qwen_local`, `tier: silver`, `review_status: unreviewed`.
+
+JSON được yêu cầu bằng prompt và kiểm tra sau sinh; không có bảo đảm schema từ
+dịch vụ API. Sai JSON/ID thì yêu cầu model sửa tối đa max_attempts lần. Hết
+lượt vẫn sai thì ghi lỗi theo paper_id vào checkpoint và `manifest.failed_annotations`, giữ ID đó trong `missing_ids` rồi tiếp tục các bài khác. Không chèn annotation giả cho bài lỗi. Chạy lại cùng lệnh sẽ thử lại các ID còn thiếu. Lỗi môi trường/GPU vẫn dừng tiến trình.
+Câu trích có thật vẫn có thể không hỗ trợ concept: cần người review ngữ nghĩa.
+
+## 5. Cách chạy
+
+Môi trường riêng `.venv-qwen` dùng Python 3.11, PyTorch CUDA và Transformers.
+Nếu đã có môi trường này, lệnh quen thuộc tự chuyển sang đúng Python. Từ folder
+`data/exp_a`:
 
 ```powershell
-python scripts/build_corpus.py
-python scripts/build_fixture.py --seed 42
+python build_exp_a.py --dry-run
+python build_exp_a.py --limit 2
+python build_exp_a.py
+python build_exp_a.py --validate-only --allow-partial
 ```
 
-Không cần dùng bộ 50 bài để xử lý dữ liệu đầy đủ; corpus chung là nguồn chính.
-Chưa annotation được facets thì không giả vờ đã sinh đủ dataset.
+Không cần `.env`. `--dry-run` hiển thị khoảng, IDs, số bài được chọn và thư mục
+kết quả để kiểm tra trước khi chạy. Mặc định chỉ xử lý bài còn thiếu **trong
+`paper_range`**; `--limit` là số bài mới tối đa trong khoảng đó, không thay đổi
+ranh giới phần chạy. Config hiện chọn phần 1; đổi khoảng/thư mục trước khi chạy
+phần khác. Chạy lại cùng config sẽ tiếp tục checkpoint của phần đó.
 
-## 7. Quy tắc kiểm tra và điều kiện nghiệm thu
+Nếu thiết lập lại máy, từ thư mục gốc dự án dùng Python 3.11:
 
-- Mỗi ID tồn tại, không trùng trong cùng tier; đủ đúng năm facet list string.
-- Nhãn chỉ chứa concept có bằng chứng; không bịa dataset/contribution bị thiếu.
-- Gold là subset corpus và thực sự được human review; metadata khớp tier/kind.
-- Prompt tuning không dùng held-out gold; corpus input không chứa nhãn đánh giá.
-- Báo số silver/gold thực tế, facet còn thiếu và bất đồng chưa giải quyết.
+```powershell
+python -m venv .venv-qwen
+.\.venv-qwen\Scripts\python.exe -X utf8 -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+.\.venv-qwen\Scripts\python.exe -X utf8 -m pip install -r data/exp_a/requirements.txt
+```
 
-A hoàn tất khi có generator annotation chạy được, metadata, gold được duyệt,
-quy tắc đánh giá và validator riêng đạt; các thư mục/README hiện tại chưa đủ.
+## 6. Tiến độ và tái lập
 
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus và bộ mẫu. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
+Model được nạp một lần mỗi tiến trình, xử lý tuần tự và lưu từng bài ngay sau
+kiểm tra. Năm người chạy trên máy riêng với cùng corpus/model/prompt; mỗi phần
+có output/checkpoint riêng. OS lock chặn hai lượt chạy cùng output. Dừng rồi chạy lại cùng lệnh
+tiếp tục bài thiếu. Checkpoint chưa có annotation nào được khởi tạo lại khi đổi cấu hình.
+Nếu đã có annotation, đổi khoảng bài, model/revision/prompt/thiết bị/tham số
+sampling hoặc code generator thì dùng output mới;
+max_new_tokens/max_attempts có thể tăng để tiếp tục checkpoint.
+Seed/phiên bản được ghi để truy nguồn, không bảo đảm kết quả giống hệt trên GPU khác.
+
+## 7. Nghiệm thu
+
+Chạy tests, corpus gate và validator từng phần. Chỉ bộ đã gom đủ 4.210 IDs,
+metadata tương ứng và manifest toàn corpus hợp lệ với `status: complete` mới
+được bàn giao cho B–E. B/C/D sinh dataset mock song
+song trên facet A; E còn cần users D. Không cần chờ gold; đánh giá chất lượng
+A vẫn cần human-reviewed gold riêng, không tự chấm bằng chính silver. Prompt v1.5 dùng P000001 làm ví dụ phát triển prompt; bài này không được đưa vào held-out gold.
+
+Các tệp JSONL/manifest được xuất khi lượt chạy kết thúc hoặc dừng có xử lý;
+tiến độ bền vững nằm trong checkpoint riêng của mỗi phần. Output/checkpoint
+của lượt toàn corpus cũ ở `generated/` không phải output của năm phần mới.
+Không chạy hai tiến trình cùng `output_dir`. Kiểm tra dẫn chứng không bảo đảm
+chọn đúng facet hoặc trích đủ ý; các nhãn vẫn là silver chưa review.
+
+Nguồn: [model card Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507),
+[PyTorch CUDA 12.4](https://pytorch.org/get-started/previous-versions/#v260).

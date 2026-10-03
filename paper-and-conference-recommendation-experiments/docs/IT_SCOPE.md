@@ -32,8 +32,7 @@ metadata, then add an override keyed by `source:source_id`, for example:
 {"include": false, "reviewer": "Khai", "reason": "Only reports a biological result; no IT method or software contribution."}
 ```
 
-Increment the scope policy version when its meaning changes. Run corpus and
-fixture builders sequentially, then validator/tests. Do not edit processed papers
+Increment the scope policy version when its meaning changes. Run the corpus builder, then validator/tests. Do not edit processed papers
 directly or delete the delivered ID map to resample IDs. Existing source IDs are
 reserved and re-inclusions recover them. Conflicting issued dedup IDs require
 manual versioned reconciliation, not silent renumbering.

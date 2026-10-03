@@ -1,49 +1,80 @@
 # Thực nghiệm D — Suy ra sở thích ngầm từ hành vi người dùng
 
-Người phụ trách: **Phú**. Trạng thái: đặc tả dữ liệu cho giai đoạn tiếp
-theo; chưa sinh dataset hoặc chạy mô hình của thực nghiệm. Khải chốt quy ước chung.
+Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
+chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
 
-## 1. Mục đích và câu hỏi thực nghiệm
+**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
+tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
+dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+
+**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
+(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
+này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
+mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
+
+**Facet dùng chung là silver do A trích từ bài thật:**
+`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
+có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
+`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
+Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
+hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+
+Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
+`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
+`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
+corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
+được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
+bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
+
+## 1. Mục đích của dataset
 
 D chuẩn bị dữ liệu kiểm tra việc suy ra sở thích từ hành vi như xem, lưu, thích
 hoặc không thích bài. Người dùng không cần nhập constraints như C. Mô hình về
 sau chỉ thấy lịch sử; bộ đánh giá có hồ sơ sở thích ẩn để kiểm tra kết quả.
 
-Giai đoạn dự kiến dùng **người dùng và hành vi giả lập trên bài thật**. Mục đích
+Giai đoạn đầu dùng **người dùng và hành vi giả lập trên corpus chính và nhãn
+silver A năm facet**. Hành vi được sinh từ sở thích ẩn và facets A
+trên cùng corpus. Mục đích
 là kiểm tra pipeline và giả thuyết của bộ mô phỏng; không trình bày đây là hành
 vi người dùng thực tế hoặc bằng chứng hệ thống đã hữu ích ngoài đời.
 
-## 2. Định dạng đầu vào
+## 2. Đầu vào của generator xây dataset
 
-`users.jsonl` chỉ chứa ID và metadata quan sát được. `interactions_train.jsonl`
-chứa lịch sử được phép dùng để suy ra sở thích; nội dung bài/facets đọc từ catalog
-chung. Loader phải dùng đường dẫn rõ ràng, không đọc latent profiles hay tương tác
-tương lai để xây hồ sơ.
+Generator D nhận **bài/facets và cấu hình mô phỏng**, không yêu cầu đã có users
+hoặc lịch sử tương tác. Nó sẽ tự sinh users, latent profiles và events.
 
-Hiện chưa có người dùng, facets đầu vào hoặc bộ mô phỏng được duyệt. ID U0001
-trong ví dụ là minh họa format, không khẳng định đã có user thật.
+| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
+|---|---|---|
+| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Các bài user có thể được tiếp xúc |
+| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Vocabulary/concepts để sinh sở thích và tính affinity bài |
+| Cấu hình D `[cần xây]` | Đề xuất `configs/exp_d.json` | Kind mock, seed 42, 5 users × 10 events, đề xuất 6 history/4 future; timezone/cutoff policy |
+| Quy tắc simulator `[cần chốt]` | Trong config có phiên bản | Phân phối latent weights [-1,1], chọn exposure, affinity → interaction, nhiễu, sampling có/không lặp |
 
-Dùng `../processed/papers.jsonl` cho corpus đầy đủ;
-`../fixtures/papers.jsonl` là bộ 50 bài thật tùy chọn để kiểm tra nhanh.
-Tuân thủ [contract dùng chung](../../DATA_CONTRACT.md); không cấp ID riêng.
+Users và interactions_train không phải prerequisite. Không có log người dùng thật
+được cung cấp cho phase này. Nếu thêm chế độ import log thật sau này phải định
+nghĩa input/protocol khác, không gọi output mô phỏng là hành vi thu thập thật.
 
-## 3. Định dạng đầu ra
+**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
+Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
+việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
+Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
+Tuân thủ [contract chung](../../DATA_CONTRACT.md), dùng cùng `paper_id`.
 
-| Tệp dự kiến | Vai trò |
+## 3. Đầu ra mock của generator xây dataset
+
+| Đầu ra generator D `[chưa tạo]` | Nội dung |
 |---|---|
-| `generated/users.jsonl` | Danh tính và metadata quan sát được |
-| `generated/interactions_train.jsonl` | Lịch sử phục vụ profile-building |
-| `ground_truth/interactions_test.jsonl` | Tương tác tương lai chỉ để đánh giá |
-| `ground_truth/latent_user_profiles.jsonl` | Sở thích ẩn đã dùng để sinh hành vi |
+| `data/exp_d/samples/generated/users.jsonl` | 5 ID pilot và metadata quan sát được; không chứa latent preferences |
+| `data/exp_d/samples/ground_truth/latent_user_profiles.jsonl` | 5 hồ sơ sở thích ẩn đã sinh trước events |
+| `data/exp_d/samples/generated/interactions_train.jsonl` | Pilot đề xuất 5 × 6 = 30 past events |
+| `data/exp_d/samples/ground_truth/interactions_test.jsonl` | Pilot đề xuất 5 × 4 = 20 future events |
+| `data/exp_d/samples/generated/manifest.json` | Input/rule hashes, seed, cutoff và số user/events thực tế |
 
-Nếu đánh giá ranking, cần lưu exposure/candidate pool từng sự kiện. Không coi
-mọi bài người dùng chưa tương tác là negative; có thể họ chưa được nhìn thấy.
+Nếu cần ranking evaluation, thêm exposure/candidate pool có event linkage theo
+schema đã duyệt. Hiện chưa chốt schema sự kiện exposure nên không giả vờ tệp
+đã có. Không coi mọi unobserved paper là negative.
 
-`samples/` lưu mẫu nhỏ được review khi dataset tồn tại; `generated/` lưu output
-đầy đủ. Manifest ghi contract version, real/mock, seed, generator/input hashes
-và số lượng thực tế. Nhãn, hồ sơ ẩn và dữ liệu tương lai tách khỏi đầu vào.
-
-## 4. Định nghĩa trường dữ liệu
+## 4. Các trường trong dataset đầu ra
 
 | Trường | Ý nghĩa/ràng buộc |
 |---|---|
@@ -58,57 +89,79 @@ Mỗi event là một tương tác phát sinh sau khi user được tiếp xúc 
 mặc định `view` là thích mạnh. Quy tắc affinity → interaction và mức nhiễu phải
 được công bố, không giấu trong code. Hồ sơ latent không nằm trong users observable.
 
-## 5. Ví dụ đầu vào và đầu ra
+## 5. Ví dụ generator: nguyên liệu → các tệp dataset
 
-Các ID bài dưới đây lấy từ bộ mẫu thật, nhưng nhãn/hành vi/hồ sơ là **ví dụ
-minh họa schema, chưa phải dữ liệu được release hoặc đáp án đã kiểm chứng**.
-Giữ nguyên title/abstract nguồn trong ví dụ JSON; không dịch nội dung corpus.
+Builder tự tạo U0001, sinh latent preferences rồi mới chọn paper và event.
+Một record trong users và một history event được minh họa dưới; latent profiles
+và future events cũng là output, nằm riêng trong ground_truth. Không phải đưa
+U0001 hoặc history file vào trước để generator đoán ra tương tác.
 
-Đầu vào quan sát được:
-
-```json
-{"user_id": "U0001"}
-```
-
-Đơn vị đầu ra dự kiến:
+**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
+config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
 
 ```json
-{"user_id":"U0001","paper_id":"P000205","interaction_type":"like","timestamp":"2026-01-10T10:00:00Z"}
+{
+  "corpus_path": "data/processed/papers.jsonl",
+  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+  "dataset_kind": "mock",
+  "seed": 42,
+  "num_users": 5,
+  "events_per_user": 10,
+  "history_events_per_user": 6,
+  "future_events_per_user": 4
+}
 ```
 
-Với A, các list rỗng chỉ minh họa kiểu dữ liệu, không phải annotation thực tế.
-Với B/C, không suy rằng ứng viên thật sự phù hợp từ nhãn ví dụ. Với D/E, user
-và sở thích là minh họa; profile E nằm trong truth, không phải input mô hình.
+**Records generator sẽ ghi vào các tệp đầu ra:**
 
-## 6. Quy tắc tạo dữ liệu và hướng đánh giá
-
-1. Sinh hồ sơ sở thích ẩn trước, trên vocabulary/facet đã chốt. Chọn exposure
-   và sinh tương tác theo độ phù hợp với hồ sơ cộng nhiễu có seed.
-2. Không random toàn bộ tương tác rồi gán sở thích ngược lại để có vẻ khớp.
-   Công bố phân phối hồ sơ, cơ chế chọn bài, loại hành vi và ảnh hưởng của nhiễu.
-3. Target 300 user × 50 tương tác = 15.000: đề xuất mỗi user 30 quá khứ và 20
-   tương lai. Đây là target mô phỏng, không phải 300 người dùng thật.
-4. Chia theo thời gian từng user; event cùng timestamp phải ở cùng phía cutoff.
-   Không random split khiến tương tác tương lai xuất hiện trong lịch sử.
-5. Người dùng và ID của D là nguồn danh tính cho E. Ghi seed, input facets/version,
-   simulator/version, cutoff và actual counts vào manifest.
-
-Đánh giá về sau có thể kiểm tra độ khớp hồ sơ suy ra với truth và khả năng dự
-đoán/xếp hạng trên holdout. Ranking chỉ có ý nghĩa khi candidate/exposure protocol
-rõ ràng. Kết quả mô phỏng phải được tách khỏi kết luận về người dùng thực tế.
-
-**Trạng thái triển khai:** chưa có generator cho thực nghiệm này. Các lệnh đang
-chạy được từ thư mục gốc chỉ chuẩn bị corpus/bộ mẫu:
-
-```powershell
-python scripts/build_corpus.py
-python scripts/build_fixture.py --seed 42
+```json
+{
+  "user_id": "U0001"
+}
 ```
 
-Không cần dùng bộ 50 bài để xử lý dữ liệu đầy đủ; corpus chung là nguồn chính.
-Chưa annotation được facets thì không giả vờ đã sinh đủ dataset.
+```json
+{
+  "user_id": "U0001",
+  "paper_id": "P000002",
+  "interaction_type": "like",
+  "timestamp": "2026-01-10T10:00:00Z"
+}
+```
 
-## 7. Quy tắc kiểm tra và điều kiện nghiệm thu
+## 6. Các bước generator phải thực hiện
+
+1. Join corpus với facets theo ID; xác định vocabulary eligible và đọc config.
+2. Tạo 5 users mock U0001–U0005; chỉ ghi metadata observable vào users.
+3. Sinh latent profile cho mỗi user trước: concept nào thích/không thích và
+   trọng số finite [-1,1] theo phân phối simulator đã duyệt.
+4. Sinh exposure: user được nhìn thấy các paper nào. Tính affinity từ latent
+   preferences và paper facets theo rule được công bố.
+5. Thêm noise có seed; chuyển affinity thành click/view/save/like/dislike theo
+   rule đã chốt. Không random behavior rồi gán ngược latent profile.
+6. Gán timestamps có timezone và sort từng user; chia 6 past/4 future trong pilot theo
+   cutoff policy. Các event cùng timestamp cùng phía; thiếu quota hợp lệ báo gap.
+7. Ghi users, latent profiles và hai tệp events; ghi manifest rồi validate IDs,
+   range/time/counts và sự tách observable/hidden/future.
+
+Sau pilot 5 users × 10 events, target mở rộng 300 users × 50 = 15.000 events là 9.000 history + 6.000 holdout. Đây là số event, không phải
+15.000 bài hoặc 300 người dùng thật. Bộ mô phỏng phải công bố cả noise/exposure.
+
+
+**Chưa có generator mock D.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
+
+### Khi cập nhật facets A
+
+Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
+để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
+bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
+
+## 7. Kiểm tra dataset và nghiệm thu
+
+**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
+thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
+gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
+facet silver A đủ coverage là đầu vào cần có.
 
 - User/paper refs resolve; observable users không chứa latent weights.
 - Trọng số hữu hạn và đúng range; timestamps có timezone; enum hành vi hợp lệ.
@@ -120,6 +173,10 @@ D hoàn tất khi bộ mô phỏng có quy tắc được duyệt, generator tá
 đúng vai trò, manifests và validator riêng đạt; chưa tạo dữ liệu D ở phase hiện tại.
 
 Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus và bộ mẫu. `--phase experiments` trả lỗi vì dataset/generator
+chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
 và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
 review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
+
+### Tách riêng: mô hình dùng dataset đã tạo thế nào?
+
+Mô hình D đọc users observable + history + corpus/facets. Simulator được dùng latent truth để sinh behavior, nhưng model/profile-building không đọc latent profiles hoặc future events.

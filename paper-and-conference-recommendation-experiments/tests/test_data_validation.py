@@ -2,7 +2,7 @@
 import json
 import sys
 import unittest
-import tempfile
+from unittest.mock import patch
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 try:
@@ -74,21 +74,15 @@ class DataChecks(unittest.TestCase):
     def test_invalid_source_year_is_missing_not_a_fake_year(self):
         self.assertIsNone(corpus.adapt('csfcube', dict(paper_id='1', title='Paper', abstract=['Text'], metadata={'year':'801'}))['year'])
 
-    def test_fixture_builder_writes_manifest_and_never_gold(self):
-        import build_fixture
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            (root / 'configs').mkdir()
-            (root / 'configs/data.json').write_text(json.dumps(dict(seed=42, fixture_size=1, corpus='data/processed/papers.jsonl', contract_version='1.0')))
-            corpus.write_jsonl(root / 'data/processed/papers.jsonl', [dict(paper_id='P000001', title='Actual title')])
-            build_fixture.build(root)
-            manifest = json.loads((root / 'data/fixtures/manifest.json').read_text())
-            self.assertEqual(manifest['record_counts'], {'papers':1})
-            self.assertEqual(manifest['dataset_kind'],'real')
-            self.assertFalse((root / 'data/fixtures/facets.jsonl').exists())
-            first = (root / 'data/fixtures/papers.jsonl').read_bytes()
-            build_fixture.build(root)
-            self.assertEqual(first, (root / 'data/fixtures/papers.jsonl').read_bytes())
+    def test_corpus_validation_uses_only_main_catalog(self):
+        original = validator.checked_manifest
+
+        def main_catalog_only(directory):
+            self.assertEqual(directory, validator.ROOT / 'data/processed')
+            return original(directory)
+
+        with patch.object(validator, 'checked_manifest', side_effect=main_catalog_only):
+            validator.validate_corpus()
 
     def test_downloader_rejects_path_traversal(self):
         from download_sources import safe_relative

@@ -1,9 +1,10 @@
-# Ingestion report — 2026-10-02
+# Ingestion report — 2026-10-02; workflow updated 2026-10-03
 
 ## Delivered scope
 
 Official raw CSFCube v1.1 and SciFact downloads, a provisional IT corpus,
-a 50-paper real smoke sample, runnable stdlib pipeline and A–E directory/docs.
+a runnable stdlib pipeline and A–E directory/docs. All experiments now read
+`data/processed/papers.jsonl` directly; the separate smoke sample was removed.
 Gold/silver annotation and A–E experimental datasets are **not generated**.
 No conference recommendation judgments, models, commits or GitHub push.
 
@@ -46,10 +47,10 @@ Native source metadata remains unchanged in raw files.
 
 ## Validation protocol
 
-Run the five commands in the root README in sequence. The corpus gate validates
-raw/source and output checksums, references, schema types, counts, sample content
+Run the four commands in the root README in sequence. The corpus gate validates
+raw/source and output checksums, references, schema types, counts, canonical content
 and lack of labels in the corpus. Unit checks exercise scope discrimination,
-provenance/dedup, stable IDs, invalid metadata, reproducible fixture creation,
+provenance/dedup, stable IDs, invalid metadata, validation directly against the main corpus,
 unknown references, invalid facets, timezone absence, temporal overlap and unsafe
 archive paths. Full experiment validation is explicitly unavailable until those
 stages are built. Raw/full generated outputs are ignored for future Git commits.

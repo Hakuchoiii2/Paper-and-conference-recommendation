@@ -2,7 +2,8 @@
 
 `papers.jsonl` là kho đầy đủ duy nhất cho xử lý bài thật. Bản hiện tại có 4.210
 bản ghi sau lọc và gộp; số này còn chờ review phạm vi và 5 trường hợp cùng tiêu đề
-nhưng khác abstract. Không nhầm corpus này với bộ mẫu 50 bài trong `../fixtures/`.
+nhưng khác abstract. Mọi exp, kể cả bước mock nhãn/hành vi, đọc trực tiếp corpus
+này và giữ nguyên paper_id/title/abstract; không tạo catalog bài trung gian.
 
 | Tệp | Vai trò |
 |---|---|
@@ -25,5 +26,5 @@ paper records hoặc xóa `id_map.jsonl` sau bàn giao để cấp lại ID. Ngu
 và ID đã cấp phải được bảo toàn khi bổ sung alias. Script dừng khi gặp xung đột
 nguồn/ID cần review thay vì tự đổi nghĩa bài.
 
-Sau khi lấy mẫu, chạy validator theo README chính. Corpus còn tạm thời; chưa có
+Sau khi build corpus, chạy validator theo README chính. Corpus còn tạm thời; chưa có
 silver/gold hoặc dataset A–E chỉ vì các bài đã là dữ liệu thật.

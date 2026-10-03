@@ -7,8 +7,14 @@ require a version bump. This file is the source of truth for A–E.
 ## Encoding, identity and corpus
 
 UTF-8 JSONL (one object per line); JSON for config/manifests. Canonical corpus:
-`data/processed/papers.jsonl`. Real and mock catalogs must never be merged.
-The delivered fixture is a real subset of that corpus and shares its IDs.
+`data/processed/papers.jsonl` is the only paper catalog for all experiments,
+including mock runs. Keep its IDs/title/abstract unchanged; no sample catalog or
+separate mock paper namespace. A extracts source-grounded silver facets into `data/exp_a/generated/facets_silver.jsonl`.
+B–E mock means synthetic queries/intents/rule labels/users/behavior on real
+corpus IDs and A facets. Do not fabricate paper facet annotations.
+Mock experiment manifests use dataset_kind=mock and identify the real input
+corpus path/hash; the corpus manifest remains dataset_kind=real. Record label
+coverage and reject unknown IDs; missing annotation is not an empty facet list.
 `paper_id`: `^P[0-9]{6}$`; `user_id`: `^U[0-9]{4}$`;
 `query_id`: `^Q[0-9]{4}$`; `intent_id`: `^I[0-9]{4}$`.
 Source IDs are strings and never replaced by canonical IDs in raw files.
@@ -32,13 +38,18 @@ Source text changes or conflicting issued IDs stop the build for review.
 Exactly five keys: `problem`, `task`, `method`, `dataset`, `contribution`.
 Each value is a list of normalized concept strings. Multiple values allowed;
 missing evidence = `[]`, never null or a bare string. No facets file exists before
-annotation. Missing facet evidence is distinct from absence of any annotation.
+annotation; absent annotation is never substituted with empty lists. Missing facet evidence is distinct from absence of any annotation.
 Native rhetorical sentence labels are retained, never relabeled as these facets.
 
 Silver: `data/exp_a/generated/facets_silver.jsonl`, automated labels.
 Gold: `data/exp_a/generated/facets_gold.jsonl`, human-reviewed subset of corpus.
 `annotation_metadata.jsonl`: paper_id, tier, dataset_kind, annotator_type,
 guideline_version, prompt_version, review_status; one entry per paper/tier.
+A also records local model/revision/runtime, seed/attempt and token counts and evidence objects
+(concept, exact quotation, source title/abstract) for every nonempty facet.
+The silver manifest must report complete corpus coverage before B–E handoff;
+partial outputs explicitly list missing IDs. Quotation presence is a structural
+check; semantic correctness still requires human review.
 Mock expected labels and Codex scope reviews do not count as real gold.
 
 ## Intent, relevance and behavior (planned interfaces)
@@ -72,5 +83,12 @@ IT admission uses versioned `configs/scope.json` and the per-record scope audit.
 These are automated/Codex-reviewed scope decisions, not human-reviewed facet gold.
 Human overrides require an include flag, reviewer and explicit evidence/reason.
 Rebuild after changes, preserve ID mappings, review target gaps, then freeze.
-Current acceptance: corpus/fixture validation plus runnable corruption tests.
+Current acceptance: main-corpus validation plus runnable corruption tests.
 Full experiment acceptance is unavailable until A–E datasets and validators exist.
+
+The local Qwen prompt v1.5 uses extractive concept phrases: normalized label
+words must occur in the selected evidence sentence. This avoids generic
+facet-definition labels; paraphrases are rejected in this extraction mode.
+Sentence-ID presence and source phrase checks do not replace semantic review.
+
+Local batch validation failures are saved per paper in the checkpoint and manifest.failed_annotations. Such IDs remain missing; they are retried on the next invocation. Missing annotations are never replaced by fabricated empty facets. Full downstream handoff still requires complete coverage.
