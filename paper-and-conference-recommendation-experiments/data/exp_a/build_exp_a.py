@@ -18,7 +18,10 @@ from download_sources import ROOT, sha256, write_json
 from validate_all import require, validate_facets, validate_papers
 
 FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
-GENERATOR_VERSION = '2.0'
+GENERATOR_VERSION = '2.1'
+LEGACY_GENERATOR_SHA256 = '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab'
+MIN_CONCEPT_RETENTION = 0.7
+SPARSE_REVIEW_THRESHOLD = 3
 EVIDENCE_SCHEMA = dict(type='object', additionalProperties=False,
                        required=['concept', 'evidence_id'], properties={
                            'concept': {'type': 'string'}, 'evidence_id': {'type': 'string'}})
@@ -86,6 +89,30 @@ def inputs(root, config):
     return papers, provenance, instruction
 
 
+def compatible_provenance(previous, current):
+    # Only this known validation-policy upgrade may reuse accepted annotations.
+    legacy = dict(current, generator_version='2.0', generator_sha256=LEGACY_GENERATOR_SHA256)
+    return previous == current or previous == legacy
+
+
+def source_phrase_coverage(concept, evidence):
+    tokens, words = normalize(concept).split(), normalize(evidence).split()
+    if not tokens:
+        return 0
+    best = 0
+    for start, word in enumerate(words):
+        if word != tokens[0]:
+            continue
+        end = start
+        try:
+            for token in tokens[1:]:
+                end = words.index(token, end + 1)
+        except ValueError:
+            continue
+        best = max(best, len(tokens) / (end - start + 1))
+    return best
+
+
 def validate_response(value, paper):
     require(isinstance(value, dict) and value.get('paper_id') == paper['paper_id'],
             f"{paper['paper_id']}: wrong paper_id")
@@ -104,10 +131,10 @@ def validate_response(value, paper):
             require(concept == concept.strip(), f'{facet}: untrimmed concept')
             require(source in ('title', 'abstract') and evidence in paper[source],
                     f"{paper['paper_id']}: {facet} evidence is absent from source text")
-            require(normalize(concept) and f' {normalize(concept)} ' in f' {normalize(evidence)} ',
-                    f'{facet}: concept must be a source phrase, not a generic definition or paraphrase; '
+            require(source_phrase_coverage(concept, evidence) >= MIN_CONCEPT_RETENTION,
+                    f'{facet}: concept must retain at least 70% of its source phrase in the same word order; '
                     f'invalid concept={json.dumps(concept)}; selected evidence={json.dumps(evidence)}. '
-                    'Copy a contiguous phrase exactly, including verb forms, from this evidence or choose a correct evidence_id.')
+                    'Use a less abbreviated phrase from this evidence or choose the correct evidence_id; do not add new words.')
             require(concept.casefold() not in {c.casefold() for c in concepts}, f'{facet}: duplicate concept')
             concepts.append(concept)
         facets[facet] = concepts
@@ -149,6 +176,53 @@ def ground_response(value, paper):
     return grounded
 
 
+def annotate(paper, instruction, config, runtime, generate_text, failure_path):
+    source = dict(paper_id=paper['paper_id'],
+                  evidence_options={key: row['evidence'] for key, row in evidence_options(paper).items()})
+    policy = ('\nCurrent extraction policy overrides any stricter copying rule above: concepts may omit '
+              'up to 30% of the words in their smallest matching source span. Keep retained words in their '
+              'original order, add no new words, and preserve meaning. Short exact phrases are allowed. '
+              'Consider both the title T0 and all abstract sentences for each facet.')
+    messages = [dict(role='system', content=instruction + policy + '\nReturn JSON only. Schema: ' + json.dumps(SCHEMA)),
+                dict(role='user', content=json.dumps(source, ensure_ascii=False))]
+    sparse_reviewed = False
+    error = None
+    for attempt in range(config['max_attempts']):
+        seed = config['seed'] + int(paper['paper_id'][1:]) * config['max_attempts'] + attempt
+        raw, generation = generate_text(messages, seed)
+        try:
+            selection = parse_generation(raw)
+            value = ground_response(selection, paper)
+            empty_count = sum(not value[facet] for facet in FACET_NAMES)
+            if empty_count >= SPARSE_REVIEW_THRESHOLD and not sparse_reviewed:
+                require(attempt + 1 < config['max_attempts'],
+                        f'{empty_count}/5 facets are empty; no attempt remains for the required sparse review')
+                sparse_reviewed = True
+                print(f"{paper['paper_id']}: review {attempt+2}/{config['max_attempts']} ({empty_count}/5 empty facets)", flush=True)
+                messages += [dict(role='assistant', content=raw), dict(role='user', content=
+                             f'{empty_count}/5 facets are empty. Review EACH empty facet against both the title T0 '
+                             'and every abstract sentence. Recover supported problem, task, method, dataset or '
+                             'contribution phrases you missed. Do not invent information or fill facets merely '
+                             'to avoid empty lists; keep [] when the paper supplies no support. Return the complete JSON.')]
+                continue
+            return value, dict(**runtime, **generation, evidence_selection=selection,
+                               attempt=attempt+1, seed=seed, sparse_reviewed=sparse_reviewed,
+                               request_parameters=dict(max_new_tokens=config['max_new_tokens'],
+                                                       max_attempts=config['max_attempts'], enable_thinking=False,
+                                                       min_concept_retention=MIN_CONCEPT_RETENTION,
+                                                       sparse_review_threshold=SPARSE_REVIEW_THRESHOLD,
+                                                       temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k']))
+        except ValueError as failure:
+            error = str(failure)
+            if attempt + 1 < config['max_attempts']:
+                print(f"{paper['paper_id']}: retry {attempt+2}/{config['max_attempts']} ({error})", flush=True)
+                messages += [dict(role='assistant', content=raw), dict(role='user', content=
+                             'Validation error: ' + error + '. Correct the JSON using ONLY the original evidence_options. '
+                             'Choose a valid evidence_id; use [] when unsupported.')]
+    write_json(failure_path, dict(paper_id=paper['paper_id'], error=error, raw_output=raw))
+    raise AnnotationError(f'Qwen annotation failed validation after {config["max_attempts"]} attempts: {error}')
+
+
 def load_qwen(root, config):
     # Imports are lazy: dry-run, validator and unit checks need no GPU/model.
     try:
@@ -178,51 +252,29 @@ def load_qwen(root, config):
                    quantization='nf4_double' if quantization else 'none',
                    device=config['device'], gpu_name=torch.cuda.get_device_name(0) if config['device'] == 'cuda' else None)
 
+    def generate_text(messages, seed):
+        torch.manual_seed(seed)
+        if config['device'] == 'cuda':
+            torch.cuda.manual_seed_all(seed)
+        text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        encoded = tokenizer(text, return_tensors='pt').to(model.device)
+        input_tokens = encoded['input_ids'].shape[-1]
+        require(input_tokens + config['max_new_tokens'] <= model.config.max_position_embeddings,
+                'Paper exceeds model context; input was not silently truncated')
+        started = time.monotonic()
+        with torch.inference_mode():
+            generated = model.generate(**encoded, max_new_tokens=config['max_new_tokens'],
+                                       do_sample=True, temperature=config['temperature'],
+                                       top_p=config['top_p'], top_k=config['top_k'],
+                                       pad_token_id=tokenizer.eos_token_id)
+        output_ids = generated[0, input_tokens:]
+        raw = tokenizer.decode(output_ids, skip_special_tokens=True).strip()
+        return raw, dict(usage=dict(input_tokens=input_tokens, output_tokens=len(output_ids)),
+                         generation_seconds=round(time.monotonic()-started, 3))
+
     def extract(paper, instruction):
-        source = dict(paper_id=paper['paper_id'],
-                      evidence_options={key: row['evidence'] for key, row in evidence_options(paper).items()})
-        messages = [dict(role='system', content=instruction +
-                        '\nReturn JSON only. Schema: ' + json.dumps(SCHEMA)),
-                    dict(role='user', content=json.dumps(source, ensure_ascii=False))]
-        error = None
-        for attempt in range(config['max_attempts']):
-            seed = config['seed'] + int(paper['paper_id'][1:]) * config['max_attempts'] + attempt
-            torch.manual_seed(seed)
-            if config['device'] == 'cuda':
-                torch.cuda.manual_seed_all(seed)
-            text = tokenizer.apply_chat_template(messages, tokenize=False,
-                                                  add_generation_prompt=True)
-            encoded = tokenizer(text, return_tensors='pt').to(model.device)
-            input_tokens = encoded['input_ids'].shape[-1]
-            require(input_tokens + config['max_new_tokens'] <= model.config.max_position_embeddings,
-                    'Paper exceeds model context; input was not silently truncated')
-            started = time.monotonic()
-            with torch.inference_mode():
-                generated = model.generate(**encoded, max_new_tokens=config['max_new_tokens'],
-                                           do_sample=True, temperature=config['temperature'],
-                                           top_p=config['top_p'], top_k=config['top_k'],
-                                           pad_token_id=tokenizer.eos_token_id)
-            output_ids = generated[0, input_tokens:]
-            raw = tokenizer.decode(output_ids, skip_special_tokens=True).strip()
-            try:
-                selection = parse_generation(raw)
-                value = ground_response(selection, paper)
-                return value, dict(**runtime, usage=dict(input_tokens=input_tokens, output_tokens=len(output_ids)),
-                                   evidence_selection=selection,
-                                   generation_seconds=round(time.monotonic()-started, 3),
-                                   attempt=attempt+1, seed=seed,
-                                   request_parameters=dict(max_new_tokens=config['max_new_tokens'],
-                                                           max_attempts=config['max_attempts'], enable_thinking=False,
-                                                           temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k']))
-            except ValueError as failure:
-                error = str(failure)
-                if attempt + 1 < config['max_attempts']:
-                    print(f"{paper['paper_id']}: retry {attempt+2}/{config['max_attempts']} ({error})", flush=True)
-                    messages += [dict(role='assistant', content=raw), dict(role='user', content=
-                                 'Validation error: ' + error + '. Correct the JSON using ONLY the original evidence_options. Choose a valid evidence_id; use [] when unsupported.')]
-        write_json(root / config['output_dir'] / 'last_failure.json',
-                   dict(paper_id=paper['paper_id'], error=error, raw_output=raw))
-        raise AnnotationError(f'Qwen annotation failed validation after {config["max_attempts"]} attempts: {error}')
+        return annotate(paper, instruction, config, runtime, generate_text,
+                        root / config['output_dir'] / 'last_failure.json')
 
     return extract
 
@@ -263,10 +315,12 @@ def generate(root, config, limit=None):
         previous = db.execute('SELECT signature FROM run').fetchone()
         if previous:
             if previous[0] != signature:
-                require(db.execute('SELECT COUNT(*) FROM annotations').fetchone()[0] == 0,
+                compatible = compatible_provenance(json.loads(previous[0]), provenance)
+                require(compatible or db.execute('SELECT COUNT(*) FROM annotations').fetchone()[0] == 0,
                         'Run provenance changed; restore inputs/config or use a NEW output_dir')
                 db.execute('UPDATE run SET signature = ?', (signature,))
-                db.execute('DELETE FROM failures')
+                if not compatible:
+                    db.execute('DELETE FROM failures')
                 db.commit()
         else:
             db.execute('INSERT INTO run VALUES (?)', (signature,))
@@ -274,26 +328,33 @@ def generate(root, config, limit=None):
         done = {row[0] for row in db.execute('SELECT paper_id FROM annotations')}
         require(done <= {p['paper_id'] for p in papers}, 'checkpoint contains unknown papers')
         catalog = {p['paper_id']: p for p in papers}
+        review_ids = set()
         for payload, in db.execute('SELECT payload FROM annotations'):
             record = json.loads(payload)
             paper = catalog[record['facets']['paper_id']]
             require(validate_response(record['metadata']['evidence'], paper) == record['facets'], 'checkpoint facets differ from evidence')
+            if (record['metadata'].get('extraction_policy_version') != GENERATOR_VERSION
+                    and sum(not record['facets'][facet] for facet in FACET_NAMES) >= SPARSE_REVIEW_THRESHOLD):
+                review_ids.add(paper['paper_id'])
         added = 0
         current = None
         extractor = None
         try:
             for position, paper in enumerate(papers[start-1:end], start):
                 current = paper['paper_id']
-                if current in done:
+                if current in done and current not in review_ids:
                     continue
-                if limit is not None and added >= limit:
-                    break
+                if limit is not None and added >= limit and current not in done:
+                    continue
                 print(f"Extracting {current} ({position}/{len(papers)})", flush=True)
                 if extractor is None:
                     extractor = load_qwen(root, config)
                 try:
                     value, local = extractor(paper, instruction)
                 except AnnotationError as failure:
+                    if current in done:
+                        print(f'REVIEW REJECTED {current}: {failure}; previous accepted result retained', flush=True)
+                        continue
                     with db:
                         db.execute('INSERT OR REPLACE INTO failures VALUES (?, ?)', (current, str(failure)))
                     print(f'REJECTED {current}: {failure}; saved for retry, continuing', flush=True)
@@ -301,13 +362,14 @@ def generate(root, config, limit=None):
                 facets = validate_response(value, paper)
                 metadata = dict(paper_id=current, tier='silver', dataset_kind='real', annotator_type='qwen_local',
                                 review_status='unreviewed', guideline_version=config['guideline_version'],
-                                prompt_version=config['prompt_version'], evidence=value, **local)
+                                 prompt_version=config['prompt_version'], extraction_policy_version=GENERATOR_VERSION,
+                                 evidence=value, **local)
                 with db:
-                    db.execute('INSERT INTO annotations VALUES (?, ?)',
+                    db.execute('INSERT OR REPLACE INTO annotations VALUES (?, ?)',
                                (current, json.dumps(dict(facets=facets, metadata=metadata), ensure_ascii=False)))
                     db.execute('DELETE FROM failures WHERE paper_id = ?', (current,))
+                added += current not in done
                 done.add(current)
-                added += 1
         except (ValueError, RuntimeError) as error:
             raise RuntimeError(f'{current}: {error}') from None
         finally:
@@ -319,7 +381,7 @@ def check_outputs(root, config, allow_partial=False):
     papers, provenance, _ = inputs(root, config)
     directory = root / config['output_dir']
     manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
-    require(manifest['provenance'] == provenance, 'Output provenance changed')
+    require(compatible_provenance(manifest['provenance'], provenance), 'Output provenance changed')
     require(manifest['dataset_kind'] == 'real' and manifest['tier'] == 'silver' and manifest['contract_version'] == '1.0', 'wrong manifest kind/tier/version')
     for name in ('facets_silver.jsonl', 'annotation_metadata.jsonl'):
         require(sha256(directory / name) == manifest['files'][name], f'{name}: checksum mismatch')

@@ -1490,11 +1490,12 @@ embedding dimension, cosine/dot product, temporal decay và UI thuộc phase sau
 README gốc của hai nguồn trong `data/raw/` giữ nguyên để bảo toàn provenance.
 `source_manifest.json` ghi URL và checksum SHA-256.
 
-**Quy ước Git hiện tại:** dữ liệu raw, processed,
-generated và ground_truth đều được phép commit/push. `.gitignore` chỉ loại cache,
-Python environment, secrets (`.env`), checkpoint cục bộ A, tệp tạm và embeddings/models hiện
-chưa thuộc phase này. Dataset được Git theo dõi không có nghĩa mô hình được đọc
-hidden truth; quy tắc loader và leakage vẫn bắt buộc.
+**Quy ước Git hiện tại:** các thực nghiệm A–E chỉ commit/push code, cấu hình
+và tài liệu. Mọi thư mục `generated/` và `ground_truth/` trong `data/exp_*/`,
+kể cả đầu ra trong `samples/`, được `.gitignore` bỏ qua và giữ trên máy.
+Dữ liệu raw và processed vẫn được phép commit/push. `.gitignore` cũng loại cache,
+Python environment, secrets (`.env`), checkpoint cục bộ A, tệp tạm và embeddings/models.
+Quy tắc tách hidden truth khỏi đầu vào mô hình và kiểm tra leakage vẫn bắt buộc.
 
 Repository đã có commit bootstrap; README không dùng trạng thái commit/push
 tĩnh làm bằng chứng remote. Kiểm tra trạng thái Git thực tế trước mỗi lần stage,
