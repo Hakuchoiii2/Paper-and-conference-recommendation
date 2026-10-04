@@ -14,6 +14,89 @@ import build_exp_a as a
 
 
 class RetryPolicyCheck(unittest.TestCase):
+    def test_regular_verb_forms_are_supported_but_synonyms_are_not(self):
+        cases = (
+            ('represent word meaning in context', 'representing word meaning in context', True),
+            ('extract instances', 'extracting instances', True),
+            ('use ranking', 'using ranking', True),
+            ('run experiments', 'running experiments', True),
+            ('study models', 'studies models', True),
+            ('predicting labels', 'predicted labels', True),
+            ('fill documents', 'filling documents', True),
+            ('file documents', 'filing documents', True),
+            ('hop', 'hopping', True),
+            ('hope', 'hoping', True),
+            ('rate', 'rated', True),
+            ('filing documents', 'filling documents', False),
+            ('hopping', 'hoping', False),
+            ('hopping', 'hoped', False),
+            ('rat', 'rated', False),
+            ('analyse models', 'evaluate models', False),
+            ('policy', 'police', False),
+            ('the', 'thing', False),
+        )
+        for concept, evidence, accepted in cases:
+            with self.subTest(concept=concept, evidence=evidence):
+                paper = dict(paper_id='P000015', title='Research', abstract=evidence)
+                value = dict(paper_id=paper['paper_id'], **{f: [] for f in a.FACET_NAMES})
+                value['task'] = [dict(concept=concept, evidence_id='A0')]
+                if accepted:
+                    try:
+                        grounded = a.ground_response(value, paper)
+                    except ValueError as error:
+                        self.fail(f'Equivalent verb form was rejected: {error}')
+                    self.assertEqual(grounded['task'][0]['concept'], concept)
+                    self.assertEqual(grounded['task'][0]['evidence'], evidence)
+                else:
+                    with self.assertRaises(ValueError):
+                        a.ground_response(value, paper)
+
+    def test_parenthetical_examples_are_optional_but_other_parentheses_are_not(self):
+        cases = (
+            ('extract instances of noun categories and relations',
+             "We consider extracting instances of noun categories (e.g., 'athlete', 'team') "
+             "and relations (e.g., 'playsForTeam(athlete, team)').", True),
+            ('alpha gamma', 'alpha (e.g., beta(delta(epsilon))) gamma.', True),
+            ('alpha gamma', 'alpha (for example, beta) gamma.', True),
+            ('alpha gamma', 'alpha (beta) gamma.', False),
+            ('alpha gamma', 'alpha (SVM) gamma.', False),
+            ('alpha gamma', 'alpha (not beta) gamma.', False),
+            ('alpha gamma', 'alpha (e.g., beta gamma.', False),
+            ('beta', 'alpha (e.g., beta) gamma.', True),
+            ('alpha omega', 'alpha beta gamma delta omega (e.g., ignored).', False),
+        )
+        for concept, evidence, accepted in cases:
+            with self.subTest(concept=concept, evidence=evidence):
+                coverage = a.source_phrase_coverage(concept, evidence)
+                if accepted:
+                    self.assertGreaterEqual(coverage, 0.7)
+                else:
+                    self.assertLess(coverage, 0.7)
+
+    def test_example_abbreviations_remain_in_one_selectable_sentence(self):
+        for example in ('e.g. beta', 'e.g., beta', 'e. g. beta', 'E.G. beta'):
+            with self.subTest(example=example):
+                evidence = f'alpha ({example}) gamma.'
+                paper = dict(paper_id='P000017', title='Research',
+                             abstract=evidence + ' We report results.')
+                value = dict(paper_id=paper['paper_id'], **{f: [] for f in a.FACET_NAMES})
+                value['task'] = [dict(concept='alpha gamma', evidence_id='A0')]
+                try:
+                    grounded = a.ground_response(value, paper)
+                except ValueError as error:
+                    self.fail(f'The example sentence could not be selected: {error}')
+                self.assertEqual(grounded['task'][0]['evidence'], evidence)
+                self.assertEqual(a.evidence_options(paper)['A1']['evidence'], 'We report results.')
+
+    def test_known_policy_21_upgrade_requires_all_other_provenance_to_match(self):
+        current = dict(generator_version='2.2', generator_sha256='new-build',
+                       config={'model': 'Qwen/test'}, input_hashes={'corpus': 'original'}, schema={})
+        previous = dict(current, generator_version='2.1',
+                        generator_sha256='49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b')
+        self.assertTrue(a.compatible_provenance(previous, current))
+        self.assertFalse(a.compatible_provenance(dict(previous, input_hashes={'corpus': 'changed'}), current))
+        self.assertFalse(a.compatible_provenance(dict(previous, generator_sha256='unknown-build'), current))
+
     def test_shortening_retains_seventy_percent_of_the_smallest_source_span(self):
         paper = dict(paper_id='P000001', title='Retrieval',
                      abstract='alpha beta gamma delta epsilon zeta eta theta iota kappa.')
@@ -137,6 +220,18 @@ class RetryPolicyCheck(unittest.TestCase):
             self.assertEqual(reviewed_ids, ['P000001', 'P000002'])
             self.assertEqual(manifest['count'], 2)
             self.assertEqual(a.read_jsonl(root / 'out/facets_silver.jsonl')[1]['method'], ['ranking'])
+            # A valid sparse response already reviewed by 2.1 needs no second review on upgrade.
+            with closing(sqlite3.connect(checkpoint)) as db, db:
+                signature = json.loads(db.execute('SELECT signature FROM run').fetchone()[0])
+                signature.update(generator_version='2.1',
+                                 generator_sha256='49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b')
+                db.execute('UPDATE run SET signature=?', (json.dumps(signature, sort_keys=True),))
+                record['metadata'].update(extraction_policy_version='2.1', sparse_reviewed=True)
+                db.execute('UPDATE annotations SET payload=? WHERE paper_id="P000002"', (json.dumps(record),))
+            reviewed_ids.clear()
+            with patch.object(a, 'load_qwen', return_value=review):
+                a.generate(root, config)
+            self.assertEqual(reviewed_ids, [])
 
 
 if __name__ == '__main__':

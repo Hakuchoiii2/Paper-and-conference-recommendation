@@ -83,11 +83,17 @@ chép định nghĩa; giữ để audit ở `generated/pilot_rejected_v13/`. Cá
 
 Qwen chọn concept và evidence_id từ các câu đánh số T0/A0/A1... của bài.
 Code lấy nguyên văn câu đã chọn và xác định source title/abstract, không yêu cầu
-model chép lại câu dài. Metadata giữ cả sentence selections. Concept phải là cụm từ thực sự xuất hiện
-trong câu đã chọn (so khớp sau chuẩn hóa case/dấu câu). Cho phép rút gọn bằng cách bỏ từ,
+model chép lại câu dài. Metadata giữ cả sentence selections. Concept phải bám vào từ trong câu đã chọn
+(so khớp sau chuẩn hóa case/dấu câu và biến thể động từ có quy tắc như representing/represent,
+extracting/extract, running/run). Cho phép rút gọn bằng cách bỏ từ,
 nhưng phải giữ thứ tự từ và ít nhất **70% số từ trong đoạn nguồn ngắn nhất chứa concept**;
 không so độ dài concept với toàn bộ câu. Cụm ngắn được chép nguyên văn luôn đạt ngưỡng.
-Không thêm từ mới hoặc dùng từ đồng nghĩa không có trong câu dẫn chứng. Code kiểm tra
+Không thêm từ mới hoặc dùng từ đồng nghĩa không có trong câu dẫn chứng.
+Ngoặc ví dụ được ghi rõ bằng `e.g.`, `for example`, `for instance` hoặc `such as`
+có thể bỏ qua khi tính tỷ lệ giữ từ. Ngoặc chứa viết tắt, định nghĩa, điều kiện hoặc phủ định
+vẫn được tính; câu dẫn chứng trong metadata luôn giữ nguyên văn. Nếu concept trích từ chính
+ngoặc ví dụ, vẫn kiểm tra với toàn bộ câu gốc để không làm mất dẫn chứng hợp lệ.
+Code kiểm tra
 đúng ID/khóa/list, không trùng concept và câu dẫn chứng có trong bài. Không có
 bằng chứng dùng `[]`; chưa xử lý không được chèn nhãn rỗng giả. Metadata ghi
 `annotator_type: qwen_local`, `tier: silver`, `review_status: unreviewed`.
@@ -100,7 +106,7 @@ Nếu kết quả hợp lệ có **ít nhất 3/5 facet trống**, model phải 
 từng câu abstract một lần. Sau lượt rà lại, facet thiếu bằng chứng vẫn được giữ `[]`;
 không ép model điền nhãn. Nếu chỉ tới lần sinh cuối mới nhận được kết quả cần rà lại,
 bài đó bị loại do hết ngân sách rà lại. Rút gọn quá 30% hoặc chọn sai evidence_id cũng retry.
-Quy tắc này thuộc extraction policy 2.1, được thêm sau prompt 1.5 và thay thế yêu cầu
+Quy tắc này thuộc extraction policy 2.2, được thêm sau prompt 1.5 và thay thế yêu cầu
 chép cụm liên tục của prompt gốc. Metadata ghi `extraction_policy_version`,
 `sparse_reviewed` và ngưỡng kiểm tra trong `request_parameters`.
 Câu trích có thật vẫn có thể không hỗ trợ concept: cần người review ngữ nghĩa.
@@ -141,9 +147,10 @@ tiếp tục bài thiếu. Checkpoint chưa có annotation nào được khởi 
 Nếu đã có annotation, đổi khoảng bài, model/revision/prompt/thiết bị/tham số
 sampling hoặc code generator thì dùng output mới;
 max_new_tokens/max_attempts có thể tăng để tiếp tục checkpoint.
-Riêng bản generator 2.0 có fingerprint đã biết được nâng lên policy 2.1 tự động
+Riêng bản generator 2.0 và 2.1 có fingerprint đã biết được nâng lên policy 2.2 tự động
 khi corpus, config, prompt và guideline không đổi. Các bài cũ có ít nhất 3 facet
-trống được xử lý lại; các bài còn lại được giữ nguyên. Chỉ thay kết quả cũ khi kết quả
+trống chưa được rà lại được xử lý lại; bài đã có `sparse_reviewed: true` được giữ nguyên.
+Chỉ thay kết quả cũ khi kết quả
 mới hợp lệ; nếu xử lý lại thất bại, giữ kết quả đã nhận và thử rà lại ở lần chạy sau.
 Việc rà lại bài đã có trong checkpoint không tính vào số bài mới của `--limit`.
 Nhấn Ctrl+C để dừng có lưu kết quả, rồi chạy lại cùng lệnh để dùng code mới.

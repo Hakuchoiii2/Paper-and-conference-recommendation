@@ -18,8 +18,11 @@ from download_sources import ROOT, sha256, write_json
 from validate_all import require, validate_facets, validate_papers
 
 FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
-GENERATOR_VERSION = '2.1'
-LEGACY_GENERATOR_SHA256 = '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab'
+GENERATOR_VERSION = '2.2'
+LEGACY_GENERATORS = {
+    '2.0': '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab',
+    '2.1': '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b',
+}
 MIN_CONCEPT_RETENTION = 0.7
 SPARSE_REVIEW_THRESHOLD = 3
 EVIDENCE_SCHEMA = dict(type='object', additionalProperties=False,
@@ -90,26 +93,85 @@ def inputs(root, config):
 
 
 def compatible_provenance(previous, current):
-    # Only this known validation-policy upgrade may reuse accepted annotations.
-    legacy = dict(current, generator_version='2.0', generator_sha256=LEGACY_GENERATOR_SHA256)
-    return previous == current or previous == legacy
+    # Only known validation-policy upgrades may reuse accepted annotations.
+    return previous == current or any(
+        previous == dict(current, generator_version=version, generator_sha256=fingerprint)
+        for version, fingerprint in LEGACY_GENERATORS.items())
+
+
+def regular_verb_form(base, ending):
+    if ending == 'ing' and base.endswith('ie'):
+        return base[:-2] + 'ying'
+    if base.endswith('e') and not base.endswith(('ee', 'ye')):
+        return base + 'd' if ending == 'ed' else base[:-1] + 'ing'
+    if ending == 'ed' and re.search(r'[^aeiou]y$', base):
+        return base[:-1] + 'ied'
+    # A single-vowel CVC base doubles its last consonant: hop -> hopping,
+    # whereas a silent-e base drops e: hope -> hoping.
+    if re.fullmatch(r'[^aeiou]*[aeiou][bdglmnprt]', base):
+        return base + base[-1] + ending
+    return base + ending
+
+
+def word_forms(word):
+    forms = {word}
+    short_forms = {'using': 'use', 'used': 'use', 'uses': 'use',
+                   'dying': 'die', 'lying': 'lie', 'tying': 'tie'}
+    if word in short_forms:
+        forms.add(short_forms[word])
+    if not word.isalpha():
+        return forms
+    for ending in ('ing', 'ed'):
+        if word.endswith(ending) and len(word) >= len(ending) + 3:
+            stem = word[:-len(ending)]
+            candidates = {stem, stem + 'e'}
+            if stem.endswith('i'):
+                candidates.add(stem[:-1] + 'y')
+            if re.search(r'([b-df-hj-np-tv-z])\1$', stem):
+                candidates.add(stem[:-1])
+            forms.update(base for base in candidates if regular_verb_form(base, ending) == word)
+    if word.endswith('ies') and len(word) > 4:
+        forms.add(word[:-3] + 'y')
+    elif word.endswith('s') and not word.endswith(('ss', 'us', 'is')) and len(word) > 3:
+        forms.add(word[:-1])
+        if word.endswith(('ches', 'shes', 'sses', 'xes', 'zes', 'oes')):
+            forms.add(word[:-2])
+    return forms
+
+
+def without_parenthetical_examples(evidence):
+    parts, depth, cursor = [], 0, 0
+    for position, char in enumerate(evidence):
+        if char == '(':
+            if depth == 0:
+                start = position
+            depth += 1
+        elif char == ')' and depth:
+            depth -= 1
+            if depth == 0 and re.match(r'\s*(?:e\s*\.\s*g\s*\.|for\s+example\b|for\s+instance\b|such\s+as\b)',
+                                      evidence[start+1:position], re.IGNORECASE):
+                parts.extend((evidence[cursor:start], ' '))
+                cursor = position + 1
+    return ''.join(parts) + evidence[cursor:]
 
 
 def source_phrase_coverage(concept, evidence):
-    tokens, words = normalize(concept).split(), normalize(evidence).split()
+    tokens = [word_forms(word) for word in normalize(concept).split()]
     if not tokens:
         return 0
     best = 0
-    for start, word in enumerate(words):
-        if word != tokens[0]:
-            continue
-        end = start
-        try:
-            for token in tokens[1:]:
-                end = words.index(token, end + 1)
-        except ValueError:
-            continue
-        best = max(best, len(tokens) / (end - start + 1))
+    for text in {evidence, without_parenthetical_examples(evidence)}:
+        words = [word_forms(word) for word in normalize(text).split()]
+        for start, word in enumerate(words):
+            if not word & tokens[0]:
+                continue
+            end = start
+            try:
+                for token in tokens[1:]:
+                    end = next(i for i in range(end + 1, len(words)) if words[i] & token)
+            except StopIteration:
+                continue
+            best = max(best, len(tokens) / (end - start + 1))
     return best
 
 
@@ -131,10 +193,13 @@ def validate_response(value, paper):
             require(concept == concept.strip(), f'{facet}: untrimmed concept')
             require(source in ('title', 'abstract') and evidence in paper[source],
                     f"{paper['paper_id']}: {facet} evidence is absent from source text")
-            require(source_phrase_coverage(concept, evidence) >= MIN_CONCEPT_RETENTION,
+            coverage = source_phrase_coverage(concept, evidence)
+            require(coverage >= MIN_CONCEPT_RETENTION,
                     f'{facet}: concept must retain at least 70% of its source phrase in the same word order; '
+                    f'matched retention={coverage:.0%} after verb-form and example normalization; '
                     f'invalid concept={json.dumps(concept)}; selected evidence={json.dumps(evidence)}. '
-                    'Use a less abbreviated phrase from this evidence or choose the correct evidence_id; do not add new words.')
+                    'Use a less abbreviated phrase from this evidence or choose the correct evidence_id; '
+                    'regular verb forms are allowed, but do not invent words or replace them with synonyms.')
             require(concept.casefold() not in {c.casefold() for c in concepts}, f'{facet}: duplicate concept')
             concepts.append(concept)
         facets[facet] = concepts
@@ -154,9 +219,18 @@ def parse_generation(text):
 
 
 def evidence_options(paper):
+    abstract = paper['abstract']
+    examples = [match.span() for match in re.finditer(r'\be\s*\.\s*g\s*\.', abstract, re.IGNORECASE)]
+    sentences, cursor = [], 0
+    for boundary in re.finditer(r'(?<=[.!?])\s+', abstract):
+        if any(start <= boundary.start() <= end for start, end in examples):
+            continue
+        sentences.append(abstract[cursor:boundary.start()])
+        cursor = boundary.end()
+    sentences.append(abstract[cursor:])
     return {'T0': dict(source='title', evidence=paper['title']),
             **{f'A{i}': dict(source='abstract', evidence=sentence)
-               for i, sentence in enumerate(re.split(r'(?<=[.!?])\s+', paper['abstract']))}}
+               for i, sentence in enumerate(sentences)}}
 
 
 def ground_response(value, paper):
@@ -181,7 +255,11 @@ def annotate(paper, instruction, config, runtime, generate_text, failure_path):
                   evidence_options={key: row['evidence'] for key, row in evidence_options(paper).items()})
     policy = ('\nCurrent extraction policy overrides any stricter copying rule above: concepts may omit '
               'up to 30% of the words in their smallest matching source span. Keep retained words in their '
-              'original order, add no new words, and preserve meaning. Short exact phrases are allowed. '
+              'original order and preserve meaning. Regular verb forms such as representing/represent '
+              'or extracting/extract are equivalent; arbitrary synonyms or invented words are not allowed. '
+              'Parenthetical examples explicitly marked e.g., for example, for instance or such as may be omitted '
+              'without affecting the retention ratio. Other parentheses, abbreviations and conditions still count. '
+              'Short exact phrases are allowed. '
               'Consider both the title T0 and all abstract sentences for each facet.')
     messages = [dict(role='system', content=instruction + policy + '\nReturn JSON only. Schema: ' + json.dumps(SCHEMA)),
                 dict(role='user', content=json.dumps(source, ensure_ascii=False))]
@@ -210,6 +288,7 @@ def annotate(paper, instruction, config, runtime, generate_text, failure_path):
                                request_parameters=dict(max_new_tokens=config['max_new_tokens'],
                                                        max_attempts=config['max_attempts'], enable_thinking=False,
                                                        min_concept_retention=MIN_CONCEPT_RETENTION,
+                                                       regular_verb_forms=True, ignore_parenthetical_examples=True,
                                                        sparse_review_threshold=SPARSE_REVIEW_THRESHOLD,
                                                        temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k']))
         except ValueError as failure:
@@ -334,6 +413,7 @@ def generate(root, config, limit=None):
             paper = catalog[record['facets']['paper_id']]
             require(validate_response(record['metadata']['evidence'], paper) == record['facets'], 'checkpoint facets differ from evidence')
             if (record['metadata'].get('extraction_policy_version') != GENERATOR_VERSION
+                    and not record['metadata'].get('sparse_reviewed')
                     and sum(not record['facets'][facet] for facet in FACET_NAMES) >= SPARSE_REVIEW_THRESHOLD):
                 review_ids.add(paper['paper_id'])
         added = 0
