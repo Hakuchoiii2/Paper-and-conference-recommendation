@@ -148,25 +148,32 @@ class ExtractionCheck(unittest.TestCase):
             self.assertEqual(manifest['count'],1)
             self.assertEqual(manifest['missing_ids'],['P000002'])
 
-            # A paper-specific model rejection does not prevent later real papers from running.
+            # An exhausted validation failure still has an audited result; later papers continue.
             config['output_dir']='batch'
             second=dict(value,paper_id='P000002')
             extractor=Mock(side_effect=[a.AnnotationError('bad JSON'),(second,{'usage':{},'model':config['model']})])
             with patch.object(a,'load_qwen',return_value=extractor):
                 manifest=a.generate(root,config)
-            self.assertEqual(manifest['count'],1)
-            self.assertEqual(manifest['missing_ids'],['P000001'])
-            self.assertEqual(manifest['failed_annotations'],{'P000001':'bad JSON'})
+            self.assertEqual(manifest['count'],2)
+            self.assertEqual(manifest['missing_ids'],[])
+            self.assertEqual(manifest['failed_annotations'],{})
+            self.assertEqual(manifest['fallback_annotations'],{'P000001':['bad JSON']})
             a.check_outputs(root,config,allow_partial=True)
             with patch.object(a,'load_qwen',return_value=lambda p,i:(value,{'usage':{},'model':config['model']})):
                 manifest=a.generate(root,config)
             self.assertEqual(manifest['status'],'complete')
             self.assertEqual(manifest['failed_annotations'],{})
+            self.assertEqual(manifest['fallback_annotations'],{'P000001':['bad JSON']})
             a.check_outputs(root,config)
 
             config['output_dir']='all_rejected'
             with patch.object(a,'load_qwen',return_value=Mock(side_effect=a.AnnotationError('bad JSON'))):
-                self.assertEqual(a.generate(root,config)['count'],0)
+                self.assertEqual(a.generate(root,config)['count'],2)
+            self.assertEqual(set(a.check_outputs(root,config)['fallback_annotations']), {'P000001','P000002'})
+            config['output_dir']='zero_annotation_reset'
+            with patch.object(a,'load_qwen',return_value=Mock(side_effect=RuntimeError('environment failure'))):
+                with self.assertRaisesRegex(RuntimeError,'environment failure'):
+                    a.generate(root,config)
             # A zero-annotation reset cannot carry failures from a removed corpus ID.
             a.write_jsonl(root/'papers.jsonl',[papers[1]])
             with patch.object(a,'load_qwen',return_value=lambda p,i:(second,{'usage':{},'model':config['model']})):

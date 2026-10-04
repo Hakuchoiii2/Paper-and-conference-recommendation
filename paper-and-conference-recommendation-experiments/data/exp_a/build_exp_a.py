@@ -18,10 +18,11 @@ from download_sources import ROOT, sha256, write_json
 from validate_all import require, validate_facets, validate_papers
 
 FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
-GENERATOR_VERSION = '2.2'
+GENERATOR_VERSION = '2.3'
 LEGACY_GENERATORS = {
     '2.0': '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab',
     '2.1': '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b',
+    '2.2': 'a9aafd069b8c1ec12ae0079e05a2272c854839c889da621964c27c61b66b3e68',
 }
 MIN_CONCEPT_RETENTION = 0.7
 SPARSE_REVIEW_THRESHOLD = 3
@@ -35,7 +36,7 @@ SCHEMA = dict(type='object', additionalProperties=False,
 
 
 class AnnotationError(RuntimeError):
-    """One paper exhausted its output-validation retries; other papers can proceed."""
+    """Legacy paper validation failure; an audited empty fallback can be saved."""
 
 
 @contextmanager
@@ -102,6 +103,8 @@ def compatible_provenance(previous, current):
 def regular_verb_form(base, ending):
     if ending == 'ing' and base.endswith('ie'):
         return base[:-2] + 'ying'
+    if ending == 'ing' and base == 'singe':
+        return base + ending
     if base.endswith('e') and not base.endswith(('ee', 'ye')):
         return base + 'd' if ending == 'ed' else base[:-1] + 'ing'
     if ending == 'ed' and re.search(r'[^aeiou]y$', base):
@@ -175,7 +178,7 @@ def source_phrase_coverage(concept, evidence):
     return best
 
 
-def validate_response(value, paper):
+def validate_response(value, paper, allow_quality_errors=False):
     require(isinstance(value, dict) and value.get('paper_id') == paper['paper_id'],
             f"{paper['paper_id']}: wrong paper_id")
     require(set(value) == {'paper_id', *FACET_NAMES}, 'wrong facet keys')
@@ -187,14 +190,15 @@ def validate_response(value, paper):
         for item in items:
             require(isinstance(item, dict) and set(item) == {'concept', 'evidence', 'source'},
                     f'{facet}: wrong evidence keys')
-            require(all(isinstance(item[k], str) and item[k].strip() for k in item),
+            require(all(isinstance(item[k], str) for k in item) and concept_nonempty(item['concept']),
                     f'{facet}: empty concept/evidence/source')
             concept, evidence, source = item['concept'], item['evidence'], item['source']
             require(concept == concept.strip(), f'{facet}: untrimmed concept')
-            require(source in ('title', 'abstract') and evidence in paper[source],
+            unresolved = allow_quality_errors and source == 'unresolved' and evidence == ''
+            require(unresolved or source in ('title', 'abstract') and bool(evidence.strip()) and evidence in paper[source],
                     f"{paper['paper_id']}: {facet} evidence is absent from source text")
             coverage = source_phrase_coverage(concept, evidence)
-            require(coverage >= MIN_CONCEPT_RETENTION,
+            require(allow_quality_errors or coverage >= MIN_CONCEPT_RETENTION,
                     f'{facet}: concept must retain at least 70% of its source phrase in the same word order; '
                     f'matched retention={coverage:.0%} after verb-form and example normalization; '
                     f'invalid concept={json.dumps(concept)}; selected evidence={json.dumps(evidence)}. '
@@ -207,15 +211,21 @@ def validate_response(value, paper):
     return facets
 
 
+def concept_nonempty(concept):
+    return isinstance(concept, str) and bool(concept.strip())
+
+
 def parse_generation(text):
     text = text.strip()
     fenced = re.fullmatch(r'```(?:json)?\s*(.*?)\s*```', text, re.DOTALL)
     if fenced:
         text = fenced[1]
     try:
-        return json.loads(text)
-    except ValueError:
-        raise ValueError('Qwen output must contain one JSON object only') from None
+        value = json.loads(text)
+        json.dumps(value, ensure_ascii=False, allow_nan=False).encode('utf-8')
+        return value
+    except (ValueError, RecursionError, UnicodeEncodeError):
+        raise ValueError('Qwen output must contain one readable UTF-8 JSON object only') from None
 
 
 def evidence_options(paper):
@@ -250,6 +260,112 @@ def ground_response(value, paper):
     return grounded
 
 
+def assess_generation(raw, paper):
+    """Recover a stable output shape, audit every issue, and score source support."""
+    value = dict(paper_id=paper['paper_id'], **{facet: [] for facet in FACET_NAMES})
+    try:
+        selection = parse_generation(raw)
+        require(isinstance(selection, dict), 'Qwen output must be a JSON object')
+    except ValueError as error:
+        return value, None, dict(score=0.0, schema_valid=False, parseable=False, validation_errors=[str(error)])
+    shape_errors = []
+    if selection.get('paper_id') != paper['paper_id']:
+        shape_errors.append('wrong paper_id; output uses the supplied paper_id')
+    if set(selection) != {'paper_id', *FACET_NAMES}:
+        shape_errors.append('wrong facet keys; output uses all five facet lists')
+    issues, total, valid, retention, supported_facets = [], 0, 0, 0.0, set()
+    options = evidence_options(paper)
+    for facet in FACET_NAMES:
+        items = selection.get(facet)
+        if not isinstance(items, list):
+            shape_errors.append(f'{facet}: expected list')
+            continue
+        seen = set()
+        for index, item in enumerate(items):
+            total += 1
+            where = f'{facet}[{index}]'
+            if not isinstance(item, dict) or set(item) != {'concept', 'evidence_id'}:
+                shape_errors.append(f'{where}: wrong concept/evidence_id keys')
+            concept = item.get('concept') if isinstance(item, dict) else item
+            if not concept_nonempty(concept):
+                shape_errors.append(f'{where}: empty or non-string concept')
+                continue
+            if concept != concept.strip():
+                shape_errors.append(f'{where}: untrimmed concept')
+            concept = concept.strip()
+            key = normalize(concept)
+            if key in seen:
+                issues.append(f'{where}: duplicate concept')
+                # Duplicates count in the denominator but earn no support/retention.
+                continue
+            seen.add(key)
+            evidence_id = item.get('evidence_id') if isinstance(item, dict) else None
+            if not isinstance(evidence_id, str) or evidence_id not in options:
+                shape_errors.append(f'{where}: unknown evidence_id')
+                grounded = dict(concept=concept, evidence='', source='unresolved')
+            else:
+                grounded = dict(concept=concept, **options[evidence_id])
+            value[facet].append(grounded)
+            one = dict(paper_id=paper['paper_id'], **{name: [] for name in FACET_NAMES})
+            one[facet] = [grounded]
+            try:
+                validate_response(one, paper)
+            except ValueError as error:
+                issues.append(f'{where}: {error}')
+            else:
+                valid += 1
+                supported_facets.add(facet)
+            retention += source_phrase_coverage(concept, grounded['evidence'])
+    schema_valid = not shape_errors
+    # ponytail: lexical support is a heuristic, not semantic confidence; keep human silver review.
+    score = (60 * len(supported_facets) / len(FACET_NAMES)
+             + (25 * valid / total + 5 * retention / total if total else 0)
+             + 10 * schema_valid)
+    return value, selection, dict(score=round(score, 4), schema_valid=schema_valid, parseable=True,
+                                 validation_errors=shape_errors + issues)
+
+
+def attempt_rank(attempt):
+    return attempt['score'], attempt['parseable'], -len(attempt['validation_errors'])
+
+
+def validate_annotation(value, paper, metadata):
+    """Fallbacks relax quality checks only when the selected raw and audit agree."""
+    fallback = metadata.get('fallback_used', False)
+    require(type(fallback) is bool, 'fallback_used must be boolean')
+    if not fallback:
+        return validate_response(value, paper)
+    errors = metadata.get('validation_errors')
+    require(isinstance(errors, list) and errors and all(isinstance(error, str) for error in errors),
+            'fallback must declare its validation errors')
+    attempts = metadata.get('attempt_scores', [])
+    require(isinstance(attempts, list), 'fallback attempt_scores must be a list')
+    if attempts:
+        require(metadata.get('attempts_used') == len(attempts), 'fallback attempts_used differs from audit')
+        require([row.get('attempt') for row in attempts] == list(range(1, len(attempts)+1)),
+                'fallback audit must contain every attempt in order')
+        for row in attempts:
+            _, _, assessment = assess_generation(row['raw_output'], paper)
+            require(all(row.get(key) == assessment[key] for key in ('score', 'schema_valid', 'parseable')),
+                    'fallback attempt score or structure differs from its raw output')
+            require(all(issue in row['validation_errors'] for issue in assessment['validation_errors']),
+                    'fallback attempt audit hides validation errors')
+        selected = next((row for row in attempts if row['attempt'] == metadata['attempt']), None)
+        require(selected is not None, 'fallback selected attempt is absent from audit')
+        recovered, _, assessment = assess_generation(selected['raw_output'], paper)
+        require(recovered == value, 'fallback evidence differs from its selected raw output')
+        require(selected['score'] == assessment['score'], 'fallback score differs from its raw output')
+        require(all(issue in errors for issue in assessment['validation_errors']),
+                'fallback audit hides validation errors')
+        require(errors == selected['validation_errors'], 'fallback errors differ from its selected attempt')
+        require(metadata.get('selected_score') == selected['score'], 'fallback selected_score differs from audit')
+        require(selected == max(attempts, key=attempt_rank),
+                'fallback did not select the highest-scoring attempt')
+    else:
+        require(not any(value[facet] for facet in FACET_NAMES), 'nonempty fallback requires raw attempt audit')
+    return validate_response(value, paper, allow_quality_errors=True)
+
+
 def annotate(paper, instruction, config, runtime, generate_text, failure_path):
     source = dict(paper_id=paper['paper_id'],
                   evidence_options={key: row['evidence'] for key, row in evidence_options(paper).items()})
@@ -264,42 +380,68 @@ def annotate(paper, instruction, config, runtime, generate_text, failure_path):
     messages = [dict(role='system', content=instruction + policy + '\nReturn JSON only. Schema: ' + json.dumps(SCHEMA)),
                 dict(role='user', content=json.dumps(source, ensure_ascii=False))]
     sparse_reviewed = False
-    error = None
+    attempts, best = [], None
+
+    def finish(candidate, fallback):
+        entry = candidate['audit']
+        generation = dict(candidate['generation'])
+        usage_keys = {key for row in attempts for key in row['usage']}
+        generation['usage'] = {key: sum(row['usage'].get(key, 0) for row in attempts) for key in usage_keys}
+        generation['generation_seconds'] = sum(row['generation_seconds'] for row in attempts)
+        return candidate['value'], dict(
+            **runtime, **generation, evidence_selection=candidate['selection'],
+            attempt=entry['attempt'], seed=entry['seed'], sparse_reviewed=sparse_reviewed,
+            attempts_used=len(attempts), selected_score=entry['score'], attempt_scores=attempts,
+            fallback_used=fallback, validation_errors=entry['validation_errors'],
+            request_parameters=dict(max_new_tokens=config['max_new_tokens'],
+                                    max_attempts=config['max_attempts'], enable_thinking=False,
+                                    min_concept_retention=MIN_CONCEPT_RETENTION,
+                                    regular_verb_forms=True, ignore_parenthetical_examples=True,
+                                    sparse_review_threshold=SPARSE_REVIEW_THRESHOLD,
+                                    temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k']))
+
     for attempt in range(config['max_attempts']):
         seed = config['seed'] + int(paper['paper_id'][1:]) * config['max_attempts'] + attempt
         raw, generation = generate_text(messages, seed)
-        try:
-            selection = parse_generation(raw)
-            value = ground_response(selection, paper)
-            empty_count = sum(not value[facet] for facet in FACET_NAMES)
-            if empty_count >= SPARSE_REVIEW_THRESHOLD and not sparse_reviewed:
-                require(attempt + 1 < config['max_attempts'],
-                        f'{empty_count}/5 facets are empty; no attempt remains for the required sparse review')
+        # Preserve otherwise unencodable characters as literal escapes in the audit.
+        raw = raw.encode('utf-8', errors='backslashreplace').decode('utf-8')
+        value, selection, assessment = assess_generation(raw, paper)
+        errors = assessment['validation_errors']
+        empty_count = sum(not value[facet] for facet in FACET_NAMES)
+        review = not errors and empty_count >= SPARSE_REVIEW_THRESHOLD and not sparse_reviewed
+        if review:
+            errors.append(f'{empty_count}/5 facets are empty; required sparse review has not completed')
+        entry = dict(attempt=attempt+1, seed=seed, raw_output=raw, **assessment,
+                     usage=generation.get('usage', {}), generation_seconds=generation.get('generation_seconds', 0))
+        attempts.append(entry)
+        candidate = dict(value=value, selection=selection, generation=generation, audit=entry)
+        if best is None or attempt_rank(entry) > attempt_rank(best['audit']):
+            best = candidate
+        print(f"{paper['paper_id']}: attempt {attempt+1}/{config['max_attempts']} "
+              f"score={entry['score']:.2f}/100; validation_errors={len(errors)}", flush=True)
+        if not errors:
+            return finish(candidate, False)
+        if attempt + 1 < config['max_attempts']:
+            if review:
                 sparse_reviewed = True
                 print(f"{paper['paper_id']}: review {attempt+2}/{config['max_attempts']} ({empty_count}/5 empty facets)", flush=True)
-                messages += [dict(role='assistant', content=raw), dict(role='user', content=
-                             f'{empty_count}/5 facets are empty. Review EACH empty facet against both the title T0 '
-                             'and every abstract sentence. Recover supported problem, task, method, dataset or '
-                             'contribution phrases you missed. Do not invent information or fill facets merely '
-                             'to avoid empty lists; keep [] when the paper supplies no support. Return the complete JSON.')]
-                continue
-            return value, dict(**runtime, **generation, evidence_selection=selection,
-                               attempt=attempt+1, seed=seed, sparse_reviewed=sparse_reviewed,
-                               request_parameters=dict(max_new_tokens=config['max_new_tokens'],
-                                                       max_attempts=config['max_attempts'], enable_thinking=False,
-                                                       min_concept_retention=MIN_CONCEPT_RETENTION,
-                                                       regular_verb_forms=True, ignore_parenthetical_examples=True,
-                                                       sparse_review_threshold=SPARSE_REVIEW_THRESHOLD,
-                                                       temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k']))
-        except ValueError as failure:
-            error = str(failure)
-            if attempt + 1 < config['max_attempts']:
-                print(f"{paper['paper_id']}: retry {attempt+2}/{config['max_attempts']} ({error})", flush=True)
-                messages += [dict(role='assistant', content=raw), dict(role='user', content=
-                             'Validation error: ' + error + '. Correct the JSON using ONLY the original evidence_options. '
-                             'Choose a valid evidence_id; use [] when unsupported.')]
-    write_json(failure_path, dict(paper_id=paper['paper_id'], error=error, raw_output=raw))
-    raise AnnotationError(f'Qwen annotation failed validation after {config["max_attempts"]} attempts: {error}')
+                feedback = (f'{empty_count}/5 facets are empty. Review EACH empty facet against both the title T0 '
+                            'and every abstract sentence. Recover supported problem, task, method, dataset or '
+                            'contribution phrases you missed. Do not invent information or fill facets merely '
+                            'to avoid empty lists; keep [] when the paper supplies no support. Return the complete JSON.')
+            else:
+                print(f"{paper['paper_id']}: retry {attempt+2}/{config['max_attempts']} ({len(errors)} validation errors)", flush=True)
+                feedback = ('Validation errors:\n' + '\n'.join(errors)
+                            + '\nCorrect ALL errors using ONLY the original evidence_options. '
+                            'Preserve supported concepts, choose valid evidence IDs, and use [] only when unsupported. '
+                            'Return the complete JSON.')
+            messages += [dict(role='assistant', content=raw), dict(role='user', content=feedback)]
+    chosen = best['audit']
+    write_json(failure_path, dict(paper_id=paper['paper_id'], error='\n'.join(chosen['validation_errors']),
+                                 raw_output=chosen['raw_output'], selected_attempt=chosen['attempt'], attempt_scores=attempts))
+    print(f"BEST AVAILABLE {paper['paper_id']}: attempt {chosen['attempt']}, "
+          f"score={chosen['score']:.2f}/100; saved with validation errors", flush=True)
+    return finish(best, True)
 
 
 def load_qwen(root, config):
@@ -371,6 +513,8 @@ def export(root, config, papers, provenance, db):
     manifest = dict(contract_version='1.0', dataset_kind='real', tier='silver',
                     status='partial' if missing else 'complete', count=len(facets), corpus_count=len(papers),
                     missing_ids=missing, failed_annotations=failures, provenance=provenance,
+                    fallback_annotations={row['paper_id']: row['validation_errors'] for row in metadata
+                                          if row.get('fallback_used', False)},
                     coverage={f: sum(bool(row[f]) for row in facets) for f in FACET_NAMES},
                     total_input_tokens=sum(row['usage'].get('input_tokens', 0) for row in metadata),
                     total_output_tokens=sum(row['usage'].get('output_tokens', 0) for row in metadata),
@@ -411,7 +555,8 @@ def generate(root, config, limit=None):
         for payload, in db.execute('SELECT payload FROM annotations'):
             record = json.loads(payload)
             paper = catalog[record['facets']['paper_id']]
-            require(validate_response(record['metadata']['evidence'], paper) == record['facets'], 'checkpoint facets differ from evidence')
+            require(validate_annotation(record['metadata']['evidence'], paper, record['metadata']) == record['facets'],
+                    'checkpoint facets differ from evidence')
             if (record['metadata'].get('extraction_policy_version') != GENERATOR_VERSION
                     and not record['metadata'].get('sparse_reviewed')
                     and sum(not record['facets'][facet] for facet in FACET_NAMES) >= SPARSE_REVIEW_THRESHOLD):
@@ -433,13 +578,15 @@ def generate(root, config, limit=None):
                     value, local = extractor(paper, instruction)
                 except AnnotationError as failure:
                     if current in done:
-                        print(f'REVIEW REJECTED {current}: {failure}; previous accepted result retained', flush=True)
+                        print(f'REVIEW FAILED {current}: {failure}; previous accepted result retained', flush=True)
                         continue
-                    with db:
-                        db.execute('INSERT OR REPLACE INTO failures VALUES (?, ?)', (current, str(failure)))
-                    print(f'REJECTED {current}: {failure}; saved for retry, continuing', flush=True)
+                    value = dict(paper_id=current, **{facet: [] for facet in FACET_NAMES})
+                    local = dict(usage={}, fallback_used=True, validation_errors=[str(failure)],
+                                 attempt_scores=[], attempts_used=0, attempt=0, selected_score=0.0)
+                if current in done and local.get('fallback_used', False):
+                    print(f'REVIEW FALLBACK {current}: previous accepted result retained', flush=True)
                     continue
-                facets = validate_response(value, paper)
+                facets = validate_annotation(value, paper, local)
                 metadata = dict(paper_id=current, tier='silver', dataset_kind='real', annotator_type='qwen_local',
                                 review_status='unreviewed', guideline_version=config['guideline_version'],
                                  prompt_version=config['prompt_version'], extraction_policy_version=GENERATOR_VERSION,
@@ -474,10 +621,14 @@ def check_outputs(root, config, allow_partial=False):
         require(annotation['tier'] == 'silver' and annotation['dataset_kind'] == 'real'
                 and annotation['review_status'] == 'unreviewed' and annotation['annotator_type'] == 'qwen_local', 'wrong annotation provenance')
         require(annotation['prompt_version'] == config['prompt_version'] and annotation['guideline_version'] == config['guideline_version'], 'annotation versions differ')
-        require(validate_response(annotation['evidence'], catalog[row['paper_id']]) == row, 'facet labels differ from evidence')
+        require(validate_annotation(annotation['evidence'], catalog[row['paper_id']], annotation) == row,
+                'facet labels differ from evidence')
     missing = sorted(set(catalog) - {row['paper_id'] for row in facets})
     require(manifest['count'] == len(facets) and manifest['corpus_count'] == len(papers) and manifest['missing_ids'] == missing, 'wrong output counts/coverage')
     require(set(manifest['failed_annotations']) <= set(missing), 'failed papers must remain missing, never fake annotations')
+    require(manifest.get('fallback_annotations', {}) == {
+        row['paper_id']: row['validation_errors'] for row in metadata if row.get('fallback_used', False)},
+        'fallback summary differs from annotation audit')
     require(manifest['status'] == ('partial' if missing else 'complete'), 'wrong completion status')
     require(manifest['coverage'] == {f: sum(bool(row[f]) for row in facets) for f in FACET_NAMES}, 'wrong facet coverage')
     require(allow_partial or not missing, f'Only {len(facets)}/{len(papers)} papers annotated; partial output is not ready for B–E')

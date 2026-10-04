@@ -136,16 +136,16 @@ class RetryPolicyCheck(unittest.TestCase):
         dense = dict(sparse, contribution=[dict(concept='ranking', evidence_id='A0')])
         bad = dict(sparse, method=[dict(concept='invented technique', evidence_id='A0')])
         cases = (
-            ('two_empty', [dense], 1, False),
-            ('three_empty', [sparse, sparse], 2, True),
-            ('five_empty', [empty, empty], 2, True),
-            ('review_finds_labels', [empty, dense], 2, True),
-            ('invalid_then_review', [bad, sparse, dense], 3, True),
-            ('three_invalid', [bad, bad, bad], None, False),
-            ('sparse_without_review_budget', [bad, bad, sparse], None, False),
+            ('two_empty', [dense], 1, False, False),
+            ('three_empty', [sparse, sparse], 2, True, False),
+            ('five_empty', [empty, empty], 2, True, False),
+            ('review_finds_labels', [empty, dense], 2, True, False),
+            ('invalid_then_review', [bad, sparse, dense], 3, True, False),
+            ('three_invalid', [bad, bad, bad], 1, False, True),
+            ('sparse_without_review_budget', [bad, bad, sparse], 3, False, True),
         )
         with tempfile.TemporaryDirectory() as directory:
-            for name, responses, attempt, reviewed in cases:
+            for name, responses, attempt, reviewed, fallback in cases:
                 with self.subTest(case=name):
                     replies = iter(responses)
                     feedback = []
@@ -153,14 +153,20 @@ class RetryPolicyCheck(unittest.TestCase):
                         feedback.append(copy.deepcopy(messages))
                         return json.dumps(next(replies)), dict(usage={}, generation_seconds=0)
                     failure_path = Path(directory) / (name + '.json')
-                    if attempt is None:
-                        with self.assertRaises(a.AnnotationError):
-                            a.annotate(paper, 'Extract supported concepts.', config, {}, generate_text, failure_path)
+                    value, metadata = a.annotate(paper, 'Extract supported concepts.', config, {}, generate_text, failure_path)
+                    self.assertEqual(metadata['attempt'], attempt)
+                    self.assertEqual(metadata['sparse_reviewed'], reviewed)
+                    self.assertEqual(metadata['fallback_used'], fallback)
+                    if fallback:
                         self.assertEqual(json.loads(failure_path.read_text())['paper_id'], 'P000003')
+                        self.assertEqual(json.loads(failure_path.read_text())['selected_attempt'], attempt)
+                        self.assertTrue(metadata['validation_errors'])
+                        a.validate_annotation(value, paper, metadata)
+                        if name == 'three_invalid':
+                            self.assertEqual(value['method'][0]['concept'], 'invented technique')
+                        else:
+                            self.assertEqual(value, a.ground_response(sparse, paper))
                     else:
-                        value, metadata = a.annotate(paper, 'Extract supported concepts.', config, {}, generate_text, failure_path)
-                        self.assertEqual(metadata['attempt'], attempt)
-                        self.assertEqual(metadata['sparse_reviewed'], reviewed)
                         self.assertEqual(value, a.ground_response(responses[-1], paper))
                         self.assertFalse(failure_path.exists())
                     self.assertEqual(len(feedback), len(responses))

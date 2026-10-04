@@ -65,7 +65,7 @@ Tệp của từng phần nằm trong `output_dir` tương ứng, ví dụ
 | `annotation_metadata.jsonl` | Câu dẫn chứng nguyên văn, model/revision/runtime, token count, seed/attempt |
 | `manifest.json` | Hashes, coverage, missing IDs, partial/complete |
 | `.exp_a_checkpoint.sqlite3` | Lưu từng bài hợp lệ để tiếp tục; không commit Git |
-| `last_failure.json` nếu lỗi | Paper ID, lỗi kiểm tra và output cuối để rà lại |
+| `last_failure.json` nếu fallback | Paper ID, output được chọn, điểm và lỗi của từng lượt để rà lại |
 
 Manifest giữ `corpus_count: 4210` và coverage của **toàn corpus**; một phần đủ
 842 bài vẫn có `status: partial`, các ID ngoài khoảng vẫn nằm trong `missing_ids`.
@@ -99,14 +99,39 @@ bằng chứng dùng `[]`; chưa xử lý không được chèn nhãn rỗng gi�
 `annotator_type: qwen_local`, `tier: silver`, `review_status: unreviewed`.
 
 JSON được yêu cầu bằng prompt và kiểm tra sau sinh; không có bảo đảm schema từ
-dịch vụ API. Sai JSON/ID thì yêu cầu model sửa tối đa max_attempts lần. Hết
-lượt vẫn sai thì ghi lỗi theo paper_id vào checkpoint và `manifest.failed_annotations`, giữ ID đó trong `missing_ids` rồi tiếp tục các bài khác. Không chèn annotation giả cho bài lỗi. Chạy lại cùng lệnh sẽ thử lại các ID còn thiếu. Lỗi môi trường/GPU vẫn dừng tiến trình.
+dịch vụ API. Mỗi lượt được chấm điểm và thu thập **tất cả lỗi concept** để model sửa
+cùng lúc. Khi có kết quả đạt kiểm tra và đã rà các facet trống theo quy tắc dưới,
+lưu ngay. **Hết lượt vẫn lỗi thì lưu kết quả có điểm cao nhất**, giữ cả concept
+chưa đạt kiểm tra, thay vì bỏ cả paper. Ngưỡng 70% là tiêu chí retry, không phải điều
+kiện loại paper ở lượt cuối. Metadata ghi `fallback_used: true`, `validation_errors`,
+`selected_score`, `attempt` được chọn, `attempts_used` và `attempt_scores` của mọi lượt
+(gồm raw output, seed, điểm, lỗi và usage). Tổng usage tính cả các lượt retry.
+`manifest.fallback_annotations` liệt kê các paper còn lỗi; `missing_ids` chỉ chứa
+paper chưa có bản ghi. Chạy lại tiếp tục các ID còn thiếu, không sinh lại fallback đã lưu.
+Lỗi môi trường/GPU vẫn dừng tiến trình.
+
+Điểm từ **0–100** là thước đo bám nguồn theo quy tắc, không phải xác suất đúng ngữ nghĩa:
+
+| Thành phần | Điểm tối đa |
+|---|---:|
+| Số facet có ít nhất một concept đạt kiểm tra / 5 | 60 |
+| Số concept đạt kiểm tra / tổng số item model sinh | 25 |
+| Tỷ lệ giữ từ trung bình của các concept | 5 |
+| JSON đúng ID, đủ khóa, đúng list/item/evidence_id | 10 |
+
+Concept trùng không tăng điểm và được gộp trong output; bản raw vẫn giữ nguyên.
+Hòa điểm ưu tiên JSON đọc được, rồi ít lỗi hơn, rồi lượt sớm hơn. Concept có evidence_id
+không tồn tại vẫn được giữ trong fallback nhưng ghi `source: unresolved`, `evidence: ""`;
+không gán dẫn chứng khác cho nó. Nếu mọi lượt đều không đọc được JSON, vẫn xuất đúng
+paper_id và năm list rỗng, có lỗi và raw output để rà lại. Bản ghi này biểu thị model
+không tạo được nhãn, không khẳng định paper không có facet.
 `max_attempts: 3` là **tổng ba lần sinh**, bao gồm lần đầu, retry và lượt rà lại.
 Nếu kết quả hợp lệ có **ít nhất 3/5 facet trống**, model phải rà lại title T0 và
 từng câu abstract một lần. Sau lượt rà lại, facet thiếu bằng chứng vẫn được giữ `[]`;
 không ép model điền nhãn. Nếu chỉ tới lần sinh cuối mới nhận được kết quả cần rà lại,
-bài đó bị loại do hết ngân sách rà lại. Rút gọn quá 30% hoặc chọn sai evidence_id cũng retry.
-Quy tắc này thuộc extraction policy 2.2, được thêm sau prompt 1.5 và thay thế yêu cầu
+dùng fallback có điểm cao nhất và ghi lỗi thiếu lượt rà lại. Rút gọn quá 30% hoặc chọn
+sai evidence_id cũng retry trong ngân sách này.
+Quy tắc này thuộc extraction policy 2.3, được thêm sau prompt 1.5 và thay thế yêu cầu
 chép cụm liên tục của prompt gốc. Metadata ghi `extraction_policy_version`,
 `sparse_reviewed` và ngưỡng kiểm tra trong `request_parameters`.
 Câu trích có thật vẫn có thể không hỗ trợ concept: cần người review ngữ nghĩa.
@@ -140,18 +165,18 @@ python -m venv .venv-qwen
 
 ## 6. Tiến độ và tái lập
 
-Model được nạp một lần mỗi tiến trình, xử lý tuần tự và lưu từng bài ngay sau
-kiểm tra. Năm người chạy trên máy riêng với cùng corpus/model/prompt; mỗi phần
+Model được nạp một lần mỗi tiến trình, xử lý tuần tự và lưu từng bài sau khi đạt
+kiểm tra hoặc chọn fallback tốt nhất. Năm người chạy trên máy riêng với cùng corpus/model/prompt; mỗi phần
 có output/checkpoint riêng. OS lock chặn hai lượt chạy cùng output. Dừng rồi chạy lại cùng lệnh
 tiếp tục bài thiếu. Checkpoint chưa có annotation nào được khởi tạo lại khi đổi cấu hình.
 Nếu đã có annotation, đổi khoảng bài, model/revision/prompt/thiết bị/tham số
 sampling hoặc code generator thì dùng output mới;
 max_new_tokens/max_attempts có thể tăng để tiếp tục checkpoint.
-Riêng bản generator 2.0 và 2.1 có fingerprint đã biết được nâng lên policy 2.2 tự động
+Riêng bản generator 2.0, 2.1 và 2.2 có fingerprint đã biết được nâng lên policy 2.3 tự động
 khi corpus, config, prompt và guideline không đổi. Các bài cũ có ít nhất 3 facet
 trống chưa được rà lại được xử lý lại; bài đã có `sparse_reviewed: true` được giữ nguyên.
-Chỉ thay kết quả cũ khi kết quả
-mới hợp lệ; nếu xử lý lại thất bại, giữ kết quả đã nhận và thử rà lại ở lần chạy sau.
+Chỉ thay kết quả cũ khi kết quả mới hợp lệ; nếu lượt rà lại chỉ có fallback, giữ kết quả
+đã nhận. Các ID bị REJECTED ở bản cũ còn thiếu sẽ được sinh lại bằng cơ chế chấm điểm mới.
 Việc rà lại bài đã có trong checkpoint không tính vào số bài mới của `--limit`.
 Nhấn Ctrl+C để dừng có lưu kết quả, rồi chạy lại cùng lệnh để dùng code mới.
 Seed/phiên bản được ghi để truy nguồn, không bảo đảm kết quả giống hệt trên GPU khác.
