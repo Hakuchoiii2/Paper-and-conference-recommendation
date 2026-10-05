@@ -19,12 +19,13 @@ from validate_all import require, validate_facets, validate_papers
 
 FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
 GENERATOR_VERSION = '2.3'
-LEGACY_GENERATORS = {
-    '2.0': '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab',
-    '2.1': '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b',
-    '2.2': 'a9aafd069b8c1ec12ae0079e05a2272c854839c889da621964c27c61b66b3e68',
-    '2.3': 'd4337f76920a5ebf503217b4ef0aff307aa798c151453b287ad7f14838e14c88',
-}
+LEGACY_GENERATORS = (
+    ('2.0', '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab'),
+    ('2.1', '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b'),
+    ('2.2', 'a9aafd069b8c1ec12ae0079e05a2272c854839c889da621964c27c61b66b3e68'),
+    ('2.3', 'd4337f76920a5ebf503217b4ef0aff307aa798c151453b287ad7f14838e14c88'),
+    ('2.3', '48ff88ceca3c0e259675a34e684a6ad871bfe0f3e24afc599f7d1fff81d48d72'),
+)
 MIN_CONCEPT_RETENTION = 0.7
 SPARSE_REVIEW_THRESHOLD = 3
 EVIDENCE_SCHEMA = dict(type='object', additionalProperties=False,
@@ -98,7 +99,7 @@ def compatible_provenance(previous, current):
     # Only known compatible generator upgrades may reuse accepted annotations.
     return previous == current or any(
         previous == dict(current, generator_version=version, generator_sha256=fingerprint)
-        for version, fingerprint in LEGACY_GENERATORS.items())
+        for version, fingerprint in LEGACY_GENERATORS)
 
 
 def regular_verb_form(base, ending):
@@ -436,7 +437,7 @@ def annotate(paper, instruction, config, runtime, generate_text, failure_path):
                             + '\nCorrect ALL errors using ONLY the original evidence_options. '
                             'Preserve supported concepts, choose valid evidence IDs, and use [] only when unsupported. '
                             'Return the complete JSON.')
-            messages += [dict(role='assistant', content=raw), dict(role='user', content=feedback)]
+            messages[2:] = [dict(role='assistant', content=raw), dict(role='user', content=feedback)]
     chosen = best['audit']
     write_json(failure_path, dict(paper_id=paper['paper_id'], error='\n'.join(chosen['validation_errors']),
                                  raw_output=chosen['raw_output'], selected_attempt=chosen['attempt'], attempt_scores=attempts))

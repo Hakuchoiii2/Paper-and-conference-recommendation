@@ -14,6 +14,36 @@ import build_exp_a as a
 
 
 class RetryPolicyCheck(unittest.TestCase):
+    def test_retry_context_does_not_accumulate_superseded_responses(self):
+        paper = dict(paper_id='P000003', title='Retrieval', abstract='We use ranking for retrieval.')
+        config = dict(max_attempts=3, max_new_tokens=2048, seed=42,
+                      temperature=0.7, top_p=0.8, top_k=20)
+        raws = [json.dumps({'paper_id': 'P000003', **{facet: [] for facet in a.FACET_NAMES},
+                           'method': [dict(concept=f'invented technique {attempt}', evidence_id='A0')]})
+                for attempt in range(3)]
+        requests = []
+
+        def generate_text(messages, seed):
+            requests.append(copy.deepcopy(messages))
+            return raws[len(requests)-1], dict(usage={})
+
+        with tempfile.TemporaryDirectory() as directory:
+            _, metadata = a.annotate(paper, 'Extract supported concepts.', config, {}, generate_text,
+                                     Path(directory) / 'last_failure.json')
+        self.assertEqual([len(messages) for messages in requests], [2, 4, 4])
+        self.assertEqual(requests[2][:2], requests[0])
+        self.assertEqual(requests[2][2]['content'], raws[1])
+        self.assertNotIn(raws[0], [message['content'] for message in requests[2]])
+        self.assertEqual([attempt['raw_output'] for attempt in metadata['attempt_scores']], raws)
+
+    def test_pre_fix_policy_23_upgrade_requires_all_other_provenance_to_match(self):
+        current = dict(generator_version='2.3', generator_sha256='new-build',
+                       config={'model': 'Qwen/test'}, input_hashes={'corpus': 'original'}, schema={})
+        previous = dict(current, generator_sha256='48ff88ceca3c0e259675a34e684a6ad871bfe0f3e24afc599f7d1fff81d48d72')
+        self.assertTrue(a.compatible_provenance(previous, current))
+        self.assertFalse(a.compatible_provenance(dict(previous, input_hashes={'corpus': 'changed'}), current))
+        self.assertFalse(a.compatible_provenance(dict(previous, generator_sha256='unknown-build'), current))
+
     def test_regular_verb_forms_are_supported_but_synonyms_are_not(self):
         cases = (
             ('represent word meaning in context', 'representing word meaning in context', True),
