@@ -23,6 +23,7 @@ LEGACY_GENERATORS = {
     '2.0': '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab',
     '2.1': '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b',
     '2.2': 'a9aafd069b8c1ec12ae0079e05a2272c854839c889da621964c27c61b66b3e68',
+    '2.3': 'd4337f76920a5ebf503217b4ef0aff307aa798c151453b287ad7f14838e14c88',
 }
 MIN_CONCEPT_RETENTION = 0.7
 SPARSE_REVIEW_THRESHOLD = 3
@@ -94,7 +95,7 @@ def inputs(root, config):
 
 
 def compatible_provenance(previous, current):
-    # Only known validation-policy upgrades may reuse accepted annotations.
+    # Only known compatible generator upgrades may reuse accepted annotations.
     return previous == current or any(
         previous == dict(current, generator_version=version, generator_sha256=fingerprint)
         for version, fingerprint in LEGACY_GENERATORS.items())
@@ -524,6 +525,56 @@ def export(root, config, papers, provenance, db):
     return manifest
 
 
+def restore_jsonl(directory, config, papers, provenance, db):
+    """Recover an empty/lost checkpoint from verified exported evidence."""
+    if db.execute('SELECT COUNT(*) FROM annotations').fetchone()[0]:
+        return
+    silver_path = directory / 'facets_silver.jsonl'
+    metadata_path = directory / 'annotation_metadata.jsonl'
+    if not silver_path.exists() and not metadata_path.exists():
+        return
+    manifest_path = directory / 'manifest.json'
+    require(manifest_path.is_file(), 'JSONL recovery requires manifest.json; restore it or the checkpoint')
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    for path in (silver_path, metadata_path):
+        if path.exists():
+            require(sha256(path) == manifest['files'].get(path.name), f'{path.name}: checksum mismatch')
+    require(metadata_path.is_file(),
+            'JSONL recovery requires annotation_metadata.jsonl; restore it or the checkpoint')
+    metadata = read_jsonl(metadata_path)
+    silver = read_jsonl(silver_path) if silver_path.exists() else None
+    if not metadata and not silver:
+        return
+    require(compatible_provenance(manifest['provenance'], provenance), 'Output provenance changed')
+    require(manifest['dataset_kind'] == 'real' and manifest['tier'] == 'silver'
+            and manifest['contract_version'] == '1.0', 'wrong manifest kind/tier/version')
+    catalog = {paper['paper_id']: paper for paper in papers}
+    records = []
+    for annotation in metadata:
+        paper_id = annotation['paper_id']
+        require(paper_id in catalog, 'JSONL contains unknown papers')
+        require(annotation['tier'] == 'silver' and annotation['dataset_kind'] == 'real'
+                and annotation['review_status'] == 'unreviewed' and annotation['annotator_type'] == 'qwen_local',
+                'wrong annotation provenance')
+        require(annotation['prompt_version'] == config['prompt_version']
+                and annotation['guideline_version'] == config['guideline_version'], 'annotation versions differ')
+        facets = validate_annotation(annotation['evidence'], catalog[paper_id], annotation)
+        require(facets['paper_id'] == paper_id, 'metadata IDs differ')
+        records.append(dict(facets=facets, metadata=annotation))
+    facets = [record['facets'] for record in records]
+    validate_facets(facets, set(catalog))
+    require(silver is None or silver == facets, 'facet labels differ from evidence')
+    missing = sorted(set(catalog) - {row['paper_id'] for row in facets})
+    require(manifest['count'] == len(records) and manifest['corpus_count'] == len(papers)
+            and manifest['missing_ids'] == missing, 'wrong output counts/coverage')
+    with db:
+        db.executemany('INSERT INTO annotations VALUES (?, ?)',
+                       [(row['facets']['paper_id'], json.dumps(row, ensure_ascii=False)) for row in records])
+        db.executemany('DELETE FROM failures WHERE paper_id = ?',
+                       [(row['facets']['paper_id'],) for row in records])
+    print(f'Restored {len(records)} accepted papers from JSONL', flush=True)
+
+
 def generate(root, config, limit=None):
     require(limit is None or type(limit) is int and limit > 0, 'limit must be positive')
     papers, provenance, instruction = inputs(root, config)
@@ -548,6 +599,7 @@ def generate(root, config, limit=None):
         else:
             db.execute('INSERT INTO run VALUES (?)', (signature,))
             db.commit()
+        restore_jsonl(directory, config, papers, provenance, db)
         done = {row[0] for row in db.execute('SELECT paper_id FROM annotations')}
         require(done <= {p['paper_id'] for p in papers}, 'checkpoint contains unknown papers')
         catalog = {p['paper_id']: p for p in papers}
@@ -561,6 +613,9 @@ def generate(root, config, limit=None):
                     and not record['metadata'].get('sparse_reviewed')
                     and sum(not record['facets'][facet] for facet in FACET_NAMES) >= SPARSE_REVIEW_THRESHOLD):
                 review_ids.add(paper['paper_id'])
+        selected_ids = {paper['paper_id'] for paper in papers[start-1:end]}
+        print(f'Range [{start}, {end}]: {len(done & selected_ids)}/{len(selected_ids)} saved; '
+              f'{len(selected_ids - done)} missing; {len(review_ids & selected_ids)} need policy review', flush=True)
         added = 0
         current = None
         extractor = None

@@ -155,6 +155,15 @@ kết quả để kiểm tra trước khi chạy. Mặc định chỉ xử lý b
 ranh giới phần chạy. Config hiện chọn phần 1; đổi khoảng/thư mục trước khi chạy
 phần khác. Chạy lại cùng config sẽ tiếp tục checkpoint của phần đó.
 
+Khi bắt đầu, code hiển thị số bài đã lưu, còn thiếu và cần rà lại **trong khoảng
+được chọn**. Dò theo `paper_id` nên bài thiếu ở giữa vẫn được xử lý; bài đã lưu
+không tính vào `--limit`. Nếu mất checkpoint, code phục hồi từ
+`annotation_metadata.jsonl` và `manifest.json` đã kiểm tra hash/provenance,
+đối chiếu với `facets_silver.jsonl` nếu tệp này còn. Nếu chỉ thiếu tệp silver,
+dẫn chứng trong metadata đủ để tạo lại mà không nạp model. Khi checkpoint còn,
+các tệp JSONL/manifest bị thiếu được xuất lại từ checkpoint. Mất cả checkpoint
+và metadata hoặc manifest thì cần khôi phục bản sao trước khi chạy tiếp.
+
 Nếu thiết lập lại máy, từ thư mục gốc dự án dùng Python 3.11:
 
 ```powershell
@@ -172,6 +181,8 @@ tiếp tục bài thiếu. Checkpoint chưa có annotation nào được khởi 
 Nếu đã có annotation, đổi khoảng bài, model/revision/prompt/thiết bị/tham số
 sampling hoặc code generator thì dùng output mới;
 max_new_tokens/max_attempts có thể tăng để tiếp tục checkpoint.
+Riêng bản bổ sung phục hồi JSONL giữ nguyên policy 2.3 và chấp nhận fingerprint
+của generator 2.3 trước đó; không cần đổi `output_dir` cho nâng cấp này.
 Riêng bản generator 2.0, 2.1 và 2.2 có fingerprint đã biết được nâng lên policy 2.3 tự động
 khi corpus, config, prompt và guideline không đổi. Các bài cũ có ít nhất 3 facet
 trống chưa được rà lại được xử lý lại; bài đã có `sparse_reviewed: true` được giữ nguyên.
@@ -197,3 +208,42 @@ chọn đúng facet hoặc trích đủ ý; các nhãn vẫn là silver chưa re
 
 Nguồn: [model card Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507),
 [PyTorch CUDA 12.4](https://pytorch.org/get-started/previous-versions/#v260).
+
+## 8. Gộp năm phần và chọn 400 bài review
+
+Từ gốc dự án, sau khi nhận đủ parts 1–5:
+
+~~~powershell
+python data/exp_a/merge_exp_a.py --dry-run
+python data/exp_a/merge_exp_a.py
+python data/exp_a/select_gold_review.py --dry-run
+python data/exp_a/select_gold_review.py
+~~~
+
+Tool gộp kiểm tra coverage từng khoảng/toàn corpus, không trùng ID, input/config
+provenance và model/revision thực tế được ghi trong metadata. Chỉ khi đủ 4.210 bài
+mới ghi silver, metadata và manifest complete ở `data/exp_a/generated/`.
+
+Tool review chọn mặc định 400 IDs, không random: số facet có dữ liệu giảm dần,
+rồi số concept có dẫn chứng giảm dần, rồi paper_id tăng dần. Bỏ P000001,
+fallback/validation errors và bài không có facet trích được. Nếu thiếu 400 bài
+hợp lệ thì báo thiếu. Không ghi đè queue review đã có.
+
+Gold là đáp án người kiểm tra dùng để đánh giá **độ đúng và độ đầy đủ** của facet A,
+độc lập với Qwen silver. Output selector chỉ là form pending và danh sách bài,
+không tự tạo `facets_gold.jsonl`. Nhãn silver nằm trong tệp tham chiếu riêng để
+đối chiếu sau review. Cách chọn này ưu tiên silver đầy đủ, không đại diện ngẫu nhiên
+cho toàn corpus. Xem [hướng dẫn chạy](../../docs/RUN_EXPERIMENTS.md) để biết tệp,
+preview part_1 và quy trình review.
+
+## 9. Đánh giá silver bằng human gold
+
+Sau khi 400 forms được người review hoàn tất (`review_status: reviewed`, có tên
+reviewer), từ gốc dự án chạy `python scripts/exp_a/evaluate_exp_a.py`. Tool xuất
+Precision/Recall/F1 từng facet, micro/macro, nhãn dư/thiếu, dẫn chứng và gợi ý
+có thể nhầm facet ở từng bài. Output tại `data/exp_a/evaluation/gold_400/`.
+
+Đây là so khớp concept sau chuẩn hóa Unicode/hoa thường/khoảng trắng, giữ dấu câu;
+nhãn cùng nghĩa khác cách viết vẫn cần người đối chiếu. 400 bài ưu tiên đầy đủ
+không tự đại diện toàn corpus. Điểm chọn lượt sinh 0–100 của A không phải accuracy.
+Xem [quy trình và cách đọc kết quả](../../docs/EVALUATE_QWEN.md).

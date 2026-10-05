@@ -6,6 +6,12 @@ chọn khoảng bằng `paper_range` trong config A. B–E
 mock queries/intents/users/hành vi trên corpus thật và facet A. B/C/D làm
 song song sau silver; E dùng chung users D. Chưa có gold hoặc kết quả mô hình.
 
+
+**Cập nhật 2026-10-05:** đã có code gộp A, chọn 400 IDs chờ human review và sinh/kiểm tra
+B–E theo số lượng mục tiêu. Snapshot đo mới nhất có A part_1 (842/4.210,
+192 bài fallback/lỗi, 650 bài hợp lệ cho sampling);
+dataset B–E trên corpus thật chờ parts 2–5. Xem [hướng dẫn chạy](docs/RUN_EXPERIMENTS.md).
+
 ## Mục lục
 
 1. Trạng thái hiện tại và số liệu dữ liệu
@@ -40,8 +46,8 @@ song song sau silver; E dùng chung users D. Chưa có gold hoặc kết quả m
 | Đóng góp sau gộp | 4.182 bản ghi từ CSFCube và 28 bản ghi từ SciFact |
 | Công cụ dữ liệu | Script tải, gộp corpus và kiểm tra chạy được |
 | Kiểm tra | Corpus gate và kiểm tra offline đạt; xem docs/VALIDATION_STATUS.md |
-| A local / mock B–E | A có code local, resume và validator; generator B–E chưa triển khai |
-| Silver/gold năm facet | Chưa có; cần annotation và review chất lượng |
+| A local / mock B–E | A có code local/resume/validator, tool gộp và chọn review; B–E có generator/config/validator |
+| Silver/gold năm facet | Silver part_1: 842/4.210; gold 400 bài chờ chọn từ full silver và người review |
 
 Số 4.210 là số bản ghi canonical hiện tại, còn mang tính tạm thời: có 5 trường hợp
 cùng tiêu đề nhưng khác abstract được giữ riêng để review. SciFact còn 15 bản ghi
@@ -57,7 +63,7 @@ cả thành phần đã có code hoặc phải xây thành các service riêng.
 | Lớp | Chức năng | Trạng thái |
 |---|---|---|
 | Nguồn và corpus | Tải, giữ bản gốc; lọc IT; chuẩn hóa, gộp trùng và cấp ID ổn định | Đã triển khai |
-| Facet và dataset | Gán năm facet; xây query, ý định, hành vi và hồ sơ thời gian A–E | A có bộ chạy Qwen3 local; B–E có đặc tả, chưa có generator/dataset |
+| Facet và dataset | Gán năm facet; xây query, ý định, hành vi và hồ sơ thời gian A–E | A có bộ chạy local; B–E có generator/validator, dataset trên corpus thật chờ A complete |
 | Biểu diễn và khuyến nghị | Biểu diễn nội dung/facet, truy hồi ứng viên, suy ra sở thích và xếp hạng theo chế độ | Giai đoạn sau; chưa chọn model/embedding/dimension |
 | Đánh giá và sử dụng | Đọc nhãn đúng giao thức, so sánh kết quả, phân tích lỗi; giao diện khi có nhu cầu | Giai đoạn sau; chưa có kết quả hoặc UI |
 
@@ -138,7 +144,7 @@ quan sát được. Ví dụ `retrieval_queries.jsonl`, `intents.jsonl`, `users.
 | E | Users D + corpus + silver A + drift config | Temporal profiles và stream E riêng | A silver, users D và simulator E |
 
 B–E dùng năm facet; native CSFCube ba facet chỉ là benchmark bổ sung tùy chọn.
-Generator B–E chưa triển khai. A có code local; số annotation thực tế xem manifest.
+Generator/validator B–E đã triển khai. Số annotation và output thực tế xem manifest; tests dùng fixture riêng.
 
 Các mục “đầu vào/đầu ra” A–E bên dưới giờ là **của generator**, còn cách mô hình
 đọc dataset được tách ở cuối mục kiểm tra. Folder `data` là nguyên liệu và output
@@ -151,8 +157,8 @@ dataset; việc model sinh ranking/scores là phase khác.
 | Corpus | Xây corpus IT chung; lọc phạm vi, gộp trùng, giữ ID/provenance; chốt schema và kiểm tra/tích hợp A–E | 6.000 bài, tối thiểu 3.000; hiện 4.210 bản ghi tạm thời |
 | A | 5 người cùng chạy trích facet theo khoảng riêng; guideline/prompt, nhãn tự động và review | Silver trên 4.210 bài hiện có, 842 bài/người; 400 bài gold là mục tiêu review riêng |
 | B | Xây dataset B: bài truy vấn, ứng viên và nhãn mức liên quan theo facet | 300 query × 100 candidates = khoảng 30.000 cặp |
-| C | Xây dataset C: yêu cầu tìm bài, ràng buộc và nhãn ứng viên có thỏa yêu cầu không | 1.500 cases; phân bổ theo loại intent được duyệt |
-| D/E | Xây dataset D: user giả lập, sở thích ẩn và hành vi; dataset E: cùng users qua nhiều giai đoạn | D: 300 users × 50 = 15.000 interactions. E: 300 users × 4 = 1.200 profiles, khoảng 15.000–20.000 interactions |
+| C | Xây dataset C: yêu cầu tìm bài, ràng buộc và nhãn ứng viên có thỏa yêu cầu không | 1.500 cases × 20 candidates; quota 6 types × 200 + 2 types × 150 |
+| D/E | Xây dataset D: user giả lập, sở thích ẩn và hành vi; dataset E: cùng users qua nhiều giai đoạn | D: 300 users × 50 = 15.000 interactions. E: 300 users × 4 = 1.200 profiles, 15 events/user/period = 18.000 interactions |
 
 Đây là mục tiêu làm việc, không phải dữ liệu đã hoàn thành. D và E không cộng
 thành 600 users. Gold/silver là nhãn trên corpus, không phải corpus độc lập.
@@ -182,7 +188,7 @@ thay bằng bộ sinh tự động để đủ 400 bài.
 
 ## 5. Quy mô, pilot và điều kiện mở từng phần
 
-Chạy A silver trên toàn corpus trước; B–E làm pilot mock rồi mở rộng.
+Chạy A silver trên toàn corpus trước; pilot B–E dùng ngay số lượng mục tiêu theo yêu cầu hiện tại.
 Gold A là mục tiêu review riêng, không chặn generator B–E khi silver đã có.
 
 | Phần | Mục tiêu làm việc | Điều kiện cần trước khi sinh dataset |
@@ -200,7 +206,7 @@ dữ liệu người dùng thật; phải ghi rõ giới hạn này trong mọi 
 
 
 
-### Pilot trước khi mở rộng
+### Pilot theo số lượng mục tiêu
 
 Mỗi exp đọc corpus chính và silver A. Pilot chỉ giới hạn output query/case/user,
 không dựng catalog mẫu hoặc facet giả.
@@ -208,10 +214,10 @@ không dựng catalog mẫu hoặc facet giả.
 | Phần | Mốc đầu tiên |
 |---|---|
 | A | `--limit 2` nếu cần kiểm tra local model; chạy tiếp toàn corpus và validate coverage |
-| B | 5 query × 10 candidates trên năm facet A |
-| C | 20 cases có positive/negative và missing facet |
-| D | 5 users × 10 events; 6 history/4 future |
-| E | Cùng 5 users D × 4 periods, ít nhất 2 events/user/period |
+| B | 300 query × 100 candidates; 60 query/facet |
+| C | 1.500 cases × 20 candidates; quota tám loại intent |
+| D | 300 users × 50 events; 30 history/20 future |
+| E | Cùng 300 users D × 4 periods × 15 events; 150 stable/150 drift |
 
 B–E vẫn ghi mock/synthetic dù dùng silver thật. Khi đổi input facet/rule, sinh
 lại labels/splits/events và cập nhật hashes; thiếu ứng viên hợp lệ thì báo gap.
@@ -225,8 +231,9 @@ schemas/                 Schema các bản ghi đang dùng
 data/raw/csfcube/         Bản gốc CSFCube, nhãn, split và tài liệu nguồn
 data/raw/scifact/         Bản gốc SciFact, claims, split và tài liệu nguồn
 data/processed/          Corpus chung, ánh xạ ID, audit và manifest
-data/exp_a/ ... exp_e/    README và các thư mục dữ liệu riêng của A–E
-scripts/                 Các script dữ liệu đang chạy được
+data/exp_a/ ... exp_e/    Generator, README và dữ liệu riêng của A–E
+scripts/exp_a/ ... exp_e/ Code chạy và đánh giá từng thực nghiệm
+scripts/                 Tiện ích corpus, I/O và kiểm tra dùng chung
 tests/                   Kiểm tra dữ liệu hợp lệ và các trường hợp lỗi
 ```
 
@@ -237,8 +244,9 @@ tests/                   Kiểm tra dữ liệu hợp lệ và các trường h�
 - `data/processed/scope_audit.jsonl`: quyết định giữ/loại từng bản ghi và bằng chứng.
 - `data/exp_a/generated/facets_silver.jsonl`: vị trí dự kiến nhãn tự động.
 - `data/exp_a/generated/facets_gold.jsonl`: vị trí dự kiến nhãn đã được người review.
-- `samples/generated/` và `samples/ground_truth/` của mỗi exp: output mock cần
-  xây trước, cùng tên trường output thật nhưng manifest ghi `dataset_kind: mock`.
+- `samples/generated/` và `samples/ground_truth/`: vị trí tùy chọn nếu cấu hình
+  một bộ nhỏ. Mặc định pilot hiện dùng ngay quy mô mục tiêu ở `generated/`
+  và `ground_truth/`; B–E vẫn ghi `dataset_kind: mock`.
 - `generated/`: dữ liệu đầy đủ của exp; `ground_truth/`: nhãn/hồ sơ ẩn/tương lai
   chỉ dành cho đánh giá. Không đưa chúng vào đầu vào dự đoán hoặc xây hồ sơ.
 
@@ -259,7 +267,9 @@ paper-and-conference-recommendation-experiments/
 ├── .gitignore
 ├── configs/
 │   ├── data.json
-│   └── scope.json
+│   ├── scope.json
+│   ├── exp_b.json, exp_c.json, exp_d.json, exp_e.json
+│   └── intent_templates.json
 ├── docs/
 │   ├── DATA_FIRST_REFERENCE.md
 │   ├── FACET_GUIDELINE.md
@@ -268,7 +278,10 @@ paper-and-conference-recommendation-experiments/
 │   ├── IT_SCOPE.md
 │   ├── INGESTION_REPORT.md
 │   ├── IMPLEMENTATION_PLAN.md
-│   └── VALIDATION_STATUS.md
+│   ├── VALIDATION_STATUS.md
+│   ├── RUN_EXPERIMENTS.md
+│   ├── EXPERIMENT_DATASETS_SPEC.md
+│   └── EXPERIMENT_DATASETS_PLAN.md
 ├── schemas/
 │   ├── paper.schema.json
 │   ├── id_map.schema.json
@@ -286,50 +299,63 @@ paper-and-conference-recommendation-experiments/
 │   │   ├── corpus_report.json
 │   │   ├── native_split_policy.json
 │   │   └── manifest.json
+│   ├── build_experiments.py, experiment_common.py
 │   ├── exp_a/
 │   │   ├── README.md
 │   │   ├── build_exp_a.py
+│   │   ├── merge_exp_a.py, select_gold_review.py
 │   │   ├── config.json
 │   │   ├── .env.example
 │   │   ├── samples/       Pilot local dùng output chính; không mock facet
-│   │   ├── generated/    facets_silver/gold và annotation_metadata [dự kiến]
-│   │   └── ground_truth/  Vị trí cho dữ liệu đánh giá cần tách riêng khi triển khai
+│   │   ├── generated/    part_1 hiện có; full silver/metadata chờ gộp đủ 5 parts
+│   │   └── ground_truth/  gold_review: hàng đợi 400 bài, pending human review
 │   ├── exp_b/
 │   │   ├── README.md
+│   │   ├── build_exp_b.py
 │   │   ├── samples/
 │   │   ├── generated/    retrieval_queries.jsonl [dự kiến]
 │   │   └── ground_truth/  retrieval_labels.jsonl [dự kiến]
 │   ├── exp_c/
 │   │   ├── README.md
+│   │   ├── build_exp_c.py
 │   │   ├── samples/
 │   │   ├── generated/    intents.jsonl [dự kiến]
 │   │   └── ground_truth/  intent_labels.jsonl [dự kiến]
 │   ├── exp_d/
 │   │   ├── README.md
+│   │   ├── build_exp_d.py
 │   │   ├── samples/
 │   │   ├── generated/    users, interactions_train [dự kiến]
 │   │   └── ground_truth/  interactions_test, latent_user_profiles [dự kiến]
 │   └── exp_e/
 │       ├── README.md
+│       ├── build_exp_e.py
 │       ├── samples/
 │       ├── generated/    interactions_train [dự kiến]; users đọc từ D
 │       └── ground_truth/  interactions_test, temporal_profiles [dự kiến]
 ├── scripts/
 │   ├── download_sources.py
 │   ├── build_corpus.py
-│   └── validate_all.py
+│   ├── validate_all.py
+│   ├── experiment_io.py, validate_experiments.py
+│   ├── exp_a/evaluate_exp_a.py
+│   └── exp_b/ ... exp_e/  Vị trí code chạy mô hình, chưa triển khai
 └── tests/
-    ├── test_data_validation.py
-    └── test_exp_a.py
+    ├── test_data_validation.py, test_exp_a.py, test_exp_a_resume.py
+    ├── test_exp_a_handoff.py
+    └── test_experiment_datasets.py, test_experiment_pipeline.py, test_qwen_evaluation.py
 ```
 
 `raw` là bản gốc bất biến; `processed` là corpus chuẩn hóa có thể rebuild bằng
-code và dùng trực tiếp cho tất cả exp. `samples/generated/` và
-`samples/ground_truth/` chứa output mock của exp, chỉ tham chiếu ID corpus.
-Output dùng nhãn đã annotation nằm ngoài `samples/`, tách input và truth.
+code và dùng trực tiếp cho tất cả exp. Mặc định output B–E nằm ở `generated/`
+và `ground_truth/` theo quy mô mục tiêu; `samples/` là vị trí tùy chọn qua config.
+Mock hay real do manifest xác định, không suy từ tên folder. Input và truth tách riêng.
 Việc tách thư mục phải đi kèm loader allowlist, không chỉ dựa vào tên folder.
-Schema A–E và script generator sẽ bổ sung khi thật sự có chức năng, không tạo
-module rỗng. README từng exp là tài liệu chi tiết riêng; README này tổng hợp chúng.
+Generator từng exp nằm trong `data/exp_*`; điều phối và rule sinh dữ liệu dùng chung
+ở `data/build_experiments.py`, `data/experiment_common.py`. Code chạy/đánh giá
+thực nghiệm nằm trong `scripts/exp_*`; xem [quy ước scripts](scripts/README.md).
+Schema/rule A–E được kiểm tra trực tiếp trong Python validators. README từng exp
+mô tả code/config/output hiện có; các tệp dataset đánh dấu dự kiến vẫn chờ đầu vào đầy đủ.
 
 ## 7. Contract, ID, provenance và định dạng dữ liệu
 
@@ -440,11 +466,11 @@ Số thứ tự bắt đầu từ **1**, sau khi sắp corpus tăng dần theo `
 
 | Phần chạy | `paper_range` | Paper IDs | Số bài | `output_dir` |
 |---|---|---|---|---|
-| Phần 1 | `[1, 842]` | `P000001`–`P000842` | 842 | `data/exp_a/generated/part_1` |
-| Phần 2 | `[843, 1684]` | `P000843`–`P001684` | 842 | `data/exp_a/generated/part_2` |
-| Phần 3 | `[1685, 2526]` | `P001685`–`P002526` | 842 | `data/exp_a/generated/part_3` |
-| Phần 4 | `[2527, 3368]` | `P002527`–`P003368` | 842 | `data/exp_a/generated/part_4` |
-| Phần 5 | `[3369, 4210]` | `P003369`–`P004210` | 842 | `data/exp_a/generated/part_5` |
+| Phần 1 | `[1, 842]` | `P000001`–`P000842` | 842 | `data/exp_a/generated/part_1` | Khải
+| Phần 2 | `[843, 1684]` | `P000843`–`P001684` | 842 | `data/exp_a/generated/part_2` | Quỳnh
+| Phần 3 | `[1685, 2526]` | `P001685`–`P002526` | 842 | `data/exp_a/generated/part_3` | Kiên
+| Phần 4 | `[2527, 3368]` | `P002527`–`P003368` | 842 | `data/exp_a/generated/part_4` | Phi
+| Phần 5 | `[3369, 4210]` | `P003369`–`P004210` | 842 | `data/exp_a/generated/part_5` | Phú
 
 Mỗi người chọn một phần và sửa **hai giá trị** `paper_range`, `output_dir`
 trong config trên máy mình. Ví dụ phần 2 (chỉ trích hai trường cần sửa):
@@ -472,7 +498,7 @@ Tệp của từng phần nằm trong `output_dir` tương ứng, ví dụ
 | `annotation_metadata.jsonl` | Câu dẫn chứng nguyên văn, model/revision/runtime, token count, seed/attempt |
 | `manifest.json` | Hashes, coverage, missing IDs, partial/complete |
 | `.exp_a_checkpoint.sqlite3` | Lưu từng bài hợp lệ để tiếp tục; không commit Git |
-| `last_failure.json` nếu lỗi | Paper ID, lỗi kiểm tra và output cuối để rà lại |
+| `last_failure.json` nếu fallback | Paper ID, output được chọn, điểm và lỗi của từng lượt để rà lại |
 
 Manifest giữ `corpus_count: 4210` và coverage của **toàn corpus**; một phần đủ
 842 bài vẫn có `status: partial`, các ID ngoài khoảng vẫn nằm trong `missing_ids`.
@@ -490,16 +516,57 @@ chép định nghĩa; giữ để audit ở `generated/pilot_rejected_v13/`. Cá
 
 Qwen chọn concept và evidence_id từ các câu đánh số T0/A0/A1... của bài.
 Code lấy nguyên văn câu đã chọn và xác định source title/abstract, không yêu cầu
-model chép lại câu dài. Metadata giữ cả sentence selections. Concept phải là cụm từ thực sự xuất hiện
-trong câu đã chọn (so khớp sau chuẩn hóa case/dấu câu); không chấp nhận định nghĩa
-chung hoặc diễn đạt lại. Đây là chế độ trích cụm từ, không sinh nhãn tùy ý. Code kiểm tra
+model chép lại câu dài. Metadata giữ cả sentence selections. Concept phải bám vào từ trong câu đã chọn
+(so khớp sau chuẩn hóa case/dấu câu và biến thể động từ có quy tắc như representing/represent,
+extracting/extract, running/run). Cho phép rút gọn bằng cách bỏ từ,
+nhưng phải giữ thứ tự từ và ít nhất **70% số từ trong đoạn nguồn ngắn nhất chứa concept**;
+không so độ dài concept với toàn bộ câu. Cụm ngắn được chép nguyên văn luôn đạt ngưỡng.
+Không thêm từ mới hoặc dùng từ đồng nghĩa không có trong câu dẫn chứng.
+Ngoặc ví dụ được ghi rõ bằng `e.g.`, `for example`, `for instance` hoặc `such as`
+có thể bỏ qua khi tính tỷ lệ giữ từ. Ngoặc chứa viết tắt, định nghĩa, điều kiện hoặc phủ định
+vẫn được tính; câu dẫn chứng trong metadata luôn giữ nguyên văn. Nếu concept trích từ chính
+ngoặc ví dụ, vẫn kiểm tra với toàn bộ câu gốc để không làm mất dẫn chứng hợp lệ.
+Code kiểm tra
 đúng ID/khóa/list, không trùng concept và câu dẫn chứng có trong bài. Không có
 bằng chứng dùng `[]`; chưa xử lý không được chèn nhãn rỗng giả. Metadata ghi
 `annotator_type: qwen_local`, `tier: silver`, `review_status: unreviewed`.
 
 JSON được yêu cầu bằng prompt và kiểm tra sau sinh; không có bảo đảm schema từ
-dịch vụ API. Sai JSON/ID thì yêu cầu model sửa tối đa max_attempts lần. Hết
-lượt vẫn sai thì ghi lỗi theo paper_id vào checkpoint và `manifest.failed_annotations`, giữ ID đó trong `missing_ids` rồi tiếp tục các bài khác. Không chèn annotation giả cho bài lỗi. Chạy lại cùng lệnh sẽ thử lại các ID còn thiếu. Lỗi môi trường/GPU vẫn dừng tiến trình.
+dịch vụ API. Mỗi lượt được chấm điểm và thu thập **tất cả lỗi concept** để model sửa
+cùng lúc. Khi có kết quả đạt kiểm tra và đã rà các facet trống theo quy tắc dưới,
+lưu ngay. **Hết lượt vẫn lỗi thì lưu kết quả có điểm cao nhất**, giữ cả concept
+chưa đạt kiểm tra, thay vì bỏ cả paper. Ngưỡng 70% là tiêu chí retry, không phải điều
+kiện loại paper ở lượt cuối. Metadata ghi `fallback_used: true`, `validation_errors`,
+`selected_score`, `attempt` được chọn, `attempts_used` và `attempt_scores` của mọi lượt
+(gồm raw output, seed, điểm, lỗi và usage). Tổng usage tính cả các lượt retry.
+`manifest.fallback_annotations` liệt kê các paper còn lỗi; `missing_ids` chỉ chứa
+paper chưa có bản ghi. Chạy lại tiếp tục các ID còn thiếu, không sinh lại fallback đã lưu.
+Lỗi môi trường/GPU vẫn dừng tiến trình.
+
+Điểm từ **0–100** là thước đo bám nguồn theo quy tắc, không phải xác suất đúng ngữ nghĩa:
+
+| Thành phần | Điểm tối đa |
+|---|---:|
+| Số facet có ít nhất một concept đạt kiểm tra / 5 | 60 |
+| Số concept đạt kiểm tra / tổng số item model sinh | 25 |
+| Tỷ lệ giữ từ trung bình của các concept | 5 |
+| JSON đúng ID, đủ khóa, đúng list/item/evidence_id | 10 |
+
+Concept trùng không tăng điểm và được gộp trong output; bản raw vẫn giữ nguyên.
+Hòa điểm ưu tiên JSON đọc được, rồi ít lỗi hơn, rồi lượt sớm hơn. Concept có evidence_id
+không tồn tại vẫn được giữ trong fallback nhưng ghi `source: unresolved`, `evidence: ""`;
+không gán dẫn chứng khác cho nó. Nếu mọi lượt đều không đọc được JSON, vẫn xuất đúng
+paper_id và năm list rỗng, có lỗi và raw output để rà lại. Bản ghi này biểu thị model
+không tạo được nhãn, không khẳng định paper không có facet.
+`max_attempts: 3` là **tổng ba lần sinh**, bao gồm lần đầu, retry và lượt rà lại.
+Nếu kết quả hợp lệ có **ít nhất 3/5 facet trống**, model phải rà lại title T0 và
+từng câu abstract một lần. Sau lượt rà lại, facet thiếu bằng chứng vẫn được giữ `[]`;
+không ép model điền nhãn. Nếu chỉ tới lần sinh cuối mới nhận được kết quả cần rà lại,
+dùng fallback có điểm cao nhất và ghi lỗi thiếu lượt rà lại. Rút gọn quá 30% hoặc chọn
+sai evidence_id cũng retry trong ngân sách này.
+Quy tắc này thuộc extraction policy 2.3, được thêm sau prompt 1.5 và thay thế yêu cầu
+chép cụm liên tục của prompt gốc. Metadata ghi `extraction_policy_version`,
+`sparse_reviewed` và ngưỡng kiểm tra trong `request_parameters`.
 Câu trích có thật vẫn có thể không hỗ trợ concept: cần người review ngữ nghĩa.
 
 ### 9.5. Cách chạy
@@ -521,6 +588,15 @@ kết quả để kiểm tra trước khi chạy. Mặc định chỉ xử lý b
 ranh giới phần chạy. Config hiện chọn phần 1; đổi khoảng/thư mục trước khi chạy
 phần khác. Chạy lại cùng config sẽ tiếp tục checkpoint của phần đó.
 
+Khi bắt đầu, code hiển thị số bài đã lưu, còn thiếu và cần rà lại **trong khoảng
+được chọn**. Dò theo `paper_id` nên bài thiếu ở giữa vẫn được xử lý; bài đã lưu
+không tính vào `--limit`. Nếu mất checkpoint, code phục hồi từ
+`annotation_metadata.jsonl` và `manifest.json` đã kiểm tra hash/provenance,
+đối chiếu với `facets_silver.jsonl` nếu tệp này còn. Nếu chỉ thiếu tệp silver,
+dẫn chứng trong metadata đủ để tạo lại mà không nạp model. Khi checkpoint còn,
+các tệp JSONL/manifest bị thiếu được xuất lại từ checkpoint. Mất cả checkpoint
+và metadata hoặc manifest thì cần khôi phục bản sao trước khi chạy tiếp.
+
 Nếu thiết lập lại máy, từ thư mục gốc dự án dùng Python 3.11:
 
 ```powershell
@@ -531,13 +607,22 @@ python -m venv .venv-qwen
 
 ### 9.6. Tiến độ và tái lập
 
-Model được nạp một lần mỗi tiến trình, xử lý tuần tự và lưu từng bài ngay sau
-kiểm tra. Năm người chạy trên máy riêng với cùng corpus/model/prompt; mỗi phần
+Model được nạp một lần mỗi tiến trình, xử lý tuần tự và lưu từng bài sau khi đạt
+kiểm tra hoặc chọn fallback tốt nhất. Năm người chạy trên máy riêng với cùng corpus/model/prompt; mỗi phần
 có output/checkpoint riêng. OS lock chặn hai lượt chạy cùng output. Dừng rồi chạy lại cùng lệnh
 tiếp tục bài thiếu. Checkpoint chưa có annotation nào được khởi tạo lại khi đổi cấu hình.
 Nếu đã có annotation, đổi khoảng bài, model/revision/prompt/thiết bị/tham số
 sampling hoặc code generator thì dùng output mới;
 max_new_tokens/max_attempts có thể tăng để tiếp tục checkpoint.
+Riêng bản bổ sung phục hồi JSONL giữ nguyên policy 2.3 và chấp nhận fingerprint
+của generator 2.3 trước đó; không cần đổi `output_dir` cho nâng cấp này.
+Riêng bản generator 2.0, 2.1 và 2.2 có fingerprint đã biết được nâng lên policy 2.3 tự động
+khi corpus, config, prompt và guideline không đổi. Các bài cũ có ít nhất 3 facet
+trống chưa được rà lại được xử lý lại; bài đã có `sparse_reviewed: true` được giữ nguyên.
+Chỉ thay kết quả cũ khi kết quả mới hợp lệ; nếu lượt rà lại chỉ có fallback, giữ kết quả
+đã nhận. Các ID bị REJECTED ở bản cũ còn thiếu sẽ được sinh lại bằng cơ chế chấm điểm mới.
+Việc rà lại bài đã có trong checkpoint không tính vào số bài mới của `--limit`.
+Nhấn Ctrl+C để dừng có lưu kết quả, rồi chạy lại cùng lệnh để dùng code mới.
 Seed/phiên bản được ghi để truy nguồn, không bảo đảm kết quả giống hệt trên GPU khác.
 
 ### 9.7. Nghiệm thu
@@ -557,761 +642,88 @@ chọn đúng facet hoặc trích đủ ý; các nhãn vẫn là silver chưa re
 Nguồn: [model card Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507),
 [PyTorch CUDA 12.4](https://pytorch.org/get-started/previous-versions/#v260).
 
+### 9.8. Gộp năm phần và chọn 400 bài review
+
+Từ gốc dự án, sau khi nhận đủ parts 1–5:
+
+~~~powershell
+python data/exp_a/merge_exp_a.py --dry-run
+python data/exp_a/merge_exp_a.py
+python data/exp_a/select_gold_review.py --dry-run
+python data/exp_a/select_gold_review.py
+~~~
+
+Tool gộp kiểm tra coverage từng khoảng/toàn corpus, không trùng ID, input/config
+provenance và model/revision thực tế được ghi trong metadata. Chỉ khi đủ 4.210 bài
+mới ghi silver, metadata và manifest complete ở `data/exp_a/generated/`.
+
+Tool review chọn mặc định 400 IDs, không random: số facet có dữ liệu giảm dần,
+rồi số concept có dẫn chứng giảm dần, rồi paper_id tăng dần. Bỏ P000001,
+fallback/validation errors và bài không có facet trích được. Nếu thiếu 400 bài
+hợp lệ thì báo thiếu. Không ghi đè queue review đã có.
+
+Gold là đáp án người kiểm tra dùng để đánh giá **độ đúng và độ đầy đủ** của facet A,
+độc lập với Qwen silver. Output selector chỉ là form pending và danh sách bài,
+không tự tạo `facets_gold.jsonl`. Nhãn silver nằm trong tệp tham chiếu riêng để
+đối chiếu sau review. Cách chọn này ưu tiên silver đầy đủ, không đại diện ngẫu nhiên
+cho toàn corpus. Xem [hướng dẫn chạy](docs/RUN_EXPERIMENTS.md) để biết tệp,
+preview part_1 và quy trình review.
+
 ## 10. Thực nghiệm B — Truy hồi bài báo theo một facet
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+**Quy mô mặc định:** 300 queries × 100 candidates = 30.000 cặp; 60 query/facet.
+Đã có generator `data/exp_b/build_exp_b.py`, config và validator.
+Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+Concept sets bằng nhau → 2, giao nhau → 1, không giao → 0; thiếu facet đích thì loại.
+Mỗi query có positive/negative và không self/duplicate; chia theo anchor 70/15/15.
+Query/splits ở generated, labels/provenance ở ground_truth.
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
-
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
-
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
-
-### 10.1. Mục đích của dataset
-
-B kiểm tra khả năng tìm bài liên quan theo **một khía cạnh được chỉ định** khi
-đầu vào là một bài mẫu. Hai bài cùng lĩnh vực chưa chắc giống phương pháp; hai bài
-khác ứng dụng vẫn có thể dùng phương pháp tương tự. Vì vậy relevance phải gắn
-với facet của query, không chỉ với chủ đề chung.
-
-Ví dụ: người đọc muốn tìm các bài dùng phương pháp tương tự bài đang đọc.
-Dataset B cần bài truy vấn, tập ứng viên cố định và mức liên quan của từng ứng
-viên. Chất lượng thứ tự xếp hạng là bước đánh giá mô hình về sau.
-
-### 10.2. Đầu vào của generator xây dataset
-
-Generator B đọc **corpus chính + năm facet silver A + cấu hình sampling/relevance**,
-rồi tạo query, candidates và labels. Dùng facets silver A; không cần
-human gold A hoặc judgments CSFCube để bắt đầu.
-
-| Đầu vào | Đường dẫn | Vai trò |
-|---|---|---|
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Bài truy vấn và ứng viên dùng cùng IDs |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Năm facet được trích từ title/abstract, có dẫn chứng |
-| Cấu hình B `[cần xây]` | `configs/exp_b.json` | `dataset_kind: mock`, seed 42, 5 queries × 10 candidates, facet, rule version và split policy |
-
-`target_facet` chỉ nhận `problem`, `task`, `method`, `dataset`, `contribution`.
-Generator không đọc `retrieval_queries.jsonl` như nguyên liệu có sẵn: đây là output.
-Tuân thủ [contract chung](DATA_CONTRACT.md); loader chọn đúng corpus chính.
-Thiếu prerequisite thì báo lỗi; không tự chuyển giữa mock và real.
-
-Ba facet `background/method/result` và nhãn 0–3 của CSFCube giữ ở raw. Benchmark
-native chỉ là hướng bổ sung về sau nếu nhóm cần, không thay B năm facet và không
-nằm trên luồng mock hiện tại. SciFact SUPPORT/CONTRADICT không phải relevance B.
-
-### 10.3. Đầu ra của generator xây dataset
-
-| Output mock `[chưa tạo]` | Nội dung |
-|---|---|
-| `data/exp_b/samples/generated/retrieval_queries.jsonl` | query_id, query_paper_id, target_facet, candidate_ids |
-| `data/exp_b/samples/ground_truth/retrieval_labels.jsonl` | Nhãn 0/1/2 cho mỗi cặp query/candidate |
-| `data/exp_b/samples/ground_truth/label_provenance.jsonl` | Nguồn synthetic, rule version và input facets |
-| `data/exp_b/samples/generated/splits.json` | Chia theo nhóm bài truy vấn |
-| `data/exp_b/samples/generated/manifest.json` | Kind mock, seed, hashes, số query/pair, skipped và gap |
-
-Mốc đầu: 5 query × 10 candidates = 50 cặp, ưu tiên phủ đủ năm target facets.
-Query và nhãn đều do builder tạo. Nhãn phục vụ kiểm thử, không phải người gán.
-Khi mở rộng, giữ corpus/facets A; output chuyển về
-`data/exp_b/generated/` và `data/exp_b/ground_truth/`. Mục tiêu mở rộng
-300 query × 100 candidates chỉ áp dụng khi có đủ bài và nhãn hợp lệ.
-
-### 10.4. Các trường trong dataset đầu ra
-
-| Trường | Ý nghĩa/ràng buộc |
-|---|---|
-| `query_id` | `Q` + 4 chữ số; duy nhất trong bộ |
-| `query_paper_id` | ID bài làm ví dụ truy vấn |
-| `target_facet` | Một trong năm khóa `problem/task/method/dataset/contribution` |
-| `candidate_ids` | List ID canonical; không trùng; không chứa query paper |
-| `candidate_id` trong nhãn | Phải thuộc candidate set của query đó |
-| `relevance` nội bộ | Đề xuất 0: không liên quan, 1: một phần, 2: cao |
-
-Khóa duy nhất của nhãn: `(query_id,candidate_id)`. Đề xuất rule mock: trên facet
-đích có dữ liệu, hai tập concept bằng nhau → 2; giao nhau nhưng khác tập → 1;
-không giao nhau → 0. Thiếu facet đích ở anchor/candidate → ineligible.
-Ghi rule/alias version trong config trước khi sinh. Đây là đáp án của kịch
-bản mock, chưa đại diện đầy đủ cho tương đồng ngữ nghĩa trên bài thật.
-Hard negative có facet khác giống anchor nhưng facet đích không giao nhau;
-easy negative khác cả facet đích lẫn các facet được rule dùng để chọn mẫu.
-
-### 10.5. Ví dụ generator: nguyên liệu → các tệp dataset
-
-Giả sử facets A thực tế có method `["matrix factorization"]` cho cả `P000001`
-và `P000002`, rule mock cho relevance 2. Ví dụ này chỉ minh họa schema;
-chỉ dùng cặp bài đó khi nhãn A thực tế xác nhận, không hardcode vào generator. Title/abstract/IDs giữ nguyên từ
-corpus chính. Ví dụ hiển thị một candidate; pilot dự kiến có 10 candidates/query.
-
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
-
-```json
-{
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_queries": 5,
-  "candidates_per_query": 10,
-  "label_rule_version": "requires-rule-review"
-}
-```
-
-**Records generator sẽ ghi vào các tệp đầu ra:**
-
-```json
-{
-  "query_id": "Q0001",
-  "query_paper_id": "P000001",
-  "target_facet": "method",
-  "candidate_ids": [
-    "P000002"
-  ]
-}
-```
-
-```json
-{
-  "query_id": "Q0001",
-  "candidate_id": "P000002",
-  "relevance": 2
-}
-```
-
-### 10.6. Các bước generator phải thực hiện
-
-1. Đọc corpus chính và facets silver A, config và rule version; join theo paper_id.
-2. Chọn anchor có facet đích; tạo positive, partial, hard/easy negative theo rule.
-3. Chọn 5 queries × 10 candidates bằng seed 42; loại self-candidate và ID trùng.
-4. Sinh đủ nhãn cho chính candidate set đã chọn; chưa có nhãn không tự bằng 0.
-5. Chia theo nhóm anchor để cùng bài truy vấn không tràn các split.
-6. Ghi query, labels, provenance và manifest; kiểm tra refs, positives và leakage.
-7. Chạy lại cùng input/seed để kiểm tra tái lập. Thiếu candidates thì báo gap.
-
-Khi mở rộng hoặc cập nhật facets A, sinh lại candidates/labels/splits theo
-input version đã ghi. Nhãn sinh bằng rule vẫn ghi synthetic; chất lượng đánh giá
-thật cần review riêng.
-
-**Chưa có generator mock B hoặc lệnh chạy nó.** Việc cập nhật README chưa tạo dataset.
-
-### 10.7. Kiểm tra dataset và nghiệm thu
-
-- Query/candidate resolve trong đúng catalog; không self-candidate hoặc trùng ID.
-- Nhãn không thừa/thiếu/nhân đôi so với chính sách judged đã công bố.
-- Positive tồn tại; nguồn/scale/mapping relevance có giải thích, không trộn ngầm.
-- Query anchors không tràn các split tùy chỉnh; nhãn không nằm trong input dự đoán.
-- Manifest ghi mock/synthetic, actual counts, rule version và mọi pair còn unjudged.
-
-Mốc mock B hoàn tất khi generator tái lập trên corpus chính kèm facets silver A năm facet, đủ mẫu hợp lệ,
-manifest ghi mock và kiểm tra cấu trúc/rule/leakage đạt. Mốc này dùng silver A nhưng không yêu cầu
-human gold A hoặc native CSFCube. Đánh giá B với nhãn được kiểm chứng là bước tiếp theo.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-#### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình B đọc retrieval_queries và corpus/facets được phép; nhãn relevance giữ cho evaluation. Mô hình tạo ranking/scores, không tạo candidate catalog/ground truth thay generator.
+Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
+Chi tiết đầu vào, schema, rules và lệnh chạy:
+[README B](data/exp_b/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
 
 ## 11. Thực nghiệm C — Khuyến nghị theo ý định tường minh
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+**Quy mô mặc định:** 1.500 cases × 20 candidates = 30.000 cặp; quota 6 types × 200 + 2 types × 150.
+Đã có generator `data/exp_c/build_exp_c.py`, config và validator.
+Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+Ràng buộc similar/different/ignore đủ năm facet, nối bằng AND; thiếu facet hoạt động thì loại.
+Có positive/negative, hard negative vi phạm đúng một constraint; chia theo nhóm anchor.
+Intents/splits ở generated, satisfaction labels/provenance ở ground_truth.
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
-
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
-
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
-
-### 11.1. Mục đích của dataset
-
-C xét yêu cầu người dùng nói rõ, có thể kết hợp **nhiều facet và nhiều hướng**.
-Khác với B chỉ hỏi một facet, C có thể yêu cầu “cùng vấn đề nhưng dùng phương pháp
-khác”, hoặc “cùng phương pháp nhưng khác vấn đề”. Mục tiêu dữ liệu là xác định
-ứng viên có thỏa toàn bộ ràng buộc không.
-
-Ví dụ cùng vấn đề nhưng khác phương pháp: ứng viên chỉ giống vấn đề mà vẫn dùng
-phương pháp cũ là một hard negative hữu ích. Chỉ tên intent không đủ định nghĩa
-đáp án; phải có constraints và quy tắc so sánh được công bố.
-
-### 11.2. Đầu vào của generator xây dataset
-
-Generator C nhận **catalog/facets và templates**, rồi tự tạo các yêu cầu/đáp án.
-`intents.jsonl` chưa có sẵn: đó là một trong các output phải sinh.
-
-| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
-|---|---|---|
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Bài làm anchor và tập bài eligible |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Biết concept của các bài để chọn và chấm ứng viên |
-| Intent templates `[cần xây]` | Đề xuất `configs/intent_templates.json` | Mỗi loại intent định nghĩa đủ năm directions, không chỉ tên loại |
-| Rule/alias đã duyệt `[cần chốt]` | Theo contract/guideline và config version | Định nghĩa similar/different/ignore và xử lý missing |
-| Cấu hình C `[cần xây]` | Đề xuất `configs/exp_c.json` | Kind mock, seed, 20 cases thử nhỏ; sau đó mục tiêu 1.500 cases, phân bổ types, số candidates/case, sampling và split policy |
-
-Số candidates/case C chưa được chốt; không suy từ B rằng C luôn có 100 candidates.
-Không cần đọc labels B để tạo C. Nếu muốn dùng nguồn nhãn khác phải công bố mode
-và provenance riêng. Facet missing làm bài ineligible ở constraint đó.
-
-**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
-Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
-việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
-Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
-Tuân thủ [contract chung](DATA_CONTRACT.md), dùng cùng `paper_id`.
-
-### 11.3. Đầu ra mock của generator xây dataset
-
-| Đầu ra generator C `[chưa tạo]` | Nội dung |
-|---|---|
-| `data/exp_c/samples/generated/intents.jsonl` | Case ID, query paper, type, constraints, candidate IDs |
-| `data/exp_c/samples/ground_truth/intent_labels.jsonl` | Mỗi candidate có satisfies_intent boolean |
-| `data/exp_c/samples/generated/splits.json` `[đề xuất]` | Mapping case theo nhóm query paper |
-| `data/exp_c/samples/generated/generation_report.json` `[đề xuất]` | Số case/type và lý do skip khi không đủ ứng viên |
-| `data/exp_c/samples/generated/manifest.json` | Input facet/template/rule hashes, seed và actual counts |
-
-Builder tạo cả yêu cầu và nhãn bằng facets/rules đầu vào. Nhãn như vậy là
-rule-based/synthetic, không mặc nhiên là người thật xác nhận ý định; ghi provenance.
-Mốc mock đầu: 20 cases. Mục tiêu mở rộng 1.500 cases không có nghĩa có 1.500 anchor papers độc lập.
-
-### 11.4. Các trường trong dataset đầu ra
-
-| Trường | Ý nghĩa |
-|---|---|
-| `intent_id` | `I` + 4 chữ số; duy nhất |
-| `query_paper_id` | Bài làm mốc so sánh |
-| `intent_type` | Tên template đã được duyệt và versioned |
-| `constraints` | Đủ `problem/task/method/dataset/contribution` |
-| Direction | `similar`: tương tự; `different`: khác; `ignore`: không xét |
-| `candidate_ids` | ID chung, không trùng hoặc chứa bài truy vấn |
-| `satisfies_intent` | Boolean của cặp `(intent_id,candidate_id)` |
-
-Đề xuất cho pilot theo concept chuẩn hóa: `similar` khi có concept chung;
-`different` khi hai tập concept đều có dữ liệu và không giao nhau. Tất cả facet
-không ignore phải được thỏa đồng thời. Bài truy vấn/ứng viên thiếu facet đang xét
-là chưa đủ điều kiện, không tự thành `different`. Đây là quy tắc pilot cần duyệt,
-không khẳng định exact match thể hiện đầy đủ tương đồng ngữ nghĩa.
-
-Tám intent types đề xuất: same_problem, same_problem_different_method,
-same_method_different_problem, similar_task, different_dataset,
-same_problem_same_method, similar_contribution, mixed_intent. Exact templates
-và quota chưa duyệt; tên loại không tự định nghĩa labels.
-
-### 11.5. Ví dụ generator: nguyên liệu → các tệp dataset
-
-Đầu vào builder là catalog/facets, config và template, chưa phải danh sách
-intents. Giả sử template same_problem_different_method đã được duyệt, builder
-chọn anchor và ứng viên, kiểm tra concept, rồi sinh một case và nhãn dưới đây.
-Trong kịch bản mock minh họa, hai bài chung problem và có method khác nhau; ví dụ chỉ minh họa schema; builder phải kiểm tra quan hệ trên facets A thực tế.
-
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
-
-```json
-{
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "templates_path": "configs/intent_templates.json",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_cases": 20
-}
-```
-
-**Records generator sẽ ghi vào các tệp đầu ra:**
-
-```json
-{
-  "intent_id": "I0001",
-  "query_paper_id": "P000001",
-  "intent_type": "same_problem_different_method",
-  "constraints": {
-    "problem": "similar",
-    "task": "ignore",
-    "method": "different",
-    "dataset": "ignore",
-    "contribution": "ignore"
-  },
-  "candidate_ids": [
-    "P000003"
-  ]
-}
-```
-
-```json
-{
-  "intent_id": "I0001",
-  "candidate_id": "P000003",
-  "satisfies_intent": true
-}
-```
-
-### 11.6. Các bước generator phải thực hiện
-
-1. Đọc config, corpus, facets, templates/rule versions; join theo paper_id và
-   kiểm tra template có đủ năm directions hợp lệ.
-2. Chọn intent type theo quota, sau đó chọn anchor đủ facet cho type đó.
-3. So facet anchor với các bài eligible theo từng constraint. Pilot đề xuất
-   similar = có concept chung, different = hai tập nonempty không giao nhau,
-   ignore = không xét; phải chốt rule/alias trước khi dùng.
-4. Candidate positive phải thỏa mọi constraint. Negative vi phạm ít nhất một;
-   hard negative ưu tiên vi phạm đúng một constraint khi khả thi.
-5. Sample candidates theo config và seed, bỏ self/trùng; thiếu positive/negative
-   thì skip case và báo lý do, không bịa satisfaction label.
-6. Cấp intent_id; ghi intents và nhãn cho từng pair. Chia nhóm theo anchor,
-   không random các case cùng anchor sang train/test khác nhau.
-7. Ghi report/manifest, kiểm tra labels khớp rule, refs và coverage types.
-
-Sau mock 20 cases, target mở rộng 1.500: phân bổ đề xuất 6 types × 200 + 2 types × 150. Tám types được đề
-xuất trong phần field/rules trước; chốt exact templates/quota trước release.
-
-
-**Chưa có generator mock C.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
-
-#### Khi cập nhật facets A
-
-Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
-để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
-bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
-
-### 11.7. Kiểm tra dataset và nghiệm thu
-
-**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
-thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
-gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
-facet silver A đủ coverage là đầu vào cần có.
-
-- IDs resolve; constraints đúng năm khóa và enums, khớp template đã duyệt.
-- Mỗi pair có đúng một boolean label; candidate sets không trùng/self-candidate.
-- Đáp án khớp rule đã công bố; missing facet không bị xem là khác một cách mặc định.
-- Có positive/negative hợp lệ hoặc case bị skip có lý do; báo coverage từng loại.
-- Nhãn không vào observable inputs; cùng anchor không xuất hiện ở nhiều split.
-
-C hoàn tất khi có facets đầu vào phù hợp, templates/rules được duyệt, generator,
-labels/manifests và validator riêng đạt. Số dòng đạt 1.500 chưa đủ nghiệm thu.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-#### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình C đọc intents + corpus/facets; intent_labels chỉ đánh giá. Dataset generator được dùng facet rules để sinh labels, model evaluation không được đọc labels đó.
+Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
+Chi tiết đầu vào, schema, rules và lệnh chạy:
+[README C](data/exp_c/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
 
 ## 12. Thực nghiệm D — Suy ra sở thích ngầm từ hành vi người dùng
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+**Quy mô mặc định:** 300 users × 50 events = 15.000; mỗi người 30 history/20 future.
+Đã có generator `data/exp_d/build_exp_d.py`, config và validator.
+Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+Profile sinh trước events từ concepts A, weights thích/tránh, exposure mixture và nhiễu có version.
+Users chỉ có ID; history ở generated, latent profiles và future ở ground_truth.
+Timestamps UTC tăng nghiêm ngặt; behavior report chỉ thống kê history.
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
-
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
-
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
-
-### 12.1. Mục đích của dataset
-
-D chuẩn bị dữ liệu kiểm tra việc suy ra sở thích từ hành vi như xem, lưu, thích
-hoặc không thích bài. Người dùng không cần nhập constraints như C. Mô hình về
-sau chỉ thấy lịch sử; bộ đánh giá có hồ sơ sở thích ẩn để kiểm tra kết quả.
-
-Giai đoạn đầu dùng **người dùng và hành vi giả lập trên corpus chính và nhãn
-silver A năm facet**. Hành vi được sinh từ sở thích ẩn và facets A
-trên cùng corpus. Mục đích
-là kiểm tra pipeline và giả thuyết của bộ mô phỏng; không trình bày đây là hành
-vi người dùng thực tế hoặc bằng chứng hệ thống đã hữu ích ngoài đời.
-
-### 12.2. Đầu vào của generator xây dataset
-
-Generator D nhận **bài/facets và cấu hình mô phỏng**, không yêu cầu đã có users
-hoặc lịch sử tương tác. Nó sẽ tự sinh users, latent profiles và events.
-
-| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
-|---|---|---|
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Các bài user có thể được tiếp xúc |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Vocabulary/concepts để sinh sở thích và tính affinity bài |
-| Cấu hình D `[cần xây]` | Đề xuất `configs/exp_d.json` | Kind mock, seed 42, 5 users × 10 events, đề xuất 6 history/4 future; timezone/cutoff policy |
-| Quy tắc simulator `[cần chốt]` | Trong config có phiên bản | Phân phối latent weights [-1,1], chọn exposure, affinity → interaction, nhiễu, sampling có/không lặp |
-
-Users và interactions_train không phải prerequisite. Không có log người dùng thật
-được cung cấp cho phase này. Nếu thêm chế độ import log thật sau này phải định
-nghĩa input/protocol khác, không gọi output mô phỏng là hành vi thu thập thật.
-
-**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
-Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
-việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
-Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
-Tuân thủ [contract chung](DATA_CONTRACT.md), dùng cùng `paper_id`.
-
-### 12.3. Đầu ra mock của generator xây dataset
-
-| Đầu ra generator D `[chưa tạo]` | Nội dung |
-|---|---|
-| `data/exp_d/samples/generated/users.jsonl` | 5 ID pilot và metadata quan sát được; không chứa latent preferences |
-| `data/exp_d/samples/ground_truth/latent_user_profiles.jsonl` | 5 hồ sơ sở thích ẩn đã sinh trước events |
-| `data/exp_d/samples/generated/interactions_train.jsonl` | Pilot đề xuất 5 × 6 = 30 past events |
-| `data/exp_d/samples/ground_truth/interactions_test.jsonl` | Pilot đề xuất 5 × 4 = 20 future events |
-| `data/exp_d/samples/generated/manifest.json` | Input/rule hashes, seed, cutoff và số user/events thực tế |
-
-Nếu cần ranking evaluation, thêm exposure/candidate pool có event linkage theo
-schema đã duyệt. Hiện chưa chốt schema sự kiện exposure nên không giả vờ tệp
-đã có. Không coi mọi unobserved paper là negative.
-
-### 12.4. Các trường trong dataset đầu ra
-
-| Trường | Ý nghĩa/ràng buộc |
-|---|---|
-| `user_id` | `U` + 4 chữ số; duy nhất trong users |
-| `paper_id` | Bài thuộc đúng corpus |
-| `interaction_type` | `click`, `view`, `save`, `like`, `dislike` |
-| `timestamp` | ISO-8601 có timezone, ưu tiên UTC |
-| `latent_preferences` | Map facet → concept → trọng số sở thích, chỉ trong truth |
-| Trọng số | Số hữu hạn thuộc [-1,1]; âm có thể biểu diễn không thích |
-
-Mỗi event là một tương tác phát sinh sau khi user được tiếp xúc với bài. Không
-mặc định `view` là thích mạnh. Quy tắc affinity → interaction và mức nhiễu phải
-được công bố, không giấu trong code. Hồ sơ latent không nằm trong users observable.
-
-### 12.5. Ví dụ generator: nguyên liệu → các tệp dataset
-
-Builder tự tạo U0001, sinh latent preferences rồi mới chọn paper và event.
-Một record trong users và một history event được minh họa dưới; latent profiles
-và future events cũng là output, nằm riêng trong ground_truth. Không phải đưa
-U0001 hoặc history file vào trước để generator đoán ra tương tác.
-
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
-
-```json
-{
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_users": 5,
-  "events_per_user": 10,
-  "history_events_per_user": 6,
-  "future_events_per_user": 4
-}
-```
-
-**Records generator sẽ ghi vào các tệp đầu ra:**
-
-```json
-{
-  "user_id": "U0001"
-}
-```
-
-```json
-{
-  "user_id": "U0001",
-  "paper_id": "P000002",
-  "interaction_type": "like",
-  "timestamp": "2026-01-10T10:00:00Z"
-}
-```
-
-### 12.6. Các bước generator phải thực hiện
-
-1. Join corpus với facets theo ID; xác định vocabulary eligible và đọc config.
-2. Tạo 5 users mock U0001–U0005; chỉ ghi metadata observable vào users.
-3. Sinh latent profile cho mỗi user trước: concept nào thích/không thích và
-   trọng số finite [-1,1] theo phân phối simulator đã duyệt.
-4. Sinh exposure: user được nhìn thấy các paper nào. Tính affinity từ latent
-   preferences và paper facets theo rule được công bố.
-5. Thêm noise có seed; chuyển affinity thành click/view/save/like/dislike theo
-   rule đã chốt. Không random behavior rồi gán ngược latent profile.
-6. Gán timestamps có timezone và sort từng user; chia 6 past/4 future trong pilot theo
-   cutoff policy. Các event cùng timestamp cùng phía; thiếu quota hợp lệ báo gap.
-7. Ghi users, latent profiles và hai tệp events; ghi manifest rồi validate IDs,
-   range/time/counts và sự tách observable/hidden/future.
-
-Sau pilot 5 users × 10 events, target mở rộng 300 users × 50 = 15.000 events là 9.000 history + 6.000 holdout. Đây là số event, không phải
-15.000 bài hoặc 300 người dùng thật. Bộ mô phỏng phải công bố cả noise/exposure.
-
-
-**Chưa có generator mock D.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
-
-#### Khi cập nhật facets A
-
-Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
-để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
-bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
-
-### 12.7. Kiểm tra dataset và nghiệm thu
-
-**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
-thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
-gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
-facet silver A đủ coverage là đầu vào cần có.
-
-- User/paper refs resolve; observable users không chứa latent weights.
-- Trọng số hữu hạn và đúng range; timestamps có timezone; enum hành vi hợp lệ.
-- Mỗi user có lịch sử và holdout; latest train < earliest test một cách nghiêm ngặt.
-- Không dùng tương tác test hoặc hidden truth để sinh profile đầu vào mô hình.
-- Báo số user/events, exposure policy, mức nhiễu và phân phối hành vi thực tế.
-
-D hoàn tất khi bộ mô phỏng có quy tắc được duyệt, generator tái lập, các tệp tách
-đúng vai trò, manifests và validator riêng đạt; chưa tạo dữ liệu D ở phase hiện tại.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-#### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình D đọc users observable + history + corpus/facets. Simulator được dùng latent truth để sinh behavior, nhưng model/profile-building không đọc latent profiles hoặc future events.
+Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
+Chi tiết đầu vào, schema, rules và lệnh chạy:
+[README D](data/exp_d/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
 
 ## 13. Thực nghiệm E — Theo dõi sở thích thay đổi theo thời gian
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+**Quy mô mặc định:** Cùng 300 users D × 4 periods × 15 events = 18.000; 1.200 profiles.
+Đã có generator `data/exp_e/build_exp_e.py`, config và validator.
+Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+150 stable/150 drift; hệ số [0,0.5,1,1], bốn periods tháng 1–4/2026 (UTC).
+Periods 1–3 history, period 4 holdout; E không đọc D future hoặc latent profiles.
+Groups/temporal profiles/future ở ground_truth; behavior report chỉ đếm history.
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
-
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
-
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
-
-### 13.1. Mục đích của dataset
-
-E mở rộng bài toán sở thích ngầm sang tình huống mối quan tâm thay đổi. Lịch sử
-rất cũ có thể phản ánh sở thích khác hiện tại. Câu hỏi thực nghiệm là hệ thống
-có theo dõi được sự chuyển dịch đó và vẫn khuyến nghị phù hợp với giai đoạn mới
-không, đồng thời có ổn định với người dùng không đổi sở thích không?
-
-E dùng **cùng user IDs với D**, pilot dùng lại 5 users mock D; khi mở rộng dùng lại 300 users D. Luồng tương
-tác E riêng để thể hiện drift; không cần giống từng byte với tương tác D.
-Đây vẫn là mô phỏng, chưa phải hành vi thật hoặc mô hình temporal đã triển khai.
-
-### 13.2. Đầu vào của generator xây dataset
-
-Generator E nhận **users do D tạo + corpus/facets + kịch bản thời gian**, rồi
-sinh profiles và một luồng events E mới. Nó không cần lịch sử E có sẵn.
-
-| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
-|---|---|---|
-| Users D `[chưa có]` | `data/exp_d/samples/generated/users.jsonl` | Danh tính dùng chung; E không tạo user IDs mới |
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Pool bài theo đúng ID chung |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Vocabulary cho profiles theo period và tính affinity |
-| Cấu hình E `[cần xây]` | Đề xuất `configs/exp_e.json` | Seed, 4 periods/boundaries, stable/drift ratio, drift rule, noise/exposure và số events |
-| Latent profiles D `[tùy chọn, chưa có]` | `data/exp_d/samples/ground_truth/latent_user_profiles.jsonl` | Chỉ nếu config yêu cầu dùng làm sở thích period đầu; đây là input của simulator, không phải input mô hình |
-
-Không mặc định đọc interactions_train/test của D để đổi tên thành E. E tạo stream
-riêng. Nếu cần kế thừa D profile, khai báo rõ mode/input version; nếu không thì
-sinh profile khởi đầu từ cùng vocabulary bằng rule E đã công bố.
-
-**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
-Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
-việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
-Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
-Tuân thủ [contract chung](DATA_CONTRACT.md), dùng cùng `paper_id`.
-
-### 13.3. Đầu ra mock của generator xây dataset
-
-| Đầu ra generator E `[chưa tạo]` | Nội dung |
-|---|---|
-| `data/exp_e/samples/ground_truth/temporal_profiles.jsonl` | Pilot 5 users × 4 periods = 20 profiles ẩn |
-| `data/exp_e/samples/generated/interactions_train.jsonl` | E events thuộc periods 1–3 theo policy đề xuất |
-| `data/exp_e/samples/ground_truth/interactions_test.jsonl` | E events period 4 làm holdout |
-| `data/exp_e/samples/ground_truth/period_metadata.json` `[đề xuất]` | Boundaries và scenario/group information dành cho generator/evaluation |
-| `data/exp_e/samples/generated/manifest.json` | Stable/drift counts, seed, source users/facet hashes, cutoff và actual events |
-
-Mốc mock: cùng 5 users D × 4 periods, ít nhất 2 events/user/period (ít nhất 40 events).
-Target mở rộng: 300 users, 1.200 profiles và tổng 15.000–20.000 events; phân bổ events/period và tỷ lệ
-stable/drift chưa chốt, phải ghi trong config. Không nhân đôi số user khi cộng D/E.
-Profiles/boundaries đã được generator biết không được lộ future truth cho model.
-
-### 13.4. Các trường trong dataset đầu ra
-
-| Trường | Ý nghĩa/ràng buộc |
-|---|---|
-| `user_id` | Phải có trong users của D |
-| `period` | Chỉ số giai đoạn; đề xuất 1–4 |
-| `start_timestamp`, `end_timestamp` | Khoảng nửa kín `[start,end)`, timezone rõ ràng |
-| `latent_preferences` | Cùng cấu trúc trọng số facet/concept của D, chỉ trong truth |
-| Event fields | `user_id`, `paper_id`, `interaction_type`, `timestamp` như D |
-
-Khóa duy nhất profile: `(user_id,period)`. Các period liên tiếp, không overlap.
-Event đúng tại `end` thuộc period tiếp theo, không thuộc period vừa kết thúc.
-Trọng số phải hữu hạn trong [-1,1]. Nhóm stable/drift cần provenance cho đánh giá,
-không tự động trở thành đặc trưng mô hình biết trước.
-
-### 13.5. Ví dụ generator: nguyên liệu → các tệp dataset
-
-Builder đọc U0001 từ D, tạo hồ sơ period 1 rồi sinh một event dựa trên hồ sơ đó.
-Hai records dưới đều là đầu ra E, không phải generator đọc một event rồi suy
-ngược ra temporal truth. Concept và trọng số chỉ là minh họa schema.
-
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
-
-```json
-{
-  "users_path": "data/exp_d/samples/generated/users.jsonl",
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_periods": 4,
-  "history_periods": [
-    1,
-    2,
-    3
-  ],
-  "holdout_period": 4
-}
-```
-
-**Records generator sẽ ghi vào các tệp đầu ra:**
-
-```json
-{
-  "user_id": "U0001",
-  "period": 1,
-  "start_timestamp": "2026-01-01T00:00:00Z",
-  "end_timestamp": "2026-02-01T00:00:00Z",
-  "latent_preferences": {
-    "method": {
-      "example concept": 0.8
-    }
-  }
-}
-```
-
-```json
-{
-  "user_id": "U0001",
-  "paper_id": "P000002",
-  "interaction_type": "view",
-  "timestamp": "2026-01-10T10:00:00Z"
-}
-```
-
-### 13.6. Các bước generator phải thực hiện
-
-1. Đọc users D và join corpus/facets; kiểm tra IDs/version và config periods.
-2. Kiểm tra bốn khoảng [start,end) liên tiếp, không overlap; chia nhóm stable
-   và drift theo ratio config và seed.
-3. Sinh latent profile trước cho từng user/period. Stable giữ sở thích cơ bản;
-   drift đi qua cũ → chuyển tiếp → mới → ổn định theo rule/intensity đã chốt.
-4. Trong mỗi period, sinh exposure và events từ profile period đó + seeded
-   noise; timestamps phải thuộc đúng [start,end).
-5. Tách periods 1–3 history và 4 test theo policy đề xuất; không reuse cutoff D
-   ngầm. Event đúng boundary thuộc period tiếp theo.
-6. Ghi temporal_profiles, hai stream events, metadata và manifest. Không ghi
-   một users catalog độc lập khiến E lệch D.
-7. Validate user refs về D, paper refs, profile uniqueness, boundaries/time,
-   actual quota/group counts và future leakage.
-
-Target mở rộng 1.200 profiles và 15.000–20.000 events là dữ liệu mô phỏng. Phân biệt hiệu
-ứng drift với noise bằng rule rõ và nhóm stable, không diễn giải mọi biến động
-ngẫu nhiên là đổi sở thích.
-
-
-**Chưa có generator mock E.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
-
-#### Khi cập nhật facets A
-
-Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
-để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
-bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
-
-### 13.7. Kiểm tra dataset và nghiệm thu
-
-**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
-thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
-gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
-facet silver A đủ coverage là đầu vào cần có.
-
-- User IDs thuộc D, không có danh tính mới; paper IDs thuộc đúng catalog.
-- `(user_id,period)` duy nhất; đủ periods; boundaries liên tiếp và không chồng.
-- Event trong `[start,end)` đúng period; history trước holdout theo từng user.
-- Truth tương lai không lọt vào input/profile-building; không trộn E stream với D.
-- Báo stable/drift ratio, profile/event counts, cutoff, nhiễu và mọi gap target.
-
-E hoàn tất khi kịch bản/boundaries và bộ mô phỏng được duyệt, generator tái lập,
-truth tách đúng, IDs thống nhất với D và validator riêng đạt. Hiện mới có đặc tả.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-#### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình E đọc shared users + E history + corpus/facets. Generator được biết profiles tất cả periods; model không biết future profile/test events hoặc scenario group truth trước.
+Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
+Chi tiết đầu vào, schema, rules và lệnh chạy:
+[README E](data/exp_e/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
 
 ## 14. Split và chống rò rỉ dữ liệu
 
@@ -1348,7 +760,7 @@ python tests/test_data_validation.py
 Lệnh tải cần internet; dữ liệu đã có được tái sử dụng và kiểm tra checksum, không
 tự tải đè bản mới. Các bước còn lại chạy offline. `seed 42` giúp lấy mẫu tái lập
 khi đầu vào và code không đổi; số 42 là quy ước, không phải yêu cầu thuật toán.
-Validator hiện kiểm tra trực tiếp corpus chính đã bàn giao. A đã có `data/exp_a/build_exp_a.py`; chưa có generator B–E.
+Validator corpus dùng dữ liệu chính; validators A và B–E được chạy ở các gate riêng.
 
 Từ folder data/exp_a, dùng `python build_exp_a.py`; nếu có .venv-qwen, bộ chạy
 tự dùng Python của môi trường đó. Chọn `paper_range` và `output_dir` riêng cho
@@ -1356,9 +768,24 @@ từng phần trong config A; mặc định phần 1 là `[1, 842]`. Không cầ
 Dùng `--dry-run` để kiểm tra khoảng, `--limit 2` để kiểm tra model và
 `--validate-only --allow-partial` để kiểm tra output của từng phần.
 
-`--phase corpus` kiểm tra phần đã triển khai. `--phase experiments` và
-`--dataset-kind mock` trả lỗi rõ ràng vì các bộ đó chưa được xây dựng; không được
-hiểu lần kiểm tra corpus đạt là cả A–E đã đạt nghiệm thu.
+Sau khi nhận đủ năm phần, chạy từ gốc dự án:
+
+~~~powershell
+python data/exp_a/merge_exp_a.py --dry-run
+python data/exp_a/merge_exp_a.py
+python data/exp_a/select_gold_review.py
+python data/exp_b/build_exp_b.py
+python data/exp_c/build_exp_c.py
+python data/exp_d/build_exp_d.py
+python data/exp_e/build_exp_e.py
+python scripts/validate_all.py --dataset-kind mock --phase experiments
+~~~
+
+Gate real/corpus kiểm tra corpus; real/experiments kiểm tra A complete;
+mock/experiments kiểm tra B–E, có `--experiment b/c/d/e` để chọn riêng.
+Các runner có `--dry-run`, `--validate-only` và `--config`.
+B–E yêu cầu A complete; không suy từ corpus pass rằng mọi exp đã hoàn thành.
+Chi tiết và lựa chọn partial/shortfall: [RUN_EXPERIMENTS](docs/RUN_EXPERIMENTS.md).
 
 ## 16. Cấu hình, scope review và quy trình rebuild
 
@@ -1421,9 +848,8 @@ counts và nội dung corpus so với nguồn. Bộ test corpus có 10 kiểm tr
 provenance/ID/primary ổn định, metadata sai, validator dùng trực tiếp corpus, path traversal,
 reviewer/reason và các corruption của refs/facet/time.
 
-A có validator riêng qua `build_exp_a.py --validate-only`; các hàm facet/time
-là nền tảng cho B–E, chưa phải validator hoàn chỉnh toàn bộ thực nghiệm.
-Các gate experiments/mock cố ý trả lỗi vì chưa có dataset đó. Tham khảo
+A có validator riêng; B–E có schema/rule/quota/hash/split/temporal và leakage gates.
+Gate experiments yêu cầu output/input phù hợp đã tồn tại. Tham khảo
 [trạng thái kiểm tra](docs/VALIDATION_STATUS.md); trạng thái pass trước đây phải
 được chạy lại khi code, input hoặc scope thay đổi.
 
@@ -1431,7 +857,8 @@ Các gate experiments/mock cố ý trả lỗi vì chưa có dataset đó. Tham 
 
 A silver toàn corpus qua validator. Generator B–E tạo query/case/user/hành vi
 mock trên corpus/facets A; manifest ghi rule/seed/hashes; refs, positive/negative,
-hidden truth và split/leakage đạt. Không yêu cầu human gold; chưa có dataset B–E.
+hidden truth và split/leakage đạt. Code đã kiểm tra trên fixtures; bộ từ corpus thật
+chờ A complete. Không yêu cầu human gold để sinh B–E.
 
 ### Điều kiện nghiệm thu dataset trên dữ liệu thật của mỗi exp
 
@@ -1448,13 +875,14 @@ Corpus đã review phạm vi/dedup/provenance; ID và protocol split được ch
 có dataset/generator/nhãn/rules phù hợp và tất cả gate tương ứng đạt. Gold thật
 đã review; không có mock refs trong real; loader dùng đúng paths. Đối chiếu kế hoạch
 DS300 gốc khi truy cập được và ghi khác biệt trước freeze. Hiện mới hoàn thành
-phần ingestion, bộ chạy A và đặc tả B–E; chưa đạt data-first release đầy đủ.
+ingestion và các generator/validators A–E; bộ dữ liệu thật và human gold
+chưa đạt data-first release đầy đủ.
 
 ## 19. Lộ trình dữ liệu và triển khai mô hình
 
 1. Chạy A bằng Qwen3 local trên toàn corpus, kiểm tra dẫn chứng/coverage và bàn giao silver.
 2. B/C/D xây dataset mock song song; D bàn giao danh sách users để E xây stream riêng.
-3. Chạy pilot nhỏ, kiểm tra refs/schema/rules/split/leakage, rồi mở rộng quy mô.
+3. Pilot theo số lượng mục tiêu, kiểm tra refs/schema/rules/split/leakage và gap.
 4. Review chất lượng silver và corpus/scope/xung đột tiêu đề; tạo human gold độc lập.
 5. Chốt protocol/metrics, triển khai và đánh giá mô hình. Mock kiểm tra giả thuyết
    mô phỏng, không phải bằng chứng hành vi người thật.
@@ -1475,9 +903,9 @@ chọn nơi nộp bài), nguồn catalog/định danh, phạm vi IT, metadata th
 nguồn relevance ground truth; sau đó mới chốt schema/split/generator/đánh giá.
 Không đoán venue phù hợp từ title hoặc lịch sử xuất bản rồi gọi là human gold.
 
-Các quyết định còn cần nhóm chốt: bản kế hoạch DS300 gốc; vocabulary/alias và
-guideline A; rule relevance mock B; templates/semantics C; exposure/affinity/noise
-D; drift ratio/intensity/boundaries E; splits custom và chỉ số/cutoff. Model,
+Các rules mock B–E, templates, exposure/noise, drift/boundaries và splits hiện
+đã công bố trong configs/READMEs. Trước đánh giá thực cần review tính phù hợp,
+vocabulary/alias/guideline A, protocol/metrics/cutoff và kế hoạch DS300 gốc. Model,
 embedding dimension, cosine/dot product, temporal decay và UI thuộc phase sau.
 
 ## 21. Nguồn dữ liệu, Git và tài liệu tham chiếu
@@ -1519,6 +947,10 @@ review trước tích hợp. Không thay nguồn corpus hoặc chuẩn ID riêng
 
 ## Tài liệu liên quan
 
+- [Đo thời gian generator A–E và ước lượng full](docs/GENERATOR_TIMING.md):
+  đo Qwen thật, benchmark đủ quota và chẩn đoán thiếu mẫu B/C trên part_1.
+- [Đánh giá Qwen silver bằng 400 bài human gold](docs/EVALUATE_QWEN.md): code
+  `scripts/exp_a/evaluate_exp_a.py`, per-facet Precision/Recall/F1 và đối chiếu từng bài.
 - [Contract dữ liệu chuẩn](DATA_CONTRACT.md)
 - [Tài liệu bàn giao data-first](docs/DATA_FIRST_REFERENCE.md)
 - [Phạm vi IT và review audit](docs/IT_SCOPE.md)
@@ -1531,3 +963,5 @@ review trước tích hợp. Không thay nguồn corpus hoặc chuẩn ID riêng
 README tổng mô tả hệ thống và trạng thái triển khai; contract quyết định schema
 chuẩn. Khi thay đổi dữ liệu/giao thức, cập nhật contract, README tổng và README
 exp liên quan cùng nhau để tránh khác biệt giữa các tài liệu.
+
+- [Hướng dẫn gộp A, chọn 400 bài review và chạy B–E](docs/RUN_EXPERIMENTS.md)

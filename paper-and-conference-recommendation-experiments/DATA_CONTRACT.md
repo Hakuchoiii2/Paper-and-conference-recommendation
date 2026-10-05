@@ -52,7 +52,7 @@ partial outputs explicitly list missing IDs. Quotation presence is a structural
 check; semantic correctness still requires human review.
 Mock expected labels and Codex scope reviews do not count as real gold.
 
-## Intent, relevance and behavior (planned interfaces)
+## Intent, relevance and behavior
 
 Directions: `similar`, `different`, `ignore`; constraints include all five keys.
 Missing constrained facet makes a candidate ineligible, not automatically different.
@@ -84,11 +84,23 @@ These are automated/Codex-reviewed scope decisions, not human-reviewed facet gol
 Human overrides require an include flag, reviewer and explicit evidence/reason.
 Rebuild after changes, preserve ID mappings, review target gaps, then freeze.
 Current acceptance: main-corpus validation plus runnable corruption tests.
-Full experiment acceptance is unavailable until A–E datasets and validators exist.
+A–E generators and validators exist. Full acceptance additionally requires the real-corpus outputs and independent human review.
 
 The local Qwen prompt v1.5 uses extractive concept phrases: normalized label
 words must occur in the selected evidence sentence. This avoids generic
 facet-definition labels; paraphrases are rejected in this extraction mode.
 Sentence-ID presence and source phrase checks do not replace semantic review.
 
-Local batch validation failures are saved per paper in the checkpoint and manifest.failed_annotations. Such IDs remain missing; they are retried on the next invocation. Missing annotations are never replaced by fabricated empty facets. Full downstream handoff still requires complete coverage.
+Local A policy 2.3 saves the highest-scored attempt when validation still fails:
+metadata records fallback_used, validation_errors and all attempt scores/raw outputs;
+manifest.fallback_annotations audits these records. A missing ID means no saved
+record, distinct from an audited fallback that may contain empty facets.
+Runtime/GPU failures still stop. Full downstream handoff requires complete coverage;
+B–E generation excludes every fallback or quality-flagged record.
+
+The 400-paper selection creates a pending human review queue under
+data/exp_a/ground_truth/gold_review, never automatic facets_gold.jsonl.
+Ranking favors nonempty facets, then supported concepts, then paper ID; exclude
+P000001 prompt development, fallbacks/errors and all-empty annotations.
+Its completeness bias must accompany evaluations. Human labels are produced
+independently before comparing the separately stored silver reference.

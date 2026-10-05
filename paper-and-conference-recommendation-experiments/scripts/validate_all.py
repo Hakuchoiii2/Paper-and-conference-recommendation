@@ -1,4 +1,4 @@
-"""Validate the delivered main real corpus; absent experiments never silent-pass."""
+"""Validate the real corpus/A handoff or synthetic B–E datasets without silent passes."""
 import argparse
 import datetime
 import json
@@ -149,11 +149,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dataset-kind', choices=['real','mock'], default='real')
     parser.add_argument('--phase', choices=['corpus','experiments'], default='corpus')
+    parser.add_argument('--experiment', choices=['all','b','c','d','e'], default='all')
+    parser.add_argument('--config', help='Custom config for one B–E experiment')
+    parser.add_argument('--allow-shortfall', action='store_true', help='Validate explicit partial B/C output')
     args = parser.parse_args()
     try:
-        require(args.dataset_kind=='real', 'Mock datasets are not built in this real-data ingestion phase.')
-        require(args.phase=='corpus', 'Experiments A-E are not built yet; full experiment validation is unavailable, not passed.')
-        validate_corpus()
+        if args.phase == 'corpus':
+            require(args.dataset_kind == 'real', 'The canonical corpus is real, not mock.')
+            validate_corpus()
+        elif args.dataset_kind == 'real':
+            require(args.experiment == 'all' and args.config is None, 'Real experiments validation checks the A handoff only')
+            from experiment_io import load_silver
+            _,_,_,manifest = load_silver(ROOT,'data/exp_a/generated')
+            print(f"PASS A: {manifest['count']} complete silver annotations (human gold is a separate review)")
+        else:
+            require(args.config is None or args.experiment != 'all', '--config requires one --experiment')
+            from validate_experiments import validate_experiment
+            for experiment in ('b','c','d','e') if args.experiment == 'all' else (args.experiment,):
+                manifest = validate_experiment(ROOT,experiment,args.config,args.allow_shortfall)
+                print(f"PASS {experiment.upper()} ({manifest['status']}): {manifest['counts']}")
     except (ValueError, KeyError, TypeError, OSError) as error:
         parser.exit(1, f'VALIDATION FAILED: {error}\n')
 
