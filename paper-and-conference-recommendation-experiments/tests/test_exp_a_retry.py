@@ -44,6 +44,37 @@ class RetryPolicyCheck(unittest.TestCase):
         self.assertFalse(a.compatible_provenance(dict(previous, input_hashes={'corpus': 'changed'}), current))
         self.assertFalse(a.compatible_provenance(dict(previous, generator_sha256='unknown-build'), current))
 
+    def test_lf_crlf_compatibility_rejects_changed_inputs_config_and_unknown_code(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name in ('prompt.md', 'guide.md'):
+                (root / name).write_bytes(b'Extract.\nKeep evidence.\n')
+            previous = dict(generator_version='2.0',
+                            generator_sha256='eabb0e4b8daef859afab7f7249e6ed6693e30244adbb2800431567b557f68b8e',
+                            config=dict(model='Qwen/test', prompt='prompt.md', guideline='guide.md'),
+                            input_hashes=dict(corpus='original', prompt=a.sha256(root / 'prompt.md'),
+                                              guideline=a.sha256(root / 'guide.md')), schema={})
+            for name in ('prompt.md', 'guide.md'):
+                (root / name).write_bytes(b'Extract.\r\nKeep evidence.\r\n')
+            current = dict(previous, generator_version='2.3', generator_sha256='current-build',
+                           input_hashes=dict(corpus='original', prompt=a.sha256(root / 'prompt.md'),
+                                             guideline=a.sha256(root / 'guide.md')))
+            original = copy.deepcopy(previous)
+            self.assertTrue(a.compatible_provenance(previous, current, root))
+            self.assertEqual(previous, original)
+            for changed in (
+                    dict(previous, generator_sha256='unknown-build'),
+                    dict(previous, config=dict(previous['config'], model='changed')),
+                    dict(previous, input_hashes=dict(previous['input_hashes'], corpus='changed'))):
+                self.assertFalse(a.compatible_provenance(changed, current, root))
+            for name in ('prompt', 'guideline'):
+                with self.subTest(name=name):
+                    path = root / current['config'][name]
+                    path.write_bytes(b'Changed instructions.\r\n')
+                    changed = dict(current, input_hashes=dict(current['input_hashes'], **{name: a.sha256(path)}))
+                    self.assertFalse(a.compatible_provenance(previous, changed, root))
+                    path.write_bytes(b'Extract.\r\nKeep evidence.\r\n')
+
     def test_regular_verb_forms_are_supported_but_synonyms_are_not(self):
         cases = (
             ('represent word meaning in context', 'representing word meaning in context', True),
@@ -212,7 +243,7 @@ class RetryPolicyCheck(unittest.TestCase):
                            domain='information_technology', scope_evidence=['CS']) for i in (1, 2)]
             a.write_jsonl(root / 'papers.jsonl', papers)
             for name in ('prompt.md', 'guide.md'):
-                (root / name).write_text('Extract.', encoding='utf-8')
+                (root / name).write_bytes(b'Extract.\n')
             config = dict(corpus='papers.jsonl', output_dir='out', model='Qwen/test', revision='test-only',
                           device='cpu', cache_dir='models', prompt='prompt.md', guideline='guide.md',
                           prompt_version='1.5', guideline_version='1.0', max_new_tokens=2048,
@@ -227,7 +258,7 @@ class RetryPolicyCheck(unittest.TestCase):
             checkpoint = root / 'out/.exp_a_checkpoint.sqlite3'
             with closing(sqlite3.connect(checkpoint)) as db, db:
                 signature = json.loads(db.execute('SELECT signature FROM run').fetchone()[0])
-                signature.update(generator_version='2.0', generator_sha256='28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab')
+                signature.update(generator_version='2.0', generator_sha256='eabb0e4b8daef859afab7f7249e6ed6693e30244adbb2800431567b557f68b8e')
                 db.execute('UPDATE run SET signature=?', (json.dumps(signature, sort_keys=True),))
                 record = json.loads(db.execute('SELECT payload FROM annotations WHERE paper_id="P000002"').fetchone()[0])
                 record['metadata'].pop('extraction_policy_version', None)
@@ -236,6 +267,8 @@ class RetryPolicyCheck(unittest.TestCase):
                     record['facets'][facet] = []
                     record['metadata']['evidence'][facet] = []
                 db.execute('UPDATE annotations SET payload=? WHERE paper_id="P000002"', (json.dumps(record),))
+            for name in ('prompt.md', 'guide.md'):
+                (root / name).write_bytes(b'Extract.\r\n')
             reviewed_ids = []
             def review(paper, instruction):
                 reviewed_ids.append(paper['paper_id'])

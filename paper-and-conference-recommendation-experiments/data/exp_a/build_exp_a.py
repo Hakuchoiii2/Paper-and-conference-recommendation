@@ -1,5 +1,6 @@
 """Extract source-grounded silver facets with local Qwen3; resume per accepted paper."""
 import argparse
+import hashlib
 import json
 import os
 import sqlite3
@@ -21,10 +22,17 @@ FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
 GENERATOR_VERSION = '2.3'
 LEGACY_GENERATORS = (
     ('2.0', '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab'),
+    ('2.0', 'eabb0e4b8daef859afab7f7249e6ed6693e30244adbb2800431567b557f68b8e'),
     ('2.1', '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b'),
+    ('2.1', '9ed5205238906eb2716a7f52060bf64d9ddb9ef9b2c3039784c39397f1b18004'),
     ('2.2', 'a9aafd069b8c1ec12ae0079e05a2272c854839c889da621964c27c61b66b3e68'),
+    ('2.2', 'ba7992d3829b2d69e0723c5779fdb41f0ca4e48d00afaccdaf51846e770286d1'),
     ('2.3', 'd4337f76920a5ebf503217b4ef0aff307aa798c151453b287ad7f14838e14c88'),
+    ('2.3', '9ab123d7b9eaa1086f6aba6732030db51ab1a556908e9c62889d3fbb33651cc6'),
     ('2.3', '48ff88ceca3c0e259675a34e684a6ad871bfe0f3e24afc599f7d1fff81d48d72'),
+    ('2.3', '98bb3164b45e1b4f409a051ce6e081b5e2dc89e934c082ff1a01ac633e55b97d'),
+    ('2.3', 'c5664253204c8a54d6e8d61c938965fafe219aefa95fc2e33544dad69467cd4e'),
+    ('2.3', '5479dba755fb2c888902ffa318203521a13e53d887ee6e303b3f9eeefa785262'),
 )
 MIN_CONCEPT_RETENTION = 0.7
 SPARSE_REVIEW_THRESHOLD = 3
@@ -95,7 +103,18 @@ def inputs(root, config):
     return papers, provenance, instruction
 
 
-def compatible_provenance(previous, current):
+def compatible_provenance(previous, current, root=None):
+    # LF/CRLF exports are equivalent only when the text itself is unchanged.
+    if root is not None and previous['input_hashes'] != current['input_hashes']:
+        hashes = dict(previous['input_hashes'])
+        for name in ('prompt', 'guideline'):
+            raw = (Path(root) / current['config'][name]).read_bytes()
+            lf = raw.replace(b'\r\n', b'\n')
+            fingerprints = {hashlib.sha256(text).hexdigest()
+                            for text in (raw, lf, lf.replace(b'\n', b'\r\n'))}
+            if hashes.get(name) in fingerprints and current['input_hashes'].get(name) in fingerprints:
+                hashes[name] = current['input_hashes'][name]
+        previous = dict(previous, input_hashes=hashes)
     # Only known compatible generator upgrades may reuse accepted annotations.
     return previous == current or any(
         previous == dict(current, generator_version=version, generator_sha256=fingerprint)
@@ -526,7 +545,7 @@ def export(root, config, papers, provenance, db):
     return manifest
 
 
-def restore_jsonl(directory, config, papers, provenance, db):
+def restore_jsonl(root, directory, config, papers, provenance, db):
     """Recover an empty/lost checkpoint from verified exported evidence."""
     if db.execute('SELECT COUNT(*) FROM annotations').fetchone()[0]:
         return
@@ -546,7 +565,7 @@ def restore_jsonl(directory, config, papers, provenance, db):
     silver = read_jsonl(silver_path) if silver_path.exists() else None
     if not metadata and not silver:
         return
-    require(compatible_provenance(manifest['provenance'], provenance), 'Output provenance changed')
+    require(compatible_provenance(manifest['provenance'], provenance, root), 'Output provenance changed')
     require(manifest['dataset_kind'] == 'real' and manifest['tier'] == 'silver'
             and manifest['contract_version'] == '1.0', 'wrong manifest kind/tier/version')
     catalog = {paper['paper_id']: paper for paper in papers}
@@ -590,7 +609,7 @@ def generate(root, config, limit=None):
         previous = db.execute('SELECT signature FROM run').fetchone()
         if previous:
             if previous[0] != signature:
-                compatible = compatible_provenance(json.loads(previous[0]), provenance)
+                compatible = compatible_provenance(json.loads(previous[0]), provenance, root)
                 require(compatible or db.execute('SELECT COUNT(*) FROM annotations').fetchone()[0] == 0,
                         'Run provenance changed; restore inputs/config or use a NEW output_dir')
                 db.execute('UPDATE run SET signature = ?', (signature,))
@@ -600,7 +619,7 @@ def generate(root, config, limit=None):
         else:
             db.execute('INSERT INTO run VALUES (?)', (signature,))
             db.commit()
-        restore_jsonl(directory, config, papers, provenance, db)
+        restore_jsonl(root, directory, config, papers, provenance, db)
         done = {row[0] for row in db.execute('SELECT paper_id FROM annotations')}
         require(done <= {p['paper_id'] for p in papers}, 'checkpoint contains unknown papers')
         catalog = {p['paper_id']: p for p in papers}
@@ -664,7 +683,7 @@ def check_outputs(root, config, allow_partial=False):
     papers, provenance, _ = inputs(root, config)
     directory = root / config['output_dir']
     manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
-    require(compatible_provenance(manifest['provenance'], provenance), 'Output provenance changed')
+    require(compatible_provenance(manifest['provenance'], provenance, root), 'Output provenance changed')
     require(manifest['dataset_kind'] == 'real' and manifest['tier'] == 'silver' and manifest['contract_version'] == '1.0', 'wrong manifest kind/tier/version')
     for name in ('facets_silver.jsonl', 'annotation_metadata.jsonl'):
         require(sha256(directory / name) == manifest['files'][name], f'{name}: checksum mismatch')
