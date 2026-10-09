@@ -196,8 +196,7 @@ Seed/phiên bản được ghi để truy nguồn, không bảo đảm kết qu�
 
 Chạy tests, corpus gate và validator từng phần. Chỉ bộ đã gom đủ 4.210 IDs,
 metadata tương ứng và manifest toàn corpus hợp lệ với `status: complete` mới
-được bàn giao cho B–E. B/C/D sinh dataset mock song
-song trên facet A; E còn cần users D. Không cần chờ gold; đánh giá chất lượng
+được bàn giao cho B–E. B/C dùng facet A; C tạo users/history để D/E sử dụng theo thứ tự mới. Không cần chờ gold; đánh giá chất lượng
 A vẫn cần human-reviewed gold riêng, không tự chấm bằng chính silver. Prompt v1.5 dùng P000001 làm ví dụ phát triển prompt; bài này không được đưa vào held-out gold.
 
 Các tệp JSONL/manifest được xuất khi lượt chạy kết thúc hoặc dừng có xử lý;

@@ -1,3 +1,5 @@
+> Cập nhật 2026-10-09: dùng contract 2.0 và thứ tự A/B/C-profile/D-session/E-temporal; [protocol hiện hành](EXPERIMENT_PROTOCOL.md).
+
 # Thực nghiệm <ký hiệu> — <tên tiếng Việt>
 
 Trạng thái triển khai và các quy ước cần chốt.
@@ -7,7 +9,7 @@ Trạng thái triển khai và các quy ước cần chốt.
 có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
 `contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
 Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+hay mock facet. B/C dùng A silver; D/E cần users C và manifest, D còn dùng C logs. Human gold A phục vụ đánh giá extraction.
 
 Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
 `generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi

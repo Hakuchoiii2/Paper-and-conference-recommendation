@@ -1,30 +1,21 @@
-# Chạy bộ sinh dataset A–E
+# Chạy generator và thực nghiệm A–E — contract 2.0
 
-## Quy mô và trạng thái
+Thứ tự mới: A trích facet, B truy xuất, C suy profile, D suy hướng theo phiên, E temporal.
+C mới thay D cũ, D mới thay C cũ; D/E lấy users từ C.
+Xem [giao thức đầy đủ](EXPERIMENT_PROTOCOL.md), gồm searching, schema, baseline và metrics.
 
-| Phần | Mặc định hiện triển khai |
+| Exp | Quy mô mặc định |
 |---|---|
-| A | Gộp 5 phần × 842 = 4.210 silver annotations |
-| Human review A | Chọn 400 IDs đầy đủ nhất; người review mới tạo gold |
-| B | 300 queries × 100 candidates = 30.000 cặp |
-| C | 1.500 cases × 20 candidates = 30.000 cặp; quota 6×200 + 2×150 |
-| D | 300 users × 50 = 15.000 events; history 9.000 / future 6.000 |
-| E | Cùng 300 users × 4 periods × 15 = 18.000 events, 1.200 profiles |
+| A | Full silver trên corpus 4.210 bài; gold review mục tiêu 400 |
+| B | 300 query × 100 candidates |
+| C | 300 users × 50 phản ứng; 30 history/20 holdout |
+| D | 300 users C × 5 phiên × 20 candidates |
+| E | 300 users C × 4 periods × 15 phản ứng; 900 rolling cases |
 
-Snapshot đo thời gian 2026-10-05 có A part_1: 842/4.210 records,
-192 bài fallback/lỗi; thiếu 3.368 IDs
-thuộc parts 2–5. Code đã kiểm tra bằng fixtures ở quy mô trên, nhưng chưa tạo B–E
-trên corpus thật hoặc tạo hàng đợi review cuối cùng. Không bù annotation còn thiếu.
-
-Xem [thời gian generator và chẩn đoán quota trên silver thật](GENERATOR_TIMING.md).
-
-Các lệnh dưới chạy từ **gốc dự án** với Python 3.11+. Có thể thay `python` bằng
-`.\.venv-qwen\Scripts\python.exe`. Tools gộp/chọn/generate B–E chỉ dùng stdlib;
-Qwen annotation có môi trường GPU riêng theo [README A](../data/exp_a/README.md).
-
-Generator và chuẩn bị dữ liệu nằm trong `data/exp_*`; bộ điều phối chung ở
-`data/build_experiments.py`. Code chạy và đánh giá mô hình ở `scripts/exp_*`;
-hiện A có evaluator Qwen, B–E chưa có bộ chạy mô hình.
+Chạy từ gốc project với Python 3.11+, B–E chỉ cần stdlib.
+Nếu lệnh python trên Windows không hoạt động, dùng .\.venv-qwen\Scripts\python.exe.
+A GPU có môi trường riêng theo [README A](../data/exp_a/README.md).
+Mọi lệnh bên dưới yêu cầu dữ liệu đầu vào tương ứng đã có; fixtures test không thay silver thật.
 
 ## 1. Nhận đủ năm phần A
 
@@ -83,9 +74,7 @@ giải quyết bất đồng rồi mới xuất gold theo contract. Không dùng
 python data/exp_a/select_gold_review.py --source data/exp_a/generated/part_1 --count 400 --dry-run --allow-partial
 ~~~
 
-## 3. Sinh B/C/D rồi E
-
-Sau khi A complete đã qua gate, B/C/D chạy độc lập; E chạy sau khi D có users/manifest.
+## 3. Sinh B → C → D → E
 
 ~~~powershell
 python data/exp_b/build_exp_b.py --dry-run
@@ -96,41 +85,51 @@ python data/exp_e/build_exp_e.py
 python scripts/validate_all.py --dataset-kind mock --phase experiments
 ~~~
 
-Mỗi generator có `--dry-run`, `--validate-only`, `--config`. Mặc định đọc
-`configs/exp_b.json` đến `exp_e.json`, output `data/exp_x/generated/`, truth
-`data/exp_x/ground_truth/`. Paths trong config tính từ gốc dự án.
-B–E là mock trên **corpus và facets thật**; seed 42, rules có version, đủ hashes.
-Các records A fallback/lỗi không được dùng để gán mock labels hoặc sinh hành vi.
+B/C dùng A complete. D dùng C users và logs; E dùng C users rồi tạo stream riêng.
+B và C có thể chuẩn bị độc lập sau A, nhưng tên/thứ tự chuẩn là A/B/C/D/E.
+Runner D tính lại đúng hàm profile của C trên C history; không yêu cầu tệp kết quả C để sinh D.
 
-B/C thiếu ứng viên/quota sẽ xuất bộ partial với report lý do và exit code 2.
-`--allow-shortfall` cho phép kiểm tra bộ partial, không bỏ qua dữ liệu sai.
-D/E thiếu pool đủ để tạo events riêng biệt thì báo lỗi. Không tự giảm mục tiêu,
-random lại nhãn, nhân đôi records hoặc tạo facets để ép đủ số.
+Generator có --dry-run, --validate-only, --config, --allow-shortfall.
+Default configs/exp_b.json … exp_e.json; paths tính từ project root.
+B/D thiếu pool ghi shortfall, status partial và exit code 2; --allow-shortfall cho phép partial,
+không bỏ qua dữ liệu sai. C/E cần đủ distinct papers trong mỗi đoạn mô phỏng.
 
-Nhãn B/C, D/E latent profiles và future events ở truth; mô hình chỉ đọc input
-quan sát được. Báo cáo D/E chỉ thống kê loại tương tác history.
-Không cho mô hình tự duyệt toàn bộ folder để tìm features.
+Manifest B–E là 2.0. Output cũ 1.0 bị từ chối ghi đè; sửa output_dir/truth_dir sang thư mục mới
+và sửa users_path D/E tới C mới nếu cần giữ dữ liệu cũ. Không chạy đồng thời cùng output.
+A code, checkpoints và silver đã có được giữ nguyên.
 
-## 4. Kiểm tra và giới hạn
+## 4. Chạy mô hình và đánh giá
 
-Khi 400 forms đã được người review hoàn tất, chạy `python scripts/exp_a/evaluate_exp_a.py`
-để chấm đối chiếu silver/gold và xem từng bài Qwen trích dư/thiếu/có thể nhầm facet.
-Xem [hướng dẫn đánh giá Qwen](EVALUATE_QWEN.md) về trạng thái reviewed, metrics,
-so khớp chữ và giới hạn cohort ưu tiên đầy đủ.
+~~~powershell
+python scripts/exp_a/evaluate_exp_a.py
+python scripts/exp_b/run_exp_b.py --split test --ks 5 10
+python scripts/exp_c/run_exp_c.py --ks 5 10
+python scripts/exp_d/run_exp_d.py --ks 5 10
+python scripts/exp_e/run_exp_e.py --ks 5 10 --half-life-days 30
+~~~
+
+A evaluator cần human gold reviewed trước khi chạy.
+B–E có --dry-run để validate trước, --config và --output dưới results/.
+Kết quả đã tồn tại cần --overwrite hoặc --output mới. B có --split train/dev/test;
+C/D/E đánh giá theo cutoff. Các phương pháp dùng chung candidate pools và metric definitions.
+
+Output: predictions.jsonl, details.jsonl, report.json, summary.csv, report.md, manifest.json.
+D có direction_macro_f1/coverage/compliance, oracle_intent được đánh dấu đặc quyền.
+C/E có importance_mae cho facet models; E chia theo stable/drift và từng period.
+Đặt tham số trước test, không chỉnh theo điểm test.
+
+## 5. Kiểm tra và giới hạn
 
 ~~~powershell
 python scripts/validate_all.py --dataset-kind real --phase corpus
-python data/exp_a/build_exp_a.py --validate-only --allow-partial
-python scripts/validate_all.py --dataset-kind mock --phase experiments --experiment b
 python -B -m unittest discover -s tests
 ~~~
 
-Fixtures của tests tách trong thư mục tạm, không ghi facets giả vào corpus thật.
-Các tests kiểm tra target counts, rules bằng ví dụ độc lập, corrupted data,
-same-anchor split, hidden truth, chronological boundaries và byte-identical rebuilds,
-kể cả D/E trong tiến trình mới với hash seed khác.
+Nếu sandbox Windows chặn thư mục temp mặc định, đặt TEMP/TMP vào thư mục writable riêng trước khi chạy tests.
+Fixtures được tạo và dọn trong thư mục tạm, không ghi paper/facet giả vào corpus thật.
+Tests kiểm tra schema/hash, labels, exposure membership, query parents, chronology,
+prefix trước từng mốc, truth separation, oracle privileges và byte-identical rebuilds/hash-seed invariance.
 
-Code/structural checks không bảo đảm Qwen trích đúng ngữ nghĩa, B/C concept overlap
-phản ánh semantic similarity, hoặc D/E mô phỏng sát hành vi người thật.
-Đọc [B](../data/exp_b/README.md), [C](../data/exp_c/README.md),
-[D](../data/exp_d/README.md), [E](../data/exp_e/README.md) để xem chính xác rules.
+Mock logs chưa chứng minh hành vi người thật. Query parser và scorer hiện lexical.
+B labels theo quy tắc chưa thay expert relevance; A gold review vẫn cần làm độc lập.
+Xem [README từng runner](../scripts/README.md) và [giới hạn protocol](EXPERIMENT_PROTOCOL.md).

@@ -1,7 +1,7 @@
-# Pilot thực nghiệm C
+# Pilot Exp C — Suy profile từ hành vi đọc và searching
 
-Dùng trực tiếp `data/processed/papers.jsonl`; không có catalog paper mẫu.
-Facet chung là `data/exp_a/generated/facets_silver.jsonl` trích từ bài thật.
-Pilot mock chỉ giới hạn số queries/cases/users/events, không mock facet.
-Output quan sát ở `generated/`, nhãn/hồ sơ ẩn/tương lai ở `ground_truth/`
-bên trong folder samples. Manifest ghi mock, rule/seed/input hashes/counts.
+Dùng corpus chính và full silver A đã được xác minh; chỉ giảm số query/user/session/event trong config.
+Đặt output_dir/truth_dir dưới `data/exp_c/samples/generated` và `samples/ground_truth`.
+
+Dữ liệu pilot dùng contract 2.0 và dataset_kind=mock; không ghi test fixtures vào corpus thật.
+Xem [README exp](../README.md) và [protocol](../../../docs/EXPERIMENT_PROTOCOL.md).

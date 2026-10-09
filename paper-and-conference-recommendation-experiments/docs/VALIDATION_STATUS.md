@@ -1,4 +1,30 @@
-# Verification — experiment folder layout, 2026-10-05
+# Verification — experiment protocol 2.0, 2026-10-09
+
+Current order: **A extraction → B retrieval → C profile inference → D session direction → E temporal adaptation**.
+C replaces the former D; D replaces the former C. See [protocol](EXPERIMENT_PROTOCOL.md)
+and [run commands](RUN_EXPERIMENTS.md) for the current schemas, baselines and metrics.
+
+- Fresh full suite: **94 tests passed** with Python 3.11, including 27 experiment
+  checks and the existing corpus/A checks. `compileall` and `git diff --check` passed.
+- B–E generators and CPU runners passed end-to-end on explicitly test-only
+  temporary fixtures. Tests cover deterministic rebuilds and hash-seed invariance,
+  query/exposure IDs and membership, reformulation references, chronological cutoffs,
+  hidden-truth separation, direction abstention, privileged oracle labeling,
+  metric calculations and output/source preservation.
+- A regression checks that zero-weight concepts from a future temporal profile
+  do not influence the current targeted exposure pool. Rolling E passes only
+  events, searches and exposures earlier than each evaluated cutoff to the scorer.
+- README files, configs, contract and run instructions use the new C/D order.
+  Existing A generation code and saved silver/checkpoints were not changed by this
+  protocol update; historical measurements below refer to the former 1.0 protocol.
+- Full production B–E generation/scoring has **not** run: the complete merged
+  `data/exp_a/generated/manifest.json` is absent. The real-input dry-run stops at
+  that missing prerequisite. Fixtures do not replace real A output.
+- These checks verify implementation and controlled mock behavior. They do not
+  establish recommendation quality on real users, semantic relevance, or novelty
+  relative to prior research. The current query parser and CPU scorers are lexical.
+
+## Earlier experiment folder layout verification — 2026-10-05
 
 Latest timing probe: see [GENERATOR_TIMING.md](GENERATOR_TIMING.md). Three real
 Qwen papers took 204.2 seconds including model loading; output passed partial

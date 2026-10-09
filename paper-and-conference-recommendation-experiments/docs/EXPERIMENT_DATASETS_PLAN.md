@@ -1,3 +1,6 @@
+> **Tài liệu lịch sử, trước thiết kế 2.0 ngày 2026-10-09.** C/D và các quota/giới hạn ở dưới dùng nghĩa cũ; không dùng làm hướng dẫn hiện hành.
+> Xem [protocol 2.0](EXPERIMENT_PROTOCOL.md) và [lệnh chạy mới](RUN_EXPERIMENTS.md). Yêu cầu hiện tại đã bao gồm code thực nghiệm.
+
 # Experiment datasets implementation plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox syntax for tracking.

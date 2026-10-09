@@ -151,7 +151,7 @@ def main():
     parser.add_argument('--phase', choices=['corpus','experiments'], default='corpus')
     parser.add_argument('--experiment', choices=['all','b','c','d','e'], default='all')
     parser.add_argument('--config', help='Custom config for one B–E experiment')
-    parser.add_argument('--allow-shortfall', action='store_true', help='Validate explicit partial B/C output')
+    parser.add_argument('--allow-shortfall', action='store_true', help='Validate explicit partial B/D output')
     args = parser.parse_args()
     try:
         if args.phase == 'corpus':

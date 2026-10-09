@@ -7,8 +7,15 @@
   "truth_dir": "data/exp_b/ground_truth",
   "num_queries": 300,
   "candidates_per_query": 100,
-  "target_facets": ["problem", "task", "method", "dataset", "contribution"],
   "positive_fraction": 0.2,
   "hard_negative_fraction": 0.5,
-  "label_rule_version": "concept_overlap_v1"
+  "label_rule_version": "weighted_overlap_v2",
+  "fixed_weights": {
+    "problem": 0.4,
+    "task": 0.2,
+    "method": 0.2,
+    "dataset": 0.1,
+    "contribution": 0.1
+  },
+  "positive_grade": 0.6
 }

@@ -3,14 +3,24 @@
 Dùng corpus chính 4.210 bài. A đã có bộ chạy Qwen3 local `Qwen/Qwen3-4B-Instruct-2507` để trích
 năm facet có dẫn chứng; 5 người chia nhau chạy 4.210 bài, mỗi người 842 bài,
 chọn khoảng bằng `paper_range` trong config A. B–E
-mock queries/intents/users/hành vi trên corpus thật và facet A. B/C/D làm
-song song sau silver; E dùng chung users D. Chưa có gold hoặc kết quả mô hình.
+mock queries/users/searching/hành vi trên corpus thật và facet A. Thứ tự mới:
+**A facet → B retrieval → C profile → D session direction → E temporal**.
+D/E dùng users C; D dùng lại C history. Gold A và benchmark trên corpus thật là các bước riêng.
 
 
 **Cập nhật 2026-10-05:** đã có code gộp A, chọn 400 IDs chờ human review và sinh/kiểm tra
 B–E theo số lượng mục tiêu. Snapshot đo mới nhất có A part_1 (842/4.210,
 192 bài fallback/lỗi, 650 bài hợp lệ cho sampling);
 dataset B–E trên corpus thật chờ parts 2–5. Xem [hướng dẫn chạy](docs/RUN_EXPERIMENTS.md).
+
+**Cập nhật 2026-10-09:** đã bổ sung bộ chạy baseline CPU B–E trong `scripts/exp_*`,
+gồm ranking, metrics, phân tích theo facet/intent/stable–drift và kết quả có hashes
+ở `results/exp_*`. A dùng evaluator human-gold hiện có. Chưa có điểm thực nghiệm
+trên dataset thật. Mỗi thành viên chạy riêng theo [README của từng exp](scripts/README.md).
+
+**Thiết kế mới 2026-10-09 (contract B–E 2.0):** C mới thay D cũ, D mới thay C cũ.
+Searching, query reformulations và exposure logs đã được đưa vào generator/runners.
+[Giao thức đầy đủ](docs/EXPERIMENT_PROTOCOL.md) là tài liệu hiện hành; các snapshot 2026-10-05 bên dưới là lịch sử.
 
 ## Mục lục
 
@@ -24,8 +34,8 @@ dataset B–E trên corpus thật chờ parts 2–5. Xem [hướng dẫn chạy]
 8. Năm facet dùng chung và silver/gold
 9. Thực nghiệm A — Gán nhãn facet
 10. Thực nghiệm B — Truy hồi theo facet
-11. Thực nghiệm C — Ý định tường minh
-12. Thực nghiệm D — Sở thích ngầm
+11. Thực nghiệm C — Suy profile từ hành vi/searching
+12. Thực nghiệm D — Similar/different theo phiên
 13. Thực nghiệm E — Sở thích theo thời gian
 14. Split và chống rò rỉ dữ liệu
 15. Cách chạy các chức năng đã triển khai
@@ -57,310 +67,93 @@ thiếu 1.790 so với mục tiêu làm việc 6.000. Không thêm bản trùng 
 
 ## 2. Cấu trúc hệ thống và luồng xử lý
 
-Hệ thống được mô tả theo bốn lớp. Đây là **cấu trúc logic**, không khẳng định tất
-cả thành phần đã có code hoặc phải xây thành các service riêng.
+Khuyến nghị tự động dùng bài đang đọc, lịch sử đọc/lưu/phản hồi và searching đã xảy ra.
+C suy concept preferences và facet importance; D suy hướng phiên hiện tại rồi cập nhật ranking.
+E kiểm tra thay đổi qua thời gian. Phiên không search vẫn được xử lý.
 
-| Lớp | Chức năng | Trạng thái |
-|---|---|---|
-| Nguồn và corpus | Tải, giữ bản gốc; lọc IT; chuẩn hóa, gộp trùng và cấp ID ổn định | Đã triển khai |
-| Facet và dataset | Gán năm facet; xây query, ý định, hành vi và hồ sơ thời gian A–E | A có bộ chạy local; B–E có generator/validator, dataset trên corpus thật chờ A complete |
-| Biểu diễn và khuyến nghị | Biểu diễn nội dung/facet, truy hồi ứng viên, suy ra sở thích và xếp hạng theo chế độ | Giai đoạn sau; chưa chọn model/embedding/dimension |
-| Đánh giá và sử dụng | Đọc nhãn đúng giao thức, so sánh kết quả, phân tích lỗi; giao diện khi có nhu cầu | Giai đoạn sau; chưa có kết quả hoặc UI |
-
-```mermaid
+~~~mermaid
 flowchart TD
-    RAW[CSFCube và SciFact raw] --> CORPUS[Corpus chính 4.210 bài]
-    CORPUS --> A[A: Qwen3 local trích năm facet có dẫn chứng]
-    A --> SILVER[Silver toàn corpus và manifest complete]
-    SILVER --> B[B: mock queries và relevance theo rule]
-    SILVER --> C[C: mock intents và satisfaction theo rule]
-    SILVER --> D[D: mock users và hành vi]
-    SILVER --> E[E: hành vi theo thời gian]
-    D -->|Danh sách users, không cần đợi hết events| E
-    SILVER --> REVIEW[Human review để tạo gold và đánh giá A]
-```
+    CORPUS[Corpus chính] --> A[A: trích 5 facet]
+    A --> B[B: kiểm tra biểu diễn và truy xuất]
+    A --> C[C: sinh user và suy profile từ hành vi/search]
+    C --> D[D: suy similar/different theo phiên]
+    C --> E[E: thích ứng theo thời gian]
+    A --> GOLD[Human gold để đánh giá A]
+~~~
 
-Facet A dựa trên bài thật; B–E sinh tình huống và hành vi mock, không mock facet.
-Không cần chờ human gold hoặc embedding model để bắt đầu xây B–E.
-
-### Luồng dữ liệu đang chạy được
-
-1. `download_sources.py` tải hoặc kiểm tra archive/tài liệu đã có; giải nén có
-   kiểm tra đường dẫn và lưu checksum từng tệp nguồn.
-2. `build_corpus.py` đọc catalog của hai nguồn, áp dụng scope và override có
-   reviewer; ghi quyết định của mọi bản ghi vào audit.
-3. Chuẩn hóa nội dung, tìm alias/trùng, bảo toàn ID và nguồn đại diện đã cấp;
-   ghi corpus, ID map, báo cáo và manifest.
-4. `validate_all.py --phase corpus` kiểm tra nguồn, hashes, schema và liên kết
-   trực tiếp trên corpus chính.
-
-### Luồng khuyến nghị dự kiến khi có mô hình
-
-| Chế độ | Thông tin người dùng đưa vào | Thành phần dữ liệu hỗ trợ | Kết quả mong muốn |
-|---|---|---|---|
-| Theo facet | Bài đang đọc + một facet muốn tìm tương tự | A và B | Danh sách bài liên quan theo facet đó |
-| Theo ý định | Bài đang đọc + yêu cầu/ràng buộc rõ ràng | A và C | Bài thỏa toàn bộ yêu cầu đã chỉ định |
-| Theo sở thích ngầm | Lịch sử tương tác được phép quan sát | A và D | Bài phù hợp với sở thích suy ra |
-| Theo sở thích hiện tại | Lịch sử có thời gian và cutoff rõ ràng | A và E | Bài phù hợp với mối quan tâm mới nhất |
-
-Dataset định nghĩa đầu vào và đáp án, không quyết định thay model. Khi triển khai
-mô hình, cần chốt candidate protocol, observable features và chỉ số trước khi chạy.
-Không cho mô hình đọc đáp án, latent truth hoặc tương tác tương lai để xếp hạng.
+B/C có thể chuẩn bị độc lập sau A; thứ tự tên và lệnh chạy chuẩn vẫn là A/B/C/D/E.
+D sử dụng cùng hàm suy profile và lịch sử C, không cần đọc file prediction C.
+Mô hình CPU hiện dùng TF-IDF/lexical concepts; chưa có semantic encoder hoặc UI.
 
 ## 3. Các thực nghiệm và quan hệ phụ thuộc
 
-| Thực nghiệm | Câu hỏi chính | Dữ liệu cần chuẩn bị |
+| Exp | Câu hỏi | Phụ thuộc |
 |---|---|---|
-| [A — Trích xuất facet](data/exp_a/README.md) | Có xác định đúng vấn đề, tác vụ, phương pháp, dataset và đóng góp của bài không? | Nhãn silver tự động và gold được người kiểm tra |
-| [B — Truy hồi theo facet](data/exp_b/README.md) | Từ một bài mẫu, có tìm được bài phù hợp theo một khía cạnh cụ thể không? | Query, tập ứng viên và nhãn mức liên quan |
-| [C — Ý định tường minh](data/exp_c/README.md) | Có đáp ứng yêu cầu kết hợp như cùng vấn đề nhưng khác phương pháp không? | Ý định, ràng buộc năm facet và nhãn thỏa/không thỏa |
-| [D — Sở thích ngầm](data/exp_d/README.md) | Có suy ra sở thích từ lịch sử tương tác thay vì yêu cầu người dùng khai báo không? | Người dùng giả lập, lịch sử, tương tác tương lai và sở thích ẩn |
-| [E — Sở thích theo thời gian](data/exp_e/README.md) | Có theo dõi được sở thích thay đổi qua nhiều giai đoạn không? | Cùng người dùng D, hồ sơ từng giai đoạn và luồng tương tác riêng |
+| [A](data/exp_a/README.md) | Trích đúng Problem/Task/Method/Dataset/Contribution? | Corpus, Qwen; gold riêng cho đánh giá |
+| [B](data/exp_b/README.md) | Whole-text hay năm facet có trọng số truy xuất tốt hơn? | Full silver A |
+| [C](data/exp_c/README.md) | Suy profile và facet importance từ đọc/search tốt đến đâu? | Full silver A; tự sinh users |
+| [D](data/exp_d/README.md) | Suy similar/different từ phần đầu phiên và sử dụng hướng có ích không? | Full silver A, users/history/search C |
+| [E](data/exp_e/README.md) | Static/recent/decay theo kịp sở thích thay đổi không? | Full silver A, users C; stream E riêng |
 
-Ví dụ xuyên suốt: người dùng đang đọc một bài về hệ thống khuyến nghị. A xác định
-bài nghiên cứu vấn đề gì và dùng phương pháp nào; B tìm các bài tương tự theo
-phương pháp; C tìm bài cùng vấn đề nhưng dùng phương pháp khác; D suy ra người dùng
-thường quan tâm chủ đề nào từ lịch sử; E xét việc mối quan tâm đó thay đổi theo thời
-gian. Đây là ví dụ giải thích mục tiêu, không phải kết quả mô hình đã chạy.
-
-**Quan hệ dữ liệu hiện tại:** A trích facet trên corpus chính; B/C/D dùng
-silver đó và không phụ thuộc output nhau. E cần danh sách users D và tạo
-stream riêng, không cần chờ D hoàn thành tương tác. Gold A phục vụ đánh giá
-chất lượng annotation, không phải prerequisite để phát triển B–E.
-
-### Đọc bảng này để xây dataset: đầu vào/đầu ra của generator
-
-**Nguyên liệu → generator → dataset → mô hình thực nghiệm.** Generator được dùng
-nguồn nhãn hoặc latent truth để xây đáp án; mô hình về sau chỉ được đọc phần input
-quan sát được. Ví dụ `retrieval_queries.jsonl`, `intents.jsonl`, `users.jsonl` và
-`interactions_train.jsonl` đều do generator tương ứng tạo, không tự có sẵn từ corpus.
-
-| Dataset | Nguyên liệu generator đọc | Generator tạo gì? | Phụ thuộc |
-|---|---|---|---|
-| A | Corpus + prompt/guideline + Qwen3 local | Silver, evidence metadata, manifest | Trọng số Qwen3 và môi trường GPU |
-| B | Corpus + silver A + sampling/relevance rule | Mock queries/candidates/labels/splits | A silver, rule và generator B |
-| C | Corpus + silver A + intent templates/rules | Mock intents/satisfaction/splits | A silver, templates và generator C |
-| D | Corpus + silver A + simulator config | Mock users/latent profiles/history/holdout | A silver và simulator D |
-| E | Users D + corpus + silver A + drift config | Temporal profiles và stream E riêng | A silver, users D và simulator E |
-
-B–E dùng năm facet; native CSFCube ba facet chỉ là benchmark bổ sung tùy chọn.
-Generator/validator B–E đã triển khai. Số annotation và output thực tế xem manifest; tests dùng fixture riêng.
-
-Các mục “đầu vào/đầu ra” A–E bên dưới giờ là **của generator**, còn cách mô hình
-đọc dataset được tách ở cuối mục kiểm tra. Folder `data` là nguyên liệu và output
-dataset; việc model sinh ranking/scores là phase khác.
+C mới là D cũ, D mới là C cũ; D hiện suy intent từ hành vi thay vì nhận sẵn constraints.
+Human gold A không chặn generator B–E, nhưng cần để chấm chất lượng extraction.
+Generator được dùng latent truth để mô phỏng; public scorer chỉ nhận observable prefix.
+D oracle được evaluator thêm riêng, đánh dấu đặc quyền.
 
 ## 4. Kế hoạch xây dataset và số lượng mục tiêu
 
-| Phần | Công việc chuẩn bị dataset | Số lượng mục tiêu |
-|---|---|---|
-| Corpus | Xây corpus IT chung; lọc phạm vi, gộp trùng, giữ ID/provenance; chốt schema và kiểm tra/tích hợp A–E | 6.000 bài, tối thiểu 3.000; hiện 4.210 bản ghi tạm thời |
-| A | 5 người cùng chạy trích facet theo khoảng riêng; guideline/prompt, nhãn tự động và review | Silver trên 4.210 bài hiện có, 842 bài/người; 400 bài gold là mục tiêu review riêng |
-| B | Xây dataset B: bài truy vấn, ứng viên và nhãn mức liên quan theo facet | 300 query × 100 candidates = khoảng 30.000 cặp |
-| C | Xây dataset C: yêu cầu tìm bài, ràng buộc và nhãn ứng viên có thỏa yêu cầu không | 1.500 cases × 20 candidates; quota 6 types × 200 + 2 types × 150 |
-| D/E | Xây dataset D: user giả lập, sở thích ẩn và hành vi; dataset E: cùng users qua nhiều giai đoạn | D: 300 users × 50 = 15.000 interactions. E: 300 users × 4 = 1.200 profiles, 15 events/user/period = 18.000 interactions |
-
-Đây là mục tiêu làm việc, không phải dữ liệu đã hoàn thành. D và E không cộng
-thành 600 users. Gold/silver là nhãn trên corpus, không phải corpus độc lập.
-Số pair/case/event không bằng số bài độc lập và không được dùng để che lấp việc
-corpus nhỏ hoặc nhãn thiếu chất lượng.
-
-### Mốc bàn giao trước mắt
-
-Corpus chính đã có; 5 người chia nhau chạy A silver, mỗi người 842 bài theo
-[bảng khoảng trong README A](data/exp_a/README.md). Gom đủ năm phần và kiểm tra
-coverage/dẫn chứng trước khi B/C/D dựng mock; D bàn giao users sớm cho E.
-Không cần chờ human gold hoặc đủ 6.000 bài.
-
-### Deliverables chung của từng thực nghiệm
-
-- README giải thích format/rules, generator **chạy được**, bộ mẫu nhỏ và dataset
-  đầy đủ khi các điều kiện đầu vào đã có.
-- Manifest ghi contract/input/generator versions, seed, checksums và số bản ghi.
-- Nhãn hoặc hidden truth tách đúng vai trò, có provenance; quy tắc split rõ ràng.
-- Kiểm tra cấu trúc, ngữ nghĩa, tái lập và leakage; báo case skip, gap target và
-  nhãn còn cần người review.
-
-Thay đổi contract, vocabulary chung, ID map và split policy cần review trước
-tích hợp. Mọi exp dùng cùng ID paper và corpus; chất lượng dataset cần kiểm tra,
-không chỉ tạo đủ số dòng. Nhãn gold cần người kiểm tra, không được
-thay bằng bộ sinh tự động để đủ 400 bài.
-
-## 5. Quy mô, pilot và điều kiện mở từng phần
-
-Chạy A silver trên toàn corpus trước; pilot B–E dùng ngay số lượng mục tiêu theo yêu cầu hiện tại.
-Gold A là mục tiêu review riêng, không chặn generator B–E khi silver đã có.
-
-| Phần | Mục tiêu làm việc | Điều kiện cần trước khi sinh dataset |
-|---|---|---|
-| Corpus | 6.000 bài; tối thiểu 3.000 | Review phạm vi IT, provenance, ID và trường hợp nghi trùng |
-| A | 400 bài gold; silver trên 4.210 bài, chia 5 phần × 842 bài | Guideline, từ vựng và quy trình review được chốt |
-| B | 300 query × 100 ứng viên | Nguồn nhãn và quy tắc facet/relevance được duyệt |
-| C | 1.500 trường hợp, khoảng 5–10 loại ý định | Facet đầu vào và ràng buộc từng loại ý định được chốt |
-| D | 300 người dùng × 50 tương tác | Quy tắc hồ sơ ẩn, tiếp xúc bài và nhiễu được công bố |
-| E | Cùng 300 người dùng × 4 giai đoạn; khoảng 15.000–20.000 tương tác | Danh tính D, khoảng thời gian, tỷ lệ ổn định/thay đổi và cutoff được chốt |
-
-Đây là mục tiêu workload từ tài liệu bàn giao, không phải số đã tạo và không phải
-bảo đảm nguồn nhãn thật đủ số lượng. Riêng D/E là hành vi mô phỏng nếu không có
-dữ liệu người dùng thật; phải ghi rõ giới hạn này trong mọi báo cáo.
-
-
-
-### Pilot theo số lượng mục tiêu
-
-Mỗi exp đọc corpus chính và silver A. Pilot chỉ giới hạn output query/case/user,
-không dựng catalog mẫu hoặc facet giả.
-
-| Phần | Mốc đầu tiên |
+| Phần | Mặc định |
 |---|---|
-| A | `--limit 2` nếu cần kiểm tra local model; chạy tiếp toàn corpus và validate coverage |
-| B | 300 query × 100 candidates; 60 query/facet |
-| C | 1.500 cases × 20 candidates; quota tám loại intent |
-| D | 300 users × 50 events; 30 history/20 future |
-| E | Cùng 300 users D × 4 periods × 15 events; 150 stable/150 drift |
+| Corpus | 4.210 papers hiện có; tối thiểu 3.000, mục tiêu làm việc 6.000 |
+| A | Full silver; 5 phần × 842; gold review mục tiêu 400 |
+| B | 300 query × 100 candidates = 30.000 pairs |
+| C | 300 users × 50 = 15.000 phản ứng; 9.000 history/6.000 holdout |
+| D | Users C × 5 sessions × 20 candidates = mục tiêu 1.500 sessions/30.000 pairs |
+| E | Users C × 4 periods × 15 = 18.000 phản ứng; 1.200 profiles, 900 rolling cases |
 
-B–E vẫn ghi mock/synthetic dù dùng silver thật. Khi đổi input facet/rule, sinh
-lại labels/splits/events và cập nhật hashes; thiếu ứng viên hợp lệ thì báo gap.
+Các số là mục tiêu config, không khẳng định output thực tế đã hoàn thành.
+C/D/E không cộng thành ba tập user độc lập. Query/exposure là records bổ sung, không cộng vào số phản ứng.
+E có bản sao periods 2/3 phục vụ rolling; chỉ có 18.000 phản ứng độc lập.
+B/D thiếu pool ghi shortfall; không nhân đôi bài, facet hay labels để đủ mục tiêu.
 
-## 6. Cấu trúc thư mục đầy đủ và vòng đời tệp
+## 5. Pilot và điều kiện mở từng phần
 
-```text
-configs/                 Cấu hình seed, đường dẫn và quy tắc lọc IT
-docs/                    Guideline, prompt, tài liệu phạm vi và báo cáo
-schemas/                 Schema các bản ghi đang dùng
-data/raw/csfcube/         Bản gốc CSFCube, nhãn, split và tài liệu nguồn
-data/raw/scifact/         Bản gốc SciFact, claims, split và tài liệu nguồn
-data/processed/          Corpus chung, ánh xạ ID, audit và manifest
-data/exp_a/ ... exp_e/    Generator, README và dữ liệu riêng của A–E
-scripts/exp_a/ ... exp_e/ Code chạy và đánh giá từng thực nghiệm
-scripts/                 Tiện ích corpus, I/O và kiểm tra dùng chung
-tests/                   Kiểm tra dữ liệu hợp lệ và các trường hợp lỗi
-```
+B–E cần full silver A đã qua validator; records fallback/lỗi bị loại.
+Pilot chỉ giảm số query/user/session/event, vẫn dùng corpus chính và facets A.
+Config pilot đặt output/truth dưới samples/; D/E trỏ users_path tới C pilot kèm manifest.
+Không ghi fixture/facet giả vào corpus thật.
 
-- `data/processed/papers.jsonl`: **corpus đầy đủ duy nhất**; dùng cho xử lý dữ liệu
-  thật. Các thực nghiệm cùng tham chiếu `paper_id`, không lập corpus/ID riêng.
-- `data/processed/id_map.jsonl`: ID nguồn → ID chung; giữ mọi nguồn gốc và nguồn
-  đại diện của từng bài. ID đã cấp không đổi khi thêm nguồn hoặc đổi thứ tự.
-- `data/processed/scope_audit.jsonl`: quyết định giữ/loại từng bản ghi và bằng chứng.
-- `data/exp_a/generated/facets_silver.jsonl`: vị trí dự kiến nhãn tự động.
-- `data/exp_a/generated/facets_gold.jsonl`: vị trí dự kiến nhãn đã được người review.
-- `samples/generated/` và `samples/ground_truth/`: vị trí tùy chọn nếu cấu hình
-  một bộ nhỏ. Mặc định pilot hiện dùng ngay quy mô mục tiêu ở `generated/`
-  và `ground_truth/`; B–E vẫn ghi `dataset_kind: mock`.
-- `generated/`: dữ liệu đầy đủ của exp; `ground_truth/`: nhãn/hồ sơ ẩn/tương lai
-  chỉ dành cho đánh giá. Không đưa chúng vào đầu vào dự đoán hoặc xây hồ sơ.
+Mọi dữ liệu B–E ghi mock và contract 2.0. Dataset 1.0 không được diễn giải lại bằng tên mới;
+giữ bộ cũ và chọn output_dir/truth_dir mới khi rebuild.
+Đọc [lệnh chạy](docs/RUN_EXPERIMENTS.md) và [giao thức](docs/EXPERIMENT_PROTOCOL.md).
 
-Silver/gold chỉ chứa nhãn và tham chiếu ID, không chép lại abstract. Một bài có thể
-có cả silver và gold để so sánh. Nội dung thật không làm nhãn giả trở thành gold.
+## 6. Cấu trúc thư mục và vòng đời tệp
 
+~~~text
+configs/exp_b.json ... exp_e.json   Rule, quotas, seed và đường dẫn
+data/processed/                    Corpus canonical và provenance
+data/exp_a/                        Qwen extraction, merge, gold review
+data/exp_b/                        Retrieval queries/labels
+data/exp_c/                        Users, history/search/exposure, latent profile
+data/exp_d/                        Sessions, prefix logs, hidden directions/labels
+data/exp_e/                        Temporal stream và rolling cases
+scripts/exp_a/                     Silver/gold evaluator
+scripts/exp_b/ ... exp_e/           Ranking và đánh giá
+scripts/baseline_common.py         Biểu diễn, profiles, direction, metrics
+scripts/experiment_runner.py       Prefix loading, evaluator, result artifacts
+results/exp_*/                     Predictions, reports và manifests
+tests/                            Fixtures riêng và corruption/regression checks
+~~~
 
-
-### Cây thư mục và các tệp quan trọng
-
-Các tệp đánh dấu `[dự kiến]` chưa được tạo; cây không phải khẳng định mọi dataset
-đã tồn tại. Các thư mục output hiện có có thể chỉ chứa `.gitkeep`.
-
-```text
-paper-and-conference-recommendation-experiments/
-├── README.md
-├── DATA_CONTRACT.md
-├── .gitignore
-├── configs/
-│   ├── data.json
-│   ├── scope.json
-│   ├── exp_b.json, exp_c.json, exp_d.json, exp_e.json
-│   └── intent_templates.json
-├── docs/
-│   ├── DATA_FIRST_REFERENCE.md
-│   ├── FACET_GUIDELINE.md
-│   ├── ANNOTATION_PROMPT.md
-│   ├── EXPERIMENT_README_TEMPLATE.md
-│   ├── IT_SCOPE.md
-│   ├── INGESTION_REPORT.md
-│   ├── IMPLEMENTATION_PLAN.md
-│   ├── VALIDATION_STATUS.md
-│   ├── RUN_EXPERIMENTS.md
-│   ├── EXPERIMENT_DATASETS_SPEC.md
-│   └── EXPERIMENT_DATASETS_PLAN.md
-├── schemas/
-│   ├── paper.schema.json
-│   ├── id_map.schema.json
-│   └── scope_audit.schema.json
-├── data/
-│   ├── raw/
-│   │   ├── README.md
-│   │   ├── csfcube/       Archive, abstract/metadata, nhãn, split, giấy phép gốc
-│   │   └── scifact/       Archive, corpus, claims, cross-validation, tài liệu gốc
-│   ├── processed/
-│   │   ├── README.md
-│   │   ├── papers.jsonl
-│   │   ├── id_map.jsonl
-│   │   ├── scope_audit.jsonl
-│   │   ├── corpus_report.json
-│   │   ├── native_split_policy.json
-│   │   └── manifest.json
-│   ├── build_experiments.py, experiment_common.py
-│   ├── exp_a/
-│   │   ├── README.md
-│   │   ├── build_exp_a.py
-│   │   ├── merge_exp_a.py, select_gold_review.py
-│   │   ├── config.json
-│   │   ├── .env.example
-│   │   ├── samples/       Pilot local dùng output chính; không mock facet
-│   │   ├── generated/    part_1 hiện có; full silver/metadata chờ gộp đủ 5 parts
-│   │   └── ground_truth/  gold_review: hàng đợi 400 bài, pending human review
-│   ├── exp_b/
-│   │   ├── README.md
-│   │   ├── build_exp_b.py
-│   │   ├── samples/
-│   │   ├── generated/    retrieval_queries.jsonl [dự kiến]
-│   │   └── ground_truth/  retrieval_labels.jsonl [dự kiến]
-│   ├── exp_c/
-│   │   ├── README.md
-│   │   ├── build_exp_c.py
-│   │   ├── samples/
-│   │   ├── generated/    intents.jsonl [dự kiến]
-│   │   └── ground_truth/  intent_labels.jsonl [dự kiến]
-│   ├── exp_d/
-│   │   ├── README.md
-│   │   ├── build_exp_d.py
-│   │   ├── samples/
-│   │   ├── generated/    users, interactions_train [dự kiến]
-│   │   └── ground_truth/  interactions_test, latent_user_profiles [dự kiến]
-│   └── exp_e/
-│       ├── README.md
-│       ├── build_exp_e.py
-│       ├── samples/
-│       ├── generated/    interactions_train [dự kiến]; users đọc từ D
-│       └── ground_truth/  interactions_test, temporal_profiles [dự kiến]
-├── scripts/
-│   ├── download_sources.py
-│   ├── build_corpus.py
-│   ├── validate_all.py
-│   ├── experiment_io.py, validate_experiments.py
-│   ├── exp_a/evaluate_exp_a.py
-│   └── exp_b/ ... exp_e/  Vị trí code chạy mô hình, chưa triển khai
-└── tests/
-    ├── test_data_validation.py, test_exp_a.py, test_exp_a_resume.py
-    ├── test_exp_a_handoff.py
-    └── test_experiment_datasets.py, test_experiment_pipeline.py, test_qwen_evaluation.py
-```
-
-`raw` là bản gốc bất biến; `processed` là corpus chuẩn hóa có thể rebuild bằng
-code và dùng trực tiếp cho tất cả exp. Mặc định output B–E nằm ở `generated/`
-và `ground_truth/` theo quy mô mục tiêu; `samples/` là vị trí tùy chọn qua config.
-Mock hay real do manifest xác định, không suy từ tên folder. Input và truth tách riêng.
-Việc tách thư mục phải đi kèm loader allowlist, không chỉ dựa vào tên folder.
-Generator từng exp nằm trong `data/exp_*`; điều phối và rule sinh dữ liệu dùng chung
-ở `data/build_experiments.py`, `data/experiment_common.py`. Code chạy/đánh giá
-thực nghiệm nằm trong `scripts/exp_*`; xem [quy ước scripts](scripts/README.md).
-Schema/rule A–E được kiểm tra trực tiếp trong Python validators. README từng exp
-mô tả code/config/output hiện có; các tệp dataset đánh dấu dự kiến vẫn chờ đầu vào đầy đủ.
+Generated/ chứa observable records; ground_truth/ chứa latent states và outcomes dùng để chấm.
+Runner không tự quét toàn bộ folder để chọn features.
+Code/facets/input thay đổi thì rebuild dataset để hashes khớp.
+Các checkpoint/parts A hiện có tiếp tục được giữ để resume/audit.
 
 ## 7. Contract, ID, provenance và định dạng dữ liệu
 
 [DATA_CONTRACT.md](DATA_CONTRACT.md) là nguồn quy ước chuẩn; các mô tả bên dưới
-tóm tắt contract 1.0. Thay đổi ý nghĩa field/schema phải có phiên bản và Khải review.
+tóm tắt corpus/A contract 1.0 và B–E/evaluation contract 2.0. Thay đổi ý nghĩa field/schema phải có phiên bản và Khải review.
 
 | Hạng mục | Quy ước |
 |---|---|
@@ -629,8 +422,7 @@ Seed/phiên bản được ghi để truy nguồn, không bảo đảm kết qu�
 
 Chạy tests, corpus gate và validator từng phần. Chỉ bộ đã gom đủ 4.210 IDs,
 metadata tương ứng và manifest toàn corpus hợp lệ với `status: complete` mới
-được bàn giao cho B–E. B/C/D sinh dataset mock song
-song trên facet A; E còn cần users D. Không cần chờ gold; đánh giá chất lượng
+được bàn giao cho B–E. B/C dùng facet A; C tạo users/history để D/E sử dụng theo thứ tự mới. Không cần chờ gold; đánh giá chất lượng
 A vẫn cần human-reviewed gold riêng, không tự chấm bằng chính silver. Prompt v1.5 dùng P000001 làm ví dụ phát triển prompt; bài này không được đưa vào held-out gold.
 
 Các tệp JSONL/manifest được xuất khi lượt chạy kết thúc hoặc dừng có xử lý;
@@ -669,81 +461,58 @@ không tự tạo `facets_gold.jsonl`. Nhãn silver nằm trong tệp tham chi�
 cho toàn corpus. Xem [hướng dẫn chạy](docs/RUN_EXPERIMENTS.md) để biết tệp,
 preview part_1 và quy trình review.
 
-## 10. Thực nghiệm B — Truy hồi bài báo theo một facet
+## 10. Thực nghiệm B — Truy xuất bằng biểu diễn năm facet
 
-**Quy mô mặc định:** 300 queries × 100 candidates = 30.000 cặp; 60 query/facet.
-Đã có generator `data/exp_b/build_exp_b.py`, config và validator.
-Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
+300 query × 100 candidates = 30.000 cặp; chia theo anchor 70/15/15.
 
-Concept sets bằng nhau → 2, giao nhau → 1, không giao → 0; thiếu facet đích thì loại.
-Mỗi query có positive/negative và không self/duplicate; chia theo anchor 70/15/15.
-Query/splits ở generated, labels/provenance ở ground_truth.
+So sánh: random, text_tfidf, equal_facets, weighted_facets.
 
-Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
-Chi tiết đầu vào, schema, rules và lệnh chạy:
-[README B](data/exp_b/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
+Chi tiết generator/schema: [README dữ liệu](data/exp_b/README.md).
+Lệnh và metrics: [README runner](scripts/exp_b/README.md).
+Giao thức chung: [EXPERIMENT_PROTOCOL](docs/EXPERIMENT_PROTOCOL.md).
 
-## 11. Thực nghiệm C — Khuyến nghị theo ý định tường minh
+## 11. Thực nghiệm C — Suy profile từ hành vi đọc và searching
 
-**Quy mô mặc định:** 1.500 cases × 20 candidates = 30.000 cặp; quota 6 types × 200 + 2 types × 150.
-Đã có generator `data/exp_c/build_exp_c.py`, config và validator.
-Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
+300 users × 50 phản ứng: 30 history/20 holdout mỗi user, tổng 15.000. C sở hữu users dùng chung cho D/E.
 
-Ràng buộc similar/different/ignore đủ năm facet, nối bằng AND; thiếu facet hoạt động thì loại.
-Có positive/negative, hard negative vi phạm đúng một constraint; chia theo nhóm anchor.
-Intents/splits ở generated, satisfaction labels/provenance ở ground_truth.
+So sánh: popularity, text_history (có search), facet_no_search, facet_history (có search).
 
-Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
-Chi tiết đầu vào, schema, rules và lệnh chạy:
-[README C](data/exp_c/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
+Chi tiết generator/schema: [README dữ liệu](data/exp_c/README.md).
+Lệnh và metrics: [README runner](scripts/exp_c/README.md).
+Giao thức chung: [EXPERIMENT_PROTOCOL](docs/EXPERIMENT_PROTOCOL.md).
 
-## 12. Thực nghiệm D — Suy ra sở thích ngầm từ hành vi người dùng
+## 12. Thực nghiệm D — Suy similar/different theo phiên
 
-**Quy mô mặc định:** 300 users × 50 events = 15.000; mỗi người 30 history/20 future.
-Đã có generator `data/exp_d/build_exp_d.py`, config và validator.
-Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
+300 users C × 5 phiên × 20 candidates, mục tiêu 1.500 phiên/30.000 labels; tối đa 4 cặp quan sát/phiên.
 
-Profile sinh trước events từ concepts A, weights thích/tránh, exposure mixture và nhiễu có version.
-Users chỉ có ID; history ở generated, latent profiles và future ở ground_truth.
-Timestamps UTC tăng nghiêm ngặt; behavior report chỉ thống kê history.
+So sánh: fixed_similar, profile_similar, direction_behavior, direction_search; oracle_intent được evaluator thêm riêng.
 
-Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
-Chi tiết đầu vào, schema, rules và lệnh chạy:
-[README D](data/exp_d/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
+Chi tiết generator/schema: [README dữ liệu](data/exp_d/README.md).
+Lệnh và metrics: [README runner](scripts/exp_d/README.md).
+Giao thức chung: [EXPERIMENT_PROTOCOL](docs/EXPERIMENT_PROTOCOL.md).
 
-## 13. Thực nghiệm E — Theo dõi sở thích thay đổi theo thời gian
+## 13. Thực nghiệm E — Thích ứng sở thích theo thời gian
 
-**Quy mô mặc định:** Cùng 300 users D × 4 periods × 15 events = 18.000; 1.200 profiles.
-Đã có generator `data/exp_e/build_exp_e.py`, config và validator.
-Dataset trên corpus thật chờ gộp A complete; tests dùng fixtures riêng.
+Cùng users C, stream riêng: 4 periods × 15 phản ứng/user = 18.000; 1.200 profiles và 900 cases rolling periods 2/3/4.
 
-150 stable/150 drift; hệ số [0,0.5,1,1], bốn periods tháng 1–4/2026 (UTC).
-Periods 1–3 history, period 4 holdout; E không đọc D future hoặc latent profiles.
-Groups/temporal profiles/future ở ground_truth; behavior report chỉ đếm history.
+So sánh: popularity, static, recent, decay (half-life mặc định 30 ngày).
 
-Mô hình đọc input quan sát được để xếp hạng; evaluator đọc truth riêng.
-Chi tiết đầu vào, schema, rules và lệnh chạy:
-[README E](data/exp_e/README.md), [hướng dẫn chung](docs/RUN_EXPERIMENTS.md).
+Chi tiết generator/schema: [README dữ liệu](data/exp_e/README.md).
+Lệnh và metrics: [README runner](scripts/exp_e/README.md).
+Giao thức chung: [EXPERIMENT_PROTOCOL](docs/EXPERIMENT_PROTOCOL.md).
 
 ## 14. Split và chống rò rỉ dữ liệu
 
-Split xác định dữ liệu được dùng để xây/chỉnh phương pháp và dữ liệu giữ lại để
-đánh giá cuối. Nhãn là đáp án kiểm tra; observable input là phần mô hình được biết.
+B chia nhóm anchor 70/15/15; catalog TF-IDF có thể được fit không nhãn theo protocol.
+C dùng lịch sử trước holdout. D dùng C history và prefix phiên trước cutoff.
+E đánh giá ở đầu periods 2/3/4, chỉ sử dụng periods trước đó.
 
-| Phần | Quy tắc cần tuân thủ |
-|---|---|
-| Corpus | Giữ split nguồn; chưa tự gán split chung từ query/claim splits |
-| A | Gold held-out không dùng chỉnh prompt/guideline dựa trên đáp án test |
-| B/C | Split custom nhóm theo bài query; candidate catalog được chia sẻ khi protocol cho phép |
-| D | Mỗi user có past history và future holdout, đề xuất 30/20 events |
-| E | Đề xuất periods 1–3 history, 4 holdout; cutoff độc lập D |
-
-Các ràng buộc bắt buộc: latest train event trước earliest test event theo user;
-timestamp bằng nhau phải ở cùng phía; không đọc relevance/satisfaction/latent
-weights/future events để xây input hoặc profile. Không coi unjudged là negative,
-không coi unobserved là dislike. Label provenance và source-native protocol phải
-được giữ để giải thích phép đánh giá. Nếu muốn đánh giá unseen-paper, cần protocol
-riêng; không tự áp ràng buộc candidate corpus disjoint lên mọi bài toán.
+Runner lọc interactions, searches và exposures theo timestamp < cutoff **trước khi gọi scorer**.
+File E interactions_train chứa periods 1–3 để dùng cho các mốc khác nhau; không được đọc hết cho mốc period 2.
+Query parent cùng user/session và sớm hơn query con; phản ứng phải thuộc exposure đã ghi.
+D tách papers của cặp quan sát khỏi pool cuối phiên.
+Labels và latent profiles/intent không thuộc observable inputs; oracle là đối chứng evaluator-owned riêng.
+Không coi unobserved/unjudged là dislike/negative. Gold A held-out không dùng tuning prompt.
 
 ## 15. Cách chạy các chức năng đã triển khai
 
@@ -783,13 +552,22 @@ python scripts/validate_all.py --dataset-kind mock --phase experiments
 
 Gate real/corpus kiểm tra corpus; real/experiments kiểm tra A complete;
 mock/experiments kiểm tra B–E, có `--experiment b/c/d/e` để chọn riêng.
-Các runner có `--dry-run`, `--validate-only` và `--config`.
+Các generator có `--dry-run`, `--validate-only` và `--config`; runner có `--dry-run`, `--config`, `--output`, `--overwrite`.
 B–E yêu cầu A complete; không suy từ corpus pass rằng mọi exp đã hoàn thành.
+Chạy các phương pháp sau khi dataset đã qua gate:
+
+~~~powershell
+python scripts/exp_b/run_exp_b.py
+python scripts/exp_c/run_exp_c.py
+python scripts/exp_d/run_exp_d.py
+python scripts/exp_e/run_exp_e.py
+~~~
+
 Chi tiết và lựa chọn partial/shortfall: [RUN_EXPERIMENTS](docs/RUN_EXPERIMENTS.md).
 
 ## 16. Cấu hình, scope review và quy trình rebuild
 
-`configs/data.json` hiện khai báo contract 1.0, seed 42,
+Corpus/A giữ contract 1.0; B–E/evaluation dùng 2.0. `configs/data.json` khai báo corpus contract 1.0, seed 42,
 `data/processed/papers.jsonl`, `data/processed/id_map.jsonl`, đường dẫn scope policy
 và dataset_kind real. Đây là cấu hình dữ liệu, không có tham số embedding/model.
 
@@ -831,8 +609,8 @@ Codex không được tính là gold facet do con người gán nhãn.
 
 Giữ nhãn và split gốc để không mất đáp án/quy trình đánh giá. Split query/claim
 của nguồn không phải cách chia train/dev/test chung cho tất cả bài trong corpus.
-Chưa chia lại corpus ở bước ingestion. Khi xây B/C, chia theo nhóm bài truy vấn để
-tránh cùng anchor xuất hiện ở nhiều tập. D/E chia theo thời gian từng người dùng;
+Chưa chia lại corpus ở bước ingestion. Khi xây B, chia theo nhóm bài truy vấn để
+tránh cùng anchor xuất hiện ở nhiều tập. C/D/E chia theo cutoff thời gian;
 không để nhãn hay dữ liệu tương lai lọt vào đầu vào mô hình.
 
 Contract, corpus và quy ước chung cần review trước tích hợp. Mỗi thực nghiệm
@@ -880,16 +658,16 @@ chưa đạt data-first release đầy đủ.
 
 ## 19. Lộ trình dữ liệu và triển khai mô hình
 
-1. Chạy A bằng Qwen3 local trên toàn corpus, kiểm tra dẫn chứng/coverage và bàn giao silver.
-2. B/C/D xây dataset mock song song; D bàn giao danh sách users để E xây stream riêng.
-3. Pilot theo số lượng mục tiêu, kiểm tra refs/schema/rules/split/leakage và gap.
-4. Review chất lượng silver và corpus/scope/xung đột tiêu đề; tạo human gold độc lập.
-5. Chốt protocol/metrics, triển khai và đánh giá mô hình. Mock kiểm tra giả thuyết
-   mô phỏng, không phải bằng chứng hành vi người thật.
+1. Hoàn thiện/gộp full silver A, review chất lượng và tạo gold độc lập.
+2. Sinh B retrieval và C users/history/searching.
+3. Sinh D sessions từ users/history C; sinh E temporal stream từ users C.
+4. Validate schema, labels, exposure/query links, prefixes, quotas và hashes.
+5. Chạy B/C/D/E, so baseline và ablation trên cùng cases/candidates.
+6. Bổ sung expert/user evaluation và literature comparison trước khi kết luận hiệu quả thực tế/tính mới.
 
-Khuyến nghị hội nghị chưa có catalog/nhãn độc lập. Native CSFCube là benchmark
-tùy chọn, không thay B năm facet. Tài liệu bàn giao cũ ở docs/DATA_FIRST_REFERENCE.md;
-yêu cầu hiện tại thay kế hoạch mock facet bằng trích facet A bằng Qwen3 local trước.
+Code CPU/generator/evaluator mới đã có. Mock kiểm tra các điều kiện mô phỏng;
+lexical query parser chưa thay parser ngữ nghĩa cho log tự nhiên.
+Conference/venue C4 cần dataset và đánh giá riêng.
 
 ## 20. Phần khuyến nghị hội nghị và các quyết định chưa chốt
 
