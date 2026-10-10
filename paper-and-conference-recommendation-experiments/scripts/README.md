@@ -1,20 +1,22 @@
-# Code chạy và đánh giá thực nghiệm
+# Script thực nghiệm A–E
 
-Thứ tự mới: **A facet → B retrieval → C profile → D session direction → E temporal**.
-Generator ở data/exp_*; runner/evaluator ở scripts/exp_*; CPU B–E chỉ cần stdlib.
+Thư mục này chứa runner và evaluator. Mỗi README bên dưới giải thích chi tiết đầu vào, scorer, ground truth, chỉ số, lệnh chạy, output và cách bổ sung phương pháp cho đúng thực nghiệm.
 
-| Exp | Runner | Nội dung |
+| Exp | Nội dung chi tiết | Chuẩn bị dữ liệu |
 |---|---|---|
-| A | [README A](exp_a/README.md) | Qwen silver so với human gold |
-| B | [README B](exp_b/README.md) | Whole-text / equal-facet / fixed-weight facet |
-| C | [README C](exp_c/README.md) | Suy profile từ hành vi + searching; search ablation |
-| D | [README D](exp_d/README.md) | Suy similar/different từ query + matched reactions; oracle riêng |
-| E | [README E](exp_e/README.md) | Static/recent/decay, rolling periods 2/3/4 |
+| A | [Đánh giá extraction Qwen](exp_a/README.md) | [Dữ liệu A](../data/exp_a/README.md) |
+| B | [Retrieval theo bài mốc](exp_b/README.md) | [Dữ liệu B](../data/exp_b/README.md) |
+| C | [Suy profile từ hành vi và tìm kiếm](exp_c/README.md) | [Dữ liệu C](../data/exp_c/README.md) |
+| D | [Suy hướng tương tự/khác biệt trong phiên](exp_d/README.md) | [Dữ liệu D](../data/exp_d/README.md) |
+| E | [Cập nhật profile theo thời gian](exp_e/README.md) | [Dữ liệu E](../data/exp_e/README.md) |
 
-baseline_common.py chứa biểu diễn, query parsing, profile/direction và metrics.
-experiment_runner.py kiểm tra dataset, lọc mọi log theo cutoff, gọi scorer và xuất results/exp_*.
-Mọi public scorer nhận observable prefixes. D oracle được evaluator thêm riêng và đánh dấu đặc quyền.
-Contract/generator/evaluation B–E là 2.0; dữ liệu 1.0 cần rebuild ở output phù hợp.
+## Tài liệu dùng chung
 
-Xem [protocol](../docs/EXPERIMENT_PROTOCOL.md), [lệnh chạy](../docs/RUN_EXPERIMENTS.md)
-và [đánh giá A](../docs/EVALUATE_QWEN.md). Chưa có benchmark người dùng thật.
+- [Giao diện scorer, evaluator và output B–E](BASELINE_GUIDE.md).
+- [Lệnh chạy nhanh A–E](../docs/RUN_EXPERIMENTS.md).
+- [Protocol và định nghĩa thực nghiệm](../docs/EXPERIMENT_PROTOCOL.md).
+- [Kế hoạch bổ sung model cho từng exp](../docs/EXPERIMENT_PLAN_FINAL.md).
+- [Chỉ mục dữ liệu và phụ thuộc](../data/README.md).
+- [Tổng quan dự án](../README.md).
+
+`baseline_common.py` chứa cách biểu diễn/chấm điểm dùng chung; `experiment_runner.py` điều phối dữ liệu và output; `evaluate_experiments.py` đọc đáp án để đánh giá. Hướng dẫn phát triển nằm trong tài liệu dùng chung và README của exp tương ứng.

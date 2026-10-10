@@ -101,18 +101,44 @@ class RankingChecks(unittest.TestCase):
         directions,_ = baseline.direction_estimate(case,events,[],shown,fs)
         self.assertEqual(directions['method'],'unknown')
 
-    def test_missing_method_is_not_rewarded_as_different_and_unknown_uses_context(self):
-        fs = dict(q=dict(problem={'p'},task=set(),method={'old'},dataset=set(),contribution=set()),
-                  p=dict(problem={'p'},task=set(),method=set(),dataset=set(),contribution=set()))
-        case = dict(query_paper_id='q',candidate_ids=['p'])
+    def test_missing_method_is_not_rewarded_and_unknown_falls_back_to_similar(self):
+        fs = dict(q=dict(problem={'graphs'},task=set(),method={'old'},dataset=set(),contribution=set()),
+                  p=dict(problem={'graphs'},task=set(),method=set(),dataset=set(),contribution=set()))
+        fs['same'] = {f:set(values) for f,values in fs['q'].items()}
+        case = dict(query_paper_id='q',candidate_ids=['p','same'])
         weights = dict.fromkeys(baseline.FACETS,0.0)
         weights.update(problem=.5,method=.5)
         self.assertEqual(baseline.intent_scores(case,weights,dict(method='different'),baseline.facet_vectors(fs))['p'],-1)
         fs['p']['method'] = {'new'}
         vectors = baseline.facet_vectors(fs)
-        unknown = baseline.intent_scores(case,weights,dict(method='unknown'),vectors)
+        self.assertTrue(vectors['q','problem'])
+        directions = dict(method='unknown')
+        unknown = baseline.intent_scores(case,weights,directions,vectors)
         similar = baseline.intent_scores(case,weights,dict(method='similar'),vectors)
+        different = baseline.intent_scores(case,weights,dict(method='different'),vectors)
+        self.assertAlmostEqual(unknown['same'],1)
+        self.assertAlmostEqual(unknown['p'],.5)
+        self.assertAlmostEqual(different['same'],.5)
+        self.assertAlmostEqual(different['p'],1)
         self.assertEqual(unknown,similar)
+        self.assertEqual(directions,dict(method='unknown'))
+
+    def test_intent_relevance_gate_uses_each_context_facet(self):
+        for context in baseline.FACETS:
+            with self.subTest(context=context):
+                fs = dict(q={f:{f'anchor_{f}'} for f in baseline.FACETS},
+                          p={f:{f'candidate_{f}'} for f in baseline.FACETS})
+                fs['q'][context] = fs['p'][context] = {'shared_context'}
+                case = dict(query_paper_id='q',candidate_ids=['p'],context_facet=context)
+                weights = dict.fromkeys(baseline.FACETS,0.0)
+                weights[context] = 1
+                directions = {context:'similar'}
+                scores = baseline.intent_scores(case,weights,directions,baseline.facet_vectors(fs))
+                self.assertAlmostEqual(scores['p'],1)
+                fs['p'] = {f:set(values) for f,values in fs['q'].items()}
+                fs['p'][context] = {'other_context'}
+                scores = baseline.intent_scores(case,weights,directions,baseline.facet_vectors(fs))
+                self.assertEqual(scores['p'],-1)
 
     def test_importance_mae_and_pooled_direction_f1(self):
         case = dict(case_id='D1',candidate_ids=['a','b'])

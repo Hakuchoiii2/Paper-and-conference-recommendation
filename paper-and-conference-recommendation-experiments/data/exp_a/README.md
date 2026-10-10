@@ -1,5 +1,7 @@
 # Thực nghiệm A — Trích năm facet bằng Qwen3 local
 
+[Chỉ mục dữ liệu](../README.md) · [Scorer/evaluator A](../../scripts/exp_a/README.md) · [Pilot](samples/README.md)
+
 Cả nhóm 5 người cùng chạy trích facet trên 4.210 title/abstract, chia thành
 5 phần không trùng nhau, mỗi người 842 bài. Chạy Qwen3 trên máy, không dùng
 API key. Corpus thật và schema năm facet vẫn dùng chung B–E.
@@ -10,14 +12,28 @@ Trích problem, task, method, dataset, contribution từ title/abstract thật.
 Output tự động là silver, cần review chất lượng; không tự tạo human gold.
 Không thay năm facet bằng ba nhãn câu gốc CSFCube hoặc facet mock.
 
+### Luồng generator từ một bài tới output
+
+1. Kiểm tra corpus/config/prompt/guideline và checkpoint của phần được chọn.
+2. Chỉ lấy paper_id còn thiếu trong khoảng, đọc title và abstract.
+3. Đánh số câu title T0, abstract A0/A1/...; gửi cho Qwen để chọn concept/evidence_id của năm facet.
+4. Parse JSON, kiểm tra bám nguồn/schema và retry trong ngân sách tối đa ba lần sinh.
+5. Lưu annotation hợp lệ hoặc best fallback cùng raw audit vào checkpoint; lỗi GPU/runtime dừng.
+6. Xuất silver, metadata/evidence và manifest khi hoàn tất hoặc dừng có xử lý.
+7. Gộp năm parts, chọn form review; evaluator so với gold sau khi người review hoàn tất.
+
+Qwen suy luận bằng trọng số pretrained, không fine-tune trong bước này. Metadata evidence
+đã có cùng silver; không cần chạy lại toàn bộ chỉ để bổ sung evidence. B–E hiện dùng
+concept sets đã lọc cờ chất lượng, chưa dùng câu evidence làm input ranking.
+
 ## 2. Đầu vào
 
 | Input | Đường dẫn/giá trị |
 |---|---|
 | Corpus | `data/processed/papers.jsonl`, toàn bộ 4.210 bài |
 | Config | `data/exp_a/config.json` |
-| Khoảng bài | `paper_range: [bài_đầu, bài_cuối]`, mặc định `[1, 842]` |
-| Thư mục kết quả | `output_dir`, mặc định `data/exp_a/generated/part_1` |
+| Khoảng bài | `paper_range: [bài_đầu, bài_cuối]`; chọn theo phần được giao |
+| Thư mục kết quả | `output_dir`; mỗi phần dùng thư mục riêng |
 | Model | `Qwen/Qwen3-4B-Instruct-2507`, revision cố định trong config |
 | Thiết bị | `cuda`; đã kiểm tra máy có RTX 4060 Laptop 8 GB |
 | Prompt/guideline | `docs/ANNOTATION_PROMPT.md`, `docs/FACET_GUIDELINE.md` |
@@ -31,13 +47,13 @@ không gửi tới dịch vụ annotation. Bản Instruct này không có thinki
 Số thứ tự bắt đầu từ **1**, sau khi sắp corpus tăng dần theo `paper_id`;
 **lấy cả bài đầu và bài cuối**. Giữ nguyên corpus, không cắt thành năm tệp.
 
-| Phần chạy | `paper_range` | Paper IDs | Số bài | `output_dir` |
-|---|---|---|---|---|
-| Phần 1 | `[1, 842]` | `P000001`–`P000842` | 842 | `data/exp_a/generated/part_1` | Khải
-| Phần 2 | `[843, 1684]` | `P000843`–`P001684` | 842 | `data/exp_a/generated/part_2` | Quỳnh
-| Phần 3 | `[1685, 2526]` | `P001685`–`P002526` | 842 | `data/exp_a/generated/part_3` | Kiên
-| Phần 4 | `[2527, 3368]` | `P002527`–`P003368` | 842 | `data/exp_a/generated/part_4` | Phi
-| Phần 5 | `[3369, 4210]` | `P003369`–`P004210` | 842 | `data/exp_a/generated/part_5` | Phú
+| Phần chạy | `paper_range` | Paper IDs | Số bài | `output_dir` | Thành viên |
+|---|---|---|---|---|---|
+| Phần 1 | `[1, 842]` | `P000001`–`P000842` | 842 | `data/exp_a/generated/part_1` | Khải |
+| Phần 2 | `[843, 1684]` | `P000843`–`P001684` | 842 | `data/exp_a/generated/part_2` | Quỳnh |
+| Phần 3 | `[1685, 2526]` | `P001685`–`P002526` | 842 | `data/exp_a/generated/part_3` | Kiên |
+| Phần 4 | `[2527, 3368]` | `P002527`–`P003368` | 842 | `data/exp_a/generated/part_4` | Phi |
+| Phần 5 | `[3369, 4210]` | `P003369`–`P004210` | 842 | `data/exp_a/generated/part_5` | Phú |
 
 Mỗi người chọn một phần và sửa **hai giá trị** `paper_range`, `output_dir`
 trong config trên máy mình. Ví dụ phần 2 (chỉ trích hai trường cần sửa):
@@ -152,8 +168,8 @@ python build_exp_a.py --validate-only --allow-partial
 Không cần `.env`. `--dry-run` hiển thị khoảng, IDs, số bài được chọn và thư mục
 kết quả để kiểm tra trước khi chạy. Mặc định chỉ xử lý bài còn thiếu **trong
 `paper_range`**; `--limit` là số bài mới tối đa trong khoảng đó, không thay đổi
-ranh giới phần chạy. Config hiện chọn phần 1; đổi khoảng/thư mục trước khi chạy
-phần khác. Chạy lại cùng config sẽ tiếp tục checkpoint của phần đó.
+ranh giới phần chạy. Đọc config và dry-run để biết phần đang chọn; đổi khoảng/thư mục
+theo phần được giao trước khi chạy. Chạy lại cùng config sẽ tiếp tục checkpoint của phần đó.
 
 Khi bắt đầu, code hiển thị số bài đã lưu, còn thiếu và cần rà lại **trong khoảng
 được chọn**. Dò theo `paper_id` nên bài thiếu ở giữa vẫn được xử lý; bài đã lưu
@@ -245,4 +261,5 @@ có thể nhầm facet ở từng bài. Output tại `data/exp_a/evaluation/gold
 Đây là so khớp concept sau chuẩn hóa Unicode/hoa thường/khoảng trắng, giữ dấu câu;
 nhãn cùng nghĩa khác cách viết vẫn cần người đối chiếu. 400 bài ưu tiên đầy đủ
 không tự đại diện toàn corpus. Điểm chọn lượt sinh 0–100 của A không phải accuracy.
-Xem [quy trình và cách đọc kết quả](../../docs/EVALUATE_QWEN.md).
+Xem [evaluator từng bước và ví dụ TP/FP/FN](../../scripts/exp_a/README.md),
+[quy trình review và cách đọc kết quả](../../docs/EVALUATE_QWEN.md).

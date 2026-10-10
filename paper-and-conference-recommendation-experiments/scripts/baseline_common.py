@@ -276,7 +276,7 @@ def intent_scores(case, weights, directions, vectors):
         if not vectors[anchor,context] or not vectors[pid,context]:
             scores[pid] = -1.0
             continue
-        relevance = dot(vectors[anchor,'problem'],vectors[pid,'problem'])
+        relevance = dot(vectors[anchor,context],vectors[pid,context])
         if relevance <= 0:
             scores[pid] = -1.0
             continue
@@ -292,7 +292,7 @@ def intent_scores(case, weights, directions, vectors):
                 missing = True
                 break
             similarity = max(0,min(1,dot(vectors[anchor,f],vectors[pid,f])))
-            numerator += weights[f] * (similarity if direction == 'similar' else 1-similarity)
+            numerator += weights[f] * (1-similarity if direction == 'different' else similarity)
             denominator += weights[f]
         scores[pid] = -1.0 if missing else numerator/denominator if denominator else relevance
     return scores
