@@ -1,0 +1,78 @@
+{
+  "config": {
+    "concepts_per_facet": 2,
+    "corpus_path": "data/processed/papers.jsonl",
+    "dataset_kind": "mock",
+    "event_step_seconds": 86400,
+    "events_per_user": 50,
+    "exposure_size": 4,
+    "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+    "history_events_per_user": 30,
+    "interaction_thresholds": [
+      -0.25,
+      0.05,
+      0.2,
+      0.4
+    ],
+    "negative_weight_range": [
+      -1,
+      -0.5
+    ],
+    "noise_std": 0.15,
+    "num_users": 300,
+    "output_dir": "data/exp_c/generated",
+    "positive_weight_range": [
+      0.5,
+      1
+    ],
+    "rule_version": "profile_search_v2",
+    "search_fraction": 0.6,
+    "seed": 42,
+    "start_timestamp": "2026-01-01T00:00:00Z",
+    "targeted_exposure_fraction": 0.8,
+    "truth_dir": "data/exp_c/ground_truth"
+  },
+  "contract_version": "2.0",
+  "counts": {
+    "cases.jsonl": 300,
+    "exposures.jsonl": 9000,
+    "exposures_test.jsonl": 6000,
+    "interactions_test.jsonl": 6000,
+    "interactions_train.jsonl": 9000,
+    "latent_user_profiles.jsonl": 300,
+    "search_events.jsonl": 5373,
+    "search_events_test.jsonl": 3578,
+    "users.jsonl": 300
+  },
+  "dataset_kind": "mock",
+  "experiment": "c",
+  "files": {
+    "data/exp_c/generated/cases.jsonl": "aca329a5604a38ace90fb424e637542e7a15627c597230fe46fffb804adc0a06",
+    "data/exp_c/generated/exposures.jsonl": "dc464ea7d188f62259e9c0561e8a1aa69a0a571ee0e354311b6cfe2603df16bb",
+    "data/exp_c/generated/generation_report.json": "f15026ae5f5d3ae69cef82163362f6927e5f9e1ea7aa2f191989dd98060471dd",
+    "data/exp_c/generated/interactions_train.jsonl": "1b14e4e1b7662b7b4f0cb00acfe4f0f038d59828700db31b2e631e6f34f2b44f",
+    "data/exp_c/generated/search_events.jsonl": "9d7807f3487dffd2d6ea3cd6a84fa17ee3eb7a44247c200b0e9f0d4cf603ef9d",
+    "data/exp_c/generated/users.jsonl": "0779897d6b535f3b2ed796c8fba38f6010a553547fb093ea85bfb65dbc41a22c",
+    "data/exp_c/ground_truth/exposures_test.jsonl": "b100d03d6d71f3e5b2cdae19996f8ef97ea67f2a851293d4af043cae5ac3d121",
+    "data/exp_c/ground_truth/interactions_test.jsonl": "2940a8cf705556cd3b303621f98144931c89361c32480a8061952e2b1ceb523e",
+    "data/exp_c/ground_truth/latent_user_profiles.jsonl": "402068a91337c9d2d5dead57e01d50a9c99b92eb0e91a87ea4f65158a7d0baf4",
+    "data/exp_c/ground_truth/search_events_test.jsonl": "59525350e35e329d8a1713ee0dbfda9f3f237792a68c23dc903a3b6ca4ac908e"
+  },
+  "generator_hashes": {
+    "data/build_experiments.py": "73fb07bf0fbbf94bfcf6a44d519a86331b0e5496bf258a4d263107a52b0ee4c0",
+    "data/exp_c/build_exp_c.py": "44122f8a7b46e10690e12704b69584edc555bbc630e81d0885ba88a015f8bf32",
+    "data/experiment_common.py": "8bb819409e04e9cb1903cf3fbc938a5043c1a137ef258324f7ca5173c713d47a",
+    "scripts/build_corpus.py": "bd318f6ee8912dd128264e4570dc83635b8934f01ba42bcd243f3c59e73438c8",
+    "scripts/experiment_io.py": "3dcc53d093ecbfd9cfe72e01e661b798d9fe74281aae2f27e7cc59b1e515e999"
+  },
+  "generator_version": "2.0",
+  "input_hashes": {
+    "configs/exp_c.json": "336e82952c93141a230ad8937d2869c60d4898b7e8bcfd4921f1b6260ced6e30",
+    "data/exp_a/generated/annotation_metadata.jsonl": "f0acf7139661873d465892d02550aff4c9ec8dd804735fbe0f830b6a7149de4b",
+    "data/exp_a/generated/facets_silver.jsonl": "f46b7812d2e9392dfe71da43fb377ed95dc6693429e0df89ffc8ebc8f1c7260e",
+    "data/exp_a/generated/manifest.json": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",
+    "data/processed/papers.jsonl": "2f78a063076fc2fcc418ebeaac2c3795a44f677eac6c5adf91b8ffad5d98ae6a"
+  },
+  "seed": 42,
+  "status": "complete"
+}

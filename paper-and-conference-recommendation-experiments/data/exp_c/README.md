@@ -1,200 +1,94 @@
-# Thực nghiệm C — Khuyến nghị theo ý định tường minh
+# Dữ liệu C — Users, profile ẩn và lịch sử tìm kiếm
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+[Chỉ mục dữ liệu](../README.md) · [Scorer C](../../scripts/exp_c/README.md) · [Protocol](../../docs/EXPERIMENT_PROTOCOL.md)
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+## 1. Generator tạo gì?
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
+C tạo users, latent profiles, query/exposure/phản ứng, rồi tách lịch sử và holdout. C sở hữu danh tính users dùng chung cho D/E.
 
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+Mục tiêu 300 users × 50 phản ứng: 30 history + 20 holdout/user. Profile thật được **sinh trước hành vi**, không suy đáp án bằng chính baseline C.
 
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
+## 2. Nguyên liệu và config
 
-## 1. Mục đích của dataset
+Corpus canonical + full silver A/metadata/complete manifest. Loại bài fallback/còn validation errors; không đổi title/abstract hoặc sinh concept giả.
 
-C xét yêu cầu người dùng nói rõ, có thể kết hợp **nhiều facet và nhiều hướng**.
-Khác với B chỉ hỏi một facet, C có thể yêu cầu “cùng vấn đề nhưng dùng phương pháp
-khác”, hoặc “cùng phương pháp nhưng khác vấn đề”. Mục tiêu dữ liệu là xác định
-ứng viên có thỏa toàn bộ ràng buộc không.
+Config `configs/exp_c.json`: seed 42, concepts_per_facet 2, targeted_exposure_fraction .8, search_fraction .6, exposure_size 4, noise_std .15. B/C độc lập sau A; C không cần output B hoặc human gold A.
 
-Ví dụ cùng vấn đề nhưng khác phương pháp: ứng viên chỉ giống vấn đề mà vẫn dùng
-phương pháp cũ là một hard negative hữu ích. Chỉ tên intent không đủ định nghĩa
-đáp án; phải có constraints và quy tắc so sánh được công bố.
+## 3. Sinh profile ẩn của một user
 
-## 2. Đầu vào của generator xây dataset
+1. Chọn hai bài thật có evidence làm nguồn concept.
+2. Mỗi facet lấy concept thích từ bài thứ nhất; lấy concept tránh từ bài thứ hai, loại trùng concept thích.
+3. Với config hai concepts/facet, lấy tối đa một liked và phần còn lại avoided; nếu nguồn thiếu thì giữ số thực tế.
+4. Preference liked lấy trong [.5,1], avoided trong [−1,−.5].
+5. Với facet có preference, lấy raw importance ngẫu nhiên [.05,1], facet không có preference nhận 0.
+6. Normalize importance để tổng năm weights bằng 1; lưu vào latent_user_profiles.
 
-Generator C nhận **catalog/facets và templates**, rồi tự tạo các yêu cầu/đáp án.
-`intents.jsonl` chưa có sẵn: đó là một trong các output phải sinh.
+Ví dụ chỉ minh họa: method thích GNN .9, tránh SVM −.7; method importance .4. Những giá trị này thuộc truth, scorer không nhìn thấy.
 
-| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
-|---|---|---|
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Bài làm anchor và tập bài eligible |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Biết concept của các bài để chọn và chấm ứng viên |
-| Intent templates `[cần xây]` | Đề xuất `configs/intent_templates.json` | Mỗi loại intent định nghĩa đủ năm directions, không chỉ tên loại |
-| Rule/alias đã duyệt `[cần chốt]` | Theo contract/guideline và config version | Định nghĩa similar/different/ignore và xử lý missing |
-| Cấu hình C `[cần xây]` | Đề xuất `configs/exp_c.json` | Kind mock, seed, 20 cases thử nhỏ; sau đó mục tiêu 1.500 cases, phân bổ types, số candidates/case, sampling và split policy |
+## 4. Sinh events, query và exposure
 
-Số candidates/case C chưa được chốt; không suy từ B rằng C luôn có 100 candidates.
-Không cần đọc labels B để tạo C. Nếu muốn dùng nguồn nhãn khác phải công bố mode
-và provenance riêng. Facet missing làm bài ineligible ở constraint đó.
+Mỗi user có 50 timestamps, bắt đầu 2026-01-01, cách nhau một ngày. Bài được chọn cho phản ứng không lặp trong chuỗi 50 events/user.
 
-**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
-Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
-việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
-Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
-Tuân thủ [contract chung](../../DATA_CONTRACT.md), dùng cùng `paper_id`.
+Pool targeted gồm bài có concept nằm trong profile với preference khác 0, gồm cả concept thích và tránh. Với xác suất .8 chọn trong targeted pool nếu còn, còn lại chọn pool chung.
 
-## 3. Đầu ra mock của generator xây dataset
+Với xác suất .6, tạo query bằng concept ưa thích ở facet được chọn theo latent importance, khi có concept phù hợp. Đây là xác suất, không phải cam kết đúng 60% events có query. Reformulation liên kết query trước qua parent_query_id.
 
-| Đầu ra generator C `[chưa tạo]` | Nội dung |
+Thời gian: query trước phản ứng 2 giây, exposure trước 1 giây. Exposure chứa bốn bài được xáo thứ tự; chỉ một bài có phản ứng ghi lại. Ba bài còn lại **không tự trở thành dislike**.
+
+## 5. Utility biến thành feedback thế nào?
+
+```text
+facet_affinity_f = trung bình preference của các concept trong facet bài
+                   (concept ngoài profile nhận 0, facet rỗng nhận 0)
+utility = Σ importance_f × facet_affinity_f + Gaussian noise(.15)
+```
+
+| Utility sau noise | Feedback |
 |---|---|
-| `data/exp_c/samples/generated/intents.jsonl` | Case ID, query paper, type, constraints, candidate IDs |
-| `data/exp_c/samples/ground_truth/intent_labels.jsonl` | Mỗi candidate có satisfies_intent boolean |
-| `data/exp_c/samples/generated/splits.json` `[đề xuất]` | Mapping case theo nhóm query paper |
-| `data/exp_c/samples/generated/generation_report.json` `[đề xuất]` | Số case/type và lý do skip khi không đủ ứng viên |
-| `data/exp_c/samples/generated/manifest.json` | Input facet/template/rule hashes, seed và actual counts |
+| < −.25 | dislike |
+| [−.25,.05) | view |
+| [.05,.20) | click |
+| [.20,.40) | save |
+| ≥ .40 | like |
 
-Builder tạo cả yêu cầu và nhãn bằng facets/rules đầu vào. Nhãn như vậy là
-rule-based/synthetic, không mặc nhiên là người thật xác nhận ý định; ghi provenance.
-Mốc mock đầu: 20 cases. Mục tiêu mở rộng 1.500 cases không có nghĩa có 1.500 anchor papers độc lập.
+Ví dụ method GNN preference .9 × importance .4 góp .36 vào utility; các facet khác và noise còn có thể đổi loại feedback. Do đó không phải “có concept thích là chắc chắn like”.
 
-## 4. Các trường trong dataset đầu ra
+## 6. Cắt history và holdout
 
-| Trường | Ý nghĩa |
-|---|---|
-| `intent_id` | `I` + 4 chữ số; duy nhất |
-| `query_paper_id` | Bài làm mốc so sánh |
-| `intent_type` | Tên template đã được duyệt và versioned |
-| `constraints` | Đủ `problem/task/method/dataset/contribution` |
-| Direction | `similar`: tương tự; `different`: khác; `ignore`: không xét |
-| `candidate_ids` | ID chung, không trùng hoặc chứa bài truy vấn |
-| `satisfies_intent` | Boolean của cặp `(intent_id,candidate_id)` |
+30 events đầu là history, 20 events sau là holdout. Cutoff đặt trước query/exposure/phản ứng của event thứ 31. Case có user_id, 20 holdout candidate_ids, cutoff.
 
-Đề xuất cho pilot theo concept chuẩn hóa: `similar` khi có concept chung;
-`different` khi hai tập concept đều có dữ liệu và không giao nhau. Tất cả facet
-không ignore phải được thỏa đồng thời. Bài truy vấn/ứng viên thiếu facet đang xét
-là chưa đủ điều kiện, không tự thành `different`. Đây là quy tắc pilot cần duyệt,
-không khẳng định exact match thể hiện đầy đủ tương đồng ngữ nghĩa.
+Quan sát được có IDs của ứng viên; feedback/query/exposure holdout giữ riêng. Scorer không dùng latent profile hoặc feedback tương lai.
 
-Tám intent types đề xuất: same_problem, same_problem_different_method,
-same_method_different_problem, similar_task, different_dataset,
-same_problem_same_method, similar_contribution, mixed_intent. Exact templates
-và quota chưa duyệt; tên loại không tự định nghĩa labels.
+| Phần | Tệp | Mục tiêu |
+|---|---|---:|
+| generated | `users.jsonl` | 300 users |
+| generated | `interactions_train.jsonl` | 9.000 reactions |
+| generated | `search_events.jsonl`, `exposures.jsonl` | Prefix logs |
+| generated | `cases.jsonl` | 300 cases |
+| ground_truth | `latent_user_profiles.jsonl` | 300 profiles |
+| ground_truth | `interactions_test.jsonl` | 6.000 reactions |
+| ground_truth | `search_events_test.jsonl`, `exposures_test.jsonl` | Holdout logs |
 
-## 5. Ví dụ generator: nguyên liệu → các tệp dataset
+Có report/manifest ghi hashes, seed, actual counts và behavior_counts lịch sử. Số query thực tế phụ thuộc simulator.
 
-Đầu vào builder là catalog/facets, config và template, chưa phải danh sách
-intents. Giả sử template same_problem_different_method đã được duyệt, builder
-chọn anchor và ứng viên, kiểm tra concept, rồi sinh một case và nhãn dưới đây.
-Trong kịch bản mock minh họa, hai bài chung problem và có method khác nhau; ví dụ chỉ minh họa schema; builder phải kiểm tra quan hệ trên facets A thực tế.
+Evaluator đổi feedback thành grade 0/0/1/2/3 để chấm ranking; latent importance dùng chấm MAE. [README scorer C](../../scripts/exp_c/README.md) giải thích profile dự đoán và ví dụ cộng evidence.
 
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
+## 7. Sinh và kiểm tra
 
-```json
-{
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "templates_path": "configs/intent_templates.json",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_cases": 20
-}
+```powershell
+python data/exp_c/build_exp_c.py --dry-run
+python data/exp_c/build_exp_c.py
+python data/exp_c/build_exp_c.py --validate-only
 ```
 
-**Records generator sẽ ghi vào các tệp đầu ra:**
+Chạy từ gốc với Python 3.11+/stdlib. Dùng config riêng và output/truth mới cho [pilot](samples/README.md); không dùng fixtures thay corpus/facet thật.
 
-```json
-{
-  "intent_id": "I0001",
-  "query_paper_id": "P000001",
-  "intent_type": "same_problem_different_method",
-  "constraints": {
-    "problem": "similar",
-    "task": "ignore",
-    "method": "different",
-    "dataset": "ignore",
-    "contribution": "ignore"
-  },
-  "candidate_ids": [
-    "P000003"
-  ]
-}
-```
+Giữ contract 2.0. Output 1.0 cần đường dẫn mới; không trộn hai schema hoặc chạy đồng thời vào cùng output.
 
-```json
-{
-  "intent_id": "I0001",
-  "candidate_id": "P000003",
-  "satisfies_intent": true
-}
-```
+## 8. Bàn giao cho D/E mà không chờ scorer C
 
-## 6. Các bước generator phải thực hiện
+Bàn giao trọn bộ C complete, manifest và config được tham chiếu. D/E trỏ users_path tới users.jsonl; loader kiểm tra hash/provenance toàn bộ handoff C.
 
-1. Đọc config, corpus, facets, templates/rule versions; join theo paper_id và
-   kiểm tra template có đủ năm directions hợp lệ.
-2. Chọn intent type theo quota, sau đó chọn anchor đủ facet cho type đó.
-3. So facet anchor với các bài eligible theo từng constraint. Pilot đề xuất
-   similar = có concept chung, different = hai tập nonempty không giao nhau,
-   ignore = không xét; phải chốt rule/alias trước khi dùng.
-4. Candidate positive phải thỏa mọi constraint. Negative vi phạm ít nhất một;
-   hard negative ưu tiên vi phạm đúng một constraint khi khả thi.
-5. Sample candidates theo config và seed, bỏ self/trùng; thiếu positive/negative
-   thì skip case và báo lý do, không bịa satisfaction label.
-6. Cấp intent_id; ghi intents và nhãn cho từng pair. Chia nhóm theo anchor,
-   không random các case cùng anchor sang train/test khác nhau.
-7. Ghi report/manifest, kiểm tra labels khớp rule, refs và coverage types.
+D lấy thêm history/search/exposure cùng thư mục để dựng importance. E chỉ dùng danh tính rồi sinh stream riêng. **Không cần C predictions hoặc model checkpoint**.
 
-Sau mock 20 cases, target mở rộng 1.500: phân bổ đề xuất 6 types × 200 + 2 types × 150. Tám types được đề
-xuất trong phần field/rules trước; chốt exact templates/quota trước release.
-
-
-**Chưa có generator mock C.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
-
-### Khi cập nhật facets A
-
-Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
-để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
-bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
-
-## 7. Kiểm tra dataset và nghiệm thu
-
-**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
-thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
-gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
-facet silver A đủ coverage là đầu vào cần có.
-
-- IDs resolve; constraints đúng năm khóa và enums, khớp template đã duyệt.
-- Mỗi pair có đúng một boolean label; candidate sets không trùng/self-candidate.
-- Đáp án khớp rule đã công bố; missing facet không bị xem là khác một cách mặc định.
-- Có positive/negative hợp lệ hoặc case bị skip có lý do; báo coverage từng loại.
-- Nhãn không vào observable inputs; cùng anchor không xuất hiện ở nhiều split.
-
-C hoàn tất khi có facets đầu vào phù hợp, templates/rules được duyệt, generator,
-labels/manifests và validator riêng đạt. Số dòng đạt 1.500 chưa đủ nghiệm thu.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình C đọc intents + corpus/facets; intent_labels chỉ đánh giá. Dataset generator được dùng facet rules để sinh labels, model evaluation không được đọc labels đó.
+Profile ẩn C chỉ evaluator đọc. Phương pháp C mới tích hợp sang D/E sau qua phiên bản rõ ràng; baseline các thành viên có thể nghiên cứu độc lập ngay khi có dataset.

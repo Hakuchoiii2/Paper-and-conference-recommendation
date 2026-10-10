@@ -1,196 +1,84 @@
-# Thực nghiệm E — Theo dõi sở thích thay đổi theo thời gian
+# Dữ liệu E — Stable/drift và rolling holdout
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+[Chỉ mục dữ liệu](../README.md) · [Scorer E](../../scripts/exp_e/README.md) · [Dữ liệu C](../exp_c/README.md)
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+## 1. Generator phục vụ câu hỏi nào?
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
+E tạo sở thích ổn định/thay đổi theo kỳ, query/exposure/phản ứng và các case rolling. Scorer so static/recent/decay trên cùng stream, không dự đoán từ nhãn drift được cung cấp sẵn.
 
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+E dùng **danh tính C** rồi tạo profiles/logs riêng. Không dùng kết quả scorer C hay dữ liệu D.
 
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
+## 2. Đầu vào và quy mô
 
-## 1. Mục đích của dataset
+Corpus canonical + full silver A/metadata/complete manifest; C users.jsonl và complete handoff được kiểm tra hashes/config/provenance.
 
-E mở rộng bài toán sở thích ngầm sang tình huống mối quan tâm thay đổi. Lịch sử
-rất cũ có thể phản ánh sở thích khác hiện tại. Câu hỏi thực nghiệm là hệ thống
-có theo dõi được sự chuyển dịch đó và vẫn khuyến nghị phù hợp với giai đoạn mới
-không, đồng thời có ổn định với người dùng không đổi sở thích không?
+Config `configs/exp_e.json`: seed 42, stable_fraction .5, drift_coefficients [0,.5,1,1], 15 events/user/kỳ. Boundaries: đầu tháng 1/2/3/4/5 năm 2026.
 
-E dùng **cùng user IDs với D**, pilot dùng lại 5 users mock D; khi mở rộng dùng lại 300 users D. Luồng tương
-tác E riêng để thể hiện drift; không cần giống từng byte với tương tác D.
-Đây vẫn là mô phỏng, chưa phải hành vi thật hoặc mô hình temporal đã triển khai.
+Với 300 users C: 150 stable/150 drift, bốn kỳ, **18.000 reactions độc lập**, 1.200 hidden profiles và 900 cases đánh giá kỳ 2/3/4.
 
-## 2. Đầu vào của generator xây dataset
+## 3. Sinh profile thật từng kỳ
 
-Generator E nhận **users do D tạo + corpus/facets + kịch bản thời gian**, rồi
-sinh profiles và một luồng events E mới. Nó không cần lịch sử E có sẵn.
+1. Xáo user IDs theo seed để chia stable/drift.
+2. Với mỗi user, sinh old/new concept preferences và importance bằng cùng quy tắc profile C.
+3. Stable dùng coefficient 0 mọi kỳ; drift dùng [0,.5,1,1].
+4. Trên hợp concepts old/new, nội suy:
+   preference(c) = (1−a)×old(c) + a×new(c).
+5. Importance cũng nội suy old/new rồi normalize.
+6. Lưu user_id, period, start/end, latent_preferences và facet_importance.
 
-| Đầu vào generator | Đường dẫn/giá trị | Vai trò |
+Concept có preference 0 sau nội suy không góp targeted exposure. Bài không có concept trong profile vẫn có thể được lấy từ pool chung. Không đưa nhãn stable/drift hoặc profile thật cho scorer.
+
+## 4. Sinh hành vi trong từng kỳ
+
+Phân bố 15 timestamps trong khoảng kỳ, giữ query trước reaction 2 giây và exposure trước 1 giây. Từng kỳ gọi simulator như C: targeted .8, search .6, bốn bài/exposure, feedback từ utility + noise .15 và thresholds −.25/.05/.2/.4.
+
+Bài có phản ứng không lặp trong cùng chuỗi kỳ/user; giữa các kỳ có thể xuất hiện lại. Các bài hiển thị nhưng chưa phản ứng không tự là negative.
+
+Cùng source users không có nghĩa profile/stream E là bản copy C. Mục tiêu E là đo thời gian với ground truth đổi có kiểm soát.
+
+## 5. Lưu history/truth để rolling thế nào?
+
+| Kỳ | Có trong history files? | Có trong truth files? | Vai trò |
+|---|---|---|---|
+| 1 | Có | Không | Quan sát trước case kỳ 2 |
+| 2 | Có | Có | Truth kỳ 2; history cho kỳ 3/4 |
+| 3 | Có | Có | Truth kỳ 3; history cho kỳ 4 |
+| 4 | Không | Có | Truth kỳ 4 |
+
+History reactions = 300×3×15 = 13.500; truth reactions cũng 13.500; overlap kỳ 2/3 = 9.000. Không cộng hai tệp thành 27.000 phản ứng độc lập. Các bản sao overlap phải giống nhau.
+
+Scorer tháng 2 chỉ nhận kỳ 1; tháng 3 nhận kỳ 1–2; tháng 4 nhận kỳ 1–3. Runner lọc timestamp < cutoff dù history file có dữ liệu của mốc sau.
+
+## 6. Case và tệp đầu ra
+
+Mỗi case chứa case_id, user_id, period, cutoff = đầu kỳ và 15 candidate_ids của kỳ đó. Chỉ IDs quan sát được; feedback tương lai giữ trong truth.
+
+| Phần | Tệp | Vai trò |
 |---|---|---|
-| Users D `[chưa có]` | `data/exp_d/samples/generated/users.jsonl` | Danh tính dùng chung; E không tạo user IDs mới |
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Pool bài theo đúng ID chung |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Vocabulary cho profiles theo period và tính affinity |
-| Cấu hình E `[cần xây]` | Đề xuất `configs/exp_e.json` | Seed, 4 periods/boundaries, stable/drift ratio, drift rule, noise/exposure và số events |
-| Latent profiles D `[tùy chọn, chưa có]` | `data/exp_d/samples/ground_truth/latent_user_profiles.jsonl` | Chỉ nếu config yêu cầu dùng làm sở thích period đầu; đây là input của simulator, không phải input mô hình |
+| generated | `interactions_train.jsonl` | Reactions kỳ 1–3 |
+| generated | `search_events.jsonl`, `exposures.jsonl` | Logs kỳ 1–3 |
+| generated | `cases.jsonl` | 900 rolling cases |
+| ground_truth | `temporal_profiles.jsonl` | Profile thật mỗi user/kỳ |
+| ground_truth | `interactions_test.jsonl` | Reactions kỳ 2–4 |
+| ground_truth | `search_events_test.jsonl`, `exposures_test.jsonl` | Logs kỳ 2–4 |
+| ground_truth | `period_metadata.json` | Groups, boundaries, drift coefficients |
 
-Không mặc định đọc interactions_train/test của D để đổi tên thành E. E tạo stream
-riêng. Nếu cần kế thừa D profile, khai báo rõ mode/input version; nếu không thì
-sinh profile khởi đầu từ cùng vocabulary bằng rule E đã công bố.
+Report/manifest ghi actual_users/events/profiles/cases, group_counts, history behavior_counts, hashes và handoff C. Evaluator dùng đúng period để ghép nhãn và chia cohort.
 
-**Các đường dẫn trong bảng tính từ thư mục gốc dự án**, không từ folder exp.
-Tệp `[đã có]` có thể đọc ngay. Tệp/cấu hình `[cần xây]` là đề xuất interface cho
-việc triển khai, chưa tồn tại và cần chốt trước khi viết/chạy generator.
-Generator phải kiểm tra prerequisite, không âm thầm thay tệp thiếu bằng nhãn giả.
-Tuân thủ [contract chung](../../DATA_CONTRACT.md), dùng cùng `paper_id`.
+## 7. Sinh và kiểm tra
 
-## 3. Đầu ra mock của generator xây dataset
-
-| Đầu ra generator E `[chưa tạo]` | Nội dung |
-|---|---|
-| `data/exp_e/samples/ground_truth/temporal_profiles.jsonl` | Pilot 5 users × 4 periods = 20 profiles ẩn |
-| `data/exp_e/samples/generated/interactions_train.jsonl` | E events thuộc periods 1–3 theo policy đề xuất |
-| `data/exp_e/samples/ground_truth/interactions_test.jsonl` | E events period 4 làm holdout |
-| `data/exp_e/samples/ground_truth/period_metadata.json` `[đề xuất]` | Boundaries và scenario/group information dành cho generator/evaluation |
-| `data/exp_e/samples/generated/manifest.json` | Stable/drift counts, seed, source users/facet hashes, cutoff và actual events |
-
-Mốc mock: cùng 5 users D × 4 periods, ít nhất 2 events/user/period (ít nhất 40 events).
-Target mở rộng: 300 users, 1.200 profiles và tổng 15.000–20.000 events; phân bổ events/period và tỷ lệ
-stable/drift chưa chốt, phải ghi trong config. Không nhân đôi số user khi cộng D/E.
-Profiles/boundaries đã được generator biết không được lộ future truth cho model.
-
-## 4. Các trường trong dataset đầu ra
-
-| Trường | Ý nghĩa/ràng buộc |
-|---|---|
-| `user_id` | Phải có trong users của D |
-| `period` | Chỉ số giai đoạn; đề xuất 1–4 |
-| `start_timestamp`, `end_timestamp` | Khoảng nửa kín `[start,end)`, timezone rõ ràng |
-| `latent_preferences` | Cùng cấu trúc trọng số facet/concept của D, chỉ trong truth |
-| Event fields | `user_id`, `paper_id`, `interaction_type`, `timestamp` như D |
-
-Khóa duy nhất profile: `(user_id,period)`. Các period liên tiếp, không overlap.
-Event đúng tại `end` thuộc period tiếp theo, không thuộc period vừa kết thúc.
-Trọng số phải hữu hạn trong [-1,1]. Nhóm stable/drift cần provenance cho đánh giá,
-không tự động trở thành đặc trưng mô hình biết trước.
-
-## 5. Ví dụ generator: nguyên liệu → các tệp dataset
-
-Builder đọc U0001 từ D, tạo hồ sơ period 1 rồi sinh một event dựa trên hồ sơ đó.
-Hai records dưới đều là đầu ra E, không phải generator đọc một event rồi suy
-ngược ra temporal truth. Concept và trọng số chỉ là minh họa schema.
-
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
-
-```json
-{
-  "users_path": "data/exp_d/samples/generated/users.jsonl",
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_periods": 4,
-  "history_periods": [
-    1,
-    2,
-    3
-  ],
-  "holdout_period": 4
-}
+```powershell
+python data/exp_e/build_exp_e.py --dry-run
+python data/exp_e/build_exp_e.py
+python data/exp_e/build_exp_e.py --validate-only
 ```
 
-**Records generator sẽ ghi vào các tệp đầu ra:**
+Từ gốc repository, Python 3.11+/stdlib. Dùng config/output mới cho [pilot E](samples/README.md). Loader vẫn yêu cầu C handoff complete dù E chỉ dùng IDs; không tách riêng users.jsonl rồi bỏ manifest.
 
-```json
-{
-  "user_id": "U0001",
-  "period": 1,
-  "start_timestamp": "2026-01-01T00:00:00Z",
-  "end_timestamp": "2026-02-01T00:00:00Z",
-  "latent_preferences": {
-    "method": {
-      "example concept": 0.8
-    }
-  }
-}
-```
+Output 1.0 không trộn vào 2.0; không chạy đồng thời vào cùng output. E cần đủ distinct papers cho từng chuỗi mô phỏng, không sinh paper giả.
 
-```json
-{
-  "user_id": "U0001",
-  "paper_id": "P000002",
-  "interaction_type": "view",
-  "timestamp": "2026-01-10T10:00:00Z"
-}
-```
+## 8. Bàn giao và chạy scorer
 
-## 6. Các bước generator phải thực hiện
+Bàn giao generated + ground_truth + config/manifest, giữ các bản sao rolling nhất quán. [Scorer E](../../scripts/exp_e/README.md) giải thích static/recent/decay, half-life, ví dụ score và các chỉ số.
 
-1. Đọc users D và join corpus/facets; kiểm tra IDs/version và config periods.
-2. Kiểm tra bốn khoảng [start,end) liên tiếp, không overlap; chia nhóm stable
-   và drift theo ratio config và seed.
-3. Sinh latent profile trước cho từng user/period. Stable giữ sở thích cơ bản;
-   drift đi qua cũ → chuyển tiếp → mới → ổn định theo rule/intensity đã chốt.
-4. Trong mỗi period, sinh exposure và events từ profile period đó + seeded
-   noise; timestamps phải thuộc đúng [start,end).
-5. Tách periods 1–3 history và 4 test theo policy đề xuất; không reuse cutoff D
-   ngầm. Event đúng boundary thuộc period tiếp theo.
-6. Ghi temporal_profiles, hai stream events, metadata và manifest. Không ghi
-   một users catalog độc lập khiến E lệch D.
-7. Validate user refs về D, paper refs, profile uniqueness, boundaries/time,
-   actual quota/group counts và future leakage.
-
-Target mở rộng 1.200 profiles và 15.000–20.000 events là dữ liệu mô phỏng. Phân biệt hiệu
-ứng drift với noise bằng rule rõ và nhóm stable, không diễn giải mọi biến động
-ngẫu nhiên là đổi sở thích.
-
-
-**Chưa có generator mock E.** Bộ chạy A đã có; cần chạy Qwen3 để bàn giao silver.
-
-### Khi cập nhật facets A
-
-Giữ corpus/IDs; khi facets hoặc alias/rule thay đổi, chạy lại generator
-để sinh lại labels/splits/events và cập nhật input hashes. Cả pilot và
-bộ mở rộng vẫn công bố phần nhãn/hành vi synthetic, không tự đổi thành real.
-
-## 7. Kiểm tra dataset và nghiệm thu
-
-**Mốc hiện tại là nghiệm thu mock:** manifest ghi `dataset_kind: mock`, references
-thuộc cùng catalog, generator tái lập và các kiểm tra bên dưới đạt. Human
-gold A và số lượng mục tiêu đầy đủ không phải điều kiện bắt đầu mock;
-facet silver A đủ coverage là đầu vào cần có.
-
-- User IDs thuộc D, không có danh tính mới; paper IDs thuộc đúng catalog.
-- `(user_id,period)` duy nhất; đủ periods; boundaries liên tiếp và không chồng.
-- Event trong `[start,end)` đúng period; history trước holdout theo từng user.
-- Truth tương lai không lọt vào input/profile-building; không trộn E stream với D.
-- Báo stable/drift ratio, profile/event counts, cutoff, nhiễu và mọi gap target.
-
-E hoàn tất khi kịch bản/boundaries và bộ mô phỏng được duyệt, generator tái lập,
-truth tách đúng, IDs thống nhất với D và validator riêng đạt. Hiện mới có đặc tả.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình E đọc shared users + E history + corpus/facets. Generator được biết profiles tất cả periods; model không biết future profile/test events hoặc scenario group truth trước.
+Stable/drift là nhóm benchmark, không phải input của phương pháp. Điểm E chứng minh cách time weighting hoạt động trong simulator; chưa thay thế quan sát đổi sở thích người thật.

@@ -1,23 +1,35 @@
-# Dữ liệu gốc từ hai nguồn
+# Nguồn dữ liệu gốc
 
-Giữ nguyên các bản tải, không sửa nội dung. Từ thư mục gốc có thể tải hoặc kiểm tra
-bản đã có bằng:
+[Chỉ mục dữ liệu](../README.md) · [Corpus được lọc/gộp](../processed/README.md)
+
+## 1. Vai trò của raw
+
+Giữ nguyên archive, bản giải nén, README, schema, giấy phép và nhãn/split nguồn. Raw không phải toàn bộ corpus được chọn cho thực nghiệm; builder còn lọc phạm vi và gộp trùng.
+
+| Nguồn | Nội dung giữ lại | Phạm vi dùng trong dự án |
+|---|---|---|
+| CSFCube v1.1 | Title/abstract/metadata, nhãn facet gốc, candidate pools, guideline, split và license | Nguyên liệu bài báo; A trích lại theo năm facet |
+| SciFact | Abstract corpus, claims train/dev/test, CV folds, schema và LICENSE.md | Chỉ bài có evidence phù hợp phạm vi IT |
+
+Không tải kho ngoài khoảng 800.000 bài liên quan CSFCube. Nhãn ba facet/relevance nguồn được giữ để bảo toàn provenance, **chưa dùng làm benchmark ba facet cho hệ năm facet**.
+
+## 2. Tải hoặc kiểm tra bản đã có
+
+Từ gốc repository:
 
 ```powershell
 python scripts/download_sources.py
 ```
 
-- `csfcube/`: bản v1.1, title/abstract/metadata, nhãn facet gốc, candidate pools,
-  split đánh giá, guideline và giấy phép. Không tải kho ngoài khoảng 800.000 bài.
-- `scifact/`: corpus abstract, claims train/dev/test và các fold cross-validation;
-  kèm README, giấy phép và mô tả schema chính thức.
+Lần tải đầu cần mạng; script tái sử dụng bản hiện có và kiểm tra checksum. Mỗi nguồn có source_manifest.json ghi URL, release/version và SHA-256. Giữ cả archive và bản giải nén.
 
-Mỗi nguồn có `source_manifest.json` ghi URL, phiên bản và checksum; giữ cả archive
-lẫn bản giải nén. URL `latest` của SciFact được xác định bằng hash archive đã tải,
-không tự cập nhật đè. Script tái sử dụng bản đã có và báo lỗi nếu dữ liệu gốc đổi.
+SciFact URL latest được khóa bằng hash archive đã tải; script không tự cập nhật đè. Nếu raw đổi, script báo lỗi. Đổi release phải giữ provenance và bản cũ, review ảnh hưởng ID/split trước khi rebuild.
 
-Lưu raw đầy đủ **không có nghĩa toàn bộ được đưa vào corpus IT**. Bộ gộp lọc phạm
-vi rồi ghi quyết định vào `../processed/scope_audit.jsonl`. Nhãn và split gốc được
-giữ để không mất provenance/quy trình đánh giá, chưa chuyển sang nhãn khuyến nghị.
-README gốc trong từng nguồn giữ nguyên ngôn ngữ để bảo toàn bản gốc. Dữ liệu raw
-và output lớn được ignore khi commit Git về sau.
+## 3. License và nguồn tham chiếu
+
+- [CSFCube v1.1](https://github.com/iesl/CSFCube/releases/tag/v1.1): giữ CC BY-NC 4.0 và thông tin citation đi kèm.
+- [SciFact](https://github.com/allenai/scifact): giữ LICENSE.md và điều kiện nguồn công bố.
+
+README gốc bên trong hai nguồn giữ nguyên ngôn ngữ/nội dung. Không chỉnh source files để khớp schema exp; xử lý bằng builder và ghi audit trong processed.
+
+Raw/processed được phép commit/push theo quy ước dự án hiện tại; các dataset exp sinh ra, model/cache/checkpoint bị ignore. Khi chia sẻ raw vẫn phải giữ attribution/giấy phép. Xem [quản lý corpus và Git](../../docs/PROJECT_OPERATIONS.md).

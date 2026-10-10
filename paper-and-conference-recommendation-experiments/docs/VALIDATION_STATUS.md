@@ -1,4 +1,105 @@
-# Verification — local Qwen, 2026-10-03
+# Verification — experiment protocol 2.0, 2026-10-09
+
+Current order: **A extraction → B retrieval → C profile inference → D session direction → E temporal adaptation**.
+C replaces the former D; D replaces the former C. See [protocol](EXPERIMENT_PROTOCOL.md)
+and [run commands](RUN_EXPERIMENTS.md) for the current schemas, baselines and metrics.
+
+- Fresh full suite: **94 tests passed** with Python 3.11, including 27 experiment
+  checks and the existing corpus/A checks. `compileall` and `git diff --check` passed.
+- B–E generators and CPU runners passed end-to-end on explicitly test-only
+  temporary fixtures. Tests cover deterministic rebuilds and hash-seed invariance,
+  query/exposure IDs and membership, reformulation references, chronological cutoffs,
+  hidden-truth separation, direction abstention, privileged oracle labeling,
+  metric calculations and output/source preservation.
+- A regression checks that zero-weight concepts from a future temporal profile
+  do not influence the current targeted exposure pool. Rolling E passes only
+  events, searches and exposures earlier than each evaluated cutoff to the scorer.
+- README files, configs, contract and run instructions use the new C/D order.
+  Existing A generation code and saved silver/checkpoints were not changed by this
+  protocol update; historical measurements below refer to the former 1.0 protocol.
+- Full production B–E generation/scoring has **not** run: the complete merged
+  `data/exp_a/generated/manifest.json` is absent. The real-input dry-run stops at
+  that missing prerequisite. Fixtures do not replace real A output.
+- These checks verify implementation and controlled mock behavior. They do not
+  establish recommendation quality on real users, semantic relevance, or novelty
+  relative to prior research. The current query parser and CPU scorers are lexical.
+
+## Earlier experiment folder layout verification — 2026-10-05
+
+Latest timing probe: see [GENERATOR_TIMING.md](GENERATOR_TIMING.md). Three real
+Qwen papers took 204.2 seconds including model loading; output passed partial
+validation, with two audited quality fallbacks. B–E each generated full target
+counts three times on 4,210-paper test-only fixtures and passed validators.
+The current part_1 snapshot has 192 flagged annotations and 650 clean papers;
+direct B/C sampling diagnostics produce only 52 queries / 16 cases. These are
+newer measurements than the earlier one-fallback snapshot recorded below.
+
+- Experiment generators now live under `data/exp_*`; A merge/review selection
+  are in `data/exp_a`, and Qwen evaluation is in `scripts/exp_a`.
+  B–E generation rules belong to their individual builders, with shared rules
+  and dispatch under `data/`. Shared I/O and validators remain in `scripts/`.
+- Fresh full suite after relocation: **77 tests passed**. All nine relocated
+  or affected CLIs passed `--help` from outside the project directory.
+- Compared generator functions before/after splitting: their ASTs match.
+  Qwen A generator bytes are unchanged (SHA256
+  `48ff88ceca3c0e259675a34e684a6ad871bfe0f3e24afc599f7d1fff81d48d72`).
+- Fresh real corpus and partial A validation passed. The read-only 400-paper
+  preview still has 59 five-facet, 281 four-facet and 60 three-facet papers.
+  Merge stops at missing part_2; B–E stop at the missing complete A manifest.
+- Read-only GitHub branch check confirms `Prepare-Dataset` points to
+  `160d76444d79e022ebba241fbe396523bf5e1a2a`, which contains retry scoring and
+  best-attempt selection. Folder changes in this session remain uncommitted.
+
+## Earlier Qwen gold evaluation verification — 2026-10-05
+
+- Fresh full suite: **77 tests passed**. Eight new evaluator checks cover literal
+  TP/FP/FN and asymmetric metrics, pending/unattributed gold, count/IDs/cohort,
+  normalized labels with meaningful punctuation preserved, N/A empty metrics,
+  cross-facet diagnostics, corrupted silver, deterministic report rebuilds and
+  source/output safety.
+- One focused independent review reproduced source-manifest overwrite when a
+  custom A source shared the evaluation destination. Fixed by rejecting source
+  directory overlap before writes; regression verifies source and human gold
+  bytes remain unchanged and a separate destination still works.
+- Evaluator compares independently completed reviewed forms with verified A
+  silver. Reports explicitly measure lexical agreement, disclose selection
+  bias, and retain paper text/evidence for human semantic error analysis.
+- Actual part_1 evaluation stopped because no completed human gold file exists;
+  no real metrics report was fabricated. Evaluation outputs are Git-ignored.
+  Local documentation links and tracked whitespace checks passed.
+- Commands/protocol: docs/EVALUATE_QWEN.md and scripts/exp_a/evaluate_exp_a.py.
+
+## Earlier dataset implementation verification — 2026-10-05
+
+- Fresh full suite: **69 tests passed** using Python 3.11.16.
+  Target-sized, explicitly test-only temporary fixtures produced B 300 queries /
+  30,000 pairs; C 1,500 cases / 30,000 pairs; D 300 users / 15,000 events;
+  E the same 300 users / 1,200 profiles / 18,000 events.
+- Rebuilds matched byte-for-byte, including D/E in fresh processes with a
+  different PYTHONHASHSEED. Corruption checks cover labels, observable truth,
+  references, input/output hashes, temporal ordering and partial A rejection.
+- Fresh real corpus gate passed: 4,210 papers, 4,235 active source references,
+  9,390 scope audit records. A part_1 validator passed as explicitly partial:
+  842/4,210 records, one audited fallback. Missing parts 2–5 block full handoff.
+- A merge dry-run correctly stopped at missing part_2/manifest.json without
+  writing merged output. Read-only 400-paper selection preview on part_1 had
+  59 papers with five nonempty facets, 281 with four and 60 with three. This
+  preview is not the final cohort and creates no human gold or review queue.
+- B/C/D/E real-corpus dry runs all stopped at the missing full A manifest;
+  none created an experiment manifest. Documentation local links and tracked
+  diff whitespace checks passed.
+- One fresh independent code review found two important issues, now fixed:
+  D/E observable behavior counts included holdout outcomes; A merge accepted
+  different resolved checkpoints. Added regression tests for both, including
+  rejecting forged combined behavior reports and permitting fallback metadata
+  without runtime model fields. Also restrict merged output to experiment A.
+- Source, configs, wrappers and validators are implemented. B–E datasets on
+  the real corpus, the final 400-paper review queue and scientific/model results
+  remain pending complete real A coverage and independent human review.
+- Existing local A generator/resume changes are preserved. No GPU annotation
+  batch, Git commit, push or fabricated real annotations were performed here.
+
+## Earlier local Qwen snapshot — 2026-10-03
 
 - Local runtime: Python 3.11.16; PyTorch 2.6.0+cu124; Transformers 4.57.6;
   accelerate 1.15.0; bitsandbytes 0.50.2. CUDA is available on RTX 4060 Laptop 8 GB.

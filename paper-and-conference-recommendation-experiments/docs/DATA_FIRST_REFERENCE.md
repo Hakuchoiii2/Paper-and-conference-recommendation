@@ -1,3 +1,6 @@
+> **Tài liệu lịch sử, trước thiết kế 2.0 ngày 2026-10-09.** C/D và các quota/giới hạn ở dưới dùng nghĩa cũ; không dùng làm hướng dẫn hiện hành.
+> Xem [protocol 2.0](EXPERIMENT_PROTOCOL.md) và [lệnh chạy mới](RUN_EXPERIMENTS.md). Yêu cầu hiện tại đã bao gồm code thực nghiệm.
+
 # DS300 — README triển khai giai đoạn Data-first
 
 > Cập nhật ngày 2026-10-03 theo yêu cầu Khải: mọi exp đọc trực tiếp

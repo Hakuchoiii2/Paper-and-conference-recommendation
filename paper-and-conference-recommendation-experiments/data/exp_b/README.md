@@ -1,174 +1,96 @@
-# Thực nghiệm B — Truy hồi bài báo theo một facet
+# Dữ liệu B — Bài mốc × 100 ứng viên
 
-Trạng thái: ưu tiên dựng mock data để kiểm thử trước;
-chưa sinh dataset hoặc chạy mô hình của thực nghiệm.
+[Chỉ mục dữ liệu](../README.md) · [Scorer B](../../scripts/exp_b/README.md) · [Protocol](../../docs/EXPERIMENT_PROTOCOL.md)
 
-**README này mô tả cách xây dataset.** Generator đọc nguyên liệu/cấu hình,
-tạo cả dữ liệu quan sát được và nhãn/truth. Đầu vào mô hình là một phần của
-dataset đã tạo, được nói riêng ở cuối; không coi output generator là prerequisite.
+## 1. Generator phục vụ câu hỏi nào?
 
-**Dùng trực tiếp corpus chính cho mọi exp:** `data/processed/papers.jsonl`
-(4.210 bài hiện có), giữ nguyên title/abstract và `paper_id`. Generator đọc catalog
-này rồi chọn query/candidates theo config; không dựng bộ bài 50 mẫu hoặc catalog
-mock riêng. Các mốc pilot dưới đây chỉ giới hạn số query/case/user/events đầu ra.
+B kiểm tra biểu diễn whole-text và năm facet khi xếp bài theo bài đang đọc X. Generator tạo **query, candidate pool, nhãn relevance cho mọi cặp và split**. Nó chưa chạy model ranking.
 
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+Quy mô config chính: 300 queries × 100 candidates = 30.000 cặp. Cùng paper có thể là ứng viên của nhiều query; không cần 30.000 bài riêng.
 
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
+## 2. Đầu vào cần có
 
-## 1. Mục đích của dataset
-
-B kiểm tra khả năng tìm bài liên quan theo **một khía cạnh được chỉ định** khi
-đầu vào là một bài mẫu. Hai bài cùng lĩnh vực chưa chắc giống phương pháp; hai bài
-khác ứng dụng vẫn có thể dùng phương pháp tương tự. Vì vậy relevance phải gắn
-với facet của query, không chỉ với chủ đề chung.
-
-Ví dụ: người đọc muốn tìm các bài dùng phương pháp tương tự bài đang đọc.
-Dataset B cần bài truy vấn, tập ứng viên cố định và mức liên quan của từng ứng
-viên. Chất lượng thứ tự xếp hạng là bước đánh giá mô hình về sau.
-
-## 2. Đầu vào của generator xây dataset
-
-Generator B đọc **corpus chính + năm facet silver A + cấu hình sampling/relevance**,
-rồi tạo query, candidates và labels. Dùng facets silver A; không cần
-human gold A hoặc judgments CSFCube để bắt đầu.
-
-| Đầu vào | Đường dẫn | Vai trò |
+| Input | Mặc định | Điều kiện |
 |---|---|---|
-| Corpus chính `[đã có]` | `data/processed/papers.jsonl` | Bài truy vấn và ứng viên dùng cùng IDs |
-| Facets silver A `[cần chạy Qwen3]` | `data/exp_a/generated/facets_silver.jsonl` | Năm facet được trích từ title/abstract, có dẫn chứng |
-| Cấu hình B `[cần xây]` | `configs/exp_b.json` | `dataset_kind: mock`, seed 42, 5 queries × 10 candidates, facet, rule version và split policy |
+| Corpus | `data/processed/papers.jsonl` | Canonical IDs/title/abstract, manifest hợp lệ |
+| Silver A | `data/exp_a/generated/facets_silver.jsonl` | Đủ corpus, metadata và complete manifest |
+| Config | `configs/exp_b.json` | dataset_kind mock, seed 42, quota và label rule |
 
-`target_facet` chỉ nhận `problem`, `task`, `method`, `dataset`, `contribution`.
-Generator không đọc `retrieval_queries.jsonl` như nguyên liệu có sẵn: đây là output.
-Tuân thủ [contract chung](../../DATA_CONTRACT.md); loader chọn đúng corpus chính.
-Thiếu prerequisite thì báo lỗi; không tự chuyển giữa mock và real.
+Bài A fallback/còn validation errors bị loại khỏi pool. Không điền facet rỗng bằng nhãn giả. Gold review A không phải prerequisite của B.
 
-Ba facet `background/method/result` và nhãn 0–3 của CSFCube giữ ở raw. Benchmark
-native chỉ là hướng bổ sung về sau nếu nhóm cần, không thay B năm facet và không
-nằm trên luồng mock hiện tại. SciFact SUPPORT/CONTRADICT không phải relevance B.
+## 3. Chọn bài mốc X thế nào?
 
-## 3. Đầu ra của generator xây dataset
+1. Chuẩn hóa concept thành sets để kiểm tra bằng nhau/giao nhau.
+2. Lấy anchor có ít nhất hai facet không rỗng.
+3. Xáo danh sách bằng seed, mỗi anchor chỉ được dùng một lần.
+4. Với anchor X, xét các bài hợp lệ khác X và tính relevance.
+5. Nếu không đủ positive/negative/pool 100, bỏ anchor đó và thử bài khác.
+6. Dừng khi đủ 300 queries hoặc hết anchor; ghi shortfall thực tế.
 
-| Output mock `[chưa tạo]` | Nội dung |
+Không đặt 100 bài thành một “profile” của X. X là bài mốc, 100 bài là danh sách cần xếp hạng.
+
+## 4. Ground truth cho từng X–Y
+
+Theo problem/task/method/dataset/contribution, fixed_weights = **[.4,.2,.2,.1,.1]**:
+
+```text
+grade_f = 2 nếu tập concept X và Y bằng nhau, không rỗng
+          1 nếu có giao
+          0 nếu không giao hoặc thiếu facet
+relevance = Σ weight_f × grade_f
+```
+
+Ví dụ grades [2,1,0,0,1] → relevance 1.1. Nếu chỉ method có giao [0,0,1,0,0] → .2.
+
+Đáp án có trước prediction và lưu trong ground_truth; label_source/rule_version ghi rõ synthetic rule. Đây là nhãn sinh từ silver, **không phải expert relevance độc lập**.
+
+## 5. Lấy 100 candidates thế nào?
+
+Chia pool theo `positive_grade: .6`:
+
+| Pool | Điều kiện |
 |---|---|
-| `data/exp_b/samples/generated/retrieval_queries.jsonl` | query_id, query_paper_id, target_facet, candidate_ids |
-| `data/exp_b/samples/ground_truth/retrieval_labels.jsonl` | Nhãn 0/1/2 cho mỗi cặp query/candidate |
-| `data/exp_b/samples/ground_truth/label_provenance.jsonl` | Nguồn synthetic, rule version và input facets |
-| `data/exp_b/samples/generated/splits.json` | Chia theo nhóm bài truy vấn |
-| `data/exp_b/samples/generated/manifest.json` | Kind mock, seed, hashes, số query/pair, skipped và gap |
+| High | Relevance ≥ .6 |
+| Low | Relevance < .6 |
+| Hard low | 0 < relevance < .6: có điểm giao nhưng chưa đủ high |
 
-Mốc đầu: 5 query × 10 candidates = 50 cặp, ưu tiên phủ đủ năm target facets.
-Query và nhãn đều do builder tạo. Nhãn phục vụ kiểm thử, không phải người gán.
-Khi mở rộng, giữ corpus/facets A; output chuyển về
-`data/exp_b/generated/` và `data/exp_b/ground_truth/`. Mục tiêu mở rộng
-300 query × 100 candidates chỉ áp dụng khi có đủ bài và nhãn hợp lệ.
+Mục tiêu lấy 20% high, phần còn lại low. Trong số low, 50% được ưu tiên lấy từ hard pool nếu đủ; phần low còn lại cũng có thể chứa hard. Vì vậy không khẳng định luôn có đúng 20 high + 40 hard + 40 easy.
 
-## 4. Các trường trong dataset đầu ra
+Số lấy được điều chỉnh theo pool thực tế nhưng phải có cả high và low, đủ 100 IDs khác nhau, không chứa anchor. Xáo thứ tự candidates; không để thứ tự file tiết lộ nhãn.
 
-| Trường | Ý nghĩa/ràng buộc |
-|---|---|
-| `query_id` | `Q` + 4 chữ số; duy nhất trong bộ |
-| `query_paper_id` | ID bài làm ví dụ truy vấn |
-| `target_facet` | Một trong năm khóa `problem/task/method/dataset/contribution` |
-| `candidate_ids` | List ID canonical; không trùng; không chứa query paper |
-| `candidate_id` trong nhãn | Phải thuộc candidate set của query đó |
-| `relevance` nội bộ | Đề xuất 0: không liên quan, 1: một phần, 2: cao |
+Ở evaluator, **relevance > 0 là positive** cho Recall/Precision/MRR. Low .2 vẫn positive; chữ low/negative trong sampling không đồng nghĩa mọi nhãn đều bằng 0.
 
-Khóa duy nhất của nhãn: `(query_id,candidate_id)`. Đề xuất rule mock: trên facet
-đích có dữ liệu, hai tập concept bằng nhau → 2; giao nhau nhưng khác tập → 1;
-không giao nhau → 0. Thiếu facet đích ở anchor/candidate → ineligible.
-Ghi rule/alias version trong config trước khi sinh. Đây là đáp án của kịch
-bản mock, chưa đại diện đầy đủ cho tương đồng ngữ nghĩa trên bài thật.
-Hard negative có facet khác giống anchor nhưng facet đích không giao nhau;
-easy negative khác cả facet đích lẫn các facet được rule dùng để chọn mẫu.
+## 6. Split theo bài mốc
 
-## 5. Ví dụ generator: nguyên liệu → các tệp dataset
+Xáo anchors theo seed rồi chia 70/15/15. Đủ 300 queries có 210 train, 45 dev, 45 test. Cùng anchor không qua hai split; ứng viên có thể qua nhiều split.
 
-Giả sử facets A thực tế có method `["matrix factorization"]` cho cả `P000001`
-và `P000002`, rule mock cho relevance 2. Ví dụ này chỉ minh họa schema;
-chỉ dùng cặp bài đó khi nhãn A thực tế xác nhận, không hardcode vào generator. Title/abstract/IDs giữ nguyên từ
-corpus chính. Ví dụ hiển thị một candidate; pilot dự kiến có 10 candidates/query.
+Baseline TF-IDF không training bằng labels. Thành viên thêm model trainable dùng train để fit, dev để chọn tham số, test để báo điểm; chi tiết ở [scorer B](../../scripts/exp_b/README.md).
 
-**Đầu vào generator: các đường dẫn và một phần config dự kiến** (chưa phải
-config hoàn chỉnh/chưa đảm bảo rule đã được chốt):
+## 7. Tệp được tạo
 
-```json
-{
-  "corpus_path": "data/processed/papers.jsonl",
-  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
-  "dataset_kind": "mock",
-  "seed": 42,
-  "num_queries": 5,
-  "candidates_per_query": 10,
-  "label_rule_version": "requires-rule-review"
-}
+| Thư mục | Tệp | Đơn vị/ý nghĩa |
+|---|---|---|
+| generated | `retrieval_queries.jsonl` | Query ID, anchor, candidate_ids |
+| generated | `splits.json` | Danh sách query IDs từng split |
+| ground_truth | `retrieval_labels.jsonl` | query_id/candidate_id/relevance |
+| ground_truth | `label_provenance.jsonl` | Nguồn và phiên bản rule |
+
+Output có generation_report và manifest ghi config, seed, hashes, số lượng thực tế, shortfall và trạng thái. Với đủ quota: 300 query records, 30.000 label pairs.
+
+Runner chuyển query_id thành case_id cho giao diện scorer. Scorer chỉ nhận query/candidates và nguyên liệu bài; evaluator đọc labels sau khi có ranking.
+
+## 8. Sinh, kiểm tra, bàn giao
+
+Chạy từ gốc repository, Python 3.11+:
+
+```powershell
+python data/exp_b/build_exp_b.py --dry-run
+python data/exp_b/build_exp_b.py
+python data/exp_b/build_exp_b.py --validate-only
 ```
 
-**Records generator sẽ ghi vào các tệp đầu ra:**
+`--config` chọn config khác; paths tính từ project root. Thiếu quota tạo partial và exit code 2; `--allow-shortfall` chấp nhận partial để khảo sát, không biến thành complete. Runner chính cần dataset hợp lệ, complete.
 
-```json
-{
-  "query_id": "Q0001",
-  "query_paper_id": "P000001",
-  "target_facet": "method",
-  "candidate_ids": [
-    "P000002"
-  ]
-}
-```
+Output contract 1.0 không được ghi đè bằng 2.0; chọn output_dir/truth_dir mới. Không chạy hai generator vào cùng output.
 
-```json
-{
-  "query_id": "Q0001",
-  "candidate_id": "P000002",
-  "relevance": 2
-}
-```
-
-## 6. Các bước generator phải thực hiện
-
-1. Đọc corpus chính và facets silver A, config và rule version; join theo paper_id.
-2. Chọn anchor có facet đích; tạo positive, partial, hard/easy negative theo rule.
-3. Chọn 5 queries × 10 candidates bằng seed 42; loại self-candidate và ID trùng.
-4. Sinh đủ nhãn cho chính candidate set đã chọn; chưa có nhãn không tự bằng 0.
-5. Chia theo nhóm anchor để cùng bài truy vấn không tràn các split.
-6. Ghi query, labels, provenance và manifest; kiểm tra refs, positives và leakage.
-7. Chạy lại cùng input/seed để kiểm tra tái lập. Thiếu candidates thì báo gap.
-
-Khi mở rộng hoặc cập nhật facets A, sinh lại candidates/labels/splits theo
-input version đã ghi. Nhãn sinh bằng rule vẫn ghi synthetic; chất lượng đánh giá
-thật cần review riêng.
-
-**Chưa có generator mock B hoặc lệnh chạy nó.** Việc cập nhật README chưa tạo dataset.
-
-## 7. Kiểm tra dataset và nghiệm thu
-
-- Query/candidate resolve trong đúng catalog; không self-candidate hoặc trùng ID.
-- Nhãn không thừa/thiếu/nhân đôi so với chính sách judged đã công bố.
-- Positive tồn tại; nguồn/scale/mapping relevance có giải thích, không trộn ngầm.
-- Query anchors không tràn các split tùy chỉnh; nhãn không nằm trong input dự đoán.
-- Manifest ghi mock/synthetic, actual counts, rule version và mọi pair còn unjudged.
-
-Mốc mock B hoàn tất khi generator tái lập trên corpus chính kèm facets silver A năm facet, đủ mẫu hợp lệ,
-manifest ghi mock và kiểm tra cấu trúc/rule/leakage đạt. Mốc này dùng silver A nhưng không yêu cầu
-human gold A hoặc native CSFCube. Đánh giá B với nhãn được kiểm chứng là bước tiếp theo.
-
-Lệnh hiện có `python scripts/validate_all.py --dataset-kind real --phase corpus`
-chỉ kiểm tra corpus chính. `--phase experiments` trả lỗi vì dataset/generator
-và validator đầy đủ A–E chưa được triển khai. Kiểm tra corpus đạt không thay thế
-review chất lượng nhãn, ngữ nghĩa hoặc giả thuyết bộ mô phỏng.
-
-### Tách riêng: mô hình dùng dataset đã tạo thế nào?
-
-Mô hình B đọc retrieval_queries và corpus/facets được phép; nhãn relevance giữ cho evaluation. Mô hình tạo ranking/scores, không tạo candidate catalog/ground truth thay generator.
+Bàn giao cả generated + ground_truth + config/manifest. [Pilot B](samples/README.md) hướng dẫn giảm quota riêng. Sau đó đọc [runner B](../../scripts/exp_b/README.md) để chạy model và so điểm.

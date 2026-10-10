@@ -1,70 +1,70 @@
-# Thực nghiệm <ký hiệu> — <tên tiếng Việt>
+# Mẫu README theo từng tầng
 
-Trạng thái triển khai và các quy ước cần chốt.
+[Tổng quan dự án](../README.md) · [Protocol hiện hành](EXPERIMENT_PROTOCOL.md)
 
-**Facet dùng chung là silver do A trích từ bài thật:**
-`data/exp_a/generated/facets_silver.jsonl`, kèm metadata/dẫn chứng và manifest
-có `status: complete`. Năm facet: `problem`, `task`, `method`, `dataset`,
-`contribution`. Không sinh facet giả hoặc thay title/abstract để khớp nhãn.
-Mock của B–E là queries/intents/nhãn theo rule/users/hành vi; không phải mock corpus
-hay mock facet. B/C/D không cần kết quả của nhau hoặc human gold A; E cần users D.
+## 1. Quy tắc phân tầng
 
-Output pilot ở `samples/generated/` và `samples/ground_truth/`; bộ mở rộng ở
-`generated/` và `ground_truth/` trực tiếp dưới exp. Cả hai vẫn ghi
-`dataset_kind: mock` nếu query/nhãn/hành vi được sinh tự động. Manifest ghi hash
-corpus và facets A, seed 42, rule version và actual counts. Generator B–E chưa
-được triển khai; A đã có bộ chạy Qwen3 local. Facet `[]` là thiếu bằng chứng, không phải
-bài chưa annotation; chỉ chọn bài đủ thông tin cho rule đang xét.
+| Vị trí | Nên có | Chi tiết đặt ở đâu? |
+|---|---|---|
+| README gốc | Mục tiêu, cấu trúc chính, chỉ mục A–E, phụ thuộc | Link tới data/scripts/docs |
+| data/README | Chỉ mục nguồn/corpus/generator và thứ tự bàn giao | data/exp_<x>/README |
+| scripts/README | Chỉ mục runner và tài liệu chung | scripts/exp_<x>/README |
+| data/exp_<x>/README | Nguyên liệu → generator → dataset/ground truth | samples/README cho pilot |
+| scripts/exp_<x>/README | Observable inputs → scorer → evaluator → điểm | BASELINE_GUIDE cho hợp đồng chung |
 
-## 1. Mục đích và câu hỏi thực nghiệm
+Mỗi README phải có đường quay lại chỉ mục và link sang bước tiếp theo. Càng sâu, ví dụ/công thức/lệnh cụ thể hơn. Không lặp toàn bộ hướng dẫn ở các trang chỉ mục.
 
-Giải thích câu hỏi cần kiểm chứng, ví dụ sử dụng, quan hệ với A–E khác và giới hạn
-dữ liệu thật/mô phỏng. Không mô tả kết quả mô hình chưa chạy.
+## 2. Khung README generator
 
-## 2. Đầu vào của generator xây dataset
+```text
+# Dữ liệu <exp> — <tên>
+Link: chỉ mục dữ liệu, runner, protocol
 
-Mọi exp đọc `data/processed/papers.jsonl` đã có. Facet A trích từ bài thật ở
-`data/exp_a/generated/facets_silver.jsonl`; E đọc thêm users mock D.
-Giữ nguyên paper_id/title/abstract. Không tạo catalog mẫu hoặc ID mock riêng.
-Ghi từng tệp nguyên liệu generator phải đọc (corpus, ID map, facets, source labels,
-users từ exp khác), config/rule/version và mục đích. Phân biệt đã có/cần tạo/tùy
-chọn; ghi prerequisite còn thiếu. Không coi query/intents/users/events mà generator
-phải sinh là đầu vào có sẵn. Liên kết DATA_CONTRACT.md và dùng ID chung.
+1. Câu hỏi và dataset generator cần tạo
+2. Nguyên liệu đã có / prerequisites, config, đường dẫn
+3. Từng bước sampling/simulation, seed và phiên bản rule
+4. Đáp án sinh từ đâu, ví dụ tính nhãn
+5. Observable vs ground_truth; split/cutoff
+6. Bảng output: tên tệp, đơn vị record, quota/actual counts
+7. Lệnh dry-run, generate, validate đang có
+8. Shortfall/failure, provenance, bàn giao và link pilot
+```
 
-## 3. Đầu ra của generator xây dataset
+Ghi rõ bài thật, facet silver, labels/behaviors mock hoặc human gold. Generator sinh query/profile/intent/events là output, không tự mô tả như dữ liệu đã có sẵn.
 
-Output mock ở `data/exp_<x>/samples/generated/` và `samples/ground_truth/`,
-manifest ghi `dataset_kind: mock` cho queries/nhãn/hành vi synthetic; A silver ghi real. Output mở rộng ở `generated/` và
-`ground_truth/` trực tiếp dưới exp; không ghi đè hoặc trộn hai loại.
-Bảng tên tệp generator phải tạo, đường dẫn và đơn vị bản ghi. Giải thích nguồn
-nhãn, bản nào cần human review, số lượng/quota/gap. Tách observable inputs, nhãn đánh giá, latent
-truth và dữ liệu tương lai. Manifest ghi version/kind, seed, hashes và actual counts.
+A trích silver từ corpus thật, selector tạo form pending. B–E generator đã có theo contract 2.0. B/C dùng A; D dùng C users/logs; E dùng C users rồi sinh stream riêng.
 
-## 4. Định nghĩa trường dữ liệu
+Ví dụ chỉ minh họa, không giả danh benchmark đã chạy. Không tự thay ID/title/abstract để khớp labels hoặc chèn facet để đủ quota.
 
-Ý nghĩa, kiểu, enum, missing values, khóa duy nhất và foreign keys. Giải thích các
-điểm dễ nhầm, nguồn nhãn và mapping chưa duyệt; không tự đổi nhãn native.
+## 3. Khung README runner
 
-## 5. Ví dụ generator: nguyên liệu → dataset
+```text
+# Exp <exp> — <tên>
+Link: chỉ mục scripts, generator, giao diện chung
 
-Ví dụ nguyên liệu/config generator đọc và records nó xuất ra từng tệp. JSON dùng ID corpus chính; ví dụ chỉ minh họa schema; label generator phải dùng facets A thực tế. Đánh dấu rõ nhãn minh họa, không coi
-ví dụ schema là đáp án đã kiểm chứng. Giữ nguyên tên trường và nội dung bài nguồn.
+1. Câu hỏi nghiên cứu, baseline/model hiện có
+2. Scorer được nhìn những tệp/trường nào; truth bị giấu
+3. Representation/profile/direction/time weighting hoạt động từng bước
+4. Công thức score và ví dụ số dẫn tới thứ tự ranking
+5. Các model/ablation so phần nào với phần nào
+6. Evaluator lấy ground truth ở đâu, metric nói gì
+7. Code chạy theo thứ tự nào, CLI hiện có, output
+8. Cách đọc kết quả và giới hạn
+9. Thành viên bổ sung phương pháp/model ở đâu; có cần train không
+```
 
-## 6. Các bước generator phải thực hiện
+Phân biệt score prediction với relevance label. Không ghi encoder/reranker “đã có” khi mới là đề xuất. Nêu rõ mô hình nào có importance/direction, model nào MAE N/A và oracle đặc quyền.
 
-Nguồn, seed, sampling, positives/negatives, sizes, splits, quy tắc ngữ nghĩa và
-giới hạn mô phỏng. Chỉ ghi lệnh generator đang chạy được. Nếu chưa triển khai thì
-ghi rõ prerequisite và trạng thái; không bịa lệnh. Chỉ số đề xuất cần chốt trước
-khi chạy, không trình bày như kết quả hiện có.
+B split theo anchor; C/D/E chỉ dùng prefix trước cutoff. Tên history/train không tự có nghĩa neural training. D/E không cần scorer C hoàn thành.
 
-## 7. Quy tắc kiểm tra và điều kiện nghiệm thu
+## 4. Khung README pilot
 
-Tách nghiệm thu mock (không cần gold thật) khỏi nghiệm thu dataset dùng nhãn đã kiểm chứng.
-Khi facets A/alias/rule thay đổi, giữ corpus/IDs và sinh lại labels/splits/manifests.
-Silver không tính vào gold; bộ mở rộng có hành vi synthetic vẫn ghi mock.
-Structural/semantic checks, chống leakage, actual counts, review chất lượng và
-tiêu chí nghiệm thu riêng. Phân biệt corpus validation hiện có với validator
-thực nghiệm chưa xây; không silent-pass khi dữ liệu bắt buộc thiếu.
+Ghi cách tạo config pilot từ config chính, **tên trường và giá trị cần giảm**, output/truth riêng, prerequisites, lệnh cụ thể và phần output phải kiểm tra.
 
-Cách mô hình sử dụng dataset đã tạo ghi riêng ở cuối; không thay hướng dẫn xây
-dataset bằng mô tả query → ranking/scores của mô hình.
+D/E pilot trỏ users_path tới C pilot complete, giữ manifest và các logs được tham chiếu. A limit mặc định tiếp tục part hiện hành; muốn pilot độc lập phải chọn output/config riêng.
+
+## 5. Tránh tài liệu lệch code
+
+Trước khi đổi README, đối chiếu generator/scorer/evaluator, config và protocol. Sau khi tách, sửa links/anchors từ nơi khác trỏ tới mục đã chuyển.
+
+Kiểm tra local links, JSON/Python snippets và tên CLI. Không dùng trạng thái/quota trong config để khẳng định dataset/model đã chạy thành công. Đo thực tế có ngày ghi nhận để trong VALIDATION_STATUS hoặc báo cáo kết quả.
