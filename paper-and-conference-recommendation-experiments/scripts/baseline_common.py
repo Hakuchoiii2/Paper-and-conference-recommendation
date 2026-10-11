@@ -148,10 +148,11 @@ def parse_search(text, facets, vocabulary=None):
     # shortcut: mock queries use known concept phrases; add semantic parsing for natural search logs.
     vocabulary = vocabulary or search_vocabulary(facets)
     result = {f:dict(include=set(),exclude=set()) for f in FACETS}
-    for segment in normalize(text).split(';'):
+    for segment in text.split(';'):
         prefix,separator,tail = segment.partition(':')
-        fs = [prefix.strip()] if separator and prefix.strip() in FACETS else FACETS
-        content = tail if separator and prefix.strip() in FACETS else segment
+        prefix_clean = normalize(prefix)
+        fs = [prefix_clean] if separator and prefix_clean in FACETS else FACETS
+        content = normalize(tail if separator and prefix_clean in FACETS else segment)
         for f in fs:
             direct = content.strip()
             negative_direct = direct.startswith('alternatives to ')
