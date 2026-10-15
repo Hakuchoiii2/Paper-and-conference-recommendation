@@ -114,10 +114,11 @@ def evaluate_predictions(predictions, cases, labels, groups, ks, truth=None):
 
 def markdown_report(report):
     metrics = list(report['summary'][0]['defined_cases'])
+    formatted_headers = [f"{m} (↓)" if any(k in m for k in ('mae', 'loss', 'error')) else f"{m} (↑)" for m in metrics]
     lines = [f"# Experiment {report['experiment'].upper()} — CPU methods", '',
              f"Dataset: **{report['dataset_kind']}**, status: **{report['dataset_status']}**, "
              f"evaluation: **{report['protocol']}**, cases: **{report['cases']}**.", '',
-             '| Model | Group | Cases | Positive cases | ' + ' | '.join(metrics) + ' |',
+             '| Model | Group | Cases | Positive cases | ' + ' | '.join(formatted_headers) + ' |',
              '|---|---|---:|---:|' + '---:|' * len(metrics)]
     for row in report['summary']:
         scores = ['N/A' if row[key] is None else f'{row[key]:.4f}' for key in metrics]

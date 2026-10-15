@@ -87,10 +87,12 @@ def generate_markdown_report(rows):
         "Đánh giá ảnh hưởng của chu kỳ bán rã (half-life tính theo ngày) lên mô hình `decay`.",
         "Khung thời gian thực nghiệm gồm 4 kỳ (kỳ 1–4, mỗi kỳ 30 ngày).",
         "",
+        "Ghi chú: (↑) giá trị càng cao càng tốt; (↓) giá trị càng thấp càng tốt.",
+        "",
         "## 1. Kết quả tổng hợp theo Half-Life (Mô hình Decay)",
         "",
-        "| Half-Life (ngày) | Overall nDCG@10 | Overall MAE | Drift nDCG@10 | Drift MAE | Stable nDCG@10 | Stable MAE |",
-        "|:---:|:---:|:---:|:---:|:---:|:---:|:---:|"
+        "| Half-Life (ngày) | Overall nDCG@10 (↑) | Overall MAE (↓) | Drift nDCG@10 (↑) | Drift MAE (↓) | Stable nDCG@10 (↑) | Stable MAE (↓) |",
+        "|:---:|:---:|:---:|:---:|:---:|:---:|:---:|",
     ]
 
     for hl in HALF_LIVES:
@@ -109,7 +111,7 @@ def generate_markdown_report(rows):
         "## 2. Chi tiết theo kỳ chuyển dịch (Period 2, 3, 4)",
         "",
         "### Nhóm Drift (Sở thích thay đổi)",
-        "| Half-Life | Kỳ 2 (bắt đầu drift) | Kỳ 3 (chuyển tiếp) | Kỳ 4 (drift hoàn toàn) |",
+        "| Half-Life | Kỳ 2 (bắt đầu drift) (↑) | Kỳ 3 (chuyển tiếp) (↑) | Kỳ 4 (drift hoàn toàn) (↑) |",
         "|:---:|:---:|:---:|:---:|",
     ])
     for hl in HALF_LIVES:
@@ -121,7 +123,7 @@ def generate_markdown_report(rows):
     lines.extend([
         "",
         "### Nhóm Stable (Sở thích cố định)",
-        "| Half-Life | Kỳ 2 | Kỳ 3 | Kỳ 4 |",
+        "| Half-Life | Kỳ 2 (↑) | Kỳ 3 (↑) | Kỳ 4 (↑) |",
         "|:---:|:---:|:---:|:---:|",
     ])
     for hl in HALF_LIVES:
