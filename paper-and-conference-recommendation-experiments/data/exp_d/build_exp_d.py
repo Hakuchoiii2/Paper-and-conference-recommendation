@@ -21,21 +21,58 @@ def build_d(facets, users, config, rng):
     require(anchors,'D needs at least two facets on an anchor')
     sessions, intents, labels, events, queries, exposures = [], [], [], [], [], []
     skipped = collections.Counter()
+    # Enumerate feasible session designs once, before balancing focus selection.
+    # Feasibility uses the existing pools/labels, not relaxed concept matching.
+    eligible_by_pair = {(context,focus): {pid for pid,row in facets.items()
+                         if row[context] and row[focus]}
+                        for context in FACETS for focus in FACETS if context != focus}
+    designs = {direction: collections.defaultdict(list) for direction in ('similar','different')}
+    positive_capacity = {}
+    for anchor in anchors:
+        available = [f for f in FACETS if facets[anchor][f]]
+        overlaps = {f: overlapping(index,f,facets[anchor][f]) for f in available}
+        for context in available:
+            for focus in available:
+                if focus == context:
+                    continue
+                eligible = eligible_by_pair[context,focus] - {anchor}
+                related = overlaps[context] & eligible
+                same = overlaps[focus] & eligible
+                for direction in designs:
+                    positive = related & same if direction == 'similar' else related - same
+                    if positive and len(eligible) > len(positive) and len(eligible) >= config['candidates_per_case']:
+                        design = (anchor,context,focus)
+                        designs[direction][focus].append(design)
+                        positive_capacity[direction,design] = min(len(positive),config['candidates_per_case'] - 1,
+                            max(1,round(config['candidates_per_case'] * config['positive_fraction'])))
+                    else:
+                        skipped['infeasible_design'] += 1
+    focus_counts, context_counts, design_counts = collections.Counter(), collections.Counter(), collections.Counter()
     start = validate_time(config['start_timestamp'])
     for user_row in users:
         user = user_row['user_id']
-        ordered = anchors[:]
-        rng.shuffle(ordered)
+        used_anchors = set()
         made = 0
-        for anchor in ordered:
-            if made == config['sessions_per_user']:
-                break
-            available = [f for f in FACETS if facets[anchor][f]]
-            context = rng.choice(available)
-            focus = rng.choice([f for f in available if f != context])
+        for _ in range(config['sessions_per_user']):
             direction = 'similar' if len(sessions) % 2 == 0 else 'different'
-            eligible = {pid for pid,row in facets.items()
-                        if pid != anchor and row[context] and row[focus]}
+            available_designs = {f:[d for d in rows if d[0] not in used_anchors]
+                                 for f,rows in designs[direction].items()}
+            available_focus = [f for f in FACETS if available_designs.get(f)]
+            if not available_focus:
+                skipped['no_unused_feasible_anchor'] += 1
+                break
+            minimum = min(focus_counts[direction,f] for f in available_focus)
+            focus = rng.choice([f for f in available_focus if focus_counts[direction,f] == minimum])
+            choices = available_designs[focus]
+            # Fill the configured positive quota where the original corpus permits it.
+            # Do not relabel negatives or sacrifice focus balance to inflate this count.
+            capacity = max(positive_capacity[direction,d] for d in choices)
+            choices = [d for d in choices if positive_capacity[direction,d] == capacity]
+            usage = min(design_counts[direction,d] for d in choices)
+            choices = [d for d in choices if design_counts[direction,d] == usage]
+            minimum_context = min(context_counts[d[1]] for d in choices)
+            anchor,context,focus = rng.choice([d for d in choices if context_counts[d[1]] == minimum_context])
+            eligible = eligible_by_pair[context,focus] - {anchor}
             same_problem = overlapping(index,context,facets[anchor][context]) & eligible
             same_focus = overlapping(index,focus,facets[anchor][focus]) & eligible
             positive = same_problem & same_focus if direction == 'similar' else same_problem - same_focus
@@ -50,13 +87,13 @@ def build_d(facets, users, config, rng):
             mode = ('clear','ambiguous','none')[len(sessions) % 3]
             previous = None
             if mode != 'none':
-                concept_context = sorted(facets[anchor][context])[0]
-                texts = [f'{context}: {concept_context} papers']
+                concept_context = rng.choice(sorted(facets[anchor][context]))
+                texts = [f'{context}: ' + rng.choice((concept_context, f'{concept_context} papers'))]
                 if mode == 'clear':
-                    concept = sorted(facets[anchor][focus])[0]
-                    texts.append(f'{context}: {concept_context}; {focus}: '
-                                 + (f'alternatives to {concept}' if direction == 'different'
-                                    else f'more papers using {concept}'))
+                    concept = rng.choice(sorted(facets[anchor][focus]))
+                    templates = ('alternatives to {}','without {}','excluding {}','instead of {}','not using {}') \
+                                if direction == 'different' else ('more papers using {}','{} papers','{}')
+                    texts.append(f'{context}: {concept_context}; {focus}: ' + rng.choice(templates).format(concept))
                 for qi,text in enumerate(texts):
                     qid = f'{sid}Q{qi}'
                     queries.append(dict(query_id=qid,user_id=user,session_id=sid,text=text,
@@ -99,8 +136,23 @@ def build_d(facets, users, config, rng):
             labels.extend(dict(case_id=sid,candidate_id=pid,relevance=session_grade(
                 facets[anchor],facets[pid],focus,direction,context)) for pid in candidates)
             made += 1
+            used_anchors.add(anchor)
+            focus_counts[direction,focus] += 1
+            context_counts[context] += 1
+            design_counts[direction,(anchor,context,focus)] += 1
     report = dict(shortfall=len(users)*config['sessions_per_user'] - len(sessions),
                   actual_cases=len(sessions),actual_pairs=len(labels),skipped=dict(skipped),
+                  focus_counts={direction:{f:focus_counts[direction,f] for f in FACETS}
+                                for direction in designs},
+                  context_counts=dict(context_counts),
+                  feasible_design_counts={direction:{f:len(rows) for f,rows in by_focus.items()}
+                                          for direction,by_focus in designs.items()},
+                  positive_pool_policy='maximize_configured_quota_within_balanced_focus',
+                  maximum_positive_capacity={direction:{f:max(positive_capacity[direction,d] for d in rows)
+                                                       for f,rows in by_focus.items()}
+                                             for direction,by_focus in designs.items()},
+                  unique_anchors=len({row['query_paper_id'] for row in sessions}),
+                  mean_intent_candidates=sum(row['relevance'] == 2 for row in labels)/len(sessions) if sessions else 0,
                   behavior_counts=dict(collections.Counter(r['interaction_type'] for r in events)))
     return ({'sessions.jsonl':sessions,'interactions_train.jsonl':events,
              'search_events.jsonl':queries,'exposures.jsonl':exposures},
