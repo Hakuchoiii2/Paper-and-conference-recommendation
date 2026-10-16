@@ -1,12 +1,11 @@
-"""Sweep half-life parameter for Exp E without overwriting existing results."""
+"""Sweep half-life parameter for Exp E under results/exp_e/sweeps/sensitivity_half_life."""
 import csv
-import json
 import subprocess
 import sys
 from pathlib import Path
 
-EXP_ROOT = Path(__file__).resolve().parents[2]
-RESULTS_DIR = EXP_ROOT / "results" / "exp_e" / "sensitivity_half_life"
+EXP_ROOT = Path(__file__).resolve().parents[3]
+RESULTS_DIR = EXP_ROOT / "results" / "exp_e" / "sweeps" / "sensitivity_half_life"
 
 HALF_LIVES = [3.0, 7.0, 14.0, 21.0, 30.0, 45.0, 60.0, 90.0, 180.0]
 
@@ -21,14 +20,15 @@ def run_sweep():
 
     for hl in HALF_LIVES:
         hl_tag = f"hl_{int(hl) if hl.is_integer() else hl}"
-        output_rel = f"results/exp_e/sensitivity_half_life/{hl_tag}"
+        output_rel = f"results/exp_e/sweeps/sensitivity_half_life/{hl_tag}"
         cmd = [
             sys.executable,
             "scripts/exp_e/run_exp_e.py",
             "--ks", "5", "10",
             "--half-life-days", str(hl),
+            "--preset", "canonical",
             "--output", output_rel,
-            "--overwrite"
+            "--overwrite",
         ]
         print(f"--> Running half_life = {hl} days ({hl_tag})...")
         proc = subprocess.run(cmd, cwd=EXP_ROOT, capture_output=True, text=True)
@@ -57,16 +57,23 @@ def run_sweep():
                     })
         print(f"    Completed {hl_tag} successfully.")
 
-    # Save summary CSV
     summary_csv = RESULTS_DIR / "sweep_metrics.csv"
     with summary_csv.open("w", encoding="utf-8", newline="") as f:
-        fields = ["half_life_days", "group", "ndcg@10", "ndcg@5", "mrr@10", "importance_mae", "precision@10", "recall@10"]
+        fields = [
+            "half_life_days",
+            "group",
+            "ndcg@10",
+            "ndcg@5",
+            "mrr@10",
+            "importance_mae",
+            "precision@10",
+            "recall@10",
+        ]
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         writer.writerows(results_summary)
     print(f"\nSaved consolidated metrics to {summary_csv}")
 
-    # Generate Markdown Report
     generate_markdown_report(results_summary)
 
 
@@ -84,7 +91,7 @@ def generate_markdown_report(rows):
     lines = [
         "# Khảo sát độ nhạy tham số Half-Life (Experiment E)",
         "",
-        "Đánh giá ảnh hưởng của chu kỳ bán rã (half-life tính theo ngày) lên mô hình `decay`.",
+        "Đánh giá ảnh hưởng của chu kỳ bán rã (half-life tính theo ngày) lên mô hình `decay__exp`.",
         "Khung thời gian thực nghiệm gồm 4 kỳ (kỳ 1–4, mỗi kỳ 30 ngày).",
         "",
         "Ghi chú: (↑) giá trị càng cao càng tốt; (↓) giá trị càng thấp càng tốt.",
