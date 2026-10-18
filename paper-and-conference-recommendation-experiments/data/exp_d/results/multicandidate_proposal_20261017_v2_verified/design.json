@@ -1,0 +1,48 @@
+{
+  "bootstrap_samples": 2000,
+  "code_hashes": {
+    "data/exp_d/build_multicandidate_sessions.py": "d123a4628fccadd5c7781adafcbd8ab794f2076db13f1b6fca2812b77c51fb10",
+    "scripts/exp_d/evidence_controls.py": "f50cfccf56c9de2168d4c3fabf57adb3b1f9f505238fea1f31bd41a260b1394c",
+    "scripts/exp_d/intent_priority.py": "2f6b2093448d85caffe3eb972f56ab8a9948c68aa4c942d0d105adf98c910aa4",
+    "scripts/exp_d/proposal_ranker.py": "13dd4ba6de08644dfa4df102ca7b9628ec2d8e47c87c09f94ea1c0dbf216ea51",
+    "scripts/exp_d/run_evidence_suite.py": "ff785fb9a2611638f6d06eab4a19d2ddd5ce8ded86e2f24556768119f70e380e",
+    "scripts/exp_d/run_improve_trial.py": "e8788bca9fb62280946866552f9358e6a52e496bff5261625ee96be61dae99c7",
+    "scripts/exp_d/run_multicandidate_proposal.py": "fbbe603376e4e456fa5897ccacef5e89c7a01b151b0dd3cbad1bd130862cf781",
+    "scripts/exp_d/test_multicandidate_proposal.py": "337546b51568e9b5560c4756c9df046e6362b784d8c90670ed281baa2357fb29"
+  },
+  "created_at": "2026-10-17T16:59:55.187721+00:00",
+  "evaluation_scope": "development diagnostic, no untouched test",
+  "expected_limitations": [
+    "8 previously used anchors; synthetic reactions; overlap labels",
+    "compliance pool ceilings change; cross-dataset deltas are pool effects",
+    "no human/generalization/acceptance or novelty claim"
+  ],
+  "fixed_before_v2_predictions": true,
+  "intervention": "candidate composition only; exact v1 queries/observations/intents/C profiles",
+  "label_rule": "unchanged session_grade; equal-grade internal order has no judged preference",
+  "noise": [
+    0.2,
+    0.5
+  ],
+  "pool_rule": "retain v1 same/different; replace outside with up to 5 total different, all designs",
+  "primary": "seed-averaged paired proposal_behavior_predicted minus proposal_behavior_similar nDCG@10",
+  "prior_v1_results_inspected": true,
+  "protocol": "d_multicandidate_v2",
+  "secondary": [
+    "intent_compliance@1",
+    "intent_compliance@5",
+    "intent_compliance@10",
+    "diagnostic_intent_recall@5",
+    "diagnostic_ceiling_fraction@5"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "source": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\exp_d\\workspace_baseline_20261016_v1",
+  "subgroup_rule": "expanded (>=2 different), unchanged, count=5, direction, query mode, focus; descriptive",
+  "training": false,
+  "tuning": false,
+  "v1": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\exp_d\\results\\contrast_proposal_20261016_v1"
+}

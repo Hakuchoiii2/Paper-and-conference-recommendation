@@ -6,7 +6,8 @@ import sys
 import unittest
 
 HERE = Path(__file__).resolve().parent
-sys.path[:0] = [str(HERE / 'workspace/scripts'), str(HERE / 'workspace')]
+ws = HERE / 'workspace' if (HERE / 'workspace').exists() else (HERE / 'workspace_baseline_20261016_v1' if (HERE / 'workspace_baseline_20261016_v1').exists() else HERE.parents[1])
+sys.path[:0] = [str(ws / 'scripts'), str(ws)]
 from experiment_io import FACETS
 from data.experiment_common import behavior, session_grade, timestamp
 from validate_experiments import check_d

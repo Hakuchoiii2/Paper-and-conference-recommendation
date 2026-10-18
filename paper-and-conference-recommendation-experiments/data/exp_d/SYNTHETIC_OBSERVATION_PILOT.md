@@ -4,7 +4,7 @@
 
 Pilot kiểm tra: **khi có bằng chứng tổng hợp được kiểm soát, estimator hiện có có suy đúng focus/direction và thay đổi ranking candidates thật không?** Đây không phải kiểm chứng người dùng thật, không phải mở rộng corpus thật và không phải phương pháp đề xuất đã thắng baseline.
 
-Thực hiện theo báo cáo `docs/bao_cao_exposure_interaction_D.md`: thử nhóm nhỏ trước, giữ nguồn thật, phản ứng có điều kiện theo intent và nhiễu; tách observation/candidates; không đưa hidden intent cho scorer; chạy mọi đối chứng trên cùng dữ liệu, kiểm tra seed/nhiễu và báo riêng focus.
+Thực hiện theo báo cáo lịch sử [exposure/interaction](docs/old/bao_cao_exposure_interaction_D.md): thử nhóm nhỏ trước, giữ nguồn thật, phản ứng có điều kiện theo intent và nhiễu; tách observation/candidates; không đưa hidden intent cho scorer; chạy mọi đối chứng trên cùng dữ liệu, kiểm tra seed/nhiễu và báo riêng focus. Kết luận mới nhất xem [evidence_report.md](docs/evidence_report.md).
 
 | Thành phần | Xử lý trong pilot |
 |---|---|

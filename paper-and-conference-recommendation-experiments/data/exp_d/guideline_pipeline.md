@@ -181,4 +181,4 @@ Tests cho exporter:
 python -B -m unittest discover -s data/exp_d -p test_export_results.py
 ```
 
-Tham khảo: [thiết kế pilot synthetic](../SYNTHETIC_OBSERVATION_PILOT.md), [overview](overview.md), [changed.md](changed.md).
+Tham khảo: [thiết kế pilot synthetic](SYNTHETIC_OBSERVATION_PILOT.md), [overview](docs/overview.md), [nhật ký generator cũ](docs/old/changed.md), [nhật ký cải tiến](docs/changed_improve.md).

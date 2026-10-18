@@ -132,3 +132,52 @@ Cải thiện suy hướng bằng parser ngữ nghĩa/query/reactions/confidence
 Chỉ thay encoder ranking **không tự cải thiện direction F1** nếu estimator giữ nguyên. Reranker có thể nhận directions dự đoán và evidence, không nhận intent thật. Giữ profile C cố định khi so hướng để xác định nguồn cải thiện.
 
 D phụ thuộc dataset C, không phụ thuộc tiến độ nghiên cứu scorer C. Không cần bộ profile kiểm duyệt để chạy mock; người dùng/relevance thật là bước kiểm chứng sau.
+
+## 11. Code phương pháp và runner cải tiến
+
+Code phương pháp được gom tại `scripts/exp_d/`; dữ liệu, model/cache, kết quả và backup vẫn ở `data/exp_d/`. Baseline `run_exp_d.py` và bản sao riêng `run_exp_d copy.py` không thay đổi.
+
+| File | Vai trò |
+|---|---|
+| `intent_priority.py` | M0 priority và lexical active |
+| `semantic_ranker.py` | SBERT full/active và hybrid |
+| `proposal_ranker.py` | Xếp hạng theo evidence, active facets, direction priority và fallback |
+| `run_contrast_proposal.py`, `summarize_contrast_proposal.py` | Benchmark cặp intent mới và báo cáo; không thay thế canonical |
+| `run_multicandidate_proposal.py` | V2: mở rộng pool thật, giữ nguyên evidence v1, đối chứng cùng pool, xuất báo cáo và kiểm tra tái lập |
+| `audit_contrast_pool.py` | Kiểm tra khả năng có cả hai phía focus trong corpus thật |
+| `evidence_controls.py` | Đối chứng direction, shuffle và phân nhóm anchor |
+| `run_improve_trial.py` | Chạy thử M0 trên canonical và các cấu hình pilot |
+| `run_sbert_trial.py` | Chạy thử frozen encoder, dùng cache local trên ổ E |
+| `run_evidence_suite.py` | Chạy đối chứng theo scorer gốc và M0 |
+| `summarize_evidence.py` | Tổng hợp báo cáo bằng chứng |
+| `model_storage.py`, `prepare_sbert_model.py` | Cấu hình cache và tải checkpoint vào `data/exp_d/model/` |
+| `test_*.py` | Tests phương pháp và đối chứng |
+
+Chạy từ gốc project thực nghiệm:
+
+```powershell
+python -B -m unittest discover -s scripts/exp_d -p 'test_*.py'
+python -B scripts/exp_d/run_improve_trial.py --output data/exp_d/results/my_m0_run
+python -B scripts/exp_d/run_sbert_trial.py --output data/exp_d/results/my_sbert_run
+python -B scripts/exp_d/run_evidence_suite.py --output data/exp_d/results/my_evidence_run
+python -B scripts/exp_d/summarize_evidence.py --help
+```
+
+Các runner từ chối ghi đè output. Summarizer hiện mặc định đọc suite `evidence_20261016_v1`; nếu dùng tên suite khác cần điều chỉnh đường dẫn đọc trước khi tổng hợp. Lệnh tải model khi cần:
+
+```powershell
+python -B scripts/exp_d/prepare_sbert_model.py --revision 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+```
+
+Generator `build_exp_d.py`, overlay generator `run_synthetic_observation_pilot.py`, công cụ workspace/export và pipeline dữ liệu vẫn ở `data/exp_d/`. Snapshot, manifest, báo cáo kết quả đã xuất và docs/old giữ đường dẫn lịch sử; không sửa chúng để giả rằng đã chạy từ layout mới. Xem [nhật ký layout và restore](../../data/exp_d/docs/changed_improve.md).
+
+### Bộ phụ v2 nhiều ứng viên — hoàn tất 18/10/2026
+
+Generator bổ sung: `data/exp_d/build_multicandidate_sessions.py`. Giữ v1 và canonical; chỉ thay outside bằng different khả dụng, giữ cả 8 anchors. Không đổi nhãn overlap, scorer hay observation. [Thiết kế, kết quả và giới hạn](../../data/exp_d/docs/multicandidate_report.md).
+
+```powershell
+python -B scripts/exp_d/run_multicandidate_proposal.py --output data/exp_d/results/my_multicandidate_v2
+python -B scripts/exp_d/run_multicandidate_proposal.py --verify-only --output data/exp_d/results/multicandidate_proposal_20261017_v2_verified
+```
+
+Mỗi lượt dùng output mới. `--verify-only` kiểm hashes và tái dựng pools/nhãn/metrics/CI; không chạy lại scorer hoặc ghi đè kết quả.
