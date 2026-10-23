@@ -53,34 +53,95 @@ Chi tiết đối chiếu công trình và phạm vi đề xuất nằm trong [n
 
 **Conference/C4:** chưa có thực nghiệm riêng trong bảng trên. Cần chốt nguồn dữ liệu, định danh conference, hồ sơ chủ đề và ground truth trước khi bổ sung generator/scorer/evaluator; xem [phạm vi và điều kiện triển khai](docs/PROJECT_OPERATIONS.md).
 
-## Cấu trúc chính
+## Kiến trúc tổng thể và workflow thực nghiệm
 
-```text
-data/
-  raw/             nguồn tải gốc và provenance
-  processed/       corpus canonical dùng chung
-  exp_a/           extraction, gộp silver và hàng đợi review
-  exp_b/ ... exp_e/ generator, generated/, ground_truth/, samples/
-scripts/
-  exp_a/ ... exp_e/ runner/evaluator và README chi tiết từng exp
-  BASELINE_GUIDE.md giao diện scorer và chỉ số dùng chung B–E
-configs/           cấu hình corpus và kiểm tra chất lượng
-docs/              protocol, hợp đồng dữ liệu, hướng dẫn và nghiên cứu
-results/           báo cáo baseline B–E, được Git bỏ qua
-tests/             kiểm tra generator, hợp đồng và runner
-```
-
-## Thứ tự và điều kiện chạy
+Sơ đồ dưới đây nối các khối xử lý hiện có và vị trí kiểm chứng của từng thực nghiệm A–E trong cùng một luồng. **Đường liền** là luồng dữ liệu/xử lý của baseline; **đường nét đứt** là dữ liệu chỉ dùng đánh giá, quan hệ dùng lại thành phần hoặc hướng chưa triển khai, được ghi rõ trên từng cạnh.
 
 ```mermaid
-flowchart LR
-    Corpus[Corpus canonical] --> A[A: silver hoàn chỉnh]
-    A --> B[B: dữ liệu retrieval]
-    A --> C[C: users và lịch sử]
-    C --> D[D: phiên intent]
-    C --> E[E: chuỗi thời gian]
-    A --> Gold[A: review gold và đánh giá]
+flowchart TB
+    Source["Nguồn bài báo thật<br/>Title, abstract và metadata"]
+    Corpus["Chuẩn hóa và kiểm tra corpus<br/>4.210 bài có paper_id thống nhất"]
+    Source --> Corpus
+
+    subgraph A["Exp A · Trích xuất và đánh giá năm facet"]
+        Extract["Qwen local<br/>Trích concept và câu dẫn chứng"]
+        Validate["Kiểm tra schema và bám nguồn<br/>Retry / checkpoint / gộp các phần"]
+        Silver["Biểu diễn bài báo dùng chung<br/>problem · task · method · dataset · contribution<br/>Silver + evidence + metadata + manifest"]
+        RefA["Reference để đánh giá extraction<br/>Hiện là AI reference; chờ human review"]
+        EvalA["Ghép nhãn exact / embedding<br/>Precision · Recall · F1 theo facet, micro/macro"]
+        Extract --> Validate --> Silver
+        Silver --> EvalA
+        RefA -. "nhãn tham chiếu" .-> EvalA
+    end
+    Corpus --> Extract
+
+    Ready["Kiểm tra silver complete và provenance<br/>Lọc bài fallback / còn lỗi khỏi pool khuyến nghị"]
+    Silver --> Ready
+
+    subgraph B["Exp B · Khuyến nghị theo bài đang đọc"]
+        DataB["Bài mốc + 100 ứng viên cố định<br/>Chia train / dev / test theo bài mốc"]
+        RankB["Chấm độ tương tự và xếp hạng<br/>Random / whole-text TF-IDF<br/>Equal-facet / weighted-facet"]
+        DataB --> RankB
+    end
+
+    subgraph C["Exp C · Suy sở thích dài hạn"]
+        DataC["Sinh users và log mô phỏng<br/>Phản ứng đọc + search + exposure"]
+        ProfileC["Chỉ lấy log trước cutoff<br/>Suy concept preferences + facet importance"]
+        RankC["Xếp hạng ứng viên holdout<br/>Popularity / text-history<br/>Facet không search / có search"]
+        DataC --> ProfileC --> RankC
+    end
+    Ready --> DataB
+    Ready --> DataC
+
+    subgraph D["Exp D · Suy ý định theo facet trong phiên"]
+        DataD["Sinh phiên: bài mốc + context + ứng viên<br/>Phản ứng và query trước cutoff"]
+        IntentD["Tính importance từ log C<br/>Suy hướng similar / different / unknown<br/>Từ hành vi hoặc hành vi + search"]
+        RankD["Xếp hạng theo context và hướng dự đoán<br/>Fixed-similar / profile-similar<br/>Direction-behavior / direction-search"]
+        DataD --> IntentD --> RankD
+    end
+
+    subgraph E["Exp E · Thích ứng khi sở thích thay đổi"]
+        DataE["Sinh stream riêng cho users C<br/>Hai nhóm stable / drift, bốn kỳ"]
+        UpdateE["Tại mỗi rolling cutoff, chỉ dùng quá khứ<br/>Tính lại profile: static / recent / decay"]
+        RankE["Xếp hạng ứng viên kỳ kế tiếp<br/>So với popularity và giữa các cách cập nhật"]
+        DataE --> UpdateE --> RankE
+    end
+    Ready --> DataD
+    Ready --> DataE
+    DataC -->|"handoff users + history / search / exposure"| DataD
+    DataC -->|"handoff users; E sinh stream riêng"| DataE
+    ProfileC -. "Dùng lại profile builder, không chờ kết quả C" .-> UpdateE
+
+    Truth["Ground truth mô phỏng B–E, giữ riêng<br/>Relevance / latent profiles / session intents<br/>Phản ứng tương lai và profile theo kỳ"]
+    Eval["Evaluator chung, tách khỏi scorer<br/>B–E: nDCG / Recall / Precision / MRR<br/>C–E: importance MAE<br/>D: direction F1 / accuracy / coverage + compliance<br/>E: tổng hợp theo stable / drift và từng kỳ"]
+    RankB --> Eval
+    RankC --> Eval
+    RankD --> Eval
+    RankE --> Eval
+    Truth -. "Chỉ evaluator đọc; D thêm oracle-intent riêng" .-> Eval
+    Report["Kết quả từng phương pháp và báo cáo so sánh<br/>Predictions · điểm từng case · bảng tổng hợp<br/>Manifest để truy nguồn và tái lập"]
+    Eval --> Report
+
+    Conference["Hướng khuyến nghị hội nghị · CHƯA TRIỂN KHAI<br/>Cần catalog, hồ sơ chủ đề và nhãn phù hợp<br/>Đối chiếu facet bài / profile với conference"]
+    Silver -. "Hướng mở rộng, chưa có thực nghiệm riêng" .-> Conference
+
+    classDef input fill:#e8f1f8,stroke:#426b85,color:#17364a;
+    classDef representation fill:#fff3d9,stroke:#c58e35,color:#604414;
+    classDef profile fill:#eaf5ed,stroke:#45915a,color:#214d2d;
+    classDef intent fill:#f1eafa,stroke:#8b5cba,color:#50326e;
+    classDef evaluation fill:#fff0f0,stroke:#c96b72,color:#72363b;
+    classDef future fill:#f5f5f5,stroke:#999,color:#555,stroke-dasharray:5 5;
+    class Source,Corpus,DataB,DataC,DataD,DataE input;
+    class Extract,Validate,Silver,Ready representation;
+    class ProfileC,UpdateE,RankC,RankE profile;
+    class IntentD,RankD,RankB intent;
+    class RefA,EvalA,Truth,Eval,Report evaluation;
+    class Conference future;
 ```
+
+B–E là các phép thử thành phần trên cùng nền corpus/facet, mỗi nhánh có đầu ra xếp hạng và đánh giá riêng. Baseline hiện dùng TF-IDF hoặc concept counts; encoder embedding ở A phục vụ **ghép nhãn đánh giá**, chưa phải encoder của ranker B–E. Retrieval toàn corpus, reranker và việc ghép B–E thành một vòng tương tác online là hướng phát triển.
+
+Các generator B–E sinh cả dữ liệu quan sát lẫn ground truth, nhưng scorer chỉ nhận phần quan sát. Nhãn ẩn đi thẳng tới evaluator; mũi tên này không đưa đáp án vào bước suy profile, suy intent hay xếp hạng. Sơ đồ mô tả luồng xử lý và hợp đồng, không xác nhận mọi dataset đã được sinh đủ.
 
 B/C cần silver A đầy đủ, metadata và manifest hợp lệ. D/E cần thêm bộ dữ liệu C hoàn chỉnh; **không cần chạy scorer C, huấn luyện model C hoặc đợi điểm C**. Human gold A phục vụ đánh giá extraction, không chặn generator B–E.
 
