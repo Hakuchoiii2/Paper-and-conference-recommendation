@@ -1,0 +1,33 @@
+{
+  "C_weights": "frozen original profiles; fixed_similar retains original uniform weights",
+  "action_assumption": "five equally spaced ordinal ranks; triangular neutral difference; exponential tilt",
+  "aggregation": "mean repeats within design -> mean designs within anchor workgroup -> mean workgroups",
+  "independent_test": false,
+  "input_dataset": "data\\exp_d\\proposal\\datasets\\observation_v1",
+  "models": [
+    "fixed_similar",
+    "profile_similar",
+    "query_only",
+    "direction_behavior",
+    "direction_search",
+    "vote",
+    "bayes_h",
+    "ordinal_intent"
+  ],
+  "ordinal_parameters": {
+    "minimum_pairs": 2,
+    "posterior_gap": 0.1,
+    "posterior_minimum": 0.25,
+    "query_reliability": 0.8,
+    "strengths": [
+      0.25,
+      0.75,
+      1.5
+    ]
+  },
+  "parameter_search": false,
+  "posterior_calibrated": false,
+  "protocol": "Frozen before this run; devised after examining prior pilot results.",
+  "scorer": "unchanged intent_scores; common unique-focus/ignore adapter; explicit profile-similar fallback",
+  "training": "none"
+}

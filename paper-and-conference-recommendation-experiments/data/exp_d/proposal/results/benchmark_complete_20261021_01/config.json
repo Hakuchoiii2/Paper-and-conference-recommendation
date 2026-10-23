@@ -1,0 +1,43 @@
+{
+  "aggregation": "mean repeats within design -> mean designs within anchor workgroup -> mean workgroups",
+  "bootstrap_repetitions": 2000,
+  "inference_source": "dataset only; never read previous results",
+  "input_dataset": "data\\exp_d\\proposal\\datasets\\observation_v1",
+  "methods": {
+    "delta_margin": 0.25,
+    "minimum_pairs": 2,
+    "posterior_gap": 0.1,
+    "posterior_minimum": 0.25,
+    "query_reliability": 0.8,
+    "reaction_reliability": 0.8,
+    "vote_fraction": 0.75
+  },
+  "metric_scope": "Focus-only main; original context+focus metrics in legacy tables",
+  "models": [
+    "fixed_similar",
+    "profile_similar",
+    "query_only",
+    "direction_behavior",
+    "direction_search",
+    "vote",
+    "bayes_h",
+    "ordinal_intent"
+  ],
+  "oracle": "oracle_intent",
+  "ordinal": {
+    "minimum_pairs": 2,
+    "posterior_gap": 0.1,
+    "posterior_minimum": 0.25,
+    "query_reliability": 0.8,
+    "strengths": [
+      0.25,
+      0.75,
+      1.5
+    ]
+  },
+  "posterior_calibrated": false,
+  "protocol": "Exploratory pilot inspected previously; no tuning in this run",
+  "ranking_policy": "R_active shared by all public methods; unchanged intent_scores",
+  "training": "none",
+  "tuning_on_dataset": false
+}

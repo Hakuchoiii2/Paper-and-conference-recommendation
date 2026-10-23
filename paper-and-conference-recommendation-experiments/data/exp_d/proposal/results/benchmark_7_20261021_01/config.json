@@ -1,0 +1,26 @@
+{
+  "aggregation": "mean repeats within design -> mean designs within anchor workgroup -> mean workgroups",
+  "bootstrap_repetitions": 2000,
+  "input_dataset": "data\\exp_d\\proposal\\datasets\\observation_v1",
+  "methods": {
+    "delta_margin": 0.25,
+    "minimum_pairs": 2,
+    "posterior_gap": 0.1,
+    "posterior_minimum": 0.25,
+    "query_reliability": 0.8,
+    "reaction_reliability": 0.8,
+    "vote_fraction": 0.75
+  },
+  "models": [
+    "fixed_similar",
+    "profile_similar",
+    "query_only",
+    "direction_behavior",
+    "direction_search",
+    "vote",
+    "bayes_h"
+  ],
+  "posterior_calibrated": false,
+  "training": "none",
+  "tuning_on_dataset": false
+}

@@ -1,0 +1,17 @@
+{
+  "compliance": "Original count(grade=2 in top K)/K; v1 ceiling .2 at K=5, .1 at K=10.",
+  "coverage": "Fraction with similar/different at true focus. Evaluator-only identification of focus.",
+  "direction_accuracy": "Focus only; unknown/ignore count as incorrect; context is supplied.",
+  "focus_macro_f1": "Macro of similar/different F1 from design-weighted confusion per workgroup, then mean workgroups.",
+  "importance_mae": "Original mean absolute difference over five weights against true session weights.",
+  "inference": "No training, new data, parameter search or previous prediction cache.",
+  "joint_accuracy": "Correct direction and exactly one inferred non-context focus, which equals true focus.",
+  "legacy_columns": "legacy_direction_* in main summary use context+focus but anchor aggregation; legacy_summary.csv uses original aggregation.",
+  "legacy_summary": "Actual original aggregate: equal case-condition means; pooled macro-F1 over context+focus.",
+  "main_aggregation": "mean repeats per design -> mean designs per anchor workgroup -> mean workgroups",
+  "ndcg": "Original graded gain 2^grade-1, TF-IDF scoring; k=5,10.",
+  "oracle": "Evaluator-only true session directions AND weights; same intent_scores, not a mathematical upper bound.",
+  "retrieval": "Original Recall/Precision/MRR: grade 1 AND grade 2 count as positive.",
+  "top1_grade2": "Fraction with grade 2 at rank 1; ceiling 1.",
+  "unknown": "Raw predictions remain unknown for evaluation; common ranking fallback is not a correct prediction."
+}

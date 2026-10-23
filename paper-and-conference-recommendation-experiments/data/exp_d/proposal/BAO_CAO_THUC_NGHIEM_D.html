@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Thực nghiệm D — bản ngắn</title><style>
+:root{color-scheme:light;--ink:#18324b;--blue:#165b91;--line:#d6e1e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef3f7;color:var(--ink);font:16px/1.65 "Segoe UI",Arial,sans-serif}main{max-width:1060px;margin:28px auto;background:white;padding:45px 55px 65px}h1{font-size:30px;line-height:1.3;margin:0 0 15px}h2{font-size:23px;line-height:1.4;color:var(--blue);margin:42px 0 18px;border-bottom:2px solid var(--line);padding-bottom:10px}h3{font-size:19px;margin-top:30px}p{margin:13px 0}a{color:var(--blue)}blockquote{margin:20px 0;padding:12px 18px;background:#eef6ff;border-left:4px solid #3c85bc}blockquote p{margin:0}table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:14px;line-height:1.5}th,td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{background:#edf5fc;text-align:left}tr:nth-child(even) td{background:#fafcfe}p:has(>img){text-align:center;margin:24px 0}img{max-width:100%;height:auto;width:850px}code{background:#eff3f6;padding:2px 5px;font-size:13px;overflow-wrap:anywhere}pre{padding:15px;background:#eff3f6;white-space:pre-wrap}pre code{padding:0}strong{font-weight:650}.back{font-size:14px;display:block;margin-bottom:20px}@media(max-width:720px){main{margin:0;padding:22px 15px}h1{font-size:25px}h2{font-size:21px}table{font-size:12px}th,td{padding:7px 6px}}@media print{@page{size:A4;margin:14mm}body{background:white;font-size:11pt}main{padding:0;margin:0;max-width:none}h1{font-size:22pt}h2{font-size:16pt;break-after:avoid}h3{break-after:avoid}p:has(>img){break-inside:avoid}img{max-height:235mm;object-fit:contain}table{font-size:9pt}tr{break-inside:avoid}pre{break-inside:avoid}}
+</style></head><body><main><h1>Thực nghiệm D — hiểu bài toán và đọc kết quả</h1>
+<p><strong>Một benchmark · tám phương pháp · một bảng kết quả chính.</strong> Oracle là mốc dùng đáp án ẩn. Các phân nhóm là cách đọc thêm cùng kết quả, không phải các thực nghiệm mới.</p>
+<h2>1. D kiểm tra điều gì?</h2>
+<ul>
+<li><strong>Query/phản ứng có giúp suy nhu cầu giống–khác không?</strong></li>
+<li><strong>Nhu cầu suy được có giúp xếp bài phù hợp lên trên không?</strong></li>
+</ul>
+<p>Ví dụ: đang đọc bài về <strong>gợi ý bài báo khi thiếu lịch sử người dùng</strong>. Context là task “gợi ý bài báo”; focus là problem. Muốn <strong>giống problem</strong> thì ưu tiên bài cũng xử lý thiếu lịch sử; muốn <strong>khác problem</strong> thì ưu tiên bài xử lý problem khác nhưng vẫn cùng task.</p>
+<h2>2. Dữ liệu và hình tổng quát</h2>
+<p><img alt="Hình 1. Bài toán D: tín hiệu công khai, ranking và đáp án riêng" src="figures/d_bai_toan.png" /></p>
+<ul>
+<li><strong>Candidates:</strong> những bài cần xếp hạng. Ưu tiên bài thật, tổng hợp phía còn thiếu.</li>
+<li><strong>Observation:</strong> các cặp riêng để tạo phản ứng trước cutoff; tách khỏi candidates đánh giá.</li>
+<li><strong>Hidden intent/labels:</strong> simulator đặt nhu cầu và nhãn trước; chỉ evaluator/Oracle được dùng làm đáp án.</li>
+</ul>
+<p>Bộ <code>datasets/observation_v1</code> có <strong>19 thiết kế trên 12 bài mốc</strong>. Mỗi thiết kế tạo 2 hướng × 3 chế độ query → <strong>114 phiên</strong>; lặp với 3 seeds × 2 mức nhiễu phản ứng.</p>
+<p><strong>15 thiết kế</strong> dùng pool 20 candidates thật; <strong>4 thiết kế</strong> dùng 19 thật + 1 tổng hợp. “4” là số thiết kế, không phải cả nhóm chỉ có bốn bài. Observation/query/phản ứng vẫn là mô phỏng ở cả hai nhóm.</p>
+<p>Mỗi pool có một candidate đúng context và đúng hướng (<strong>grade 2</strong>), một candidate đúng context nhưng sai hướng (<strong>grade 1</strong>) và 18 bài ngoài context (<strong>grade 0</strong>). Hai nhu cầu đối lập giữ cùng pool.</p>
+<h2>3. Code chạy và phương pháp khác nhau ở đâu?</h2>
+<p><img alt="Hình 2. Luồng code dựng dữ liệu và chạy benchmark hoàn chỉnh" src="figures/d_hien_thuc.png" /></p>
+<p><strong>Các phương pháp thay phần suy directions:</strong></p>
+<ul>
+<li><strong>Bốn baseline gốc:</strong> fixed_similar (luôn giống, weights đều), profile_similar (luôn giống, weights C), DELTA (chỉ phản ứng), DELTA + query.</li>
+<li><strong>Đối chứng bổ sung:</strong> QUERY-ONLY, VOTE, BAYES-H và Ordinal-Intent. Tất cả không train.</li>
+<li><strong>Oracle Intent:</strong> evaluator dùng directions và trọng số phiên đúng; không phải phương pháp thực tế để chọn thắng.</li>
+</ul>
+<p>DELTA lấy chênh lệch phản ứng <strong>phía khác − phía giống</strong>. Tổng chênh lệch chia cho <code>(số cặp + 2)</code>; đủ hai cặp và độ lớn ≥ 0,25 thì suy hướng. Dương → different, âm → similar; chưa rõ → unknown. DELTA + query bổ sung quy tắc query rõ.</p>
+<p><strong>Ranking chung gồm hai bước:</strong></p>
+<ol>
+<li><strong>R_active:</strong> suy được duy nhất một focus → giữ context/focus, bỏ facet khác; chưa rõ → fallback always-similar. Không dùng focus thật.</li>
+<li><strong>intent_scores gốc:</strong> similarity cosine là S; similar dùng S, different dùng 1−S. Điểm là <strong>Σ(weight × term) / Σweight</strong> trên facets đang dùng. Không đạt context hoặc candidate thiếu facet active có weight → −1; anchor thiếu thì bỏ facet; hết weights dùng cosine context; hòa theo ID.</li>
+</ol>
+<p>Ví dụ weights task/problem = 0,6/0,4: A có cosine (0,90; 0,95), B có (0,85; 0,20). Muốn giống problem: A=0,92 &gt; B=0,59. Muốn khác: B=0,83 &gt; A=0,56. <strong>Đổi hướng làm đổi thứ tự.</strong></p>
+<p>Vectors/candidates dùng chung; ngoài fixed_similar, các method dùng cùng C weights. Directions ban đầu được giữ để chấm: fallback ranking không được tính là suy đúng hướng.</p>
+<h2>4. Một bảng kết quả</h2>
+<table>
+<thead>
+<tr>
+<th>Phương pháp</th>
+<th style="text-align: right;">Accuracy</th>
+<th style="text-align: right;">F1</th>
+<th style="text-align: right;">Coverage</th>
+<th style="text-align: right;">nDCG@10</th>
+<th style="text-align: right;">C@5</th>
+<th style="text-align: right;">C@10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fixed_similar</td>
+<td style="text-align: right;">50,00%</td>
+<td style="text-align: right;">0,3333</td>
+<td style="text-align: right;">100,00%</td>
+<td style="text-align: right;">0,8029</td>
+<td style="text-align: right;">0,1722</td>
+<td style="text-align: right;">0,0903</td>
+</tr>
+<tr>
+<td>profile_similar</td>
+<td style="text-align: right;">50,00%</td>
+<td style="text-align: right;">0,3333</td>
+<td style="text-align: right;">100,00%</td>
+<td style="text-align: right;">0,8019</td>
+<td style="text-align: right;">0,1722</td>
+<td style="text-align: right;">0,0903</td>
+</tr>
+<tr>
+<td>QUERY-ONLY</td>
+<td style="text-align: right;">33,33%</td>
+<td style="text-align: right;">0,5000</td>
+<td style="text-align: right;">33,33%</td>
+<td style="text-align: right;">0,8623</td>
+<td style="text-align: right;">0,1815</td>
+<td style="text-align: right;">0,0935</td>
+</tr>
+<tr>
+<td>DELTA</td>
+<td style="text-align: right;">95,83%</td>
+<td style="text-align: right;">0,9734</td>
+<td style="text-align: right;">96,80%</td>
+<td style="text-align: right;">0,9597</td>
+<td style="text-align: right;">0,1981</td>
+<td style="text-align: right;">0,0993</td>
+</tr>
+<tr>
+<td><strong>DELTA + query</strong></td>
+<td style="text-align: right;">96,91%</td>
+<td style="text-align: right;">0,9793</td>
+<td style="text-align: right;">97,84%</td>
+<td style="text-align: right;">0,9632</td>
+<td style="text-align: right;">0,1985</td>
+<td style="text-align: right;">0,0995</td>
+</tr>
+<tr>
+<td>VOTE</td>
+<td style="text-align: right;">91,74%</td>
+<td style="text-align: right;">0,9545</td>
+<td style="text-align: right;">92,05%</td>
+<td style="text-align: right;">0,9523</td>
+<td style="text-align: right;">0,1962</td>
+<td style="text-align: right;">0,0988</td>
+</tr>
+<tr>
+<td>BAYES-H</td>
+<td style="text-align: right;">91,51%</td>
+<td style="text-align: right;">0,9533</td>
+<td style="text-align: right;">91,82%</td>
+<td style="text-align: right;">0,9518</td>
+<td style="text-align: right;">0,1962</td>
+<td style="text-align: right;">0,0988</td>
+</tr>
+<tr>
+<td>Ordinal-Intent</td>
+<td style="text-align: right;">81,13%</td>
+<td style="text-align: right;">0,8934</td>
+<td style="text-align: right;">81,13%</td>
+<td style="text-align: right;">0,9374</td>
+<td style="text-align: right;">0,1940</td>
+<td style="text-align: right;">0,0979</td>
+</tr>
+<tr>
+<td>Oracle — đặc quyền</td>
+<td style="text-align: right;">100,00%</td>
+<td style="text-align: right;">1,0000</td>
+<td style="text-align: right;">100,00%</td>
+<td style="text-align: right;">0,9862</td>
+<td style="text-align: right;">0,2000</td>
+<td style="text-align: right;">0,1000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Đọc cột:</strong> Accuracy/F1/Coverage chấm tại focus; unknown tính sai trong accuracy. nDCG đo thứ hạng, không phải phần trăm đoán đúng. C@K là Compliance@K = số grade 2 trong top K / K; một grade 2/phiên nên trần C@5=0,20 và C@10=0,10.</p>
+<p>Bảng dùng trung bình theo thiết kế rồi nhóm bài mốc. Metrics gốc tính cả context + focus và toàn bộ Recall/Precision/MRR được giữ trong <a href="results/benchmark_complete_20261021_01/report.md">báo cáo đầy đủ</a>; không trộn hai định nghĩa vào bảng này.</p>
+<h2>5. Nói được gì từ bảng này?</h2>
+<ul>
+<li><strong>Phản ứng giúp suy hướng:</strong> DELTA 95,83% so với mốc luôn similar 50%. Thêm query tăng lên <strong>96,91%</strong>.</li>
+<li><strong>Intent giúp ranking:</strong> DELTA + query có nDCG <strong>0,9632</strong> so với profile_similar <strong>0,8019</strong>, và đưa bài đúng nhu cầu lên hạng 1 ở <strong>94,56%</strong> phiên. Hiệu quả bao gồm suy scope và hướng.</li>
+<li><strong>DELTA + query gốc vẫn tốt nhất trong tám phương pháp.</strong> Các method bổ sung chưa thắng. Oracle dùng đáp án ẩn nên được đọc riêng.</li>
+</ul>
+<p>Chỉ xét nhóm candidates thật, nDCG cũng tăng <strong>0,7537 → 0,9483</strong>. Đây là phân nhóm từ cùng lượt chạy, không cần thêm một bảng thực nghiệm trong bản ngắn.</p>
+<p><strong>Phạm vi:</strong> kết quả hỗ trợ hai luận điểm trong mô phỏng có kiểm soát. Chỉ 12 bài mốc, query/cặp khá thuận lợi và phần lớn candidates ngoài context; chưa xác nhận trên người dùng thật hoặc test nội dung độc lập.</p>
+<p>Nguồn: <a href="results/benchmark_complete_20261021_01/report.md">lượt chạy complete</a>, 5.472 public predictions + 684 Oracle. Chạy lại từ thư mục experiments bằng <code>python -B scripts/exp_d/proposal/run_benchmark.py</code>.</p></main></body></html>

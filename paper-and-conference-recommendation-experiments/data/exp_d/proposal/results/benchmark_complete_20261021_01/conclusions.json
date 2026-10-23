@@ -1,0 +1,82 @@
+{
+  "best_public_on_pilot": {
+    "direction_accuracy": "direction_search",
+    "ndcg10": "direction_search"
+  },
+  "claims": [
+    {
+      "baseline": "profile_similar",
+      "bootstrap_repetitions": 2000,
+      "ci_high": 0.47762345679012347,
+      "ci_low": 0.43207947530864194,
+      "clusters": 12,
+      "comparison": "reaction_vs_no_signal",
+      "delta": 0.4583333333333333,
+      "exploratory": true,
+      "group": "overall",
+      "method": "direction_behavior",
+      "metric": "direction_accuracy",
+      "status": "positive"
+    },
+    {
+      "baseline": "direction_behavior",
+      "bootstrap_repetitions": 2000,
+      "ci_high": 0.018518518518518528,
+      "ci_low": 0.003858024691358023,
+      "clusters": 12,
+      "comparison": "query_added_to_reactions",
+      "delta": 0.01080246913580247,
+      "exploratory": true,
+      "group": "overall",
+      "method": "direction_search",
+      "metric": "direction_accuracy",
+      "status": "positive"
+    },
+    {
+      "baseline": "profile_similar",
+      "bootstrap_repetitions": 2000,
+      "ci_high": 0.21586091039299218,
+      "ci_low": 0.10813672870264465,
+      "clusters": 12,
+      "comparison": "directions_vs_no_signal",
+      "delta": 0.16128686969847855,
+      "exploratory": true,
+      "group": "overall",
+      "method": "direction_search",
+      "metric": "ndcg10",
+      "status": "positive"
+    },
+    {
+      "baseline": "direction_search",
+      "bootstrap_repetitions": 2000,
+      "ci_high": -0.13001543209876543,
+      "ci_low": -0.18599537037037037,
+      "clusters": 12,
+      "comparison": "ordinal_vs_delta",
+      "delta": -0.15779320987654322,
+      "exploratory": true,
+      "group": "overall",
+      "method": "ordinal_intent",
+      "metric": "direction_accuracy",
+      "status": "negative"
+    },
+    {
+      "baseline": "direction_search",
+      "bootstrap_repetitions": 2000,
+      "ci_high": -0.01616322289719144,
+      "ci_low": -0.037281559259076384,
+      "clusters": 12,
+      "comparison": "ordinal_vs_delta",
+      "delta": -0.0257440059746316,
+      "exploratory": true,
+      "group": "overall",
+      "method": "ordinal_intent",
+      "metric": "ndcg10",
+      "status": "negative"
+    }
+  ],
+  "independent_test": false,
+  "no_claim_of_novelty": true,
+  "oracle_is_not_competing": true,
+  "scope": "controlled_mock_pilot"
+}
