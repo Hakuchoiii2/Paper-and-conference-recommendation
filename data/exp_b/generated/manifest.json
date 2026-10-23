@@ -1,0 +1,55 @@
+{
+  "config": {
+    "candidates_per_query": 100,
+    "corpus_path": "data/processed/papers.jsonl",
+    "dataset_kind": "mock",
+    "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+    "fixed_weights": {
+      "contribution": 0.1,
+      "dataset": 0.1,
+      "method": 0.2,
+      "problem": 0.4,
+      "task": 0.2
+    },
+    "hard_negative_fraction": 0.5,
+    "label_rule_version": "weighted_overlap_v2",
+    "num_queries": 300,
+    "output_dir": "data/exp_b/generated",
+    "positive_fraction": 0.2,
+    "positive_grade": 0.6,
+    "seed": 42,
+    "truth_dir": "data/exp_b/ground_truth"
+  },
+  "contract_version": "2.0",
+  "counts": {
+    "label_provenance.jsonl": 1800,
+    "retrieval_labels.jsonl": 1800,
+    "retrieval_queries.jsonl": 18
+  },
+  "dataset_kind": "mock",
+  "experiment": "b",
+  "files": {
+    "data/exp_b/generated/generation_report.json": "6d86acef4efcb7447eb9a8deb6315cc684e27d190e77c658b96ff0be439341e1",
+    "data/exp_b/generated/retrieval_queries.jsonl": "60d21b246422706049ca18d164f9958133572d65ec557d75e974d2a9bac36938",
+    "data/exp_b/generated/splits.json": "21eed2ffa02e1435f3dee9198a68107171ca325fc5f7ce64815dc0a5536c388a",
+    "data/exp_b/ground_truth/label_provenance.jsonl": "c449cc6e66ec4fd552ee39dbc4370aadaee8448839724f7750ca49d254196d60",
+    "data/exp_b/ground_truth/retrieval_labels.jsonl": "97a79113da8bd8dbba98b1c9a33385449c87c7d1457ec5de4065174ecfdac2e2"
+  },
+  "generator_hashes": {
+    "data/build_experiments.py": "73fb07bf0fbbf94bfcf6a44d519a86331b0e5496bf258a4d263107a52b0ee4c0",
+    "data/exp_b/build_exp_b.py": "19d892565cdd50eaa1ae6415381ce5e47b0e24db699477cb4cc601110a440704",
+    "data/experiment_common.py": "8bb819409e04e9cb1903cf3fbc938a5043c1a137ef258324f7ca5173c713d47a",
+    "scripts/build_corpus.py": "bd318f6ee8912dd128264e4570dc83635b8934f01ba42bcd243f3c59e73438c8",
+    "scripts/experiment_io.py": "3dcc53d093ecbfd9cfe72e01e661b798d9fe74281aae2f27e7cc59b1e515e999"
+  },
+  "generator_version": "2.0",
+  "input_hashes": {
+    "configs/exp_b.json": "4305956968f93f2b2bf2a0be1c2448b050ea2e86cba558b35b53e40adfddd669",
+    "data/exp_a/generated/annotation_metadata.jsonl": "f0acf7139661873d465892d02550aff4c9ec8dd804735fbe0f830b6a7149de4b",
+    "data/exp_a/generated/facets_silver.jsonl": "f46b7812d2e9392dfe71da43fb377ed95dc6693429e0df89ffc8ebc8f1c7260e",
+    "data/exp_a/generated/manifest.json": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",
+    "data/processed/papers.jsonl": "2f78a063076fc2fcc418ebeaac2c3795a44f677eac6c5adf91b8ffad5d98ae6a"
+  },
+  "seed": 42,
+  "status": "partial"
+}

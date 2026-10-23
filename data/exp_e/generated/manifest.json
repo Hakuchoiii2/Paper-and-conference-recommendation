@@ -1,0 +1,90 @@
+{
+  "config": {
+    "concepts_per_facet": 2,
+    "corpus_path": "data/processed/papers.jsonl",
+    "dataset_kind": "mock",
+    "drift_coefficients": [
+      0,
+      0.5,
+      1,
+      1
+    ],
+    "events_per_user_per_period": 15,
+    "exposure_size": 4,
+    "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+    "interaction_thresholds": [
+      -0.25,
+      0.05,
+      0.2,
+      0.4
+    ],
+    "negative_weight_range": [
+      -1,
+      -0.5
+    ],
+    "noise_std": 0.15,
+    "output_dir": "data/exp_e/generated",
+    "period_boundaries": [
+      "2026-01-01T00:00:00Z",
+      "2026-02-01T00:00:00Z",
+      "2026-03-01T00:00:00Z",
+      "2026-04-01T00:00:00Z",
+      "2026-05-01T00:00:00Z"
+    ],
+    "positive_weight_range": [
+      0.5,
+      1
+    ],
+    "rule_version": "profile_search_v2",
+    "search_fraction": 0.6,
+    "seed": 42,
+    "stable_fraction": 0.5,
+    "targeted_exposure_fraction": 0.8,
+    "truth_dir": "data/exp_e/ground_truth",
+    "users_path": "data/exp_c/generated/users.jsonl"
+  },
+  "contract_version": "2.0",
+  "counts": {
+    "cases.jsonl": 900,
+    "exposures.jsonl": 13500,
+    "exposures_test.jsonl": 13500,
+    "interactions_test.jsonl": 13500,
+    "interactions_train.jsonl": 13500,
+    "search_events.jsonl": 8106,
+    "search_events_test.jsonl": 8044,
+    "temporal_profiles.jsonl": 1200
+  },
+  "dataset_kind": "mock",
+  "experiment": "e",
+  "files": {
+    "data/exp_e/generated/cases.jsonl": "7d94752f43e3c62a141ec9f777ae38297817ee692d8678a907f9ada632ecdcb4",
+    "data/exp_e/generated/exposures.jsonl": "ae6fc1f05fb66f9167bd5bb83fe6bc6b7480bda01bc0772774698a6dcb1d9000",
+    "data/exp_e/generated/generation_report.json": "d09b3d24c825522f4e5d2b9d111372ca9cca227c97a4f484faeb15fa9b827c8b",
+    "data/exp_e/generated/interactions_train.jsonl": "7e2dc2059a6ceff9756ba3973fe04754c0301947fe9d537a4d04470b0115f9d7",
+    "data/exp_e/generated/search_events.jsonl": "43b7969a6da91b8bddbd269feb5562dc7864935e4ef1f23dc961f6f9b83e10e5",
+    "data/exp_e/ground_truth/exposures_test.jsonl": "9ef30824e8d3682d92ee30e6abf3f9f6af518d796110e5b3872a65832a4f7cb8",
+    "data/exp_e/ground_truth/interactions_test.jsonl": "6d7615d479b75219c6906e2313110211f2ff56b6da0af598abe43e241f8e1399",
+    "data/exp_e/ground_truth/period_metadata.json": "99e7539a9e1585351d679df644a04e144aa6eafc0fbc57644fd9265e25bd592b",
+    "data/exp_e/ground_truth/search_events_test.jsonl": "b27a4a02083691b451489d49eab5d3261f8cc24b98e32868cd3e517853272bc5",
+    "data/exp_e/ground_truth/temporal_profiles.jsonl": "a568ce046cad261cbd669ef293f7ef4b95a90e397352e12b24c2d2bc6da1bfb5"
+  },
+  "generator_hashes": {
+    "data/build_experiments.py": "73fb07bf0fbbf94bfcf6a44d519a86331b0e5496bf258a4d263107a52b0ee4c0",
+    "data/exp_e/build_exp_e.py": "7ef9de700ee219404ce2fff1443318874b64da62c498ed2117e4b7b2336069c6",
+    "data/experiment_common.py": "8bb819409e04e9cb1903cf3fbc938a5043c1a137ef258324f7ca5173c713d47a",
+    "scripts/build_corpus.py": "bd318f6ee8912dd128264e4570dc83635b8934f01ba42bcd243f3c59e73438c8",
+    "scripts/experiment_io.py": "3dcc53d093ecbfd9cfe72e01e661b798d9fe74281aae2f27e7cc59b1e515e999"
+  },
+  "generator_version": "2.0",
+  "input_hashes": {
+    "configs/exp_e.json": "9dec22b05e7ed5dbaeda44fcca20397e65d02de0ba03a3acb94dafcced9082fa",
+    "data/exp_a/generated/annotation_metadata.jsonl": "f0acf7139661873d465892d02550aff4c9ec8dd804735fbe0f830b6a7149de4b",
+    "data/exp_a/generated/facets_silver.jsonl": "f46b7812d2e9392dfe71da43fb377ed95dc6693429e0df89ffc8ebc8f1c7260e",
+    "data/exp_a/generated/manifest.json": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",
+    "data/exp_c/generated/manifest.json": "5078549a1a9128601871352e502c31e78cd8fa85f8ec61a446502849df353e1a",
+    "data/exp_c/generated/users.jsonl": "0779897d6b535f3b2ed796c8fba38f6010a553547fb093ea85bfb65dbc41a22c",
+    "data/processed/papers.jsonl": "2f78a063076fc2fcc418ebeaac2c3795a44f677eac6c5adf91b8ffad5d98ae6a"
+  },
+  "seed": 42,
+  "status": "complete"
+}

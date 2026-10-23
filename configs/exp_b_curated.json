@@ -1,0 +1,21 @@
+{
+  "dataset_kind": "mock",
+  "seed": 42,
+  "corpus_path": "data/processed/papers.jsonl",
+  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+  "output_dir": "data/exp_b/curated/generated",
+  "truth_dir": "data/exp_b/curated/ground_truth",
+  "num_queries": 50,
+  "candidates_per_query": 50,
+  "positive_fraction": 0.1,
+  "hard_negative_fraction": 0.7,
+  "label_rule_version": "weighted_overlap_v2",
+  "fixed_weights": {
+    "problem": 0.4,
+    "task": 0.2,
+    "method": 0.2,
+    "dataset": 0.1,
+    "contribution": 0.1
+  },
+  "positive_grade": 0.3
+}

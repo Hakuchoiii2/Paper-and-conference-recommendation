@@ -1,0 +1,44 @@
+{
+  "dataset_kind": "mock",
+  "seed": 42,
+  "corpus_path": "data/processed/papers.jsonl",
+  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+  "users_path": "data/exp_c/generated/users.jsonl",
+  "output_dir": "data/exp_e/generated",
+  "truth_dir": "data/exp_e/ground_truth",
+  "events_per_user_per_period": 15,
+  "period_boundaries": [
+    "2026-01-01T00:00:00Z",
+    "2026-02-01T00:00:00Z",
+    "2026-03-01T00:00:00Z",
+    "2026-04-01T00:00:00Z",
+    "2026-05-01T00:00:00Z"
+  ],
+  "stable_fraction": 0.5,
+  "drift_coefficients": [
+    0,
+    0.5,
+    1,
+    1
+  ],
+  "rule_version": "profile_search_v2",
+  "concepts_per_facet": 2,
+  "targeted_exposure_fraction": 0.8,
+  "noise_std": 0.15,
+  "positive_weight_range": [
+    0.5,
+    1
+  ],
+  "negative_weight_range": [
+    -1,
+    -0.5
+  ],
+  "interaction_thresholds": [
+    -0.25,
+    0.05,
+    0.2,
+    0.4
+  ],
+  "search_fraction": 0.6,
+  "exposure_size": 4
+}
