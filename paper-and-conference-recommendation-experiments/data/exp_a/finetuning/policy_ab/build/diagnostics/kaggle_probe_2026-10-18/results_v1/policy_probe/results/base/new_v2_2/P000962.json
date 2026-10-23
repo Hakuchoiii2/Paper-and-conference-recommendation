@@ -1,0 +1,50 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "new_v2_2",
+    "paper_id": "P000962",
+    "seed": 2928,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "messages_sha256": "ce6c1254db82f619603cc1d96412bb4ba04e94e7842d4ac9f3bd1cb7c124f60c",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P000962\",\n  \"problem\": [\n    {\n      \"concept\": \"Privacy-sensitive data distribution\",\n      \"evidence_ids\": [\"A2\"]\n    },\n    {\n      \"concept\": \"Inefficiency of conventional training approaches\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Developing a decentralized learning framework\",\n      \"evidence_ids\": [\"A3\", \"A4\", \"A5\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Federated Learning with iterative model averaging\",\n      \"evidence_ids\": [\"A4\", \"A5\"]\n    },\n    {\n      \"concept\": \"Communication-efficient training\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Five different model architectures\",\n      \"evidence_ids\": [\"A5\"]\n    },\n    {\n      \"concept\": \"Four datasets\",\n      \"evidence_ids\": [\"A5\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Federated Learning framework\",\n      \"evidence_ids\": [\"A4\", \"A5\"]\n    },\n    {\n      \"concept\": \"Empirical evaluation of communication efficiency\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 22.638447321999934,
+    "usage": {
+      "input_tokens": 1733,
+      "output_tokens": 294
+    },
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: Concept must use selected source words in source order",
+      "problem[1]: Concept must use selected source words in source order",
+      "task[0]: Concept must use selected source words in source order",
+      "method[0]: Concept must use selected source words in source order",
+      "method[1]: Concept must use selected source words in source order",
+      "contribution[0]: Concept must use selected source words in source order",
+      "contribution[1]: Concept must use selected source words in source order"
+    ],
+    "bounded_stop": false
+  },
+  "record_sha256": "b2df8d62e1aa9a7a2a514867e9e0c235f0744ffd24825f816dec98e63df76f6f"
+}

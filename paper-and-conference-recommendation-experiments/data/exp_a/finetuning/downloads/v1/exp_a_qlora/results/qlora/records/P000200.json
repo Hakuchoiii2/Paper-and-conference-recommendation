@@ -1,0 +1,178 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000200\", \"problem\": [{\"concept\": \"morphologically-Rich Language\", \"evidence_id\": \"A0\"}, {\"concept\": \"detection of idioms or proverbs phrases\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"detection and classification of lexical phrases\", \"evidence_id\": \"A4\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"n-gram\", \"evidence_id\": \"A7\"}, {\"concept\": \"similarity measure\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}, {\"concept\": \"manually collected and annotated\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.8237708150009,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000200\", \"problem\": [{\"concept\": \"morphologically-Rich Language\", \"evidence_id\": \"A0\"}, {\"concept\": \"detection of idioms or proverbs phrases\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"detection and classification of lexical phrases\", \"evidence_id\": \"A4\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"n-gram\", \"evidence_id\": \"A7\"}, {\"concept\": \"similarity measure\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}, {\"concept\": \"manually collected and annotated\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 642,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2609,
+            "output_tokens": 186
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000200\", \"problem\": [{\"concept\": \"morphologically-Rich Language\", \"evidence_id\": \"A0\"}, {\"concept\": \"detection of idioms or proverbs phrases\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"detection and classification of lexical phrases\", \"evidence_id\": \"A4\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"n-gram\", \"evidence_id\": \"A7\"}, {\"concept\": \"similarity measure\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}, {\"concept\": \"manually collected and annotated\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.76058680999995,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000200\", \"problem\": [{\"concept\": \"morphologically-Rich Language\", \"evidence_id\": \"A0\"}, {\"concept\": \"detection of idioms or proverbs phrases\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"detection and classification of lexical phrases\", \"evidence_id\": \"A4\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"n-gram\", \"evidence_id\": \"A7\"}, {\"concept\": \"similarity measure\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"AIPSeLEX\", \"evidence_id\": \"A4\"}, {\"concept\": \"manually collected and annotated\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 643,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4168,
+            "output_tokens": 204
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "AIPSeLEX",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "manually collected and annotated",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "AIPSeLEX",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "n-gram",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "similarity measure",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000200",
+        "problem": [
+          {
+            "concept": "morphologically-Rich Language",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "detection of idioms or proverbs phrases",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detection and classification of lexical phrases",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "sentiment analysis",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 59.58435762500085,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 643,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6777,
+        "output_tokens": 390
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "AIPSeLEX",
+        "manually collected and annotated"
+      ],
+      "dataset": [
+        "AIPSeLEX"
+      ],
+      "method": [
+        "n-gram",
+        "similarity measure"
+      ],
+      "paper_id": "P000200",
+      "problem": [
+        "morphologically-Rich Language",
+        "detection of idioms or proverbs phrases"
+      ],
+      "task": [
+        "detection and classification of lexical phrases",
+        "sentiment analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.58435762500085,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000200",
+    "usage": {
+      "input_tokens": 6777,
+      "output_tokens": 390
+    }
+  },
+  "record_sha256": "6df98a1ae69a804b57901a4154144cf3bc2d83f833d35ea21808659608e2c0e1",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

@@ -1,0 +1,37 @@
+test_accepted_multi_evidence_keeps_independent_review_provenance (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_accepted_multi_evidence_keeps_independent_review_provenance) ... ok
+test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos) ... ERROR
+test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) ... 
+  test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x0000018BE41E3060>) ... FAIL
+test_accepted_multi_evidence_keeps_independent_review_provenance (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_accepted_multi_evidence_keeps_independent_review_provenance) ... ok
+test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) ... 
+  test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x0000018BE4221BC0>) ... FAIL
+
+======================================================================
+ERROR: test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 172, in test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos
+    manifest = self.module.prepare(review, output, tokenizer=tokenizer, root=root)
+               ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'v2_training_under_test' has no attribute 'prepare'
+
+======================================================================
+FAIL: test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x0000018BE41E3060>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 77, in test_rejects_self_review_missing_facet_and_resealed_wrong_source
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x0000018BE4221BC0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 77, in test_rejects_self_review_missing_facet_and_resealed_wrong_source
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 34.206s
+
+FAILED (failures=2, errors=1)

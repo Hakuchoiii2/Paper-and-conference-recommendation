@@ -1,0 +1,223 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"unbalanced and non-IID data distributions\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.108757354000034,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"unbalanced and non-IID data distributions\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 2928,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2502,
+            "output_tokens": 168
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"unbalanced and non-IID data distributions\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.363556388999996,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"unbalanced and non-IID data distributions\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 2929,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4051,
+            "output_tokens": 168
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Federated Learning",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reduction in required communication rounds",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "iterative model averaging",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Federated Learning",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000962",
+        "problem": [
+          {
+            "concept": "privacy sensitive",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "unbalanced and non-IID data distributions",
+            "evidence_id": "A6"
+          }
+        ],
+        "task": [
+          {
+            "concept": "federated learning of deep networks",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 51.47231374300003,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2929,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6553,
+        "output_tokens": 336
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "Federated Learning",
+          "evidence": "We term this decentralized approach Federated Learning.",
+          "source": "abstract"
+        },
+        {
+          "concept": "reduction in required communication rounds",
+          "evidence": "Communication costs are the principal constraint, and we show a reduction in required communication rounds by 10-100x as compared to synchronized stochastic gradient descent.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "iterative model averaging",
+          "evidence": "We present a practical method for the federated learning of deep networks based on iterative model averaging, and conduct an extensive empirical evaluation, considering five different model architectures and four datasets.",
+          "source": "abstract"
+        },
+        {
+          "concept": "Federated Learning",
+          "evidence": "We term this decentralized approach Federated Learning.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P000962",
+      "problem": [
+        {
+          "concept": "privacy sensitive",
+          "evidence": "However, this rich data is often privacy sensitive, large in quantity, or both, which may preclude logging to the data center and training there using conventional approaches.",
+          "source": "abstract"
+        },
+        {
+          "concept": "unbalanced and non-IID data distributions",
+          "evidence": "These experiments demonstrate the approach is robust to the unbalanced and non-IID data distributions that are a defining characteristic of this setting.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "federated learning of deep networks",
+          "evidence": "We present a practical method for the federated learning of deep networks based on iterative model averaging, and conduct an extensive empirical evaluation, considering five different model architectures and four datasets.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "Federated Learning",
+        "reduction in required communication rounds"
+      ],
+      "dataset": [],
+      "method": [
+        "iterative model averaging",
+        "Federated Learning"
+      ],
+      "paper_id": "P000962",
+      "problem": [
+        "privacy sensitive",
+        "unbalanced and non-IID data distributions"
+      ],
+      "task": [
+        "federated learning of deep networks"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.47231374300003,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P000962",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6553,
+      "output_tokens": 336
+    }
+  },
+  "record_sha256": "6c30c38181de05f37e452a6e1cca90c98657a0996f5f7fa13c4c4d9fe7daf489",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

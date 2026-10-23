@@ -1,0 +1,158 @@
+{
+  "record": {
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001431\",\n  \"problem\": [\n    {\n      \"concept\": \"no standard definition\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"no standard definition, and there are several different classification schema\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine the different classification schema\",\n      \"evidence_id\": \"A10\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"classification schema based on four characteristics\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"examples of each type of community\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"important implications for the design and management of online communities\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.55347874400013,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"problem\": [\n    {\n      \"concept\": \"no standard definition\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"no standard definition, and there are several different classification schema\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine the different classification schema\",\n      \"evidence_id\": \"A10\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"classification schema based on four characteristics\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"examples of each type of community\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"important implications for the design and management of online communities\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.881,
+          "seed": 4335,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2751,
+            "output_tokens": 212
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001431\", \"problem\": [{\"concept\": \"no standard definition, and there are several different classification schema\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"examine the different classification schema\", \"evidence_id\": \"A10\"}], \"method\": [{\"concept\": \"synthesis of the literature\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"classification schema based on four characteristics\", \"evidence_id\": \"A1\"}, {\"concept\": \"examples of each type of community\", \"evidence_id\": \"A2\"}, {\"concept\": \"important implications for the design and management of online communities\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.453600501999972,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"problem\": [\n    {\n      \"concept\": \"no standard definition, and there are several different classification schema\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine the different classification schema\",\n      \"evidence_id\": \"A10\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"synthesis of the literature\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"classification schema based on four characteristics\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"examples of each type of community\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"important implications for the design and management of online communities\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 87.881,
+          "seed": 4336,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4330,
+            "output_tokens": 216
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "classification schema based on four characteristics",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "examples of each type of community",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "important implications for the design and management of online communities",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "synthesis of the literature",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P001431",
+        "problem": [
+          {
+            "concept": "no standard definition, and there are several different classification schema",
+            "evidence_id": "A8"
+          }
+        ],
+        "task": [
+          {
+            "concept": "examine the different classification schema",
+            "evidence_id": "A10"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.0070792460001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4336,
+      "selected_score": 87.881,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7081,
+        "output_tokens": 428
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "classification schema based on four characteristics",
+        "examples of each type of community",
+        "important implications for the design and management of online communities"
+      ],
+      "dataset": [],
+      "method": [
+        "synthesis of the literature"
+      ],
+      "paper_id": "P001431",
+      "problem": [
+        "no standard definition, and there are several different classification schema"
+      ],
+      "task": [
+        "examine the different classification schema"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 42.0070792460001,
+    "paper_id": "P001431",
+    "usage": {
+      "input_tokens": 7081,
+      "output_tokens": 428
+    }
+  },
+  "record_sha256": "5082556dcb5fa25d13a95b7a2da41891207bd4d404313560c7c68690a221e470",
+  "signature": "16ab9a393e639edcf1c6e576b94736cd0dde52fbac1f71b6d8bd5823700d14c5"
+}

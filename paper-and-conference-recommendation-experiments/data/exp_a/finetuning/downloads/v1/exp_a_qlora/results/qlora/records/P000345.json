@@ -1,0 +1,166 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000345\", \"problem\": [{\"concept\": \"division of the continuum into categories is arbitrary\", \"evidence_id\": \"A1\"}, {\"concept\": \"conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"study further in order to understand how and why it conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Rasch model\", \"evidence_id\": \"A3\"}, {\"concept\": \"multiplicative metric\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"probability distribution reflects the precision with which the data are collected\", \"evidence_id\": \"A6\"}, {\"concept\": \"joining assumption is destroyed when categories are combined\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.604952689998754,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000345\", \"problem\": [{\"concept\": \"division of the continuum into categories is arbitrary\", \"evidence_id\": \"A1\"}, {\"concept\": \"conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"study further in order to understand how and why it conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Rasch model\", \"evidence_id\": \"A3\"}, {\"concept\": \"multiplicative metric\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"probability distribution reflects the precision with which the data are collected\", \"evidence_id\": \"A6\"}, {\"concept\": \"joining assumption is destroyed when categories are combined\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1077,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2650,
+            "output_tokens": 188
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000345\", \"problem\": [{\"concept\": \"division of the continuum into categories is arbitrary\", \"evidence_id\": \"A1\"}, {\"concept\": \"conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"study further in order to understand how and why it conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Rasch model\", \"evidence_id\": \"A3\"}, {\"concept\": \"multiplicative metric\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"probability distribution reflects the precision with which the data are collected\", \"evidence_id\": \"A6\"}, {\"concept\": \"joining assumption is destroyed when categories are combined\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.836038754001493,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000345\", \"problem\": [{\"concept\": \"division of the continuum into categories is arbitrary\", \"evidence_id\": \"A1\"}, {\"concept\": \"conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"study further in order to understand how and why it conflicts with the joining assumption\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Rasch model\", \"evidence_id\": \"A3\"}, {\"concept\": \"multiplicative metric\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"probability distribution reflects the precision with which the data are collected\", \"evidence_id\": \"A6\"}, {\"concept\": \"joining assumption is destroyed when categories are combined\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1078,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4221,
+            "output_tokens": 188
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "probability distribution reflects the precision with which the data are collected",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "joining assumption is destroyed when categories are combined",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Rasch model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "multiplicative metric",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000345",
+        "problem": [
+          {
+            "concept": "division of the continuum into categories is arbitrary",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "conflicts with the joining assumption",
+            "evidence_id": "A5"
+          }
+        ],
+        "task": [
+          {
+            "concept": "study further in order to understand how and why it conflicts with the joining assumption",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 59.44099144400025,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1078,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6871,
+        "output_tokens": 376
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "probability distribution reflects the precision with which the data are collected",
+        "joining assumption is destroyed when categories are combined"
+      ],
+      "dataset": [],
+      "method": [
+        "Rasch model",
+        "multiplicative metric"
+      ],
+      "paper_id": "P000345",
+      "problem": [
+        "division of the continuum into categories is arbitrary",
+        "conflicts with the joining assumption"
+      ],
+      "task": [
+        "study further in order to understand how and why it conflicts with the joining assumption"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.44099144400025,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000345",
+    "usage": {
+      "input_tokens": 6871,
+      "output_tokens": 376
+    }
+  },
+  "record_sha256": "d09fb4636ec67bbd0e967599842af154979d8ad97f186ea0a989384dbf066567",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

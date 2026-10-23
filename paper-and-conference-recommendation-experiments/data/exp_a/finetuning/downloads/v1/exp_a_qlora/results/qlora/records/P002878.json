@@ -1,0 +1,159 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002878\", \"problem\": [], \"task\": [{\"concept\": \"Measuring the minute-scale dynamics of emotions from online data\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"analyzing the emotional content of their tweets\", \"evidence_id\": \"A2\"}, {\"concept\": \"separate analysis for male and female subjects\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"emotions and their expression evolve at the temporal resolution of one minute\", \"evidence_id\": \"A3\"}, {\"concept\": \"positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence\", \"evidence_id\": \"A5\"}, {\"concept\": \"gender-specific differences in emotional dynamics\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 30.677600080998673,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002878\", \"problem\": [], \"task\": [{\"concept\": \"Measuring the minute-scale dynamics of emotions from online data\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"analyzing the emotional content of their tweets\", \"evidence_id\": \"A2\"}, {\"concept\": \"separate analysis for male and female subjects\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"emotions and their expression evolve at the temporal resolution of one minute\", \"evidence_id\": \"A3\"}, {\"concept\": \"positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence\", \"evidence_id\": \"A5\"}, {\"concept\": \"gender-specific differences in emotional dynamics\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 8676,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2471,
+            "output_tokens": 189
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002878\", \"problem\": [], \"task\": [{\"concept\": \"Measuring the minute-scale dynamics of emotions from online data\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"analyzing the emotional content of their tweets\", \"evidence_id\": \"A2\"}, {\"concept\": \"separate analysis for male and female subjects\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"emotions and their expression evolve at the temporal resolution of one minute\", \"evidence_id\": \"A3\"}, {\"concept\": \"positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence\", \"evidence_id\": \"A5\"}, {\"concept\": \"gender-specific differences in emotional dynamics\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.521425530998386,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002878\", \"problem\": [], \"task\": [{\"concept\": \"Measuring the minute-scale dynamics of emotions from online data\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"analyzing the emotional content of their tweets\", \"evidence_id\": \"A2\"}, {\"concept\": \"separate analysis for male and female subjects\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"emotions and their expression evolve at the temporal resolution of one minute\", \"evidence_id\": \"A3\"}, {\"concept\": \"positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence\", \"evidence_id\": \"A5\"}, {\"concept\": \"gender-specific differences in emotional dynamics\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 8677,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4024,
+            "output_tokens": 189
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "emotions and their expression evolve at the temporal resolution of one minute",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "gender-specific differences in emotional dynamics",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analyzing the emotional content of their tweets",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "separate analysis for male and female subjects",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002878",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Measuring the minute-scale dynamics of emotions from online data",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 63.19902561199706,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8677,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6495,
+        "output_tokens": 378
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "emotions and their expression evolve at the temporal resolution of one minute",
+        "positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence",
+        "gender-specific differences in emotional dynamics"
+      ],
+      "dataset": [],
+      "method": [
+        "analyzing the emotional content of their tweets",
+        "separate analysis for male and female subjects"
+      ],
+      "paper_id": "P002878",
+      "problem": [],
+      "task": [
+        "Measuring the minute-scale dynamics of emotions from online data"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 63.19902561199706,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P002878",
+    "usage": {
+      "input_tokens": 6495,
+      "output_tokens": 378
+    }
+  },
+  "record_sha256": "e140a372b201bf43ac629d40f2d71339315396163d6ed4e06e82c655fd5582ed",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

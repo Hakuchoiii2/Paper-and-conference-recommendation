@@ -1,0 +1,51 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "new_v2_2",
+    "paper_id": "P001892",
+    "seed": 5718,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "messages_sha256": "cffee8593bda1e3b481edbfa11c2b86b8bf4b6cf5d44a0c2a040695517c12a34",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P001892\",\n  \"problem\": [\n    {\n      \"concept\": \"Limited attention to Zero-shot Text Classification (0Shot-TC) in NLU research\",\n      \"evidence_ids\": [\"A0\"]\n    },\n    {\n      \"concept\": \"Chaotic experiments and lack of uniform comparison in 0Shot-TC\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Benchmarking Zero-shot Text Classification (0Shot-TC) with unified datasets and evaluations\",\n      \"evidence_ids\": [\"A4\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Providing unified datasets and standardized evaluations for 0Shot-TC\",\n      \"evidence_ids\": [\"A4\"]\n    },\n    {\n      \"concept\": \"Extending evaluation setup to label-fully-unseen 0Shot-TC\",\n      \"evidence_ids\": [\"A6\"]\n    },\n    {\n      \"concept\": \"Unifying diverse aspects of 0Shot-TC within a textual entailment formulation\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Unified datasets for studying 0Shot-TC across different aspects (topic, emotion, situation)\",\n      \"evidence_ids\": [\"A5\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Providing unified datasets for 0Shot-TC across different aspects\",\n      \"evidence_ids\": [\"A5\"]\n    },\n    {\n      \"concept\": \"Extending the evaluation setup to label-fully-unseen 0Shot-TC\",\n      \"evidence_ids\": [\"A6\"]\n    },\n    {\n      \"concept\": \"Unifying diverse aspects of 0Shot-TC within a textual entailment formulation\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 31.059294453999996,
+    "usage": {
+      "input_tokens": 1873,
+      "output_tokens": 408
+    },
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: Concept must use selected source words in source order",
+      "problem[1]: Concept must use selected source words in source order",
+      "task[0]: Concept must use selected source words in source order",
+      "method[0]: Concept must use selected source words in source order",
+      "method[2]: Concept must use selected source words in source order",
+      "dataset[0]: Concept must use selected source words in source order",
+      "contribution[0]: Concept must use selected source words in source order",
+      "contribution[2]: Concept must use selected source words in source order"
+    ],
+    "bounded_stop": false
+  },
+  "record_sha256": "d4e1468ac4f06817ffd28ff80b929ea29ad1e6463117cd4b6296926181abcfbc"
+}

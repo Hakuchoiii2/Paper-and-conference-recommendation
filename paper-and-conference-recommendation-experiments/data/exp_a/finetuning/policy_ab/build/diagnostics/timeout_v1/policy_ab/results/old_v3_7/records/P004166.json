@@ -1,0 +1,226 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004166\", \"problem\": [{\"concept\": \"imbalanced data distributions\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"multi-label ranking\", \"evidence_id\": \"A4\"}, {\"concept\": \"visual object recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"block coordinate descent\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PASCAL VOC 2006\", \"evidence_id\": \"A6\"}, {\"concept\": \"PASCAL VOC 2007\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"efficient algorithm for multi-label ranking\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.130924462000053,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004166\", \"problem\": [{\"concept\": \"imbalanced data distributions\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"multi-label ranking\", \"evidence_id\": \"A4\"}, {\"concept\": \"visual object recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"block coordinate descent\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PASCAL VOC 2006\", \"evidence_id\": \"A6\"}, {\"concept\": \"PASCAL VOC 2007\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"efficient algorithm for multi-label ranking\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.7143,
+          "seed": 12540,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2450,
+            "output_tokens": 170
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004166\", \"problem\": [{\"concept\": \"imbalanced data distributions\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"multi-label ranking\", \"evidence_id\": \"A4\"}, {\"concept\": \"visual object recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"block coordinate descent\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PASCAL VOC 2006\", \"evidence_id\": \"A6\"}, {\"concept\": \"PASCAL VOC 2007\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"efficient algorithm for multi-label ranking\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.73479402800001,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004166\", \"problem\": [{\"concept\": \"imbalanced data distributions\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"multi-label ranking\", \"evidence_id\": \"A4\"}, {\"concept\": \"visual object recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"block coordinate descent\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PASCAL VOC 2006\", \"evidence_id\": \"A6\"}, {\"concept\": \"PASCAL VOC 2007\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"efficient algorithm for multi-label ranking\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.7143,
+          "seed": 12541,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3991,
+            "output_tokens": 170
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "efficient algorithm for multi-label ranking",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "PASCAL VOC 2006",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "PASCAL VOC 2007",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "block coordinate descent",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004166",
+        "problem": [
+          {
+            "concept": "imbalanced data distributions",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multi-label ranking",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visual object recognition",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 51.86571849000006,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12541,
+      "selected_score": 99.7143,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6441,
+        "output_tokens": 340
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "efficient algorithm for multi-label ranking",
+          "evidence": "We present an efficient algorithm for multi-label ranking based on the idea of block coordinate descent.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "PASCAL VOC 2006",
+          "evidence": "Empirical results on the PASCAL VOC 2006 and 2007 data sets show promising results in comparison to the state-of-the-art algorithms for multi-label learning.",
+          "source": "abstract"
+        },
+        {
+          "concept": "PASCAL VOC 2007",
+          "evidence": "Empirical results on the PASCAL VOC 2006 and 2007 data sets show promising results in comparison to the state-of-the-art algorithms for multi-label learning.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "block coordinate descent",
+          "evidence": "We present an efficient algorithm for multi-label ranking based on the idea of block coordinate descent.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P004166",
+      "problem": [
+        {
+          "concept": "imbalanced data distributions",
+          "evidence": "Conventional approaches implement multi-label learning as a set of binary classification problems, but they suffer from imbalanced data distributions when the number of classes is large.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "multi-label ranking",
+          "evidence": "We present an efficient algorithm for multi-label ranking based on the idea of block coordinate descent.",
+          "source": "abstract"
+        },
+        {
+          "concept": "visual object recognition",
+          "evidence": "Multi-label learning is useful in visual object recognition when several objects are present in an image.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "efficient algorithm for multi-label ranking"
+      ],
+      "dataset": [
+        "PASCAL VOC 2006",
+        "PASCAL VOC 2007"
+      ],
+      "method": [
+        "block coordinate descent"
+      ],
+      "paper_id": "P004166",
+      "problem": [
+        "imbalanced data distributions"
+      ],
+      "task": [
+        "multi-label ranking",
+        "visual object recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.86571849000006,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P004166",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6441,
+      "output_tokens": 340
+    }
+  },
+  "record_sha256": "7675ce72f70635e2f16553c423ae5fa6a7f10de154198f653b3c4b4106b573bc",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

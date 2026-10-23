@@ -1,0 +1,278 @@
+{
+  "record": {
+    "arm": "R2",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002586\",\n  \"problem\": [\n    {\n      \"concept\": \"more untranscribed test data may be available than training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"low-resource Keyword Search (KWS) and Speech-to-Text (STT) tasks\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"semi-supervised training\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"speaker adaptation on the test data\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"achieved significant additional improvements in STT and KWS\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 24.358441018999656,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002586\",\n  \"problem\": [\n    {\n      \"concept\": \"more untranscribed test data may be available than training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"low-resource Keyword Search (KWS) and Speech-to-Text (STT) tasks\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"semi-supervised training\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"speaker adaptation on the test data\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"achieved significant additional improvements in STT and KWS\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 79.4286,
+          "seed": 7800,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2439,
+            "output_tokens": 294
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"low-resource Keyword Search (KWS) and Speech-to-Text (STT) tasks\"; evidence_id=\"T0\"; evidence=\"Semi-supervised training in low-resource ASR and KWS\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised training\"; evidence_id=\"A2\"; evidence=\"In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002586\", \"problem\": [], \"task\": [{\"concept\": \"low-resource ASR and KWS\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"semi-supervised training\", \"evidence_id\": \"A2\"}, {\"concept\": \"speaker adaptation on the test data\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\", \"evidence_id\": \"A2\"}, {\"concept\": \"achieved significant additional improvements in STT and KWS\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.67564666399994,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002586\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"low-resource ASR and KWS\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"semi-supervised training\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"speaker adaptation on the test data\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"achieved significant additional improvements in STT and KWS\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.0,
+          "seed": 7801,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4752,
+            "output_tokens": 240
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised training\"; evidence_id=\"A2\"; evidence=\"In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002586\", \"problem\": [], \"task\": [{\"concept\": \"low-resource ASR and KWS\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"semi-supervised training\", \"evidence_id\": \"A3\"}, {\"concept\": \"speaker adaptation on the test data\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\", \"evidence_id\": \"A2\"}, {\"concept\": \"achieved significant additional improvements in STT and KWS\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 3,
+          "generation_seconds": 23.040581016000033,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002586\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"low-resource ASR and KWS\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"semi-supervised training\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"speaker adaptation on the test data\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Assamese, Bengali, Lao, Haitian, Zulu, and Tamil\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"achieved significant additional improvements in STT and KWS\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 7802,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4451,
+            "output_tokens": 210
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "achieved significant additional improvements in STT and KWS",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Assamese, Bengali, Lao, Haitian, Zulu, and Tamil",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "semi-supervised training",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "speaker adaptation on the test data",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002586",
+        "problem": [],
+        "task": [
+          {
+            "concept": "low-resource ASR and KWS",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 74.07466869899963,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Assamese, Bengali, Lao, Haitian, Zulu, and Tamil",
+            "evidence": "In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7802,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11642,
+        "output_tokens": 744
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "937af0b41521c6b33c54c22582610bfdcb777787343b4d53f293e39d5f47e2db",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "dbc69df28734d220de7afaaf33627598370b3e8791a8b82763efcde7ddfb385f",
+        "repair_packet": null,
+        "seed": 7800
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "b48701597495b65c575bab73fff3fda0d44a860b15f0b1cc3763ecfa572c9cca",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "low-resource Keyword Search (KWS) and Speech-to-Text (STT) tasks",
+              "error": "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"low-resource Keyword Search (KWS) and Speech-to-Text (STT) tasks\"; evidence_id=\"T0\"; evidence=\"Semi-supervised training in low-resource ASR and KWS\"",
+              "evidence_id": "T0",
+              "facet": "task",
+              "index": 0,
+              "source_sentence": "Semi-supervised training in low-resource ASR and KWS"
+            },
+            {
+              "concept": "semi-supervised training",
+              "error": "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised training\"; evidence_id=\"A2\"; evidence=\"In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data.\"",
+              "evidence_id": "A2",
+              "facet": "method",
+              "index": 0,
+              "source_sentence": "In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data."
+            }
+          ],
+          "paper_id": "P002586",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 7801
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "3352d38778b4bbc44e0801e3548045f147d57e00feec036daa21d1b644588f69",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "semi-supervised training",
+              "error": "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised training\"; evidence_id=\"A2\"; evidence=\"In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data.\"",
+              "evidence_id": "A2",
+              "facet": "method",
+              "index": 0,
+              "source_sentence": "In this paper, we present a set of experiments on low-resource languages in telephony speech quality in Assamese, Bengali, Lao, Haitian, Zulu, and Tamil, demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data."
+            }
+          ],
+          "paper_id": "P002586",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 7802
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "demonstrating the impact that such techniques can have, in particular learning robust bottle-neck features on the test data",
+        "achieved significant additional improvements in STT and KWS"
+      ],
+      "dataset": [],
+      "method": [
+        "semi-supervised training",
+        "speaker adaptation on the test data"
+      ],
+      "paper_id": "P002586",
+      "problem": [],
+      "task": [
+        "low-resource ASR and KWS"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 74.07466869899963,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 49.716227679999974,
+      "input_tokens": 9203,
+      "output_tokens": 450
+    },
+    "paper_id": "P002586",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 11642,
+      "output_tokens": 744
+    }
+  },
+  "record_sha256": "b592fc7921b64a360f2db46c4068b2679a269ccef6117f698197f896ef0675a1",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

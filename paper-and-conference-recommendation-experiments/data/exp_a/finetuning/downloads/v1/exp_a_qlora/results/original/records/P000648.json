@@ -1,0 +1,223 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000648\",\n  \"problem\": [\n    {\"concept\": \"room for improvement in Portuguese part-of-speech tagging\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evaluate impact of word embeddings and features on part-of-speech tagging\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural networks and word embeddings\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"two previous versions of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"state-of-the-art new tagger available for use out-of-the-box\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.5046380040003,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000648\",\n  \"problem\": [\n    {\"concept\": \"room for improvement in Portuguese part-of-speech tagging\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evaluate impact of word embeddings and features on part-of-speech tagging\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural networks and word embeddings\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"two previous versions of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"state-of-the-art new tagger available for use out-of-the-box\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 63.1429,
+          "seed": 1986,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2477,
+            "output_tokens": 229
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"room for improvement in Portuguese part-of-speech tagging\"; evidence_id=\"A1\"; evidence=\"Despite much work already carried out in this field, there is still room for improvement, especially in Portuguese.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate impact of word embeddings and features on part-of-speech tagging\"; evidence_id=\"A4\"; evidence=\"We evaluate the impact of using different types of word embeddings and explicit features as input.\"",
+            "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"two previous versions of the Mac-Morpho corpus\"; evidence_id=\"A3\"; evidence=\"We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000648\", \"problem\": [{\"concept\": \"room for improvement, especially in Portuguese\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"evaluate impact of word embeddings and explicit features on part-of-speech tagging\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"neural networks and word embeddings\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}, {\"concept\": \"two previous versions of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A7\"}, {\"concept\": \"state-of-the-art new tagger available for use out-of-the-box\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.386547064001206,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000648\",\n  \"problem\": [\n    {\"concept\": \"room for improvement, especially in Portuguese\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evaluate impact of word embeddings and explicit features on part-of-speech tagging\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural networks and word embeddings\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"two previous versions of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"state-of-the-art new tagger available for use out-of-the-box\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 79.4286,
+          "seed": 1987,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4278,
+            "output_tokens": 227
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate impact of word embeddings and explicit features on part-of-speech tagging\"; evidence_id=\"A4\"; evidence=\"We evaluate the impact of using different types of word embeddings and explicit features as input.\"",
+            "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"two previous versions of the Mac-Morpho corpus\"; evidence_id=\"A3\"; evidence=\"We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000648\", \"problem\": [{\"concept\": \"room for improvement, especially in Portuguese\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"evaluate impact of word embeddings and explicit features on part-of-speech tagging\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"neural networks and word embeddings\", \"evidence_id\": \"A2\"}, {\"concept\": \"explicit features\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}, {\"concept\": \"two previous versions of the Mac-Morpho corpus\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"new revision of the Mac-Morpho corpus\", \"evidence_id\": \"A7\"}, {\"concept\": \"state-of-the-art new tagger available for use out-of-the-box\", \"evidence_id\": \"A7\"}, {\"concept\": \"show how different methods for generating word embeddings and additional features differ in accuracy\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 32.139324276999105,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000648\",\n  \"problem\": [\n    {\n      \"concept\": \"room for improvement, especially in Portuguese\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"evaluate impact of word embeddings and explicit features on part-of-speech tagging\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"neural networks and word embeddings\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"explicit features\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"new revision of the Mac-Morpho corpus\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"two previous versions of the Mac-Morpho corpus\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"new revision of the Mac-Morpho corpus\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"state-of-the-art new tagger available for use out-of-the-box\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"show how different methods for generating word embeddings and additional features differ in accuracy\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 81.3333,
+          "seed": 1988,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4192,
+            "output_tokens": 318
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate impact of word embeddings and explicit features on part-of-speech tagging\"; evidence_id=\"A4\"; evidence=\"We evaluate the impact of using different types of word embeddings and explicit features as input.\"",
+            "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"two previous versions of the Mac-Morpho corpus\"; evidence_id=\"A3\"; evidence=\"We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new revision of the Mac-Morpho corpus",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "state-of-the-art new tagger available for use out-of-the-box",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "show how different methods for generating word embeddings and additional features differ in accuracy",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "new revision of the Mac-Morpho corpus",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "two previous versions of the Mac-Morpho corpus",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "neural networks and word embeddings",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "explicit features",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000648",
+        "problem": [
+          {
+            "concept": "room for improvement, especially in Portuguese",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "evaluate impact of word embeddings and explicit features on part-of-speech tagging",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 78.03050934500061,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "new revision of the Mac-Morpho corpus",
+            "evidence": "We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1988,
+      "selected_score": 81.3333,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10947,
+        "output_tokens": 774
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate impact of word embeddings and explicit features on part-of-speech tagging\"; evidence_id=\"A4\"; evidence=\"We evaluate the impact of using different types of word embeddings and explicit features as input.\"",
+        "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"two previous versions of the Mac-Morpho corpus\"; evidence_id=\"A3\"; evidence=\"We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "new revision of the Mac-Morpho corpus",
+        "state-of-the-art new tagger available for use out-of-the-box",
+        "show how different methods for generating word embeddings and additional features differ in accuracy"
+      ],
+      "dataset": [
+        "two previous versions of the Mac-Morpho corpus"
+      ],
+      "method": [
+        "neural networks and word embeddings",
+        "explicit features"
+      ],
+      "paper_id": "P000648",
+      "problem": [
+        "room for improvement, especially in Portuguese"
+      ],
+      "task": [
+        "evaluate impact of word embeddings and explicit features on part-of-speech tagging"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 78.03050934500061,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000648",
+    "usage": {
+      "input_tokens": 10947,
+      "output_tokens": 774
+    }
+  },
+  "record_sha256": "63ec1e50f894403de01926cce09c3f069aecf4cfad00efa136d9797ce8246c91",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

@@ -1,0 +1,166 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001175\", \"problem\": [{\"concept\": \"lack of adequacy\", \"evidence_id\": \"A0\"}, {\"concept\": \"repeatedly translate some source words while mistakenly ignoring other words\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Neural Machine Translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"reconstructor\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"significantly improves the adequacy of NMT output\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.356649820998427,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001175\", \"problem\": [{\"concept\": \"lack of adequacy\", \"evidence_id\": \"A0\"}, {\"concept\": \"repeatedly translate some source words while mistakenly ignoring other words\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Neural Machine Translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"reconstructor\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"significantly improves the adequacy of NMT output\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 3567,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2427,
+            "output_tokens": 178
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001175\", \"problem\": [{\"concept\": \"lack of adequacy\", \"evidence_id\": \"A0\"}, {\"concept\": \"repeatedly translate some source words while mistakenly ignoring other words\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Neural Machine Translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"reconstructor\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"significantly improves the adequacy of NMT output\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.860844959999667,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001175\", \"problem\": [{\"concept\": \"lack of adequacy\", \"evidence_id\": \"A0\"}, {\"concept\": \"repeatedly translate some source words while mistakenly ignoring other words\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Neural Machine Translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"reconstructor\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"encoder-decoder-reconstructor framework\", \"evidence_id\": \"A2\"}, {\"concept\": \"significantly improves the adequacy of NMT output\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 3568,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3972,
+            "output_tokens": 178
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "encoder-decoder-reconstructor framework",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "significantly improves the adequacy of NMT output",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "encoder-decoder-reconstructor framework",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "reconstructor",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001175",
+        "problem": [
+          {
+            "concept": "lack of adequacy",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "repeatedly translate some source words while mistakenly ignoring other words",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Neural Machine Translation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 60.217494780998095,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3568,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6399,
+        "output_tokens": 356
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "encoder-decoder-reconstructor framework",
+        "significantly improves the adequacy of NMT output"
+      ],
+      "dataset": [],
+      "method": [
+        "encoder-decoder-reconstructor framework",
+        "reconstructor"
+      ],
+      "paper_id": "P001175",
+      "problem": [
+        "lack of adequacy",
+        "repeatedly translate some source words while mistakenly ignoring other words"
+      ],
+      "task": [
+        "Neural Machine Translation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 60.217494780998095,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P001175",
+    "usage": {
+      "input_tokens": 6399,
+      "output_tokens": 356
+    }
+  },
+  "record_sha256": "3b438deaec18abc32708909b9e0993416d3c91d973c0a7e32176f8c99f6e2a8c",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

@@ -1,0 +1,179 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P004079\",\n  \"problem\": [\n    {\n      \"concept\": \"NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"translate patent sentences comprising a large vocabulary of technical terms\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Japanese-Chinese patent sentences\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 34.15067039000132,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P004079\",\n  \"problem\": [\n    {\n      \"concept\": \"NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"translate patent sentences comprising a large vocabulary of technical terms\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Japanese-Chinese patent sentences\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 12279,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2606,
+            "output_tokens": 416
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words\", \"evidence_id\": \"A1\"}, {\"concept\": \"This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT\", \"evidence_id\": \"A6\"}, {\"concept\": \"rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Japanese-Chinese patent sentences\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 42.05277483399914,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P004079\",\n  \"problem\": [\n    {\n      \"concept\": \"NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"translate patent sentences comprising a large vocabulary of technical terms\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Japanese-Chinese patent sentences\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 12280,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4391,
+            "output_tokens": 416
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Japanese-Chinese patent sentences",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004079",
+        "problem": [
+          {
+            "concept": "NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "translate patent sentences comprising a large vocabulary of technical terms",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 76.20344522400046,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Japanese-Chinese patent sentences",
+            "evidence": "Our experiments on Japanese-Chinese patent sentences show that the proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12280,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6997,
+        "output_tokens": 832
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "proposed NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems and an improvement of approximately 0.6 BLEU points and 0.8 RIBES points over an equivalent NMT system without our proposed technique"
+      ],
+      "dataset": [],
+      "method": [
+        "train an NMT system on bilingual data wherein technical terms are replaced with technical term tokens",
+        "use it as a decoder to translate source sentences with technical term tokens and replace the tokens with technical term translations using SMT",
+        "rerank the 1,000-best SMT translations on the basis of the average of the SMT score and that of the NMT rescoring of the translated sentences with technical term tokens"
+      ],
+      "paper_id": "P004079",
+      "problem": [
+        "NMT cannot handle a larger vocabulary because training complexity and decoding complexity proportionally increase with the number of target words",
+        "This problem becomes even more serious when translating patent documents, which contain many technical terms that are observed infrequently"
+      ],
+      "task": [
+        "translate patent sentences comprising a large vocabulary of technical terms"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 76.20344522400046,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P004079",
+    "usage": {
+      "input_tokens": 6997,
+      "output_tokens": 832
+    }
+  },
+  "record_sha256": "2fb70c9a0f96654386c761c281fb958addf7af0d65ac730d986c4fa3688294bd",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

@@ -1,91 +1,108 @@
-# Exp A — Đánh giá Qwen trích năm facet
+# Exp A — Đánh giá Qwen bằng embedding hoặc khớp chữ
 
-[Chỉ mục script](../README.md) · [Generator A](../../data/exp_a/README.md) · [Quy trình review](../../docs/EVALUATE_QWEN.md)
+[Generator A](../../data/exp_a/README.md) · [Quy trình review](docs/SEMANTIC_REVIEW_PROTOCOL.md) · [Kết quả matcher](docs/MATCHER_REFERENCE_REPORT.md)
 
-## 1. A kiểm tra điều gì?
+[Kaggle pilot 50 bài](docs/KAGGLE_PILOT.md) · [Kết quả QLoRA v1](docs/QLORA_V1_PROGRESS_2026-10-16.md) · [Báo cáo lịch sử](docs/archive/README.md)
 
-A có hai bước: Qwen đọc title/abstract để trích facet silver; evaluator đối chiếu silver với nhãn do người review độc lập. README này giải thích bước đánh giá. Chia bài cho năm thành viên, GPU, retry, checkpoint và gộp nằm trong README generator.
+**[Policy matrix v4 COMPLETE và đã chấm lại](docs/KAGGLE_POLICY_MATRIX_V4_EVALUATION_2026-10-16.md)**
+Qwen3-8B trên 30 paper dev: original **60,65%**, policy **50,43%**, policy_examples
+**52,51%** micro F1. 90 signed records, 60 raw replay và 450 ô scoring khớp local.
+Nhánh có ví dụ mất 26 TP so original và chỉ giảm 1 FP; method/contribution chiếm
+64,9% lỗi của nhánh này. Có cả lỗi coverage/role và giới hạn matching tên/nhãn dài.
+Giữ reference/evaluator/ngưỡng và baseline original; không sửa prompt hoặc fine-tune.
+Output `data/exp_a/evaluation/policy_matrix_kaggle_v4/`; vẫn AI reference trên dev.
 
-Qwen là **model đã có trong A**. Evaluator chạy CPU, không gọi lại Qwen, không học tham số và không sửa gold. Điểm chọn lượt sinh 0–100 chỉ đo bám nguồn/schema; không thay thế Precision/Recall/F1 so với gold.
+**[Matrix v2 COMPLETE và đã chấm lại](docs/KAGGLE_FACET_MATRIX_V2_EVALUATION_2026-10-16.md)**
+4 cấu hình ×50 bài, 200 replay và 1.000 phép so theo bài/facet khớp local. 8B original
+micro **56,36%**, macro **56,89%**, method **65,38%**, contribution **50,00%**.
+Source-first giảm điểm ở cả hai model; schema kind/span loại nhiều item, đồng thời
+có thêm nhãn sai vai trò/gộp ý. Giữ threshold 0,85 và frozen AI reference.
+Output `data/exp_a/evaluation/facet_matrix_v2/`; chưa coi đây là human gold hoặc held-out quality.
 
-## 2. Đầu vào và điều kiện chạy
+**[Pilot v3.7 đã COMPLETE và được chấm](docs/KAGGLE_PILOT50_V3_7_EVALUATION_2026-10-16.md)**
+ở kernel version9, đủ50 bài trên hai Tesla T4; hash/raw-applied replay qua.
+Micro-F1 **54,27%** (v3.6:53,85%), macro **56,21%** (v3.6:56,83%). Method
+**59,84%**, contribution **47,45%**, dataset **75,86%**; thêm11 TP nhưng24 FP.
+P002586 giữ được hai method, finding vẫn thiếu điều kiện; artifact/finding âm
+còn bỏ sót. 29 fallback, tăng từ23. Output `generated_v3_7_pilot50/`.
 
-| Đầu vào | Mặc định | Vai trò |
-|---|---|---|
-| Corpus | `data/processed/papers.jsonl` | Title/abstract và ID |
-| Silver source | `data/exp_a/generated/` | Silver, metadata/evidence, manifest có hash hợp lệ |
-| Human gold | `data/exp_a/ground_truth/gold_review/review_annotations.jsonl` | Đáp án người review hoàn tất |
-| Gold cohort manifest | Thư mục gold review | Xác nhận IDs đã chọn |
-| Expected count | 400 | Kiểm tra số bài đánh giá |
-
-Gold phải có đúng năm list facet, ID duy nhất, `review_status: reviewed` và tên reviewer. Selector mới tạo form pending, **chưa tạo ground truth hoàn chỉnh**. Người review đọc bài và điền nhãn trước khi xem silver reference.
-
-Silver phải chứa mọi ID gold. Evaluator cho phép source partial nếu cohort có đủ và báo coverage; điều đó không làm source partial đủ điều kiện bàn giao B–E. P000001 đã dùng phát triển prompt nên bị loại khỏi held-out gold.
-
-## 3. Generator tạo gì trước khi chấm?
-
-```text
-title/abstract → Qwen → concept + evidence_id
-→ kiểm tra schema/bám nguồn, retry có giới hạn
-→ facets_silver + annotation_metadata + manifest
-→ selector chọn cohort → form pending
-→ người review hoàn tất → human gold
-```
-
-Không cần chạy lại extraction để chấm A nếu silver và metadata/evidence hợp lệ đã có. Gold kiểm tra **đúng và đủ**: người review có thể xóa nhãn sai, sửa facet và bổ sung ý bị bỏ sót.
-
-Selector ưu tiên bài nhiều facet/concept hợp lệ, không lấy mẫu ngẫu nhiên toàn corpus. Điểm A chỉ có phạm vi cohort đó.
-
-## 4. Evaluator chạy từng bước
-
-1. Kiểm tra source manifest, hash, corpus, metadata và gold cohort.
-2. Từ chối gold pending, thiếu reviewer, sai số lượng/schema/IDs hoặc có P000001.
-3. Chuẩn hóa concept bằng Unicode NFKC, casefold và khoảng trắng; giữ dấu câu.
-4. Với mỗi paper/facet, chuyển nhãn thành tập rồi tính TP/FP/FN.
-5. Tổng hợp P/R/F1 từng facet, micro/macro và tỷ lệ paper cả năm facet khớp hoàn toàn.
-6. Xuất nhãn dư/thiếu và evidence để người đọc phân tích lỗi.
-
-Không tự gộp từ đồng nghĩa. `C++` và `C#` vẫn khác nhau. Hai cách diễn đạt cùng nghĩa nhưng không khớp sau chuẩn hóa có thể bị tính khác; cần đọc per-paper để diễn giải.
-
-## 5. Ví dụ tính điểm
-
-Ví dụ minh họa facet method:
-
-```text
-Gold   = {graph neural networks, contrastive learning}
-Silver = {graph neural networks, support vector machines}
-TP = 1, FP = 1, FN = 1
-Precision = TP / (TP+FP) = 0.5
-Recall    = TP / (TP+FN) = 0.5
-F1        = 2TP / (2TP+FP+FN) = 0.5
-```
-
-Precision thấp: trích thêm nhãn không có trong gold. Recall thấp: bỏ sót nhãn gold. **Micro** cộng counts rồi tính điểm chung; **macro** lấy trung bình F1 của các facet có điểm xác định. Mẫu số bằng 0 báo N/A.
-
-Exact match paper đòi cả năm tập nhãn giống nhau. Chẩn đoán “có thể nhầm facet” hỗ trợ rà lỗi, không tự sửa/công nhận nhãn.
-
-## 6. Chạy và đọc kết quả
-
-Từ gốc repository, Python 3.11+:
+Code/test pilot ở `pilot/`; code/test matrix và policy ở `matrix/`.
+Kaggle entrypoints tương ứng là `data/exp_a/.kaggle/pilot/kaggle.ps1` và
+`data/exp_a/.kaggle/matrix/matrix.ps1`. Evaluator và test evaluator dùng chung
+ở thư mục này. Từ gốc project chạy toàn bộ test A:
 
 ```powershell
-python scripts/exp_a/evaluate_exp_a.py
-python scripts/exp_a/evaluate_exp_a.py --source data/exp_a/generated --gold data/exp_a/ground_truth/gold_review/review_annotations.jsonl --output data/exp_a/evaluation/gold_400
+python -B -m unittest discover -s scripts/exp_a -t . -v
 ```
 
-`--expected-count` mặc định 400; chỉ đổi khi chủ động đánh giá cohort khác. A không dùng split/ks của B–E.
+Output/evaluation pilot v3.1–v3.4 và test riêng v3.4 đã xóa; giữ từ v3.5 trở đi.
+Báo cáo/audit cũ đã gom vào [file lưu trữ](docs/archive/README.md); xem
+[cleanup manifest](../../data/exp_a/cleanup_manifest_2026-10-16.json).
+Baseline `data/exp_a/generated/` còn dùng bởi pilot builder và B–E nên vẫn giữ.
 
-| Tệp dưới `data/exp_a/evaluation/gold_400/` | Cách đọc |
-|---|---|
-| `report.md` | P/R/F1 từng facet và giới hạn |
-| `summary.json` | TP/FP/FN, micro/macro và corpus audit |
-| `per_paper.jsonl` | Nhãn dư/thiếu, gold/silver, evidence |
-| `manifest.json` | Hash input/code/output |
+`evaluate_exp_a.py` đọc silver đã lưu, không chạy Qwen trích xuất lại.
+Reference hiện hành là AI v2: 400 bài / 3.322 concept, sửa 18 bài / 21 facet
+theo nguồn; chưa phải human gold. Encoder dùng Qwen3-Embedding-0.6B local,
+mặc định cosine **0.85**.
 
-Bàn giao cả thư mục. Báo cáo cần nêu cohort, cách chọn, phiên bản model/prompt/policy và việc dùng lexical agreement.
+## Cách ghép và tính điểm
 
-## 7. Thành viên A phát triển gì tiếp?
+1. Kiểm tra hash silver/corpus, ID cohort và schema/status của reference.
+2. Giữ exact pairs sau NFKC, casefold và chuẩn hóa khoảng trắng; giữ dấu câu.
+3. Embed nhãn còn lại bằng last non-padding token + L2, không thêm instruction.
+4. Chuẩn hóa hậu tố dataset/corpus/collection; alias cần có định nghĩa trong nguồn.
+5. Chặn một số bất đồng về số liệu, metric, phủ định, mức đạt/mức tăng và thao tác task.
+6. Trong cùng paper/facet, cặp canonical được nhận theo định danh; cặp khác cần cosine
+   ≥ ngưỡng. Mỗi nhãn chỉ dùng một lần; tối đa số cặp rồi tổng assignment score.
+7. Cặp ghép được là TP; Qwen dư là FP; reference thiếu là FN. Tính P/R/F1
+   từng facet, micro/macro; mẫu số bằng 0 báo N/A.
 
-So prompt, extraction policy hoặc model extraction khác trên cùng năm facet và gold cohort. Dùng tập phát triển riêng để chỉnh prompt; không chỉnh theo gold held-out rồi báo như test độc lập.
+Exact có `similarity=1.0` theo quy ước. Canonical có `assignment_score=1.0`,
+nhưng `similarity` vẫn là cosine thật. Cặp embedding dùng cosine cho cả hai.
+`rejected_pairs` ghi các ứng viên vượt ngưỡng bị chặn và lý do.
+`exact_papers` đếm khớp chữ; `matched_papers` đếm bài ghép đủ cả năm facet.
 
-Encoder retrieval/reranker của B–E không phải điều kiện chạy A. Evidence có thật vẫn cần người đọc kiểm tra có hỗ trợ đúng concept/facet không.
+## Chạy từ gốc project
+
+~~~powershell
+.\.venv-qwen\Scripts\python.exe -B scripts/exp_a/evaluate_exp_a.py
+.\.venv-qwen\Scripts\python.exe -B scripts/exp_a/evaluate_exp_a.py --threshold 0.85
+.\.venv-qwen\Scripts\python.exe -B scripts/exp_a/evaluate_exp_a.py --matching exact --output data/exp_a/evaluation/gold_400
+.\.venv-qwen\Scripts\python.exe -B scripts/exp_a/test_qwen_evaluation.py
+~~~
+
+Model cache được kiểm tra SHA-256, nằm dưới
+`data/exp_a/evaluation/embedding_probe/.model_cache/`.
+Không cần thêm package hay LLM judge. `--source`, `--gold`, `--output` và
+`--expected-count` vẫn được hỗ trợ. Exact mode không nạp encoder.
+Source partial được phép nếu đủ ID reference; không làm source đủ điều kiện
+bàn giao B–E. P000001 dùng phát triển prompt và bị loại khỏi cohort.
+
+## Kết quả 400 bài ngày 2026-10-14
+
+| Lượt | TP | FP | FN | Precision | Recall | Micro F1 |
+|---|---:|---:|---:|---:|---:|---:|
+| Reference v1 + matcher cũ | 1266 | 2087 | 2034 | 37.76% | 38.36% | 38.06% |
+| Reference v2 + matcher cũ | 1284 | 2069 | 2038 | 38.29% | 38.65% | 38.47% |
+| **Reference v2 + matcher mới** | **1298** | **2055** | **2024** | **38.71%** | **39.07%** | **38.89%** |
+
+Output mặc định hiện hành: `data/exp_a/evaluation/embedding_400_revised/`.
+`embedding_400/` và `reference_only_400/` là hai mốc lịch sử để đối chiếu;
+khác hash reference/code. Baseline lexical trên reference v2 là 21.21%.
+
+- `report.md`: điểm từng facet, baseline và giới hạn.
+- `summary.json`: counts, micro/macro, encoder/runtime, corpus audit và diagnostics matcher.
+- `per_paper.jsonl`: raw silver/gold, matched/rejected pairs, nhãn dư/thiếu và evidence.
+- `manifest.json`: hash input/code/model/output.
+
+## Giới hạn và code đã dọn
+
+Đã thử 56 cặp hiệu chỉnh và 44 cặp kiểm tra ở 12 bài khác. Ứng viên 0.78 chưa
+đạt precision 90% theo gate đặt trước, nên giữ mặc định 0.85. Các cặp do Codex
+rà, chưa được người xác nhận. Matcher vẫn có thể nhầm phạm vi, điều kiện và
+nhãn gộp nhiều ý; điểm là agreement với AI reference, chưa phải semantic accuracy.
+Cohort ưu tiên silver đầy đủ và không đại diện ngẫu nhiên toàn corpus.
+
+Giữ một evaluator và file test `scripts/exp_a/test_qwen_evaluation.py`.
+Không giữ script probe/calibration riêng; log/cache test tạm được dọn.
+Báo cáo/audit lịch sử được nén trong `docs/archive/`; output pilot giữ từ v3.5 trở đi.

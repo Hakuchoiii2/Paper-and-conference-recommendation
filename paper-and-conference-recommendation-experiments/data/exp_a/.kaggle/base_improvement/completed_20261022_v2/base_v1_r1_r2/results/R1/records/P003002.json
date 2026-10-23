@@ -1,0 +1,177 @@
+{
+  "record": {
+    "arm": "R1",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003002\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.481921481999962,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003002\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 9048,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2693,
+            "output_tokens": 140
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003002\", \"problem\": [], \"task\": [{\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"}, {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 17.039323508000052,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003002\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 9049,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4210,
+            "output_tokens": 140
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "reinforcement learning approach",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "policy gradient algorithm",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003002",
+        "problem": [],
+        "task": [
+          {
+            "concept": "mapping natural language instructions to sequences of executable actions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 30.521244990000014,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9049,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6903,
+        "output_tokens": 280
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4ec354f6600795e5fa4434088972bfb44a663867decbb9f6f870fb5a3904923c",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": false,
+        "messages_sha256": "f1b6a6a558f0550085ea27d499fae0054e1f659a417593872f2e2445570d2d46",
+        "repair_packet": null,
+        "seed": 9048
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "a4d60addb6a3cba6c685dee281ed4e5eeee1e7f59685bb57d416091833519e63",
+        "repair_packet": null,
+        "seed": 9049
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "method can rival supervised learning techniques while requiring few or no annotated training examples"
+      ],
+      "dataset": [],
+      "method": [
+        "reinforcement learning approach",
+        "policy gradient algorithm"
+      ],
+      "paper_id": "P003002",
+      "problem": [],
+      "task": [
+        "mapping natural language instructions to sequences of executable actions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 30.521244990000014,
+    "instruction_sha256": "e154398ed4976b8a39d6e0c8e55f325e4f0dd64f196d0c6a65232d998bac3993",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 30.521244990000014,
+      "input_tokens": 6903,
+      "output_tokens": 280
+    },
+    "paper_id": "P003002",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 6903,
+      "output_tokens": 280
+    }
+  },
+  "record_sha256": "80ef5ae33a01857e5fd9821f9a1a716af29372ad0246952d733044f180462384",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

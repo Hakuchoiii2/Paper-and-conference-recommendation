@@ -1,0 +1,61 @@
+{
+  "verified_records": 12,
+  "signature": "5ad1db912e956ceaab446bb5698401324f0d1d6c7cbda0f0c2d9b5decbfffb88",
+  "groups": [
+    {
+      "arm": "base",
+      "decoder": "greedy",
+      "papers": 3,
+      "schema_valid": 3,
+      "error_free": 0,
+      "stop_reasons": {
+        "json_complete": 3
+      },
+      "output_tokens": 928,
+      "mean_seconds": 24.01,
+      "median_seconds": 23.219
+    },
+    {
+      "arm": "base",
+      "decoder": "sampling",
+      "papers": 3,
+      "schema_valid": 3,
+      "error_free": 0,
+      "stop_reasons": {
+        "json_complete": 3
+      },
+      "output_tokens": 990,
+      "mean_seconds": 25.384,
+      "median_seconds": 21.931
+    },
+    {
+      "arm": "adapter",
+      "decoder": "greedy",
+      "papers": 3,
+      "schema_valid": 1,
+      "error_free": 1,
+      "stop_reasons": {
+        "json_complete": 1,
+        "duplicate_concept": 2
+      },
+      "output_tokens": 985,
+      "mean_seconds": 44.84,
+      "median_seconds": 35.416
+    },
+    {
+      "arm": "adapter",
+      "decoder": "sampling",
+      "papers": 3,
+      "schema_valid": 2,
+      "error_free": 2,
+      "stop_reasons": {
+        "json_complete": 2,
+        "duplicate_concept": 1
+      },
+      "output_tokens": 833,
+      "mean_seconds": 37.847,
+      "median_seconds": 34.207
+    }
+  ],
+  "limitations": "Three first-draft diagnostic papers, one seed; no semantic/F1 evaluation or trained v2 adapter"
+}

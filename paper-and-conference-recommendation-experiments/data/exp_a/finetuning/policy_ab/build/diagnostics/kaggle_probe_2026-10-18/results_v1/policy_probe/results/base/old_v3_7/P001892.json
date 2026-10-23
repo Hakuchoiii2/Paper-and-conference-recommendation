@@ -1,0 +1,42 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "old_v3_7",
+    "paper_id": "P001892",
+    "seed": 5718,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "messages_sha256": "f128884f947c238e9580960e9f6179ea9ea9b83e95002ef73a751cdcd24907af",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P001892\",\n  \"problem\": [\n    {\n      \"concept\": \"chaotic experiments in literature make no uniform comparison\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"little attention has been paid by the research community\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"associate an appropriate label with a piece of text\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"textual entailment formulation\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"datasets we provide facilitate studying 0Shot-TC relative to conceptually different and diverse aspects\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"datasets we provide facilitate studying 0Shot-TC relative to conceptually different and diverse aspects\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"extend the existing evaluation setup (label-partially-unseen) to include a more challenging yet realistic evaluation label-fully-unseen 0Shot-TC\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"unify the 0Shot-TC of diverse aspects within a textual entailment formulation\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 26.723725075999937,
+    "usage": {
+      "input_tokens": 2642,
+      "output_tokens": 329
+    },
+    "schema_valid": true,
+    "validation_errors": [],
+    "bounded_stop": false
+  },
+  "record_sha256": "d5996c51eaef134d167e002b922cd0fbb7ba70f73388c1ec4c021db17278ee5c"
+}

@@ -1,0 +1,71 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"not certified\", \"evidence_id\": \"A1\"}, {\"concept\": \"fails\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"identify featured/good articles\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorizing Wikipedia articles\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"word count\", \"evidence_id\": \"A4\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"F-measure of 90.4%\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 1,
+      "generation_seconds": 33.366541381998104,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"not certified\", \"evidence_id\": \"A1\"}, {\"concept\": \"fails\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"identify featured/good articles\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorizing Wikipedia articles\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"word count\", \"evidence_id\": \"A4\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"F-measure of 90.4%\", \"evidence_id\": \"A6\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "seed": 201,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2508,
+        "output_tokens": 227
+      },
+      "validation_errors": []
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"not certified\", \"evidence_id\": \"A1\"}, {\"concept\": \"fails\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"identify featured/good articles\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorizing Wikipedia articles\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"word count\", \"evidence_id\": \"A4\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"F-measure of 90.4%\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 2,
+      "generation_seconds": 35.406899915000395,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"not certified\", \"evidence_id\": \"A1\"}, {\"concept\": \"fails\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"identify featured/good articles\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorizing Wikipedia articles\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"word count\", \"evidence_id\": \"A4\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"F-measure of 90.4%\", \"evidence_id\": \"A6\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "seed": 202,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4102,
+        "output_tokens": 227
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P000053",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "Wikipedia",
+        "evidence": "In a first case study, we use this measure to identify featured/good articles in Wikipedia.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 2,
+  "selected_score": 100.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

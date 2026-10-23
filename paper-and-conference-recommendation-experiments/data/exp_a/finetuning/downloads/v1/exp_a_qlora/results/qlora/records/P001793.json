@@ -1,0 +1,171 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001793\", \"problem\": [{\"concept\": \"scarcity and class imbalance of training data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"early rumor detection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"neural language model\", \"evidence_id\": \"A4\"}, {\"concept\": \"event propagation patterns\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data augmentation technique\", \"evidence_id\": \"A1\"}, {\"concept\": \"expand the size of an existing rumor data set nearly by 200%\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.125156858997798,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001793\", \"problem\": [{\"concept\": \"scarcity and class imbalance of training data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"early rumor detection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"neural language model\", \"evidence_id\": \"A4\"}, {\"concept\": \"event propagation patterns\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data augmentation technique\", \"evidence_id\": \"A1\"}, {\"concept\": \"expand the size of an existing rumor data set nearly by 200%\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5421,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2585,
+            "output_tokens": 172
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001793\", \"problem\": [{\"concept\": \"scarcity and class imbalance of training data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"early rumor detection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"neural language model\", \"evidence_id\": \"A4\"}, {\"concept\": \"event propagation patterns\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data augmentation technique\", \"evidence_id\": \"A1\"}, {\"concept\": \"expand the size of an existing rumor data set nearly by 200%\", \"evidence_id\": \"A6\"}, {\"concept\": \"performance of rumor detection can be improved by 12.1% in terms of F-score\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.11462648499946,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001793\", \"problem\": [{\"concept\": \"scarcity and class imbalance of training data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"early rumor detection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"neural language model\", \"evidence_id\": \"A4\"}, {\"concept\": \"event propagation patterns\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data augmentation technique\", \"evidence_id\": \"A1\"}, {\"concept\": \"expand the size of an existing rumor data set nearly by 200%\", \"evidence_id\": \"A6\"}, {\"concept\": \"performance of rumor detection can be improved by 12.1% in terms of F-score\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5422,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4136,
+            "output_tokens": 205
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "data augmentation technique",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "expand the size of an existing rumor data set nearly by 200%",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "performance of rumor detection can be improved by 12.1% in terms of F-score",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "data augmentation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "neural language model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "event propagation patterns",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001793",
+        "problem": [
+          {
+            "concept": "scarcity and class imbalance of training data",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "early rumor detection",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 64.23978334399726,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5422,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6721,
+        "output_tokens": 377
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "data augmentation technique",
+        "expand the size of an existing rumor data set nearly by 200%",
+        "performance of rumor detection can be improved by 12.1% in terms of F-score"
+      ],
+      "dataset": [],
+      "method": [
+        "data augmentation",
+        "neural language model",
+        "event propagation patterns"
+      ],
+      "paper_id": "P001793",
+      "problem": [
+        "scarcity and class imbalance of training data"
+      ],
+      "task": [
+        "early rumor detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 64.23978334399726,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P001793",
+    "usage": {
+      "input_tokens": 6721,
+      "output_tokens": 377
+    }
+  },
+  "record_sha256": "ca941c4f998c1274439ad7ae8d319769ea92eed74f9d9003b73d8fc2a894b246",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

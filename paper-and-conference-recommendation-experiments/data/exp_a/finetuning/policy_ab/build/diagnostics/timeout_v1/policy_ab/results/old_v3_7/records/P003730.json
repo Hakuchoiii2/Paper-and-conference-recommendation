@@ -1,0 +1,203 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003730\", \"problem\": [], \"task\": [{\"concept\": \"identifying parallel sentences in comparable corpora\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"continuous vector representations\", \"evidence_id\": \"A1\"}, {\"concept\": \"distributional semantics\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora\", \"evidence_id\": \"T0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.422390732000167,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003730\", \"problem\": [], \"task\": [{\"concept\": \"identifying parallel sentences in comparable corpora\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"continuous vector representations\", \"evidence_id\": \"A1\"}, {\"concept\": \"distributional semantics\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora\", \"evidence_id\": \"T0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 11232,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2339,
+            "output_tokens": 123
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003730\", \"problem\": [], \"task\": [{\"concept\": \"identifying parallel sentences in comparable corpora\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"continuous vector representations\", \"evidence_id\": \"A1\"}, {\"concept\": \"distributional semantics\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"BUCC 2017\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora\", \"evidence_id\": \"T0\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.014437914999917,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003730\", \"problem\": [], \"task\": [{\"concept\": \"identifying parallel sentences in comparable corpora\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"continuous vector representations\", \"evidence_id\": \"A1\"}, {\"concept\": \"distributional semantics\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"BUCC 2017\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora\", \"evidence_id\": \"T0\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 11233,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3829,
+            "output_tokens": 144
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora",
+            "evidence_id": "T0"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "BUCC 2017",
+            "evidence_id": "T0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "continuous vector representations",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "distributional semantics",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P003730",
+        "problem": [],
+        "task": [
+          {
+            "concept": "identifying parallel sentences in comparable corpora",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.436828647000084,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11233,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6168,
+        "output_tokens": 267
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora",
+          "evidence": "BUCC 2017 Shared Task: a First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora",
+          "source": "title"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "BUCC 2017",
+          "evidence": "BUCC 2017 Shared Task: a First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora",
+          "source": "title"
+        }
+      ],
+      "method": [
+        {
+          "concept": "continuous vector representations",
+          "evidence": "Our goal is to leverage continuous vector representations and distributional semantics with a minimal use of external preprocessing and postprocessing tools.",
+          "source": "abstract"
+        },
+        {
+          "concept": "distributional semantics",
+          "evidence": "Our goal is to leverage continuous vector representations and distributional semantics with a minimal use of external preprocessing and postprocessing tools.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P003730",
+      "problem": [],
+      "task": [
+        {
+          "concept": "identifying parallel sentences in comparable corpora",
+          "evidence": "AbstractThis paper describes our participation in BUCC 2017 shared task: identifying parallel sentences in comparable corpora.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "First Attempt Toward a Deep Learning Framework for Identifying Parallel Sentences in Comparable Corpora"
+      ],
+      "dataset": [
+        "BUCC 2017"
+      ],
+      "method": [
+        "continuous vector representations",
+        "distributional semantics"
+      ],
+      "paper_id": "P003730",
+      "problem": [],
+      "task": [
+        "identifying parallel sentences in comparable corpora"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 41.436828647000084,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P003730",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6168,
+      "output_tokens": 267
+    }
+  },
+  "record_sha256": "59542bb794410b2c43f3cb93ce22ca97deaab70f5effd7d7bc3e108380af555c",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

@@ -1,0 +1,102 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P001854\",\n  \"problem\": [\n    {\"concept\": \"word-level analysis cannot leverage semantic information in subword structures\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"poor embeddings for infrequent words and weak handling of out-of-vocabulary words\", \"evidence_id\": \"A3\"}\n  ],\n  \"task\": [\n    {\"concept\": \"unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"parsimony criterion for hierarchical morpheme segmentation\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"MorphMine for unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"improves embedding quality using MorphMine morphemes\", \"evidence_id\": \"A8\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 19.12221487399802,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001854\",\n  \"problem\": [\n    {\"concept\": \"word-level analysis cannot leverage semantic information in subword structures\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"poor embeddings for infrequent words and weak handling of out-of-vocabulary words\", \"evidence_id\": \"A3\"}\n  ],\n  \"task\": [\n    {\"concept\": \"unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"parsimony criterion for hierarchical morpheme segmentation\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"MorphMine for unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"improves embedding quality using MorphMine morphemes\", \"evidence_id\": \"A8\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 60.8077,
+      "seed": 5604,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2504,
+        "output_tokens": 202
+      },
+      "validation_errors": [
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"poor embeddings for infrequent words and weak handling of out-of-vocabulary words\"; evidence_id=\"A3\"; evidence=\"With regard to word embedding techniques, this leads to not only poor embeddings for infrequent words in long-tailed text corpora but also weak capabilities for handling out-of-vocabulary words.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"parsimony criterion for hierarchical morpheme segmentation\"; evidence_id=\"A5\"; evidence=\"MorphMine applies a parsimony criterion to hierarchically segment words into the fewest number of morphemes at each level of the hierarchy.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"improves embedding quality using MorphMine morphemes\"; evidence_id=\"A8\"; evidence=\"Additionally, we experimentally demonstrate that utilizing MorphMine morphemes to enrich word embeddings consistently improves embedding quality on a variety of of embedding evaluations and a downstream language modeling task.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001854\", \"problem\": [{\"concept\": \"word-level analysis cannot leverage semantic information in subword structures\", \"evidence_id\": \"A2\"}, {\"concept\": \"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"parsimony criterion for hierarchical morpheme segmentation\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MorphMine for unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}, {\"concept\": \"improves embedding quality using MorphMine morphemes\", \"evidence_id\": \"A8\"}]}",
+      "attempt": 2,
+      "generation_seconds": 22.205637168000976,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001854\",\n  \"problem\": [\n    {\"concept\": \"word-level analysis cannot leverage semantic information in subword structures\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\", \"evidence_id\": \"A3\"}\n  ],\n  \"task\": [\n    {\"concept\": \"unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"parsimony criterion for hierarchical morpheme segmentation\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"MorphMine for unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"improves embedding quality using MorphMine morphemes\", \"evidence_id\": \"A8\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 60.8077,
+      "seed": 5605,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4295,
+        "output_tokens": 203
+      },
+      "validation_errors": [
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\"; evidence_id=\"A3\"; evidence=\"With regard to word embedding techniques, this leads to not only poor embeddings for infrequent words in long-tailed text corpora but also weak capabilities for handling out-of-vocabulary words.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"parsimony criterion for hierarchical morpheme segmentation\"; evidence_id=\"A5\"; evidence=\"MorphMine applies a parsimony criterion to hierarchically segment words into the fewest number of morphemes at each level of the hierarchy.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"improves embedding quality using MorphMine morphemes\"; evidence_id=\"A8\"; evidence=\"Additionally, we experimentally demonstrate that utilizing MorphMine morphemes to enrich word embeddings consistently improves embedding quality on a variety of of embedding evaluations and a downstream language modeling task.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001854\", \"problem\": [{\"concept\": \"word-level analysis cannot leverage semantic information in subword structures\", \"evidence_id\": \"A2\"}, {\"concept\": \"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"parsimony criterion for hierarchical morpheme segmentation\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MorphMine for unsupervised morpheme segmentation\", \"evidence_id\": \"A4\"}, {\"concept\": \"improves embedding quality using MorphMine morphemes\", \"evidence_id\": \"A8\"}]}",
+      "attempt": 3,
+      "generation_seconds": 24.856415202997596,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001854\",\n  \"problem\": [\n    {\n      \"concept\": \"word-level analysis cannot leverage semantic information in subword structures\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"unsupervised morpheme segmentation\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"parsimony criterion for hierarchical morpheme segmentation\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"MorphMine for unsupervised morpheme segmentation\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"improves embedding quality using MorphMine morphemes\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 60.8077,
+      "seed": 5606,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4275,
+        "output_tokens": 233
+      },
+      "validation_errors": [
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\"; evidence_id=\"A3\"; evidence=\"With regard to word embedding techniques, this leads to not only poor embeddings for infrequent words in long-tailed text corpora but also weak capabilities for handling out-of-vocabulary words.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"parsimony criterion for hierarchical morpheme segmentation\"; evidence_id=\"A5\"; evidence=\"MorphMine applies a parsimony criterion to hierarchically segment words into the fewest number of morphemes at each level of the hierarchy.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"improves embedding quality using MorphMine morphemes\"; evidence_id=\"A8\"; evidence=\"Additionally, we experimentally demonstrate that utilizing MorphMine morphemes to enrich word embeddings consistently improves embedding quality on a variety of of embedding evaluations and a downstream language modeling task.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P001854",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 3,
+  "selected_score": 60.8077,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\"; evidence_id=\"A3\"; evidence=\"With regard to word embedding techniques, this leads to not only poor embeddings for infrequent words in long-tailed text corpora but also weak capabilities for handling out-of-vocabulary words.\"",
+    "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"parsimony criterion for hierarchical morpheme segmentation\"; evidence_id=\"A5\"; evidence=\"MorphMine applies a parsimony criterion to hierarchically segment words into the fewest number of morphemes at each level of the hierarchy.\"",
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"improves embedding quality using MorphMine morphemes\"; evidence_id=\"A8\"; evidence=\"Additionally, we experimentally demonstrate that utilizing MorphMine morphemes to enrich word embeddings consistently improves embedding quality on a variety of of embedding evaluations and a downstream language modeling task.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

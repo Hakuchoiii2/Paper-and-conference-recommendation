@@ -1,0 +1,153 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "contribution": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "pattern": "^(T0|A(?:0|[1-9][0-9]*))$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "concept",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "dataset": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "pattern": "^(T0|A(?:0|[1-9][0-9]*))$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "concept",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "method": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "pattern": "^(T0|A(?:0|[1-9][0-9]*))$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "concept",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "paper_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "problem": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "pattern": "^(T0|A(?:0|[1-9][0-9]*))$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "concept",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "task": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "evidence_ids": {
+            "items": {
+              "pattern": "^(T0|A(?:0|[1-9][0-9]*))$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "concept",
+          "evidence_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "paper_id",
+    "problem",
+    "task",
+    "method",
+    "dataset",
+    "contribution"
+  ],
+  "type": "object"
+}

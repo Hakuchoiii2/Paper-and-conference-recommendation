@@ -1,0 +1,166 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}, {\"concept\": \"few evaluation reports of speaker recognition on a large scale of voiceprint corpus\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.47641042000032,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}, {\"concept\": \"few evaluation reports of speaker recognition on a large scale of voiceprint corpus\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6666,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2484,
+            "output_tokens": 172
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}, {\"concept\": \"few evaluation reports of speaker recognition on a large scale of voiceprint corpus\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"440 thousand people\", \"evidence_id\": \"A4\"}, {\"concept\": \"recognition rate of Top 50 is stable at about 95%\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.907968102997984,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}, {\"concept\": \"few evaluation reports of speaker recognition on a large scale of voiceprint corpus\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"440 thousand people\", \"evidence_id\": \"A4\"}, {\"concept\": \"recognition rate of Top 50 is stable at about 95%\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6667,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4031,
+            "output_tokens": 201
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "deep nonlinear metric learning based speaker identification algorithm",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "440 thousand people",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "recognition rate of Top 50 is stable at about 95%",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "deep nonlinear metric learning",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P002208",
+        "problem": [
+          {
+            "concept": "evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "few evaluation reports of speaker recognition on a large scale of voiceprint corpus",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speaker identification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 62.384378522998304,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6667,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6515,
+        "output_tokens": 373
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "deep nonlinear metric learning based speaker identification algorithm",
+        "440 thousand people",
+        "recognition rate of Top 50 is stable at about 95%"
+      ],
+      "dataset": [],
+      "method": [
+        "deep nonlinear metric learning"
+      ],
+      "paper_id": "P002208",
+      "problem": [
+        "evaluations on the speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus",
+        "few evaluation reports of speaker recognition on a large scale of voiceprint corpus"
+      ],
+      "task": [
+        "speaker identification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 62.384378522998304,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P002208",
+    "usage": {
+      "input_tokens": 6515,
+      "output_tokens": 373
+    }
+  },
+  "record_sha256": "872ccaf256a2262ba8dbf9acdc442a8337ddb34ea71414f25caa6e78ce285e1e",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

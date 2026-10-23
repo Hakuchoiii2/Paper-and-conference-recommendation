@@ -1,0 +1,213 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001566\", \"problem\": [], \"task\": [{\"concept\": \"semantic interpretation of an input sentence\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"Data-Oriented Parsing\", \"evidence_id\": \"A0\"}, {\"concept\": \"combining sub-analyses\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"ATIS corpus\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"data-oriented semantic interpretation algorithm\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically enriched corpus\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.769870029000003,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001566\", \"problem\": [], \"task\": [{\"concept\": \"semantic interpretation of an input sentence\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"Data-Oriented Parsing\", \"evidence_id\": \"A0\"}, {\"concept\": \"combining sub-analyses\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"ATIS corpus\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"data-oriented semantic interpretation algorithm\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically enriched corpus\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 4740,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2433,
+            "output_tokens": 148
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001566\", \"problem\": [], \"task\": [{\"concept\": \"semantic interpretation of an input sentence\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"Data-Oriented Parsing\", \"evidence_id\": \"A0\"}, {\"concept\": \"combining sub-analyses\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"ATIS corpus\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"data-oriented semantic interpretation algorithm\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically enriched corpus\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.235372141000198,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001566\", \"problem\": [], \"task\": [{\"concept\": \"semantic interpretation of an input sentence\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"Data-Oriented Parsing\", \"evidence_id\": \"A0\"}, {\"concept\": \"combining sub-analyses\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"ATIS corpus\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"data-oriented semantic interpretation algorithm\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically enriched corpus\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 4741,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3952,
+            "output_tokens": 148
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "data-oriented semantic interpretation algorithm",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "semantically enriched corpus",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ATIS corpus",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Data-Oriented Parsing",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "combining sub-analyses",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001566",
+        "problem": [],
+        "task": [
+          {
+            "concept": "semantic interpretation of an input sentence",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 45.0052421700002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4741,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6385,
+        "output_tokens": 296
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "data-oriented semantic interpretation algorithm",
+          "evidence": "A data-oriented semantic interpretation algorithm was succesfully tested on this semantically enriched corpus.",
+          "source": "abstract"
+        },
+        {
+          "concept": "semantically enriched corpus",
+          "evidence": "A data-oriented semantic interpretation algorithm was succesfully tested on this semantically enriched corpus.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "ATIS corpus",
+          "evidence": "Semantic annotations were added to the syntactic annotations of most of the sentences of the ATIS corpus.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "Data-Oriented Parsing",
+          "evidence": "In Data-Oriented Parsing (DOP), an annotated language corpus is used as a stochastic grammar.",
+          "source": "abstract"
+        },
+        {
+          "concept": "combining sub-analyses",
+          "evidence": "The most probable analysis of a new input sentence is constructed by combining sub-analyses from the corpus in the most probable way.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001566",
+      "problem": [],
+      "task": [
+        {
+          "concept": "semantic interpretation of an input sentence",
+          "evidence": "If a corpus with semantically annotated sentences is used, the same approach can also generate the most probable semantic interpretation of an input sentence.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "data-oriented semantic interpretation algorithm",
+        "semantically enriched corpus"
+      ],
+      "dataset": [
+        "ATIS corpus"
+      ],
+      "method": [
+        "Data-Oriented Parsing",
+        "combining sub-analyses"
+      ],
+      "paper_id": "P001566",
+      "problem": [],
+      "task": [
+        "semantic interpretation of an input sentence"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 45.0052421700002,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001566",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6385,
+      "output_tokens": 296
+    }
+  },
+  "record_sha256": "9a0e90ab6383b71d9072b200b09e7d79a458e320471a2f209c76d5c5dfd33a1c",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

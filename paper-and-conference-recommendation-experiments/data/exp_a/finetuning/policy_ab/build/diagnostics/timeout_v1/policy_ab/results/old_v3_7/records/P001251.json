@@ -1,0 +1,216 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001251\", \"problem\": [{\"concept\": \"existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Switchboard conversational speech corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}, {\"concept\": \"system outperforms a standard end-to-end speech recognition system\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.565782982999963,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001251\", \"problem\": [{\"concept\": \"existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Switchboard conversational speech corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}, {\"concept\": \"system outperforms a standard end-to-end speech recognition system\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 3795,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2412,
+            "output_tokens": 192
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001251\", \"problem\": [{\"concept\": \"existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Switchboard conversational speech corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}, {\"concept\": \"system outperforms a standard end-to-end speech recognition system\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.245923183000002,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001251\", \"problem\": [{\"concept\": \"existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Switchboard conversational speech corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"direct acoustic-to-word, end-to-end speech recognition model\", \"evidence_id\": \"A3\"}, {\"concept\": \"system outperforms a standard end-to-end speech recognition system\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 3796,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3975,
+            "output_tokens": 192
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "direct acoustic-to-word, end-to-end speech recognition model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "system outperforms a standard end-to-end speech recognition system",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Switchboard conversational speech corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "direct acoustic-to-word, end-to-end speech recognition model",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001251",
+        "problem": [
+          {
+            "concept": "existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "direct acoustic-to-word, end-to-end speech recognition",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.811706165999965,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3796,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6387,
+        "output_tokens": 384
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "direct acoustic-to-word, end-to-end speech recognition model",
+          "evidence": "In this work, we present a direct acoustic-to-word, end-to-end speech recognition model capable of utilizing the conversational context to better process long conversations.",
+          "source": "abstract"
+        },
+        {
+          "concept": "system outperforms a standard end-to-end speech recognition system",
+          "evidence": "We evaluate our proposed approach on the Switchboard conversational speech corpus and show that our system outperforms a standard end-to-end speech recognition system.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "Switchboard conversational speech corpus",
+          "evidence": "We evaluate our proposed approach on the Switchboard conversational speech corpus and show that our system outperforms a standard end-to-end speech recognition system.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "direct acoustic-to-word, end-to-end speech recognition model",
+          "evidence": "In this work, we present a direct acoustic-to-word, end-to-end speech recognition model capable of utilizing the conversational context to better process long conversations.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001251",
+      "problem": [
+        {
+          "concept": "existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information",
+          "evidence": "However, existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "direct acoustic-to-word, end-to-end speech recognition",
+          "evidence": "In this work, we present a direct acoustic-to-word, end-to-end speech recognition model capable of utilizing the conversational context to better process long conversations.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "direct acoustic-to-word, end-to-end speech recognition model",
+        "system outperforms a standard end-to-end speech recognition system"
+      ],
+      "dataset": [
+        "Switchboard conversational speech corpus"
+      ],
+      "method": [
+        "direct acoustic-to-word, end-to-end speech recognition model"
+      ],
+      "paper_id": "P001251",
+      "problem": [
+        "existing speech recognition models are typically built at a sentence level, and thus it may not capture important conversational context information"
+      ],
+      "task": [
+        "direct acoustic-to-word, end-to-end speech recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.811706165999965,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001251",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6387,
+      "output_tokens": 384
+    }
+  },
+  "record_sha256": "0fa8c9953658ac8e7845efd09e2eda7240857e7692a0dff668b1fb1849b4bb47",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

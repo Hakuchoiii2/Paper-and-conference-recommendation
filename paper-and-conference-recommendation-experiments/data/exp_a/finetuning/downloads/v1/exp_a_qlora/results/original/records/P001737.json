@@ -1,0 +1,226 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001737\",\n  \"problem\": [\n    {\"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"detect hate speech in social media\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"distinguishing hate speech from general profanity\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"supervised classification methods\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"recently released dataset annotated for this purpose\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"establish lexical baselines for detecting hate speech\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"results of 78% accuracy in identifying posts across three classes\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 20.508442324997304,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001737\",\n  \"problem\": [\n    {\"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"detect hate speech in social media\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"distinguishing hate speech from general profanity\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"supervised classification methods\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"recently released dataset annotated for this purpose\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"establish lexical baselines for detecting hate speech\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"results of 78% accuracy in identifying posts across three classes\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 91.4286,
+          "seed": 5253,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2385,
+            "output_tokens": 220
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"distinguishing hate speech from general profanity\"; evidence_id=\"A0\"; evidence=\"In this paper we examine methods to detect hate speech in social media, while distinguishing this from general profanity.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establish lexical baselines for detecting hate speech\"; evidence_id=\"A1\"; evidence=\"We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001737\", \"problem\": [{\"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"detect hate speech in social media\", \"evidence_id\": \"T0\"}, {\"concept\": \"distinguishing hate speech from general profanity\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character n-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"word n-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"word skip-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"supervised classification methods\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"recently released dataset annotated for this purpose\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"establish lexical baselines for detecting hate speech\", \"evidence_id\": \"A1\"}, {\"concept\": \"results of 78% accuracy in identifying posts across three classes\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 28.35899259099824,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001737\",\n  \"problem\": [\n    {\"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"detect hate speech in social media\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"distinguishing hate speech from general profanity\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"character n-grams\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"word n-grams\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"word skip-grams\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"supervised classification methods\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"recently released dataset annotated for this purpose\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"establish lexical baselines for detecting hate speech\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"results of 78% accuracy in identifying posts across three classes\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 94.0,
+          "seed": 5254,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4098,
+            "output_tokens": 277
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"distinguishing hate speech from general profanity\"; evidence_id=\"A0\"; evidence=\"In this paper we examine methods to detect hate speech in social media, while distinguishing this from general profanity.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establish lexical baselines for detecting hate speech\"; evidence_id=\"A1\"; evidence=\"We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001737\", \"problem\": [{\"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"detect hate speech in social media\", \"evidence_id\": \"T0\"}, {\"concept\": \"distinguishing hate speech from general profanity\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character n-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"word n-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"word skip-grams\", \"evidence_id\": \"A2\"}, {\"concept\": \"supervised classification methods\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"recently released dataset annotated for this purpose\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"establish lexical baselines for detecting hate speech\", \"evidence_id\": \"A1\"}, {\"concept\": \"results of 78% accuracy in identifying posts across three classes\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 3,
+          "generation_seconds": 33.005182681001315,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001737\",\n  \"problem\": [\n    {\n      \"concept\": \"main challenge lies in discriminating profanity and hate speech from each other\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"detect hate speech in social media\",\n      \"evidence_id\": \"T0\"\n    },\n    {\n      \"concept\": \"distinguishing hate speech from general profanity\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"character n-grams\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"word n-grams\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"word skip-grams\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"supervised classification methods\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"recently released dataset annotated for this purpose\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"establish lexical baselines for detecting hate speech\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"results of 78% accuracy in identifying posts across three classes\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 94.0,
+          "seed": 5255,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4124,
+            "output_tokens": 327
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"distinguishing hate speech from general profanity\"; evidence_id=\"A0\"; evidence=\"In this paper we examine methods to detect hate speech in social media, while distinguishing this from general profanity.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establish lexical baselines for detecting hate speech\"; evidence_id=\"A1\"; evidence=\"We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "establish lexical baselines for detecting hate speech",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "results of 78% accuracy in identifying posts across three classes",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "recently released dataset annotated for this purpose",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "character n-grams",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word n-grams",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word skip-grams",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "supervised classification methods",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001737",
+        "problem": [
+          {
+            "concept": "main challenge lies in discriminating profanity and hate speech from each other",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detect hate speech in social media",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "distinguishing hate speech from general profanity",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 81.87261759699686,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "recently released dataset annotated for this purpose",
+            "evidence": "We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5255,
+      "selected_score": 94.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10607,
+        "output_tokens": 824
+      },
+      "validation_errors": [
+        "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"distinguishing hate speech from general profanity\"; evidence_id=\"A0\"; evidence=\"In this paper we examine methods to detect hate speech in social media, while distinguishing this from general profanity.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establish lexical baselines for detecting hate speech\"; evidence_id=\"A1\"; evidence=\"We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "establish lexical baselines for detecting hate speech",
+        "results of 78% accuracy in identifying posts across three classes"
+      ],
+      "dataset": [],
+      "method": [
+        "character n-grams",
+        "word n-grams",
+        "word skip-grams",
+        "supervised classification methods"
+      ],
+      "paper_id": "P001737",
+      "problem": [
+        "main challenge lies in discriminating profanity and hate speech from each other"
+      ],
+      "task": [
+        "detect hate speech in social media",
+        "distinguishing hate speech from general profanity"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 81.87261759699686,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P001737",
+    "usage": {
+      "input_tokens": 10607,
+      "output_tokens": 824
+    }
+  },
+  "record_sha256": "cbcf6e953248cbb9f7ac4a822b322f8e8cecceadb9fa766faee62369e25ebedc",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

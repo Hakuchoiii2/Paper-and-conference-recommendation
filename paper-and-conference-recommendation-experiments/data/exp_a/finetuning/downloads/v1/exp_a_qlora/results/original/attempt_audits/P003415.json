@@ -1,0 +1,104 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P003415\",\n  \"problem\": [\n    {\n      \"concept\": \"many questions about the best way to learn such extractors\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"relation extraction\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"integrating named entity linking and coreference resolution into argument identification\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"enforcing type constraints of linked arguments\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"partitioning the model by relation type signature\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"GORECO\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"using NEL for argument identification boosts performance over the traditional approach\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using argument types provides further improvement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"our best system boosts precision by 44% and recall by 70%\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 28.439097795002453,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003415\",\n  \"problem\": [\n    {\n      \"concept\": \"many questions about the best way to learn such extractors\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"relation extraction\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"integrating named entity linking and coreference resolution into argument identification\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"enforcing type constraints of linked arguments\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"partitioning the model by relation type signature\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"GORECO\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"using NEL for argument identification boosts performance over the traditional approach\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using argument types provides further improvement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"our best system boosts precision by 44% and recall by 70%\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 78.9545,
+      "seed": 10287,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2477,
+        "output_tokens": 346
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"relation extraction\"; evidence_id=\"A2\"; evidence=\"In this paper we investigate four orthogonal improvements: integrating named entity linking (NEL) and coreference resolution into argument identification for training and extraction, enforcing type constraints of linked arguments, and partitioning the model by relation type signature.\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"NY Times articles partially annotated by Hoffmann et al. (2011)\"; evidence_id=\"A3\"; evidence=\"We evaluate sentential extraction performance on two datasets: the popular set of NY Times articles partially annotated by Hoffmann et al.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"using argument types provides further improvement\"; evidence_id=\"A5\"; evidence=\"We find that using NEL for argument identification boosts performance over the traditional approach (named entity recognition with string match), and there is further improvement from using argument types.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P003415\", \"problem\": [{\"concept\": \"many questions about the best way to learn such extractors\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"integrating named entity linking and coreference resolution into argument identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"enforcing type constraints of linked arguments\", \"evidence_id\": \"A2\"}, {\"concept\": \"partitioning the model by relation type signature\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\", \"evidence_id\": \"A3\"}, {\"concept\": \"GORECO\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"using NEL for argument identification boosts performance over the traditional approach\", \"evidence_id\": \"A5\"}, {\"concept\": \"using argument types provides further improvement\", \"evidence_id\": \"A5\"}, {\"concept\": \"our best system boosts precision by 44% and recall by 70%\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 2,
+      "generation_seconds": 35.28676422100034,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003415\",\n  \"problem\": [\n    {\n      \"concept\": \"many questions about the best way to learn such extractors\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"relation extraction\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"integrating named entity linking and coreference resolution into argument identification\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"enforcing type constraints of linked arguments\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"partitioning the model by relation type signature\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"GORECO\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"using NEL for argument identification boosts performance over the traditional approach\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using argument types provides further improvement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"our best system boosts precision by 44% and recall by 70%\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 78.9545,
+      "seed": 10288,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4409,
+        "output_tokens": 346
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"relation extraction\"; evidence_id=\"A2\"; evidence=\"In this paper we investigate four orthogonal improvements: integrating named entity linking (NEL) and coreference resolution into argument identification for training and extraction, enforcing type constraints of linked arguments, and partitioning the model by relation type signature.\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"NY Times articles partially annotated by Hoffmann et al. (2011)\"; evidence_id=\"A3\"; evidence=\"We evaluate sentential extraction performance on two datasets: the popular set of NY Times articles partially annotated by Hoffmann et al.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"using argument types provides further improvement\"; evidence_id=\"A5\"; evidence=\"We find that using NEL for argument identification boosts performance over the traditional approach (named entity recognition with string match), and there is further improvement from using argument types.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P003415\", \"problem\": [{\"concept\": \"many questions about the best way to learn such extractors\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"integrating named entity linking and coreference resolution into argument identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"enforcing type constraints of linked arguments\", \"evidence_id\": \"A2\"}, {\"concept\": \"partitioning the model by relation type signature\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\", \"evidence_id\": \"A3\"}, {\"concept\": \"GORECO\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"using NEL for argument identification boosts performance over the traditional approach\", \"evidence_id\": \"A5\"}, {\"concept\": \"using argument types provides further improvement\", \"evidence_id\": \"A5\"}, {\"concept\": \"our best system boosts precision by 44% and recall by 70%\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 3,
+      "generation_seconds": 35.21938477799995,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003415\",\n  \"problem\": [\n    {\n      \"concept\": \"many questions about the best way to learn such extractors\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"relation extraction\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"integrating named entity linking and coreference resolution into argument identification\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"enforcing type constraints of linked arguments\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"partitioning the model by relation type signature\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"NY Times articles partially annotated by Hoffmann et al. (2011)\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"GORECO\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"using NEL for argument identification boosts performance over the traditional approach\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using argument types provides further improvement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"our best system boosts precision by 44% and recall by 70%\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 78.9545,
+      "seed": 10289,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4420,
+        "output_tokens": 346
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"relation extraction\"; evidence_id=\"A2\"; evidence=\"In this paper we investigate four orthogonal improvements: integrating named entity linking (NEL) and coreference resolution into argument identification for training and extraction, enforcing type constraints of linked arguments, and partitioning the model by relation type signature.\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"NY Times articles partially annotated by Hoffmann et al. (2011)\"; evidence_id=\"A3\"; evidence=\"We evaluate sentential extraction performance on two datasets: the popular set of NY Times articles partially annotated by Hoffmann et al.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"using argument types provides further improvement\"; evidence_id=\"A5\"; evidence=\"We find that using NEL for argument identification boosts performance over the traditional approach (named entity recognition with string match), and there is further improvement from using argument types.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P003415",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 3,
+  "selected_score": 78.9545,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"relation extraction\"; evidence_id=\"A2\"; evidence=\"In this paper we investigate four orthogonal improvements: integrating named entity linking (NEL) and coreference resolution into argument identification for training and extraction, enforcing type constraints of linked arguments, and partitioning the model by relation type signature.\"",
+    "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"NY Times articles partially annotated by Hoffmann et al. (2011)\"; evidence_id=\"A3\"; evidence=\"We evaluate sentential extraction performance on two datasets: the popular set of NY Times articles partially annotated by Hoffmann et al.\"",
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"using argument types provides further improvement\"; evidence_id=\"A5\"; evidence=\"We find that using NEL for argument identification boosts performance over the traditional approach (named entity recognition with string match), and there is further improvement from using argument types.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

@@ -1,0 +1,23 @@
+# Keep datasets, annotations, prompts, scripts, settings and provenance in Git.
+# Model weights and tokenizer assets are downloaded/generated separately.
+**/.model_cache/
+**/.cache/
+*.safetensors
+pytorch_model*.bin
+*.pt
+*.pth
+*.onnx
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+added_tokens.json
+vocab.json
+vocab.txt
+merges.txt
+
+# Rebuild upload bundles from the versioned builders and source data.
+*.zip
+*.zip.bin
+
+# Embedding vectors are a local evaluation cache.
+label_vectors.json

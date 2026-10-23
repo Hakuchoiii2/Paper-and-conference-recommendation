@@ -1,0 +1,547 @@
+test_publication_docs_preserve_all_sealed_adapter_checksums (test_collect.CollectionChecks.test_publication_docs_preserve_all_sealed_adapter_checksums) ... ERROR
+test_adapter_from_different_base_revision_is_rejected (test_experiment.ExperimentChecks.test_adapter_from_different_base_revision_is_rejected) ... ERROR
+test_changed_adapter_file_is_rejected (test_experiment.ExperimentChecks.test_changed_adapter_file_is_rejected) ... ERROR
+test_predictions_never_read_test_reference (test_experiment.ExperimentChecks.test_predictions_never_read_test_reference) ... ERROR
+test_accepts_single_sentence_as_a_list (test_label_revision.MultiSentenceEvidenceTests.test_accepts_single_sentence_as_a_list) ... ok
+test_rejects_a_subject_not_supported_by_selected_sentences (test_label_revision.MultiSentenceEvidenceTests.test_rejects_a_subject_not_supported_by_selected_sentences) ... ok
+test_rejects_duplicate_concepts_and_empty_text (test_label_revision.MultiSentenceEvidenceTests.test_rejects_duplicate_concepts_and_empty_text) ... ok
+test_rejects_invented_numbers (test_label_revision.MultiSentenceEvidenceTests.test_rejects_invented_numbers) ... ok
+test_rejects_legacy_item_shape_in_v2 (test_label_revision.MultiSentenceEvidenceTests.test_rejects_legacy_item_shape_in_v2) ... ok
+test_rejects_missing_unknown_duplicated_or_reversed_evidence (test_label_revision.MultiSentenceEvidenceTests.test_rejects_missing_unknown_duplicated_or_reversed_evidence) ... ok
+test_rejects_wrong_paper_or_incomplete_facets (test_label_revision.MultiSentenceEvidenceTests.test_rejects_wrong_paper_or_incomplete_facets) ... ok
+test_resolves_subject_without_losing_either_exact_quote (test_label_revision.MultiSentenceEvidenceTests.test_resolves_subject_without_losing_either_exact_quote) ... ok
+test_additional_teacher_references_are_balanced_and_never_disguised_as_human (test_prepare.PrepareChecks.test_additional_teacher_references_are_balanced_and_never_disguised_as_human) ... ok
+test_bad_concept_rejects_whole_paper_and_exact_evidence_id_remaps (test_prepare.PrepareChecks.test_bad_concept_rejects_whole_paper_and_exact_evidence_id_remaps) ... ok
+test_corrupt_source_hash_or_corpus_fails_closed (test_prepare.PrepareChecks.test_corrupt_source_hash_or_corpus_fails_closed) ... ok
+test_duplicate_titles_cannot_leak_across_splits (test_prepare.PrepareChecks.test_duplicate_titles_cannot_leak_across_splits) ... ok
+test_exact_quotas_reproducible_and_rare_facets_reach_holdouts (test_prepare.PrepareChecks.test_exact_quotas_reproducible_and_rare_facets_reach_holdouts) ... ok
+test_pending_frozen_and_prompt_examples_are_excluded (test_prepare.PrepareChecks.test_pending_frozen_and_prompt_examples_are_excluded) ... ok
+test_token_limits_reject_complete_examples_without_truncation (test_prepare.PrepareChecks.test_token_limits_reject_complete_examples_without_truncation) ... ok
+test_incomplete_source_cannot_enter_the_training_pool (test_review.TeacherReviewChecks.test_incomplete_source_cannot_enter_the_training_pool) ... ERROR
+test_invalid_paper_is_recorded_as_a_whole_paper_rejection (test_review.TeacherReviewChecks.test_invalid_paper_is_recorded_as_a_whole_paper_rejection) ... ERROR
+test_missing_review_cannot_be_claimed_complete (test_review.TeacherReviewChecks.test_missing_review_cannot_be_claimed_complete) ... ERROR
+test_review_aggregation_enters_real_data_preparation_without_dropping_concepts (test_review.TeacherReviewChecks.test_review_aggregation_enters_real_data_preparation_without_dropping_concepts) ... ERROR
+test_reviewed_response_reconstructs_complete_reference_and_provenance (test_review.TeacherReviewChecks.test_reviewed_response_reconstructs_complete_reference_and_provenance) ... ERROR
+test_self_review_is_rejected (test_review.TeacherReviewChecks.test_self_review_is_rejected) ... ERROR
+test_tiny_qwen3_adapter_updates_and_saves_without_base_weights (test_train.AdapterSmokeTests.test_tiny_qwen3_adapter_updates_and_saves_without_base_weights) ... D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\peft\utils\save_and_load.py:295: UserWarning: Could not find a config file in  - will assume that the vocabulary was not modified.
+  warnings.warn(
+ok
+test_jsonl_duplicate_ids_and_train_dev_overlap_are_rejected (test_train.CompletionTests.test_jsonl_duplicate_ids_and_train_dev_overlap_are_rejected) ... ok
+test_non_json_or_extra_assistant_turn_is_rejected (test_train.CompletionTests.test_non_json_or_extra_assistant_turn_is_rejected) ... ok
+test_only_json_completion_and_eos_receive_labels (test_train.CompletionTests.test_only_json_completion_and_eos_receive_labels) ... ok
+test_overlong_examples_are_rejected_without_truncation (test_train.CompletionTests.test_overlong_examples_are_rejected_without_truncation) ... ok
+test_padding_is_masked_even_when_padding_and_eos_share_an_id (test_train.CompletionTests.test_padding_is_masked_even_when_padding_and_eos_share_an_id) ... ok
+test_actual_trainer_accumulates_completion_loss_and_restores_best_adapter (test_train.RunIntegrityTests.test_actual_trainer_accumulates_completion_loss_and_restores_best_adapter) ... The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 2, 'pad_token_id': 0}.
+ok
+test_checkpoint_resume_requires_matching_signature_and_intact_files (test_train.RunIntegrityTests.test_checkpoint_resume_requires_matching_signature_and_intact_files) ... ok
+test_completed_adapter_reuse_verifies_hashes_and_requires_explicit_opt_in (test_train.RunIntegrityTests.test_completed_adapter_reuse_verifies_hashes_and_requires_explicit_opt_in) ... ok
+test_incompatible_or_unmarked_nonempty_run_cannot_be_reused (test_train.RunIntegrityTests.test_incompatible_or_unmarked_nonempty_run_cannot_be_reused) ... ok
+test_selected_completion_logits_match_full_masked_loss_and_lora_gradients (test_train.RunIntegrityTests.test_selected_completion_logits_match_full_masked_loss_and_lora_gradients) ... ok
+
+======================================================================
+ERROR: test_publication_docs_preserve_all_sealed_adapter_checksums (test_collect.CollectionChecks.test_publication_docs_preserve_all_sealed_adapter_checksums)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpalxuvjmt\\download\\adapters\\qwen3-8b-facets-qlora-v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpalxuvjmt\\download\\adapters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_collect.py", line 22, in test_publication_docs_preserve_all_sealed_adapter_checksums
+    source.mkdir(parents=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpalxuvjmt\\download'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpalxuvjmt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_collect.py", line 17, in test_publication_docs_preserve_all_sealed_adapter_checksums
+    with tempfile.TemporaryDirectory() as temporary:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpalxuvjmt'
+
+======================================================================
+ERROR: test_adapter_from_different_base_revision_is_rejected (test_experiment.ExperimentChecks.test_adapter_from_different_base_revision_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 63, in test_adapter_from_different_base_revision_is_rejected
+    m.shared.base.write_json(root/'adapter_manifest.json',dict(status='complete',base_model='Qwen/Qwen3-8B',
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\download_sources.py", line 41, in write_json
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpxwep3i6r\\adapter_manifest.json.tmp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpxwep3i6r'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 61, in test_adapter_from_different_base_revision_is_rejected
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpxwep3i6r'
+
+======================================================================
+ERROR: test_changed_adapter_file_is_rejected (test_experiment.ExperimentChecks.test_changed_adapter_file_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 50, in test_changed_adapter_file_is_rejected
+    (root/'adapter_model.safetensors').write_bytes(b'original')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1067, in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp8fcvq7kd\\adapter_model.safetensors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp8fcvq7kd'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 48, in test_changed_adapter_file_is_rejected
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp8fcvq7kd'
+
+======================================================================
+ERROR: test_predictions_never_read_test_reference (test_experiment.ExperimentChecks.test_predictions_never_read_test_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 34, in test_predictions_never_read_test_reference
+    (root/'model_inputs').mkdir()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpk0j6afhz\\model_inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpk0j6afhz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_experiment.py", line 30, in test_predictions_never_read_test_reference
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpk0j6afhz'
+
+======================================================================
+ERROR: test_incomplete_source_cannot_enter_the_training_pool (test_review.TeacherReviewChecks.test_incomplete_source_cannot_enter_the_training_pool)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 90, in test_incomplete_source_cannot_enter_the_training_pool
+    self.fixture(root)
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 26, in fixture
+    (root/'source_candidates.jsonl').write_text(payload, encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpsn8n218p\\source_candidates.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpsn8n218p'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 88, in test_incomplete_source_cannot_enter_the_training_pool
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpsn8n218p'
+
+======================================================================
+ERROR: test_invalid_paper_is_recorded_as_a_whole_paper_rejection (test_review.TeacherReviewChecks.test_invalid_paper_is_recorded_as_a_whole_paper_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 76, in test_invalid_paper_is_recorded_as_a_whole_paper_rejection
+    self.fixture(root)
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 26, in fixture
+    (root/'source_candidates.jsonl').write_text(payload, encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp2ldi45mw\\source_candidates.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp2ldi45mw'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 74, in test_invalid_paper_is_recorded_as_a_whole_paper_rejection
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp2ldi45mw'
+
+======================================================================
+ERROR: test_missing_review_cannot_be_claimed_complete (test_review.TeacherReviewChecks.test_missing_review_cannot_be_claimed_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 67, in test_missing_review_cannot_be_claimed_complete
+    self.fixture(root)
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 26, in fixture
+    (root/'source_candidates.jsonl').write_text(payload, encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpnlgrhj_c\\source_candidates.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpnlgrhj_c'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 65, in test_missing_review_cannot_be_claimed_complete
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpnlgrhj_c'
+
+======================================================================
+ERROR: test_review_aggregation_enters_real_data_preparation_without_dropping_concepts (test_review.TeacherReviewChecks.test_review_aggregation_enters_real_data_preparation_without_dropping_concepts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9\\data\\exp_a\\ground_truth\\gold_review'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9\\data\\exp_a\\ground_truth'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9\\data\\exp_a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 104, in test_review_aggregation_enters_real_data_preparation_without_dropping_concepts
+    papers,_,_=fixture(root,count=10)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_prepare.py", line 52, in fixture
+    write_jsonl(review / 'review_papers.jsonl', papers)
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_prepare.py", line 17, in write_jsonl
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9\\data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 102, in test_review_aggregation_enters_real_data_preparation_without_dropping_concepts
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmp0qgoq9g9'
+
+======================================================================
+ERROR: test_reviewed_response_reconstructs_complete_reference_and_provenance (test_review.TeacherReviewChecks.test_reviewed_response_reconstructs_complete_reference_and_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 44, in test_reviewed_response_reconstructs_complete_reference_and_provenance
+    paper, response = self.fixture(root)
+                      ^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 26, in fixture
+    (root/'source_candidates.jsonl').write_text(payload, encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmphkmuisw6\\source_candidates.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmphkmuisw6'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 42, in test_reviewed_response_reconstructs_complete_reference_and_provenance
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmphkmuisw6'
+
+======================================================================
+ERROR: test_self_review_is_rejected (test_review.TeacherReviewChecks.test_self_review_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 59, in test_self_review_is_rejected
+    self.fixture(root,reviewer='/root/sft_data_audit')
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 26, in fixture
+    (root/'source_candidates.jsonl').write_text(payload, encoding='utf-8')
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpqlbs9a5e\\source_candidates.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpqlbs9a5e'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_review.py", line 57, in test_self_review_is_rejected
+    with tempfile.TemporaryDirectory() as directory:
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\khai\\AppData\\Local\\Packages\\sandbox.{15279443-95cb-491f-91cc-ec88cc7b8e2e}\\AC\\Temp\\tmpqlbs9a5e'
+
+----------------------------------------------------------------------
+Ran 36 tests in 56.698s
+
+FAILED (errors=10)
+{'eval_loss': 5.552456378936768, 'eval_runtime': 0.015, 'eval_samples_per_second': 66.449, 'eval_steps_per_second': 66.449, 'epoch': 1.0}
+{'train_runtime': 0.4737, 'train_samples_per_second': 4.222, 'train_steps_per_second': 2.111, 'train_loss': 5.548525333404541, 'epoch': 1.0}

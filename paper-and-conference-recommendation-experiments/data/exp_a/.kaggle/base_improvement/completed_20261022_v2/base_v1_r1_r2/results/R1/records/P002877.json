@@ -1,0 +1,187 @@
+{
+  "record": {
+    "arm": "R1",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002877\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a neural interlingua for multilingual machine translation\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.352591327000027,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002877\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a neural interlingua for multilingual machine translation\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.7222,
+          "seed": 8673,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2680,
+            "output_tokens": 189
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002877\", \"problem\": [], \"task\": [{\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"}, {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a neural interlingua for multilingual machine translation\", \"evidence_id\": \"T0\"}, {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"}, {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.65570156099966,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002877\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a neural interlingua for multilingual machine translation\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.7222,
+          "seed": 8674,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4240,
+            "output_tokens": 189
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "a neural interlingua for multilingual machine translation",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "language-independent representation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "comparable BLEU scores for each language pair in WMT15",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "neural interlingua",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002877",
+        "problem": [],
+        "task": [
+          {
+            "concept": "direct zero-shot translation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "create an English Yelp review classifier that can also classify French and German reviews",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 39.00829288799969,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8674,
+      "selected_score": 75.7222,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6920,
+        "output_tokens": 378
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4bd13606a5be872619498daee219da6d56dee09aa2cfd1dc1597a0b739a1edd7",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": false,
+        "messages_sha256": "db9d3319e2f7794d9190cc11f1c6d550c3369bd8fa9ddddd26ed2b2b6624bd55",
+        "repair_packet": null,
+        "seed": 8673
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "6773421657a97bfa048bd50bbcef4d7c73feb73adbd1d427bb10a3a27bc46d69",
+        "repair_packet": null,
+        "seed": 8674
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "a neural interlingua for multilingual machine translation",
+        "language-independent representation",
+        "comparable BLEU scores for each language pair in WMT15"
+      ],
+      "dataset": [],
+      "method": [
+        "neural interlingua"
+      ],
+      "paper_id": "P002877",
+      "problem": [],
+      "task": [
+        "direct zero-shot translation",
+        "create an English Yelp review classifier that can also classify French and German reviews"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 39.00829288799969,
+    "instruction_sha256": "e154398ed4976b8a39d6e0c8e55f325e4f0dd64f196d0c6a65232d998bac3993",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 39.00829288799969,
+      "input_tokens": 6920,
+      "output_tokens": 378
+    },
+    "paper_id": "P002877",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 6920,
+      "output_tokens": 378
+    }
+  },
+  "record_sha256": "ecfc765eea43a75466905b99d383e797cddab9bb27615a884b7781cb6d58e9af",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

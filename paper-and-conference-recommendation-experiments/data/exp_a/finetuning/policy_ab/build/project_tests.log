@@ -1,0 +1,418 @@
+test_conflicting_abstract_is_not_silently_merged (test_data_validation.DataChecks.test_conflicting_abstract_is_not_silently_merged) ... ok
+test_corpus_validation_uses_only_main_catalog (test_data_validation.DataChecks.test_corpus_validation_uses_only_main_catalog) ... ok
+test_downloader_rejects_path_traversal (test_data_validation.DataChecks.test_downloader_rejects_path_traversal) ... ok
+test_invalid_source_year_is_missing_not_a_fake_year (test_data_validation.DataChecks.test_invalid_source_year_is_missing_not_a_fake_year) ... ok
+test_merge_keeps_provenance_and_stable_ids (test_data_validation.DataChecks.test_merge_keeps_provenance_and_stable_ids) ... ok
+test_override_requires_attributed_text_evidence (test_data_validation.DataChecks.test_override_requires_attributed_text_evidence) ... ok
+test_pipeline_exists (test_data_validation.DataChecks.test_pipeline_exists) ... ok
+test_primary_source_stays_stable_when_alias_is_added (test_data_validation.DataChecks.test_primary_source_stays_stable_when_alias_is_added) ... ok
+test_scope_requires_computing_evidence (test_data_validation.DataChecks.test_scope_requires_computing_evidence) ... ok
+test_validator_catches_corruption (test_data_validation.DataChecks.test_validator_catches_corruption) ... ok
+PASS: 4210 real IT-scoped papers, 4235 active source refs, 9390 audited records
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Extracting P000002 (2/2)
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Extracting P000002 (2/2)
+Range [1, 2]: 2/2 saved; 0 missing; 0 need policy review
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Extracting P000002 (2/2)
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Range [1, 1]: 0/1 saved; 1 missing; 0 need policy review
+Extracting P000002 (1/1)
+test_failure_keeps_partial_and_json_parser_rejects_prose (test_exp_a.ExtractionCheck.test_failure_keeps_partial_and_json_parser_rejects_prose) ... ok
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Range [1, 2]: 1/2 saved; 1 missing; 0 need policy review
+Extracting P000002 (2/2)
+Range [1, 2]: 2/2 saved; 0 missing; 0 need policy review
+test_local_pipeline_resume_failure_and_grounding (test_exp_a.ExtractionCheck.test_local_pipeline_resume_failure_and_grounding) ... ok
+Range [2, 3]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000002 (2/4)
+Range [2, 3]: 1/2 saved; 1 missing; 0 need policy review
+Extracting P000003 (3/4)
+Range [2, 3]: 2/2 saved; 0 missing; 0 need policy review
+Range [4, 4]: 0/1 saved; 1 missing; 0 need policy review
+Extracting P000004 (4/4)
+Range [3, 3]: 0/1 saved; 1 missing; 0 need policy review
+Extracting P000003 (3/4)
+Range [1, 4]: 0/4 saved; 4 missing; 0 need policy review
+Extracting P000001 (1/4)
+Extracting P000002 (2/4)
+Extracting P000003 (3/4)
+Extracting P000004 (4/4)
+test_paper_range_selects_inclusive_sorted_ids_and_resumes (test_exp_a.ExtractionCheck.test_paper_range_selects_inclusive_sorted_ids_and_resumes) ... ok
+test_sentence_ids_resolve_to_exact_source_without_fabrication (test_exp_a.ExtractionCheck.test_sentence_ids_resolve_to_exact_source_without_fabrication) ... ok
+test_windows_launcher_preserves_script_path_with_spaces (test_exp_a.ExtractionCheck.test_windows_launcher_preserves_script_path_with_spaces) ... ok
+P000001: attempt 1/3 score=0.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=0.00/100; saved with validation errors
+test_all_malformed_attempts_still_return_five_arrays_with_audit (test_exp_a_best_attempt.BestAttemptCheck.test_all_malformed_attempts_still_return_five_arrays_with_audit) ... ok
+P000001: attempt 1/3 score=36.00/100; validation_errors=7
+P000001: retry 2/3 (7 validation errors)
+P000001: attempt 2/3 score=36.00/100; validation_errors=7
+P000001: retry 3/3 (7 validation errors)
+P000001: attempt 3/3 score=36.00/100; validation_errors=7
+BEST AVAILABLE P000001: attempt 1, score=36.00/100; saved with validation errors
+test_candidate_reports_all_errors_and_retains_unresolved_concept (test_exp_a_best_attempt.BestAttemptCheck.test_candidate_reports_all_errors_and_retains_unresolved_concept) ... ok
+P000001: attempt 1/3 score=54.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=39.00/100; validation_errors=10
+P000001: retry 3/3 (10 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=54.00/100; saved with validation errors
+test_duplicate_grounded_items_cannot_inflate_attempt_score (test_exp_a_best_attempt.BestAttemptCheck.test_duplicate_grounded_items_cannot_inflate_attempt_score) ... ok
+P000001: attempt 1/3 score=10.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=68.50/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=10.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 2, score=68.50/100; saved with validation errors
+test_exhausted_retries_choose_earlier_best_and_keep_invalid_concept (test_exp_a_best_attempt.BestAttemptCheck.test_exhausted_retries_choose_earlier_best_and_keep_invalid_concept) ... ok
+P000001: attempt 1/3 score=0.00/100; validation_errors=3
+P000001: retry 2/3 (3 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=3
+P000001: retry 3/3 (3 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=3
+BEST AVAILABLE P000001: attempt 1, score=0.00/100; saved with validation errors
+test_fallback_audit_cannot_hide_selected_raw_quality_errors (test_exp_a_best_attempt.BestAttemptCheck.test_fallback_audit_cannot_hide_selected_raw_quality_errors) ... ok
+P000001: attempt 1/3 score=50.50/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=93.75/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=50.50/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 2, score=93.75/100; saved with validation errors
+test_five_supported_facets_outrank_many_exact_items_in_one_facet (test_exp_a_best_attempt.BestAttemptCheck.test_five_supported_facets_outrank_many_exact_items_in_one_facet) ... ok
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+P000001: attempt 1/3 score=0.00/100; validation_errors=3
+P000001: retry 2/3 (3 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=3
+P000001: retry 3/3 (3 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=3
+BEST AVAILABLE P000001: attempt 1, score=0.00/100; saved with validation errors
+Extracting P000002 (2/2)
+P000002: attempt 1/3 score=0.00/100; validation_errors=1
+P000002: retry 2/3 (1 validation errors)
+P000002: attempt 2/3 score=0.00/100; validation_errors=1
+P000002: retry 3/3 (1 validation errors)
+P000002: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000002: attempt 1, score=0.00/100; saved with validation errors
+Range [1, 2]: 2/2 saved; 0 missing; 0 need policy review
+test_generate_persists_every_fallback_and_resume_does_not_reextract (test_exp_a_best_attempt.BestAttemptCheck.test_generate_persists_every_fallback_and_resume_does_not_reextract) ... ok
+P000001: attempt 1/3 score=68.50/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=10.00/100; validation_errors=1
+P000001: review 3/3 (5/5 empty facets)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=68.50/100; saved with validation errors
+test_grounded_nonempty_candidate_outscores_empty_review_candidates (test_exp_a_best_attempt.BestAttemptCheck.test_grounded_nonempty_candidate_outscores_empty_review_candidates) ... ok
+test_known_policy_22_upgrade_requires_other_provenance_to_match (test_exp_a_best_attempt.BestAttemptCheck.test_known_policy_22_upgrade_requires_other_provenance_to_match) ... ok
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+P000001: attempt 1/3 score=0.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=0.00/100; saved with validation errors
+Extracting P000002 (2/2)
+P000002: attempt 1/3 score=76.00/100; validation_errors=0
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+P000001: attempt 1/3 score=0.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=0.00/100; saved with validation errors
+Extracting P000002 (2/2)
+P000002: attempt 1/3 score=76.00/100; validation_errors=0
+test_malformed_encoding_or_nesting_cannot_stop_later_papers (test_exp_a_best_attempt.BestAttemptCheck.test_malformed_encoding_or_nesting_cannot_stop_later_papers) ... ok
+test_nonstandard_json_numbers_cannot_leak_into_audit_metadata (test_exp_a_best_attempt.BestAttemptCheck.test_nonstandard_json_numbers_cannot_leak_into_audit_metadata) ... ok
+P000001: attempt 1/3 score=13.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=11.50/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=11.50/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=13.00/100; saved with validation errors
+test_retention_ranks_invalid_shortening_without_dropping_phrase (test_exp_a_best_attempt.BestAttemptCheck.test_retention_ranks_invalid_shortening_without_dropping_phrase) ... ok
+test_singe_verb_form_is_distinct_from_sing (test_exp_a_best_attempt.BestAttemptCheck.test_singe_verb_form_is_distinct_from_sing) ... ok
+P000001: attempt 1/3 score=76.00/100; validation_errors=0
+test_valid_success_includes_attempt_scores_without_fallback (test_exp_a_best_attempt.BestAttemptCheck.test_valid_success_includes_attempt_scores_without_fallback) ... ok
+P000001: attempt 1/3 score=66.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=66.00/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=66.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=66.00/100; saved with validation errors
+test_wrong_paper_id_is_corrected_and_flagged_in_selected_fallback (test_exp_a_best_attempt.BestAttemptCheck.test_wrong_paper_id_is_corrected_and_flagged_in_selected_fallback) ... ok
+P000001: attempt 1/3 score=0.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=0.00/100; validation_errors=2
+P000001: retry 3/3 (2 validation errors)
+P000001: attempt 3/3 score=0.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 2, score=0.00/100; saved with validation errors
+test_zero_score_tie_preserves_parseable_unknown_labels (test_exp_a_best_attempt.BestAttemptCheck.test_zero_score_tie_preserves_parseable_unknown_labels) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_changed_part_bytes_are_rejected_before_merge (test_exp_a_handoff.HandoffChecks.test_changed_part_bytes_are_rejected_before_merge) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_default_review_refuses_partial_a_but_explicit_preview_is_read_only (test_exp_a_handoff.HandoffChecks.test_default_review_refuses_partial_a_but_explicit_preview_is_read_only) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+Range [4, 6]: 3/3 saved; 0 missing; 0 need policy review
+test_different_resolved_model_identity_is_rejected_before_writing (test_exp_a_handoff.HandoffChecks.test_different_resolved_model_identity_is_rejected_before_writing) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_different_sampling_provenance_is_rejected (test_exp_a_handoff.HandoffChecks.test_different_sampling_provenance_is_rejected) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_fallback_without_runtime_model_identity_remains_mergeable (test_exp_a_handoff.HandoffChecks.test_fallback_without_runtime_model_identity_remains_mergeable) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [3, 6]: 0/4 saved; 4 missing; 0 need policy review
+Extracting P000003 (3/6)
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_incomplete_or_overlapping_parts_never_publish_handoff (test_exp_a_handoff.HandoffChecks.test_incomplete_or_overlapping_parts_never_publish_handoff) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_merge_keeps_sorted_metadata_fallback_audit_and_all_ids (test_exp_a_handoff.HandoffChecks.test_merge_keeps_sorted_metadata_fallback_audit_and_all_ids) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_merge_output_cannot_overwrite_other_dataset_or_source_part (test_exp_a_handoff.HandoffChecks.test_merge_output_cannot_overwrite_other_dataset_or_source_part) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_merge_uses_selected_cohort_not_unselected_corpus_positions (test_exp_a_handoff.HandoffChecks.test_merge_uses_selected_cohort_not_unselected_corpus_positions) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_review_ranks_completeness_and_evidence_without_creating_gold (test_exp_a_handoff.HandoffChecks.test_review_ranks_completeness_and_evidence_without_creating_gold) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/6)
+Extracting P000002 (2/6)
+Extracting P000003 (3/6)
+Range [4, 6]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000004 (4/6)
+Extracting P000005 (5/6)
+Extracting P000006 (6/6)
+test_review_work_and_shortfall_are_never_overwritten (test_exp_a_handoff.HandoffChecks.test_review_work_and_shortfall_are_never_overwritten) ... ok
+test_existing_policy_23_outputs_remain_compatible (test_exp_a_resume.JsonlResumeCheck.test_existing_policy_23_outputs_remain_compatible) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+Restored 2 accepted papers from JSONL
+Range [1, 3]: 2/3 saved; 1 missing; 0 need policy review
+Extracting P000002 (2/3)
+test_jsonl_only_resume_fills_middle_gap_and_preserves_saved_annotations (test_exp_a_resume.JsonlResumeCheck.test_jsonl_only_resume_fills_middle_gap_and_preserves_saved_annotations) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+P000001: attempt 1/3 score=10.00/100; validation_errors=1
+P000001: retry 2/3 (1 validation errors)
+P000001: attempt 2/3 score=10.00/100; validation_errors=1
+P000001: retry 3/3 (1 validation errors)
+P000001: attempt 3/3 score=10.00/100; validation_errors=1
+BEST AVAILABLE P000001: attempt 1, score=10.00/100; saved with validation errors
+Extracting P000002 (2/3)
+P000002: attempt 1/3 score=10.00/100; validation_errors=1
+P000002: retry 2/3 (1 validation errors)
+P000002: attempt 2/3 score=10.00/100; validation_errors=1
+P000002: retry 3/3 (1 validation errors)
+P000002: attempt 3/3 score=10.00/100; validation_errors=1
+BEST AVAILABLE P000002: attempt 1, score=10.00/100; saved with validation errors
+Extracting P000003 (3/3)
+P000003: attempt 1/3 score=10.00/100; validation_errors=1
+P000003: retry 2/3 (1 validation errors)
+P000003: attempt 2/3 score=10.00/100; validation_errors=1
+P000003: retry 3/3 (1 validation errors)
+P000003: attempt 3/3 score=10.00/100; validation_errors=1
+BEST AVAILABLE P000003: attempt 1, score=10.00/100; saved with validation errors
+Restored 3 accepted papers from JSONL
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+test_jsonl_recovery_preserves_audited_fallbacks_without_model_loading (test_exp_a_resume.JsonlResumeCheck.test_jsonl_recovery_preserves_audited_fallbacks_without_model_loading) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+test_jsonl_recovery_rejects_changed_inputs_without_overwriting_saved_files (test_exp_a_resume.JsonlResumeCheck.test_jsonl_recovery_rejects_changed_inputs_without_overwriting_saved_files) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+test_jsonl_recovery_rejects_unverified_metadata_without_overwriting_silver (test_exp_a_resume.JsonlResumeCheck.test_jsonl_recovery_rejects_unverified_metadata_without_overwriting_silver) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+test_jsonl_recovery_requires_manifest_and_evidence_before_overwriting (test_exp_a_resume.JsonlResumeCheck.test_jsonl_recovery_requires_manifest_and_evidence_before_overwriting) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+Restored 3 accepted papers from JSONL
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+test_metadata_only_resume_rebuilds_silver_without_model_loading (test_exp_a_resume.JsonlResumeCheck.test_metadata_only_resume_rebuilds_silver_without_model_loading) ... ok
+Range [1, 3]: 0/3 saved; 3 missing; 0 need policy review
+Extracting P000001 (1/3)
+Extracting P000002 (2/3)
+Extracting P000003 (3/3)
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+Range [1, 3]: 3/3 saved; 0 missing; 0 need policy review
+test_missing_output_files_are_rebuilt_from_checkpoint_without_model_loading (test_exp_a_resume.JsonlResumeCheck.test_missing_output_files_are_rebuilt_from_checkpoint_without_model_loading) ... ok
+test_example_abbreviations_remain_in_one_selectable_sentence (test_exp_a_retry.RetryPolicyCheck.test_example_abbreviations_remain_in_one_selectable_sentence) ... ok
+Range [1, 2]: 0/2 saved; 2 missing; 0 need policy review
+Extracting P000001 (1/2)
+Extracting P000002 (2/2)
+Range [1, 2]: 2/2 saved; 0 missing; 1 need policy review
+Extracting P000002 (2/2)
+Range [1, 2]: 2/2 saved; 0 missing; 0 need policy review
+Range [1, 2]: 1/2 saved; 1 missing; 1 need policy review
+Extracting P000001 (1/2)
+Extracting P000002 (2/2)
+Range [1, 2]: 2/2 saved; 0 missing; 0 need policy review
+test_known_checkpoint_upgrade_preserves_dense_records_and_reviews_sparse_records (test_exp_a_retry.RetryPolicyCheck.test_known_checkpoint_upgrade_preserves_dense_records_and_reviews_sparse_records) ... ok
+test_known_policy_21_upgrade_requires_all_other_provenance_to_match (test_exp_a_retry.RetryPolicyCheck.test_known_policy_21_upgrade_requires_all_other_provenance_to_match) ... ok
+test_lf_crlf_compatibility_rejects_changed_inputs_config_and_unknown_code (test_exp_a_retry.RetryPolicyCheck.test_lf_crlf_compatibility_rejects_changed_inputs_config_and_unknown_code) ... ok
+test_parenthetical_examples_are_optional_but_other_parentheses_are_not (test_exp_a_retry.RetryPolicyCheck.test_parenthetical_examples_are_optional_but_other_parentheses_are_not) ... ok
+test_pre_fix_policy_23_upgrade_requires_all_other_provenance_to_match (test_exp_a_retry.RetryPolicyCheck.test_pre_fix_policy_23_upgrade_requires_all_other_provenance_to_match) ... ok
+test_regular_verb_forms_are_supported_but_synonyms_are_not (test_exp_a_retry.RetryPolicyCheck.test_regular_verb_forms_are_supported_but_synonyms_are_not) ... ok
+P000003: attempt 1/3 score=10.00/100; validation_errors=1
+P000003: retry 2/3 (1 validation errors)
+P000003: attempt 2/3 score=10.00/100; validation_errors=1
+P000003: retry 3/3 (1 validation errors)
+P000003: attempt 3/3 score=10.00/100; validation_errors=1
+BEST AVAILABLE P000003: attempt 1, score=10.00/100; saved with validation errors
+test_retry_context_does_not_accumulate_superseded_responses (test_exp_a_retry.RetryPolicyCheck.test_retry_context_does_not_accumulate_superseded_responses) ... ok
+test_shortening_retains_seventy_percent_of_the_smallest_source_span (test_exp_a_retry.RetryPolicyCheck.test_shortening_retains_seventy_percent_of_the_smallest_source_span) ... ok
+P000003: attempt 1/3 score=76.00/100; validation_errors=0
+P000003: attempt 1/3 score=64.00/100; validation_errors=1
+P000003: review 2/3 (3/5 empty facets)
+P000003: attempt 2/3 score=64.00/100; validation_errors=0
+P000003: attempt 1/3 score=10.00/100; validation_errors=1
+P000003: review 2/3 (5/5 empty facets)
+P000003: attempt 2/3 score=10.00/100; validation_errors=0
+P000003: attempt 1/3 score=10.00/100; validation_errors=1
+P000003: review 2/3 (5/5 empty facets)
+P000003: attempt 2/3 score=76.00/100; validation_errors=0
+P000003: attempt 1/3 score=37.00/100; validation_errors=1
+P000003: retry 2/3 (1 validation errors)
+P000003: attempt 2/3 score=64.00/100; validation_errors=1
+P000003: review 3/3 (3/5 empty facets)
+P000003: attempt 3/3 score=76.00/100; validation_errors=0
+P000003: attempt 1/3 score=37.00/100; validation_errors=1
+P000003: retry 2/3 (1 validation errors)
+P000003: attempt 2/3 score=37.00/100; validation_errors=1
+P000003: retry 3/3 (1 validation errors)
+P000003: attempt 3/3 score=37.00/100; validation_errors=1
+BEST AVAILABLE P000003: attempt 1, score=37.00/100; saved with validation errors
+P000003: attempt 1/3 score=37.00/100; validation_errors=1
+P000003: retry 2/3 (1 validation errors)
+P000003: attempt 2/3 score=37.00/100; validation_errors=1
+P000003: retry 3/3 (1 validation errors)
+P000003: attempt 3/3 score=64.00/100; validation_errors=1
+BEST AVAILABLE P000003: attempt 3, score=64.00/100; saved with validation errors
+test_sparse_review_and_invalid_output_share_the_three_attempt_budget (test_exp_a_retry.RetryPolicyCheck.test_sparse_review_and_invalid_output_share_the_three_attempt_budget) ... ok
+test_b_has_fixed_multi_facet_labels_and_anchor_disjoint_splits (test_experiment_datasets.DatasetChecks.test_b_has_fixed_multi_facet_labels_and_anchor_disjoint_splits) ... ok
+test_c_owns_users_and_has_search_exposure_and_hidden_importance (test_experiment_datasets.DatasetChecks.test_c_owns_users_and_has_search_exposure_and_hidden_importance) ... ok
+test_d_hides_direction_and_keeps_observation_papers_out_of_holdout (test_experiment_datasets.DatasetChecks.test_d_hides_direction_and_keeps_observation_papers_out_of_holdout) ... ok
+test_e_rolling_cutoffs_and_stable_profiles (test_experiment_datasets.DatasetChecks.test_e_rolling_cutoffs_and_stable_profiles) ... ok
+test_missing_facet_never_becomes_a_different_match (test_experiment_datasets.DatasetChecks.test_missing_facet_never_becomes_a_different_match) ... ok
+test_zero_weight_future_concepts_do_not_target_current_exposures (test_experiment_datasets.DatasetChecks.test_zero_weight_future_concepts_do_not_target_current_exposures) ... ok
+test_d_and_e_require_c_handoff (test_experiment_pipeline.PipelineChecks.test_d_and_e_require_c_handoff) ... ok
+test_files_validate_and_rebuild_identically_in_order (test_experiment_pipeline.PipelineChecks.test_files_validate_and_rebuild_identically_in_order) ... ok
+test_foreign_users_and_temporal_importance_corruption_rejected (test_experiment_pipeline.PipelineChecks.test_foreign_users_and_temporal_importance_corruption_rejected) ... ok
+test_fresh_processes_ignore_python_hash_seed (test_experiment_pipeline.PipelineChecks.test_fresh_processes_ignore_python_hash_seed) ... ok
+test_history_report_and_incomplete_a_are_rejected (test_experiment_pipeline.PipelineChecks.test_history_report_and_incomplete_a_are_rejected) ... ok
+test_label_and_observable_truth_corruption_rejected_with_new_hashes (test_experiment_pipeline.PipelineChecks.test_label_and_observable_truth_corruption_rejected_with_new_hashes) ... ok
+test_missing_hash_and_legacy_outputs_are_preserved (test_experiment_pipeline.PipelineChecks.test_missing_hash_and_legacy_outputs_are_preserved) ... ok
+test_search_cutoff_exposure_membership_and_query_parent_are_validated (test_experiment_pipeline.PipelineChecks.test_search_cutoff_exposure_membership_and_query_parent_are_validated) ... ok
+test_decay_and_recent_history_follow_new_interest_and_reject_future (test_experiment_runners.RankingChecks.test_decay_and_recent_history_follow_new_interest_and_reject_future) ... ok
+test_directions_use_matched_feedback_and_search_negation (test_experiment_runners.RankingChecks.test_directions_use_matched_feedback_and_search_negation) ... ok
+test_importance_mae_and_pooled_direction_f1 (test_experiment_runners.RankingChecks.test_importance_mae_and_pooled_direction_f1) ... ok
+test_intent_relevance_gate_uses_each_context_facet (test_experiment_runners.RankingChecks.test_intent_relevance_gate_uses_each_context_facet) ... ok
+test_metrics_match_hand_calculation_and_handle_short_pools (test_experiment_runners.RankingChecks.test_metrics_match_hand_calculation_and_handle_short_pools) ... ok
+test_missing_method_is_not_rewarded_and_unknown_falls_back_to_similar (test_experiment_runners.RankingChecks.test_missing_method_is_not_rewarded_and_unknown_falls_back_to_similar) ... ok
+test_no_positive_metrics_remain_undefined_with_denominators (test_experiment_runners.RankingChecks.test_no_positive_metrics_remain_undefined_with_denominators) ... ok
+test_tfidf_smoothing_and_cosine_have_known_values (test_experiment_runners.RankingChecks.test_tfidf_smoothing_and_cosine_have_known_values) ... ok
+test_ties_and_random_predictions_are_independent_of_input_order (test_experiment_runners.RankingChecks.test_ties_and_random_predictions_are_independent_of_input_order) ... ok
+test_dry_run_does_not_score_or_write_and_results_cannot_overlap_data (test_experiment_runners.RunnerChecks.test_dry_run_does_not_score_or_write_and_results_cannot_overlap_data) ... ok
+test_each_runner_prefixes_hidden_truth_artifacts_and_reproducibility (test_experiment_runners.RunnerChecks.test_each_runner_prefixes_hidden_truth_artifacts_and_reproducibility) ... ok
+test_failed_write_releases_lock_and_unrelated_files_are_preserved (test_experiment_runners.RunnerChecks.test_failed_write_releases_lock_and_unrelated_files_are_preserved) ... ok
+test_incomplete_predictions_and_future_history_are_rejected (test_experiment_runners.RunnerChecks.test_incomplete_predictions_and_future_history_are_rejected) ... ok
+test_input_changes_during_loading_or_scoring_prevent_publication (test_experiment_runners.RunnerChecks.test_input_changes_during_loading_or_scoring_prevent_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 41.398s
+
+OK

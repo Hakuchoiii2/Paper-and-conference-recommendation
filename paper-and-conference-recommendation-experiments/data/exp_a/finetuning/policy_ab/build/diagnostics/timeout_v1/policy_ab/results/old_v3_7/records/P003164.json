@@ -1,0 +1,216 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU are still largely unknown\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.557059779999918,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU are still largely unknown\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 9534,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2611,
+            "output_tokens": 159
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU are still largely unknown\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.133647895999957,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU are still largely unknown\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 9535,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4141,
+            "output_tokens": 159
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "TextBugger",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "TextBugger achieves 100\\% success rate on the IMDB dataset",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "IMDB",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "TextBugger",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003164",
+        "problem": [
+          {
+            "concept": "security vulnerabilities of DLTU are still largely unknown",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "generating adversarial texts",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.690707675999874,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9535,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6752,
+        "output_tokens": 318
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "TextBugger",
+          "evidence": "Specifically, we present TextBugger, a general attack framework for generating adversarial texts.",
+          "source": "abstract"
+        },
+        {
+          "concept": "TextBugger achieves 100\\% success rate on the IMDB dataset",
+          "evidence": "For instance, TextBugger achieves 100\\% success rate on the IMDB dataset based on Amazon AWS Comprehend within 4.61 seconds and preserves 97\\% semantic similarity.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "IMDB",
+          "evidence": "For instance, TextBugger achieves 100\\% success rate on the IMDB dataset based on Amazon AWS Comprehend within 4.61 seconds and preserves 97\\% semantic similarity.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "TextBugger",
+          "evidence": "Specifically, we present TextBugger, a general attack framework for generating adversarial texts.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P003164",
+      "problem": [
+        {
+          "concept": "security vulnerabilities of DLTU are still largely unknown",
+          "evidence": "Despite its tremendous popularity, the security vulnerabilities of DLTU are still largely unknown, which is highly concerning given its increasing use in security-sensitive applications such as sentiment analysis and toxic content detection.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "generating adversarial texts",
+          "evidence": "Specifically, we present TextBugger, a general attack framework for generating adversarial texts.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "TextBugger",
+        "TextBugger achieves 100\\% success rate on the IMDB dataset"
+      ],
+      "dataset": [
+        "IMDB"
+      ],
+      "method": [
+        "TextBugger"
+      ],
+      "paper_id": "P003164",
+      "problem": [
+        "security vulnerabilities of DLTU are still largely unknown"
+      ],
+      "task": [
+        "generating adversarial texts"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 48.690707675999874,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P003164",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6752,
+      "output_tokens": 318
+    }
+  },
+  "record_sha256": "5749d7b011699082ae02200f7a17d43c89b8c32d3b36448a2172c17b6252bbdb",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

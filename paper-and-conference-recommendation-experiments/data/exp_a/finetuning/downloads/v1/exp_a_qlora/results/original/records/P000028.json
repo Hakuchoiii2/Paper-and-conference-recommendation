@@ -1,0 +1,156 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000028\",\n  \"problem\": [\n    {\n      \"concept\": \"common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"sarcasm recognizer to identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.47633239899733,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000028\",\n  \"problem\": [\n    {\n      \"concept\": \"common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"sarcasm recognizer to identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 126,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2406,
+            "output_tokens": 231
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000028\", \"problem\": [{\"concept\": \"common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"identify this type of sarcasm in tweets\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"sarcasm recognizer to identify this type of sarcasm in tweets\", \"evidence_id\": \"A2\"}, {\"concept\": \"identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.598786069997004,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000028\",\n  \"problem\": [\n    {\n      \"concept\": \"common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"sarcasm recognizer to identify this type of sarcasm in tweets\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 127,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4003,
+            "output_tokens": 231
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "sarcasm recognizer to identify this type of sarcasm in tweets",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000028",
+        "problem": [
+          {
+            "concept": "common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "identify this type of sarcasm in tweets",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 46.07511846899433,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 127,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6409,
+        "output_tokens": 462
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "sarcasm recognizer to identify this type of sarcasm in tweets",
+        "identifying contrasting contexts using the phrases learned through bootstrapping yields improved recall for sarcasm recognition"
+      ],
+      "dataset": [],
+      "method": [
+        "novel bootstrapping algorithm that automatically learns lists of positive sentiment phrases and negative situation phrases from sarcastic tweets"
+      ],
+      "paper_id": "P000028",
+      "problem": [
+        "common form of sarcasm on Twitter consists of a positive sentiment contrasted with a negative situation"
+      ],
+      "task": [
+        "identify this type of sarcasm in tweets"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 46.07511846899433,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000028",
+    "usage": {
+      "input_tokens": 6409,
+      "output_tokens": 462
+    }
+  },
+  "record_sha256": "dcf2907431ac8da8b4614239cec93ed37cfb0188a837f5313342741ac1b11e38",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

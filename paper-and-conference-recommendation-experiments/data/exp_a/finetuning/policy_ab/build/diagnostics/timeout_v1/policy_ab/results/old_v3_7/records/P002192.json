@@ -1,0 +1,233 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"rumours fester and accidental or deliberate misinformation often emerges\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"filters relevant and trustworthy information from Twitter\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"time windows\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.402650539999968,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"rumours fester and accidental or deliberate misinformation often emerges\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"filters relevant and trustworthy information from Twitter\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"time windows\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6618,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2544,
+            "output_tokens": 166
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"rumours fester and accidental or deliberate misinformation often emerges\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"filters relevant and trustworthy information from Twitter\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"time windows\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"model was significantly more accurate than similar studies in the literature\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.31840396499979,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"rumours fester and accidental or deliberate misinformation often emerges\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"filters relevant and trustworthy information from Twitter\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"time windows\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"model was significantly more accurate than similar studies in the literature\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6619,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4081,
+            "output_tokens": 191
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "autonomous message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "model was significantly more accurate than similar studies in the literature",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "machine-learning classifiers",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "time windows",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [
+          {
+            "concept": "rumours fester and accidental or deliberate misinformation often emerges",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "filters relevant and trustworthy information from Twitter",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 53.721054504999756,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6619,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6625,
+        "output_tokens": 357
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "autonomous message-classifier",
+          "evidence": "In this article, we aim to support the task of making sense from social media data, and specifically, seek to build an autonomous message-classifier that filters relevant and trustworthy information from Twitter.",
+          "source": "abstract"
+        },
+        {
+          "concept": "software demonstration",
+          "evidence": "Finally we developed a software demonstration that provides a visual user interface to allow the user to examine the analysis.",
+          "source": "abstract"
+        },
+        {
+          "concept": "model was significantly more accurate than similar studies in the literature",
+          "evidence": "From our findings, we identified that our model was significantly more accurate than similar studies in the literature.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "message-classifier",
+          "evidence": "In this article, we aim to support the task of making sense from social media data, and specifically, seek to build an autonomous message-classifier that filters relevant and trustworthy information from Twitter.",
+          "source": "abstract"
+        },
+        {
+          "concept": "machine-learning classifiers",
+          "evidence": "We ran modern machine-learning classifiers over those measures to produce trustworthiness scores at various time windows from the outbreak of the rumour.",
+          "source": "abstract"
+        },
+        {
+          "concept": "time windows",
+          "evidence": "Such time-windows were key as they allowed useful insight into the progression of the rumours.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P002192",
+      "problem": [
+        {
+          "concept": "rumours fester and accidental or deliberate misinformation often emerges",
+          "evidence": "While social networks can provide an ideal platform for up-to-date information from individuals across the world, it has also proved to be a place where rumours fester and accidental or deliberate misinformation often emerges.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "filters relevant and trustworthy information from Twitter",
+          "evidence": "In this article, we aim to support the task of making sense from social media data, and specifically, seek to build an autonomous message-classifier that filters relevant and trustworthy information from Twitter.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "autonomous message-classifier",
+        "software demonstration",
+        "model was significantly more accurate than similar studies in the literature"
+      ],
+      "dataset": [],
+      "method": [
+        "message-classifier",
+        "machine-learning classifiers",
+        "time windows"
+      ],
+      "paper_id": "P002192",
+      "problem": [
+        "rumours fester and accidental or deliberate misinformation often emerges"
+      ],
+      "task": [
+        "filters relevant and trustworthy information from Twitter"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 53.721054504999756,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P002192",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6625,
+      "output_tokens": 357
+    }
+  },
+  "record_sha256": "41b8244fb61e8b11d3f6950b5704e7a6bf72cb6330daf38498a1804b40fb92ec",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

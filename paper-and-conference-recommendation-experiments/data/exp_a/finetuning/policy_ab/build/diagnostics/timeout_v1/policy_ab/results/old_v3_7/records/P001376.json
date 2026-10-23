@@ -1,0 +1,223 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001376\", \"problem\": [{\"concept\": \"existing approaches are far from solving the problem\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"detect the spammers\", \"evidence_id\": \"A10\"}], \"method\": [{\"concept\": \"random walks biased on the spam dynamics\", \"evidence_id\": \"A11\"}, {\"concept\": \"feature representations\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ENWalk\", \"evidence_id\": \"A10\"}, {\"concept\": \"two types of spammers\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.346055245000002,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001376\", \"problem\": [{\"concept\": \"existing approaches are far from solving the problem\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"detect the spammers\", \"evidence_id\": \"A10\"}], \"method\": [{\"concept\": \"random walks biased on the spam dynamics\", \"evidence_id\": \"A11\"}, {\"concept\": \"feature representations\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ENWalk\", \"evidence_id\": \"A10\"}, {\"concept\": \"two types of spammers\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 4170,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2539,
+            "output_tokens": 151
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001376\", \"problem\": [{\"concept\": \"existing approaches are far from solving the problem\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"detect the spammers\", \"evidence_id\": \"A10\"}], \"method\": [{\"concept\": \"random walks biased on the spam dynamics\", \"evidence_id\": \"A11\"}, {\"concept\": \"feature representations\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ENWalk\", \"evidence_id\": \"A10\"}, {\"concept\": \"two types of spammers\", \"evidence_id\": \"A8\"}, {\"concept\": \"novel dynamics of spamming\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.453209119999997,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001376\", \"problem\": [{\"concept\": \"existing approaches are far from solving the problem\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"detect the spammers\", \"evidence_id\": \"A10\"}], \"method\": [{\"concept\": \"random walks biased on the spam dynamics\", \"evidence_id\": \"A11\"}, {\"concept\": \"feature representations\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ENWalk\", \"evidence_id\": \"A10\"}, {\"concept\": \"two types of spammers\", \"evidence_id\": \"A8\"}, {\"concept\": \"novel dynamics of spamming\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 4171,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4057,
+            "output_tokens": 171
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "ENWalk",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "two types of spammers",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "novel dynamics of spamming",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "random walks biased on the spam dynamics",
+            "evidence_id": "A11"
+          },
+          {
+            "concept": "feature representations",
+            "evidence_id": "A10"
+          }
+        ],
+        "paper_id": "P001376",
+        "problem": [
+          {
+            "concept": "existing approaches are far from solving the problem",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detect the spammers",
+            "evidence_id": "A10"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.799264365,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4171,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6596,
+        "output_tokens": 322
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "ENWalk",
+          "evidence": "We propose ENWalk, a framework to detect the spammers by learning the feature representations of the users in the social media.",
+          "source": "abstract"
+        },
+        {
+          "concept": "two types of spammers",
+          "evidence": "Our analyses discover two types of spammers and their relationships with the dynamics of content posts.",
+          "source": "abstract"
+        },
+        {
+          "concept": "novel dynamics of spamming",
+          "evidence": "Our results discover novel dynamics of spamming which are intuitive and arguable.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "random walks biased on the spam dynamics",
+          "evidence": "We learn the feature representations using the random walks biased on the spam dynamics.",
+          "source": "abstract"
+        },
+        {
+          "concept": "feature representations",
+          "evidence": "We propose ENWalk, a framework to detect the spammers by learning the feature representations of the users in the social media.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001376",
+      "problem": [
+        {
+          "concept": "existing approaches are far from solving the problem",
+          "evidence": "Although, there are active ongoing researches, existing approaches are far from solving the problem.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "detect the spammers",
+          "evidence": "We propose ENWalk, a framework to detect the spammers by learning the feature representations of the users in the social media.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "ENWalk",
+        "two types of spammers",
+        "novel dynamics of spamming"
+      ],
+      "dataset": [],
+      "method": [
+        "random walks biased on the spam dynamics",
+        "feature representations"
+      ],
+      "paper_id": "P001376",
+      "problem": [
+        "existing approaches are far from solving the problem"
+      ],
+      "task": [
+        "detect the spammers"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 48.799264365,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001376",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6596,
+      "output_tokens": 322
+    }
+  },
+  "record_sha256": "25936abe09895164396a25ad1359672aa4e515108b1abc04dba86e9c355414e0",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

@@ -1,0 +1,121 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P001567\",\n  \"problem\": [\n    {\"concept\": \"task of automatically detecting agreement and disagreement categories is difficult\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 19.303240318000462,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001567\",\n  \"problem\": [\n    {\"concept\": \"task of automatically detecting agreement and disagreement categories is difficult\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 10.8333,
+      "seed": 4743,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2386,
+        "output_tokens": 202
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"task of automatically detecting agreement and disagreement categories is difficult\"; evidence_id=\"A2\"; evidence=\"This variation might be one of the reasons why the task of automatically detecting the categories was difficult.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"detecting sentence-level agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"classifier trained to detect agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of web forum debates\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation set of 175 expressions\"; evidence_id=\"A1\"; evidence=\"Among the 175 expressions annotated in the evaluation set, 163 were unique, which shows that there is large variation in expressions used.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\"; evidence_id=\"A3\"; evidence=\"F-scores of 0.44 and 0.37 were achieved by a classifier trained on 2,000 debate sentences for detecting sentence-level agreement and disagreement.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001567\", \"problem\": [], \"task\": [{\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"}, {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}]}",
+      "attempt": 2,
+      "generation_seconds": 19.829495246001898,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001567\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 11.0,
+      "seed": 4744,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4371,
+        "output_tokens": 175
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"detecting sentence-level agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"classifier trained to detect agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of web forum debates\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation set of 175 expressions\"; evidence_id=\"A1\"; evidence=\"Among the 175 expressions annotated in the evaluation set, 163 were unique, which shows that there is large variation in expressions used.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\"; evidence_id=\"A3\"; evidence=\"F-scores of 0.44 and 0.37 were achieved by a classifier trained on 2,000 debate sentences for detecting sentence-level agreement and disagreement.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001567\", \"problem\": [{\"concept\": \"task of automatically detecting the categories was difficult\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"}, {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}]}",
+      "attempt": 3,
+      "generation_seconds": 21.03117551000105,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001567\",\n  \"problem\": [{\"concept\": \"task of automatically detecting the categories was difficult\", \"evidence_id\": \"A2\"}],\n  \"task\": [{\"concept\": \"detecting sentence-level agreement and disagreement\", \"evidence_id\": \"A0\"}],\n  \"method\": [{\"concept\": \"classifier trained to detect agreement and disagreement\", \"evidence_id\": \"A0\"}],\n  \"dataset\": [\n    {\"concept\": \"corpus of web forum debates\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"evaluation set of 175 expressions\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\", \"evidence_id\": \"A3\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 27.8333,
+      "seed": 4745,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4265,
+        "output_tokens": 191
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"detecting sentence-level agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"classifier trained to detect agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of web forum debates\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+        "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation set of 175 expressions\"; evidence_id=\"A1\"; evidence=\"Among the 175 expressions annotated in the evaluation set, 163 were unique, which shows that there is large variation in expressions used.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\"; evidence_id=\"A3\"; evidence=\"F-scores of 0.44 and 0.37 were achieved by a classifier trained on 2,000 debate sentences for detecting sentence-level agreement and disagreement.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P001567",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "corpus of web forum debates",
+        "evidence": "Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource, not a collection description",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 3,
+  "selected_score": 27.8333,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"detecting sentence-level agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+    "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"classifier trained to detect agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+    "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of web forum debates\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+    "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation set of 175 expressions\"; evidence_id=\"A1\"; evidence=\"Among the 175 expressions annotated in the evaluation set, 163 were unique, which shows that there is large variation in expressions used.\"",
+    "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\"; evidence_id=\"A3\"; evidence=\"F-scores of 0.44 and 0.37 were achieved by a classifier trained on 2,000 debate sentences for detecting sentence-level agreement and disagreement.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

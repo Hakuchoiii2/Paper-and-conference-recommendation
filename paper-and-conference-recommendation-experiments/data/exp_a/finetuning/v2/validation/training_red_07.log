@@ -1,0 +1,36 @@
+test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment) ... FAIL
+
+======================================================================
+FAIL: test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 438, in test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 13, in <module>
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\data\exp_a\finetuning\v2\training.py", line 323, in load_tokenizer
+    return AutoTokenizer.from_pretrained(MODEL, revision=REVISION, cache_dir=str(cache),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 1156, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\transformers\tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\transformers\tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\transformers\tokenization_utils_base.py", line 2442, in _patch_mistral_regex
+    _is_local or (not _is_local and is_base_mistral(pretrained_model_name_or_path))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\transformers\tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in forbidden
+AssertionError: Offline tokenizer attempted metadata/network lookup
+
+
+----------------------------------------------------------------------
+Ran 1 test in 8.551s
+
+FAILED (failures=1)

@@ -1,0 +1,42 @@
+{
+  "record": {
+    "arm": "adapter",
+    "policy": "old_v3_7",
+    "paper_id": "P000151",
+    "seed": 495,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": true,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "messages_sha256": "7f0b5fbcae7f5c2d787087315860178ca1c48118d8792c27c75b60fbb326a529",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\"paper_id\": \"P000151\", \"problem\": [], \"task\": [{\"concept\": \"question classification\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_id\": \"A1\"}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_id\": \"A3\"}]}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 22.801919541000075,
+    "usage": {
+      "input_tokens": 2387,
+      "output_tokens": 160
+    },
+    "schema_valid": true,
+    "validation_errors": [],
+    "bounded_stop": false
+  },
+  "record_sha256": "93e5d2cfc65175ba95145daa82a52ea212be84b9212dbcb28941d4f77ccb1fbc"
+}
