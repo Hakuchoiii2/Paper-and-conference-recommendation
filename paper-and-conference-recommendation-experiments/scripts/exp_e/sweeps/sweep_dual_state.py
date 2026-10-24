@@ -1,4 +1,5 @@
 """Sweep alpha parameter for Dual-State Hybrid model under results/exp_e/sweeps/sensitivity_dual_state."""
+import argparse
 import csv
 import subprocess
 import sys
@@ -17,7 +18,7 @@ SWEEP_MODELS = [
 ]
 
 
-def run_sweep():
+def run_sweep(config_path: str = None):
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     output_rel = "results/exp_e/sweeps/sensitivity_dual_state/run_alpha"
     model_keys = [m for _, m in SWEEP_MODELS]
@@ -30,6 +31,8 @@ def run_sweep():
         "--output", output_rel,
         "--overwrite",
     ]
+    if config_path:
+        cmd.extend(["--config", config_path])
     print(f"Running Dual-State Hybrid alpha sweep across {len(SWEEP_MODELS)} configurations...")
     proc = subprocess.run(cmd, cwd=EXP_ROOT, capture_output=True, text=True)
     if proc.returncode != 0:
@@ -89,4 +92,7 @@ def run_sweep():
 
 
 if __name__ == "__main__":
-    run_sweep()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", help="Optional dataset config path")
+    args = parser.parse_args()
+    run_sweep(config_path=args.config)

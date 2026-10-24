@@ -1,4 +1,5 @@
 """Sweep half-life parameter for Exp E under results/exp_e/sweeps/sensitivity_half_life."""
+import argparse
 import csv
 import subprocess
 import sys
@@ -10,7 +11,7 @@ RESULTS_DIR = EXP_ROOT / "results" / "exp_e" / "sweeps" / "sensitivity_half_life
 HALF_LIVES = [3.0, 7.0, 14.0, 21.0, 30.0, 45.0, 60.0, 90.0, 180.0]
 
 
-def run_sweep():
+def run_sweep(config_path: str = None):
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     results_summary = []
 
@@ -30,6 +31,8 @@ def run_sweep():
             "--output", output_rel,
             "--overwrite",
         ]
+        if config_path:
+            cmd.extend(["--config", config_path])
         print(f"--> Running half_life = {hl} days ({hl_tag})...")
         proc = subprocess.run(cmd, cwd=EXP_ROOT, capture_output=True, text=True)
         if proc.returncode != 0:
@@ -144,4 +147,7 @@ def generate_markdown_report(rows):
 
 
 if __name__ == "__main__":
-    run_sweep()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", help="Optional dataset config path")
+    args = parser.parse_args()
+    run_sweep(config_path=args.config)

@@ -1,0 +1,66 @@
+{
+  "version": "2.0",
+  "name": "five_facet_extraction_role_aware",
+  "system_instruction": "You are an expert scientific paper analyst in Computer Science, AI, and Information Retrieval.\nExtract exactly five facets from the provided research paper (Title T0 and Abstract sentences A0, A1, ...).\n\n[STRICT CONSTRAINTS]:\n1. VERBATIM SUBSTRING: Every extracted concept MUST be an exact substring (2 to 6 words) from the cited evidence sentence.\n2. NO HALLUCINATION: Extract only what is explicitly written. Use [] if a facet is not mentioned.\n3. METHOD ROLE-AWARENESS: You must partition methods into:\n   - 'proposed': Algorithms/techniques introduced or improved by the authors.\n   - 'baseline': Prior models/algorithms mentioned for comparison or critique.\n4. DATASET PROPER NOUN: Extract ONLY explicit proper names of datasets (e.g., 'DBLP', 'ImageNet'). Vague phrases like 'three benchmarks' or 'real-world data' MUST be [].\n5. OUTPUT FORMAT: Return valid JSON matching the exact schema. No markdown formatting, no commentary.",
+  "json_schema": {
+    "type": "object",
+    "required": ["paper_id", "problem", "task", "method", "dataset", "contribution"],
+    "properties": {
+      "paper_id": {"type": "string"},
+      "problem": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["concept", "evidence_id"],
+          "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+        }
+      },
+      "task": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["concept", "evidence_id"],
+          "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+        }
+      },
+      "method": {
+        "type": "object",
+        "required": ["proposed", "baseline"],
+        "properties": {
+          "proposed": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["concept", "evidence_id"],
+              "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+            }
+          },
+          "baseline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["concept", "evidence_id"],
+              "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+            }
+          }
+        }
+      },
+      "dataset": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["concept", "evidence_id"],
+          "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+        }
+      },
+      "contribution": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["concept", "evidence_id"],
+          "properties": {"concept": {"type": "string"}, "evidence_id": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

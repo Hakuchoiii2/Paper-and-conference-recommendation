@@ -174,24 +174,25 @@ def check_behavior(experiment, observed, truth, facets, config, report, shared_u
     profiles = truth['latent_user_profiles.jsonl' if experiment == 'c' else 'temporal_profiles.jsonl']
     by_profile = {}
     boundaries = [validate_time(t) for t in config['period_boundaries']] if experiment == 'e' else None
+    num_periods = len(boundaries) - 1 if boundaries else 0
     for row in profiles:
         check_profile(row,facets,experiment == 'e')
         require(row['user_id'] in ids,'Unknown profile user')
         key = row['user_id'],row.get('period',0)
         require(key not in by_profile,'Duplicate latent profile')
         if boundaries:
-            require(type(row['period']) is int and 1 <= row['period'] <= 4,'Invalid profile period')
+            require(type(row['period']) is int and 1 <= row['period'] <= num_periods,'Invalid profile period')
             p = row['period']
             require(validate_time(row['start_timestamp']) == boundaries[p-1]
                     and validate_time(row['end_timestamp']) == boundaries[p],'Profile period boundaries differ')
         by_profile[key] = row
-    periods = (1,2,3,4) if boundaries else (0,)
+    periods = tuple(range(1, num_periods + 1)) if boundaries else (0,)
     require(set(by_profile) == {(u,p) for u in ids for p in periods},'Missing latent profiles')
     schema = {'case_id','user_id','candidate_ids','cutoff'} | ({'period'} if boundaries else set())
     cases = check_cases(observed['cases.jsonl'],facets,ids,schema,
                         config['events_per_user_per_period'] if boundaries else
                         config['events_per_user'] - config['history_events_per_user'])
-    expected = len(ids)*3 if boundaries else len(ids)
+    expected = len(ids)*(num_periods - 1) if boundaries else len(ids)
     require(len(cases) == expected,'Wrong behavior case quota')
     user_periods = set()
     for case in cases.values():
@@ -200,7 +201,7 @@ def check_behavior(experiment, observed, truth, facets, config, report, shared_u
         require((user,period) not in user_periods,'Duplicate user/period case')
         user_periods.add((user,period))
         if boundaries:
-            require(type(period) is int and 2 <= period <= 4 and cutoff == boundaries[period-1],'Wrong rolling cutoff')
+            require(type(period) is int and 2 <= period <= num_periods and cutoff == boundaries[period-1],'Wrong rolling cutoff')
             judged = [r for r in future if r['user_id'] == user and cutoff <= validate_time(r['timestamp']) < boundaries[period]]
         else:
             judged = [r for r in future if r['user_id'] == user]
@@ -220,8 +221,11 @@ def check_behavior(experiment, observed, truth, facets, config, report, shared_u
                 and metadata['drift_coefficients'] == config['drift_coefficients'],'Wrong E schedule')
         require(sum(v == 'stable' for v in metadata['groups'].values()) == int(len(ids)*config['stable_fraction']),
                 'Wrong stable quota')
+        drift_coeffs = config['drift_coefficients']
+        target_period = (next(i for i, c in enumerate(drift_coeffs, 1) if c >= 1.0)
+                         if any(c >= 1.0 for c in drift_coeffs) else num_periods)
         for user,group in metadata['groups'].items():
-            old,new = by_profile[user,1],by_profile[user,3]
+            old,new = by_profile[user,1],by_profile[user,target_period]
             for period in periods:
                 row = by_profile[user,period]
                 coefficient = 0 if group == 'stable' else config['drift_coefficients'][period-1]
@@ -237,7 +241,7 @@ def check_behavior(experiment, observed, truth, facets, config, report, shared_u
             if group == 'drift':
                 require(old['latent_preferences'] != new['latent_preferences'],'Drift profile did not change')
         for name in ('interactions_train.jsonl','search_events.jsonl','exposures.jsonl'):
-            require(all(boundaries[0] <= validate_time(r['timestamp']) < boundaries[3] for r in observed[name]),
+            require(all(boundaries[0] <= validate_time(r['timestamp']) < boundaries[num_periods - 1] for r in observed[name]),
                     'Future event leaked into E history')
         for user in ids:
             for period in periods:
@@ -247,7 +251,7 @@ def check_behavior(experiment, observed, truth, facets, config, report, shared_u
     else:
         require(len(users) == config['num_users'],'Wrong C user quota')
     require(report['shortfall'] == 0 and report['actual_users'] == len(ids)
-            and report['actual_events'] == (len(ids)*4*config['events_per_user_per_period'] if boundaries else
+            and report['actual_events'] == (len(ids)*num_periods*config['events_per_user_per_period'] if boundaries else
                                            len(history)+len(future)),'Wrong behavior report counts')
 
 def check_d(observed, truth, facets, config, report, users):

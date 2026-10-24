@@ -24,6 +24,14 @@ MODEL_PRESETS: Dict[str, List[str]] = {
         'drift__shift_gate__cos0.55',
         'hybrid__dual_state__alpha0.65',
         'decay__power_law__beta0.6',
+        'hybrid__fast_slow_gated__w30',
+    ],
+    # Monolith-inspired Fast-Slow Gated preset
+    'monolith': [
+        'hybrid__fast_slow_gated__w14',
+        'hybrid__fast_slow_gated__w30',
+        'hybrid__fast_slow_gated__w45',
+        'hybrid__fast_slow_gated__w60',
     ],
     # Comprehensive benchmark comparing baselines and all new ideas together
     'all': [
@@ -34,6 +42,7 @@ MODEL_PRESETS: Dict[str, List[str]] = {
         'drift__shift_gate__cos0.55',
         'hybrid__dual_state__alpha0.65',
         'decay__power_law__beta0.6',
+        'hybrid__fast_slow_gated__w30',
     ],
 }
 

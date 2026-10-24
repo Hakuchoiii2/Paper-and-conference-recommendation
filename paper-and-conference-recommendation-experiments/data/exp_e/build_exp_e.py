@@ -18,10 +18,14 @@ def build_e(facets, users, config, rng):
     count = config['events_per_user_per_period']
     require(type(count) is int and count >= 2,'Invalid events_per_user_per_period')
     boundaries = [validate_time(t) for t in config['period_boundaries']]
-    require(len(boundaries) == 5 and all(a < b for a,b in zip(boundaries,boundaries[1:])),
-            'E needs four ordered periods')
+    num_periods = len(boundaries) - 1
+    require(num_periods >= 2 and all(a < b for a,b in zip(boundaries,boundaries[1:])),
+            'E needs at least two ordered periods')
     coefficients = config['drift_coefficients']
-    require(coefficients == [0,.5,1,1],'Unsupported drift schedule')
+    require(len(coefficients) == num_periods,
+            f'E needs {num_periods} drift coefficients, got {len(coefficients)}')
+    if num_periods == 4 and 'allow_custom_schedule' not in config:
+        require(coefficients == [0,.5,1,1],'Unsupported drift schedule')
     require(type(config['stable_fraction']) in (int,float) and 0 <= config['stable_fraction'] <= 1,
             'Invalid stable_fraction')
     ids = [u['user_id'] for u in users]
@@ -43,13 +47,13 @@ def build_e(facets, users, config, rng):
             require(step.total_seconds() > 3,'Period too short for ordered search/exposure/events')
             times = [start + step*i for i in range(1,count+1)]
             events, searches, shown = profile_events(facets,index,user,profile,weights,times,config,rng,f'E{user}P{period}')
-            if period <= 3:
+            if period <= num_periods - 1:
                 history.extend(events); queries.extend(searches); exposures.extend(shown)
             if period >= 2:
                 future.extend(events); test_queries.extend(searches); test_exposures.extend(shown)
                 cases.append(dict(case_id=f'E{user}P{period}',user_id=user,period=period,cutoff=timestamp(start),
                                   candidate_ids=[r['paper_id'] for r in events]))
-    report = dict(shortfall=0,actual_users=len(ids),actual_events=len(ids)*4*count,
+    report = dict(shortfall=0,actual_users=len(ids),actual_events=len(ids)*num_periods*count,
                   behavior_counts=dict(collections.Counter(r['interaction_type'] for r in history)),
                   group_counts=dict(collections.Counter(groups.values())))
     return ({'interactions_train.jsonl':history,'search_events.jsonl':queries,'exposures.jsonl':exposures,'cases.jsonl':cases},

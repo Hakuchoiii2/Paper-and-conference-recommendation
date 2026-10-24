@@ -6,6 +6,7 @@ from exp_e.methods import (
     decay_fixed,
     decay_power_law,
     dual_state,
+    fast_slow_gated,
 )
 
 __all__ = [
@@ -15,4 +16,5 @@ __all__ = [
     'decay_fixed',
     'decay_power_law',
     'dual_state',
+    'fast_slow_gated',
 ]

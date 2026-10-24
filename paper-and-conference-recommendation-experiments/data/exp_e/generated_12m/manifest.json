@@ -1,0 +1,106 @@
+{
+  "config": {
+    "concepts_per_facet": 2,
+    "corpus_path": "data/processed/papers.jsonl",
+    "dataset_kind": "mock",
+    "drift_coefficients": [
+      0.0,
+      0.0,
+      0.1,
+      0.2,
+      0.35,
+      0.55,
+      0.75,
+      0.88,
+      0.95,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "events_per_user_per_period": 15,
+    "exposure_size": 4,
+    "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+    "interaction_thresholds": [
+      -0.25,
+      0.05,
+      0.2,
+      0.4
+    ],
+    "negative_weight_range": [
+      -1.0,
+      -0.5
+    ],
+    "noise_std": 0.15,
+    "output_dir": "data/exp_e/generated_12m",
+    "period_boundaries": [
+      "2026-01-01T00:00:00Z",
+      "2026-02-01T00:00:00Z",
+      "2026-03-01T00:00:00Z",
+      "2026-04-01T00:00:00Z",
+      "2026-05-01T00:00:00Z",
+      "2026-06-01T00:00:00Z",
+      "2026-07-01T00:00:00Z",
+      "2026-08-01T00:00:00Z",
+      "2026-09-01T00:00:00Z",
+      "2026-10-01T00:00:00Z",
+      "2026-11-01T00:00:00Z",
+      "2026-12-01T00:00:00Z",
+      "2027-01-01T00:00:00Z"
+    ],
+    "positive_weight_range": [
+      0.5,
+      1.0
+    ],
+    "rule_version": "profile_search_v2",
+    "search_fraction": 0.6,
+    "seed": 42,
+    "stable_fraction": 0.5,
+    "targeted_exposure_fraction": 0.8,
+    "truth_dir": "data/exp_e/ground_truth_12m",
+    "users_path": "data/exp_c/generated/users.jsonl"
+  },
+  "contract_version": "2.0",
+  "counts": {
+    "cases.jsonl": 3300,
+    "exposures.jsonl": 49500,
+    "exposures_test.jsonl": 49500,
+    "interactions_test.jsonl": 49500,
+    "interactions_train.jsonl": 49500,
+    "search_events.jsonl": 29629,
+    "search_events_test.jsonl": 29681,
+    "temporal_profiles.jsonl": 3600
+  },
+  "dataset_kind": "mock",
+  "experiment": "e",
+  "files": {
+    "data/exp_e/generated_12m/cases.jsonl": "66a0ac456bf4fdb35bcf16e57761cd77d22e290033d12cecfde6107cc6d7f3c8",
+    "data/exp_e/generated_12m/exposures.jsonl": "ed4f1a583d2d8f8415d86578be485448daad633dfff1662cce6af384b661cef4",
+    "data/exp_e/generated_12m/generation_report.json": "723be81e38ffeb60ef99cace0ac141eaad961588887d2233e077a0fe311d53ee",
+    "data/exp_e/generated_12m/interactions_train.jsonl": "f770cc9b88f464397000c5d9c8e05ba974bc02af1d5dadf34086444aa207c750",
+    "data/exp_e/generated_12m/search_events.jsonl": "23c04d4fb8d45dc6d494af23ec5a106cefec0349cd6f6e6d830f27bab93894e3",
+    "data/exp_e/ground_truth_12m/exposures_test.jsonl": "fc8c6d7f0031581986c4319ab1e0174cdd3e683e1245fa2fae89c6b2fc2af5e2",
+    "data/exp_e/ground_truth_12m/interactions_test.jsonl": "539772115a0d1040b69a4e61d58cb476c3d6259103c923f77373f264f3657914",
+    "data/exp_e/ground_truth_12m/period_metadata.json": "a932bb5beb16df879c6ebaba61389873e836ead934b2c1ab6d960a0c1d598724",
+    "data/exp_e/ground_truth_12m/search_events_test.jsonl": "c35837e1b70c4f98383ad1ffa57c657e1b520d3dcbe634b2967d3ec9fb40b3a5",
+    "data/exp_e/ground_truth_12m/temporal_profiles.jsonl": "eda7221537da30c28efd206dc44345d2e83e4a9db217b769ce796a0213e9ef8f"
+  },
+  "generator_hashes": {
+    "data/build_experiments.py": "73fb07bf0fbbf94bfcf6a44d519a86331b0e5496bf258a4d263107a52b0ee4c0",
+    "data/exp_e/build_exp_e.py": "d92d4589045ac96cddea88421bc2d1dd4cae81fcfbeba1c71d305c2a5258b99a",
+    "data/experiment_common.py": "8bb819409e04e9cb1903cf3fbc938a5043c1a137ef258324f7ca5173c713d47a",
+    "scripts/build_corpus.py": "bd318f6ee8912dd128264e4570dc83635b8934f01ba42bcd243f3c59e73438c8",
+    "scripts/experiment_io.py": "3dcc53d093ecbfd9cfe72e01e661b798d9fe74281aae2f27e7cc59b1e515e999"
+  },
+  "generator_version": "2.0",
+  "input_hashes": {
+    "configs/exp_e_12m.json": "558244bed8cce2b43ce797fe2ac921231a5da55dc225c62e072874b5da65f645",
+    "data/exp_a/generated/annotation_metadata.jsonl": "f0acf7139661873d465892d02550aff4c9ec8dd804735fbe0f830b6a7149de4b",
+    "data/exp_a/generated/facets_silver.jsonl": "f46b7812d2e9392dfe71da43fb377ed95dc6693429e0df89ffc8ebc8f1c7260e",
+    "data/exp_a/generated/manifest.json": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",
+    "data/exp_c/generated/manifest.json": "5078549a1a9128601871352e502c31e78cd8fa85f8ec61a446502849df353e1a",
+    "data/exp_c/generated/users.jsonl": "0779897d6b535f3b2ed796c8fba38f6010a553547fb093ea85bfb65dbc41a22c",
+    "data/processed/papers.jsonl": "2f78a063076fc2fcc418ebeaac2c3795a44f677eac6c5adf91b8ffad5d98ae6a"
+  },
+  "seed": 42,
+  "status": "complete"
+}
