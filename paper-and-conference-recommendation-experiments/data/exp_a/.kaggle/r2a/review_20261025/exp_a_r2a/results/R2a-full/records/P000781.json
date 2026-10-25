@@ -1,0 +1,220 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000781\",\n  \"problem\": [\n    {\n      \"concept\": \"statistically heterogeneous correlations suggesting at least one undiscovered moderator\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"evidence from the analysis indicates the presence of a very small but statistically significant relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions\",\n      \"evidence_id\": \"A1\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 15.626277626000046,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P000781\",\n  \"problem\": [\n    {\n      \"concept\": \"statistically heterogeneous correlations suggesting at least one undiscovered moderator\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"evidence from the analysis indicates the presence of a very small but statistically significant relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions\",\n      \"evidence_id\": \"A1\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 42.0,
+          "seed": 2385,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2373,
+            "output_tokens": 179
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"statistically heterogeneous correlations suggesting at least one undiscovered moderator\"; evidence_id=\"A2\"; evidence=\"Moderator analyses did not reveal significant moderators of this relationship, although the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000781\", \"problem\": [{\"concept\": \"observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions\", \"evidence_id\": \"A0\"}, {\"concept\": \"evidence from the analysis indicates the presence of a very small but statistically significant relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions\", \"evidence_id\": \"A1\"}]}",
+          "attempt": 2,
+          "generation_seconds": 7.295975080999824,
+          "operations": [
+            {
+              "before": {
+                "concept": "statistically heterogeneous correlations suggesting at least one undiscovered moderator",
+                "evidence_id": "A2"
+              },
+              "concept": "observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P000781\",\"edits\":[{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\",\"evidence_id\":\"A2\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 2386,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2563,
+            "output_tokens": 59
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "evidence from the analysis indicates the presence of a very small but statistically significant relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions",
+            "evidence_id": "A1"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P000781",
+        "problem": [
+          {
+            "concept": "observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 22.92225270699987,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000781",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 2386,
+      "selected_score": 64.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4936,
+        "output_tokens": 238
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "f757cf82cf02f2fd37f5d5bedf0d488df67af659eb689b6a68df07ff4ede4877",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 2385
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "b7575a4f5a2cec103587e1873889d606768e8acbd2367c42c9bfc9433ff622bb",
+        "operations": [
+          {
+            "before": {
+              "concept": "statistically heterogeneous correlations suggesting at least one undiscovered moderator",
+              "evidence_id": "A2"
+            },
+            "concept": "observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 2386
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions",
+        "evidence from the analysis indicates the presence of a very small but statistically significant relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P000781",
+      "problem": [
+        "observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator"
+      ],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 22.92225270699987,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 7.295975080999824,
+      "input_tokens": 2563,
+      "output_tokens": 59
+    },
+    "paper_id": "P000781",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [],
+      "method": [],
+      "problem": [
+        0
+      ],
+      "task": []
+    },
+    "usage": {
+      "input_tokens": 4936,
+      "output_tokens": 238
+    }
+  },
+  "record_sha256": "e991114f53da08621944c1751add921a5afeb25a285c22271ff0f50ce6f96f93",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

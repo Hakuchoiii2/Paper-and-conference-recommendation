@@ -1,0 +1,304 @@
+{
+  "record": {
+    "arm": "R2a-V",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003661\",\n  \"problem\": [\n    {\n      \"concept\": \"differences in performance between retrieval methods are significant\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"evaluate retrieval experiments\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistical testing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"describe statistical tests for determining significant performance differences\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"suggest evaluating relevance feedback from the user's perspective\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"propose non-parametric alternatives when normality assumption is invalid\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.98997191000035,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003661\",\n  \"problem\": [\n    {\n      \"concept\": \"differences in performance between retrieval methods are significant\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"evaluate retrieval experiments\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistical testing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"describe statistical tests for determining significant performance differences\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"suggest evaluating relevance feedback from the user's perspective\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"propose non-parametric alternatives when normality assumption is invalid\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 44.0,
+          "seed": 11025,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2390,
+            "output_tokens": 215
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate retrieval experiments\"; evidence_id=\"T0\"; evidence=\"Using Statistical Testing in the Evaluation of Retrieval Experiments\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"describe statistical tests for determining significant performance differences\"; evidence_id=\"A2\"; evidence=\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"suggest evaluating relevance feedback from the user's perspective\"; evidence_id=\"A1\"; evidence=\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"propose non-parametric alternatives when normality assumption is invalid\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003661\", \"problem\": [], \"task\": [{\"concept\": \"Using Statistical Testing in the Evaluation of Retrieval Experiments\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"statistical testing\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}, {\"concept\": \"It is suggested that relevance feedback be evaluated from the perspective of the user\", \"evidence_id\": \"A1\"}, {\"concept\": \"There are a number of non-parametric alternatives if the assumption of normality is invalid\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.27930750099995,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003661\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"Using Statistical Testing in the Evaluation of Retrieval Experiments\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistical testing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"It is suggested that relevance feedback be evaluated from the perspective of the user\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"There are a number of non-parametric alternatives if the assumption of normality is invalid\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 70.0,
+          "seed": 11026,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4870,
+            "output_tokens": 213
+          },
+          "validation_errors": [
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"There are a number of non-parametric alternatives if the assumption of normality is invalid\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003661\", \"problem\": [], \"task\": [{\"concept\": \"Using Statistical Testing in the Evaluation of Retrieval Experiments\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"statistical testing\", \"evidence_id\": \"T0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}, {\"concept\": \"It is suggested that relevance feedback be evaluated from the perspective of the user\", \"evidence_id\": \"A1\"}, {\"concept\": \"if it is a poor approximation, there are a number of non-parametric alternatives\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 3,
+          "generation_seconds": 22.27062946599972,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003661\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"Evaluation of retrieval experiments using statistical testing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistical testing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"It is suggested that relevance feedback be evaluated from the perspective of the user\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"if it is a poor approximation, there are a number of non-parametric alternatives\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 11027,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4332,
+            "output_tokens": 208
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "It is suggested that relevance feedback be evaluated from the perspective of the user",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "if it is a poor approximation, there are a number of non-parametric alternatives",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "statistical testing",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P003661",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Using Statistical Testing in the Evaluation of Retrieval Experiments",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 64.53990887700002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11027,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11592,
+        "output_tokens": 636
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "b00d3d752e273646a03de9db96b93e7dd25cdcc8ff66312b504b339db5f93609",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "87df10b1868c938fcf06af09117b28b0b87c4c804258385e64385c91fdc5f269",
+        "repair_packet": null,
+        "seed": 11025
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "081967eef84e8158cd0ca38c778a416d5714b3d320c2977dd1b7c9b08a4ea6a7",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "evaluate retrieval experiments",
+              "error": "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate retrieval experiments\"; evidence_id=\"T0\"; evidence=\"Using Statistical Testing in the Evaluation of Retrieval Experiments\"",
+              "evidence_id": "T0",
+              "facet": "task",
+              "index": 0,
+              "source_sentence": "Using Statistical Testing in the Evaluation of Retrieval Experiments"
+            },
+            {
+              "concept": "describe statistical tests for determining significant performance differences",
+              "error": "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"describe statistical tests for determining significant performance differences\"; evidence_id=\"A2\"; evidence=\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\"",
+              "evidence_id": "A2",
+              "facet": "contribution",
+              "index": 0,
+              "source_sentence": "A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant."
+            },
+            {
+              "concept": "suggest evaluating relevance feedback from the user's perspective",
+              "error": "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"suggest evaluating relevance feedback from the user's perspective\"; evidence_id=\"A1\"; evidence=\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\"",
+              "evidence_id": "A1",
+              "facet": "contribution",
+              "index": 1,
+              "source_sentence": "In particular, it is suggested that relevance feedback be evaluated from the perspective of the user."
+            },
+            {
+              "concept": "propose non-parametric alternatives when normality assumption is invalid",
+              "error": "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"propose non-parametric alternatives when normality assumption is invalid\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\"",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 2,
+              "source_sentence": "However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives."
+            }
+          ],
+          "paper_id": "P003661",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 11026
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "7935fd1a24d84e123fd0e2ce480d227b0ebda5c69234ebbdae9e0073fa8f9f78",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "There are a number of non-parametric alternatives if the assumption of normality is invalid",
+              "error": "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"There are a number of non-parametric alternatives if the assumption of normality is invalid\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\"",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 2,
+              "source_sentence": "However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives."
+            }
+          ],
+          "paper_id": "P003661",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 11027
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 5,
+    "facets": {
+      "contribution": [
+        "A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant",
+        "It is suggested that relevance feedback be evaluated from the perspective of the user",
+        "if it is a poor approximation, there are a number of non-parametric alternatives"
+      ],
+      "dataset": [],
+      "method": [
+        "statistical testing"
+      ],
+      "paper_id": "P003661",
+      "problem": [],
+      "task": [
+        "Using Statistical Testing in the Evaluation of Retrieval Experiments"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 64.53990887700002,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": false,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 46.54993696699967,
+      "input_tokens": 9202,
+      "output_tokens": 421
+    },
+    "paper_id": "P003661",
+    "protected_items_changed": 1,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 11592,
+      "output_tokens": 636
+    }
+  },
+  "record_sha256": "cfd37562a261a88c532fde728bcef2660af2dd2e03a4e229f24785172517a8b0",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

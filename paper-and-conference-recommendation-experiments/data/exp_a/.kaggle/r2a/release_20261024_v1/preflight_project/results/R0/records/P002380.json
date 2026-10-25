@@ -1,0 +1,149 @@
+{
+  "record": {
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 15.023595121000199,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7182,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2348,
+            "output_tokens": 171
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002380\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"}, {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"}, {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.020067298999948,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"language design\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7183,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3883,
+            "output_tokens": 190
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Two language design methods based on principles derived from the denotational approach to programming language semantics",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "solution to the array parameter problem",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "modularization facility",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "correspondence between parametric and declarative mechanisms",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "principle of abstraction for programming languages adapted from set theory",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002380",
+        "problem": [],
+        "task": []
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 35.043662420000146,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7183,
+      "selected_score": 64.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6231,
+        "output_tokens": 361
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "Two language design methods based on principles derived from the denotational approach to programming language semantics",
+        "solution to the array parameter problem",
+        "modularization facility"
+      ],
+      "dataset": [],
+      "method": [
+        "correspondence between parametric and declarative mechanisms",
+        "principle of abstraction for programming languages adapted from set theory"
+      ],
+      "paper_id": "P002380",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 35.043662420000146,
+    "paper_id": "P002380",
+    "usage": {
+      "input_tokens": 6231,
+      "output_tokens": 361
+    }
+  },
+  "record_sha256": "fa0f9ef3ba75f8f15e033ae1c40952c7c303c8f8983381c30cfe77a771ab22a4",
+  "signature": "16ab9a393e639edcf1c6e576b94736cd0dde52fbac1f71b6d8bd5823700d14c5"
+}

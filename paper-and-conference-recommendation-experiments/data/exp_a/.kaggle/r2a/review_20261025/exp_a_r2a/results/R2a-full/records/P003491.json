@@ -1,0 +1,141 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003491\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": []\n}",
+          "attempt": 1,
+          "generation_seconds": 5.24699524000016,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003491\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": []\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 10.0,
+          "seed": 10515,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2417,
+            "output_tokens": 43
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P003491",
+        "problem": [],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 5.24699524000016,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003491",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 10515,
+      "selected_score": 10.0,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [
+          "Abstract contains download/book-server boilerplate; inspect the original source"
+        ],
+        "status": "suspected_non_research"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2417,
+        "output_tokens": 43
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "8aff69eed5eb4a9e429b6250752bb29dfb32762b16d94fbc9cea994771de745f",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 10515
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P003491",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 5.24699524000016,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P003491",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [],
+      "dataset": [],
+      "method": [],
+      "problem": [],
+      "task": []
+    },
+    "usage": {
+      "input_tokens": 2417,
+      "output_tokens": 43
+    }
+  },
+  "record_sha256": "a6a67d83d1325218d73521df0c055827960611cfd0f6f5d2d70d0b044124d9cd",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

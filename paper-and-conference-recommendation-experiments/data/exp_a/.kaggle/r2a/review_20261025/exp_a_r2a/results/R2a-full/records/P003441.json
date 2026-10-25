@@ -1,0 +1,284 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003441\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"introduce robot programming language\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"UML/P Statecharts\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"MontiCore\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"Eclipse plugin\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"LightRocks (Light Weight Robot Coding for Skills)\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"three different level of abstraction for robot programming\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"code generation while hiding controller specific implementation details\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"generic graphical editor\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 19.396576670000286,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003441\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"introduce robot programming language\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"UML/P Statecharts\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"MontiCore\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"Eclipse plugin\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"LightRocks (Light Weight Robot Coding for Skills)\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"three different level of abstraction for robot programming\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"code generation while hiding controller specific implementation details\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"generic graphical editor\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 69.1481,
+          "seed": 10365,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2466,
+            "output_tokens": 233
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"UML/P Statecharts\"; evidence_id=\"A5\"; evidence=\"A Statechart like model is used to describe the different levels of detail.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"code generation while hiding controller specific implementation details\"; evidence_id=\"A7\"; evidence=\"To this end we are able to generate code while hiding controller specific implementation details.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003441\", \"problem\": [], \"task\": [{\"concept\": \"introduce robot programming language\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"}, {\"concept\": \"MontiCore\", \"evidence_id\": \"A6\"}, {\"concept\": \"Eclipse plugin\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"LightRocks (Light Weight Robot Coding for Skills)\", \"evidence_id\": \"A0\"}, {\"concept\": \"three different level of abstraction for robot programming\", \"evidence_id\": \"A1\"}, {\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"}, {\"concept\": \"generate code while hiding controller specific implementation details\", \"evidence_id\": \"A7\"}, {\"concept\": \"generic graphical editor\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 10.040774046000024,
+          "operations": [
+            {
+              "before": {
+                "concept": "code generation while hiding controller specific implementation details",
+                "evidence_id": "A7"
+              },
+              "concept": "generate code while hiding controller specific implementation details",
+              "evidence_id": "A7",
+              "facet": "contribution",
+              "index": 3,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "UML/P Statecharts",
+                "evidence_id": "A5"
+              },
+              "concept": "Statechart like model",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\": \"P003441\", \"edits\": [{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":3,\"concept\":\"generate code while hiding controller specific implementation details\",\"evidence_id\":\"A7\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"method\",\"index\":0,\"concept\":\"Statechart like model\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 75.8148,
+          "seed": 10366,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2792,
+            "output_tokens": 89
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "LightRocks (Light Weight Robot Coding for Skills)",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "three different level of abstraction for robot programming",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Statechart like model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "generate code while hiding controller specific implementation details",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "generic graphical editor",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Statechart like model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "MontiCore",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Eclipse plugin",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P003441",
+        "problem": [],
+        "task": [
+          {
+            "concept": "introduce robot programming language",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 29.43735071600031,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003441",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 10366,
+      "selected_score": 75.8148,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5258,
+        "output_tokens": 322
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "050c8ef511d107c437c08565969c00c2e7b4397faed00bc81e450a576f5b6395",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 10365
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "0b67d623bb81b89fedeb0591e73d3773fed03ebbd20e3ad9449ec0d318359f37",
+        "operations": [
+          {
+            "before": {
+              "concept": "code generation while hiding controller specific implementation details",
+              "evidence_id": "A7"
+            },
+            "concept": "generate code while hiding controller specific implementation details",
+            "evidence_id": "A7",
+            "facet": "contribution",
+            "index": 3,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "UML/P Statecharts",
+              "evidence_id": "A5"
+            },
+            "concept": "Statechart like model",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 10366
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "LightRocks (Light Weight Robot Coding for Skills)",
+        "three different level of abstraction for robot programming",
+        "Statechart like model",
+        "generate code while hiding controller specific implementation details",
+        "generic graphical editor"
+      ],
+      "dataset": [],
+      "method": [
+        "Statechart like model",
+        "MontiCore",
+        "Eclipse plugin"
+      ],
+      "paper_id": "P003441",
+      "problem": [],
+      "task": [
+        "introduce robot programming language"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 29.43735071600031,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 10.040774046000024,
+      "input_tokens": 2792,
+      "output_tokens": 89
+    },
+    "paper_id": "P003441",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1,
+        2
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5258,
+      "output_tokens": 322
+    }
+  },
+  "record_sha256": "a3bb724a4eb07bed7a7e6ceebb021554920d9529c5d39ee5fee4aa055f2f1cf0",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

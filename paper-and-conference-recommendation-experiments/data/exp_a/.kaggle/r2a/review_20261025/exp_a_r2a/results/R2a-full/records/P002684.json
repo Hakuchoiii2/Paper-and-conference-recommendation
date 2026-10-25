@@ -1,0 +1,220 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002684\",\n  \"problem\": [\n    {\n      \"concept\": \"they encode this context in different ways, providing their respective models with different information\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"letter-to-phoneme conversion\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"name transliteration\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"joint n-gram features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"state-of-the-art discriminative sequence model\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"letter-to-phoneme data sets\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"transliteration data sets\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"include joint n-gram features inside a state-of-the-art discriminative sequence model\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 26.290661333000116,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002684\",\n  \"problem\": [\n    {\n      \"concept\": \"they encode this context in different ways, providing their respective models with different information\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"letter-to-phoneme conversion\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"name transliteration\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"joint n-gram features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"state-of-the-art discriminative sequence model\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"letter-to-phoneme data sets\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"transliteration data sets\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"include joint n-gram features inside a state-of-the-art discriminative sequence model\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 99.8413,
+          "seed": 8094,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2462,
+            "output_tokens": 322
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "include joint n-gram features inside a state-of-the-art discriminative sequence model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "letter-to-phoneme data sets",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "transliteration data sets",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "joint n-gram features",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "state-of-the-art discriminative sequence model",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002684",
+        "problem": [
+          {
+            "concept": "they encode this context in different ways, providing their respective models with different information",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "letter-to-phoneme conversion",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "name transliteration",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 26.290661333000116,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002684",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "letter-to-phoneme data sets",
+            "evidence": "We evaluate our approach on several letter-to-phoneme and transliteration data sets.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          },
+          {
+            "concept": "transliteration data sets",
+            "evidence": "We evaluate our approach on several letter-to-phoneme and transliteration data sets.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 8094,
+      "selected_score": 99.8413,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2462,
+        "output_tokens": 322
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "c26e89549645b4f8c29af31849eb4e8b7fedaf0aee9aab363e6afbf36823b733",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 8094
+      }
+    ],
+    "common_dataset_filter_removed": 2,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "include joint n-gram features inside a state-of-the-art discriminative sequence model",
+        "improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models"
+      ],
+      "dataset": [],
+      "method": [
+        "joint n-gram features",
+        "state-of-the-art discriminative sequence model"
+      ],
+      "paper_id": "P002684",
+      "problem": [
+        "they encode this context in different ways, providing their respective models with different information"
+      ],
+      "task": [
+        "letter-to-phoneme conversion",
+        "name transliteration"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 26.290661333000116,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P002684",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0,
+        1
+      ],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0,
+        1
+      ]
+    },
+    "usage": {
+      "input_tokens": 2462,
+      "output_tokens": 322
+    }
+  },
+  "record_sha256": "c2e75e52eaf17c6a3f7f0c1503a7ee542765d953390fb4bc228c46d3eece9c34",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

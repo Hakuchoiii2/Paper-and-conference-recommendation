@@ -1,0 +1,202 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001389\",\n  \"problem\": [\n    {\n      \"concept\": \"unsupervised identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"summarization of contention issues\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Joint Topic Viewpoint model (JTV)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"online debates documents\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Joint Topic Viewpoint model (JTV) for unsupervised identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"effectiveness of the proposed model to automatically and accurately detect recurrent patterns of arguing expressions\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.582325014000162,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001389\",\n  \"problem\": [\n    {\n      \"concept\": \"unsupervised identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"summarization of contention issues\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Joint Topic Viewpoint model (JTV)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"online debates documents\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Joint Topic Viewpoint model (JTV) for unsupervised identification and clustering of arguing expressions\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"effectiveness of the proposed model to automatically and accurately detect recurrent patterns of arguing expressions\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 99.7134,
+          "seed": 4209,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2393,
+            "output_tokens": 260
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Joint Topic Viewpoint model (JTV) for unsupervised identification and clustering of arguing expressions",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "effectiveness of the proposed model to automatically and accurately detect recurrent patterns of arguing expressions",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "online debates documents",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Joint Topic Viewpoint model (JTV)",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001389",
+        "problem": [
+          {
+            "concept": "unsupervised identification and clustering of arguing expressions",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "summarization of contention issues",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "identification and clustering of arguing expressions",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 21.582325014000162,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001389",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "online debates documents",
+            "evidence": "A set of experiments is conducted on online debates documents.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 4209,
+      "selected_score": 99.7134,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2393,
+        "output_tokens": 260
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "bd2a549ab165998a345b730d7ed6c5012a98f12d63a746aa87d73dc8f8caf556",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 4209
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "Joint Topic Viewpoint model (JTV) for unsupervised identification and clustering of arguing expressions",
+        "effectiveness of the proposed model to automatically and accurately detect recurrent patterns of arguing expressions"
+      ],
+      "dataset": [],
+      "method": [
+        "Joint Topic Viewpoint model (JTV)"
+      ],
+      "paper_id": "P001389",
+      "problem": [
+        "unsupervised identification and clustering of arguing expressions"
+      ],
+      "task": [
+        "summarization of contention issues",
+        "identification and clustering of arguing expressions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 21.582325014000162,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P001389",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0,
+        1
+      ]
+    },
+    "usage": {
+      "input_tokens": 2393,
+      "output_tokens": 260
+    }
+  },
+  "record_sha256": "4776103d3393c88670378cbe32ecc4a155254367a2e8b4305d08d5e8b41d1e2b",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

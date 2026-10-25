@@ -1,0 +1,154 @@
+{
+  "record": {
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002470\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.358989971000028,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002470\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 87.0394,
+          "seed": 7452,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2433,
+            "output_tokens": 148
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002470\", \"problem\": [], \"task\": [{\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.40152372900002,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002470\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 87.0394,
+          "seed": 7453,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3956,
+            "output_tokens": 148
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "co-word techniques to build a bridge between scientometrics and economics of innovation",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "publications in the polymer science field over 15 years",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "co-word analysis techniques",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "study interactions between academic and technological research",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 29.760513700000047,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "publications in the polymer science field over 15 years",
+            "evidence": "It is based upon a systematic content analysis of publications in the polymer science field over a period of 15 years.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7453,
+      "selected_score": 87.0394,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6389,
+        "output_tokens": 296
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "co-word techniques to build a bridge between scientometrics and economics of innovation"
+      ],
+      "dataset": [],
+      "method": [
+        "co-word analysis techniques"
+      ],
+      "paper_id": "P002470",
+      "problem": [],
+      "task": [
+        "study interactions between academic and technological research"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 29.760513700000047,
+    "paper_id": "P002470",
+    "usage": {
+      "input_tokens": 6389,
+      "output_tokens": 296
+    }
+  },
+  "record_sha256": "ff045f0cc2a9fff9726f5b98540aeefa09f9d2a3957555172691f056dd7e3de7",
+  "signature": "16ab9a393e639edcf1c6e576b94736cd0dde52fbac1f71b6d8bd5823700d14c5"
+}
