@@ -83,7 +83,5 @@ Dưới đây là bảng phân công chi tiết công việc cho Người 1 và 
 | **2.1** | Viết script tối ưu hóa trọng số w_B | Tạo `scripts/exp_b/tune_weights.py` dùng Grid Search / Scipy Optimize trên tập Train/Dev để tối đa hóa nDCG@10. | Script tự động tìm bộ trọng số `[w_prob, w_task, w_method, w_data, w_contrib]` tối ưu. |
 | **2.2** | Khóa (Freeze) cấu hình Downstream Ranker | Tạo file cấu hình chính thức `configs/exp_b_frozen.json` lưu bộ trọng số w_B* đã học và đường dẫn mô hình. | Cấu hình đóng băng cố định, không thay đổi trước khi chạy test. |
 | **2.3** | Đóng gói Module Ranker để chuyển giao | Đóng gói hàm chuẩn `evaluate_downstream_ranker(facet_data)` cho phép nhóm Exp A thử nghiệm các LLM khác (RQ3). | Module Python độc lập sẵn sàng tích hợp với Exp A và Conference. |
-| **2.4** | Soạn thảo Mục 4 và Mục 5 (Methodology and Results) trong Paper | Viết công thức toán S_w(q, d), mô tả 3 cấu hình Whole/Equal/Weighted, lập bảng kết quả nDCG@10. | Bản thảo Markdown Mục 4 và Mục 5 của bài báo. |
-
 ---
 
