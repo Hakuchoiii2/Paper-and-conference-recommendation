@@ -1,7 +1,9 @@
 """Run versioned conference datasets and replay source audits from local snapshots."""
 import argparse
 from collections import Counter
+import csv
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -12,6 +14,7 @@ import sys
 import tempfile
 
 HERE = Path(__file__).resolve().parent
+STATS_HEADING = '## Phân bố số bài theo hội nghị — tập 4'
 
 
 def run(stage, arguments):
@@ -28,6 +31,69 @@ def compare_baseline():
         (second[pid]['baseline_status'], second[pid]['baseline_conference_id']) for pid, r in first.items()):
         raise ValueError('Stage-2 baseline reconstruction differs from the frozen stage-1 labels')
     print(json.dumps(dict(frozen_baseline_comparison='passed', papers=len(first))))
+
+
+def conference_statistics(check=False):
+    out = HERE / '4_catalog_mapping/output'
+
+    def read(name):
+        with (out / name).open(encoding='utf-8') as stream:
+            return [json.loads(line) for line in stream if line.strip()]
+
+    links = read('paper_conference_links.jsonl')
+    catalog = read('conference_catalog.jsonl')
+    groups = read('conference_papers.jsonl')
+    if len({r['paper_id'] for r in links}) != len(links):
+        raise ValueError('Duplicate paper IDs in stage-4 statistics')
+    members = {}
+    for row in links:
+        if row['mapping_status'] == 'matched':
+            if not row['conference_id']:
+                raise ValueError('Matched paper has no conference ID')
+            members.setdefault(row['conference_id'], set()).add(row['paper_id'])
+    lookup = {r['conference_id']: r for r in catalog}
+    if len(lookup) != len(catalog) or set(lookup) != set(members):
+        raise ValueError('Stage-4 catalog does not match paper labels')
+    if len({g['conference_id'] for g in groups}) != len(groups) or {g['conference_id'] for g in groups} != set(members):
+        raise ValueError('Stage-4 conference groups are incomplete or duplicated')
+    for group in groups:
+        ids = group['paper_ids']
+        if len(ids) != len(set(ids)) or group['paper_count'] != len(ids) or set(ids) != members[group['conference_id']]:
+            raise ValueError('Stage-4 paper count/group membership differs from labels')
+
+    rows = [dict(conference_id=cid, acronym=lookup[cid]['acronym'],
+                 conference_name=lookup[cid]['canonical_name'], paper_count=len(ids))
+            for cid, ids in members.items()]
+    rows.sort(key=lambda r: (-r['paper_count'], r['conference_name'], r['conference_id']))
+    stream = io.StringIO(newline='')
+    writer = csv.DictWriter(stream, fieldnames=['conference_id', 'acronym', 'conference_name', 'paper_count'], lineterminator='\n')
+    writer.writeheader()
+    writer.writerows(rows)
+    expected = stream.getvalue().encode('utf-8-sig')
+    path = out / 'conference_statistics.csv'
+    if check:
+        if path.read_bytes() != expected:
+            raise ValueError('Stage-4 conference_statistics.csv differs from current labels')
+    else:
+        path.write_bytes(expected)
+
+    total = sum(r['paper_count'] for r in rows)
+    counts = [r['paper_count'] for r in rows]
+    lines = ['', STATS_HEADING, '',
+        'Chỉ đếm paper_id duy nhất có mapping_status=matched; mỗi ID hội nghị/joint được tính là một nhóm.', '',
+        f'Danh sách đầy đủ tên hội nghị và số bài, sắp giảm dần: [conference_statistics.csv]({path.as_posix()}).', '',
+        f'Tập 4 có **{len(rows)} hội nghị/joint**, **{total:,} bài conference**; mỗi hội nghị có **{min(counts) if counts else 0}–{max(counts) if counts else 0} bài**.', '',
+        '| Số bài/hội nghị | Số hội nghị/joint | Tổng số bài |', '|---|---:|---:|']
+    bins = [('1–4', 1, 4), ('5–9', 5, 9), ('10–19', 10, 19),
+            ('20–49', 20, 49), ('50–99', 50, 99), ('Từ 100', 100, None)]
+    for label, low, high in bins:
+        selected = [n for n in counts if n >= low and (high is None or n <= high)]
+        lines.append(f'| {label} | {len(selected)} | {sum(selected):,} |')
+    lines += [f'| **Tổng** | **{len(rows)}** | **{total:,}** |', '',
+        f'Có **{sum(n >= 10 for n in counts)} hội nghị từ 10 bài trở lên**, tương ứng **{sum(n for n in counts if n >= 10):,} bài**; đây là thống kê mô tả, chưa áp ngưỡng chọn hội nghị thực nghiệm.', '',
+        'Chạy riêng phần thống kê và cập nhật báo cáo: `python run_pipeline.py --stats-only`.', '']
+    print(json.dumps(dict(conference_statistics='passed' if check else 'updated', conferences=len(rows), papers=total)))
+    return lines
 
 
 def dataset_report(check=False):
@@ -67,11 +133,20 @@ def dataset_report(check=False):
         f"Năm được nối trực tiếp từ `metadata.year` của mọi alias raw thành `year` (số nguyên 1000–2100). Raw có {raw_missing} bản ghi thiếu năm và {len(raw)-raw_known-raw_missing} giá trị không hợp lệ. Sau gộp, mỗi bản có {years['available']:,} bài chốt được năm, {years['missing']} bài thiếu và {years['conflicting']} bài có các năm nguồn mâu thuẫn; hai nhóm cuối để `year=null`. Các năm khác nhau được giữ trong `year_candidates` và thông tin nguồn trong `evidence`.", '',
         f'Bài conference chốt được năm: {coverage}.', '',
         '`year` là năm từ dataset gốc, không mặc định là năm tổ chức hội nghị. `publication_year` là trường riêng cho năm được metadata xuất bản ủng hộ; bước nối raw không ghi đè trường này. Nhãn hội nghị không thay đổi khi nối năm.', '',
+        '## Lưu ý khi chọn cách dựng dataset', '',
+        '- **Cách 2 — enrichment:** có thể dùng khi nối đúng bài/phiên bản, xác minh venue/track và đánh giá riêng nhãn bổ sung; chưa nên dùng nguyên bản 2 làm nhãn chuẩn vì rule cũ chưa hợp nhất các sửa mới và chưa có kiểm định độc lập. Luồng hiện tại là DOI gốc hoặc CorpusId → DOI → Crossref, chưa tra trực tiếp arXiv ID.',
+        '- DOI của preprint arXiv không chứng minh đã xuất bản ở conference; phải phân biệt với DOI bản xuất bản và giữ chứng cứ nguồn. Xem [hướng dẫn DOI arXiv](https://info.arxiv.org/help/doi.html).',
+        '- **Cách 3 — kiểm tra mapping:** đủ làm baseline thử nghiệm ban đầu, chưa đủ tuyên bố toàn bộ nhãn đã đúng; phần tên mở rộng ở bản 4 cũng cần đánh giá. Để chốt tập thực nghiệm cần chọn hội nghị đủ dữ liệu, kiểm tra mẫu độc lập, xử lý trùng/phiên bản và chốt split; profile chỉ dùng train.',
+        '- Không cần ép giải quyết hết unresolved: có thể chốt một tập con đủ căn cứ và báo rõ phần loại/thiếu. Chi tiết điều kiện dùng enrichment và kiểm định ở [restriction.md]('+ (HERE/'restriction.md').as_posix()+').', '',
         '## Tái lập', '',
         'Giữ bộ raw, corpus chung, bảng mapping và hồ sơ metadata/đối chiếu nguồn đi kèm. Chạy tại thư mục chứa báo cáo; mặc định không truy cập mạng và không dùng kết quả của các thư mục thử nghiệm cũ:', '',
         '```powershell', 'python 1_raw_mapping/preprocess_cube.py', 'python run_pipeline.py --audit',
         'python run_pipeline.py --check --check-isolated', '```', '',
         'Báo cáo này được lệnh chung tạo lại từ output thực tế. Có kiểm tra nguồn/ID, năm, tổng đếm, nhãn, hash và khả năng tái lập. Bản 3 dùng làm baseline đã sửa theo nguồn; chưa phải nhãn được người chấm độc lập xác nhận toàn bộ, chưa đo precision/recall nhãn.', '']
+    if '4_catalog_mapping' in stages:
+        if lines and lines[-1] == '':
+            lines.pop()
+        lines += conference_statistics(check=check)
     expected = '\n'.join(lines)
     path = HERE / 'Report_dataset.md'
     if check:
@@ -132,6 +207,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Verify all generated versions without changing files')
     parser.add_argument('--check-isolated', action='store_true', help='Also rebuild in a temporary directory while blocking network and old outputs')
+    parser.add_argument('--stats-only', action='store_true', help='Summarize stage-4 conference paper counts and update the report without rebuilding datasets')
     parser.add_argument('--audit-raw', action='store_true', help='Replay the source audit offline and rebuild the reviewed version')
     parser.add_argument('--audit', action='store_true', help='Replay both raw and enrichment sample audits offline, then rebuild the reviewed version')
     parser.add_argument('--import-cache', type=Path, help='One-time bootstrap from old original API caches')
@@ -140,6 +216,23 @@ def main():
     parser.add_argument('--limit', type=int, default=50)
     args = parser.parse_args()
     checking = args.check or args.check_isolated
+    if args.stats_only:
+        if args.import_cache or args.prepare_mapping or args.fetch_missing or args.audit_raw or args.audit or args.check_isolated:
+            parser.error('--stats-only cannot be combined with pipeline rebuild or isolated-check options')
+        if not (HERE/'4_catalog_mapping/output/manifest.json').exists():
+            parser.error('Stage-4 outputs are required for --stats-only')
+        footer = conference_statistics(check=args.check)
+        path = HERE/'Report_dataset.md'
+        current = path.read_text(encoding='utf-8') if path.exists() else '# Tổng hợp dataset cho Conference Recommendation\n'
+        prefix = current.split('\n'+STATS_HEADING, 1)[0].rstrip('\n')
+        expected = prefix+'\n'+'\n'.join(footer)
+        if args.check:
+            if current != expected:
+                raise ValueError('Stage-4 statistics footer differs from current counts')
+        else:
+            path.write_text(expected,encoding='utf-8')
+        print(json.dumps(dict(dataset_report='passed' if args.check else 'updated',scope='stage_4_statistics')))
+        return
     if checking and (args.import_cache or args.prepare_mapping or args.fetch_missing or args.audit_raw or args.audit):
         parser.error('--check cannot be combined with input-changing options')
     base_manifest = HERE / '1_raw_mapping/output/manifest.json'
