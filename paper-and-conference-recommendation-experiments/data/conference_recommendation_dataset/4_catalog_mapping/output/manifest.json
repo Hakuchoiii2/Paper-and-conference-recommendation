@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.2.0",
+  "dataset_version": "1.2.0",
+  "source": "csfcube",
+  "generated_at": "2026-10-30T11:31:18.388986+00:00",
+  "verification_level": "raw_names_with_external_directory_and_inherited_corrections",
+  "network_requests": 0,
+  "llm_calls": 0,
+  "human_paper_review_performed": false,
+  "input_paths": {
+    "raw": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\abstracts-csfcube-preds.jsonl",
+    "source_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\source_manifest.json",
+    "papers": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\papers.jsonl",
+    "id_map": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\id_map.jsonl",
+    "review_overrides": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\inherited\\paper_review_overrides.csv",
+    "review_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\inherited\\manifest.json",
+    "review_cache": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\inherited\\source_cache.jsonl",
+    "venue_directory": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\venue_directory.jsonl",
+    "directory_sources": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\venue_sources.jsonl",
+    "directory_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\review\\catalog_manifest.json",
+    "directory_script": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\4_catalog_mapping\\audit_mapping.py"
+  },
+  "input_hashes": {
+    "raw": "5128d311b6a1f975614fcb98c3c4fd025d3a9c7b39d1b9a41d5a0e47b0e35732",
+    "source_manifest": "1d624510f2cbf0846706383f2edaa5f3700c74f4525d816f89ed4771a1927225",
+    "papers": "6aa27158f22f99d3b4d6f0850cd49e3d788fd63a9cfdf6c8df10238912faccfe",
+    "id_map": "15848e223382fce8b027df5de882ee1be3e0390a3977832f4e18bd35efcc2903",
+    "review_overrides": "55c61f7ae342288386396008365e56ceafc3c006b409e9cd1c00211142ca3ced",
+    "review_manifest": "0219ae073b9d01f45cbd38a0618acdcb63f00ca62ff177f1f6b75ea7010d54fe",
+    "review_cache": "29aed0490a2d29229009572edeeddafc6823d10360f86623320a5da40591bf8e",
+    "venue_directory": "343e17c997c5e6bc7d7846aefc29812fb8b2d6c661a85fed1c27b4e533431ea7",
+    "directory_sources": "ddd7bb34bb9df1434c44f629db275c328b4ce198b128a68e78561c0c737b9144",
+    "directory_manifest": "ab347ba9129b0d84f3314115fa4622be7c8e9e2f378bc909c4ca25b5b959a4f6",
+    "directory_script": "1abb3fcfd9358634e3b4d764aa2884f05972f29f6be5d096260e2104dedf36a5"
+  },
+  "code_and_mapping_hashes": {
+    "mapping": "030827c7cd3e8474ef886e8e4cf1c330f96d436f370758a9f29ca72cf4863a7e",
+    "script": "0c4fc806c4c2ef25dfee4b78d3dfc2d93c7a88669b5a421b011f28925462b493"
+  },
+  "counts": {
+    "raw_records": 4207,
+    "canonical_papers": 4182,
+    "source_aliases": 4207,
+    "duplicate_excess": 25,
+    "venue_mapping_rows": 1646,
+    "conferences": 171,
+    "statuses": {
+      "excluded": 1083,
+      "matched": 1144,
+      "unresolved": 1955
+    },
+    "venue_types": {
+      "workshop": 235,
+      "conference": 1144,
+      "journal": 834,
+      "preprint": 1118,
+      "unknown": 837,
+      "auxiliary": 14
+    },
+    "year_statuses": {
+      "available": 4173,
+      "conflicting": 7,
+      "missing": 2
+    },
+    "matched_with_year": 1143,
+    "reasons": {
+      "consistent_raw_aliases": 2225,
+      "missing_or_preprint_only": 1364,
+      "unresolved_alias_venue": 588,
+      "source_audit_publication_conflict_review": 1,
+      "source_audit_outside_main": 1,
+      "source_audit_different_conference": 1,
+      "conflicting_alias_venues": 2
+    },
+    "mapping_review_statuses": {
+      "unreviewed": 1423,
+      "rule_reviewed": 223
+    },
+    "paper_source_corrections": 3,
+    "verification_levels": {
+      "raw_mapping": 4179,
+      "source_checked": 3
+    }
+  },
+  "directory_entries": 2698,
+  "paper_enrichment": false,
+  "arxiv_lookups": 0,
+  "checks": {
+    "source_and_alias_integrity": true,
+    "raw_evidence_preserved": true,
+    "grouping_consistent": true,
+    "inputs_unchanged": true,
+    "self_tests_passed": 59,
+    "semantic_label_accuracy": "not_measured"
+  },
+  "output_hashes": {
+    "paper_conference_links.jsonl": "3787981b1df3101207c2a477749557a7ddb03dd81c5262b66578f9467af75b61",
+    "conference_catalog.jsonl": "a6c0333bfedce0766c7fde04d35f71043cc7dad0bfdd79d765a3117b9c89d449",
+    "conference_papers.jsonl": "f113ce04825a47f6ffb7e411667bdb0ecf4cad7ff7278a551d1a4de010982bb5",
+    "report.md": "d5530f585944f127a8dce1f608abfdb82b0a15e95e3aaf25247127fff7c48440",
+    "comparison.csv": "dedf6a9aa1a51460faf81392d85d2a1058faa01731249106cf2f48d528b0177a",
+    "raw_inventory.json": "5f0542e45750cc1a91a3bdec8735f13f425b46e6ad62b6ddb4841d2285ab944b"
+  }
+}

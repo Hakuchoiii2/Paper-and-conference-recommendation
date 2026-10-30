@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.1",
+  "dataset_version": "1.0.1",
+  "source": "csfcube",
+  "generated_at": "2026-10-30T10:39:03.669469+00:00",
+  "verification_level": "raw_mapping",
+  "network_requests": 0,
+  "llm_calls": 0,
+  "human_paper_review_performed": false,
+  "input_paths": {
+    "raw": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\abstracts-csfcube-preds.jsonl",
+    "source_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\source_manifest.json",
+    "papers": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\papers.jsonl",
+    "id_map": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\id_map.jsonl"
+  },
+  "input_hashes": {
+    "raw": "5128d311b6a1f975614fcb98c3c4fd025d3a9c7b39d1b9a41d5a0e47b0e35732",
+    "source_manifest": "1d624510f2cbf0846706383f2edaa5f3700c74f4525d816f89ed4771a1927225",
+    "papers": "6aa27158f22f99d3b4d6f0850cd49e3d788fd63a9cfdf6c8df10238912faccfe",
+    "id_map": "15848e223382fce8b027df5de882ee1be3e0390a3977832f4e18bd35efcc2903"
+  },
+  "code_and_mapping_hashes": {
+    "mapping": "f7a9a858588aaa3fb34ae631f0ea186bced7c8cce03e046bee81f7c2cdfc6d75",
+    "script": "9a84339bb227030182c1e6a59a3716c98fedc82222ba2b844b608c198d4efb0b"
+  },
+  "counts": {
+    "raw_records": 4207,
+    "canonical_papers": 4182,
+    "source_aliases": 4207,
+    "duplicate_excess": 25,
+    "venue_mapping_rows": 1646,
+    "conferences": 34,
+    "statuses": {
+      "unresolved": 2489,
+      "excluded": 809,
+      "matched": 884
+    },
+    "venue_types": {
+      "unknown": 1371,
+      "workshop": 149,
+      "journal": 646,
+      "preprint": 1118,
+      "conference": 884,
+      "auxiliary": 14
+    },
+    "year_statuses": {
+      "available": 4173,
+      "conflicting": 7,
+      "missing": 2
+    },
+    "matched_with_year": 883,
+    "reasons": {
+      "unresolved_alias_venue": 1124,
+      "consistent_raw_aliases": 1693,
+      "missing_or_preprint_only": 1364,
+      "conflicting_alias_venues": 1
+    },
+    "mapping_review_statuses": {
+      "unreviewed": 1646
+    }
+  },
+  "checks": {
+    "source_and_alias_integrity": true,
+    "raw_evidence_preserved": true,
+    "grouping_consistent": true,
+    "inputs_unchanged": true,
+    "self_tests_passed": 45,
+    "semantic_label_accuracy": "not_measured"
+  },
+  "output_hashes": {
+    "paper_conference_links.jsonl": "ea2f6d22693856021ff71803774d1113c5d7bf419c8c06ae1a8a88f34b371173",
+    "conference_catalog.jsonl": "8d7ee3aacb84378b2ec9ff99a0616b255c8a7b5b32480c48c7bfbb335c0ad731",
+    "conference_papers.jsonl": "942c2e43402b89dda1ad4e19b69ccb2068bfefd740f12948a5f2f3e0becc7bbe",
+    "report.md": "4d4429a10b0115e456aa5e52f2ec98aca6e6154fa70cf304b7937de03218132e"
+  }
+}
