@@ -96,6 +96,39 @@ def conference_statistics(check=False):
     return lines
 
 
+def version5_statistics():
+    """Summarize frozen stage-5 outputs without changing review/split artifacts."""
+    stage = HERE / '5_mapping_reviewed'
+    with (stage / 'output/conference_statistics.csv').open(encoding='utf-8-sig', newline='') as stream:
+        rows = list(csv.DictReader(stream))
+    counts = [int(row['paper_count']) for row in rows]
+    links = [json.loads(line) for line in (stage / 'output/paper_conference_links.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
+    actual = Counter(row['conference_id'] for row in links if row['mapping_status'] == 'matched')
+    if len(rows) != len(actual) or {row['conference_id']: int(row['paper_count']) for row in rows} != dict(actual):
+        raise ValueError('Stage-5 statistics differ from current labels')
+    candidates = [n for n in counts if n >= 5]
+    lines = ['## Phân bố số bài theo hội nghị — tập 5', '',
+        f'Chỉ đếm bài `matched`, mỗi `paper_id` một lần và mỗi ID hội nghị/joint một nhóm: **{len(rows)} hội nghị/joint, {sum(counts):,} bài**, từ **{min(counts)}–{max(counts)} bài/nhóm**. Chi tiết từng hội nghị: [conference_statistics.csv](5_mapping_reviewed/output/conference_statistics.csv).', '',
+        '| Số bài/hội nghị | Số hội nghị/joint | Tổng số bài |', '|---|---:|---:|']
+    for label, low, high in [('1–4', 1, 4), ('5–9', 5, 9), ('10–19', 10, 19), ('20–49', 20, 49), ('50–99', 50, 99), ('Từ 100', 100, None)]:
+        selected = [n for n in counts if n >= low and (high is None or n <= high)]
+        lines.append(f'| {label} | {len(selected)} | {sum(selected):,} |')
+    lines += [f'| **Tổng** | **{len(rows)}** | **{sum(counts):,}** |', '',
+        f'Ngưỡng **n ≥ 5** cho **{len(candidates)} hội nghị, {sum(candidates):,} bài** ({sum(candidates)/sum(counts):.1%} số bài matched); đây là tập ứng viên trước khi lọc năm và kiểm tra tối thiểu train/test.', '']
+    split = stage / 'splits/temporal_2015_2016_2019'
+    if (split / 'manifest.json').exists():
+        manifest = json.loads((split / 'manifest.json').read_text(encoding='utf-8'))
+        config, totals = manifest['config'], manifest['counts']
+        lines += ['### Chia train/test của tập 5', '',
+            f'Chỉ dùng `matched` đã review, lấy năm từ `raw.metadata.year`: **train ≤ {config["train_year_max"]}**, **test {config["test_year_min"]}–{config["test_year_max"]}**. Hội nghị phải có tổng ≥ {config["min_matched_per_conference"]} bài matched và ít nhất **{config["min_train_per_conference"]} train + {config["min_test_per_conference"]} test**; không đủ thì loại cả hội nghị. Bỏ bài thiếu/mâu thuẫn năm hoặc ngoài khoảng năm; không chia ngẫu nhiên, không bổ sung năm từ web.', '',
+            '| Phần dữ liệu | Số hội nghị | Số bài |', '|---|---:|---:|',
+            f'| Train | {totals["selected_conferences"]} | {totals["train"]:,} |',
+            f'| Test | {totals["selected_conferences"]} | {totals["test"]:,} |',
+            f'| **Tổng, cùng tập hội nghị** | **{totals["selected_conferences"]}** | **{totals["selected_papers"]:,}** |', '',
+            f'Còn {totals["reviewed_matched"]-totals["selected_papers"]:,} bài matched không vào split. Chi tiết số train/test từng hội nghị: [conference_split_statistics.csv](5_mapping_reviewed/splits/temporal_2015_2016_2019/conference_split_statistics.csv). Dữ liệu nằm trong `5_mapping_reviewed/splits/temporal_2015_2016_2019/`; chỉ dùng train xây profile K-Medoids, test để đánh giá. Chưa tạo dev.', '']
+    return lines
+
+
 def dataset_report(check=False):
     def read(path):
         with path.open(encoding='utf-8') as stream:
@@ -104,19 +137,22 @@ def dataset_report(check=False):
     stages = ['1_raw_mapping', '2_mapping_enriched', '3_mapping_reviewed']
     if (HERE/'4_catalog_mapping/review/catalog_manifest.json').exists():
         stages.append('4_catalog_mapping')
+    if (HERE/'5_mapping_reviewed/output/manifest.json').exists():
+        stages.append('5_mapping_reviewed')
     raw = read(HERE.parent / 'raw/csfcube/abstracts-csfcube-preds.jsonl')
     parse_year = runpy.run_path(str(HERE / stages[0] / 'preprocess_cube.py'))['parse_raw_year']
     raw_known = sum(parse_year((r.get('metadata') or {}).get('year')) is not None for r in raw)
     raw_missing = sum((r.get('metadata') or {}).get('year') is None or str(r['metadata']['year']).strip() == '' for r in raw)
     links = {stage: read(HERE / stage / 'output/paper_conference_links.jsonl') for stage in stages}
     lines = ['# Tổng hợp dataset cho Conference Recommendation', '',
-        'Phạm vi: chỉ CSFCube, dùng title + abstract để gợi ý hội nghị. Chưa bổ sung rank, chia train/dev/test hoặc xây profile hội nghị.', '',
+        'Phạm vi: chỉ CSFCube, dùng title + abstract để gợi ý hội nghị. Bản 5 đã review mapping và chia train/test theo năm raw; chưa tạo dev, bổ sung rank hoặc xây profile hội nghị.' if '5_mapping_reviewed' in stages else 'Phạm vi: chỉ CSFCube, dùng title + abstract để gợi ý hội nghị. Chưa bổ sung rank, chia train/dev/test hoặc xây profile hội nghị.', '',
         '## Cách tạo các phiên bản', '',
         'Dùng phần CSFCube đã tiền xử lý chung: làm sạch văn bản, gộp trùng và giữ ID. Nối từng bài về các bản ghi raw bằng source ID; giữ nguyên văn bản và thông tin nguồn.', '',
         '1. **1_raw_mapping:** đọc venue có sẵn, chuẩn hóa/mapping tên hội nghị; tách journal/workshop/ấn phẩm phụ và các bài chưa rõ.',
         '2. **2_mapping_enriched:** mở rộng alias, nối metadata theo DOI hoặc CorpusId → DOI; đối chiếu title và tác giả khi có, rồi xét lại venue. Trường hợp mâu thuẫn hoặc không đủ căn cứ được giữ chưa rõ.',
         '3. **3_mapping_reviewed:** kế thừa bản 1, đối chiếu 223 alias và mẫu 169 bài với nguồn; sửa hai quy tắc tên và ba trường hợp cụ thể. Chưa hợp nhất enrichment của bản 2.',
-        *(['4. **4_catalog_mapping:** kế thừa bản 3, mở rộng tên venue raw bằng danh mục ICORE, ACL Anthology và tên journal Crossref khớp đầy đủ; không tìm thêm bài hoặc lần ngược arXiv.'] if len(stages)>3 else []), '',
+        *(['4. **4_catalog_mapping:** kế thừa bản 3, mở rộng tên venue raw bằng danh mục ICORE, ACL Anthology và tên journal Crossref khớp đầy đủ; không tìm thêm bài hoặc lần ngược arXiv.'] if '4_catalog_mapping' in stages else []),
+        *(['5. **5_mapping_reviewed:** review toàn bộ 1.144 bài matched và 446 alias matched của bản 4: đọc venue/journal raw, đối chiếu danh tính bài và venue/track với nguồn; AI xét các trường hợp cần phân xử. Sửa 26 ID joint, chuyển 36 bài ngoài đích và 18 bài chưa đủ căn cứ; giữ 1.090 matched. Không mở rộng tập mapping, không đổi năm/văn bản raw. Chi tiết: [phương pháp review bản 5](5_mapping_reviewed/METHOD_REVIEW_V5.md).'] if '5_mapping_reviewed' in stages else []), '',
         '## Thống kê', '',
         '| Tập dữ liệu | Tổng bản ghi/bài | Conference | Ngoài đích | Chưa rõ | Hội nghị/joint | Có năm raw chốt được |',
         '|---|---:|---:|---:|---:|---:|---:|',
@@ -136,24 +172,28 @@ def dataset_report(check=False):
         '## Lưu ý khi chọn cách dựng dataset', '',
         '- **Cách 2 — enrichment:** có thể dùng khi nối đúng bài/phiên bản, xác minh venue/track và đánh giá riêng nhãn bổ sung; chưa nên dùng nguyên bản 2 làm nhãn chuẩn vì rule cũ chưa hợp nhất các sửa mới và chưa có kiểm định độc lập. Luồng hiện tại là DOI gốc hoặc CorpusId → DOI → Crossref, chưa tra trực tiếp arXiv ID.',
         '- DOI của preprint arXiv không chứng minh đã xuất bản ở conference; phải phân biệt với DOI bản xuất bản và giữ chứng cứ nguồn. Xem [hướng dẫn DOI arXiv](https://info.arxiv.org/help/doi.html).',
-        '- **Cách 3 — kiểm tra mapping:** đủ làm baseline thử nghiệm ban đầu, chưa đủ tuyên bố toàn bộ nhãn đã đúng; phần tên mở rộng ở bản 4 cũng cần đánh giá. Để chốt tập thực nghiệm cần chọn hội nghị đủ dữ liệu, kiểm tra mẫu độc lập, xử lý trùng/phiên bản và chốt split; profile chỉ dùng train.',
+        '- **Bản 5 — tập thực nghiệm:** đã rà soát toàn bộ matched của bản 4, giữ chứng cứ và tách các ca chưa chắc chắn; đủ dùng tiếp cho thực nghiệm và mô tả phương pháp trong bài báo. Đây là nhãn đối chiếu nguồn kết hợp AI review, chưa phải gold do người chấm độc lập xác nhận; chưa đo precision/recall nhãn. Profile chỉ dùng train.' if '5_mapping_reviewed' in stages else '- **Cách 3 — kiểm tra mapping:** đủ làm baseline thử nghiệm ban đầu, chưa đủ tuyên bố toàn bộ nhãn đã đúng; phần tên mở rộng ở bản 4 cũng cần đánh giá. Để chốt tập thực nghiệm cần chọn hội nghị đủ dữ liệu, kiểm tra mẫu độc lập, xử lý trùng/phiên bản và chốt split; profile chỉ dùng train.',
         '- Không cần ép giải quyết hết unresolved: có thể chốt một tập con đủ căn cứ và báo rõ phần loại/thiếu. Chi tiết điều kiện dùng enrichment và kiểm định ở [restriction.md]('+ (HERE/'restriction.md').as_posix()+').', '',
         '## Tái lập', '',
         'Giữ bộ raw, corpus chung, bảng mapping và hồ sơ metadata/đối chiếu nguồn đi kèm. Chạy tại thư mục chứa báo cáo; mặc định không truy cập mạng và không dùng kết quả của các thư mục thử nghiệm cũ:', '',
         '```powershell', 'python 1_raw_mapping/preprocess_cube.py', 'python run_pipeline.py --audit',
-        'python run_pipeline.py --check --check-isolated', '```', '',
-        'Báo cáo này được lệnh chung tạo lại từ output thực tế. Có kiểm tra nguồn/ID, năm, tổng đếm, nhãn, hash và khả năng tái lập. Bản 3 dùng làm baseline đã sửa theo nguồn; chưa phải nhãn được người chấm độc lập xác nhận toàn bộ, chưa đo precision/recall nhãn.', '']
+        'python run_pipeline.py --check --check-isolated',
+        *(['python 5_mapping_reviewed/review_mapping.py --check', 'python 5_mapping_reviewed/split_temporal.py --check'] if '5_mapping_reviewed' in stages else []),
+        '```', '',
+        'Báo cáo tạo lại từ output thực tế; các lệnh kiểm tra bản 5 xác nhận hồ sơ review, hash và split tái lập được. Kết quả kiểm tra kỹ thuật không thay thế đánh giá độ chính xác nhãn độc lập.' if '5_mapping_reviewed' in stages else 'Báo cáo này được lệnh chung tạo lại từ output thực tế. Có kiểm tra nguồn/ID, năm, tổng đếm, nhãn, hash và khả năng tái lập. Bản 3 dùng làm baseline đã sửa theo nguồn; chưa phải nhãn được người chấm độc lập xác nhận toàn bộ, chưa đo precision/recall nhãn.', '']
     if '4_catalog_mapping' in stages:
         if lines and lines[-1] == '':
             lines.pop()
         lines += conference_statistics(check=check)
+    if '5_mapping_reviewed' in stages:
+        lines += version5_statistics()
     expected = '\n'.join(lines)
     path = HERE / 'Report_dataset.md'
     if check:
         if path.read_text(encoding='utf-8') != expected:
             raise ValueError('Report_dataset.md differs from current datasets')
     else:
-        path.write_text(expected, encoding='utf-8')
+        path.write_text(expected, encoding='utf-8', newline='\n')
     print(json.dumps(dict(dataset_report='passed' if check else 'updated')))
 
 
@@ -207,7 +247,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Verify all generated versions without changing files')
     parser.add_argument('--check-isolated', action='store_true', help='Also rebuild in a temporary directory while blocking network and old outputs')
-    parser.add_argument('--stats-only', action='store_true', help='Summarize stage-4 conference paper counts and update the report without rebuilding datasets')
+    parser.add_argument('--stats-only', action='store_true', help='Update the dataset report and available conference/split statistics without rebuilding datasets')
     parser.add_argument('--audit-raw', action='store_true', help='Replay the source audit offline and rebuild the reviewed version')
     parser.add_argument('--audit', action='store_true', help='Replay both raw and enrichment sample audits offline, then rebuild the reviewed version')
     parser.add_argument('--import-cache', type=Path, help='One-time bootstrap from old original API caches')
@@ -221,17 +261,7 @@ def main():
             parser.error('--stats-only cannot be combined with pipeline rebuild or isolated-check options')
         if not (HERE/'4_catalog_mapping/output/manifest.json').exists():
             parser.error('Stage-4 outputs are required for --stats-only')
-        footer = conference_statistics(check=args.check)
-        path = HERE/'Report_dataset.md'
-        current = path.read_text(encoding='utf-8') if path.exists() else '# Tổng hợp dataset cho Conference Recommendation\n'
-        prefix = current.split('\n'+STATS_HEADING, 1)[0].rstrip('\n')
-        expected = prefix+'\n'+'\n'.join(footer)
-        if args.check:
-            if current != expected:
-                raise ValueError('Stage-4 statistics footer differs from current counts')
-        else:
-            path.write_text(expected,encoding='utf-8')
-        print(json.dumps(dict(dataset_report='passed' if args.check else 'updated',scope='stage_4_statistics')))
+        dataset_report(check=args.check)
         return
     if checking and (args.import_cache or args.prepare_mapping or args.fetch_missing or args.audit_raw or args.audit):
         parser.error('--check cannot be combined with input-changing options')
