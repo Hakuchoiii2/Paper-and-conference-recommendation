@@ -1,0 +1,25 @@
+{
+  "description": "Cấu hình thực nghiệm Khuyến nghị Hội nghị Khoa học (Conference Recommendation) dựa trên 5 Facets",
+  "dataset_split_dir": "data/conference_recommendation_dataset/5_mapping_reviewed/splits/temporal_2015_2016_2019",
+  "facets_path": "data/exp_a/generated/facets_silver.jsonl",
+  "output_dir": "results/conference_recommendation",
+  "algorithm": "gated_knn",
+  "k_neighbors": 10,
+  "context_gate": {
+    "tau": 0.45,
+    "kappa": 10.0
+  },
+  "facet_weights": {
+    "task": 0.3,
+    "method": 0.3,
+    "dataset": 0.2,
+    "contribution": 0.2
+  },
+  "feature_type": "tfidf",
+  "embedding_model": "allenai/specter2_base",
+  "embedding_path": null,
+  "evaluation": {
+    "top_k_list": [1, 3, 5],
+    "macro_average": true
+  }
+}
