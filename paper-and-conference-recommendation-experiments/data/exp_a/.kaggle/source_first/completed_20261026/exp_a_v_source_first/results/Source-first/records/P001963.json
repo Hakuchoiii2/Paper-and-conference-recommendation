@@ -1,0 +1,220 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 18.632395202999987,
+          "messages_sha256": "6b59833a08f59ad4804646bbdc7beadece54be6a1522f4904576f8c257c9eaf1",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001963\", \"problem\": [], \"task\": [{\"concept\": \"uncovering the connections between structure and function of complex networks\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"TTR-LDA-Community model\", \"evidence_id\": \"A1\"}, {\"concept\": \"Latent Dirichlet Allocation model (LDA)\", \"evidence_id\": \"A1\"}, {\"concept\": \"Girvan-Newman community detection algorithm\", \"evidence_id\": \"A1\"}, {\"concept\": \"inference mechanism\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Delicious, a popular social tagging system\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"TTR-LDA-Community model is meaningful for understanding communities\", \"evidence_id\": \"A4\"}, {\"concept\": \"TTR-LDA-Community model outperforms TTR-LDA and LDA models in tag prediction\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 87.8026,
+          "seed": 5933,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2301,
+            "output_tokens": 227
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "TTR-LDA-Community model is meaningful for understanding communities",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "TTR-LDA-Community model outperforms TTR-LDA and LDA models in tag prediction",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Delicious, a popular social tagging system",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "TTR-LDA-Community model",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Latent Dirichlet Allocation model (LDA)",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Girvan-Newman community detection algorithm",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "inference mechanism",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001963",
+        "problem": [],
+        "task": [
+          {
+            "concept": "uncovering the connections between structure and function of complex networks",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 63.12805390299991,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001963",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Delicious, a popular social tagging system",
+            "evidence": "The model is then applied to data from Delicious, a popular social tagging system, over the time period of 2005-2008.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 87.8026,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3530,
+        "output_tokens": 817
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.32338416199991,
+        "messages_sha256": "2b688127c1245044a4c03aadf47fca51f93e692e6033b308b593d56c6d1673d9",
+        "raw_output": "{\"paper_id\":\"P001963\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Exploring community is fundamental for uncovering the connections between structure and function of complex networks and for practical applications in many disciplines such as biology and sociology.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose a TTR-LDA-Community model which combines the Latent Dirichlet Allocation model (LDA) and the Girvan-Newman community detection algorithm with an inference mechanism.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"The model is then applied to data from Delicious, a popular social tagging system, over the time period of 2005-2008.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Our results show that 1) users in the same community tend to be interested in similar set of topics in all time periods; and 2) topics may divide into several sub-topics and scatter into different communities over time.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We evaluate the effectiveness of our model and show that the TTR-LDA-Community model is meaningful for understanding communities and outperforms TTR-LDA and LDA models in tag prediction.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5931,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 604,
+          "output_tokens": 295
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.17227453800001,
+        "messages_sha256": "8f46b578a6f84bf899f74b0002385192165adac854e26b12e96753a93ed4d8b8",
+        "raw_output": "{\"paper_id\":\"P001963\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Exploring community is fundamental for uncovering the connections between structure and function of complex networks and for practical applications in many disciplines such as biology and sociology.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose a TTR-LDA-Community model which combines the Latent Dirichlet Allocation model (LDA) and the Girvan-Newman community detection algorithm with an inference mechanism.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"The model is then applied to data from Delicious, a popular social tagging system, over the time period of 2005-2008.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Our results show that 1) users in the same community tend to be interested in similar set of topics in all time periods; and 2) topics may divide into several sub-topics and scatter into different communities over time.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We evaluate the effectiveness of our model and show that the TTR-LDA-Community model is meaningful for understanding communities and outperforms TTR-LDA and LDA models in tag prediction.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5932,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 625,
+          "output_tokens": 295
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.632395202999987,
+        "messages_sha256": "6b59833a08f59ad4804646bbdc7beadece54be6a1522f4904576f8c257c9eaf1",
+        "raw_output": "{\"paper_id\": \"P001963\", \"problem\": [], \"task\": [{\"concept\": \"uncovering the connections between structure and function of complex networks\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"TTR-LDA-Community model\", \"evidence_id\": \"A1\"}, {\"concept\": \"Latent Dirichlet Allocation model (LDA)\", \"evidence_id\": \"A1\"}, {\"concept\": \"Girvan-Newman community detection algorithm\", \"evidence_id\": \"A1\"}, {\"concept\": \"inference mechanism\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Delicious, a popular social tagging system\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"TTR-LDA-Community model is meaningful for understanding communities\", \"evidence_id\": \"A4\"}, {\"concept\": \"TTR-LDA-Community model outperforms TTR-LDA and LDA models in tag prediction\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 5933,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2301,
+          "output_tokens": 227
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "TTR-LDA-Community model is meaningful for understanding communities",
+        "TTR-LDA-Community model outperforms TTR-LDA and LDA models in tag prediction"
+      ],
+      "dataset": [],
+      "method": [
+        "TTR-LDA-Community model",
+        "Latent Dirichlet Allocation model (LDA)",
+        "Girvan-Newman community detection algorithm",
+        "inference mechanism"
+      ],
+      "paper_id": "P001963",
+      "problem": [],
+      "task": [
+        "uncovering the connections between structure and function of complex networks"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 63.12805390299991,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.32338416199991,
+        "messages_sha256": "2b688127c1245044a4c03aadf47fca51f93e692e6033b308b593d56c6d1673d9",
+        "raw_output": "{\"paper_id\":\"P001963\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Exploring community is fundamental for uncovering the connections between structure and function of complex networks and for practical applications in many disciplines such as biology and sociology.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose a TTR-LDA-Community model which combines the Latent Dirichlet Allocation model (LDA) and the Girvan-Newman community detection algorithm with an inference mechanism.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"The model is then applied to data from Delicious, a popular social tagging system, over the time period of 2005-2008.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Our results show that 1) users in the same community tend to be interested in similar set of topics in all time periods; and 2) topics may divide into several sub-topics and scatter into different communities over time.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We evaluate the effectiveness of our model and show that the TTR-LDA-Community model is meaningful for understanding communities and outperforms TTR-LDA and LDA models in tag prediction.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5931,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 604,
+          "output_tokens": 295
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.17227453800001,
+        "messages_sha256": "8f46b578a6f84bf899f74b0002385192165adac854e26b12e96753a93ed4d8b8",
+        "raw_output": "{\"paper_id\":\"P001963\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Exploring community is fundamental for uncovering the connections between structure and function of complex networks and for practical applications in many disciplines such as biology and sociology.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose a TTR-LDA-Community model which combines the Latent Dirichlet Allocation model (LDA) and the Girvan-Newman community detection algorithm with an inference mechanism.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"The model is then applied to data from Delicious, a popular social tagging system, over the time period of 2005-2008.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Our results show that 1) users in the same community tend to be interested in similar set of topics in all time periods; and 2) topics may divide into several sub-topics and scatter into different communities over time.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We evaluate the effectiveness of our model and show that the TTR-LDA-Community model is meaningful for understanding communities and outperforms TTR-LDA and LDA models in tag prediction.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5932,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 625,
+          "output_tokens": 295
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 63.12805390299991,
+      "input_tokens": 3530,
+      "output_tokens": 817
+    },
+    "paper_id": "P001963",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3530,
+      "output_tokens": 817
+    }
+  },
+  "record_sha256": "2420cf7d0c534b70ed7e5c424a479c9c97bda9873239a566beb49382f66b29bd",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

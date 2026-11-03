@@ -1,0 +1,572 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.68576792300064,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12360,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1469,
+            "output_tokens": 192
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "generate natural instructions",
+              "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.068778890999965,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12361,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3220,
+            "output_tokens": 192
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "generate natural instructions",
+              "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.660009981999792,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P004106\",\"task\":[{\"concept\":\"source-code generation\",\"evidence_id\":\"A3\"},{\"concept\":\"generate natural instructions\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"template-driven\",\"evidence_id\":\"A4\"},{\"concept\":\"NLG engine\",\"evidence_id\":\"A7\"},{\"concept\":\"source-to-source compiler\",\"evidence_id\":\"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12362,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 924,
+            "output_tokens": 84
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "generate natural instructions",
+              "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MyProLang",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proprietary natural programming language",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "template-driven",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "NLG engine",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "source-to-source compiler",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004106",
+        "problem": [
+          {
+            "concept": "extensive manual work",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "non-automated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "source-code generation",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "generate natural instructions",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 64.4145567960004,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P004106",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5613,
+        "output_tokens": 468
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "generate natural instructions",
+          "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.68576792300064,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12360,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1469,
+            "output_tokens": 192
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "generate natural instructions",
+              "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.068778890999965,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004106\", \"problem\": [{\"concept\": \"extensive manual work\", \"evidence_id\": \"A1\"}, {\"concept\": \"non-automated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"source-code generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"generate natural instructions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"template-driven\", \"evidence_id\": \"A4\"}, {\"concept\": \"NLG engine\", \"evidence_id\": \"A7\"}, {\"concept\": \"source-to-source compiler\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"MyProLang\", \"evidence_id\": \"A4\"}, {\"concept\": \"proprietary natural programming language\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12361,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3220,
+            "output_tokens": 192
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "generate natural instructions",
+              "evidence": "It harnesses GUI templates to generate proprietary natural language source-code, instead of having computer programmers write the code manually.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MyProLang",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proprietary natural programming language",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "template-driven",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "NLG engine",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "source-to-source compiler",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004106",
+        "problem": [
+          {
+            "concept": "extensive manual work",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "non-automated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "source-code generation",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "generate natural instructions",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 52.754546814000605,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12361,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4689,
+        "output_tokens": 384
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 25.68576792300064,
+        "inherited": false,
+        "messages_sha256": "64f27c7b4a04d14f5e4b7afa17710b4652a14e98f41f7e191a17b7bedfacd1ee",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12360,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1469,
+          "output_tokens": 192
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.068778890999965,
+        "inherited": false,
+        "messages_sha256": "cea1b0161a8579a6ab5a32ef3939b5251918b5d758ee2ad16bb2ba4f1a713533",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004106",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ]
+        },
+        "seed": 12361,
+        "usage": {
+          "input_tokens": 3220,
+          "output_tokens": 192
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.660009981999792,
+        "inherited": false,
+        "messages_sha256": "fcec88f42dca135dc224c7e8f1903126249c1d5a0fef14fce915d42f5ea6158b",
+        "reached_token_limit": false,
+        "seed": 12362,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 84
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "MyProLang",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proprietary natural programming language",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "template-driven",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "NLG engine",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "source-to-source compiler",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004106",
+        "problem": [
+          {
+            "concept": "extensive manual work",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "non-automated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "source-code generation",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "generate natural instructions",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "source-code generation",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "generate natural instructions",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "template-driven",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "NLG engine",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "source-to-source compiler",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.660009981999792,
+      "messages_sha256": "fcec88f42dca135dc224c7e8f1903126249c1d5a0fef14fce915d42f5ea6158b",
+      "raw_output": "{\"paper_id\":\"P004106\",\"task\":[{\"concept\":\"source-code generation\",\"evidence_id\":\"A3\"},{\"concept\":\"generate natural instructions\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"template-driven\",\"evidence_id\":\"A4\"},{\"concept\":\"NLG engine\",\"evidence_id\":\"A7\"},{\"concept\":\"source-to-source compiler\",\"evidence_id\":\"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 924,
+        "output_tokens": 84
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "dc8c350abd38b1e292aaaf52e2684c12df01290f705c8795b34c6a84e0a5f134",
+    "facets": {
+      "contribution": [
+        "MyProLang",
+        "proprietary natural programming language"
+      ],
+      "dataset": [],
+      "method": [
+        "template-driven",
+        "NLG engine",
+        "source-to-source compiler"
+      ],
+      "paper_id": "P004106",
+      "problem": [
+        "extensive manual work",
+        "non-automated"
+      ],
+      "task": [
+        "source-code generation",
+        "generate natural instructions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 64.4145567960004,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 64.4145567960004,
+      "input_tokens": 5613,
+      "output_tokens": 468
+    },
+    "paper_id": "P004106",
+    "source_sha256": "6839001712ebedf01bb20f39a40b144c1e952567eff2794a7b97bbca48d7e348",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5613,
+      "output_tokens": 468
+    }
+  },
+  "record_sha256": "d4582147002ef4974746294c330a711fab4cd1aa7460b48bce69eb04cdc4819a",
+  "signature": "c4e41850ab9239cde830284e89193f54b9e906492bcc07dfd709400a389b78fc"
+}

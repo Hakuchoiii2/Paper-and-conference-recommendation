@@ -1,0 +1,477 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.55491200400138,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6408,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1240,
+            "output_tokens": 142
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.635189374999754,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6409,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2911,
+            "output_tokens": 126
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.6486347200007,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002122\", \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}, {\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6410,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 645,
+            "output_tokens": 91
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "continuous vector representations of language",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "language vectors capture genetic relationships between languages",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "character-based neural language model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "language vectors",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "continuous vector representations of language",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002122",
+        "problem": [
+          {
+            "concept": "discrete category",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multilingual natural language processing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 43.838736099001835,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P002122",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4796,
+        "output_tokens": 359
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.55491200400138,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6408,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1240,
+            "output_tokens": 142
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.635189374999754,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002122\", \"problem\": [{\"concept\": \"discrete category\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}, {\"concept\": \"language vectors capture genetic relationships between languages\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6409,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2911,
+            "output_tokens": 126
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "continuous vector representations of language",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "language vectors capture genetic relationships between languages",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "character-based neural language model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "language vectors",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002122",
+        "problem": [
+          {
+            "concept": "discrete category",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multilingual natural language processing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 33.190101379001135,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6409,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4151,
+        "output_tokens": 268
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.55491200400138,
+        "inherited": false,
+        "messages_sha256": "f44c6de9812cc1f5450c25650f07b7c7ae1e084e034df98e627e053cf8f9e8ae",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6408,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1240,
+          "output_tokens": 142
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.635189374999754,
+        "inherited": false,
+        "messages_sha256": "a1bd874865753b6e989f0bba09ce33bcbc2723a3d62fe83d870e5f0baccb81e0",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002122",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 6409,
+        "usage": {
+          "input_tokens": 2911,
+          "output_tokens": 126
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.6486347200007,
+        "inherited": false,
+        "messages_sha256": "3559708e38ff2904987174e2c66b17b4caecb1a1b7ef3dec3528d6c0ea89eebb",
+        "reached_token_limit": false,
+        "seed": 6410,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 645,
+          "output_tokens": 91
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "continuous vector representations of language",
+            "evidence_id": "A1"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "continuous vector representations of language",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "language vectors capture genetic relationships between languages",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "character-based neural language model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "language vectors",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002122",
+        "problem": [
+          {
+            "concept": "discrete category",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multilingual natural language processing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "multilingual natural language processing",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "character-based neural language model",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "language vectors",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.6486347200007,
+      "messages_sha256": "3559708e38ff2904987174e2c66b17b4caecb1a1b7ef3dec3528d6c0ea89eebb",
+      "raw_output": "{\"paper_id\": \"P002122\", \"task\": [{\"concept\": \"multilingual natural language processing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"character-based neural language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"language vectors\", \"evidence_id\": \"A3\"}, {\"concept\": \"continuous vector representations of language\", \"evidence_id\": \"A1\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 645,
+        "output_tokens": 91
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "cb0b2d016879c271b807392626fda9f5a832a2641737b35645d1716289a41c08",
+    "facets": {
+      "contribution": [
+        "continuous vector representations of language",
+        "language vectors capture genetic relationships between languages"
+      ],
+      "dataset": [],
+      "method": [
+        "character-based neural language model",
+        "language vectors",
+        "continuous vector representations of language"
+      ],
+      "paper_id": "P002122",
+      "problem": [
+        "discrete category"
+      ],
+      "task": [
+        "multilingual natural language processing"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 43.838736099001835,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 43.838736099001835,
+      "input_tokens": 4796,
+      "output_tokens": 359
+    },
+    "paper_id": "P002122",
+    "source_sha256": "4d4d29198f4f2696dc9c93ad94df6488cf166cf91756b4afcf344475a4e9455d",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4796,
+      "output_tokens": 359
+    }
+  },
+  "record_sha256": "819973c54ca6d36ce71b067fdf6110335c564bf60370712d2a5a1ea4a307a568",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

@@ -1,0 +1,180 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 10.144866844000035,
+          "messages_sha256": "5ec39a6228a5f53ba114d3b5cbf48bcc70d1f4ae3fcc3af019e86dca9dc8c35b",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000781\", \"problem\": [{\"concept\": \"the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions\", \"evidence_id\": \"A1\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 2387,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2218,
+            "output_tokens": 112
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions",
+            "evidence_id": "A1"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P000781",
+        "problem": [
+          {
+            "concept": "the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 42.32250736600008,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000781",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 64.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3281,
+        "output_tokens": 538
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.066233411999974,
+        "messages_sha256": "a2d99e29b9ab48e334c8bd43fa21384105779ac51cdf7f9608762e5f09f68692",
+        "raw_output": "{\"paper_id\":\"P000781\",\"units\":[{\"evidence_id\":\"T0\",\"span\":\"Perceived Support for One's Opinions and Willingness to Speak Out: A Meta-Analysis of Survey Studies on the 'Spiral of Silence'\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A0\",\"span\":\"The authors report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions.\",\"roles\":[\"task\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Moderator analyses did not reveal significant moderators of this relationship, although the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\",\"roles\":[\"problem\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2385,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 521,
+          "output_tokens": 213
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.111407110000073,
+        "messages_sha256": "f6644b538d73ff7a0ca3ceeaf7d018eaf2120d23e84cbde7ec4d3dc4ddfc1355",
+        "raw_output": "{\"paper_id\":\"P000781\",\"units\":[{\"evidence_id\":\"T0\",\"span\":\"Perceived Support for One's Opinions and Willingness to Speak Out: A Meta-Analysis of Survey Studies on the 'Spiral of Silence'\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A0\",\"span\":\"The authors report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions.\",\"roles\":[\"task\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Moderator analyses did not reveal significant moderators of this relationship, although the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\",\"roles\":[\"problem\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2386,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 542,
+          "output_tokens": 213
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.144866844000035,
+        "messages_sha256": "5ec39a6228a5f53ba114d3b5cbf48bcc70d1f4ae3fcc3af019e86dca9dc8c35b",
+        "raw_output": "{\"paper_id\": \"P000781\", \"problem\": [{\"concept\": \"the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions\", \"evidence_id\": \"A1\"}]}",
+        "reached_token_limit": false,
+        "seed": 2387,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2218,
+          "output_tokens": 112
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P000781",
+      "problem": [
+        "the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator"
+      ],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 42.32250736600008,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.066233411999974,
+        "messages_sha256": "a2d99e29b9ab48e334c8bd43fa21384105779ac51cdf7f9608762e5f09f68692",
+        "raw_output": "{\"paper_id\":\"P000781\",\"units\":[{\"evidence_id\":\"T0\",\"span\":\"Perceived Support for One's Opinions and Willingness to Speak Out: A Meta-Analysis of Survey Studies on the 'Spiral of Silence'\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A0\",\"span\":\"The authors report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions.\",\"roles\":[\"task\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Moderator analyses did not reveal significant moderators of this relationship, although the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\",\"roles\":[\"problem\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2385,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 521,
+          "output_tokens": 213
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.111407110000073,
+        "messages_sha256": "f6644b538d73ff7a0ca3ceeaf7d018eaf2120d23e84cbde7ec4d3dc4ddfc1355",
+        "raw_output": "{\"paper_id\":\"P000781\",\"units\":[{\"evidence_id\":\"T0\",\"span\":\"Perceived Support for One's Opinions and Willingness to Speak Out: A Meta-Analysis of Survey Studies on the 'Spiral of Silence'\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A0\",\"span\":\"The authors report a meta-analysis of survey studies examining the relationship between people's perceptions of support for their opinions and their willingness to express those opinions.\",\"roles\":[\"task\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"Evidence from the analysis indicates the presence of a very small but statistically significant, relationship between the degree to which a person believes others hold similar opinions and the willingness to express those opinions.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Moderator analyses did not reveal significant moderators of this relationship, although the observed correlations were statistically heterogeneous, suggesting at least one undiscovered moderator\",\"roles\":[\"problem\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2386,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 542,
+          "output_tokens": 213
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 42.32250736600008,
+      "input_tokens": 3281,
+      "output_tokens": 538
+    },
+    "paper_id": "P000781",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3281,
+      "output_tokens": 538
+    }
+  },
+  "record_sha256": "fdc1a2ed846652124962b53690a83409137db371a0bf5fdd6c2d863ab8e54002",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -1,4 +1,12 @@
-# Exp A — Đánh giá Qwen bằng embedding hoặc khớp chữ
+# Exp A — Đánh giá LLM trích facet và lịch sử evaluator
+
+**Script sinh dữ liệu chính thức (28/10/2026): [data/exp_a/final/](../../data/exp_a/final/README.md)** — chạy `python -B data/exp_a/final/generate.py --check` để kiểm tra adapter/cấu hình, bỏ `--check` để sinh dữ liệu bằng QLoRA gold400 V-recall. Các phần bên dưới là evaluator và lịch sử thử nghiệm.
+
+**Kết quả hiện tại (03/11/2026):** Qwen3-4B/8B/14B, Llama3.1-8B và Gemma2-9B đã hoàn tất QLoRA và đánh giá test60; [CSV metrics 5 LLM](../../data/exp_a/final/results/llm_experiment_metrics.csv). Cấu hình/checkpoint, giới hạn gold400 và hướng dẫn bộ final nằm trong [README final](../../data/exp_a/final/README.md).
+
+## Evaluator và các lượt thử lịch sử
+
+Các bảng điểm/pilot bên dưới là các mốc trước bộ final; không trộn với điểm test60 khi so sánh model.
 
 [Generator A](../../data/exp_a/README.md) · [Quy trình review](docs/SEMANTIC_REVIEW_PROTOCOL.md) · [Kết quả matcher](docs/MATCHER_REFERENCE_REPORT.md)
 
@@ -41,8 +49,7 @@ Báo cáo/audit cũ đã gom vào [file lưu trữ](docs/archive/README.md); xem
 Baseline `data/exp_a/generated/` còn dùng bởi pilot builder và B–E nên vẫn giữ.
 
 `evaluate_exp_a.py` đọc silver đã lưu, không chạy Qwen trích xuất lại.
-Reference hiện hành là AI v2: 400 bài / 3.322 concept, sửa 18 bài / 21 facet
-theo nguồn; chưa phải human gold. Encoder dùng Qwen3-Embedding-0.6B local,
+Reference AI v2 của các báo cáo lịch sử bên dưới gồm 400 bài /3.322 concept. Reference400 hiện hành là bản AI-assisted đã được người dùng chấp nhận, 400 bài /3.346 concept tại `data/exp_a/ground_truth/gold_review/human_gold.jsonl`; evaluator mặc định đọc đường dẫn này. Bộ final giữ gold/split đã đóng băng trong `reference/`, với train280/valid60/test60. Không đối chiếu trực tiếp điểm trên reference/split khác nhau. Encoder dùng Qwen3-Embedding-0.6B local,
 mặc định cosine **0.85**.
 
 ## Cách ghép và tính điểm

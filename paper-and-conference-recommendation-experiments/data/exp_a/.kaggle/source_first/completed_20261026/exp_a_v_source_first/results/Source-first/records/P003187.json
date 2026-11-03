@@ -1,0 +1,234 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 28.198545012000068,
+          "messages_sha256": "ef382d465eeb6b2661acd5e2420f5081d323640a239e57282e870050b8817eb2",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003187\", \"problem\": [{\"concept\": \"exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"method\": [], \"dataset\": [{\"concept\": \"survey of 250 British managers\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"political behaviour appeared to be common\", \"evidence_id\": \"A1\"}, {\"concept\": \"most managers viewed political behaviour as ethical and necessary\", \"evidence_id\": \"A2\"}, {\"concept\": \"aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics\", \"evidence_id\": \"A2\"}, {\"concept\": \"tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion\", \"evidence_id\": \"A3\"}, {\"concept\": \"tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail\", \"evidence_id\": \"A4\"}, {\"concept\": \"a consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’\", \"evidence_id\": \"A5\"}, {\"concept\": \"findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 85.5,
+          "seed": 9605,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2338,
+            "output_tokens": 359
+          },
+          "validation_errors": [
+            "contribution[2]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics\"; evidence_id=\"A2\"; evidence=\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "political behaviour appeared to be common",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "most managers viewed political behaviour as ethical and necessary",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "a consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "survey of 250 British managers",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [],
+        "paper_id": "P003187",
+        "problem": [
+          {
+            "concept": "exploring their experience and perceptions of organization politics",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "exploring their experience and perceptions of organization politics",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 83.99559114600015,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003187",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "survey of 250 British managers",
+            "evidence": "This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 85.5,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3648,
+        "output_tokens": 1111
+      },
+      "validation_errors": [
+        "contribution[2]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics\"; evidence_id=\"A2\"; evidence=\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 27.90890439199984,
+        "messages_sha256": "9ecacc2022f7f92bd967bc15e06443cbe2339ef4a0d4a73faa04deb3b8e85e7a",
+        "raw_output": "{\"paper_id\":\"P003187\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Political behaviour appeared to be common.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9603,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 641,
+          "output_tokens": 376
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.888141742000244,
+        "messages_sha256": "ccd63dd49e1a2d5d8022afefeb65d9d05845b5ed224f1d4bfe44939a3de5db74",
+        "raw_output": "{\"paper_id\":\"P003187\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Political behaviour appeared to be common.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9604,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 669,
+          "output_tokens": 376
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 28.198545012000068,
+        "messages_sha256": "ef382d465eeb6b2661acd5e2420f5081d323640a239e57282e870050b8817eb2",
+        "raw_output": "{\"paper_id\": \"P003187\", \"problem\": [{\"concept\": \"exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"method\": [], \"dataset\": [{\"concept\": \"survey of 250 British managers\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"political behaviour appeared to be common\", \"evidence_id\": \"A1\"}, {\"concept\": \"most managers viewed political behaviour as ethical and necessary\", \"evidence_id\": \"A2\"}, {\"concept\": \"aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics\", \"evidence_id\": \"A2\"}, {\"concept\": \"tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion\", \"evidence_id\": \"A3\"}, {\"concept\": \"tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail\", \"evidence_id\": \"A4\"}, {\"concept\": \"a consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’\", \"evidence_id\": \"A5\"}, {\"concept\": \"findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 9605,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2338,
+          "output_tokens": 359
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "political behaviour appeared to be common",
+        "most managers viewed political behaviour as ethical and necessary",
+        "aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics",
+        "tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+        "tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail",
+        "a consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’",
+        "findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P003187",
+      "problem": [
+        "exploring their experience and perceptions of organization politics"
+      ],
+      "task": [
+        "exploring their experience and perceptions of organization politics"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 83.99559114600015,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 27.90890439199984,
+        "messages_sha256": "9ecacc2022f7f92bd967bc15e06443cbe2339ef4a0d4a73faa04deb3b8e85e7a",
+        "raw_output": "{\"paper_id\":\"P003187\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Political behaviour appeared to be common.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9603,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 641,
+          "output_tokens": 376
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.888141742000244,
+        "messages_sha256": "ccd63dd49e1a2d5d8022afefeb65d9d05845b5ed224f1d4bfe44939a3de5db74",
+        "raw_output": "{\"paper_id\":\"P003187\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Political behaviour appeared to be common.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Tactics experienced frequently included networking, using ‘key players’ to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping ‘dirt files’ for blackmail.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of ‘you stab my back, I’ll stab yours’.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Findings are discussed using an ‘antecedents–behaviours–consequences’ framework of perceived organization politics to guide research.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9604,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 669,
+          "output_tokens": 376
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "Qwen output must contain one readable UTF-8 JSON object only"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 83.99559114600015,
+      "input_tokens": 3648,
+      "output_tokens": 1111
+    },
+    "paper_id": "P003187",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3648,
+      "output_tokens": 1111
+    }
+  },
+  "record_sha256": "084183a2c7ff7a96735315558f71c16634c1a564ec5d2cb319d4250538741097",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -40,6 +40,17 @@ class EvaluationChecks(unittest.TestCase):
         kwargs.setdefault('matching', 'exact')
         return evaluator.evaluate(self.root, gold=self.gold, output=self.output, expected_count=3, **kwargs)
 
+    def test_default_reference_reads_renamed_human_gold(self):
+        rows = self.review()
+        for row in rows:
+            row.update(reviewer_type='human', human_review_status='accepted')
+        renamed = self.root / self.queue / 'human_gold.jsonl'
+        write_jsonl(renamed, rows)
+        (self.root / self.gold).unlink()
+        report = evaluator.evaluate(self.root, output=self.output, expected_count=3, matching='exact')
+        self.assertEqual(report['reference_kind'], 'human')
+        self.assertEqual(report['gold_count'], 3)
+
     def test_embedding_assignment_is_one_to_one_and_maximizes_matches(self):
         self.assertEqual(evaluator.match_pairs([[0.95], [0.90]], 0.85), ((0, 0),))
         self.assertEqual(set(evaluator.match_pairs([[0.95,0.85], [0.90,0.1]],0.85)), {(0,1),(1,0)})

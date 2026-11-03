@@ -1,0 +1,487 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.2720663939981,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4956,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1310,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.76364657999875,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4957,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3100,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.29864522799835,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001638\", \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4958,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 760,
+            "output_tokens": 84
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "factual and asserting tones affect dialogue",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4Forums",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "generative models of text",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001638",
+        "problem": [
+          {
+            "concept": "confounded by the users' ideologies on the debate topic and their emotions",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "estimate the causal effect of reply tones",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 85.3343582019952,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001638",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5170,
+        "output_tokens": 448
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.2720663939981,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4956,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1310,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.76364657999875,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001638\", \"problem\": [{\"concept\": \"confounded by the users' ideologies on the debate topic and their emotions\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"4Forums\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}, {\"concept\": \"factual and asserting tones affect dialogue\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4957,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3100,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "factual and asserting tones affect dialogue",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4Forums",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "generative models of text",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001638",
+        "problem": [
+          {
+            "concept": "confounded by the users' ideologies on the debate topic and their emotions",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "estimate the causal effect of reply tones",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 70.03571297399685,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4957,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4410,
+        "output_tokens": 364
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 33.2720663939981,
+        "inherited": false,
+        "messages_sha256": "20fdc684ea63270eb9d4c77cef28697344064ccced945f29c4ec9fbf12c49b1f",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4956,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1310,
+          "output_tokens": 182
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 36.76364657999875,
+        "inherited": false,
+        "messages_sha256": "d18e5eb1c3e482015493dde940dd48cb3c26adcd90122710f0594c55049e0959",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001638",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 4957,
+        "usage": {
+          "input_tokens": 3100,
+          "output_tokens": 182
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.29864522799835,
+        "inherited": false,
+        "messages_sha256": "9e6c8a6486faf16da89f9a6d069f5e97cc0f769ce8f565faaa384303b446ebba",
+        "reached_token_limit": false,
+        "seed": 4958,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 760,
+          "output_tokens": 84
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "factual and asserting tones affect dialogue",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4Forums",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "generative models of text",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001638",
+        "problem": [
+          {
+            "concept": "confounded by the users' ideologies on the debate topic and their emotions",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "estimate the causal effect of reply tones",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "estimate the causal effect of reply tones",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "generative models of text",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "latent confounder representation",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.29864522799835,
+      "messages_sha256": "9e6c8a6486faf16da89f9a6d069f5e97cc0f769ce8f565faaa384303b446ebba",
+      "raw_output": "{\"paper_id\": \"P001638\", \"task\": [{\"concept\": \"estimate the causal effect of reply tones\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"generative models of text\", \"evidence_id\": \"A4\"}, {\"concept\": \"latent confounder representation\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 760,
+        "output_tokens": 84
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "0dace23cd0b316eeb5c03942798432d3775929b1cb093f4edd68f1e68e625c99",
+    "facets": {
+      "contribution": [
+        "latent confounder representation",
+        "factual and asserting tones affect dialogue"
+      ],
+      "dataset": [
+        "4Forums"
+      ],
+      "method": [
+        "generative models of text",
+        "latent confounder representation"
+      ],
+      "paper_id": "P001638",
+      "problem": [
+        "confounded by the users' ideologies on the debate topic and their emotions"
+      ],
+      "task": [
+        "estimate the causal effect of reply tones"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 85.3343582019952,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 85.3343582019952,
+      "input_tokens": 5170,
+      "output_tokens": 448
+    },
+    "paper_id": "P001638",
+    "source_sha256": "5a39af81fa60426eef43ff7f42e904a40a419c50294308c339dac349db7ab57d",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5170,
+      "output_tokens": 448
+    }
+  },
+  "record_sha256": "b2a1bc0915fde73be0abd5f54652f895476524c0da99611c7611e26c78ca4020",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

@@ -1,0 +1,482 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.548749158000646,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1443,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.24122762299885,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3160,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.696415317001083,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7913,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 877,
+            "output_tokens": 70
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "ambiguity regarding which emotions are being measured",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "conceptual inconsistency among measures",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reviewing self-report measurement practices",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.48639209800058,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P002623",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5480,
+        "output_tokens": 412
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.548749158000646,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1443,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.24122762299885,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"ambiguity regarding which emotions are being measured\", \"evidence_id\": \"A7\"}, {\"concept\": \"conceptual inconsistency among measures\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3160,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "ambiguity regarding which emotions are being measured",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "conceptual inconsistency among measures",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reviewing self-report measurement practices",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.789976780999496,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7912,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4603,
+        "output_tokens": 342
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.548749158000646,
+        "inherited": false,
+        "messages_sha256": "68cee4d5a266dcd603a1086033b2bcbc678548dabb4c0a642a3adcd24d627404",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7911,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1443,
+          "output_tokens": 171
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.24122762299885,
+        "inherited": false,
+        "messages_sha256": "789be1c4b053f316bd8093bff082dfbb3a0c71bebd598c790600b04118487962",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002623",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 7912,
+        "usage": {
+          "input_tokens": 3160,
+          "output_tokens": 171
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.696415317001083,
+        "inherited": false,
+        "messages_sha256": "59b352f320a451b96b795af4ff9a19e3335950ec6a8456f8222fa827ce2357d2",
+        "reached_token_limit": false,
+        "seed": 7913,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 877,
+          "output_tokens": 70
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "ambiguity regarding which emotions are being measured",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "conceptual inconsistency among measures",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reviewing self-report measurement practices",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "reviewing self-report measurement practices",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "coding",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.696415317001083,
+      "messages_sha256": "59b352f320a451b96b795af4ff9a19e3335950ec6a8456f8222fa827ce2357d2",
+      "raw_output": "{\"paper_id\": \"P002623\", \"task\": [{\"concept\": \"reviewing self-report measurement practices\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}, {\"concept\": \"coding\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 877,
+        "output_tokens": 70
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "2f3a0c965a233b08ee0715c44f97ddf41828ad2e3a2bcc3aa0acf480aa766ac8",
+    "facets": {
+      "contribution": [
+        "researchers assess many purportedly distinct emotions",
+        "majority of scales used include only a single item"
+      ],
+      "dataset": [],
+      "method": [
+        "quantitative review",
+        "coding"
+      ],
+      "paper_id": "P002623",
+      "problem": [
+        "ambiguity regarding which emotions are being measured",
+        "conceptual inconsistency among measures"
+      ],
+      "task": [
+        "reviewing self-report measurement practices"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.48639209800058,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.48639209800058,
+      "input_tokens": 5480,
+      "output_tokens": 412
+    },
+    "paper_id": "P002623",
+    "source_sha256": "fd5b3e675c4269dd5ba1e3e7c84e56b444c47458fe45b0a119fb34a0792295a5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5480,
+      "output_tokens": 412
+    }
+  },
+  "record_sha256": "3af6e67ef4b144c929d7d5a4f06b21b9f937dca32bb41c75fc16089b53f0beee",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

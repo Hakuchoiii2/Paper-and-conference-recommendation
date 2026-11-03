@@ -1,6 +1,16 @@
-# Thực nghiệm A — Trích năm facet bằng Qwen3 local
+# Thực nghiệm A — So sánh LLM trích năm facet
+
+**Kiến trúc chính thức (28/10/2026): [final/](final/README.md)** — Qwen3-8B + QLoRA gold400 `checkpoint-105` + V-recall ba lượt. Adapter, prompt, cấu hình và kết quả đã lưu tại `data/exp_a/final`; entrypoint sinh dữ liệu là `data/exp_a/final/generate.py`. Các mục bên dưới giữ lịch sử thử nghiệm.
+
+**Kết quả hiện tại (03/11/2026):** đã hoàn tất QLoRA và test60 cho Qwen3-4B, Qwen3-8B, Qwen3-14B, Llama3.1-8B và Gemma2-9B; cùng split280/60/60. Xem [CSV metrics 5 LLM](final/results/llm_experiment_metrics.csv) và [README final](final/README.md). Qwen8B vẫn là cấu hình sinh corpus đang chọn; điểm extraction không tự quyết định model tốt nhất cho downstream.
+
+**Reference400 hiện hành:** [human_gold.jsonl](ground_truth/gold_review/human_gold.jsonl), 400 bài /3.346 concept; người dùng chấp nhận bản v3 ngày26/10/2026, `human_review_status: accepted`. Nguồn nhãn AI-assisted và lịch sử audit được giữ trong metadata.
 
 [Chỉ mục dữ liệu](../README.md) · [Scorer/evaluator A](../../scripts/exp_a/README.md) · [Pilot](samples/README.md)
+
+## Lịch sử pipeline và bàn giao nhóm
+
+Các hướng dẫn bên dưới mô tả các lượt chạy cũ và baseline B–E. Phạm vi nghiên cứu hiện tại là A/B/conference; dùng `final/` cho bộ code/config đang bàn giao.
 
 Cả nhóm 5 người cùng chạy trích facet trên 4.210 title/abstract, chia thành
 5 phần không trùng nhau, mỗi người 842 bài. Chạy Qwen3 trên máy, không dùng

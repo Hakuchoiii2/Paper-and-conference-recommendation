@@ -1,0 +1,226 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 20.568177805999767,
+          "messages_sha256": "4154288d3799ad7d8288663a99a4b240916f5b77634e4459d5a6b7e44a286e8e",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003211\", \"problem\": [{\"concept\": \"each category of gamers provides a different brain interaction\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"differentiation of Gamers category between a Newbie and a Hardcore\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"using Cyton and Daysi Boards to receive brain data\", \"evidence_id\": \"A2\"}, {\"concept\": \"using connection 10-20 for electrode placement\", \"evidence_id\": \"A2\"}, {\"concept\": \"sampling frequency of 250 and obtaining 128 data per second\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"data from gamers playing DOTA 1\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz\", \"evidence_id\": \"A4\"}, {\"concept\": \"hardcore brainwave has more potential than the newbie brainwave in those channels\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 73.0,
+          "seed": 9677,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2462,
+            "output_tokens": 251
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"using Cyton and Daysi Boards to receive brain data\"; evidence_id=\"A2\"; evidence=\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\"",
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using connection 10-20 for electrode placement\"; evidence_id=\"A2\"; evidence=\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\"",
+            "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"data from gamers playing DOTA 1\"; evidence_id=\"A3\"; evidence=\"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz\"; evidence_id=\"A4\"; evidence=\"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "hardcore brainwave has more potential than the newbie brainwave in those channels",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "data from gamers playing DOTA 1",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "using Cyton and Daysi Boards to receive brain data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "using connection 10-20 for electrode placement",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "sampling frequency of 250 and obtaining 128 data per second",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003211",
+        "problem": [
+          {
+            "concept": "each category of gamers provides a different brain interaction",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "differentiation of Gamers category between a Newbie and a Hardcore",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 87.96331104199999,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003211",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 73.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4013,
+        "output_tokens": 1161
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"using Cyton and Daysi Boards to receive brain data\"; evidence_id=\"A2\"; evidence=\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\"",
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using connection 10-20 for electrode placement\"; evidence_id=\"A2\"; evidence=\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"data from gamers playing DOTA 1\"; evidence_id=\"A3\"; evidence=\"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz\"; evidence_id=\"A4\"; evidence=\"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.121717380000064,
+        "messages_sha256": "8231f39d8a0974e5023880f1b7cfa93b9097c68bebd9785f2dac7b5ac19cebfd",
+        "raw_output": "{\"paper_id\":\"P003211\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"The gamers are players, the nickname is given due to their love of video games, there are categories that characterize gamers: Newbie is the player who is starting to play videogames, Hardcore are who already have knowledge previous of the game and know what is the theme of the same and Professional who are the most experienced players who participate in international tournaments and promoting certain brands.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9675,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 765,
+          "output_tokens": 434
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.273415856000156,
+        "messages_sha256": "695c9960bb4faddd73a86138e28183e60332dd6ba08e96efdc1515506e02f38c",
+        "raw_output": "{\"paper_id\": \"P003211\", \"units\": [{\"evidence_id\": \"A0\", \"span\": \"The gamers are players, the nickname is given due to their love of video games, there are categories that characterize gamers: Newbie is the player who is starting to play videogames, Hardcore are who already have knowledge previous of the game and know what is the theme of the same and Professional who are the most experienced players who participate in international tournaments and promoting certain brands.\", \"roles\": [\"problem\"], \"origin\": \"prior\"}, {\"evidence_id\": \"A1\", \"span\": \"It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.\", \"roles\": [\"problem\"], \"origin\": \"prior\"}, {\"evidence_id\": \"A2\", \"span\": \"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\", \"roles\": [\"method\"], \"origin\": \"current\"}, {\"evidence_id\": \"A3\", \"span\": \"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\", \"roles\": [\"method\"], \"origin\": \"current\"}, {\"evidence_id\": \"A4\", \"span\": \"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\", \"roles\": [\"contribution\"], \"origin\": \"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9676,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 786,
+          "output_tokens": 476
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 20.568177805999767,
+        "messages_sha256": "4154288d3799ad7d8288663a99a4b240916f5b77634e4459d5a6b7e44a286e8e",
+        "raw_output": "{\"paper_id\": \"P003211\", \"problem\": [{\"concept\": \"each category of gamers provides a different brain interaction\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"differentiation of Gamers category between a Newbie and a Hardcore\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"using Cyton and Daysi Boards to receive brain data\", \"evidence_id\": \"A2\"}, {\"concept\": \"using connection 10-20 for electrode placement\", \"evidence_id\": \"A2\"}, {\"concept\": \"sampling frequency of 250 and obtaining 128 data per second\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"data from gamers playing DOTA 1\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz\", \"evidence_id\": \"A4\"}, {\"concept\": \"hardcore brainwave has more potential than the newbie brainwave in those channels\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 9677,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2462,
+          "output_tokens": 251
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "difference of signals in the channels F7 and P3 in the frequencies of 1 and 2 Hz",
+        "hardcore brainwave has more potential than the newbie brainwave in those channels"
+      ],
+      "dataset": [
+        "data from gamers playing DOTA 1"
+      ],
+      "method": [
+        "using Cyton and Daysi Boards to receive brain data",
+        "using connection 10-20 for electrode placement",
+        "sampling frequency of 250 and obtaining 128 data per second"
+      ],
+      "paper_id": "P003211",
+      "problem": [
+        "each category of gamers provides a different brain interaction"
+      ],
+      "task": [
+        "differentiation of Gamers category between a Newbie and a Hardcore"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 87.96331104199999,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.121717380000064,
+        "messages_sha256": "8231f39d8a0974e5023880f1b7cfa93b9097c68bebd9785f2dac7b5ac19cebfd",
+        "raw_output": "{\"paper_id\":\"P003211\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"The gamers are players, the nickname is given due to their love of video games, there are categories that characterize gamers: Newbie is the player who is starting to play videogames, Hardcore are who already have knowledge previous of the game and know what is the theme of the same and Professional who are the most experienced players who participate in international tournaments and promoting certain brands.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9675,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 765,
+          "output_tokens": 434
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.273415856000156,
+        "messages_sha256": "695c9960bb4faddd73a86138e28183e60332dd6ba08e96efdc1515506e02f38c",
+        "raw_output": "{\"paper_id\": \"P003211\", \"units\": [{\"evidence_id\": \"A0\", \"span\": \"The gamers are players, the nickname is given due to their love of video games, there are categories that characterize gamers: Newbie is the player who is starting to play videogames, Hardcore are who already have knowledge previous of the game and know what is the theme of the same and Professional who are the most experienced players who participate in international tournaments and promoting certain brands.\", \"roles\": [\"problem\"], \"origin\": \"prior\"}, {\"evidence_id\": \"A1\", \"span\": \"It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.\", \"roles\": [\"problem\"], \"origin\": \"prior\"}, {\"evidence_id\": \"A2\", \"span\": \"It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data, in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4).\", \"roles\": [\"method\"], \"origin\": \"current\"}, {\"evidence_id\": \"A3\", \"span\": \"The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.\", \"roles\": [\"method\"], \"origin\": \"current\"}, {\"evidence_id\": \"A4\", \"span\": \"Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.\", \"roles\": [\"contribution\"], \"origin\": \"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9676,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 786,
+          "output_tokens": 476
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 87.96331104199999,
+      "input_tokens": 4013,
+      "output_tokens": 1161
+    },
+    "paper_id": "P003211",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 4013,
+      "output_tokens": 1161
+    }
+  },
+  "record_sha256": "6dfa2836297dff4ae8014dc1310048db3696b52a779cd5973a630cf616da6597",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

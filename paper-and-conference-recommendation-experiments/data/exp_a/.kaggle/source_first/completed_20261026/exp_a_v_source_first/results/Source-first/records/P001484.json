@@ -1,0 +1,198 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 13.991734061999978,
+          "messages_sha256": "f7e169b5c17dd8eabc41f6c8b7cdb19d2fef2006d7b36324e57c70361dcefaa2",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [{\"concept\": \"three different approaches to incorporate costs into the AL selection mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 68.5,
+          "seed": 4496,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2299,
+            "output_tokens": 158
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MUC7 T corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "three different approaches to incorporate costs into the AL selection mechanism",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001484",
+        "problem": [
+          {
+            "concept": "measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 63.6363622399997,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001484",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 68.5,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3531,
+        "output_tokens": 824
+      },
+      "validation_errors": [
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.97074931799989,
+        "messages_sha256": "9a5b2c0e716ed6151260e9b4a1095b62b017e42e757a4ae96d10c26f83cce69b",
+        "raw_output": "{\"paper_id\":\"P001484\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Active Learning (AL) is a selective sampling strategy which has been shown to be particularly cost-efficient by drastically reducing the amount of training data to be manually annotated.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"For the annotation of natural language data, cost efficiency is usually measured in terms of the number of tokens to be considered.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"the time it takes to manually label selected annotation examples.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We here propose three different approaches to incorporate costs into the AL selection mechanism and evaluate them on the MUC7 T corpus, an extension of the MUC7 newspaper corpus that contains such annotation time information.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Our experiments reveal that using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4494,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 602,
+          "output_tokens": 333
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.67387885999983,
+        "messages_sha256": "192365e07495b1956bb6084587c53eac196de4fcac35f7dc3db18b6525be7f71",
+        "raw_output": "{\"paper_id\":\"P001484\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Active Learning (AL) is a selective sampling strategy which has been shown to be particularly cost-efficient by drastically reducing the amount of training data to be manually annotated.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"For the annotation of natural language data, cost efficiency is usually measured in terms of the number of tokens to be considered.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"the time it takes to manually label selected annotation examples.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We here propose three different approaches to incorporate costs into the AL selection mechanism and evaluate them on the MUC7 T corpus, an extension of the MUC7 newspaper corpus that contains such annotation time information.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Our experiments reveal that using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4495,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 630,
+          "output_tokens": 333
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 13.991734061999978,
+        "messages_sha256": "f7e169b5c17dd8eabc41f6c8b7cdb19d2fef2006d7b36324e57c70361dcefaa2",
+        "raw_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [{\"concept\": \"three different approaches to incorporate costs into the AL selection mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 4496,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2299,
+          "output_tokens": 158
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection"
+      ],
+      "dataset": [
+        "MUC7 T corpus"
+      ],
+      "method": [
+        "three different approaches to incorporate costs into the AL selection mechanism"
+      ],
+      "paper_id": "P001484",
+      "problem": [
+        "measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate"
+      ],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 63.6363622399997,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.97074931799989,
+        "messages_sha256": "9a5b2c0e716ed6151260e9b4a1095b62b017e42e757a4ae96d10c26f83cce69b",
+        "raw_output": "{\"paper_id\":\"P001484\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Active Learning (AL) is a selective sampling strategy which has been shown to be particularly cost-efficient by drastically reducing the amount of training data to be manually annotated.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"For the annotation of natural language data, cost efficiency is usually measured in terms of the number of tokens to be considered.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"the time it takes to manually label selected annotation examples.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We here propose three different approaches to incorporate costs into the AL selection mechanism and evaluate them on the MUC7 T corpus, an extension of the MUC7 newspaper corpus that contains such annotation time information.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Our experiments reveal that using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4494,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 602,
+          "output_tokens": 333
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.67387885999983,
+        "messages_sha256": "192365e07495b1956bb6084587c53eac196de4fcac35f7dc3db18b6525be7f71",
+        "raw_output": "{\"paper_id\":\"P001484\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Active Learning (AL) is a selective sampling strategy which has been shown to be particularly cost-efficient by drastically reducing the amount of training data to be manually annotated.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"For the annotation of natural language data, cost efficiency is usually measured in terms of the number of tokens to be considered.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"the time it takes to manually label selected annotation examples.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We here propose three different approaches to incorporate costs into the AL selection mechanism and evaluate them on the MUC7 T corpus, an extension of the MUC7 newspaper corpus that contains such annotation time information.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Our experiments reveal that using a cost-sensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4495,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 630,
+          "output_tokens": 333
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "Qwen output must contain one readable UTF-8 JSON object only"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 63.6363622399997,
+      "input_tokens": 3531,
+      "output_tokens": 824
+    },
+    "paper_id": "P001484",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3531,
+      "output_tokens": 824
+    }
+  },
+  "record_sha256": "664b8c0c67af93c4ee83bc3353070a54214b80b9894079259d76f7b8ca335a20",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

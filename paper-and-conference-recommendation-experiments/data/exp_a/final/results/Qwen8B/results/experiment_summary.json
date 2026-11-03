@@ -1,0 +1,149 @@
+{
+  "status": "complete",
+  "signature": "f8973981a6d9506a658c9d5f9bafe76e29fcbe2285af88c10a4774d04adc1cce",
+  "counts": {
+    "test": 60,
+    "train": 280,
+    "valid": 60
+  },
+  "selected_checkpoint": "checkpoint-105",
+  "validation": {
+    "status": "selected",
+    "split": "valid",
+    "checkpoint": "checkpoint-105",
+    "micro": {
+      "tp": 357,
+      "fp": 214,
+      "fn": 153,
+      "precision": 0.6252189141856392,
+      "recall": 0.7,
+      "f1": 0.6604995374653099
+    },
+    "criterion": "validation_v_recall_micro_f1_then_recall_then_earlier_epoch",
+    "signature": "f8973981a6d9506a658c9d5f9bafe76e29fcbe2285af88c10a4774d04adc1cce"
+  },
+  "table": [
+    {
+      "arm": "base-V-recall",
+      "tp": 152,
+      "fp": 522,
+      "fn": 350,
+      "precision": 0.22551928783382788,
+      "recall": 0.30278884462151395,
+      "f1": 0.2585034013605442,
+      "macro_f1": 0.25965134931697803,
+      "by_facet": {
+        "problem": {
+          "tp": 26,
+          "fp": 80,
+          "fn": 59,
+          "precision": 0.24528301886792453,
+          "recall": 0.3058823529411765,
+          "f1": 0.27225130890052357,
+          "exact": 2
+        },
+        "task": {
+          "tp": 19,
+          "fp": 111,
+          "fn": 72,
+          "precision": 0.14615384615384616,
+          "recall": 0.2087912087912088,
+          "f1": 0.17194570135746606,
+          "exact": 0
+        },
+        "method": {
+          "tp": 52,
+          "fp": 149,
+          "fn": 107,
+          "precision": 0.25870646766169153,
+          "recall": 0.3270440251572327,
+          "f1": 0.28888888888888886,
+          "exact": 1
+        },
+        "dataset": {
+          "tp": 19,
+          "fp": 68,
+          "fn": 17,
+          "precision": 0.21839080459770116,
+          "recall": 0.5277777777777778,
+          "f1": 0.3089430894308943,
+          "exact": 7
+        },
+        "contribution": {
+          "tp": 36,
+          "fp": 114,
+          "fn": 95,
+          "precision": 0.24,
+          "recall": 0.2748091603053435,
+          "f1": 0.25622775800711745,
+          "exact": 0
+        }
+      },
+      "fallback": 4,
+      "fresh_calls": 180
+    },
+    {
+      "arm": "gold400-QLoRA-V-recall",
+      "tp": 355,
+      "fp": 207,
+      "fn": 147,
+      "precision": 0.6316725978647687,
+      "recall": 0.7071713147410359,
+      "f1": 0.6672932330827067,
+      "macro_f1": 0.676692371996632,
+      "by_facet": {
+        "problem": {
+          "tp": 52,
+          "fp": 32,
+          "fn": 33,
+          "precision": 0.6190476190476191,
+          "recall": 0.611764705882353,
+          "f1": 0.6153846153846154,
+          "exact": 16
+        },
+        "task": {
+          "tp": 68,
+          "fp": 41,
+          "fn": 23,
+          "precision": 0.6238532110091743,
+          "recall": 0.7472527472527473,
+          "f1": 0.68,
+          "exact": 11
+        },
+        "method": {
+          "tp": 131,
+          "fp": 64,
+          "fn": 28,
+          "precision": 0.6717948717948717,
+          "recall": 0.8238993710691824,
+          "f1": 0.7401129943502824,
+          "exact": 15
+        },
+        "dataset": {
+          "tp": 30,
+          "fp": 10,
+          "fn": 6,
+          "precision": 0.75,
+          "recall": 0.8333333333333334,
+          "f1": 0.7894736842105263,
+          "exact": 46
+        },
+        "contribution": {
+          "tp": 74,
+          "fp": 60,
+          "fn": 57,
+          "precision": 0.5522388059701493,
+          "recall": 0.5648854961832062,
+          "f1": 0.5584905660377358,
+          "exact": 4
+        }
+      },
+      "fallback": 3,
+      "fresh_calls": 180
+    }
+  ],
+  "training_performed": true,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "wall_seconds": 17510.969628529,
+  "limitation": "Gold400 was purposively selected and previously inspected during pipeline development; this is a new paper-level training split, not an independent external holdout."
+}

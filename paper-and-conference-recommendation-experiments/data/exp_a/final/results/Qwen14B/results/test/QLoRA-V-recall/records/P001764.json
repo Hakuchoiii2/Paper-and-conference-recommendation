@@ -1,0 +1,439 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.48936547899939,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1228,
+            "output_tokens": 121
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.551574671000708,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2882,
+            "output_tokens": 121
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.921043410999118,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001764\",\"task\":[{\"concept\":\"predict alignment scores\",\"evidence_id\":\"A2\"}],\"method\":[{\"concept\":\"natural language processing\",\"evidence_id\":\"A2\"},{\"concept\":\"discourse features\",\"evidence_id\":\"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5336,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 612,
+            "output_tokens": 58
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 53.961983560999215,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P001764",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4722,
+        "output_tokens": 300
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.48936547899939,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1228,
+            "output_tokens": 121
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.551574671000708,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}, {\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2882,
+            "output_tokens": 121
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 44.0409401500001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5335,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4110,
+        "output_tokens": 242
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.48936547899939,
+        "inherited": false,
+        "messages_sha256": "c901a0782633931e97d21fc2870e352509d59f425186d94a665d07adfe01f63d",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5334,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1228,
+          "output_tokens": 121
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 23.551574671000708,
+        "inherited": false,
+        "messages_sha256": "a3ecb863ed5d2d1088b1d497e62bcb7cbf8035c345a10bc73bfbaeeae9341f9b",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001764",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 5335,
+        "usage": {
+          "input_tokens": 2882,
+          "output_tokens": 121
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.921043410999118,
+        "inherited": false,
+        "messages_sha256": "131440e6991e933c3e8d411dccedadd6bf3952ad978cb69a7be8c81bd5c514f6",
+        "reached_token_limit": false,
+        "seed": 5336,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 612,
+          "output_tokens": 58
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.921043410999118,
+      "messages_sha256": "131440e6991e933c3e8d411dccedadd6bf3952ad978cb69a7be8c81bd5c514f6",
+      "raw_output": "{\"paper_id\":\"P001764\",\"task\":[{\"concept\":\"predict alignment scores\",\"evidence_id\":\"A2\"}],\"method\":[{\"concept\":\"natural language processing\",\"evidence_id\":\"A2\"},{\"concept\":\"discourse features\",\"evidence_id\":\"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 612,
+        "output_tokens": 58
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "9a75a39e813482c8cefb15870d7b8c789856a4fc28267bc3e371cf1b26cd6367",
+    "facets": {
+      "contribution": [
+        "predict alignment scores",
+        "proven learning methods"
+      ],
+      "dataset": [],
+      "method": [
+        "natural language processing",
+        "discourse features"
+      ],
+      "paper_id": "P001764",
+      "problem": [],
+      "task": [
+        "predict alignment scores"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 53.961983560999215,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 53.961983560999215,
+      "input_tokens": 4722,
+      "output_tokens": 300
+    },
+    "paper_id": "P001764",
+    "source_sha256": "403840f4233b149fd5f580238a50ba131467d4d98a5d82f3afc57c0e3b2b25e4",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4722,
+      "output_tokens": 300
+    }
+  },
+  "record_sha256": "5a5204652bd12783b892bdd50d43985af8ac37ac1208d2f7f00b4a5c7a9c7e03",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

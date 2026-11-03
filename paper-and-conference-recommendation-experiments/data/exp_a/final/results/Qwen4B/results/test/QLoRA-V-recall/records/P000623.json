@@ -1,0 +1,485 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.471735995999552,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1411,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.031638000000385,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3128,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.247694756999408,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000623\",\"task\":[{\"concept\":\"Collective Stance Classification\",\"evidence_id\":\"T0\"},{\"concept\":\"identify both linguistic features of the posts and features that capture the underlying relationships between posts and users\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"probabilistic soft logic\",\"evidence_id\":\"A5\"},{\"concept\":\"collective classification\",\"evidence_id\":\"A3\"},{\"concept\":\"observed network structure of the posts\",\"evidence_id\":\"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1913,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 836,
+            "output_tokens": 107
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "collective classification model",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "observed network structure of the posts",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "identify both linguistic features of the posts and features that capture the underlying relationships between posts and users",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 58.751068752999345,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P000623",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5375,
+        "output_tokens": 431
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.471735995999552,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1411,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.031638000000385,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification model\", \"evidence_id\": \"A7\"}, {\"concept\": \"collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3128,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "collective classification model",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 44.50337399599994,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1912,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4539,
+        "output_tokens": 324
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.471735995999552,
+        "inherited": false,
+        "messages_sha256": "5212fbd504d89a79719158262fa5e41cd871adc8085cd67f88e3780f8c52fffa",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1911,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1411,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 23.031638000000385,
+        "inherited": false,
+        "messages_sha256": "c648b1ea436b342ab10ad98a3fcfee2b568b388b03d1a030cd18e75b03cdfca6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000623",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 1912,
+        "usage": {
+          "input_tokens": 3128,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.247694756999408,
+        "inherited": false,
+        "messages_sha256": "cbb70539ddb96efe593e829cc5b874737f02c06b56e9b242a861ede6f8ce5dd1",
+        "reached_token_limit": false,
+        "seed": 1913,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 836,
+          "output_tokens": 107
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "identify both linguistic features of the posts and features that capture the underlying relationships between posts and users",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "observed network structure of the posts",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "collective classification model",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.247694756999408,
+      "messages_sha256": "cbb70539ddb96efe593e829cc5b874737f02c06b56e9b242a861ede6f8ce5dd1",
+      "raw_output": "{\"paper_id\":\"P000623\",\"task\":[{\"concept\":\"Collective Stance Classification\",\"evidence_id\":\"T0\"},{\"concept\":\"identify both linguistic features of the posts and features that capture the underlying relationships between posts and users\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"probabilistic soft logic\",\"evidence_id\":\"A5\"},{\"concept\":\"collective classification\",\"evidence_id\":\"A3\"},{\"concept\":\"observed network structure of the posts\",\"evidence_id\":\"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 836,
+        "output_tokens": 107
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "06e5c027585efe62f3c9563668d2c11d9ef9151f53e7581cff8fedfb93e9bea4",
+    "facets": {
+      "contribution": [
+        "collective classification model",
+        "collective classification model easily incorporates rich, relational information and outperforms a local model which uses only linguistic information"
+      ],
+      "dataset": [
+        "4FORUMS"
+      ],
+      "method": [
+        "probabilistic soft logic",
+        "collective classification",
+        "observed network structure of the posts"
+      ],
+      "paper_id": "P000623",
+      "problem": [],
+      "task": [
+        "Collective Stance Classification",
+        "identify both linguistic features of the posts and features that capture the underlying relationships between posts and users"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.751068752999345,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 58.751068752999345,
+      "input_tokens": 5375,
+      "output_tokens": 431
+    },
+    "paper_id": "P000623",
+    "source_sha256": "a92f4db40123138c7532e8d87e013ab02373ff29706fc01141301c4cedbed872",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5375,
+      "output_tokens": 431
+    }
+  },
+  "record_sha256": "12f30c4548d0d3a770587dfa4027fceebf041d9cdc8221310c7154fd8578a95f",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

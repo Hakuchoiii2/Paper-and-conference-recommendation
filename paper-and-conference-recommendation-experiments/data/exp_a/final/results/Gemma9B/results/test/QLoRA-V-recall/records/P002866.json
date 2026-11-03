@@ -1,0 +1,456 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 34.72398620199965,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8640,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1301,
+            "output_tokens": 183
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.69789142799709,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8641,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3087,
+            "output_tokens": 183
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.444772668000951,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002866\", \"task\": [], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8642,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 752,
+            "output_tokens": 41
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "OntoNotes",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "ensemble approach",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002866",
+        "problem": [
+          {
+            "concept": "rare and conflict with evidence from strictly agreeing cases",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 81.8666502979977,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002866",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5140,
+        "output_tokens": 407
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 34.72398620199965,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8640,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1301,
+            "output_tokens": 183
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.69789142799709,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002866\", \"problem\": [{\"concept\": \"rare and conflict with evidence from strictly agreeing cases\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"OntoNotes\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"predicting English notional anaphora\", \"evidence_id\": \"A4\"}, {\"concept\": \"circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8641,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3087,
+            "output_tokens": 183
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "OntoNotes",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "ensemble approach",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002866",
+        "problem": [
+          {
+            "concept": "rare and conflict with evidence from strictly agreeing cases",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 73.42187762999674,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8641,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4388,
+        "output_tokens": 366
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 34.72398620199965,
+        "inherited": false,
+        "messages_sha256": "39d984f66527b125ea1bda7b72e4734fbd62aaa4a0495ac0c2af7f997fecacd1",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 8640,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1301,
+          "output_tokens": 183
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 38.69789142799709,
+        "inherited": false,
+        "messages_sha256": "47658f69398649c3ed0efb4805201e83e863a41bb867d73a11939a472abee980",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002866",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 8641,
+        "usage": {
+          "input_tokens": 3087,
+          "output_tokens": 183
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.444772668000951,
+        "inherited": false,
+        "messages_sha256": "e3563f906685604e9018b3468cc33230f85e360b41634dfdc3f3333e85b9642d",
+        "reached_token_limit": false,
+        "seed": 8642,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 752,
+          "output_tokens": 41
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "OntoNotes",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "ensemble approach",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002866",
+        "problem": [
+          {
+            "concept": "rare and conflict with evidence from strictly agreeing cases",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predicting English notional anaphora",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "ensemble approach",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.444772668000951,
+      "messages_sha256": "e3563f906685604e9018b3468cc33230f85e360b41634dfdc3f3333e85b9642d",
+      "raw_output": "{\"paper_id\": \"P002866\", \"task\": [], \"method\": [{\"concept\": \"ensemble approach\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 752,
+        "output_tokens": 41
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "20ab5d50d5f6ab48883118870847fdb32372800467f2e3aee2cd1662d91db6e1",
+    "facets": {
+      "contribution": [
+        "predicting English notional anaphora",
+        "circumstances at the anaphor's utterance location, as well as global factors such as genre, have a strong effect on the choice of referring expression"
+      ],
+      "dataset": [
+        "OntoNotes"
+      ],
+      "method": [
+        "ensemble approach"
+      ],
+      "paper_id": "P002866",
+      "problem": [
+        "rare and conflict with evidence from strictly agreeing cases"
+      ],
+      "task": [
+        "predicting English notional anaphora"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 81.8666502979977,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 81.8666502979977,
+      "input_tokens": 5140,
+      "output_tokens": 407
+    },
+    "paper_id": "P002866",
+    "source_sha256": "37ec46f135fc13694202f6bf5913ea51d45b52d605f5a6c0c018f707c0b2ace0",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5140,
+      "output_tokens": 407
+    }
+  },
+  "record_sha256": "22b802af1b6d1f0a931c13f056b1a585d3537718c29a91ac7d8e52607f5c56a8",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

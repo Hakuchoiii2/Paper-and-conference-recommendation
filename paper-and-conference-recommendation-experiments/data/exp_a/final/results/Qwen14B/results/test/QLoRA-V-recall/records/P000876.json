@@ -1,0 +1,545 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.357175531000394,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2670,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1498,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.71565580999959,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2671,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3288,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.388458473000355,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000876\",\"task\":[{\"concept\":\"predict content polarity\",\"evidence_id\":\"A5\"},{\"concept\":\"opinion holder bias prediction\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"relational learning\",\"evidence_id\":\"A5\"},{\"concept\":\"endorsements\",\"evidence_id\":\"A5\"},{\"concept\":\"transfer user biases to textual features\",\"evidence_id\":\"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2672,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 961,
+            "output_tokens": 89
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "transfer user biases to textual features",
+              "evidence": "We then analyze sentiments by transferring user biases to textual features.",
+              "facet": "method",
+              "index": 3,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "transfer learning strategy",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "user bias tends to be more consistent over time",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "transfer learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "relational learning",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "endorsements",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "transfer user biases to textual features",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000876",
+        "problem": [
+          {
+            "concept": "highly dynamic textual content",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "lack of labeled data",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "real time sentiment analysis",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "opinion holder bias prediction",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "predict content polarity",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 85.46128981400034,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P000876",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5747,
+        "output_tokens": 489
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "transfer user biases to textual features",
+          "evidence": "We then analyze sentiments by transferring user biases to textual features.",
+          "facet": "method",
+          "index": 3,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.357175531000394,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2670,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1498,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.71565580999959,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000876\", \"problem\": [{\"concept\": \"highly dynamic textual content\", \"evidence_id\": \"A2\"}, {\"concept\": \"lack of labeled data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"real time sentiment analysis\", \"evidence_id\": \"A1\"}, {\"concept\": \"opinion holder bias prediction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"relational learning\", \"evidence_id\": \"A5\"}, {\"concept\": \"endorsements\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"transfer learning strategy\", \"evidence_id\": \"A3\"}, {\"concept\": \"user bias tends to be more consistent over time\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2671,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3288,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "transfer learning strategy",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "user bias tends to be more consistent over time",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "transfer learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "relational learning",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "endorsements",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000876",
+        "problem": [
+          {
+            "concept": "highly dynamic textual content",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "lack of labeled data",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "real time sentiment analysis",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "opinion holder bias prediction",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 70.07283134099998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2671,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4786,
+        "output_tokens": 400
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 33.357175531000394,
+        "inherited": false,
+        "messages_sha256": "6c00038a9f689412d2ea9347bd6dec1d22eaa3ee3c73b2f49336edf07e85e0e8",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2670,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1498,
+          "output_tokens": 200
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 36.71565580999959,
+        "inherited": false,
+        "messages_sha256": "a4c06e5e693819e5ce9c57a842f449643c97948dcbfa838e42357e1acfb57e82",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000876",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ]
+        },
+        "seed": 2671,
+        "usage": {
+          "input_tokens": 3288,
+          "output_tokens": 200
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.388458473000355,
+        "inherited": false,
+        "messages_sha256": "9bf674a5cc282f3124ba5353124b1ecb8b279a5d4c7a8ba701c7a3f0ec1bd3d4",
+        "reached_token_limit": false,
+        "seed": 2672,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 961,
+          "output_tokens": 89
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "predict content polarity",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "transfer user biases to textual features",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "transfer learning strategy",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "user bias tends to be more consistent over time",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "transfer learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "relational learning",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "endorsements",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000876",
+        "problem": [
+          {
+            "concept": "highly dynamic textual content",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "lack of labeled data",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "real time sentiment analysis",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "opinion holder bias prediction",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "opinion holder bias prediction",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "relational learning",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "endorsements",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.388458473000355,
+      "messages_sha256": "9bf674a5cc282f3124ba5353124b1ecb8b279a5d4c7a8ba701c7a3f0ec1bd3d4",
+      "raw_output": "{\"paper_id\":\"P000876\",\"task\":[{\"concept\":\"predict content polarity\",\"evidence_id\":\"A5\"},{\"concept\":\"opinion holder bias prediction\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"relational learning\",\"evidence_id\":\"A5\"},{\"concept\":\"endorsements\",\"evidence_id\":\"A5\"},{\"concept\":\"transfer user biases to textual features\",\"evidence_id\":\"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 961,
+        "output_tokens": 89
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "796890e7c8462b5e3bc39362b779ffa8d8531a0059f79716ef4b43a5a115bca6",
+    "facets": {
+      "contribution": [
+        "transfer learning strategy",
+        "user bias tends to be more consistent over time"
+      ],
+      "dataset": [],
+      "method": [
+        "transfer learning",
+        "relational learning",
+        "endorsements",
+        "transfer user biases to textual features"
+      ],
+      "paper_id": "P000876",
+      "problem": [
+        "highly dynamic textual content",
+        "lack of labeled data"
+      ],
+      "task": [
+        "real time sentiment analysis",
+        "opinion holder bias prediction",
+        "predict content polarity"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 85.46128981400034,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 85.46128981400034,
+      "input_tokens": 5747,
+      "output_tokens": 489
+    },
+    "paper_id": "P000876",
+    "source_sha256": "fa4a999f18c171a356f02dce2a802a31606dbafda34652133f989b07b76892d8",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5747,
+      "output_tokens": 489
+    }
+  },
+  "record_sha256": "6871efe27d9e6d56654d4825b2356976a0c4c107046b7d58023b58870aaf927b",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

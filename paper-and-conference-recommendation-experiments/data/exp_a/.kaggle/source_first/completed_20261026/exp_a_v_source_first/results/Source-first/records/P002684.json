@@ -1,0 +1,231 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 19.509816441000112,
+          "messages_sha256": "1a5c5bdb68bee8bad201c4240b77b56027e05345f2113aa9ecea6fed1eb2d550",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002684\", \"problem\": [], \"task\": [{\"concept\": \"letter-to-phoneme conversion\", \"evidence_id\": \"A0\"}, {\"concept\": \"name transliteration\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"generative joint n-gram models\", \"evidence_id\": \"A1\"}, {\"concept\": \"discriminative sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"joint n-gram features\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"letter-to-phoneme data sets\", \"evidence_id\": \"A5\"}, {\"concept\": \"transliteration data sets\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"include joint n-gram features inside a state-of-the-art discriminative sequence model\", \"evidence_id\": \"A4\"}, {\"concept\": \"improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 87.8413,
+          "seed": 8096,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2307,
+            "output_tokens": 240
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "include joint n-gram features inside a state-of-the-art discriminative sequence model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "letter-to-phoneme data sets",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "transliteration data sets",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "generative joint n-gram models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "discriminative sequence models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "joint n-gram features",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002684",
+        "problem": [],
+        "task": [
+          {
+            "concept": "letter-to-phoneme conversion",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "name transliteration",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 68.42609708999953,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002684",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "letter-to-phoneme data sets",
+            "evidence": "We evaluate our approach on several letter-to-phoneme and transliteration data sets.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          },
+          {
+            "concept": "transliteration data sets",
+            "evidence": "We evaluate our approach on several letter-to-phoneme and transliteration data sets.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 87.8413,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3548,
+        "output_tokens": 876
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.33973318599965,
+        "messages_sha256": "575a915335831990da8c9cfd1098d9a70146d5ff1976238800b006df3c87f706",
+        "raw_output": "{\"paper_id\":\"P002684\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPhonetic string transduction problems, such as letter-to-phoneme conversion and name transliteration, have recently received much attention in the NLP community.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In the past few years, two methods have come to dominate as solutions to supervised string transduction: generative joint n-gram models, and discriminative sequence models.\",\"roles\":[\"task\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"Both approaches benefit from their ability to consider large, flexible spans of source context when making transduction decisions.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"However, they encode this context in different ways, providing their respective models with different information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"To combine the strengths of these two systems, we include joint n-gram features inside a state-of-the-art discrimin\\/tive sequence model.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"We evaluate our approach on several letter-to-phoneme and transliteration data sets.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Our results indicate an improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8094,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 610,
+          "output_tokens": 318
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.57654746299977,
+        "messages_sha256": "df9ebe0c8d6510e852e5e8d47b75cf65473e18129d0e58aee987572cf239b396",
+        "raw_output": "{\"paper_id\":\"P002684\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPhonetic string transduction problems, such as letter-to-phoneme conversion and name transliteration, have recently received much attention in the NLP community.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In the past few years, two methods have come to dominate as solutions to supervised string transduction: generative joint n-gram models, and discriminative sequence models.\",\"roles\":[\"task\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"Both approaches benefit from their ability to consider large, flexible spans of source context when making transduction decisions.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"However, they encode this context in different ways, providing their respective models with different information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"To combine the strengths of these two systems, we include joint n-gram features inside a state-of-the-art discrimin\\/tive sequence model.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"We evaluate our approach on several letter-to-phoneme and transliteration data sets.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Our results indicate an improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8095,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 631,
+          "output_tokens": 318
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 19.509816441000112,
+        "messages_sha256": "1a5c5bdb68bee8bad201c4240b77b56027e05345f2113aa9ecea6fed1eb2d550",
+        "raw_output": "{\"paper_id\": \"P002684\", \"problem\": [], \"task\": [{\"concept\": \"letter-to-phoneme conversion\", \"evidence_id\": \"A0\"}, {\"concept\": \"name transliteration\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"generative joint n-gram models\", \"evidence_id\": \"A1\"}, {\"concept\": \"discriminative sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"joint n-gram features\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"letter-to-phoneme data sets\", \"evidence_id\": \"A5\"}, {\"concept\": \"transliteration data sets\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"include joint n-gram features inside a state-of-the-art discriminative sequence model\", \"evidence_id\": \"A4\"}, {\"concept\": \"improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 8096,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2307,
+          "output_tokens": 240
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 2,
+    "facets": {
+      "contribution": [
+        "include joint n-gram features inside a state-of-the-art discriminative sequence model",
+        "improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models"
+      ],
+      "dataset": [],
+      "method": [
+        "generative joint n-gram models",
+        "discriminative sequence models",
+        "joint n-gram features"
+      ],
+      "paper_id": "P002684",
+      "problem": [],
+      "task": [
+        "letter-to-phoneme conversion",
+        "name transliteration"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 68.42609708999953,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.33973318599965,
+        "messages_sha256": "575a915335831990da8c9cfd1098d9a70146d5ff1976238800b006df3c87f706",
+        "raw_output": "{\"paper_id\":\"P002684\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPhonetic string transduction problems, such as letter-to-phoneme conversion and name transliteration, have recently received much attention in the NLP community.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In the past few years, two methods have come to dominate as solutions to supervised string transduction: generative joint n-gram models, and discriminative sequence models.\",\"roles\":[\"task\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"Both approaches benefit from their ability to consider large, flexible spans of source context when making transduction decisions.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"However, they encode this context in different ways, providing their respective models with different information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"To combine the strengths of these two systems, we include joint n-gram features inside a state-of-the-art discrimin\\/tive sequence model.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"We evaluate our approach on several letter-to-phoneme and transliteration data sets.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Our results indicate an improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8094,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 610,
+          "output_tokens": 318
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.57654746299977,
+        "messages_sha256": "df9ebe0c8d6510e852e5e8d47b75cf65473e18129d0e58aee987572cf239b396",
+        "raw_output": "{\"paper_id\":\"P002684\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPhonetic string transduction problems, such as letter-to-phoneme conversion and name transliteration, have recently received much attention in the NLP community.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In the past few years, two methods have come to dominate as solutions to supervised string transduction: generative joint n-gram models, and discriminative sequence models.\",\"roles\":[\"task\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"Both approaches benefit from their ability to consider large, flexible spans of source context when making transduction decisions.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"However, they encode this context in different ways, providing their respective models with different information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"To combine the strengths of these two systems, we include joint n-gram features inside a state-of-the-art discrimin\\/tive sequence model.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"We evaluate our approach on several letter-to-phoneme and transliteration data sets.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Our results indicate an improvement in overall performance with respect to both the joint n-gram approach and traditional feature sets for discriminative models.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8095,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 631,
+          "output_tokens": 318
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 68.42609708999953,
+      "input_tokens": 3548,
+      "output_tokens": 876
+    },
+    "paper_id": "P002684",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3548,
+      "output_tokens": 876
+    }
+  },
+  "record_sha256": "48ee37869d9d8793d7db1392ebf819ee76e9c137b03604350ed437dbe2ab4dcc",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

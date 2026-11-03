@@ -1,0 +1,192 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 10.779378767000026,
+          "messages_sha256": "f0c1620cd7f1b2885829e811fb312f04b232248ac395268b817e00cab0bb26fa",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002173\", \"problem\": [], \"task\": [{\"concept\": \"controlling of a Ghost Team in Ms Pac-Man\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"Monte-Carlo Tree Search\", \"evidence_id\": \"A0\"}, {\"concept\": \"MCTS on each ghost's tree\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ghost team (ICE gUCT)\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 6563,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2220,
+            "output_tokens": 120
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "ghost team (ICE gUCT)",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Monte-Carlo Tree Search",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "MCTS on each ghost's tree",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002173",
+        "problem": [],
+        "task": [
+          {
+            "concept": "controlling of a Ghost Team in Ms Pac-Man",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 39.258046837000165,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002173",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 76.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3287,
+        "output_tokens": 493
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.454876397000135,
+        "messages_sha256": "d7dcd888abde3915d5b9580d734772a4efb05a3708e50902699af2a8901609e3",
+        "raw_output": "{\"paper_id\":\"P002173\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We present an application of Monte-Carlo Tree Search (MCTS) to controlling ghosts in the game of Ms Pac-Man.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We approach the problem by performing MCTS on each ghost's tree that represents the game state from the ghost's perspective.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our goal is to create a strong ghost team that is adaptable to a variety of Ms Pac-Man's play styles.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"This ghost team (ICE gUCT) won the CEC 2011 Ms Pac-Man vs Ghost Team Competition for the ghost side.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6561,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 523,
+          "output_tokens": 189
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.023791673000005,
+        "messages_sha256": "2b25483113201e572ef3323e7c9dccf2f673d6e750c98b9e8272d6f8d431d738",
+        "raw_output": "{\"paper_id\":\"P002173\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Applying Monte-Carlo Tree Search to collaboratively controlling of a Ghost Team in Ms Pac-Man\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We approach the problem by performing MCTS on each ghost's tree that represents the game state from the ghost's perspective.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our goal is to create a strong ghost team that is adaptable to a variety of Ms Pac-Man's play styles.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"This ghost team (ICE gUCT) won the CEC 2011 Ms Pac-Man vs Ghost Team Competition for the ghost side.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6562,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 544,
+          "output_tokens": 184
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.779378767000026,
+        "messages_sha256": "f0c1620cd7f1b2885829e811fb312f04b232248ac395268b817e00cab0bb26fa",
+        "raw_output": "{\"paper_id\": \"P002173\", \"problem\": [], \"task\": [{\"concept\": \"controlling of a Ghost Team in Ms Pac-Man\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"Monte-Carlo Tree Search\", \"evidence_id\": \"A0\"}, {\"concept\": \"MCTS on each ghost's tree\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"ghost team (ICE gUCT)\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 6563,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2220,
+          "output_tokens": 120
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "ghost team (ICE gUCT)"
+      ],
+      "dataset": [],
+      "method": [
+        "Monte-Carlo Tree Search",
+        "MCTS on each ghost's tree"
+      ],
+      "paper_id": "P002173",
+      "problem": [],
+      "task": [
+        "controlling of a Ghost Team in Ms Pac-Man"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 39.258046837000165,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.454876397000135,
+        "messages_sha256": "d7dcd888abde3915d5b9580d734772a4efb05a3708e50902699af2a8901609e3",
+        "raw_output": "{\"paper_id\":\"P002173\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We present an application of Monte-Carlo Tree Search (MCTS) to controlling ghosts in the game of Ms Pac-Man.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We approach the problem by performing MCTS on each ghost's tree that represents the game state from the ghost's perspective.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our goal is to create a strong ghost team that is adaptable to a variety of Ms Pac-Man's play styles.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"This ghost team (ICE gUCT) won the CEC 2011 Ms Pac-Man vs Ghost Team Competition for the ghost side.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6561,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 523,
+          "output_tokens": 189
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.023791673000005,
+        "messages_sha256": "2b25483113201e572ef3323e7c9dccf2f673d6e750c98b9e8272d6f8d431d738",
+        "raw_output": "{\"paper_id\":\"P002173\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Applying Monte-Carlo Tree Search to collaboratively controlling of a Ghost Team in Ms Pac-Man\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We approach the problem by performing MCTS on each ghost's tree that represents the game state from the ghost's perspective.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our goal is to create a strong ghost team that is adaptable to a variety of Ms Pac-Man's play styles.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"This ghost team (ICE gUCT) won the CEC 2011 Ms Pac-Man vs Ghost Team Competition for the ghost side.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6562,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 544,
+          "output_tokens": 184
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 39.258046837000165,
+      "input_tokens": 3287,
+      "output_tokens": 493
+    },
+    "paper_id": "P002173",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3287,
+      "output_tokens": 493
+    }
+  },
+  "record_sha256": "b3f73d0d92dcfe48cfa4aacff1b77a7d2d859d494e7982f2a7833d78ad79bafd",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

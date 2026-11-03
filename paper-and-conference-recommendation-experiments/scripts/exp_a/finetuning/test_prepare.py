@@ -89,6 +89,25 @@ class PrepareChecks(unittest.TestCase):
             self.assertEqual(set(test_papers[0]), {'paper_id', 'title', 'abstract'})
             self.assertTrue((root / 'one/instruction.txt').is_file())
 
+    def test_human_accepted_reference_filename_and_provenance_are_preserved(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / 'tmp') as directory:
+            root = Path(directory)
+            _, references, _ = fixture(root, count=10)
+            review = root / 'data/exp_a/ground_truth/gold_review'
+            for row in references:
+                row.update(reviewer_type='human', reviewer='user', human_review_status='accepted')
+            write_jsonl(review / 'human_gold.jsonl', references)
+            (review / 'review_annotations.jsonl').unlink()
+            (review / 'gpt_review_manifest.json').write_text(json.dumps(dict(
+                reference_file='human_gold.jsonl', source_confirmation_pending_ids=[])), encoding='utf-8')
+            result = preparation.prepare(root, root / 'out')
+            self.assertEqual(result['eligible_papers'], 10)
+            self.assertEqual(result['annotation_kind'], 'human_gold')
+            self.assertEqual(result['human_review_status'], 'accepted')
+            for row in preparation.base.read_jsonl(root / 'out/train.jsonl'):
+                self.assertEqual(row['provenance']['reviewer_type'], 'human')
+                self.assertEqual(row['provenance']['human_review_status'], 'accepted')
+
     def test_bad_concept_rejects_whole_paper_and_exact_evidence_id_remaps(self):
         with tempfile.TemporaryDirectory(dir=ROOT / 'tmp') as directory:
             root = Path(directory)

@@ -1,0 +1,593 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003641\", \"problem\": [{\"concept\": \"Human linguistic annotation is expensive and time-consuming\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.15822716299954,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003641\", \"problem\": [{\"concept\": \"Human linguistic annotation is expensive and time-consuming\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10965,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1323,
+            "output_tokens": 237
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "bias correction technique significantly improves annotation quality on two tasks",
+              "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003641\", \"problem\": [], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.54596553600004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003641\", \"problem\": [], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10966,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3105,
+            "output_tokens": 215
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "bias correction technique significantly improves annotation quality on two tasks",
+              "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 17.117214320999665,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P003641\",\"task\":[{\"concept\":\"affect recognition\",\"evidence_id\":\"A2\"},{\"concept\":\"word similarity\",\"evidence_id\":\"A2\"},{\"concept\":\"recognizing textual entailment\",\"evidence_id\":\"A2\"},{\"concept\":\"event temporal ordering\",\"evidence_id\":\"A2\"},{\"concept\":\"word sense disambiguation\",\"evidence_id\":\"A2\"},{\"concept\":\"bias correction\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Amazon's Mechanical Turk\",\"evidence_id\":\"A1\"},{\"concept\":\"bias correction\",\"evidence_id\":\"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10967,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 801,
+            "output_tokens": 126
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "bias correction technique significantly improves annotation quality on two tasks",
+              "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "bias correction technique significantly improves annotation quality on two tasks",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Amazon's Mechanical Turk",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003641",
+        "problem": [],
+        "task": [
+          {
+            "concept": "affect recognition",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word similarity",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "recognizing textual entailment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "event temporal ordering",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.82140701999924,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P003641",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5229,
+        "output_tokens": 578
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "bias correction technique significantly improves annotation quality on two tasks",
+          "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003641\", \"problem\": [{\"concept\": \"Human linguistic annotation is expensive and time-consuming\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.15822716299954,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003641\", \"problem\": [{\"concept\": \"Human linguistic annotation is expensive and time-consuming\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10965,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1323,
+            "output_tokens": 237
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "bias correction technique significantly improves annotation quality on two tasks",
+              "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003641\", \"problem\": [], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.54596553600004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003641\", \"problem\": [], \"task\": [{\"concept\": \"affect recognition\", \"evidence_id\": \"A2\"}, {\"concept\": \"word similarity\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognizing textual entailment\", \"evidence_id\": \"A2\"}, {\"concept\": \"event temporal ordering\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Amazon's Mechanical Turk\", \"evidence_id\": \"A1\"}, {\"concept\": \"bias correction\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts\", \"evidence_id\": \"A4\"}, {\"concept\": \"bias correction technique significantly improves annotation quality on two tasks\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10966,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3105,
+            "output_tokens": 215
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "bias correction technique significantly improves annotation quality on two tasks",
+              "evidence": "We propose a technique for bias correction that significantly improves annotation quality on two tasks.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "bias correction technique significantly improves annotation quality on two tasks",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Amazon's Mechanical Turk",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003641",
+        "problem": [],
+        "task": [
+          {
+            "concept": "affect recognition",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word similarity",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "recognizing textual entailment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "event temporal ordering",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 62.70419269899958,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10966,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4428,
+        "output_tokens": 452
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.15822716299954,
+        "inherited": false,
+        "messages_sha256": "4503565d496338a09aede149e3d6a1506626909d50b23e6b2b448d4f293925a4",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 10965,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1323,
+          "output_tokens": 237
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.54596553600004,
+        "inherited": false,
+        "messages_sha256": "a2d69750e158669b5bb074d81a9dba15c0bb58901b98176fd06b2e1dd120e147",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003641",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 10966,
+        "usage": {
+          "input_tokens": 3105,
+          "output_tokens": 215
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 17.117214320999665,
+        "inherited": false,
+        "messages_sha256": "95fbce9482f3d74d03e8f75674dcd92527264c1204c431a7f763a5f1cfa42328",
+        "reached_token_limit": false,
+        "seed": 10967,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 801,
+          "output_tokens": 126
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "bias correction technique significantly improves annotation quality on two tasks",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Amazon's Mechanical Turk",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003641",
+        "problem": [],
+        "task": [
+          {
+            "concept": "affect recognition",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word similarity",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "recognizing textual entailment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "event temporal ordering",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "affect recognition",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "word similarity",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 2,
+          "item": {
+            "concept": "recognizing textual entailment",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 3,
+          "item": {
+            "concept": "event temporal ordering",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 4,
+          "item": {
+            "concept": "word sense disambiguation",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Amazon's Mechanical Turk",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "bias correction",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 17.117214320999665,
+      "messages_sha256": "95fbce9482f3d74d03e8f75674dcd92527264c1204c431a7f763a5f1cfa42328",
+      "raw_output": "{\"paper_id\":\"P003641\",\"task\":[{\"concept\":\"affect recognition\",\"evidence_id\":\"A2\"},{\"concept\":\"word similarity\",\"evidence_id\":\"A2\"},{\"concept\":\"recognizing textual entailment\",\"evidence_id\":\"A2\"},{\"concept\":\"event temporal ordering\",\"evidence_id\":\"A2\"},{\"concept\":\"word sense disambiguation\",\"evidence_id\":\"A2\"},{\"concept\":\"bias correction\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Amazon's Mechanical Turk\",\"evidence_id\":\"A1\"},{\"concept\":\"bias correction\",\"evidence_id\":\"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 801,
+        "output_tokens": 126
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "917471bb0a4352328e16ccab91d4fbfc6d8dd905d3e22761050660cd4e9c7ce9",
+    "facets": {
+      "contribution": [
+        "non-expert labels for training machine learning algorithms can be as effective as gold standard annotations from experts",
+        "bias correction technique significantly improves annotation quality on two tasks"
+      ],
+      "dataset": [],
+      "method": [
+        "Amazon's Mechanical Turk",
+        "bias correction"
+      ],
+      "paper_id": "P003641",
+      "problem": [],
+      "task": [
+        "affect recognition",
+        "word similarity",
+        "recognizing textual entailment",
+        "event temporal ordering",
+        "word sense disambiguation",
+        "bias correction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.82140701999924,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.82140701999924,
+      "input_tokens": 5229,
+      "output_tokens": 578
+    },
+    "paper_id": "P003641",
+    "source_sha256": "3758d990a082e03574a906e5b5128494408c8041a82a34bd9f2b1ada9f8256d5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5229,
+      "output_tokens": 578
+    }
+  },
+  "record_sha256": "197118c076a48c0bdf3ece43f3ee9dc84b5745c15f442f0b7711424f946566b4",
+  "signature": "c4e41850ab9239cde830284e89193f54b9e906492bcc07dfd709400a389b78fc"
+}

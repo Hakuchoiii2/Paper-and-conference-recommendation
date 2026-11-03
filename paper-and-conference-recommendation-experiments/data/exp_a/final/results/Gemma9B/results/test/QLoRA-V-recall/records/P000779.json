@@ -1,0 +1,482 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.410321488998306,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2379,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1472,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.312958325997897,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2380,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3226,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.365874247003376,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"task\": [], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2381,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 879,
+            "output_tokens": 48
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [
+          {
+            "concept": "enslave and control the populace",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analysis of the language of totalitarianism",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 67.08915406199958,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000779",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5577,
+        "output_tokens": 326
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+          "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.410321488998306,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2379,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1472,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.312958325997897,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [{\"concept\": \"enslave and control the populace\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"analysis of the language of totalitarianism\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2380,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3226,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [
+          {
+            "concept": "enslave and control the populace",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analysis of the language of totalitarianism",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.723279814996204,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2380,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4698,
+        "output_tokens": 278
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.410321488998306,
+        "inherited": false,
+        "messages_sha256": "d5500d6aaff4be328a516029a2d77946e6737a0b2c4faff4b489860a381f10ed",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2379,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1472,
+          "output_tokens": 139
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.312958325997897,
+        "inherited": false,
+        "messages_sha256": "b9604a8995d7f4aa0742e9d90afb887e3c0fa3772e58ecc242b73c5c693bab63",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000779",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 2380,
+        "usage": {
+          "input_tokens": 3226,
+          "output_tokens": 139
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.365874247003376,
+        "inherited": false,
+        "messages_sha256": "53ba6debae5a55763c3f0bf858fa4deaeec7f909ab701e0b43a7e15d8ac5b1b7",
+        "reached_token_limit": false,
+        "seed": 2381,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 879,
+          "output_tokens": 48
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [
+          {
+            "concept": "enslave and control the populace",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analysis of the language of totalitarianism",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.365874247003376,
+      "messages_sha256": "53ba6debae5a55763c3f0bf858fa4deaeec7f909ab701e0b43a7e15d8ac5b1b7",
+      "raw_output": "{\"paper_id\": \"P000779\", \"task\": [], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 879,
+        "output_tokens": 48
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "cc2e4d70dc8f808ca76984a31cb52fd2a9fa23a48cf73d900df764e488d44993",
+    "facets": {
+      "contribution": [
+        "Newspeak was not nearly so successful as a tool of thought and behavior control as Orwell's fictional language"
+      ],
+      "dataset": [],
+      "method": [
+        "analysis of the speeches and writings of actual dictators"
+      ],
+      "paper_id": "P000779",
+      "problem": [
+        "enslave and control the populace"
+      ],
+      "task": [
+        "analysis of the language of totalitarianism"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 67.08915406199958,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 67.08915406199958,
+      "input_tokens": 5577,
+      "output_tokens": 326
+    },
+    "paper_id": "P000779",
+    "source_sha256": "80b66a3ea65224fab11a847c744568c4f1b6afea5cbf495726b0075ed20babf5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5577,
+      "output_tokens": 326
+    }
+  },
+  "record_sha256": "6832dccff3c5557814c8f1135f0a6cc9ff4b08da517fee6628d4071f8f822797",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

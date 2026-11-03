@@ -1,0 +1,81 @@
+[
+  {
+    "model": "Qwen4B",
+    "status": "verified_and_imported",
+    "zip_sha256": "dfabac874d33c0d1178fe0ae23af88bd21f918a98ec049cca6f993008ebfbdd6",
+    "checked_hashes": 750,
+    "record_counts": {
+      "valid/checkpoint-35": 60,
+      "valid/checkpoint-70": 60,
+      "valid/checkpoint-105": 60,
+      "test/QLoRA-V-recall": 60
+    },
+    "selected_checkpoint": "checkpoint-105",
+    "test": {
+      "arm": "QLoRA-V-recall",
+      "tp": 315,
+      "fp": 216,
+      "fn": 187,
+      "precision": 0.5932203389830508,
+      "recall": 0.6274900398406374,
+      "f1": 0.6098741529525653,
+      "macro_f1": 0.6292648362563663,
+      "by_facet": {
+        "problem": {
+          "tp": 45,
+          "fp": 36,
+          "fn": 40,
+          "precision": 0.5555555555555556,
+          "recall": 0.5294117647058824,
+          "f1": 0.5421686746987951,
+          "exact": 17
+        },
+        "task": {
+          "tp": 62,
+          "fp": 47,
+          "fn": 29,
+          "precision": 0.5688073394495413,
+          "recall": 0.6813186813186813,
+          "f1": 0.62,
+          "exact": 11
+        },
+        "method": {
+          "tp": 117,
+          "fp": 71,
+          "fn": 42,
+          "precision": 0.6223404255319149,
+          "recall": 0.7358490566037735,
+          "f1": 0.6743515850144092,
+          "exact": 13
+        },
+        "dataset": {
+          "tp": 26,
+          "fp": 3,
+          "fn": 10,
+          "precision": 0.896551724137931,
+          "recall": 0.7222222222222222,
+          "f1": 0.8,
+          "exact": 50
+        },
+        "contribution": {
+          "tp": 65,
+          "fp": 59,
+          "fn": 66,
+          "precision": 0.5241935483870968,
+          "recall": 0.4961832061068702,
+          "f1": 0.5098039215686274,
+          "exact": 6
+        }
+      },
+      "fallback": 2,
+      "fresh_calls": 180
+    },
+    "fallback_paper_ids": [
+      "P002933",
+      "P003701"
+    ],
+    "adapter_bytes": 132187888,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "adapter_tensors": 504
+  }
+]

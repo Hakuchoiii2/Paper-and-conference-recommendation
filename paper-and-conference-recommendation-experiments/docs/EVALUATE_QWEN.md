@@ -7,7 +7,7 @@ silver đầy đủ và sạch, nên điểm trên cohort này chưa đại di�
 ## 1. Hoàn tất gold độc lập
 
 Đọc `review_papers.jsonl` và guideline; điền năm facet trong
-`data/exp_a/ground_truth/gold_review/review_annotations.jsonl`. Người review
+`data/exp_a/ground_truth/gold_review/human_gold.jsonl`. Người review
 xác định nhãn từ title/abstract, gồm cả ý Qwen có thể bỏ sót. Giữ `[]` khi thiếu
 bằng chứng; không suy từ kiến thức ngoài bài. Chưa xem `silver_reference.jsonl`
 trước khi hoàn tất bản review độc lập.

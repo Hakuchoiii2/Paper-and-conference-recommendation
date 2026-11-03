@@ -1,0 +1,477 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.445298119000654,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5646,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1380,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.068783044000156,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5647,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3172,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.218377274002705,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"task\": [], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5648,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 818,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not accurate, informative and engaging",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 78.73245843700352,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001868",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5370,
+        "output_tokens": 403
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.445298119000654,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5646,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1380,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.068783044000156,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not accurate, informative and engaging\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5647,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3172,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not accurate, informative and engaging",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 66.51408116300081,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5647,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4552,
+        "output_tokens": 340
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.445298119000654,
+        "inherited": false,
+        "messages_sha256": "472193cb4d7b93c3b88efed0d41e2f3aae47bc2b1a0f50e6f5345d4daa7775ca",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5646,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1380,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.068783044000156,
+        "inherited": false,
+        "messages_sha256": "fd66bcbfff034e5671930c44a9cc612d33954eadb62392945eb1c9aaf1be864e",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001868",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 5647,
+        "usage": {
+          "input_tokens": 3172,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.218377274002705,
+        "inherited": false,
+        "messages_sha256": "f0eaa07ad8261a73207a303d82e5e1bd53111563418e8f7bf44786829440a386",
+        "reached_token_limit": false,
+        "seed": 5648,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 818,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not accurate, informative and engaging",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.218377274002705,
+      "messages_sha256": "f0eaa07ad8261a73207a303d82e5e1bd53111563418e8f7bf44786829440a386",
+      "raw_output": "{\"paper_id\": \"P001868\", \"task\": [], \"method\": [{\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}, {\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 818,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "f90ac080784e35b7f650d2dc619087a0e67aa81b2e93149fe624536fca09c871",
+    "facets": {
+      "contribution": [
+        "hierarchically attend and copy"
+      ],
+      "dataset": [
+        "CONVAI2"
+      ],
+      "method": [
+        "hierarchically attend and copy",
+        "pointer-generator networks"
+      ],
+      "paper_id": "P001868",
+      "problem": [
+        "short and dull responses",
+        "not accurate, informative and engaging"
+      ],
+      "task": [
+        "response generation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 78.73245843700352,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 78.73245843700352,
+      "input_tokens": 5370,
+      "output_tokens": 403
+    },
+    "paper_id": "P001868",
+    "source_sha256": "8a9815623564b7ddc997d40143f82a442cfa2afa7c1f282b3d4d02068cb570de",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5370,
+      "output_tokens": 403
+    }
+  },
+  "record_sha256": "a4b5dbe7aa26e8482ca036fa7c741763d1dd31975833bdab554e3f93a8a1d944",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

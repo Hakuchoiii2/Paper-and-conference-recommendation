@@ -131,13 +131,15 @@ def prepare(root: Path, destination: Path, *, seed=42, tokenizer=None, extra_sou
                        'manifest.json', 'additional_ai_reference'))
     records, rejected, files, seen = [], [], {}, set()
     for directory, paper_name, evidence_name, manifest_name, group in groups:
-        paths = [directory / paper_name, directory / 'review_annotations.jsonl', directory / evidence_name]
+        group_manifest_path = directory / manifest_name
+        group_manifest = json.loads(group_manifest_path.read_text(encoding='utf-8')) if group_manifest_path.exists() else {}
+        reference_file = group_manifest.get('reference_file', 'review_annotations.jsonl')
+        base.require(reference_file in ('review_annotations.jsonl', 'human_gold.jsonl'), 'Unknown reference filename')
+        paths = [directory / paper_name, directory / reference_file, directory / evidence_name]
         papers, references, evidence = (_keyed(path) for path in paths)
         base.require(set(papers) == set(references) == set(evidence), 'Source/reference/evidence IDs differ')
         base.require(not seen & set(papers), 'Reference groups overlap by paper_id')
         seen.update(papers)
-        group_manifest_path = directory / manifest_name
-        group_manifest = json.loads(group_manifest_path.read_text(encoding='utf-8')) if group_manifest_path.exists() else {}
         pending = set(group_manifest.get('source_confirmation_pending_ids', []))
         for path in paths + ([group_manifest_path] if group_manifest_path.exists() else []):
             files[str(path.relative_to(root))] = hashlib.sha256(path.read_bytes()).hexdigest()
@@ -150,9 +152,13 @@ def prepare(root: Path, destination: Path, *, seed=42, tokenizer=None, extra_sou
                 base.require(pid not in pending, 'Source confirmation pending')
                 base.require(pid not in frozen_ids and _normalized(paper['title']) not in frozen_titles
                              and _source_key(paper) not in frozen_sources, 'Frozen pilot or prompt example')
-                base.require(reference.get('reviewer_type') == 'ai' and reference.get('review_status') == 'reviewed',
-                             'Reference is not a reviewed AI annotation')
-                base.require(reference.get('human_review_status') == 'pending', 'Unexpected human review provenance')
+                reviewer_type = reference.get('reviewer_type')
+                base.require(reviewer_type in ('ai', 'human') and reference.get('review_status') == 'reviewed',
+                             'Reference is not a reviewed annotation')
+                expected_status = 'accepted' if reviewer_type == 'human' else 'pending'
+                base.require(reference.get('human_review_status') == expected_status, 'Unexpected human review provenance')
+                if reviewer_type == 'human':
+                    base.require(isinstance(reference.get('reviewer'), str) and reference['reviewer'].strip(), 'Missing human reviewer')
                 base.require(set(reference['facets']) == set(FACETS) == set(proof['evidence']), 'Wrong evidence/facet keys')
                 target, remapped = dict(paper_id=pid), []
                 options = base.evidence_options(paper)
@@ -174,7 +180,7 @@ def prepare(root: Path, destination: Path, *, seed=42, tokenizer=None, extra_sou
                 messages = [dict(role='system', content=system), dict(role='user', content=json.dumps(source, ensure_ascii=False)),
                             dict(role='assistant', content=json.dumps(target, ensure_ascii=False))]
                 provenance = dict(annotation_group=group, annotation_origin=proof['annotation_origin'],
-                    reviewer_type='ai', human_review_status='pending', review_status='reviewed',
+                    reviewer_type=reviewer_type, human_review_status=reference['human_review_status'], review_status='reviewed',
                     source_sha256=proof['source_sha256'], reference_sha256=_json_digest(reference),
                     evidence_id_remapping=remapped)
                 record = dict(paper=paper, reference=reference, target=target, messages=messages, provenance=provenance)
@@ -197,7 +203,10 @@ def prepare(root: Path, destination: Path, *, seed=42, tokenizer=None, extra_sou
     base.require(not frozen_ids & set(records), 'Frozen pilot/prompt paper leaked into eligible cohort')
     leakage['frozen_pilot_or_prompt_id_overlap'] = 0
     distributions = {split: _distribution(ids, records, features) for split, ids in split_ids.items()}
-    notes = ['Labels are AI references with human review pending, not independently human-validated gold.',
+    kinds = {r['provenance']['reviewer_type'] for r in records.values()}
+    annotation_kind = 'human_gold' if kinds == {'human'} else 'ai_reference' if kinds == {'ai'} else 'mixed_reference'
+    human_status = 'accepted' if kinds == {'human'} else 'pending' if kinds == {'ai'} else 'mixed'
+    notes = ['Reference reviewer type and human acceptance are preserved from source provenance.',
              'The existing 400-paper cohort favors richer prior silver annotations and is not a random corpus sample.',
              'Iterative multilabel allocation balances facet presence, multiple concepts, empty papers, length and annotation group; exact joint balance is not guaranteed.']
     total_features = Counter(feature for labels in features.values() for feature in labels)
@@ -210,7 +219,7 @@ def prepare(root: Path, destination: Path, *, seed=42, tokenizer=None, extra_sou
         input_sha256=files, corpus_sha256=hashlib.sha256(corpus_path.read_bytes()).hexdigest(),
         prompt_version=config.get('prompt_version'), guideline_version=config.get('guideline_version'),
         token_limits=dict(max_sequence_tokens=4096, max_assistant_tokens=2048, verified=tokenizer is not None),
-        annotation_kind='ai_reference', human_review_status='pending',
+        annotation_kind=annotation_kind, human_review_status=human_status,
         distribution_table=[dict(facet=facet, **{split: dict(present=distributions[split]['facet_presence'][facet],
             multiple=distributions[split]['facet_multiple'][facet], concepts=distributions[split]['concept_counts'][facet])
             for split in RATIOS}) for facet in FACETS])

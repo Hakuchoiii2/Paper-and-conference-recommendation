@@ -1,0 +1,226 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 21.898103942000034,
+          "messages_sha256": "03ad12264a8b56df953cf9fc4548aff1b31d461309107361d43ac90b486bea63",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004047\", \"problem\": [{\"concept\": \"Such a system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"this is problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"}, {\"concept\": \"translation and language models are trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 61.0,
+          "seed": 12185,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2406,
+            "output_tokens": 273
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"Such a system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models are trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; possible split source word: morpho logically -> morphologically; preserve raw evidence; concept=\"proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced\"; evidence_id=\"A9\"; evidence=\"Nonetheless, the proposed morph-based solution has clear benefits, as morpho logically well motivated structures (phrases) are learned , and the proportion of words left untranslated is clearly reduced.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Europarl corpus consisting of the Proceedings of the European Parliament",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "unsupervised morphology learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Morfessor algorithm",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "translation and language models are trained directly on morphs instead of words",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P004047",
+        "problem": [
+          {
+            "concept": "Such a system generalizes poorly to word forms that do not occur in the training data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "this is problematic for languages that are highly compounding, highly inflecting, or both",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 108.81390770399958,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P004047",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 61.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3845,
+        "output_tokens": 1460
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"Such a system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+        "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models are trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; possible split source word: morpho logically -> morphologically; preserve raw evidence; concept=\"proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced\"; evidence_id=\"A9\"; evidence=\"Nonetheless, the proposed morph-based solution has clear benefits, as morpho logically well motivated structures (phrases) are learned , and the proportion of words left untranslated is clearly reduced.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 43.407550768999954,
+        "messages_sha256": "37b08d4ffddfc59e51c66ada54762edddad0a818280b0aca6fa0aa19be06b3db",
+        "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Morphology-aware statistical machine translation based on morphs induced in an unsupervised manner\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In SMT, words are traditionally used as the smallest units of translation.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Such a system generalizes poorly to word forms that do not occur in the training data.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In particular, this is problematic for languages that are highly compounding, highly inflecting, or both.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"An alternative way is to use sub-word units, such as morphemes.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We use the Morfessor algorithm to find statistical morphemelike units (called morphs) that can be used to reduce the size of the lexicon and improve the ability to generalize.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Translation and language models are trained directly on morphs instead of words.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The approach is tested on three Nordic languages (Danish, Finnish, and Swedish) that are included in the Europarl corpus consisting of the Proceedings of the European Parliament.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"However, in our experiments we did not obtain higher BLEU scores for the morph model than for the standard word-based approach.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"Nonetheless, the proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 12183,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 594
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 43.50825299299959,
+        "messages_sha256": "726ae4d5fa4ac0722e24a8f384f323950ec69f3bd7394ae02feacab68e867e2f",
+        "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Morphology-aware statistical machine translation based on morphs induced in an unsupervised manner\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In SMT, words are traditionally used as the smallest units of translation.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Such a system generalizes poorly to word forms that do not occur in the training data.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"A3\",\n      \"span\": \"In particular, this is problematic for languages that are highly compounding, highly inflecting, or both.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"An alternative way is to use sub-word units, such as morphemes.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We use the Morfessor algorithm to find statistical morphemelike units (called morphs) that can be used to reduce the size of the lexicon and improve the ability to generalize.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Translation and language models are trained directly on morphs instead of words.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The approach is tested on three Nordic languages (Danish, Finnish, and Swedish) that are included in the Europarl corpus consisting of the Proceedings of the European Parliament.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"However, in our experiments we did not obtain higher BLEU scores for the morph model than for the standard word-based approach.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"Nonetheless, the proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 12184,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 730,
+          "output_tokens": 593
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 21.898103942000034,
+        "messages_sha256": "03ad12264a8b56df953cf9fc4548aff1b31d461309107361d43ac90b486bea63",
+        "raw_output": "{\"paper_id\": \"P004047\", \"problem\": [{\"concept\": \"Such a system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"this is problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"}, {\"concept\": \"translation and language models are trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}]}",
+        "reached_token_limit": false,
+        "seed": 12185,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2406,
+          "output_tokens": 273
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced"
+      ],
+      "dataset": [
+        "Europarl corpus consisting of the Proceedings of the European Parliament"
+      ],
+      "method": [
+        "unsupervised morphology learning",
+        "Morfessor algorithm",
+        "translation and language models are trained directly on morphs instead of words"
+      ],
+      "paper_id": "P004047",
+      "problem": [
+        "Such a system generalizes poorly to word forms that do not occur in the training data",
+        "this is problematic for languages that are highly compounding, highly inflecting, or both"
+      ],
+      "task": [
+        "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 108.81390770399958,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 43.407550768999954,
+        "messages_sha256": "37b08d4ffddfc59e51c66ada54762edddad0a818280b0aca6fa0aa19be06b3db",
+        "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Morphology-aware statistical machine translation based on morphs induced in an unsupervised manner\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In SMT, words are traditionally used as the smallest units of translation.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Such a system generalizes poorly to word forms that do not occur in the training data.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In particular, this is problematic for languages that are highly compounding, highly inflecting, or both.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"An alternative way is to use sub-word units, such as morphemes.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We use the Morfessor algorithm to find statistical morphemelike units (called morphs) that can be used to reduce the size of the lexicon and improve the ability to generalize.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Translation and language models are trained directly on morphs instead of words.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The approach is tested on three Nordic languages (Danish, Finnish, and Swedish) that are included in the Europarl corpus consisting of the Proceedings of the European Parliament.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"However, in our experiments we did not obtain higher BLEU scores for the morph model than for the standard word-based approach.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"Nonetheless, the proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 12183,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 594
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 43.50825299299959,
+        "messages_sha256": "726ae4d5fa4ac0722e24a8f384f323950ec69f3bd7394ae02feacab68e867e2f",
+        "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Morphology-aware statistical machine translation based on morphs induced in an unsupervised manner\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In SMT, words are traditionally used as the smallest units of translation.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Such a system generalizes poorly to word forms that do not occur in the training data.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"A3\",\n      \"span\": \"In particular, this is problematic for languages that are highly compounding, highly inflecting, or both.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"An alternative way is to use sub-word units, such as morphemes.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We use the Morfessor algorithm to find statistical morphemelike units (called morphs) that can be used to reduce the size of the lexicon and improve the ability to generalize.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Translation and language models are trained directly on morphs instead of words.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The approach is tested on three Nordic languages (Danish, Finnish, and Swedish) that are included in the Europarl corpus consisting of the Proceedings of the European Parliament.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"However, in our experiments we did not obtain higher BLEU scores for the morph model than for the standard word-based approach.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"Nonetheless, the proposed morph-based solution has clear benefits, as morphologically well motivated structures (phrases) are learned, and the proportion of words left untranslated is clearly reduced.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 12184,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 730,
+          "output_tokens": 593
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 108.81390770399958,
+      "input_tokens": 3845,
+      "output_tokens": 1460
+    },
+    "paper_id": "P004047",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3845,
+      "output_tokens": 1460
+    }
+  },
+  "record_sha256": "143fb431c2b89e3ebc55ad3307347a39764b52b3a9d8de896cca1923c1198c7c",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

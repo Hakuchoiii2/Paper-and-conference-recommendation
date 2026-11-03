@@ -1,0 +1,510 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 40.12642883600347,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12279,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1456,
+            "output_tokens": 218
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 44.58160667500488,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12280,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3293,
+            "output_tokens": 218
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 16.081154455001524,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004079\", \"task\": [], \"method\": [{\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12281,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 942,
+            "output_tokens": 86
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "NMT system",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Neural machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "technical term tokens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "statistical machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "rerank the 1,000-best SMT translations",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004079",
+        "problem": [
+          {
+            "concept": "cannot handle a larger vocabulary",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "out of vocabulary",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "translate patent sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 100.78918996600987,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P004079",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5691,
+        "output_tokens": 522
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 40.12642883600347,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12279,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1456,
+            "output_tokens": 218
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 44.58160667500488,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004079\", \"problem\": [{\"concept\": \"cannot handle a larger vocabulary\", \"evidence_id\": \"A1\"}, {\"concept\": \"out of vocabulary\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"translate patent sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NMT system\", \"evidence_id\": \"A8\"}, {\"concept\": \"method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12280,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3293,
+            "output_tokens": 218
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "NMT system",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Neural machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "technical term tokens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "statistical machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "rerank the 1,000-best SMT translations",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004079",
+        "problem": [
+          {
+            "concept": "cannot handle a larger vocabulary",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "out of vocabulary",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "translate patent sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 84.70803551100835,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12280,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4749,
+        "output_tokens": 436
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.12642883600347,
+        "inherited": false,
+        "messages_sha256": "b7c90525175f016e34690593ff71586bfe09725b9d96b9e107b77a5f2bd2f132",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12279,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1456,
+          "output_tokens": 218
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 44.58160667500488,
+        "inherited": false,
+        "messages_sha256": "41f81c58719fa4f0338d294bb2086a0aa0f92a767fd8e6fec85b7ddb3b7d1cbb",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004079",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 12280,
+        "usage": {
+          "input_tokens": 3293,
+          "output_tokens": 218
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 16.081154455001524,
+        "inherited": false,
+        "messages_sha256": "66bedaeac696ddd0cde45e72c347b256ff2c94ebe48eadbbc730154b74b22211",
+        "reached_token_limit": false,
+        "seed": 12281,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 942,
+          "output_tokens": 86
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "NMT system",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Neural machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "technical term tokens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "statistical machine translation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "rerank the 1,000-best SMT translations",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P004079",
+        "problem": [
+          {
+            "concept": "cannot handle a larger vocabulary",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "out of vocabulary",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "translate patent sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "technical term tokens",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "statistical machine translation",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "rerank the 1,000-best SMT translations",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 16.081154455001524,
+      "messages_sha256": "66bedaeac696ddd0cde45e72c347b256ff2c94ebe48eadbbc730154b74b22211",
+      "raw_output": "{\"paper_id\": \"P004079\", \"task\": [], \"method\": [{\"concept\": \"technical term tokens\", \"evidence_id\": \"A5\"}, {\"concept\": \"statistical machine translation\", \"evidence_id\": \"A0\"}, {\"concept\": \"rerank the 1,000-best SMT translations\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 942,
+        "output_tokens": 86
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "6fb74ff6ab61869226a91e26c34f69f59445a44de23a6d46bfbba9afd0a8a3f8",
+    "facets": {
+      "contribution": [
+        "NMT system",
+        "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms"
+      ],
+      "dataset": [],
+      "method": [
+        "Neural machine translation",
+        "technical term tokens",
+        "statistical machine translation",
+        "rerank the 1,000-best SMT translations"
+      ],
+      "paper_id": "P004079",
+      "problem": [
+        "cannot handle a larger vocabulary",
+        "out of vocabulary"
+      ],
+      "task": [
+        "translate patent sentences"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 100.78918996600987,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 100.78918996600987,
+      "input_tokens": 5691,
+      "output_tokens": 522
+    },
+    "paper_id": "P004079",
+    "source_sha256": "6fdd9d3c2d32ca5e7957abed38b27631ad7ea8e4a11806dc49e76144652765a1",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5691,
+      "output_tokens": 522
+    }
+  },
+  "record_sha256": "96d0c647918908b9dec8f3a2251204afab7c11d2f6d64270048575c69df98fb9",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

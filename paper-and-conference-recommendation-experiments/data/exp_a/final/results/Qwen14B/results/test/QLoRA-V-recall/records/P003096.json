@@ -1,0 +1,474 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.832824749999418,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9330,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1252,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.520157227998425,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9331,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2954,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.613339935000113,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P003096\",\"task\":[{\"concept\":\"narrative comprehension\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"neural story ending selection model\",\"evidence_id\":\"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9332,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 680,
+            "output_tokens": 49
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "neural story ending selection model",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ROCStory Cloze Task",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "narrative sequence",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "sentiment evolution",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "commonsense knowledge",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "neural story ending selection model",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003096",
+        "problem": [
+          {
+            "concept": "do not explicitly use background commonsense knowledge",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "story ending selection",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "narrative comprehension",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 65.96632191299796,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P003096",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4886,
+        "output_tokens": 379
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.832824749999418,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9330,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1252,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.520157227998425,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003096\", \"problem\": [{\"concept\": \"do not explicitly use background commonsense knowledge\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"story ending selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"narrative sequence\", \"evidence_id\": \"A3\"}, {\"concept\": \"sentiment evolution\", \"evidence_id\": \"A3\"}, {\"concept\": \"commonsense knowledge\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"ROCStory Cloze Task\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"neural story ending selection model\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9331,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2954,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "neural story ending selection model",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ROCStory Cloze Task",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "narrative sequence",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "sentiment evolution",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "commonsense knowledge",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003096",
+        "problem": [
+          {
+            "concept": "do not explicitly use background commonsense knowledge",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "story ending selection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 57.35298197799784,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9331,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4206,
+        "output_tokens": 330
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.832824749999418,
+        "inherited": false,
+        "messages_sha256": "e4841e59152bcbe110afe0efe04c6cad085afa97e9db8826eb996de1d34d7bb8",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 9330,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1252,
+          "output_tokens": 165
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.520157227998425,
+        "inherited": false,
+        "messages_sha256": "568efd826c11075665daba0a69973cc18477b0eab1c2f8f87126363485e7b58c",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003096",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 9331,
+        "usage": {
+          "input_tokens": 2954,
+          "output_tokens": 165
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.613339935000113,
+        "inherited": false,
+        "messages_sha256": "431d4828260e356a30dba0baf8df97533a56916d5bfe292e83fb972800a49634",
+        "reached_token_limit": false,
+        "seed": 9332,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 680,
+          "output_tokens": 49
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "narrative comprehension",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "neural story ending selection model",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "neural story ending selection model",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ROCStory Cloze Task",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "narrative sequence",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "sentiment evolution",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "commonsense knowledge",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003096",
+        "problem": [
+          {
+            "concept": "do not explicitly use background commonsense knowledge",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "story ending selection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 8.613339935000113,
+      "messages_sha256": "431d4828260e356a30dba0baf8df97533a56916d5bfe292e83fb972800a49634",
+      "raw_output": "{\"paper_id\":\"P003096\",\"task\":[{\"concept\":\"narrative comprehension\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"neural story ending selection model\",\"evidence_id\":\"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 680,
+        "output_tokens": 49
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "e72b2e1a4d44458cafa8b327ec999432823958012926999ea9a770c884b326ff",
+    "facets": {
+      "contribution": [
+        "neural story ending selection model"
+      ],
+      "dataset": [
+        "ROCStory Cloze Task"
+      ],
+      "method": [
+        "narrative sequence",
+        "sentiment evolution",
+        "commonsense knowledge",
+        "neural story ending selection model"
+      ],
+      "paper_id": "P003096",
+      "problem": [
+        "do not explicitly use background commonsense knowledge"
+      ],
+      "task": [
+        "story ending selection",
+        "narrative comprehension"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 65.96632191299796,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 65.96632191299796,
+      "input_tokens": 4886,
+      "output_tokens": 379
+    },
+    "paper_id": "P003096",
+    "source_sha256": "258920cbc850fb5e64322a98cef52aa59b6482ea004b05a8a2b3645e749b8139",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4886,
+      "output_tokens": 379
+    }
+  },
+  "record_sha256": "6a0ce204fc4b62d776ec7c2d10e8aa406645649f4df275357562d80753745038",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

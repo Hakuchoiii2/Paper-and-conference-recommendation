@@ -1,0 +1,184 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 9.885104393999882,
+          "messages_sha256": "e6a90d2d960f7b0777683c25c2e61369a3a063f6755461c86212720526fe68d3",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003614\", \"problem\": [{\"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\", \"evidence_id\": \"A4\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure\", \"evidence_id\": \"A9\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 37.0,
+          "seed": 10886,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2740,
+            "output_tokens": 99
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure\"; evidence_id=\"A9\"; evidence=\"In this paper, we focus on two levels of analysis.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P003614",
+        "problem": [
+          {
+            "concept": "RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 161.0555071480003,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003614",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 37.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4847,
+        "output_tokens": 2167
+      },
+      "validation_errors": [
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure\"; evidence_id=\"A9\"; evidence=\"In this paper, we focus on two levels of analysis.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 75.78025537400026,
+        "messages_sha256": "9954bdb058f2d9c1b607c80da97d5cc25a623489d33dd9267bc2bfbab384c6d8",
+        "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rhetorical Structure Theory (RST) (Mann and Thompson 1987), argues that in most coherent discourse, consecutive discourse elements are related by a small set of rhetorical relations.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Moreover, RST suggests that the information conveyed in a discourse over and above what is conveyed in its component clauses can be derived from the rhetorical relation-based structure of the discourse.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"A large number of natural language generation systems rely on the rhetorical relations defined in RST to impose structure on multi-sentential text (Hovy 1991; Knott 1991; Moore and Paris 1989; Rosner and Stede 1992).\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In addition, many descriptive studies of discourse have employed RST (Fox 1987; Linden, Cumming, and Martin 1992; Matthiessen and Thompson 1988).\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"However, recent work by Moore and Paris (1992) noted that RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system, because RST representations provide insufficient information to support the generation of appropriate responses to \\\"follow-up questions.\\\"\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"1 Further consideration has led us to conclude that the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"In this paper, we focus on two levels of analysis.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The first involves the relation between the information conveyed in consecutive elements of a coherent discourse.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"Thus, for example, one utterance may describe an event that can be presumed to be the cause of another event described in the subsequent utterance.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A12\",\n      \"span\": \"This causal relation is at what we will call the informational level.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A13\",\n      \"span\": \"The second level of relation results from the fact that discourses are produced to effect changes in the mental state of the discourse participants.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A14\",\n      \"span\": \"In coherent discourse, a speaker is carrying out a consistent plan to achieve the intended changes, and consecutive discourse elements are related to one another by means of the ways in which they participate in that plan.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10884,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 1043,
+          "output_tokens": 1034
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 75.39014738000014,
+        "messages_sha256": "8470049fcdc5e53180390309d5a93f758def00ba4482443b64c079ed1960e871",
+        "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rhetorical Structure Theory (RST) (Mann and Thompson 1987), argues that in most coherent discourse, consecutive discourse elements are related by a small set of rhetorical relations.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Moreover, RST suggests that the information conveyed in a discourse over and above what is conveyed in its component clauses can be derived from the rhetorical relation-based structure of the discourse.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"A large number of natural language generation systems rely on the rhetorical relations defined in RST to impose structure on multi-sentential text (Hovy 1991; Knott 1991; Moore and Paris 1989; Rosner and Stede 1992).\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In addition, many descriptive studies of discourse have employed RST (Fox 1987; Linden, Cumming, and Martin 1992; Matthiessen and Thompson 1988).\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"However, recent work by Moore and Paris (1992) noted that RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system, because RST representations provide insufficient information to support the generation of appropriate responses to \\\"follow-up questions.\\\"\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"1 Further consideration has led us to conclude that the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"In this paper, we focus on two levels of analysis.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The first involves the relation between the information conveyed in consecutive elements of a coherent discourse.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"Thus, for example, one utterance may describe an event that can be presumed to be the cause of another event described in the subsequent utterance.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A12\",\n      \"span\": \"This causal relation is at what we will call the informational level.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A13\",\n      \"span\": \"The second level of relation results from the fact that discourses are produced to effect changes in the mental state of the discourse participants.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A14\",\n      \"span\": \"In coherent discourse, a speaker is carrying out a consistent plan to achieve the intended changes, and consecutive discourse elements are related to one another by means of the ways in which they participate in that plan.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10885,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 1064,
+          "output_tokens": 1034
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.885104393999882,
+        "messages_sha256": "e6a90d2d960f7b0777683c25c2e61369a3a063f6755461c86212720526fe68d3",
+        "raw_output": "{\"paper_id\": \"P003614\", \"problem\": [{\"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\", \"evidence_id\": \"A4\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure\", \"evidence_id\": \"A9\"}]}",
+        "reached_token_limit": false,
+        "seed": 10886,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2740,
+          "output_tokens": 99
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "introduce a multi-level discourse analysis framework that accounts for both informational and intentional levels of discourse structure"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P003614",
+      "problem": [
+        "RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions"
+      ],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 161.0555071480003,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 75.78025537400026,
+        "messages_sha256": "9954bdb058f2d9c1b607c80da97d5cc25a623489d33dd9267bc2bfbab384c6d8",
+        "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rhetorical Structure Theory (RST) (Mann and Thompson 1987), argues that in most coherent discourse, consecutive discourse elements are related by a small set of rhetorical relations.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Moreover, RST suggests that the information conveyed in a discourse over and above what is conveyed in its component clauses can be derived from the rhetorical relation-based structure of the discourse.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"A large number of natural language generation systems rely on the rhetorical relations defined in RST to impose structure on multi-sentential text (Hovy 1991; Knott 1991; Moore and Paris 1989; Rosner and Stede 1992).\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In addition, many descriptive studies of discourse have employed RST (Fox 1987; Linden, Cumming, and Martin 1992; Matthiessen and Thompson 1988).\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"However, recent work by Moore and Paris (1992) noted that RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system, because RST representations provide insufficient information to support the generation of appropriate responses to \\\"follow-up questions.\\\"\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"1 Further consideration has led us to conclude that the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"In this paper, we focus on two levels of analysis.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The first involves the relation between the information conveyed in consecutive elements of a coherent discourse.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"Thus, for example, one utterance may describe an event that can be presumed to be the cause of another event described in the subsequent utterance.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A12\",\n      \"span\": \"This causal relation is at what we will call the informational level.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A13\",\n      \"span\": \"The second level of relation results from the fact that discourses are produced to effect changes in the mental state of the discourse participants.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A14\",\n      \"span\": \"In coherent discourse, a speaker is carrying out a consistent plan to achieve the intended changes, and consecutive discourse elements are related to one another by means of the ways in which they participate in that plan.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10884,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 1043,
+          "output_tokens": 1034
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 75.39014738000014,
+        "messages_sha256": "8470049fcdc5e53180390309d5a93f758def00ba4482443b64c079ed1960e871",
+        "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rhetorical Structure Theory (RST) (Mann and Thompson 1987), argues that in most coherent discourse, consecutive discourse elements are related by a small set of rhetorical relations.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Moreover, RST suggests that the information conveyed in a discourse over and above what is conveyed in its component clauses can be derived from the rhetorical relation-based structure of the discourse.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"A large number of natural language generation systems rely on the rhetorical relations defined in RST to impose structure on multi-sentential text (Hovy 1991; Knott 1991; Moore and Paris 1989; Rosner and Stede 1992).\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In addition, many descriptive studies of discourse have employed RST (Fox 1987; Linden, Cumming, and Martin 1992; Matthiessen and Thompson 1988).\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"However, recent work by Moore and Paris (1992) noted that RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system, because RST representations provide insufficient information to support the generation of appropriate responses to \\\"follow-up questions.\\\"\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"1 Further consideration has led us to conclude that the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"In this paper, we focus on two levels of analysis.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The first involves the relation between the information conveyed in consecutive elements of a coherent discourse.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"Thus, for example, one utterance may describe an event that can be presumed to be the cause of another event described in the subsequent utterance.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A12\",\n      \"span\": \"This causal relation is at what we will call the informational level.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A13\",\n      \"span\": \"The second level of relation results from the fact that discourses are produced to effect changes in the mental state of the discourse participants.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A14\",\n      \"span\": \"In coherent discourse, a speaker is carrying out a consistent plan to achieve the intended changes, and consecutive discourse elements are related to one another by means of the ways in which they participate in that plan.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10885,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 1064,
+          "output_tokens": 1034
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 161.0555071480003,
+      "input_tokens": 4847,
+      "output_tokens": 2167
+    },
+    "paper_id": "P003614",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 4847,
+      "output_tokens": 2167
+    }
+  },
+  "record_sha256": "68460bd195ae409414daa94391638f451417bd399171e7835b96e163f9943836",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

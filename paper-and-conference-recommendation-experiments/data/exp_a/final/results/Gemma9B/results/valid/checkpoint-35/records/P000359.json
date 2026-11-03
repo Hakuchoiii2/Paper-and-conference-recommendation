@@ -1,0 +1,492 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 40.29844369299826,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1119,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1477,
+            "output_tokens": 202
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 39.096061551001185,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1120,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3305,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.028328934997262,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"task\": [], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1121,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 947,
+            "output_tokens": 61
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [],
+        "task": [
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "identify two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 91.42283417899671,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000359",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5729,
+        "output_tokens": 445
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 40.29844369299826,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1119,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1477,
+            "output_tokens": 202
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 39.096061551001185,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [], \"task\": [{\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}, {\"concept\": \"identify two different classes of individuals\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1120,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3305,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [],
+        "task": [
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "identify two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 79.39450524399945,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1120,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4782,
+        "output_tokens": 384
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.29844369299826,
+        "inherited": false,
+        "messages_sha256": "4fdcd3fb303f5281201200afd0b2fccc0aa5e44dc871bca9c879d21485dc8fef",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1119,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1477,
+          "output_tokens": 202
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 39.096061551001185,
+        "inherited": false,
+        "messages_sha256": "c0369da6e2cad2ee32334cad9395a47610f2622225e38276a02c25a898494420",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000359",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 1120,
+        "usage": {
+          "input_tokens": 3305,
+          "output_tokens": 182
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.028328934997262,
+        "inherited": false,
+        "messages_sha256": "85506cbeddfce152a1dd593ee841d0f5c336486f90861526fa9671625c2eab6d",
+        "reached_token_limit": false,
+        "seed": 1121,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 947,
+          "output_tokens": 61
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [],
+        "task": [
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "identify two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "null model",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.028328934997262,
+      "messages_sha256": "85506cbeddfce152a1dd593ee841d0f5c336486f90861526fa9671625c2eab6d",
+      "raw_output": "{\"paper_id\": \"P000359\", \"task\": [], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 947,
+        "output_tokens": 61
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "2d8dbe1fcc9a4e0d58eeea7f8d67e2f20ac9da91d45b018c6d7d49b8cc4959e3",
+    "facets": {
+      "contribution": [
+        "null model",
+        "two different classes of individuals",
+        "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce"
+      ],
+      "dataset": [
+        "Twitter"
+      ],
+      "method": [
+        "null model",
+        "measure the emotional valence of content"
+      ],
+      "paper_id": "P000359",
+      "problem": [],
+      "task": [
+        "measure the emotional valence of content",
+        "identify two different classes of individuals"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 91.42283417899671,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 91.42283417899671,
+      "input_tokens": 5729,
+      "output_tokens": 445
+    },
+    "paper_id": "P000359",
+    "source_sha256": "9fbc73051d37f8ec8a10f09f4193d6f3748bffe3bf1556c1dd29a4a7601598ac",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5729,
+      "output_tokens": 445
+    }
+  },
+  "record_sha256": "bac4babecf9303a8eeffc01b16a61754664d517b9146b02beb2aa546f8d271cd",
+  "signature": "b0b21a47569879bad65e14196a6442ba43f10d52aaf1fa69c7660c743a7a59ba"
+}

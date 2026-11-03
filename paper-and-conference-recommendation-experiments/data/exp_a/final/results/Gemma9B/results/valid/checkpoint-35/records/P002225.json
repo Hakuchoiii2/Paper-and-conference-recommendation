@@ -1,0 +1,482 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.03391923500021,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6717,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1318,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.9391165019988,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6718,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3095,
+            "output_tokens": 154
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.516221272999246,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002225\", \"task\": [], \"method\": [{\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}, {\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6719,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 757,
+            "output_tokens": 58
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "method to quantify the interpretability of the word embeddings",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "statistical method",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "word intrusion test",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002225",
+        "problem": [
+          {
+            "concept": "broadly and heterogeneously distributed",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "uncover the latent semantic structure",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 77.48925700999825,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002225",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5170,
+        "output_tokens": 383
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.03391923500021,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6717,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1318,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}, {\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.9391165019988,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002225\", \"problem\": [{\"concept\": \"broadly and heterogeneously distributed\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"uncover the latent semantic structure\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"statistical method\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}, {\"concept\": \"method to quantify the interpretability of the word embeddings\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6718,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3095,
+            "output_tokens": 154
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "method to quantify the interpretability of the word embeddings",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "statistical method",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "word intrusion test",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002225",
+        "problem": [
+          {
+            "concept": "broadly and heterogeneously distributed",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "uncover the latent semantic structure",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 65.97303573699901,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6718,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4413,
+        "output_tokens": 325
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.03391923500021,
+        "inherited": false,
+        "messages_sha256": "65419965cc128f47f0f39097cc7dd7efa2661b253c98e1669e5e9bf0f6cc3f3d",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6717,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1318,
+          "output_tokens": 171
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 33.9391165019988,
+        "inherited": false,
+        "messages_sha256": "02555087aa6deb83505350463476d558154b2aae857b54f43b4d5578cf43fb0a",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002225",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 6718,
+        "usage": {
+          "input_tokens": 3095,
+          "output_tokens": 154
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.516221272999246,
+        "inherited": false,
+        "messages_sha256": "93b734e3965e6c3bd05a1dac0cf479a2a539a31dd0badcfae9f25002abf7cd81",
+        "reached_token_limit": false,
+        "seed": 6719,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 757,
+          "output_tokens": 58
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "method to quantify the interpretability of the word embeddings",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "SEMCAT",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "statistical method",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "word intrusion test",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002225",
+        "problem": [
+          {
+            "concept": "broadly and heterogeneously distributed",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "uncover the latent semantic structure",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "word intrusion test",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.516221272999246,
+      "messages_sha256": "93b734e3965e6c3bd05a1dac0cf479a2a539a31dd0badcfae9f25002abf7cd81",
+      "raw_output": "{\"paper_id\": \"P002225\", \"task\": [], \"method\": [{\"concept\": \"word intrusion test\", \"evidence_id\": \"A5\"}, {\"concept\": \"SEMCAT\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 757,
+        "output_tokens": 58
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "2c0493deec4afcfab1699db60b2a3a3edf4bfac5142106e4ca7b6e9efec66303",
+    "facets": {
+      "contribution": [
+        "SEMCAT",
+        "method to quantify the interpretability of the word embeddings"
+      ],
+      "dataset": [
+        "SEMCAT"
+      ],
+      "method": [
+        "statistical method",
+        "word intrusion test",
+        "SEMCAT"
+      ],
+      "paper_id": "P002225",
+      "problem": [
+        "broadly and heterogeneously distributed"
+      ],
+      "task": [
+        "uncover the latent semantic structure"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 77.48925700999825,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 77.48925700999825,
+      "input_tokens": 5170,
+      "output_tokens": 383
+    },
+    "paper_id": "P002225",
+    "source_sha256": "6285bbb5d11e6ce5c6f6ed0c67dfe992b8acbbedbff76eeef7b15b5035a90532",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5170,
+      "output_tokens": 383
+    }
+  },
+  "record_sha256": "fc7696be1f00dec46ff33ce64694aca5d5de1aea5f15daa4dab362c529766bb1",
+  "signature": "b0b21a47569879bad65e14196a6442ba43f10d52aaf1fa69c7660c743a7a59ba"
+}

@@ -263,7 +263,7 @@ def markdown_report(report):
 
 
 def evaluate(root, source='data/exp_a/generated',
-             gold='data/exp_a/ground_truth/gold_review/review_annotations.jsonl',
+             gold='data/exp_a/ground_truth/gold_review/human_gold.jsonl',
              output=None, expected_count=400, matching='embedding', threshold=0.85):
     require(matching in ('exact','embedding'), 'Invalid matching mode')
     require(type(threshold) in (int,float) and math.isfinite(threshold) and 0 < threshold <= 1,
@@ -402,7 +402,7 @@ def evaluate(root, source='data/exp_a/generated',
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', default='data/exp_a/generated')
-    parser.add_argument('--gold', default='data/exp_a/ground_truth/gold_review/review_annotations.jsonl')
+    parser.add_argument('--gold', default='data/exp_a/ground_truth/gold_review/human_gold.jsonl')
     parser.add_argument('--output')
     parser.add_argument('--expected-count', type=int, default=400)
     parser.add_argument('--matching', choices=('embedding','exact'), default='embedding')

@@ -109,11 +109,13 @@ Nhãn test chỉ dùng đánh giá, không dùng chọn extractor, tune trọng 
 | Thành phần | Hiện có và phần cần tiếp tục |
 |---|---|
 | Corpus | Corpus canonical 4.210 title/abstract; metadata venue/year cần được kiểm tra hoặc bổ sung cho conference |
-| A | Có pipeline Qwen, facet/evidence, evaluator và các báo cáo base/QLoRA; nghiên cứu nhiều extractor cần khóa protocol so sánh chung |
+| A — cập nhật 03/11/2026 | Đã hoàn tất QLoRA và đánh giá test60 cho Qwen3-4B, Qwen3-8B, Qwen3-14B, Llama3.1-8B và Gemma2-9B; cùng split280/60/60. [Bộ final](data/exp_a/final/README.md) và [CSV metrics 5 LLM](data/exp_a/final/results/llm_experiment_metrics.csv) |
 | B baseline | Có `random`, `text_tfidf`, `equal_facets`, `weighted_facets`; scorer lexical, trọng số cố định, ranking trên candidate pool |
 | Dữ liệu B trên máy, kiểm tra 24/10/2026 | Manifest ghi 18 query và 1.800 cặp có nhãn, so với mục tiêu cấu hình 300 query × 100 candidates; đây là dữ liệu mock với nhãn weighted overlap từ facet |
 | Semantic ranking và shared weights | Là thiết kế nghiên cứu cần triển khai/kiểm chứng; encoder embedding dùng ghép nhãn đánh giá A không đồng nghĩa ranker B đã dùng semantic encoder |
 | Conference | Chưa có pipeline thực nghiệm riêng trong cấu trúc A–E hiện có; cần chốt nguồn, catalog, temporal split, hồ sơ hội nghị và nhãn |
+
+Gold400 dùng cho lượt so sánh hiện tại có nguồn AI hỗ trợ, đã được người dùng kiểm tra/chấp nhận và từng được xem trong quá trình phát triển pipeline. Các điểm test60 cần được báo cùng giới hạn này; chúng chưa phải kết quả trên một external holdout độc lập. Qwen8B vẫn là cấu hình đã chọn cho entrypoint sinh corpus; điểm extraction của 5 model chưa xác nhận model nào tốt nhất cho downstream.
 
 Kết quả B trên nhãn mock phản ánh giả định sinh dữ liệu, chưa đủ xác nhận lợi ích semantic ranking trên nhãn độc lập. Việc corpus lấy bài thật không làm nhãn mô phỏng trở thành đánh giá người dùng thật.
 
@@ -124,7 +126,7 @@ Kết quả B trên nhãn mock phản ánh giả định sinh dữ liệu, chưa
 | Nắm hướng đề tài và các quyết định còn mở | [Đề cương A/B/conference](docs/PAPER_STRUCTURE_SHARED_FACET_WEIGHTS_2026-10-23.md) |
 | Đọc nguồn, corpus và provenance | [Chỉ mục dữ liệu](data/README.md), [corpus canonical](data/processed/README.md), [nguồn gốc](data/raw/README.md) |
 | Chuẩn bị và đánh giá A | [Dữ liệu A](data/exp_a/README.md), [runner A](scripts/exp_a/README.md), [đánh giá Qwen](docs/EVALUATE_QWEN.md) |
-| Đọc kết quả extraction đã có | [So sánh base v1/v2](scripts/exp_a/docs/BASE_V1_V2_COMPARISON_2026-10-20.md), [QLoRA v1](scripts/exp_a/docs/QLORA_V1_PROGRESS_2026-10-16.md), [test QLoRA v2](scripts/exp_a/docs/QLORA_V2_TEST_RESULT_2026-10-20.md) |
+| Đọc kết quả extraction hiện tại | [Final: protocol và kết quả 5 LLM](data/exp_a/final/README.md), [bảng metrics test60](data/exp_a/final/results/llm_experiment_metrics.csv) |
 | Chuẩn bị và chạy baseline B | [Dữ liệu B](data/exp_b/README.md), [runner B](scripts/exp_b/README.md) |
 | Viết scorer theo giao diện hiện có | [Hướng dẫn baseline](scripts/BASELINE_GUIDE.md) |
 | Tra schema và quy trình của code hiện có | [Data contract](DATA_CONTRACT.md), [protocol A–E](docs/EXPERIMENT_PROTOCOL.md), [lệnh chạy](docs/RUN_EXPERIMENTS.md) |
@@ -133,4 +135,4 @@ Kết quả B trên nhãn mock phản ánh giả định sinh dữ liệu, chưa
 
 Các thực nghiệm **C — profile**, **D — ý định theo phiên**, **E — thích ứng theo thời gian** được đưa ra ngoài phạm vi nghiên cứu chính. Code, config, dữ liệu và hướng dẫn tương ứng vẫn được giữ để tra cứu và tái lập các lần chạy cũ.
 
-[Chỉ mục scripts](scripts/README.md), [protocol A–E](docs/EXPERIMENT_PROTOCOL.md), [quản lý dự án](docs/PROJECT_OPERATIONS.md) và [kế hoạch A–E ngày 10/10](docs/EXPERIMENT_PLAN_FINAL.md) còn mô tả cấu trúc triển khai trước đây. Dùng chúng để hiểu code hiện có; dùng [đề cương ngày 23/10](docs/PAPER_STRUCTURE_SHARED_FACET_WEIGHTS_2026-10-23.md) để xác định hướng nghiên cứu tiếp theo. Nhánh conference giữ tên riêng, không đổi thành C cũ.
+[Protocol A–E](docs/EXPERIMENT_PROTOCOL.md), [quản lý dự án](docs/PROJECT_OPERATIONS.md) và [kế hoạch A–E ngày 10/10](docs/EXPERIMENT_PLAN_FINAL.md) còn mô tả cấu trúc triển khai trước đây. Dùng chúng để hiểu code hiện có; dùng [đề cương ngày 23/10](docs/PAPER_STRUCTURE_SHARED_FACET_WEIGHTS_2026-10-23.md) để xác định hướng nghiên cứu tiếp theo. Nhánh conference giữ tên riêng, không đổi thành C cũ.

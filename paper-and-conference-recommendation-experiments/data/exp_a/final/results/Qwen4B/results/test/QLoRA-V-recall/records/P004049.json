@@ -1,0 +1,501 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.83503685100004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12189,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1312,
+            "output_tokens": 193
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}, {\"concept\": \"learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.05882182099958,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}, {\"concept\": \"learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12190,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3046,
+            "output_tokens": 233
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.03125415300019,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P004049\",\"task\":[{\"concept\":\"automatically identifying idiomatic dictionary entries\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"idiom classifier\",\"evidence_id\":\"A2\"},{\"concept\":\"word sense disambiguation algorithms\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12191,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 825,
+            "output_tokens": 66
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "learned classifier can provide high quality idiom labels",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 66.92511282499981,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P004049",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5183,
+        "output_tokens": 492
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.83503685100004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12189,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1312,
+            "output_tokens": 193
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}, {\"concept\": \"learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.05882182099958,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"learned classifier can provide high quality idiom labels\", \"evidence_id\": \"A3\"}, {\"concept\": \"learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12190,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3046,
+            "output_tokens": 233
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "learned classifier can provide high quality idiom labels",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 57.893858671999624,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12190,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4358,
+        "output_tokens": 426
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 25.83503685100004,
+        "inherited": false,
+        "messages_sha256": "34e7c4787cae70ed2c7eb53e377298487432360b5cb3fc36a51a64310c84ebda",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12189,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1312,
+          "output_tokens": 193
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 32.05882182099958,
+        "inherited": false,
+        "messages_sha256": "a61efc65c05baae65e58f6472607e563bf816591d0c91cc0b87af892a0ec4166",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004049",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 12190,
+        "usage": {
+          "input_tokens": 3046,
+          "output_tokens": 233
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.03125415300019,
+        "inherited": false,
+        "messages_sha256": "cf5585ed0c0099b65a5ea56219672f0219d9f9e16b7b45a7521af48833d1e610",
+        "reached_token_limit": false,
+        "seed": 12191,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 825,
+          "output_tokens": 66
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "learned classifier can provide high quality idiom labels",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.03125415300019,
+      "messages_sha256": "cf5585ed0c0099b65a5ea56219672f0219d9f9e16b7b45a7521af48833d1e610",
+      "raw_output": "{\"paper_id\":\"P004049\",\"task\":[{\"concept\":\"automatically identifying idiomatic dictionary entries\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"idiom classifier\",\"evidence_id\":\"A2\"},{\"concept\":\"word sense disambiguation algorithms\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 825,
+        "output_tokens": 66
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "0c697fdcad1143d6074d3e5e4ce79604b81b0caddc8e5fb9424bcbddb12cc113",
+    "facets": {
+      "contribution": [
+        "learned classifier can provide high quality idiom labels",
+        "learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+        "idiom classifier"
+      ],
+      "dataset": [
+        "Wiktionary"
+      ],
+      "method": [
+        "idiom classifier",
+        "phrase meanings are constructed compositionally",
+        "word sense disambiguation algorithms"
+      ],
+      "paper_id": "P004049",
+      "problem": [
+        "incomplete source of idiomatic phrases"
+      ],
+      "task": [
+        "automatically identifying idiomatic dictionary entries"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 66.92511282499981,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 66.92511282499981,
+      "input_tokens": 5183,
+      "output_tokens": 492
+    },
+    "paper_id": "P004049",
+    "source_sha256": "e82490130c6c0a27e42b83616831b17a8c258a614614f5c523a6a307fa0e0723",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5183,
+      "output_tokens": 492
+    }
+  },
+  "record_sha256": "4bd0d730c84c8b28d47d7db051bcfe18cac66d1807e4c9a769934f7ae064b3fe",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

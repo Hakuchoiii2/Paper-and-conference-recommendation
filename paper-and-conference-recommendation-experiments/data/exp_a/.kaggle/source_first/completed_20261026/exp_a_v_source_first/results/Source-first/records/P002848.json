@@ -1,0 +1,246 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 23.477603947999796,
+          "messages_sha256": "91bd351150e473fe721d333854fbb8815496523102fdaa085bb8df8b7a722e56",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002848\", \"problem\": [{\"concept\": \"significant variation in children's knowledge at the beginning of kindergarten\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"designing, implementing, and piloting an intelligent vocabulary learning tutor\", \"evidence_id\": \"A0\"}, {\"concept\": \"collecting activity information suitable for insights and interventions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"graph-based knowledge representation\", \"evidence_id\": \"A1\"}, {\"concept\": \"learner modeling\", \"evidence_id\": \"A1\"}, {\"concept\": \"adaptive learning content and assessment exposition\", \"evidence_id\": \"A1\"}, {\"concept\": \"novel phased learner model approach\", \"evidence_id\": \"A2\"}, {\"concept\": \"A/B testing for a variety of hypotheses\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"180 kindergarten learners\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"design and evaluation of a tutor platform for personalized vocabulary learning\", \"evidence_id\": \"T0\"}, {\"concept\": \"example application using videos and word to picture/image association\", \"evidence_id\": \"A3\"}, {\"concept\": \"framework that allows A/B testing at scale\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 97.1509,
+          "seed": 8588,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2312,
+            "output_tokens": 296
+          },
+          "validation_errors": [
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"framework that allows A/B testing at scale\"; evidence_id=\"A6\"; evidence=\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "design and evaluation of a tutor platform for personalized vocabulary learning",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "example application using videos and word to picture/image association",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "framework that allows A/B testing at scale",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "180 kindergarten learners",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "graph-based knowledge representation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "learner modeling",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "adaptive learning content and assessment exposition",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "novel phased learner model approach",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "A/B testing for a variety of hypotheses",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002848",
+        "problem": [
+          {
+            "concept": "significant variation in children's knowledge at the beginning of kindergarten",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "designing, implementing, and piloting an intelligent vocabulary learning tutor",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "collecting activity information suitable for insights and interventions",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 71.57585393299996,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002848",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "180 kindergarten learners",
+            "evidence": "A pilot study with 180 kindergarten learners allowed the tutor to collect various kinds of activity information suitable for insights and interventions both at an individual- and class-level.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 97.1509,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3563,
+        "output_tokens": 946
+      },
+      "validation_errors": [
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"framework that allows A/B testing at scale\"; evidence_id=\"A6\"; evidence=\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.17844455400018,
+        "messages_sha256": "4d992cd781df2878d2683b7b52e9eb0f16a8e62db38705bd60d20c750373b743",
+        "raw_output": "{\"paper_id\":\"P002848\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper presents our experiences in designing, implementing, and piloting an intelligent vocabulary learning tutor.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The design builds on several intelligent tutoring design concepts, including graph-based knowledge representation, learner modeling, and adaptive learning content and assessment exposition.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Specifically, we design a novel phased learner model approach to enable systematic exposure to words during vocabulary instruction.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also built an example application over the tutor platform that uses a learning activity involving videos and an assessment activity involving word to picture/image association.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"More importantly, the tutor adapts to the significant variation in children's knowledge at the beginning of kindergarten, and evolves the application at the speed of each individual learner.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A pilot study with 180 kindergarten learners allowed the tutor to collect various kinds of activity information suitable for insights and interventions both at an individual- and class-level.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8586,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 615,
+          "output_tokens": 325
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 23.919805430999986,
+        "messages_sha256": "a1e309c007f7b7c266f96ffa656d4eb221f589cf20d55be7402b1e8311cd0b6b",
+        "raw_output": "{\"paper_id\":\"P002848\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper presents our experiences in designing, implementing, and piloting an intelligent vocabulary learning tutor.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The design builds on several intelligent tutoring design concepts, including graph-based knowledge representation, learner modeling, and adaptive learning content and assessment exposition.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Specifically, we design a novel phased learner model approach to enable systematic exposure to words during vocabulary instruction.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also built an example application over the tutor platform that uses a learning activity involving videos and an assessment activity involving word to picture/image association.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"More importantly, the tutor adapts to the significant variation in children's knowledge at the beginning of kindergarten, and evolves the application at the speed of each individual learner.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A pilot study with 180 kindergarten learners allowed the tutor to collect various kinds of activity information suitable for insights and interventions both at an individual- and class-level.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8587,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 636,
+          "output_tokens": 325
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 23.477603947999796,
+        "messages_sha256": "91bd351150e473fe721d333854fbb8815496523102fdaa085bb8df8b7a722e56",
+        "raw_output": "{\"paper_id\": \"P002848\", \"problem\": [{\"concept\": \"significant variation in children's knowledge at the beginning of kindergarten\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"designing, implementing, and piloting an intelligent vocabulary learning tutor\", \"evidence_id\": \"A0\"}, {\"concept\": \"collecting activity information suitable for insights and interventions\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"graph-based knowledge representation\", \"evidence_id\": \"A1\"}, {\"concept\": \"learner modeling\", \"evidence_id\": \"A1\"}, {\"concept\": \"adaptive learning content and assessment exposition\", \"evidence_id\": \"A1\"}, {\"concept\": \"novel phased learner model approach\", \"evidence_id\": \"A2\"}, {\"concept\": \"A/B testing for a variety of hypotheses\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"180 kindergarten learners\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"design and evaluation of a tutor platform for personalized vocabulary learning\", \"evidence_id\": \"T0\"}, {\"concept\": \"example application using videos and word to picture/image association\", \"evidence_id\": \"A3\"}, {\"concept\": \"framework that allows A/B testing at scale\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 8588,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2312,
+          "output_tokens": 296
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "design and evaluation of a tutor platform for personalized vocabulary learning",
+        "example application using videos and word to picture/image association",
+        "framework that allows A/B testing at scale"
+      ],
+      "dataset": [],
+      "method": [
+        "graph-based knowledge representation",
+        "learner modeling",
+        "adaptive learning content and assessment exposition",
+        "novel phased learner model approach",
+        "A/B testing for a variety of hypotheses"
+      ],
+      "paper_id": "P002848",
+      "problem": [
+        "significant variation in children's knowledge at the beginning of kindergarten"
+      ],
+      "task": [
+        "designing, implementing, and piloting an intelligent vocabulary learning tutor",
+        "collecting activity information suitable for insights and interventions"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 71.57585393299996,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.17844455400018,
+        "messages_sha256": "4d992cd781df2878d2683b7b52e9eb0f16a8e62db38705bd60d20c750373b743",
+        "raw_output": "{\"paper_id\":\"P002848\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper presents our experiences in designing, implementing, and piloting an intelligent vocabulary learning tutor.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The design builds on several intelligent tutoring design concepts, including graph-based knowledge representation, learner modeling, and adaptive learning content and assessment exposition.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Specifically, we design a novel phased learner model approach to enable systematic exposure to words during vocabulary instruction.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also built an example application over the tutor platform that uses a learning activity involving videos and an assessment activity involving word to picture/image association.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"More importantly, the tutor adapts to the significant variation in children's knowledge at the beginning of kindergarten, and evolves the application at the speed of each individual learner.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A pilot study with 180 kindergarten learners allowed the tutor to collect various kinds of activity information suitable for insights and interventions both at an individual- and class-level.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8586,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 615,
+          "output_tokens": 325
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 23.919805430999986,
+        "messages_sha256": "a1e309c007f7b7c266f96ffa656d4eb221f589cf20d55be7402b1e8311cd0b6b",
+        "raw_output": "{\"paper_id\":\"P002848\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper presents our experiences in designing, implementing, and piloting an intelligent vocabulary learning tutor.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The design builds on several intelligent tutoring design concepts, including graph-based knowledge representation, learner modeling, and adaptive learning content and assessment exposition.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Specifically, we design a novel phased learner model approach to enable systematic exposure to words during vocabulary instruction.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also built an example application over the tutor platform that uses a learning activity involving videos and an assessment activity involving word to picture/image association.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"More importantly, the tutor adapts to the significant variation in children's knowledge at the beginning of kindergarten, and evolves the application at the speed of each individual learner.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A pilot study with 180 kindergarten learners allowed the tutor to collect various kinds of activity information suitable for insights and interventions both at an individual- and class-level.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"The effort also demonstrates that we can do A/B testing for a variety of hypotheses at scale with such a framework.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8587,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 636,
+          "output_tokens": 325
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 71.57585393299996,
+      "input_tokens": 3563,
+      "output_tokens": 946
+    },
+    "paper_id": "P002848",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3563,
+      "output_tokens": 946
+    }
+  },
+  "record_sha256": "f1033af77d88508228f3e4d946806f0e3b3366d11613b736a180af695dde1f2e",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

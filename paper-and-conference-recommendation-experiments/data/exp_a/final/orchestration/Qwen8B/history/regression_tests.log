@@ -1,0 +1,69 @@
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_duplicate_and_non_target_changes_cannot_rewrite_the_draft (test_v_recall.RecallTests.test_duplicate_and_non_target_changes_cannot_rewrite_the_draft) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_empty_additions_is_a_successful_no_op (test_v_recall.RecallTests.test_empty_additions_is_a_successful_no_op) ... ok
+test_f2_uses_recall_weighting_and_handles_empty_counts (test_v_recall.RecallTests.test_f2_uses_recall_weighting_and_handles_empty_counts) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/3; score=52.00/100; validation_errors=0
+P000001: review 2/3; score=52.00/100; validation_errors=0
+test_first_review_messages_and_seed_match_original_v (test_v_recall.RecallTests.test_first_review_messages_and_seed_match_original_v) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_malformed_and_truncated_coverage_preserve_base (test_v_recall.RecallTests.test_malformed_and_truncated_coverage_preserve_base) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_recovers_two_ideas_from_an_already_cited_sentence (test_v_recall.RecallTests.test_recovers_two_ideas_from_an_already_cited_sentence) ... ok
+test_rejects_changed_generation_budget (test_v_recall.RecallTests.test_rejects_changed_generation_budget) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_rejects_unfounded_addition_but_retains_other_good_additions (test_v_recall.RecallTests.test_rejects_unfounded_addition_but_retains_other_good_additions) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_seed_budget_cost_and_raw_draft_provenance (test_v_recall.RecallTests.test_seed_budget_cost_and_raw_draft_provenance) ... ok
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+test_unknown_source_id_is_rejected (test_v_recall.RecallTests.test_unknown_source_id_is_rejected) ... ok
+test_bundle_unpack_rejects_unknown_or_traversing_files (test_v_recall_gold400.Gold400Tests.test_bundle_unpack_rejects_unknown_or_traversing_files) ... ok
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+test_cached_fresh_draft_resumes_without_repeating_call_one (test_v_recall_gold400.Gold400Tests.test_cached_fresh_draft_resumes_without_repeating_call_one) ... ok
+test_f2_is_recall_weighted (test_v_recall_gold400.Gold400Tests.test_f2_is_recall_weighted) ... ok
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+test_fresh_draft_counts_three_new_calls_and_uses_only_source (test_v_recall_gold400.Gold400Tests.test_fresh_draft_counts_three_new_calls_and_uses_only_source) ... ok
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+test_fresh_first_pass_messages_match_the_original_engine (test_v_recall_gold400.Gold400Tests.test_fresh_first_pass_messages_match_the_original_engine) ... ok
+P000019: extract 1/2; score=0.00/100; validation_errors=1
+  Qwen output must contain one readable UTF-8 JSON object only
+P000019: review 2/2; score=52.00/100; validation_errors=0
+test_malformed_fresh_draft_can_recover_on_review_without_extra_calls (test_v_recall_gold400.Gold400Tests.test_malformed_fresh_draft_can_recover_on_review_without_extra_calls) ... ok
+test_missing_predictions_fail_before_gold_is_opened (test_v_recall_gold400.Gold400Tests.test_missing_predictions_fail_before_gold_is_opened) ... ok
+# V-recall on accepted human gold400
+
+Accepted AI-assisted human gold; purposively selected cohort and prior development history. Unchanged embedding scorer is approximate matching. All400 retained including audit-noted sources. No fine-tuning. Draft/first-review are diagnostics from the same3 calls, not extra arms.
+
+Gold SHA256: 3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c
+
+| Stage | Precision | Recall | F1 | F2 | Macro F1 | Fallback |
+|---|---:|---:|---:|---:|---:|---:|
+| Draft | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+| V-review1 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+| V-recall | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+test_offline400_scoring_keeps_all_records_and_same_stage_counts (test_v_recall_gold400.Gold400Tests.test_offline400_scoring_keeps_all_records_and_same_stage_counts) ... ok
+test_two_worker_shards_cover_all400_once (test_v_recall_gold400.Gold400Tests.test_two_worker_shards_cover_all400_once) ... ok
+test_workers_do_not_read_gold_and_evaluation_detects_tampering (test_v_recall_gold400.Gold400Tests.test_workers_do_not_read_gold_and_evaluation_detects_tampering) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 5.589s
+
+OK

@@ -1,0 +1,190 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 12.646275048999996,
+          "messages_sha256": "e6e981991ef6e67d40501c03cb303012e2dc620fe7e1e41009a87918d94cdddd",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002380\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"}, {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"Several useful extensions and generalizations of Pascal emerge by applying these principles\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7184,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2193,
+            "output_tokens": 143
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Two language design methods based on principles derived from the denotational approach to programming language semantics",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Several useful extensions and generalizations of Pascal emerge by applying these principles",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "correspondence between parametric and declarative mechanisms",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "principle of abstraction for programming languages adapted from set theory",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002380",
+        "problem": [],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 37.703274136000346,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002380",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 64.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3206,
+        "output_tokens": 467
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 12.527810116000182,
+        "messages_sha256": "92a5f72da12db0c2dfc3059005200aee5560a213325e9cd0d921cbfdd23f53ea",
+        "raw_output": "{\"paper_id\":\"P002380\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The principles are, firstly, the correspondence between parametric and declarative mechanisms, and secondly, a principle of abstraction for programming languages adapted from set theory.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Several useful extensions and generalizations of Pascal emerge by applying these principles, including a solution to the array parameter problem, and a modularization facility.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 7182,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 496,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 12.529188971000167,
+        "messages_sha256": "2e0e7f9d778c4928f447bd586a6d3f33878932d9b293ab2549ad366852f177d8",
+        "raw_output": "{\"paper_id\":\"P002380\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The principles are, firstly, the correspondence between parametric and declarative mechanisms, and secondly, a principle of abstraction for programming languages adapted from set theory.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Several useful extensions and generalizations of Pascal emerge by applying these principles, including a solution to the array parameter problem, and a modularization facility.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 7183,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 517,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.646275048999996,
+        "messages_sha256": "e6e981991ef6e67d40501c03cb303012e2dc620fe7e1e41009a87918d94cdddd",
+        "raw_output": "{\"paper_id\": \"P002380\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"}, {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Two language design methods based on principles derived from the denotational approach to programming language semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"Several useful extensions and generalizations of Pascal emerge by applying these principles\", \"evidence_id\": \"A2\"}]}",
+        "reached_token_limit": false,
+        "seed": 7184,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2193,
+          "output_tokens": 143
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "Two language design methods based on principles derived from the denotational approach to programming language semantics",
+        "Several useful extensions and generalizations of Pascal emerge by applying these principles"
+      ],
+      "dataset": [],
+      "method": [
+        "correspondence between parametric and declarative mechanisms",
+        "principle of abstraction for programming languages adapted from set theory"
+      ],
+      "paper_id": "P002380",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 37.703274136000346,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 12.527810116000182,
+        "messages_sha256": "92a5f72da12db0c2dfc3059005200aee5560a213325e9cd0d921cbfdd23f53ea",
+        "raw_output": "{\"paper_id\":\"P002380\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The principles are, firstly, the correspondence between parametric and declarative mechanisms, and secondly, a principle of abstraction for programming languages adapted from set theory.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Several useful extensions and generalizations of Pascal emerge by applying these principles, including a solution to the array parameter problem, and a modularization facility.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 7182,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 496,
+          "output_tokens": 162
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 12.529188971000167,
+        "messages_sha256": "2e0e7f9d778c4928f447bd586a6d3f33878932d9b293ab2549ad366852f177d8",
+        "raw_output": "{\"paper_id\":\"P002380\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The principles are, firstly, the correspondence between parametric and declarative mechanisms, and secondly, a principle of abstraction for programming languages adapted from set theory.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Several useful extensions and generalizations of Pascal emerge by applying these principles, including a solution to the array parameter problem, and a modularization facility.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 7183,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 517,
+          "output_tokens": 162
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 37.703274136000346,
+      "input_tokens": 3206,
+      "output_tokens": 467
+    },
+    "paper_id": "P002380",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3206,
+      "output_tokens": 467
+    }
+  },
+  "record_sha256": "2e1afcf5298a7f82c3ecb7a5b255157152d4546100e7e5a4db23329e35b7872e",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

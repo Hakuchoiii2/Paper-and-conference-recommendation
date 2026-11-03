@@ -1,23 +1,11 @@
-# Nhãn tham chiếu AI — Exp A: bản hiện hành
+# Human gold400 — accepted ngày 26/10/2026
 
-Bản mới nhất: `codex_source_audit_revision_v2`, ngày 2026-10-14,
-400 bài, **3.322 concept**. Lượt này sửa **18 bài / 21 trường facet** theo nguồn
-sau audit 29 bài. Các nhãn còn lại giữ bản AI trước; chưa rà lại toàn bộ 400 bài.
-`review_annotations.jsonl` và `gpt_review_evidence.jsonl` là cặp dữ liệu hiện hành.
+Người dùng đã chấp nhận bản reference v3 sau khi xem kết quả rà soát và sửa nhãn. File chính: **human_gold.jsonl**, đủ **400 bài /3.346 concept**; toàn bộ human_review_status=accepted, reviewer_type=human, reviewer=user. Nhãn được AI hỗ trợ soạn và rà; annotation_author_type=ai giữ rõ nguồn gốc, không mô tả đây là hai lượt human annotation độc lập.
 
-- `gpt_review_manifest.json`: nguồn nhãn, thống kê và hash hiện hành.
-- `gpt_semantic_revision_summary.json`: phạm vi sửa và năm trường hợp pending nguồn.
-- `manifest.json`: cohort và hash các file hiện hành.
-- `review_papers.jsonl`: title/abstract; `selection_ranking.jsonl`: cách chọn cohort.
-- `silver_reference.jsonl`: snapshot Qwen lúc chọn cohort, được giữ nguyên.
-- Lý do sửa, nhãn/evidence trước–sau và metadata cũ được gộp tại
-  `data/exp_a/evaluation/reference_revision/`; không giữ nhiều bản gold cạnh nhau.
+Lượt chấp nhận này chỉ đổi tên file và metadata, **không sửa concept, nguồn hay evidence**. Các ghi chú về15 bài cần xác minh/độ chi tiết trong audit trước vẫn được giữ để truy vết; chấp nhận không tự xác minh lại nguồn ngoài title/abstract.
 
-Output Qwen cho 4.210 bài không đổi. Các kết quả đánh giá cũ là lịch sử, gắn với
-hash reference cũ; kết quả mới phải ghi hash bản v2. Việc sửa reference dựa trên
-abstract và guideline, không thay nhãn chỉ để khớp cách viết của Qwen.
+Cặp dữ liệu: `human_gold.jsonl` và `gpt_review_evidence.jsonl`. `gpt_review_manifest.json` và `manifest.json` trỏ tới file mới, lưu trạng thái accepted và checksum tương ứng.
 
-P000042, P001758, P002171, P003362 và P004138 vẫn cần xác minh nguồn; không đoán
-tên nghi vấn hoặc nội dung abstract bị cắt. Nhãn vẫn là **AI reference**,
-`human_review_status: pending`, chưa phải human gold độc lập. Cohort ưu tiên
-silver đầy đủ và không đại diện ngẫu nhiên cho toàn corpus.
+[Biên nhận chấp nhận và backup trước đổi tên](../../evaluation/reference_gold_acceptance_20261026_v1/acceptance_report.json) · [Thống kê chỉnh nhãn v3](../../evaluation/reference_gold_audit_20261026_v1/report_vi.md) · [Nhật ký sửa nhãn](../../evaluation/reference_gold_audit_20261026_v1/changes.jsonl).
+
+Các release/split huấn luyện, pilot và kết quả đánh giá cũ giữ nguyên, gắn với hash lúc chạy. Evaluator hiện mặc định đọc human_gold.jsonl; không chạy lại điểm trong bước này.

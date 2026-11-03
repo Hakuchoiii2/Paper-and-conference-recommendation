@@ -1,0 +1,231 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 20.042675008000003,
+          "messages_sha256": "f3e0dc994398b15bdf4daf7c2aa6f3780ec88d3631d9f2d6273fed106bef512f",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000268\", \"problem\": [{\"concept\": \"social goodness of the links constructed\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"examination of overlap of community structures\", \"evidence_id\": \"A1\"}, {\"concept\": \"predicting links while retaining the social community structures\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"unigram, bigram and LDA content models\", \"evidence_id\": \"A2\"}, {\"concept\": \"content at varying granularities\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"100 discussion topics spanning over 10 Twitter events\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"unigram language model performed the best\", \"evidence_id\": \"A5\"}, {\"concept\": \"observation agrees with phenomenon of evolution of word usage behavior\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically finer-grained content was more effective compared to coarser-grained content\", \"evidence_id\": \"A8\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 96.5051,
+          "seed": 848,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2404,
+            "output_tokens": 244
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"examination of overlap of community structures\"; evidence_id=\"A1\"; evidence=\"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "unigram language model performed the best",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "observation agrees with phenomenon of evolution of word usage behavior",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "semantically finer-grained content was more effective compared to coarser-grained content",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "100 discussion topics spanning over 10 Twitter events",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "unigram, bigram and LDA content models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "content at varying granularities",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000268",
+        "problem": [
+          {
+            "concept": "social goodness of the links constructed",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "examination of overlap of community structures",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "predicting links while retaining the social community structures",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 110.78194865000006,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000268",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "100 discussion topics spanning over 10 Twitter events",
+            "evidence": "100 discussion topics, spanning over 10 Twitter events, were used for experiments.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 96.5051,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3839,
+        "output_tokens": 1452
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"examination of overlap of community structures\"; evidence_id=\"A1\"; evidence=\"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 46.89717946300004,
+        "messages_sha256": "a5223606a119043a310179a64efdb15541eba9faf28f53f967f2383d261ece23",
+        "raw_output": "{\n  \"paper_id\": \"P000268\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper explores the social quality (goodness) of community structures formed across Twitter users, where social links within the structures are estimated based upon semantic properties of user-generated content (corpus).\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Unigram, bigram and LDA content models were empirically investigated for evaluation of effectiveness, as approximators of underlying social graphs, such that they maintain the {\\\\it community} social property.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Impact of content at varying granularities, for the purpose of predicting links while retaining the social community structures, was investigated.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"100 discussion topics, spanning over 10 Twitter events, were used for experiments.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The unigram language model performed the best, indicating strong similarity of word usage within deeply connected social communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al., and raises a question on the literature that use, without validation, LDA for content-based social link prediction over other content models.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Also, semantically finer-grained content was observed to be more effective compared to coarser-grained content.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 846,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 707,
+          "output_tokens": 620
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 43.842094179000014,
+        "messages_sha256": "7a3ecaa4d53991eb25e3422b9da45e097cc7af98676119add2b2db7800056b39",
+        "raw_output": "{\n  \"paper_id\": \"P000268\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper explores the social quality (goodness) of community structures formed across Twitter users, where social links within the structures are estimated based upon semantic properties of user-generated content (corpus).\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Unigram, bigram and LDA content models were empirically investigated for evaluation of effectiveness, as approximators of underlying social graphs, such that they maintain the {\\\\it community} social property.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Impact of content at varying granularities, for the purpose of predicting links while retaining the social community structures, was investigated.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"100 discussion topics, spanning over 10 Twitter events, were used for experiments.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The unigram language model performed the best, indicating strong similarity of word usage within deeply connected social communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"(2013), and raises a question on the literature that use, without validation, LDA for content-based social link prediction over other content models.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Also, semantically finer-grained content was observed to be more effective compared to coarser-grained content.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 847,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 728,
+          "output_tokens": 588
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 20.042675008000003,
+        "messages_sha256": "f3e0dc994398b15bdf4daf7c2aa6f3780ec88d3631d9f2d6273fed106bef512f",
+        "raw_output": "{\"paper_id\": \"P000268\", \"problem\": [{\"concept\": \"social goodness of the links constructed\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"examination of overlap of community structures\", \"evidence_id\": \"A1\"}, {\"concept\": \"predicting links while retaining the social community structures\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"unigram, bigram and LDA content models\", \"evidence_id\": \"A2\"}, {\"concept\": \"content at varying granularities\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"100 discussion topics spanning over 10 Twitter events\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"unigram language model performed the best\", \"evidence_id\": \"A5\"}, {\"concept\": \"observation agrees with phenomenon of evolution of word usage behavior\", \"evidence_id\": \"A6\"}, {\"concept\": \"semantically finer-grained content was more effective compared to coarser-grained content\", \"evidence_id\": \"A8\"}]}",
+        "reached_token_limit": false,
+        "seed": 848,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2404,
+          "output_tokens": 244
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "unigram language model performed the best",
+        "observation agrees with phenomenon of evolution of word usage behavior",
+        "semantically finer-grained content was more effective compared to coarser-grained content"
+      ],
+      "dataset": [],
+      "method": [
+        "unigram, bigram and LDA content models",
+        "content at varying granularities"
+      ],
+      "paper_id": "P000268",
+      "problem": [
+        "social goodness of the links constructed"
+      ],
+      "task": [
+        "examination of overlap of community structures",
+        "predicting links while retaining the social community structures"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 110.78194865000006,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 46.89717946300004,
+        "messages_sha256": "a5223606a119043a310179a64efdb15541eba9faf28f53f967f2383d261ece23",
+        "raw_output": "{\n  \"paper_id\": \"P000268\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper explores the social quality (goodness) of community structures formed across Twitter users, where social links within the structures are estimated based upon semantic properties of user-generated content (corpus).\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Unigram, bigram and LDA content models were empirically investigated for evaluation of effectiveness, as approximators of underlying social graphs, such that they maintain the {\\\\it community} social property.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Impact of content at varying granularities, for the purpose of predicting links while retaining the social community structures, was investigated.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"100 discussion topics, spanning over 10 Twitter events, were used for experiments.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The unigram language model performed the best, indicating strong similarity of word usage within deeply connected social communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al., and raises a question on the literature that use, without validation, LDA for content-based social link prediction over other content models.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Also, semantically finer-grained content was observed to be more effective compared to coarser-grained content.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 846,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 707,
+          "output_tokens": 620
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 43.842094179000014,
+        "messages_sha256": "7a3ecaa4d53991eb25e3422b9da45e097cc7af98676119add2b2db7800056b39",
+        "raw_output": "{\n  \"paper_id\": \"P000268\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper explores the social quality (goodness) of community structures formed across Twitter users, where social links within the structures are estimated based upon semantic properties of user-generated content (corpus).\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"We examined the overlap of the community structures of the constructed graphs, and followership-based social communities, to find the social goodness of the links constructed.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Unigram, bigram and LDA content models were empirically investigated for evaluation of effectiveness, as approximators of underlying social graphs, such that they maintain the {\\\\it community} social property.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Impact of content at varying granularities, for the purpose of predicting links while retaining the social community structures, was investigated.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"100 discussion topics, spanning over 10 Twitter events, were used for experiments.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The unigram language model performed the best, indicating strong similarity of word usage within deeply connected social communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"This observation agrees with the phenomenon of evolution of word usage behavior, that transform individuals belonging to the same community tending to choose the same words, made by Danescu et al.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"(2013), and raises a question on the literature that use, without validation, LDA for content-based social link prediction over other content models.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Also, semantically finer-grained content was observed to be more effective compared to coarser-grained content.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 847,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 728,
+          "output_tokens": 588
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 110.78194865000006,
+      "input_tokens": 3839,
+      "output_tokens": 1452
+    },
+    "paper_id": "P000268",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3839,
+      "output_tokens": 1452
+    }
+  },
+  "record_sha256": "5c40d467f22020e8da0368012873cd42997a6b160a5387d00206d700945e772d",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

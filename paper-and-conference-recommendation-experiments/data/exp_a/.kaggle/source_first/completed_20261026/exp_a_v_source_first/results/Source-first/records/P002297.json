@@ -1,0 +1,246 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 28.391870939,
+          "messages_sha256": "f6b2c21105ec96b1b4de9e7856147daa9edbec3f68ecaa0b59ccc526f321e337",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002297\", \"problem\": [{\"concept\": \"highly social dialogue is frequent in social media, making it a challenging context for NLP\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"train classifiers to identify two different types of subjective language in dialogue\", \"evidence_id\": \"A2\"}, {\"concept\": \"bootstrapping a classifier for nastiness dialogic acts\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"bootstrapping method\", \"evidence_id\": \"A2\"}, {\"concept\": \"developing linguistic indicators\", \"evidence_id\": \"A3\"}, {\"concept\": \"general syntactic patterns\", \"evidence_id\": \"A5\"}, {\"concept\": \"bootstrapping over the first level\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"bootstrapping method for sarcasm and nastiness classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"classifier achieves 54% precision and 38% recall for sarcastic utterances\", \"evidence_id\": \"A4\"}, {\"concept\": \"precision improves to 62% and recall to 52% with generalized syntactic patterns\", \"evidence_id\": \"A5\"}, {\"concept\": \"classifier achieves 58% precision and 49% recall for nastiness dialogic acts\", \"evidence_id\": \"A7\"}, {\"concept\": \"precision increases to 75% and recall to 62% with bootstrapping over the first level\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 75.381,
+          "seed": 6935,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2406,
+            "output_tokens": 352
+          },
+          "validation_errors": [
+            "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"bootstrapping over the first level\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"bootstrapping method for sarcasm and nastiness classifiers\"; evidence_id=\"A2\"; evidence=\"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"precision improves to 62% and recall to 52% with generalized syntactic patterns\"; evidence_id=\"A5\"; evidence=\"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"classifier achieves 58% precision and 49% recall for nastiness dialogic acts\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\"",
+            "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"precision increases to 75% and recall to 62% with bootstrapping over the first level\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "bootstrapping method for sarcasm and nastiness classifiers",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "classifier achieves 54% precision and 38% recall for sarcastic utterances",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "precision improves to 62% and recall to 52% with generalized syntactic patterns",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "classifier achieves 58% precision and 49% recall for nastiness dialogic acts",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "precision increases to 75% and recall to 62% with bootstrapping over the first level",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "bootstrapping method",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "developing linguistic indicators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "general syntactic patterns",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "bootstrapping over the first level",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002297",
+        "problem": [
+          {
+            "concept": "highly social dialogue is frequent in social media, making it a challenging context for NLP",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "train classifiers to identify two different types of subjective language in dialogue",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "bootstrapping a classifier for nastiness dialogic acts",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 110.2520482089999,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002297",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 75.381,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3845,
+        "output_tokens": 1434
+      },
+      "validation_errors": [
+        "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"bootstrapping over the first level\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"bootstrapping method for sarcasm and nastiness classifiers\"; evidence_id=\"A2\"; evidence=\"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"precision improves to 62% and recall to 52% with generalized syntactic patterns\"; evidence_id=\"A5\"; evidence=\"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"classifier achieves 58% precision and 49% recall for nastiness dialogic acts\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\"",
+        "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"precision increases to 75% and recall to 62% with bootstrapping over the first level\"; evidence_id=\"A7\"; evidence=\"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.280816136999874,
+        "messages_sha256": "f0df2e6e6e757e2808a6a052bc9a152c493630966b5a2011ae478abbaf19da85",
+        "raw_output": "{\n  \"paper_id\": \"P002297\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Bootstrapping Improves the Performance of Sarcasm and Nastiness Classifiers for Online Dialogue\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"highly social dialogue is frequent in social media, making it a challenging context for NLP\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"We explore two methods of developing linguistic indicators to be used in a first level classifier aimed at maximizing precision at the expense of recall\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The best performing classifier for the first phase achieves 54% precision and 38% recall for sarcastic utterances\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"To further test the generality of the method, we then apply it to bootstrapping a classifier for nastiness dialogic acts\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6933,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 530
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 41.57936113300002,
+        "messages_sha256": "407d5b2b506a06f165220cbf3dffee62a246858175a0d4c5257b0c03d8dc8540",
+        "raw_output": "{\n  \"paper_id\": \"P002297\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"More and more of the information on the web is dialogic, from Facebook newsfeeds, to forum conversations, to comment threads on news articles.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In contrast to traditional, monologic Natural Language Processing resources such as news, highly social dialogue is frequent in social media, making it a challenging context for NLP.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"We explore two methods of developing linguistic indicators to be used in a first level classifier aimed at maximizing precision at the expense of recall.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The best performing classifier for the first phase achieves 54% precision and 38% recall for sarcastic utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"To further test the generality of the method, we then apply it to bootstrapping a classifier for nastiness dialogic acts.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6934,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 730,
+          "output_tokens": 552
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 28.391870939,
+        "messages_sha256": "f6b2c21105ec96b1b4de9e7856147daa9edbec3f68ecaa0b59ccc526f321e337",
+        "raw_output": "{\"paper_id\": \"P002297\", \"problem\": [{\"concept\": \"highly social dialogue is frequent in social media, making it a challenging context for NLP\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"train classifiers to identify two different types of subjective language in dialogue\", \"evidence_id\": \"A2\"}, {\"concept\": \"bootstrapping a classifier for nastiness dialogic acts\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"bootstrapping method\", \"evidence_id\": \"A2\"}, {\"concept\": \"developing linguistic indicators\", \"evidence_id\": \"A3\"}, {\"concept\": \"general syntactic patterns\", \"evidence_id\": \"A5\"}, {\"concept\": \"bootstrapping over the first level\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"bootstrapping method for sarcasm and nastiness classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"classifier achieves 54% precision and 38% recall for sarcastic utterances\", \"evidence_id\": \"A4\"}, {\"concept\": \"precision improves to 62% and recall to 52% with generalized syntactic patterns\", \"evidence_id\": \"A5\"}, {\"concept\": \"classifier achieves 58% precision and 49% recall for nastiness dialogic acts\", \"evidence_id\": \"A7\"}, {\"concept\": \"precision increases to 75% and recall to 62% with bootstrapping over the first level\", \"evidence_id\": \"A7\"}]}",
+        "reached_token_limit": false,
+        "seed": 6935,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2406,
+          "output_tokens": 352
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "bootstrapping method for sarcasm and nastiness classifiers",
+        "classifier achieves 54% precision and 38% recall for sarcastic utterances",
+        "precision improves to 62% and recall to 52% with generalized syntactic patterns",
+        "classifier achieves 58% precision and 49% recall for nastiness dialogic acts",
+        "precision increases to 75% and recall to 62% with bootstrapping over the first level"
+      ],
+      "dataset": [],
+      "method": [
+        "bootstrapping method",
+        "developing linguistic indicators",
+        "general syntactic patterns",
+        "bootstrapping over the first level"
+      ],
+      "paper_id": "P002297",
+      "problem": [
+        "highly social dialogue is frequent in social media, making it a challenging context for NLP"
+      ],
+      "task": [
+        "train classifiers to identify two different types of subjective language in dialogue",
+        "bootstrapping a classifier for nastiness dialogic acts"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 110.2520482089999,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.280816136999874,
+        "messages_sha256": "f0df2e6e6e757e2808a6a052bc9a152c493630966b5a2011ae478abbaf19da85",
+        "raw_output": "{\n  \"paper_id\": \"P002297\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Bootstrapping Improves the Performance of Sarcasm and Nastiness Classifiers for Online Dialogue\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"highly social dialogue is frequent in social media, making it a challenging context for NLP\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"We explore two methods of developing linguistic indicators to be used in a first level classifier aimed at maximizing precision at the expense of recall\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The best performing classifier for the first phase achieves 54% precision and 38% recall for sarcastic utterances\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"To further test the generality of the method, we then apply it to bootstrapping a classifier for nastiness dialogic acts\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6933,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 530
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 41.57936113300002,
+        "messages_sha256": "407d5b2b506a06f165220cbf3dffee62a246858175a0d4c5257b0c03d8dc8540",
+        "raw_output": "{\n  \"paper_id\": \"P002297\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"More and more of the information on the web is dialogic, from Facebook newsfeeds, to forum conversations, to comment threads on news articles.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In contrast to traditional, monologic Natural Language Processing resources such as news, highly social dialogue is frequent in social media, making it a challenging context for NLP.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"This paper tests a bootstrapping method, originally proposed in a monologic domain, to train classifiers to identify two different types of subjective language in dialogue: sarcasm and nastiness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"We explore two methods of developing linguistic indicators to be used in a first level classifier aimed at maximizing precision at the expense of recall.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The best performing classifier for the first phase achieves 54% precision and 38% recall for sarcastic utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We then use general syntactic patterns from previous work to create more general sarcasm indicators, improving precision to 62% and recall to 52%.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"To further test the generality of the method, we then apply it to bootstrapping a classifier for nastiness dialogic acts.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Our first phase, using crowdsourced nasty indicators, achieves 58% precision and 49% recall, which increases to 75% precision and 62% recall when we bootstrap over the first level with generalized syntactic patterns.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6934,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 730,
+          "output_tokens": 552
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 110.2520482089999,
+      "input_tokens": 3845,
+      "output_tokens": 1434
+    },
+    "paper_id": "P002297",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3845,
+      "output_tokens": 1434
+    }
+  },
+  "record_sha256": "193ce0d9f13eeee296fb48a9a268979bf13253c6260509bae0d51d79de95f14f",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

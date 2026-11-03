@@ -1,0 +1,197 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 12.513973501999999,
+          "messages_sha256": "df0a40805579d44edae99940649765bb2c88ff2797eb6b676444924c22c1f4f7",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001431\", \"problem\": [{\"concept\": \"no standard definition\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"examine the different classification schema\", \"evidence_id\": \"A10\"}], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"classification schema based on four characteristics\", \"evidence_id\": \"A1\"}, {\"concept\": \"examples of each type of community\", \"evidence_id\": \"A2\"}, {\"concept\": \"important implications for design and management\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 75.7143,
+          "seed": 4337,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2596,
+            "output_tokens": 133
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "classification schema based on four characteristics",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "examples of each type of community",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "important implications for design and management",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P001431",
+        "problem": [
+          {
+            "concept": "no standard definition",
+            "evidence_id": "A8"
+          }
+        ],
+        "task": [
+          {
+            "concept": "examine the different classification schema",
+            "evidence_id": "A10"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 75.51517745800015,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001431",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 75.7143,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4415,
+        "output_tokens": 972
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.222215157000164,
+        "messages_sha256": "5ebbab62b024b99c8b758a4fe2609c1bef45ace9ca73bba7e084483a5e14b6ff",
+        "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"A synthesis of the literature suggests that the key characteristics for classifying online communities are: (i) their attributes, (ii) supporting software, (iii) their relationship to physical communities, and (iv) the sociological concept of boundedness.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"A classification schema based on these four characteristics is presented in this paper.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Examples of each type of community are discussed.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"These classification schema have important implications for the design and management of online communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The purpose of this paper is to examine the different classification schema that have been presented for classifying online communities.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A16\",\n      \"span\": \"In the literature, four different schema for classifying online communities have been presented.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A17\",\n      \"span\": \"These four schema classify communities by: (i) attributes, (ii) supporting software, (iii) relationship to physical communities, and (iv) boundedness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4335,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 899,
+          "output_tokens": 419
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 31.77898879899999,
+        "messages_sha256": "bcb3979d3a4496828dc2f90cdf0a4b6143fb9600e956019adb60314ea6cc1f88",
+        "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"A synthesis of the literature suggests that the key characteristics for classifying online communities are: (i) their attributes, (ii) supporting software, (iii) their relationship to physical communities, and (iv) the sociological concept of boundedness.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"A classification schema based on these four characteristics is presented in this paper.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Examples of each type of community are discussed.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"These classification schema have important implications for the design and management of online communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The purpose of this paper is to examine the different classification schema that have been presented for classifying online communities.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A16\",\n      \"span\": \"In the literature, four different schema for classifying online communities have been presented.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A17\",\n      \"span\": \"These four schema classify communities by: (i) attributes, (ii) supporting software, (iii) relationship to physical communities, and (iv) boundedness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4336,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 420
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.513973501999999,
+        "messages_sha256": "df0a40805579d44edae99940649765bb2c88ff2797eb6b676444924c22c1f4f7",
+        "raw_output": "{\"paper_id\": \"P001431\", \"problem\": [{\"concept\": \"no standard definition\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"examine the different classification schema\", \"evidence_id\": \"A10\"}], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"classification schema based on four characteristics\", \"evidence_id\": \"A1\"}, {\"concept\": \"examples of each type of community\", \"evidence_id\": \"A2\"}, {\"concept\": \"important implications for design and management\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 4337,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2596,
+          "output_tokens": 133
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "classification schema based on four characteristics",
+        "examples of each type of community",
+        "important implications for design and management"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P001431",
+      "problem": [
+        "no standard definition"
+      ],
+      "task": [
+        "examine the different classification schema"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 75.51517745800015,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.222215157000164,
+        "messages_sha256": "5ebbab62b024b99c8b758a4fe2609c1bef45ace9ca73bba7e084483a5e14b6ff",
+        "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"A synthesis of the literature suggests that the key characteristics for classifying online communities are: (i) their attributes, (ii) supporting software, (iii) their relationship to physical communities, and (iv) the sociological concept of boundedness.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"A classification schema based on these four characteristics is presented in this paper.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Examples of each type of community are discussed.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"These classification schema have important implications for the design and management of online communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The purpose of this paper is to examine the different classification schema that have been presented for classifying online communities.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A16\",\n      \"span\": \"In the literature, four different schema for classifying online communities have been presented.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A17\",\n      \"span\": \"These four schema classify communities by: (i) attributes, (ii) supporting software, (iii) relationship to physical communities, and (iv) boundedness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4335,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 899,
+          "output_tokens": 419
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 31.77898879899999,
+        "messages_sha256": "bcb3979d3a4496828dc2f90cdf0a4b6143fb9600e956019adb60314ea6cc1f88",
+        "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"A synthesis of the literature suggests that the key characteristics for classifying online communities are: (i) their attributes, (ii) supporting software, (iii) their relationship to physical communities, and (iv) the sociological concept of boundedness.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"A classification schema based on these four characteristics is presented in this paper.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Examples of each type of community are discussed.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"These classification schema have important implications for the design and management of online communities.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The purpose of this paper is to examine the different classification schema that have been presented for classifying online communities.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A16\",\n      \"span\": \"In the literature, four different schema for classifying online communities have been presented.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A17\",\n      \"span\": \"These four schema classify communities by: (i) attributes, (ii) supporting software, (iii) relationship to physical communities, and (iv) boundedness.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4336,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 420
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 75.51517745800015,
+      "input_tokens": 4415,
+      "output_tokens": 972
+    },
+    "paper_id": "P001431",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 4415,
+      "output_tokens": 972
+    }
+  },
+  "record_sha256": "df5a2cfb422ab056068f5947a325dfba93b2f1c48cbf8ea15f41b3db095cb67e",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -1,0 +1,6421 @@
+{
+  "micro": {
+    "tp": 355,
+    "fp": 207,
+    "fn": 147,
+    "precision": 0.6316725978647687,
+    "recall": 0.7071713147410359,
+    "f1": 0.6672932330827067
+  },
+  "by_facet": {
+    "problem": {
+      "tp": 52,
+      "fp": 32,
+      "fn": 33,
+      "precision": 0.6190476190476191,
+      "recall": 0.611764705882353,
+      "f1": 0.6153846153846154,
+      "exact": 16
+    },
+    "task": {
+      "tp": 68,
+      "fp": 41,
+      "fn": 23,
+      "precision": 0.6238532110091743,
+      "recall": 0.7472527472527473,
+      "f1": 0.68,
+      "exact": 11
+    },
+    "method": {
+      "tp": 131,
+      "fp": 64,
+      "fn": 28,
+      "precision": 0.6717948717948717,
+      "recall": 0.8238993710691824,
+      "f1": 0.7401129943502824,
+      "exact": 15
+    },
+    "dataset": {
+      "tp": 30,
+      "fp": 10,
+      "fn": 6,
+      "precision": 0.75,
+      "recall": 0.8333333333333334,
+      "f1": 0.7894736842105263,
+      "exact": 46
+    },
+    "contribution": {
+      "tp": 74,
+      "fp": 60,
+      "fn": 57,
+      "precision": 0.5522388059701493,
+      "recall": 0.5648854961832062,
+      "f1": 0.5584905660377358,
+      "exact": 4
+    }
+  },
+  "macro_f1": 0.676692371996632,
+  "target_micro": {
+    "tp": 205,
+    "fp": 124,
+    "fn": 85,
+    "precision": 0.6231003039513677,
+    "recall": 0.7068965517241379,
+    "f1": 0.6623586429725363
+  },
+  "details": [
+    {
+      "paper_id": "P000047",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "unable to model the dynamic nature of words' semantics",
+            "very few evaluation benchmarks exist"
+          ],
+          "missing": [
+            "lack of a suitable benchmark",
+            "unable to model the dynamic nature"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "generic evaluation of context-sensitive representations",
+              "gold": "generic evaluation of context-sensitive representations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "annotations curated by experts",
+              "gold": "annotations curated by experts",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "Stanford Contextual Word Similarity"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "WiC",
+              "gold": "WiC",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "existing models have surpassed the performance ceiling of the standard evaluation dataset"
+          ],
+          "missing": [
+            "Word in Context dataset"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "WiC",
+              "gold": "WiC",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000144",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "no reliable estimates of the proportion of legitimate and infringing files"
+          ],
+          "missing": [
+            "no reliable estimates"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "lack of representative data sets",
+              "gold": "lack of representative data sets",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "assess the status of these files with regard to copyright infringement",
+              "gold": "assess the status of these files with regard to copyright infringement",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "analysing six large data sets",
+            "file metadata"
+          ],
+          "missing": [
+            "analysing six large data sets containing file metadata"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "empirical data about the uses and misuses of OCHs"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "at least 26 % to 79 % of the files are potentially infringing",
+              "gold": "at least 26% to 79% of assessed files are potentially infringing",
+              "similarity": 0.9605713684474325,
+              "match_type": "embedding"
+            },
+            {
+              "silver": "Megaupload to have the second highest proportion of legitimate files",
+              "gold": "Megaupload to have the second highest proportion of legitimate files in our study",
+              "similarity": 0.9193388673877273,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000148",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "solely focused on detecting topic-based influencers using the combination of link structure and topic-relevance"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "information diffusion"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "detecting topic-based influencers",
+              "gold": "detecting topic-based influencers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "behavioral model of authors and readers"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "content-based citation graph",
+              "gold": "content-based citation graph",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "topic-based similarity scores",
+              "gold": "topic-based similarity scores",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Topic-Sensitive PageRank",
+              "gold": "Topic-Sensitive PageRank",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "behavioral model of authors and readers",
+              "gold": "behavioral model of authors and readers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "three different extensions of the Topic-Sensitive PageRank algorithm",
+              "gold": "three different extensions of the Topic-Sensitive PageRank algorithm",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000159",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "limited effective receptive field of ResNet"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "few attention models can effectively encode such cross-region relations",
+              "gold": "few attention models can effectively encode such cross-region relations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "encoding cross-region relations"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Visual Question Answering",
+              "gold": "Visual Question Answering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "multivariate distribution over a grid-structured Conditional Random Field"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "grid-structured Conditional Random Field",
+              "gold": "grid-structured Conditional Random Field",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Loopy Belief Propagation",
+              "gold": "Loopy Belief Propagation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Mean Field",
+              "gold": "Mean Field",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "recurrent layers",
+              "gold": "recurrent layers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "CLEVR",
+              "gold": "CLEVR",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "VQA",
+              "gold": "VQA",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "convert iterative inference algorithms Mean Field and Loopy Belief Propagation as recurrent layers",
+              "gold": "converting Mean Field and Loopy Belief Propagation into recurrent layers of an end-to-end neural network",
+              "similarity": 0.8792997370954342,
+              "match_type": "embedding"
+            },
+            {
+              "silver": "visual attention as a multivariate distribution over a grid-structured Conditional Random Field",
+              "gold": "visual attention as a multivariate distribution over a grid-structured Conditional Random Field on image regions",
+              "similarity": 0.9584749991084455,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000197",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "confounding factors",
+              "gold": "confounding factors",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "risk invoking stereotyping and essentialism",
+              "gold": "stereotyping and essentialism",
+              "similarity": 0.9153125240897128,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "controlling for variables in the corpus"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Authorial Gender Attribution",
+              "gold": "authorial gender attribution",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "LIWC",
+              "gold": "LIWC",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "machine learning",
+              "gold": "machine learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "topic modeling",
+              "gold": "topic modeling",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "importance of controlling for variables in the corpus",
+              "gold": "importance of controlling for variables in the corpus",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000292",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 3,
+          "exact": 0,
+          "extra": [
+            "ignoring other available speech recognition and machine translation corpora",
+            "poor at exploiting such data"
+          ],
+          "missing": [
+            "direct speech translation models are poor at exploiting auxiliary data",
+            "error propagation issues",
+            "unrealistic assumption that cascaded and direct models are trained on equal amounts of data"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Speech Translation",
+              "gold": "Speech Translation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "multi-task-trainable recognition and translation",
+              "gold": "recognition and translation tasks",
+              "similarity": 0.9026479338862063,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "attention-passing",
+              "gold": "attention-passing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "multi-task training",
+              "gold": "multi-task training",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "two attention mechanisms",
+              "gold": "two attention mechanisms",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "direct speech translation models require more data to perform well than cascaded models",
+            "proposed model outperforms all examined baselines and is able to exploit auxiliary training data much more effectively than direct attentional models"
+          ],
+          "missing": [
+            "end-to-end trainable models with two attention mechanisms"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "attention-passing technique",
+              "gold": "attention-passing technique",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000499",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "topic discovery and evolution"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "analyze when social context actually helps with TDE"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "topic discovery and evolution",
+              "gold": "Topic discovery and evolution",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "comparing with and outperforming several state-of-the-art baselines",
+            "social context information"
+          ],
+          "missing": [
+            "incorporating textual information and social context in an NMF model"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "non-negative matrix factorization",
+              "gold": "non-negative matrix factorization",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Twitter"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "non-negative matrix factorization (NMF) based model",
+              "gold": "non-negative matrix factorization (NMF) based model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "using the social context information is most useful when faced with topics that are particularly difficult to detect",
+              "gold": "social context information is most useful when faced with topics that are particularly difficult to detect",
+              "similarity": 0.9354956592710133,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000555",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "reusability of Annotated Data"
+          ],
+          "missing": [
+            "whether a corpus annotated by means of AL -using a particular classifier and a particular feature set -can be re-used to train classifiers different from the ones employed by AL, supplying alternative feature sets as well"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Annotation Costs",
+              "gold": "annotation efforts",
+              "similarity": 0.8518380483349333,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "annotation of large-scale document corpora"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "text corpus annotation",
+              "gold": "text corpus annotation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "reusing AL-annotated corpora for classifiers with different feature sets and classifiers"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Active Learning",
+              "gold": "Active Learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "corpus annotated by means of AL can be reused to train classifiers different from the ones employed by AL"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "reduction rates for annotation efforts ranging up until 72%",
+              "gold": "reduction rates for annotation efforts ranging up until 72%",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000623",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Collective Stance Classification"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "stance classification",
+              "gold": "stance classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "network structure"
+          ],
+          "missing": [
+            "structural and linguistic features"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "collective classification",
+              "gold": "collective classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "probabilistic soft logic",
+              "gold": "probabilistic soft logic",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "4FORUMS",
+              "gold": "4FORUMS",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "collective classification approach"
+          ],
+          "missing": [
+            "collective classification approach to stance classification"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "collective classification model",
+              "gold": "collective classification model incorporates rich relational information and outperforms a local model using only linguistic information",
+              "similarity": 0.9168097169921259,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000629",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "topic modeling"
+          ],
+          "missing": [
+            "community discovery"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "latent community topic analysis",
+              "gold": "latent community topic analysis",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "community discovery",
+            "topic analysis"
+          ],
+          "missing": [
+            "incorporate community discovery into topic analysis"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "separate the concepts of community and topic",
+              "gold": "separate the concepts of community and topic",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "model separates the concepts of community and topic"
+          ],
+          "missing": [
+            "handle topic modeling and community discovery in the same framework",
+            "topics could help understand community structure"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "topics could help understand community structure, while community structure could help model topics",
+              "gold": "community structure could help model topics",
+              "similarity": 0.9284226329380021,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000637",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "focus only on the local properties",
+              "gold": "focus only on the local properties",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "quantify their relative importance"
+          ],
+          "missing": [
+            "discovering the global correlations"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "analyze the structure of languages",
+              "gold": "analyze the structure of languages",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "co-occurrence network"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "spectral analysis",
+              "gold": "spectral analysis",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "PhoNet",
+              "gold": "PhoNet",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "natural linguistic principles governing the structure of the consonant inventories",
+            "quantify their relative importance"
+          ],
+          "missing": [
+            "spectral analysis of PhoNet quantifies the relative importance of principles governing consonant inventories",
+            "spectral analysis of PhoNet reveals natural linguistic principles governing consonant-inventory structure"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000683",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "degrade sensor performance in predictable ways"
+          ],
+          "missing": [
+            "dynamic environments may degrade sensor performance"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "static uncertainty parameters",
+              "gold": "static uncertainty parameters",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "model sensor uncertainty"
+          ],
+          "missing": [
+            "state estimates"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "localization accuracy",
+              "gold": "localization",
+              "similarity": 0.8564668274818038,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "Monte Monte Carlo simulations",
+            "predictive robust estimator"
+          ],
+          "missing": [
+            "prior on observation uncertainty"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Monte Carlo simulations",
+              "gold": "Monte Carlo simulations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "nonparametric Bayesian inference",
+              "gold": "nonparametric Bayesian inference",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "KITTI",
+              "gold": "KITTI",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "significant improvements in localization accuracy relative to a fixed noise model"
+          ],
+          "missing": [
+            "PROBE-GK"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "predictive robust estimator",
+              "gold": "predictive robust estimator",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000779",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "language of actual totalitarian regimes was not nearly as successful"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "analysis of the language of totalitarianism"
+          ],
+          "missing": [
+            "examines the manipulation of language"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "evaluates the extent to which thought control succeeded",
+              "gold": "evaluates the extent to which thought control succeeded",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "analysis of the speeches and writings",
+              "gold": "analysis of the speeches and writings",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "language of actual totalitarian regimes was not nearly as successful as Newspeak in controlling thought and behavior",
+            "Newspeak is used in the novel by a totalitarian dictatorship to create a distorted view of reality and to control the thought and behaviour of its subjects"
+          ],
+          "missing": [
+            "language of actual totalitarian regimes was less successful at controlling thought and behaviour than Orwell's Newspeak",
+            "mismatch between official rhetoric and reality gave rise to counterlanguages"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": [
+            {
+              "silver": "language of actual totalitarian regimes was not nearly as successful as Newspeak in controlling thought and behavior",
+              "gold": "language of actual totalitarian regimes was less successful at controlling thought and behaviour than Orwell's Newspeak",
+              "reason": "negation_mismatch"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paper_id": "P000876",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "highly dynamic textual content",
+              "gold": "highly dynamic textual content",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "lack of labeled data",
+              "gold": "lack of labeled data",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "opinion holder bias prediction",
+              "gold": "opinion holder bias prediction",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "real time sentiment analysis",
+              "gold": "real time sentiment analysis",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "user bias prediction"
+          ],
+          "missing": [
+            "transferring user biases to textual features"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "relational learning",
+              "gold": "relational learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "transfer learning",
+              "gold": "transfer learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "user bias prediction"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "knowing the bias of only 10% of users generates an F1 accuracy level ranging from 80% to 90% in predicting user sentiment in tweets",
+              "gold": "knowing the bias of only 10% of users generates an F1 accuracy level ranging from 80% to 90% in predicting user sentiment in tweets",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "transfer learning strategy",
+              "gold": "transfer learning strategy",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000938",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "not readily available for most natural language generation tasks"
+          ],
+          "missing": [
+            "domain utterances are not readily available"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "handcrafted generation component",
+              "gold": "handcrafted generation component",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "language generation",
+              "gold": "language generation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "generating paraphrases",
+              "gold": "generating paraphrases in dialogue",
+              "similarity": 0.9036672263616233,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "n-best list"
+          ],
+          "missing": [
+            "crowdsourcing",
+            "sampling from the n-best list"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Factored Language Models",
+              "gold": "Factored Language Models",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "structured perceptron",
+              "gold": "structured perceptron",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "data-driven generation method",
+            "n-best-list sampling produces more natural dialogue than always returning the first-best utterance"
+          ],
+          "missing": [
+            "dialogue naturalness can be improved by learning to vary generated utterances for a given semantic input",
+            "results suggest that capturing human-language variation with data-driven methods benefits dialogue interaction"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Bagel",
+              "gold": "Bagel",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000962",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "non-IID data distributions"
+          ],
+          "missing": [
+            "Communication costs are the principal constraint"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "privacy sensitive",
+              "gold": "privacy sensitive",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "robust to the unbalanced and non-IID data distributions"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "federated learning of deep networks",
+              "gold": "federated learning of deep networks",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "Communication-Efficient Learning of Deep Networks from Decentralized Data",
+            "synchronized stochastic gradient descent"
+          ],
+          "missing": [
+            "aggregating locally-computed updates"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "iterative model averaging",
+              "gold": "iterative model averaging",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "practical method for the federated learning of deep networks"
+          ],
+          "missing": [
+            "The proposed federated-learning approach requires 10–100 times fewer communication rounds than synchronized stochastic gradient descent"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Federated Learning",
+              "gold": "Federated Learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001192",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "little attention has been devoted to similarity measures between these embeddings",
+              "gold": "little attention has been devoted to similarity measures",
+              "similarity": 0.9073915684255109,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "semantic textual similarity",
+              "gold": "semantic textual similarity",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "averaged word vectors",
+              "gold": "averaged word vectors",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "non-parametric rank correlation coefficients",
+              "gold": "non-parametric rank correlation coefficients",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Pearson correlation coefficient",
+              "gold": "Pearson correlation coefficient",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Corpus"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "common non-parametric rank correlation coefficients can be used instead to significantly improve performance",
+            "Pearson correlation is appropriate for some word vectors but not others"
+          ],
+          "missing": [
+            "on sentence-level similarity benchmarks averaged word vectors with rank correlation rival the strongest deep representations with cosine similarity"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "cosine similarity is essentially equivalent to the Pearson correlation coefficient",
+              "gold": "for all common word vectors cosine similarity is essentially equivalent to the Pearson correlation coefficient",
+              "similarity": 0.9007931491435969,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": [
+            {
+              "silver": "Pearson correlation is appropriate for some word vectors but not others",
+              "gold": "for all common word vectors cosine similarity is essentially equivalent to the Pearson correlation coefficient",
+              "reason": "negation_mismatch"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paper_id": "P001274",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "current metrics for assessing them do not control for the confound of lexical information",
+              "gold": "do not control for the confound of lexical information",
+              "similarity": 0.8981668877056133,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "assessing the degree to which CDSM capture semantic interactions",
+              "gold": "assessing the degree to which CDSM capture semantic interactions",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "compositional distributional semantics models"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "co-occurrence based and neural language model input vectors",
+              "gold": "co-occurrence based and neural language model input vectors",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "vector addition",
+              "gold": "vector addition",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 4,
+          "exact": 0,
+          "extra": [
+            "dataset for performing this type of assessment"
+          ],
+          "missing": [
+            "dataset for assessing CDSM compositional information",
+            "neural language input vectors are consistently superior to co-occurrence based vectors",
+            "several CDSM capture substantial compositional information",
+            "vector addition matches and is in many cases superior to purpose-built paramaterized models"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "new method for assessing the degree to which CDSM capture semantic interactions",
+              "gold": "new method for assessing how CDSM capture semantic interactions separately from lexical information",
+              "similarity": 0.9713610065912743,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001297",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "noisy training data",
+              "gold": "noisy training data",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "relations are disjoint",
+              "gold": "models assume relations are disjoint",
+              "similarity": 0.8922663662903544,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "extractors for NY Times text",
+            "Information Extraction"
+          ],
+          "missing": [
+            "Information Extraction of Overlapping Relations"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "corpus-level component",
+              "gold": "corpus-level component",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "multi-instance learning",
+              "gold": "multi-instance learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "sentence-level extraction model",
+              "gold": "sentence-level extraction model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "weak supervision",
+              "gold": "weak supervision",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "NY Times text"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Freebase",
+              "gold": "Freebase",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "approach runs quickly and yields surprising gains in accuracy"
+          ],
+          "missing": [
+            "proposed overlapping-relation approach yields accuracy gains at aggregate and sentence levels"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "novel approach for multi-instance learning with overlapping relations",
+              "gold": "multi-instance learning with overlapping relations",
+              "similarity": 0.9378264703473723,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001322",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "completion rates for massive open online classes (MOOCs) are notoriously low"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "not taken full advantage of the multiple types of data available",
+              "gold": "not taken full advantage of the multiple types of data",
+              "similarity": 0.991279012101764,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "predict MOOC completion"
+          ],
+          "missing": [
+            "predictive of successful class completion"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "click-stream data",
+            "N NLP indices",
+            "NLP",
+            "NLP indices",
+            "predictive power"
+          ],
+          "missing": [
+            "combines click-stream data and NLP approaches"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "MOOC on educational data mining"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC"
+          ],
+          "missing": [
+            "clickstream data and NLP indices predict MOOC completion with 78% accuracy in a subsample completing at least one graded assignment and producing at least 50 forum words"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": [
+            {
+              "silver": "mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC",
+              "gold": "clickstream data and NLP indices predict MOOC completion with 78% accuracy in a subsample completing at least one graded assignment and producing at least 50 forum words",
+              "reason": "numeric_mismatch"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paper_id": "P001366",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "little consideration of their potential biases"
+          ],
+          "missing": [
+            "potential biases",
+            "racial bias"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "racial bias"
+          ],
+          "missing": [
+            "hate speech"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "abusive language detection",
+              "gold": "abusive language detection",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "compare the predictions",
+              "gold": "compare the predictions",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "train classifiers",
+              "gold": "train classifiers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "five different sets of Twitter data"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "abusive language detection systems may disproportionately negatively impact African-American social media users",
+            "systematic racial bias in all datasets"
+          ],
+          "missing": [
+            "classifiers trained on the evaluated datasets tend to predict African-American English tweets as abusive at substantially higher rates than Standard American English tweets",
+            "evidence of systematic racial bias in all five evaluated Twitter hate-speech and abusive-language datasets"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001402",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "lacks of human annotations"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "large amounts of annotated training data are typically unavailable",
+              "gold": "large amounts of annotated training data are typically unavailable",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "3D-based objectness detection"
+          ],
+          "missing": [
+            "objectness detection"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "RGBD object recognition",
+              "gold": "RGBD object recognition",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 6,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "3D-based objectness detection",
+            "bounding-box annotations are not required",
+            "CAD models",
+            "DCNN-GPC",
+            "multi-modal DCNN",
+            "weakly-supervised learning"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Deep Convolutional Neural Networks",
+              "gold": "Deep Convolutional Neural Networks",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Gaussian Process Classification",
+              "gold": "Gaussian Process Classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "pretrain a DCNN for the depth modality",
+              "gold": "pretraining a depth-modality DCNN on virtual depth images projected from CAD models",
+              "similarity": 0.872611735778189,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "nuclear waste simulants"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Washington RGBS Dataset",
+              "gold": "Washington RGBS Dataset",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "weakly supervised approach"
+          ],
+          "missing": [
+            "novel dataset of industrial objects",
+            "real-time detection and recognition pipeline"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "DCNN-GPC",
+              "gold": "DCNN-GPC",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "pretrain a DCNN for the depth modality",
+              "gold": "depth-modality DCNN pretraining using virtual depth images projected from CAD models",
+              "similarity": 0.8707748621647993,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001470",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "create funny headlines"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "predict whether or not an edited headline is funny",
+              "gold": "predict whether or not an edited headline is funny",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "crowdsourced editors"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "baseline classifiers",
+              "gold": "baseline classifiers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "single word replacement",
+              "gold": "single word replacement",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Humicroedit",
+              "gold": "Humicroedit",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "baseline classifiers"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Humicroedit",
+              "gold": "Humicroedit",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001588",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "flaws in both their content and the way algorithms are evaluated"
+          ],
+          "missing": [
+            "evaluation scores are inflated"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "over-represented question-types",
+              "gold": "over-represented question-types",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "answer large, easy question categories"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "visual question answering",
+              "gold": "visual question answering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "attention helps certain categories more than others",
+            "new evaluation schemes"
+          ],
+          "missing": [
+            "MLP"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "multi-modal compact bilinear pooling",
+              "gold": "multi-modal compact bilinear pooling",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "neural module networks",
+              "gold": "neural module networks",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "recurrent answering units",
+              "gold": "recurrent answering units",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "attention helps certain categories more than others",
+            "new dataset",
+            "new evaluation schemes",
+            "questions that are meaningless for a given image",
+            "simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories"
+          ],
+          "missing": [
+            "new evaluation schemes that compensate for over-represented question-types",
+            "new VQA dataset with over 1.6 million questions in 12 categories and questions meaningless for given images"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001700",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "how to make the job of a tutor, automatic and intelligent"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "automatic and intelligent tutor"
+          ],
+          "missing": [
+            "appropriate decision-making to a critical situation"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "GISMO",
+              "gold": "GISMO",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "workflow model",
+              "gold": "workflow model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "workflow"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "automatic and intelligent tutor",
+              "gold": "automatic and intelligent tutor",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001715",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "ignore the content of social interactions"
+          ],
+          "missing": [
+            "link-based methods ignore the content of social interactions"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "extract relevant topics"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "community extraction",
+              "gold": "community extraction",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Bayesian generative model",
+              "gold": "Bayesian generative model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Gibbs sampling",
+              "gold": "Gibbs sampling",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Enron email corpus",
+              "gold": "Enron email corpus",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "model extracts well-connected and topically meaningful communities"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Bayesian generative model",
+              "gold": "Bayesian generative model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron",
+              "gold": "model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001764",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "quantify the extent to which a legislator's spoken language indicates their degree of alignment toward an organization"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "predict alignment scores",
+              "gold": "predict alignment scores",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "discourse features",
+              "gold": "discourse features",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "natural language processing",
+              "gold": "natural language processing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Digital Democracy"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "up to 78% accuracy"
+          ],
+          "missing": [
+            "up to 78% accuracy predicting legislator-organization alignment scores using discourse features"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "methods surpass established baselines",
+              "gold": "methods surpass established baselines",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001901",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "recursive nature of language",
+              "gold": "do not explicitly take into account the recursive nature of language",
+              "similarity": 0.8675873159786589,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Dependency-Aware Named Entity Recognition"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Named Entity Recognition",
+              "gold": "Named entity recognition",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "dependency trees"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "relative and global attention mechanisms",
+              "gold": "relative and global attention mechanisms",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Tree-LSTM",
+              "gold": "Tree-LSTM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "conditional random field classifier",
+              "gold": "conditional random field",
+              "similarity": 0.9451030848793004,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "Dependency-Aware Named Entity Recognition",
+            "new state of the art on two datasets"
+          ],
+          "missing": [
+            "linguistically-inspired way to recognize entities",
+            "model detects words disclosing entity types based on their syntactic roles in a sentence"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001906",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "do not have associated research documentation",
+              "gold": "do not have associated research documentation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "super-human performance"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Question Answering",
+              "gold": "Question Answering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 2,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Attention-over-Attention",
+            "data augmentation"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "transfer learning from BERT",
+              "gold": "transfer learning from BERT",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "ensembling",
+              "gold": "ensembling strategies",
+              "similarity": 0.8677860744011687,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "SQuAD"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Natural Questions",
+              "gold": "Natural Questions",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "simple approach of transfer learning from BERT"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Adding ensembling strategies further improves that number by 2.3 F1 points",
+              "gold": "adding ensembling strategies further improves performance by 2.3 F1 points",
+              "similarity": 0.9794035900796327,
+              "match_type": "embedding"
+            },
+            {
+              "silver": "transfer learning from BERT outperforms the previous state-of-the-art system trained on 4 million more examples than ours by 1.9 F1 points",
+              "gold": "on Natural Questions, BERT transfer learning outperforms the prior best system by 1.9 F1 points using 4 million fewer training examples",
+              "similarity": 0.8793953798230255,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": [
+            {
+              "silver": "transfer learning from BERT outperforms the previous state-of-the-art system trained on 4 million more examples than ours by 1.9 F1 points",
+              "gold": "simple approach of transfer learning from BERT",
+              "reason": "missing_quantity"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paper_id": "P001966",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "amplitude and phase compensation",
+            "multipath channels"
+          ],
+          "missing": [
+            "extension to multipath channels is problematic",
+            "inefficient system that yields no diversity"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "cooperative multiple access channels"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "network coding with diversity",
+              "gold": "network coding",
+              "similarity": 0.9009717349158587,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "information-theoretic metrics",
+            "outage and ergodic capacity"
+          ],
+          "missing": [
+            "physical-layer network coding",
+            "selection diversity"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "distributed relay selection",
+              "gold": "distributed relay selection",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "network coding with diversity"
+          ],
+          "missing": [
+            "NCD"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "new cooperative protocol",
+              "gold": "new cooperative protocol",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002039",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "confounding effects of non-emotional variables"
+          ],
+          "missing": [
+            "emotional word content is confounded with frequency, familiarity and age of acquisition"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "mechanisms by which emotion is involved in automatic lexical processing are unclear",
+              "gold": "mechanisms by which emotion is involved in automatic lexical processing are unclear",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "lexical decision"
+          ],
+          "missing": [
+            "compare different models of emotion",
+            "lexical processing"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "British Lexicon Project"
+          ],
+          "missing": [
+            "controlling for the potentially confounding effects"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "statistical approaches",
+              "gold": "statistical approaches",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "British Lexicon Project",
+              "gold": "British Lexicon Project",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "effect appears to be categorical rather than graded"
+          ],
+          "missing": [
+            "emotional-word processing facilitation appears categorical rather than graded and is not modulated by arousal"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "emotional words, whether positive or negative, are processed faster than neutral words",
+              "gold": "after controlling non-emotional confounders, positive and negative emotional words are processed faster than neutral words",
+              "similarity": 0.962184850180016,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002122",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "treat language as a discrete category",
+              "gold": "treat language as a discrete category",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "multilingual natural language processing",
+              "gold": "multilingual natural language processing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "inference about language varieties not seen during training",
+              "gold": "improve inference about language varieties unseen during training",
+              "similarity": 0.9650191230905094,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "character-based neural language model",
+              "gold": "character-based neural language model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "continuous vector representations of language",
+              "gold": "continuous vector representations of language",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Bible translations",
+              "gold": "Bible translations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "continuous vector representations of language"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "language vectors capture genetic relationships between languages",
+              "gold": "language vectors capture genetic relationships",
+              "similarity": 0.9601948287309902,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002140",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "focus on either syntagmatic or paradigmatic relations alone",
+              "gold": "focus on either syntagmatic or paradigmatic relations alone",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "word representation"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "word analogy",
+              "gold": "word analogy",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "word similarity",
+              "gold": "word similarity",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "joint training objective",
+              "gold": "joint training objective",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "jointly modeling both syntagmatic and paradigmatic relations",
+              "gold": "syntagmatic and paradigmatic relations",
+              "similarity": 0.8833253142267883,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Wikipedia",
+              "gold": "Wikipedia",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "jointly modeling both syntagmatic and paradigmatic relations"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "two novel distributional models",
+              "gold": "two novel distributional models",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002290",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "complexity in understanding the image content",
+              "gold": "complexity in understanding the image content",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "diverse ways of describing it in natural language",
+              "gold": "diverse ways of describing it",
+              "similarity": 0.9192497606553851,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "image captioning",
+              "gold": "Image captioning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "encoder-decoder framework"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "actor-critic reinforcement learning",
+              "gold": "actor-critic reinforcement learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "policy network",
+              "gold": "policy network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "value network",
+              "gold": "value network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "visual-semantic embedding",
+              "gold": "visual-semantic embedding",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Microsoft COCO",
+              "gold": "Microsoft COCO",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "decision-making framework"
+          ],
+          "missing": [
+            "decision-making framework for image captioning"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "novel reward defined by visual-semantic embedding",
+              "gold": "novel reward defined by visual-semantic embedding",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002300",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "low inter-task variance"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "single metric is insufficient to capture complex task variations",
+              "gold": "single metric is insufficient to capture complex task variations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "dialog intent classification",
+              "gold": "dialog intent classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "few-shot learning",
+              "gold": "few-shot learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "sentiment analysis",
+              "gold": "sentiment analysis",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "adaptive metric learning",
+              "gold": "adaptive metric learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "weighted combination",
+              "gold": "weighted combination",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "method performs favorably against state-of-the-art few shot learning algorithms in terms of predictive accuracy"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "adaptive metric learning",
+              "gold": "adaptive metric learning approach",
+              "similarity": 0.986841751509712,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002421",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "irregular spatial domain",
+            "non-trivial"
+          ],
+          "missing": [
+            "design and convolution of CNN kernel filters are non-trivial in irregular spatial domains"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "digit classification",
+              "gold": "digit classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "image classification",
+              "gold": "image classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Algebraic Multigrid",
+              "gold": "Algebraic Multigrid",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "spectral multipliers",
+              "gold": "spectral multipliers",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "graph convolution and pooling operators",
+              "gold": "graph convolution",
+              "similarity": 0.8766639497578432,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "MNIST",
+              "gold": "MNIST",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "gradient calculations on the input data and spectral filters"
+          ],
+          "missing": [
+            "graph CNN"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "graph convolution and pooling operators",
+              "gold": "graph convolution and pooling operators",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002467",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "ignore useful cues from context",
+              "gold": "ignore useful cues from context",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "independent proposal generation systems",
+              "gold": "limited by the performance of independent proposal generation systems",
+              "similarity": 0.8851542684309497,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "phrase grounding",
+              "gold": "phrase grounding",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "regression mechanism"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "context refinement network",
+              "gold": "context refinement network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "multimodal spatial regression",
+              "gold": "multimodal spatial regression",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Flickr30K Entities",
+              "gold": "Flickr30K Entities",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Refer-it Game",
+              "gold": "Refer-it Game",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "MSRC"
+          ],
+          "missing": [
+            "multimodal spatial regression with semantic context"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "context refinement network",
+              "gold": "context refinement network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002623",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "Casual Scale Usage"
+          ],
+          "missing": [
+            "Imprecise Measurement",
+            "unknown reliability"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Conceptual Fuzziness",
+              "gold": "Conceptual Fuzziness",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "assessing momentary distinct emotions",
+              "gold": "assessing momentary distinct emotions",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "coding these practices",
+              "gold": "coding these practices",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "quantitative review",
+              "gold": "quantitative review",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "researchers assess many purportedly distinct emotions"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "majority of scales used include only a single item",
+              "gold": "majority of scales used include only a single item",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "researchers frequently use scales that were not systematically developed",
+              "gold": "researchers frequently use scales that were not systematically developed",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002801",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "original papers often reported on only one or two selected datasets",
+              "gold": "original papers often reported on only one or two selected datasets",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "sentence pair modeling"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "natural language inference",
+              "gold": "natural language inference",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "paraphrase identification",
+              "gold": "paraphrase identification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Question Answering",
+              "gold": "question answering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "semantic textual similarity",
+              "gold": "semantic textual similarity",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "inter-sentence interactions"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Enhanced Sequential Inference Model",
+              "gold": "Enhanced Sequential Inference Model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "LSTM",
+              "gold": "LSTM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Pairwise Word Interaction Model",
+              "gold": "Pairwise Word Interaction Model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Tree-LSTM",
+              "gold": "Tree-LSTM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "Pairwise Word Interaction Model achieves the best performance when less data is available",
+            "systematic study",
+            "Tree-LSTM does not help as much as previously claimed"
+          ],
+          "missing": [
+            "open-source toolkit",
+            "systematic comparison of neural sentence-pair models across eight datasets"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Enhanced Sequential Inference Model is the best so far for larger datasets",
+              "gold": "Enhanced Sequential Inference Model performs best for larger datasets, while Pairwise Word Interaction Model performs best with less data",
+              "similarity": 0.900241490520093,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002844",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "low-utility facets",
+              "gold": "low-utility facets",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "general language that is unlikely to appear verbatim in answers",
+              "gold": "general language that is unlikely to appear verbatim",
+              "similarity": 0.9717584750475913,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "identifies and addresses low-utility facets"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Complex Answer Retrieval",
+              "gold": "Complex Answer Retrieval",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "entity similarity scores",
+            "two estimators of facet utility"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "facet frequency information",
+              "gold": "facet frequency information",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "hierarchical structure of CAR queries",
+              "gold": "hierarchical structure of CAR queries",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "knowledge graph embeddings",
+              "gold": "knowledge graph embeddings",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "TREC CAR",
+              "gold": "TREC CAR",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "approach to CAR that identifies and addresses low-utility facets",
+              "gold": "approach to CAR that identifies and addresses low-utility facets",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "two estimators of facet utility",
+              "gold": "two estimators of facet utility",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002866",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "substantial challenge"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "conflict with evidence from strictly agreeing cases",
+              "gold": "rare and conflict with evidence from strictly agreeing cases",
+              "similarity": 0.9285220370433565,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "coreference resolution"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "predicting English notional anaphora",
+              "gold": "predicting English notional anaphora",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "coreference resolution",
+            "referring expression generation"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "ensemble approach",
+              "gold": "ensemble approach",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "OntoNotes",
+              "gold": "OntoNotes",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "ensemble approach",
+            "theoretical approaches positing a plural construal at the antecedent's utterance are insufficient"
+          ],
+          "missing": [
+            "ensemble predictive model for English notional anaphora",
+            "results suggest anaphor-location circumstances and global factors such as genre strongly affect referring-expression choice"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002933",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "high cost of computing kernel similarities",
+              "gold": "high cost of computing kernel similarities",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "poor scalability",
+              "gold": "poor scalability",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "biomedical relation extraction"
+          ],
+          "missing": [
+            "classification"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "relation extraction",
+              "gold": "relation extraction",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "random subspaces"
+          ],
+          "missing": [
+            "random subspaces of KLSH codes"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "kernelized locality-sensitive hashing",
+              "gold": "kernelized locality-sensitive hashing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "mutual information",
+              "gold": "mutual information",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "random subspaces of KLSH codes"
+          ],
+          "missing": [
+            "explicit representation of NLP structures"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "approach for optimizing the KLSH model",
+              "gold": "optimizing the KLSH model",
+              "similarity": 0.9804575009302741,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003049",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "cannot be easily extended to capture the rich semantics in visual modality"
+          ],
+          "missing": [
+            "inconsistent dialogues"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "limited to textual modality",
+              "gold": "limited to textual modality",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "multi-turn task-oriented dialogue"
+          ],
+          "missing": [
+            "generate responses"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "deep reinforcement learning",
+              "gold": "deep reinforcement learning",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "end-to-end neural conversational model",
+              "gold": "end-to-end neural conversational model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "taxonomy-based learning module",
+              "gold": "taxonomy-based learning module",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "three key components"
+          ],
+          "missing": [
+            "taxonomy-based learning module"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Knowledge-aware Multimodal Dialogue",
+              "gold": "Knowledge-aware Multimodal Dialogue",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003054",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "few-shot relation classification remains an open problem",
+              "gold": "few-shot relation classification remains an open problem",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "relation classification"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Few-Shot Relation Classification",
+              "gold": "Few-Shot Relation Classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "crowdworkers"
+          ],
+          "missing": [
+            "annotated by crowdworkers",
+            "filtered by crowdworkers"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "distant supervision",
+              "gold": "distant supervision",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "few-shot learning",
+              "gold": "few-shot learning methods",
+              "similarity": 0.9562429676677346,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "Wikipedia"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "FewRel",
+              "gold": "FewRel",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "few-shot relation classification remains an open problem"
+          ],
+          "missing": [
+            "thorough evaluation"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "FewRel",
+              "gold": "FewRel",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003080",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "lack of a supervised learning benchmark task",
+              "gold": "lack of a supervised learning benchmark task",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "generating generic utterances that can be memorized",
+              "gold": "generic utterances",
+              "similarity": 0.8650385349256292,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "open-domain dialogue"
+          ],
+          "missing": [
+            "retrieving knowledge"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "knowledge retrieval and natural response generation",
+              "gold": "generating natural responses",
+              "similarity": 0.8590187258486796,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "knowledge retrieval"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "reading and conditioning on retrieved knowledge",
+              "gold": "retrieving knowledge, reading and conditioning on it",
+              "similarity": 0.9378454068048384,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "Wikipedia"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Wizard of Wikipedia",
+              "gold": "Wizard of Wikipedia",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "Wizard of Wikipedia"
+          ],
+          "missing": [
+            "architectures capable of retrieving knowledge"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "large dataset with conversations directly grounded with knowledge retrieved from Wikipedia",
+              "gold": "large dataset with conversations directly grounded with knowledge",
+              "similarity": 0.9421939214455402,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003096",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "do not explicitly use background commonsense knowledge",
+              "gold": "do not explicitly use background commonsense knowledge",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "Story ending prediction"
+          ],
+          "missing": [
+            "story ending selection"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "commonsense knowledge",
+            "narrative sequence",
+            "sentiment evolution"
+          ],
+          "missing": [
+            "narrative sequence, sentiment evolution and commonsense knowledge"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "neural story ending selection model",
+              "gold": "neural story ending selection model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "ROCStory Cloze Task",
+              "gold": "ROCStory Cloze Task",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "neural story ending selection model",
+              "gold": "neural story ending selection model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "adding the additional commonsense knowledge significantly improves story-ending prediction performance on ROCStory Cloze Task",
+              "gold": "adding commonsense knowledge significantly improves story-ending selection performance",
+              "similarity": 0.8940179630120298,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003306",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "semantic frames in the training data can contain information not expressed in the utterances"
+          ],
+          "missing": [
+            "information that is not expressed in the utterances"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "no prior information on the alignment",
+              "gold": "no prior information on the alignment",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "weakly supervised classification"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "semantic frame induction",
+              "gold": "induction of semantic frames",
+              "similarity": 0.8728065579188246,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "expression sharing",
+              "gold": "expression sharing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Hidden Markov Models",
+              "gold": "Hidden Markov Models",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "hierarchical HMM",
+              "gold": "hierarchical HMM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "PATCOR",
+              "gold": "PATCOR",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "expression sharing",
+              "gold": "expression sharing",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "hierarchical HMM",
+              "gold": "hierarchical HMM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003362",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "ignores sense distinctions"
+          ],
+          "missing": [
+            "limited their utility"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "no clear consensus on guidelines for computational verb lexicons",
+              "gold": "has yet to develop a clear consensus on guidelines for computational verb lexicons",
+              "similarity": 0.9540378663656016,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "animate the actions of virtual human agents"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "lexicon development",
+              "gold": "lexicon development",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "systematic efforts"
+          ],
+          "missing": [
+            "class-based approach"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "automatic acquisition methods",
+              "gold": "automatic acquisition methods",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Levin verb classes",
+              "gold": "Levin verb classes",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "FameNet II"
+          ],
+          "missing": [
+            "VerbNet",
+            "Xtag"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "PropBank",
+              "gold": "PropBank",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "WordNet",
+              "gold": "WordNet",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "it is possible to semi-automatically supplement and tune VerbNet with novel information from corpus data"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "VerbNet",
+              "gold": "VerbNet",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "VerbNet syntactic frames account for over 84% exact matches to the frames found in PropBank",
+              "gold": "VerbNet syntactic frames account for over 84% exact matches to the frames found in PropBank",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003602",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "semantic linearity does not always hold",
+              "gold": "semantic linearity does not always hold",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "semantic composition"
+          ],
+          "missing": [
+            "Text Representation Learning"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "text classification",
+              "gold": "text classification",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "non-linear semantic composition"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "complex-valued vector word representation",
+              "gold": "complex-valued vector word representation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "end-to-end neural network",
+              "gold": "end-to-end neural network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Semantic Hilbert Space",
+              "gold": "Semantic Hilbert Space",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "end-to-end neural network"
+          ],
+          "missing": [
+            "non-linear semantic composition"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Semantic Hilbert Space",
+              "gold": "Semantic Hilbert Space",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003701",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "not all possibly relevant markers may be known"
+          ],
+          "missing": [
+            "limited to the annotated lesions"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "exhaustive annotation is time‐consuming",
+              "gold": "exhaustive annotation is time‐consuming",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "anomaly detection"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "identifying anomalous images and image segments",
+              "gold": "identifying anomalous images and image segments",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "encoder",
+            "fast mapping technique"
+          ],
+          "missing": [
+            "anomaly score",
+            "trained encoder"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "discriminator feature residual error",
+              "gold": "discriminator feature residual error",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "generative adversarial network",
+              "gold": "generative adversarial network",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "image reconstruction error",
+              "gold": "image reconstruction error",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "f‐AnoGAN outperforms alternative approaches and yields high anomaly detection accuracy"
+          ],
+          "missing": [
+            "a visual Turing test with two retina experts showed that the generated images are indistinguishable from real normal retinal OCT images"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "fast mapping technique",
+              "gold": "fast mapping technique",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "f‐AnoGAN",
+              "gold": "f‐AnoGAN",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003705",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "membership alone, without a complete profile of what a community is and how it interacts with other communities, has limited applications",
+              "gold": "community membership alone lacks a complete profile of community content and interactions, limiting applications",
+              "similarity": 0.8952274337913715,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "community profiling",
+              "gold": "community profiling",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "searching and browsing communities",
+              "gold": "searching and browsing communities",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "interactive community visualization"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "community profiling",
+              "gold": "community profiling",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "profile-aware community ranking",
+              "gold": "profile-aware community ranking",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "Twitter"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "DBLP",
+              "gold": "DBLP",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "interactive community visualization"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "SocialLens",
+              "gold": "SocialLens",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "profile-aware community ranking",
+              "gold": "community profiling",
+              "similarity": 0.8570677878333934,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003788",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "easily poisoned by clever spammers"
+          ],
+          "missing": [
+            "Bayesian spam filters are easily poisoned"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "significant amount of time to adapt",
+              "gold": "significant amount of time to adapt",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "attack-resilience"
+          ],
+          "missing": [
+            "spam detection"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "spam filtering",
+              "gold": "spam filtering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "Bayesian filter"
+          ],
+          "missing": [
+            "friend notification"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "adaptive trust management",
+              "gold": "adaptive trust management",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "social closeness-based spam filtering",
+              "gold": "social closeness-based spam filtering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "social interest-based spam filtering",
+              "gold": "social interest-based spam filtering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "SOAP",
+              "gold": "SOAP",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "SOAP prototype",
+              "gold": "SOAP prototype",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "SOAP can greatly improve the performance of Bayesian spam filters in terms of accuracy, attack-resilience, and efficiency of spam detection",
+              "gold": "SOAP improves Bayesian spam filters in accuracy, attack-resilience, and efficiency of spam detection",
+              "similarity": 0.9511383015080189,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003825",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "Accurate prediction of GEBVs is a central and recurring challenge in plant and animal breeding"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "far more predictors than observations",
+              "gold": "far more predictors than observations",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "comparatively evaluate six regularized linear regression methods for predicting GEBV using dense SNP markers"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "predicting GEBV",
+              "gold": "predicting GEBV",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 6,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "fivefold cross-validation"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "adaptive elastic net",
+              "gold": "adaptive elastic net",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "adaptive lasso",
+              "gold": "adaptive lasso",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "elastic net",
+              "gold": "elastic net",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "lasso",
+              "gold": "lasso",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "ridge regression",
+              "gold": "ridge regression",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "ridge regression BLUP",
+              "gold": "ridge regression BLUP",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "QTL-MAS 2011",
+              "gold": "QTL-MAS 2011",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "The correlation between the predicted GEBV and simulated phenotypic values based on the fivefold CV also revealed a similar pattern except that the adaptive elastic net had lower accuracy than both the ridge regression methods"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "elastic net, lasso, adaptive lasso and the adaptive elastic net all had similar accuracies but outperformed ridge regression and ridge regression BLUP in terms of the Pearson correlation between predicted GEBVs and the true genomic value as well as the root mean squared error",
+              "gold": "On the simulated data, elastic net, lasso, adaptive lasso and adaptive elastic net outperform ridge regression and ridge regression BLUP for true genomic value prediction in Pearson correlation and root mean squared error",
+              "similarity": 0.9121534297484403,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003964",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "implicit cues"
+          ],
+          "missing": [
+            "dialogues often give merely implicit cues"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "inferring personal attributes"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "extracting personal attributes",
+              "gold": "extracting personal attributes from conversations",
+              "similarity": 0.9174954969151353,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "neural networks",
+            "per-predicate basis"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "attention mechanisms",
+              "gold": "attention mechanisms",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "embeddings",
+              "gold": "embeddings",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Hidden Attribute Models",
+              "gold": "Hidden Attribute Models",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "per-predicate basis"
+          ],
+          "missing": [
+            "The proposed personal-attribute inference methods outperform state-of-the-art baselines on conversational texts including Reddit discussions, movie scripts, and crowdsourced personal dialogues"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Hidden Attribute Models",
+              "gold": "Hidden Attribute Models",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003993",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "p-values cannot be computed explicitly",
+              "gold": "p-values cannot be computed explicitly",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "obtaining the same rejections and non-rejections as the ones obtained if the p-values for all hypotheses had been available"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "test multiple hypotheses",
+              "gold": "test multiple hypotheses",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "generic algorithm"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Monte Carlo simulation",
+              "gold": "Monte Carlo simulation",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "step-up and step-down procedures",
+              "gold": "step-up and step-down procedures",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "conditions guaranteeing Monte Carlo-based multiple testing results are identical to those with explicit p-values",
+            "three sets together with an error bound on their correctness"
+          ],
+          "missing": [
+            "Under established conditions, Monte Carlo rejections and non-rejections are identical to those obtained using the explicitly known p-values"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "framework for Monte Carlo-based multiple testing",
+              "gold": "generic algorithm for a general multiple testing procedure",
+              "similarity": 0.8858510234688186,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P004028",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "how facial expressions relate to personal constructs"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "automatic personality impression prediction",
+              "gold": "automatic personality impression prediction",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "assess the relevance of each facial expression of emotion with respect to Big-Five impressions",
+              "gold": "study connections between facial expressions of emotion and impressions of Big-Five personality traits in YouTube vlogs",
+              "similarity": 0.8563950639842006,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Computer Expression Recognition Toolbox",
+              "gold": "Computer Expression Recognition Toolbox",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "correlation analysis",
+              "gold": "correlation analysis",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "four sets of behavioral cues",
+              "gold": "behavioral cues",
+              "similarity": 0.9001690033935407,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "CERT"
+          ],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "multiple facial expression cues have significant correlation with several of the Big-Five traits"
+          ],
+          "missing": [
+            "In the 281-vlogger study, facial-expression cues significantly predict only Extraversion impressions, with moderate R2 values"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "four sets of behavioral cues",
+              "gold": "four sets of behavioral cues",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P004049",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "incomplete source of idiomatic phrases",
+              "gold": "incomplete source of idiomatic phrases",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "idiom detection",
+              "gold": "idiom detection",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "idiom identification",
+              "gold": "identifying idiomatic dictionary entries",
+              "similarity": 0.8677230563408003,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "phrase meanings are constructed compositionally"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "idiom classifier",
+              "gold": "idiom classifier",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "word sense disambiguation",
+              "gold": "word sense disambiguation algorithms",
+              "similarity": 0.9415837860627051,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Wiktionary",
+              "gold": "Wiktionary",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "idiom classifier"
+          ],
+          "missing": [
+            "corpus of over 60,000 Wiktionary multi-word definitions",
+            "On Wiktionary definition example sentences, the expanded idiom set increases detection recall by over 28 percentage points"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "classifier more than doubles the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "gold": "The learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision above 65%",
+              "similarity": 0.902657075667265,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P004079",
+      "comparison": {
+        "problem": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "cannot handle a larger vocabulary",
+              "gold": "cannot handle a larger vocabulary",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "technical terms that are observed infrequently",
+              "gold": "many technical terms that are observed infrequently",
+              "similarity": 0.9580302514328657,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "rerank the 1,000-best SMT translations"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "translate patent sentences",
+              "gold": "translate patent sentences",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "NMT system",
+            "replace technical terms with technical term tokens",
+            "rerank"
+          ],
+          "missing": [
+            "NMT rescoring",
+            "technical term tokens"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "SMT",
+              "gold": "SMT",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "On Japanese-Chinese patent sentences, the proposed technique improves an equivalent NMT system by approximately 0.6 BLEU points and 0.8 RIBES points"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms",
+              "gold": "method that enables NMT to translate patent sentences comprising a large vocabulary of technical terms",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "NMT system achieves a substantial improvement of up to 3.1 BLEU points and 2.3 RIBES points over traditional SMT systems",
+              "gold": "On Japanese-Chinese patent sentences, the proposed NMT system improves over traditional SMT by up to 3.1 BLEU points and 2.3 RIBES points",
+              "similarity": 0.852444242219904,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P004103",
+      "comparison": {
+        "problem": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "exact": 0,
+          "extra": [
+            "similar performance gains have yet to be demonstrated for online spam filtering"
+          ],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "high cost of SVMs",
+              "gold": "high cost of SVMs",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 2,
+          "exact": 0,
+          "extra": [],
+          "missing": [
+            "blog spam",
+            "splog detection"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "online spam filtering",
+              "gold": "online spam filtering",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Relaxed Online SVM",
+              "gold": "Relaxed Online SVM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "Support Vector Machines",
+              "gold": "online SVMs",
+              "similarity": 0.8862428999159415,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "exact": 0,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "Relaxed Online SVM",
+              "gold": "Relaxed Online SVM",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "nearly equivalent performance may be achieved by a Relaxed Online SVM at greatly reduced computational cost",
+              "gold": "A Relaxed Online SVM can achieve nearly equivalent online spam-filtering performance to online SVMs at greatly reduced computational cost",
+              "similarity": 0.8552095752113879,
+              "match_type": "embedding"
+            },
+            {
+              "silver": "online SVMs give state-of-the-art classification performance on online spam filtering",
+              "gold": "Online SVMs achieve state-of-the-art online spam-filtering classification performance on large benchmark datasets",
+              "similarity": 0.9850346357757005,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    },
+    {
+      "paper_id": "P004165",
+      "comparison": {
+        "problem": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "deep language understanding and multi-step reasoning"
+          ],
+          "missing": [
+            "Learning a natural-language interface for database tables requires deep language understanding and multi-step reasoning",
+            "Previous program-induction approaches rely on domain-specific grammars, rules, or annotations"
+          ],
+          "matched_pairs": [],
+          "rejected_pairs": []
+        },
+        "task": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "program induction"
+          ],
+          "missing": [
+            "induce executable programs from natural-language queries over database tables"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Learning a natural language interface for database tables",
+              "gold": "natural language interface for database tables",
+              "similarity": 0.8755200121213086,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "method": {
+          "tp": 2,
+          "fp": 2,
+          "fn": 1,
+          "exact": 0,
+          "extra": [
+            "ensemble of 15 models",
+            "weak supervision"
+          ],
+          "missing": [
+            "weak supervision of question-answer pairs"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "Neural Programmer",
+              "gold": "Neural Programmer",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "end-to-end neural network model",
+              "gold": "end-to-end neural network",
+              "similarity": 0.9717841830272974,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "dataset": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "exact": 1,
+          "extra": [],
+          "missing": [],
+          "matched_pairs": [
+            {
+              "silver": "WikiTableQuestions",
+              "gold": "WikiTableQuestions",
+              "similarity": 1.0,
+              "match_type": "exact"
+            }
+          ],
+          "rejected_pairs": []
+        },
+        "contribution": {
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "exact": 0,
+          "extra": [
+            "ensemble of 15 models, with a trivial combination technique, achieves 37.7% accuracy"
+          ],
+          "missing": [
+            "An ensemble of 15 Neural Programmer models achieves 37.7% accuracy, competitive with a semantic-parser state of the art of 37.1%",
+            "enhance the objective function of Neural Programmer"
+          ],
+          "matched_pairs": [
+            {
+              "silver": "first weakly supervised, end-to-end neural network model",
+              "gold": "first weakly supervised, end-to-end neural network model",
+              "similarity": 1.0,
+              "match_type": "exact"
+            },
+            {
+              "silver": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+              "gold": "A single Neural Programmer model achieves 34.2% accuracy using only 10,000 weakly supervised examples",
+              "similarity": 0.9531391238936753,
+              "match_type": "embedding"
+            }
+          ],
+          "rejected_pairs": []
+        }
+      }
+    }
+  ],
+  "split": "test",
+  "arm": "gold400-QLoRA-V-recall",
+  "signature": "b924d604f4807e1a839bcbc3965355489806f625dd99dab4dd8da6ded46fa246",
+  "embedding": {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "device": "cuda",
+    "model_files": {
+      "model.safetensors": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+      "config.json": "b5bf1f51fc45be473a54718cef92448d90a1be001bf9b9a44b8c7f10a19feaa9",
+      "tokenizer_config.json": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+      "tokenizer.json": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "1_Pooling/config.json": "37bf193fa101f19101bfad9c31d3eb0f786e247b7b1e5cb7f007d730eed1ddbd",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+    },
+    "gpu": "Tesla T4",
+    "dtype": "float32",
+    "pooling": "last non-padding token + L2",
+    "instruction": null,
+    "torch_version": "2.11.0+cu128",
+    "transformers_version": "4.57.6",
+    "encoded_labels": 720,
+    "max_label_tokens": 55,
+    "model_directory": "data/exp_a/evaluation/embedding_probe/.model_cache/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3"
+  },
+  "paper_count": 60,
+  "fallback": 3,
+  "fresh_calls": 180,
+  "input_tokens": 321013,
+  "output_tokens": 29643
+}

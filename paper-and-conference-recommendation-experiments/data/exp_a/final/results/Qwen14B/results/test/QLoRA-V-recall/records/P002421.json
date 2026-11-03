@@ -1,0 +1,525 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.385176596002566,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7305,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1438,
+            "output_tokens": 176
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.27515166000012,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7306,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3175,
+            "output_tokens": 176
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 17.848916781000298,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002421\",\"task\":[{\"concept\":\"digit classification\",\"evidence_id\":\"A8\"}],\"method\":[{\"concept\":\"graph signal processing\",\"evidence_id\":\"A2\"},{\"concept\":\"graph convolution and pooling operators\",\"evidence_id\":\"A3\"},{\"concept\":\"Algebraic Multigrid\",\"evidence_id\":\"A7\"},{\"concept\":\"spectral multipliers\",\"evidence_id\":\"A5\"},{\"concept\":\"gradient calculations on the input data and spectral filters\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7307,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 877,
+            "output_tokens": 108
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "graph CNN",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "graph signal processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Algebraic Multigrid",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "spectral multipliers",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "gradient calculations on the input data and spectral filters",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002421",
+        "problem": [
+          {
+            "concept": "irregular spatial domain",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "digit classification",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.50924503700298,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P002421",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5490,
+        "output_tokens": 460
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.385176596002566,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7305,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1438,
+            "output_tokens": 176
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.27515166000012,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002421\", \"problem\": [{\"concept\": \"irregular spatial domain\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"digit classification\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"graph signal processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"Algebraic Multigrid\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"graph convolution and pooling operators\", \"evidence_id\": \"A3\"}, {\"concept\": \"graph CNN\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7306,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3175,
+            "output_tokens": 176
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "graph CNN",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "graph signal processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Algebraic Multigrid",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002421",
+        "problem": [
+          {
+            "concept": "irregular spatial domain",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "digit classification",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 61.660328256002686,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7306,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4613,
+        "output_tokens": 352
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 29.385176596002566,
+        "inherited": false,
+        "messages_sha256": "d6b49224206a0879d7d0532dfacf8a70984fba90008a6f12819f9fedf54d875a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7305,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1438,
+          "output_tokens": 176
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 32.27515166000012,
+        "inherited": false,
+        "messages_sha256": "93c0ceb0f376e16534349c01d2e78f53ae42cd1405b78749176e7cb0e23207aa",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002421",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ]
+        },
+        "seed": 7306,
+        "usage": {
+          "input_tokens": 3175,
+          "output_tokens": 176
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 17.848916781000298,
+        "inherited": false,
+        "messages_sha256": "053732a382220fa84cdbfd6c31ef38fa5b754d6fe1556f22c0bae5c03ea7c953",
+        "reached_token_limit": false,
+        "seed": 7307,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 877,
+          "output_tokens": 108
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "spectral multipliers",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "gradient calculations on the input data and spectral filters",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "graph CNN",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "graph signal processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Algebraic Multigrid",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002421",
+        "problem": [
+          {
+            "concept": "irregular spatial domain",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "digit classification",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "digit classification",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "graph signal processing",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "graph convolution and pooling operators",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "Algebraic Multigrid",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 17.848916781000298,
+      "messages_sha256": "053732a382220fa84cdbfd6c31ef38fa5b754d6fe1556f22c0bae5c03ea7c953",
+      "raw_output": "{\"paper_id\":\"P002421\",\"task\":[{\"concept\":\"digit classification\",\"evidence_id\":\"A8\"}],\"method\":[{\"concept\":\"graph signal processing\",\"evidence_id\":\"A2\"},{\"concept\":\"graph convolution and pooling operators\",\"evidence_id\":\"A3\"},{\"concept\":\"Algebraic Multigrid\",\"evidence_id\":\"A7\"},{\"concept\":\"spectral multipliers\",\"evidence_id\":\"A5\"},{\"concept\":\"gradient calculations on the input data and spectral filters\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 877,
+        "output_tokens": 108
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "dfb88777ff9fcf3670624b885140f915312e128eb8d404b7dfbb5820dc7f3d5f",
+    "facets": {
+      "contribution": [
+        "graph convolution and pooling operators",
+        "graph CNN"
+      ],
+      "dataset": [
+        "MNIST"
+      ],
+      "method": [
+        "graph signal processing",
+        "graph convolution and pooling operators",
+        "Algebraic Multigrid",
+        "spectral multipliers",
+        "gradient calculations on the input data and spectral filters"
+      ],
+      "paper_id": "P002421",
+      "problem": [
+        "irregular spatial domain"
+      ],
+      "task": [
+        "digit classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.50924503700298,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.50924503700298,
+      "input_tokens": 5490,
+      "output_tokens": 460
+    },
+    "paper_id": "P002421",
+    "source_sha256": "34455ccd56a9412b08d01c37dc6dd3a665fdadc97541fbe5b8ab44e122d44e38",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5490,
+      "output_tokens": 460
+    }
+  },
+  "record_sha256": "f3ed5de846e594f9eec7e621020905a090125df652af134d1099e90df7a08e30",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}
