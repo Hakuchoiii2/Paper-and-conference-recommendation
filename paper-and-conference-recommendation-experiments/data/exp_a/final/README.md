@@ -47,7 +47,7 @@ final/
 
 **Trọng số adapter không được push lên Git. Adapter sẽ được cung cấp qua Google Drive; tải riêng sau khi clone repo.**
 
-**Link Google Drive: TODO — chủ repo sẽ chèn link tại đây.**
+**Link Google Drive: [TODO — chủ repo sẽ chèn link tại đây.](https://drive.google.com/drive/folders/1HGhcJ3YKJ-GWo-yMLbPUwAbNtj2kTV4H?usp=sharing)**
 
 1. Mở link Drive ở trên sau khi được bổ sung, tải adapter của model cần dùng. Chạy entrypoint sinh corpus hiện tại chỉ cần **Qwen8B**; tải cả 5 khi cần dùng toàn bộ các model đã fine-tune.
 2. Giải nén để có đúng đường dẫn từ gốc repo: `data/exp_a/final/adapter/<model>/`. Tránh lồng thêm một cấp như `adapter/Qwen8B/Qwen8B/`.
