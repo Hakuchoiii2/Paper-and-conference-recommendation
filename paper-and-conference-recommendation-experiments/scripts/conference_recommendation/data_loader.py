@@ -117,10 +117,13 @@ def load_dataset(
         enriched = []
         for r in raw_list:
             pid = r["paper_id"]
-            facets = facets_dict.get(
-                pid,
-                {f: [] for f in FACET_KEYS}
-            )
+            # Nếu bản ghi đã có sẵn trường facets (đã merge trên đĩa), ưu tiên sử dụng
+            facets = r.get("facets")
+            if not facets or not isinstance(facets, dict):
+                facets = facets_dict.get(
+                    pid,
+                    {f: [] for f in FACET_KEYS}
+                )
             item = {
                 "paper_id": pid,
                 "title": r.get("title", "").strip(),

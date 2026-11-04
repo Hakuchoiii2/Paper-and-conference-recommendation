@@ -21,7 +21,7 @@ from .baselines import (
     FlatFacetKNNMatcher,
     RandomMatcher,
 )
-from .metrics import evaluate_predictions, compute_ranking_metrics
+from .metrics import evaluate_predictions, hit_at_k, reciprocal_rank
 
 __all__ = [
     "get_repo_root",
@@ -42,5 +42,6 @@ __all__ = [
     "FlatFacetKNNMatcher",
     "RandomMatcher",
     "evaluate_predictions",
-    "compute_ranking_metrics",
+    "hit_at_k",
+    "reciprocal_rank",
 ]
