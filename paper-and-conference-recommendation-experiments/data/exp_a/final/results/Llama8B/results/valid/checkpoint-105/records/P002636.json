@@ -1,0 +1,518 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"language divergence\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.78458228099953,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"language divergence\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7950,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1614,
+            "output_tokens": 155
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.794087320999097,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7951,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3328,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 13.176182458999392,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"task\": [{\"concept\": \"translation between lowresource languages\", \"evidence_id\": \"A5\"}, {\"concept\": \"building a toolbox of methods\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}, {\"concept\": \"leveraging language relatedness\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7952,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 1016,
+            "output_tokens": 111
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "leveraging language relatedness",
+              "evidence": "The objective of the tutorial is to discuss how the relatedness among languages can be leveraged to bridge this language divergence thereby achieving some/all of these goals: (i) improving translation quality, (ii) achieving better generalization, (iii) sharing linguistic resources, and (iv) reducing resource requirements.We will look at the existing research in SMT from the perspective of related languages, with the goal to build a toolbox of methods that are useful for translation between related languages.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "notions of language relatedness",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "leveraging language relatedness",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "translation between lowresource languages",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "building a toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 50.75485206099802,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P002636",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5958,
+        "output_tokens": 405
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "leveraging language relatedness",
+          "evidence": "The objective of the tutorial is to discuss how the relatedness among languages can be leveraged to bridge this language divergence thereby achieving some/all of these goals: (i) improving translation quality, (ii) achieving better generalization, (iii) sharing linguistic resources, and (iv) reducing resource requirements.We will look at the existing research in SMT from the perspective of related languages, with the goal to build a toolbox of methods that are useful for translation between related languages.",
+          "facet": "method",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"language divergence\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.78458228099953,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"language divergence\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7950,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1614,
+            "output_tokens": 155
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.794087320999097,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"notions of language relatedness\", \"evidence_id\": \"A6\"}, {\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7951,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3328,
+            "output_tokens": 139
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "notions of language relatedness",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 37.57866960199863,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7951,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4942,
+        "output_tokens": 294
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.78458228099953,
+        "inherited": false,
+        "messages_sha256": "7482a2e18856609fef7b03e346e965c2bb8172648a58f279575e6713129d64d6",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7950,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1614,
+          "output_tokens": 155
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 18.794087320999097,
+        "inherited": false,
+        "messages_sha256": "172471bd9b76573695772da4f801fffb48b5b592ba26b7bb76634d8cc4f56f96",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002636",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ]
+        },
+        "seed": 7951,
+        "usage": {
+          "input_tokens": 3328,
+          "output_tokens": 139
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 13.176182458999392,
+        "inherited": false,
+        "messages_sha256": "d8570f6f99aa70f17201f6f089cf58b39208c983bf42ec64a4b7e776715c6ee5",
+        "reached_token_limit": false,
+        "seed": 7952,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 1016,
+          "output_tokens": 111
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "translation between lowresource languages",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "task",
+          "item": {
+            "concept": "building a toolbox of methods",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "leveraging language relatedness",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 3,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "notions of language relatedness",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 13.176182458999392,
+      "messages_sha256": "d8570f6f99aa70f17201f6f089cf58b39208c983bf42ec64a4b7e776715c6ee5",
+      "raw_output": "{\"paper_id\": \"P002636\", \"task\": [{\"concept\": \"translation between lowresource languages\", \"evidence_id\": \"A5\"}, {\"concept\": \"building a toolbox of methods\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}, {\"concept\": \"leveraging language relatedness\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 1016,
+        "output_tokens": 111
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "ba11dcc9f96e58c6f191f40ce5e69cf9ea187add70d6c6a4a8d0f649c23c4ea6",
+    "facets": {
+      "contribution": [
+        "notions of language relatedness",
+        "toolbox of methods"
+      ],
+      "dataset": [],
+      "method": [
+        "pivotbased and multisource methods",
+        "deep learning",
+        "leveraging language relatedness"
+      ],
+      "paper_id": "P002636",
+      "problem": [
+        "high accuracy difficult"
+      ],
+      "task": [
+        "Statistical Machine Translation",
+        "translation between lowresource languages",
+        "building a toolbox of methods"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 50.75485206099802,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 50.75485206099802,
+      "input_tokens": 5958,
+      "output_tokens": 405
+    },
+    "paper_id": "P002636",
+    "source_sha256": "623d4c54505e9488bc94af5f5ef1e191b911bac843418cefd9a5e5921aa3c1bf",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5958,
+      "output_tokens": 405
+    }
+  },
+  "record_sha256": "b2508266059ff4da2ab4013031c808f16ab89c98fecd64fc8ca682a6f3d58ba6",
+  "signature": "0607e0b146eeed5d4d2fe44eb5bcde929d29cc9e051683e7318148f8ade02414"
+}

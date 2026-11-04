@@ -1,0 +1,172 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002173\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"controlling of a Ghost Team in Ms Pac-Man\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"Monte-Carlo Tree Search\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"MCTS on each ghost's tree\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"ghost team (ICE gUCT)\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 12.235397228999773,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002173\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"controlling of a Ghost Team in Ms Pac-Man\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"Monte-Carlo Tree Search\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"MCTS on each ghost's tree\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"ghost team (ICE gUCT)\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 6561,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2375,
+            "output_tokens": 138
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "ghost team (ICE gUCT)",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Monte-Carlo Tree Search",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "MCTS on each ghost's tree",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002173",
+        "problem": [],
+        "task": [
+          {
+            "concept": "controlling of a Ghost Team in Ms Pac-Man",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 12.235397228999773,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002173",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 6561,
+      "selected_score": 76.0,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2375,
+        "output_tokens": 138
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "d4964b300695556b48a990a196d77232b08be5dcd289da47f2a39abc9fc05f92",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 6561
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "ghost team (ICE gUCT)"
+      ],
+      "dataset": [],
+      "method": [
+        "Monte-Carlo Tree Search",
+        "MCTS on each ghost's tree"
+      ],
+      "paper_id": "P002173",
+      "problem": [],
+      "task": [
+        "controlling of a Ghost Team in Ms Pac-Man"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 12.235397228999773,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P002173",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 2375,
+      "output_tokens": 138
+    }
+  },
+  "record_sha256": "a0c286dc230b1f0b5ceeae22b44df6c7a4a0fe6301fce345b8a43dd885b0fe4a",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

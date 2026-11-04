@@ -1,0 +1,495 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.4692959219974,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 918,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1422,
+            "output_tokens": 206
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 42.058560494999256,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 919,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3251,
+            "output_tokens": 206
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.759329856999102,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000292\", \"task\": [], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 920,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 896,
+            "output_tokens": 77
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "end-to-end trainable models with two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing technique",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "multi-task training",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000292",
+        "problem": [
+          {
+            "concept": "inconclusive on whether the cascade or the direct model is stronger",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "direct speech translation models require more data to perform well than cascaded models",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speech translation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 94.28718627399576,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000292",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5569,
+        "output_tokens": 489
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.4692959219974,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 918,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1422,
+            "output_tokens": 206
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 42.058560494999256,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000292\", \"problem\": [{\"concept\": \"inconclusive on whether the cascade or the direct model is stronger\", \"evidence_id\": \"A2\"}, {\"concept\": \"direct speech translation models require more data to perform well than cascaded models\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"speech translation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"end-to-end trainable models with two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing technique\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 919,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3251,
+            "output_tokens": 206
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "end-to-end trainable models with two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing technique",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "multi-task training",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000292",
+        "problem": [
+          {
+            "concept": "inconclusive on whether the cascade or the direct model is stronger",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "direct speech translation models require more data to perform well than cascaded models",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speech translation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 79.52785641699666,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 919,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4673,
+        "output_tokens": 412
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 37.4692959219974,
+        "inherited": false,
+        "messages_sha256": "b2d3a7ede91c8b0807edfd42cf2bca824ff2e953c61fe87b67e4cfad04d2cdaa",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 918,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1422,
+          "output_tokens": 206
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 42.058560494999256,
+        "inherited": false,
+        "messages_sha256": "74ab62eef69d2f4d02b781af9254e4b790a4160badb729168f14b50c22ae975f",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000292",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 919,
+        "usage": {
+          "input_tokens": 3251,
+          "output_tokens": 206
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.759329856999102,
+        "inherited": false,
+        "messages_sha256": "7bc5185cad65450dd4327352675bef7c26027919a39dff4c91c9a15340886ba7",
+        "reached_token_limit": false,
+        "seed": 920,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 896,
+          "output_tokens": 77
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "end-to-end trainable models with two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing technique",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "two attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "attention-passing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "multi-task training",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000292",
+        "problem": [
+          {
+            "concept": "inconclusive on whether the cascade or the direct model is stronger",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "direct speech translation models require more data to perform well than cascaded models",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speech translation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "two attention mechanisms",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "attention-passing",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "multi-task training",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.759329856999102,
+      "messages_sha256": "7bc5185cad65450dd4327352675bef7c26027919a39dff4c91c9a15340886ba7",
+      "raw_output": "{\"paper_id\": \"P000292\", \"task\": [], \"method\": [{\"concept\": \"two attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention-passing\", \"evidence_id\": \"A5\"}, {\"concept\": \"multi-task training\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 896,
+        "output_tokens": 77
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "d7fbfde5ef996652772a2fb0c415fdfb2e5f1b58589ffcc0be5a1eda179ca397",
+    "facets": {
+      "contribution": [
+        "end-to-end trainable models with two attention mechanisms",
+        "attention-passing technique"
+      ],
+      "dataset": [],
+      "method": [
+        "two attention mechanisms",
+        "attention-passing",
+        "multi-task training"
+      ],
+      "paper_id": "P000292",
+      "problem": [
+        "inconclusive on whether the cascade or the direct model is stronger",
+        "direct speech translation models require more data to perform well than cascaded models"
+      ],
+      "task": [
+        "speech translation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 94.28718627399576,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 94.28718627399576,
+      "input_tokens": 5569,
+      "output_tokens": 489
+    },
+    "paper_id": "P000292",
+    "source_sha256": "9cf68a82709096d083b2dd4f576ddf34689c23772a1864a6ddb9a8190a710f2c",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5569,
+      "output_tokens": 489
+    }
+  },
+  "record_sha256": "54298ce1f6138a24af60dc5b60e5c33f3fc86bae3c9f35c700d52ad5cd31c811",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

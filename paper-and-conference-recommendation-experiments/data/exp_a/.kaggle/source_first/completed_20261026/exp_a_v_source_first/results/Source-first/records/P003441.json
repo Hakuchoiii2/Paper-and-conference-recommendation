@@ -1,0 +1,223 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 18.05425761100014,
+          "messages_sha256": "0776ba079c793cd91c9dd09fd39d34c00519c6a679984c3502e139012d0a7df6",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003441\", \"problem\": [], \"task\": [{\"concept\": \"introduce the new robot programming language LightRocks\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"UML/P Statecharts\", \"evidence_id\": \"A5\"}, {\"concept\": \"MontiCore\", \"evidence_id\": \"A6\"}, {\"concept\": \"Eclipse plugin\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"LightRocks (Light Weight Robot Coding for Skills)\", \"evidence_id\": \"A0\"}, {\"concept\": \"three different level of abstraction for robot programming\", \"evidence_id\": \"A1\"}, {\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"}, {\"concept\": \"code generation while hiding controller specific implementation details\", \"evidence_id\": \"A7\"}, {\"concept\": \"generic graphical editor implemented as an Eclipse plugin\", \"evidence_id\": \"A8\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 69.3333,
+          "seed": 10367,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2311,
+            "output_tokens": 220
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"UML/P Statecharts\"; evidence_id=\"A5\"; evidence=\"A Statechart like model is used to describe the different levels of detail.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"code generation while hiding controller specific implementation details\"; evidence_id=\"A7\"; evidence=\"To this end we are able to generate code while hiding controller specific implementation details.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "LightRocks (Light Weight Robot Coding for Skills)",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "three different level of abstraction for robot programming",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Statechart like model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "code generation while hiding controller specific implementation details",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "generic graphical editor implemented as an Eclipse plugin",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "UML/P Statecharts",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "MontiCore",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Eclipse plugin",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P003441",
+        "problem": [],
+        "task": [
+          {
+            "concept": "introduce the new robot programming language LightRocks",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 69.16558983799996,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003441",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 69.3333,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3560,
+        "output_tokens": 910
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"UML/P Statecharts\"; evidence_id=\"A5\"; evidence=\"A Statechart like model is used to describe the different levels of detail.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"code generation while hiding controller specific implementation details\"; evidence_id=\"A7\"; evidence=\"To this end we are able to generate code while hiding controller specific implementation details.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 25.659183743000085,
+        "messages_sha256": "e95f0b58b17916c544eb0c68c1504422d9298d24d182a32a3473d3a0ef8d4a87",
+        "raw_output": "{\"paper_id\":\"P003441\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper introduces the new robot programming language LightRocks (Light Weight Robot Coding for Skills), a domain specific language (DSL) for robot programming.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The language offers three different level of abstraction for robot programming.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"On lowest level skills are coded by domain experts.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"On a more abstract level these skills are supposed to be combined by shop floor workers or technicians to define tasks.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The language is designed to allow as much flexibility as necessary on the lowest level of abstraction and is kept as simple as possible with the more abstract layers.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A Statechart like model is used to describe the different levels of detail.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"For this we apply the UML/P and the language workbench MontiCore.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"To this end we are able to generate code while hiding controller specific implementation details.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"In addition the development in LightRocks is supported by a generic graphical editor implemented as an Eclipse plugin.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 10365,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 614,
+          "output_tokens": 345
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 25.452148483999736,
+        "messages_sha256": "191c002014243de5732febe7a2589def87e4dc336cc9c12e2ea495ed7f768e21",
+        "raw_output": "{\"paper_id\":\"P003441\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper introduces the new robot programming language LightRocks (Light Weight Robot Coding for Skills), a domain specific language (DSL) for robot programming.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The language offers three different level of abstraction for robot programming.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"On lowest level skills are coded by domain experts.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"On a more abstract level these skills are supposed to be combined by shop floor workers or technicians to define tasks.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The language is designed to allow as much flexibility as necessary on the lowest level of abstraction and is kept as simple as possible with the more abstract layers.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A Statechart like model is used to describe the different levels of detail.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"For this we apply the UML/P and the language workbench MontiCore.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"To this end we are able to generate code while hiding controller specific implementation details.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"In addition the development in LightRocks is supported by a generic graphical editor implemented as an Eclipse plugin.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 10366,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 635,
+          "output_tokens": 345
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.05425761100014,
+        "messages_sha256": "0776ba079c793cd91c9dd09fd39d34c00519c6a679984c3502e139012d0a7df6",
+        "raw_output": "{\"paper_id\": \"P003441\", \"problem\": [], \"task\": [{\"concept\": \"introduce the new robot programming language LightRocks\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"UML/P Statecharts\", \"evidence_id\": \"A5\"}, {\"concept\": \"MontiCore\", \"evidence_id\": \"A6\"}, {\"concept\": \"Eclipse plugin\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"LightRocks (Light Weight Robot Coding for Skills)\", \"evidence_id\": \"A0\"}, {\"concept\": \"three different level of abstraction for robot programming\", \"evidence_id\": \"A1\"}, {\"concept\": \"Statechart like model\", \"evidence_id\": \"A5\"}, {\"concept\": \"code generation while hiding controller specific implementation details\", \"evidence_id\": \"A7\"}, {\"concept\": \"generic graphical editor implemented as an Eclipse plugin\", \"evidence_id\": \"A8\"}]}",
+        "reached_token_limit": false,
+        "seed": 10367,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2311,
+          "output_tokens": 220
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "LightRocks (Light Weight Robot Coding for Skills)",
+        "three different level of abstraction for robot programming",
+        "Statechart like model",
+        "code generation while hiding controller specific implementation details",
+        "generic graphical editor implemented as an Eclipse plugin"
+      ],
+      "dataset": [],
+      "method": [
+        "UML/P Statecharts",
+        "MontiCore",
+        "Eclipse plugin"
+      ],
+      "paper_id": "P003441",
+      "problem": [],
+      "task": [
+        "introduce the new robot programming language LightRocks"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 69.16558983799996,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 25.659183743000085,
+        "messages_sha256": "e95f0b58b17916c544eb0c68c1504422d9298d24d182a32a3473d3a0ef8d4a87",
+        "raw_output": "{\"paper_id\":\"P003441\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper introduces the new robot programming language LightRocks (Light Weight Robot Coding for Skills), a domain specific language (DSL) for robot programming.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The language offers three different level of abstraction for robot programming.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"On lowest level skills are coded by domain experts.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"On a more abstract level these skills are supposed to be combined by shop floor workers or technicians to define tasks.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The language is designed to allow as much flexibility as necessary on the lowest level of abstraction and is kept as simple as possible with the more abstract layers.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A Statechart like model is used to describe the different levels of detail.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"For this we apply the UML/P and the language workbench MontiCore.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"To this end we are able to generate code while hiding controller specific implementation details.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"In addition the development in LightRocks is supported by a generic graphical editor implemented as an Eclipse plugin.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 10365,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 614,
+          "output_tokens": 345
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 25.452148483999736,
+        "messages_sha256": "191c002014243de5732febe7a2589def87e4dc336cc9c12e2ea495ed7f768e21",
+        "raw_output": "{\"paper_id\":\"P003441\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper introduces the new robot programming language LightRocks (Light Weight Robot Coding for Skills), a domain specific language (DSL) for robot programming.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The language offers three different level of abstraction for robot programming.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"On lowest level skills are coded by domain experts.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"On a more abstract level these skills are supposed to be combined by shop floor workers or technicians to define tasks.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The language is designed to allow as much flexibility as necessary on the lowest level of abstraction and is kept as simple as possible with the more abstract layers.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"A Statechart like model is used to describe the different levels of detail.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"For this we apply the UML/P and the language workbench MontiCore.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"To this end we are able to generate code while hiding controller specific implementation details.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"In addition the development in LightRocks is supported by a generic graphical editor implemented as an Eclipse plugin.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 10366,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 635,
+          "output_tokens": 345
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 69.16558983799996,
+      "input_tokens": 3560,
+      "output_tokens": 910
+    },
+    "paper_id": "P003441",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3560,
+      "output_tokens": 910
+    }
+  },
+  "record_sha256": "a513590c4d0e130ce872e1d20447c05d4ea8ab9a3ffc6a69700df40054ab4a43",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

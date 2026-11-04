@@ -1,0 +1,203 @@
+{
+  "record": {
+    "arm": "R2",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000669\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"event recognition\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.666213784999854,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000669\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"event recognition\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.6429,
+          "seed": 2049,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2362,
+            "output_tokens": 210
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000669\", \"problem\": [], \"task\": [{\"concept\": \"event recognition\", \"evidence_id\": \"A0\"}, {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"}, {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"}, {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.83971213800004,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000669\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"event recognition\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.6429,
+          "seed": 2050,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4104,
+            "output_tokens": 210
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "system achieves an F1 of 81.4% in recognition and a 64.2% in classification",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "application of semantic roles improves the performance of the presented system, especially for nominal events",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "conditional random fields",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "morphosyntactic features",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "semantic roles features",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P000669",
+        "problem": [],
+        "task": [
+          {
+            "concept": "event recognition",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "event classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 39.50592592299989,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2050,
+      "selected_score": 75.6429,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6466,
+        "output_tokens": 420
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "964772196c5afe66f46b22a2899fb96edb1a8efd40525dd4931048e5722190f2",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "9cdbbb7b08a4f9b72c4abe9adcb7a30dc6d204720cdfd2fa7b1d03ba39ae2519",
+        "repair_packet": null,
+        "seed": 2049
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "0bedb17a17605e8f959e94c526c545fc2985828167ddfaea67b3ebb9845bb198",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000669",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 2050
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "system achieves an F1 of 81.4% in recognition and a 64.2% in classification",
+        "application of semantic roles improves the performance of the presented system, especially for nominal events"
+      ],
+      "dataset": [],
+      "method": [
+        "conditional random fields",
+        "morphosyntactic features",
+        "semantic roles features"
+      ],
+      "paper_id": "P000669",
+      "problem": [],
+      "task": [
+        "event recognition",
+        "event classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 39.50592592299989,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 21.83971213800004,
+      "input_tokens": 4104,
+      "output_tokens": 210
+    },
+    "paper_id": "P000669",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 6466,
+      "output_tokens": 420
+    }
+  },
+  "record_sha256": "46c2008d1168fb30332596a22af70f0b0ce314ae4c955c24700cca5382ad1749",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

@@ -1,0 +1,273 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003932\", \"problem\": [], \"task\": [{\"concept\": \"Face Recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"monogenic magnitude\", \"evidence_id\": \"A1\"}, {\"concept\": \"uniform LBP\", \"evidence_id\": \"A1\"}, {\"concept\": \"monogenic orientation\", \"evidence_id\": \"A1\"}, {\"concept\": \"quadrant-bit codes\", \"evidence_id\": \"A1\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"AR\", \"evidence_id\": \"A4\"}, {\"concept\": \"FERET\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"monogenic binary pattern\", \"evidence_id\": \"T0\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.128352952000114,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003932\", \"problem\": [], \"task\": [{\"concept\": \"Face Recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"monogenic magnitude\", \"evidence_id\": \"A1\"}, {\"concept\": \"uniform LBP\", \"evidence_id\": \"A1\"}, {\"concept\": \"monogenic orientation\", \"evidence_id\": \"A1\"}, {\"concept\": \"quadrant-bit codes\", \"evidence_id\": \"A1\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"AR\", \"evidence_id\": \"A4\"}, {\"concept\": \"FERET\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"monogenic binary pattern\", \"evidence_id\": \"T0\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 11838,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2470,
+            "output_tokens": 208
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003932\", \"problem\": [], \"task\": [{\"concept\": \"Face Recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"monogenic magnitude\", \"evidence_id\": \"A1\"}, {\"concept\": \"uniform LBP\", \"evidence_id\": \"A1\"}, {\"concept\": \"monogenic orientation\", \"evidence_id\": \"A1\"}, {\"concept\": \"quadrant-bit codes\", \"evidence_id\": \"A1\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"AR\", \"evidence_id\": \"A4\"}, {\"concept\": \"FERET\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"monogenic binary pattern\", \"evidence_id\": \"T0\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}, {\"concept\": \"Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors\", \"evidence_id\": \"A3\"}, {\"concept\": \"The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 45.538995343999886,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003932\", \"problem\": [], \"task\": [{\"concept\": \"Face Recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"monogenic magnitude\", \"evidence_id\": \"A1\"}, {\"concept\": \"uniform LBP\", \"evidence_id\": \"A1\"}, {\"concept\": \"monogenic orientation\", \"evidence_id\": \"A1\"}, {\"concept\": \"quadrant-bit codes\", \"evidence_id\": \"A1\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"AR\", \"evidence_id\": \"A4\"}, {\"concept\": \"FERET\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"monogenic binary pattern\", \"evidence_id\": \"T0\"}, {\"concept\": \"histogram of MBP\", \"evidence_id\": \"A0\"}, {\"concept\": \"Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors\", \"evidence_id\": \"A3\"}, {\"concept\": \"The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 11839,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4053,
+            "output_tokens": 324
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "monogenic binary pattern",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "histogram of MBP",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "AR",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "FERET",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "monogenic magnitude",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "uniform LBP",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "monogenic orientation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "quadrant-bit codes",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "histogram of MBP",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P003932",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Face Recognition",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 74.667348296,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11839,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6523,
+        "output_tokens": 532
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "monogenic binary pattern",
+          "evidence": "Monogenic Binary Pattern (MBP): A Novel Feature Extraction and Representation Model for Face Recognition",
+          "source": "title"
+        },
+        {
+          "concept": "histogram of MBP",
+          "evidence": "A novel feature extraction method, namely monogenic binary pattern (MBP), is proposed in this paper based on the theory of monogenic signal analysis, and the histogram of MBP (HMBP) is subsequently presented for robust face representation and recognition.",
+          "source": "abstract"
+        },
+        {
+          "concept": "Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors",
+          "evidence": "Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors.",
+          "source": "abstract"
+        },
+        {
+          "concept": "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity",
+          "evidence": "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "AR",
+          "evidence": "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity.",
+          "source": "abstract"
+        },
+        {
+          "concept": "FERET",
+          "evidence": "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "monogenic magnitude",
+          "evidence": "MBP consists of two parts: one is monogenic magnitude encoded via uniform LBP, and the other is monogenic orientation encoded as quadrant-bit codes.",
+          "source": "abstract"
+        },
+        {
+          "concept": "uniform LBP",
+          "evidence": "MBP consists of two parts: one is monogenic magnitude encoded via uniform LBP, and the other is monogenic orientation encoded as quadrant-bit codes.",
+          "source": "abstract"
+        },
+        {
+          "concept": "monogenic orientation",
+          "evidence": "MBP consists of two parts: one is monogenic magnitude encoded via uniform LBP, and the other is monogenic orientation encoded as quadrant-bit codes.",
+          "source": "abstract"
+        },
+        {
+          "concept": "quadrant-bit codes",
+          "evidence": "MBP consists of two parts: one is monogenic magnitude encoded via uniform LBP, and the other is monogenic orientation encoded as quadrant-bit codes.",
+          "source": "abstract"
+        },
+        {
+          "concept": "histogram of MBP",
+          "evidence": "A novel feature extraction method, namely monogenic binary pattern (MBP), is proposed in this paper based on the theory of monogenic signal analysis, and the histogram of MBP (HMBP) is subsequently presented for robust face representation and recognition.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P003932",
+      "problem": [],
+      "task": [
+        {
+          "concept": "Face Recognition",
+          "evidence": "Monogenic Binary Pattern (MBP): A Novel Feature Extraction and Representation Model for Face Recognition",
+          "source": "title"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "monogenic binary pattern",
+        "histogram of MBP",
+        "Compared with the well-known and powerful Gabor filtering based LBP schemes, one clear advantage of HMBP is its lower time and space complexity because monogenic signal analysis needs fewer convolutions and generates more compact feature vectors",
+        "The experimental results on the AR and FERET face databases validate that the proposed MBP algorithm has better performance than or comparable performance with state-of-the-art local feature based methods but with significantly lower time and space complexity"
+      ],
+      "dataset": [
+        "AR",
+        "FERET"
+      ],
+      "method": [
+        "monogenic magnitude",
+        "uniform LBP",
+        "monogenic orientation",
+        "quadrant-bit codes",
+        "histogram of MBP"
+      ],
+      "paper_id": "P003932",
+      "problem": [],
+      "task": [
+        "Face Recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 74.667348296,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P003932",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6523,
+      "output_tokens": 532
+    }
+  },
+  "record_sha256": "2f0fd1d8c962e7c706ad521e1d506fd96a5a15f37af07380ae1d772cedd3fd9d",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

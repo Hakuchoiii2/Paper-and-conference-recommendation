@@ -1,0 +1,184 @@
+{
+  "record": {
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.444642505000047,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 81.6923,
+          "seed": 3213,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2337,
+            "output_tokens": 151
+          },
+          "validation_errors": [
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"biological vision results\"; evidence_id=\"A0\"; evidence=\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001057\", \"problem\": [], \"task\": [{\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"}, {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.572594680999828,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 81.6923,
+          "seed": 3214,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3911,
+            "output_tokens": 151
+          },
+          "validation_errors": [
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"biological vision results\"; evidence_id=\"A0\"; evidence=\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001057\", \"problem\": [], \"task\": [{\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"construct a novel vision model\", \"evidence_id\": \"A0\"}, {\"concept\": \"extract linearly separable features\", \"evidence_id\": \"T0\"}, {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 3,
+          "generation_seconds": 19.11329059700006,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"handwritten digit recognition\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"construct a novel vision model\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"extract linearly separable features\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MNIST\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"model outperforms other models on the same data set\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 87.7436,
+          "seed": 3215,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3979,
+            "output_tokens": 179
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model outperforms other models on the same data set",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "construct a novel vision model",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "extract linearly separable features",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "novel vision model",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P001057",
+        "problem": [],
+        "task": [
+          {
+            "concept": "handwritten digit recognition",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 49.130527782999934,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3215,
+      "selected_score": 87.7436,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10227,
+        "output_tokens": 481
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "model outperforms other models on the same data set"
+      ],
+      "dataset": [
+        "MNIST"
+      ],
+      "method": [
+        "construct a novel vision model",
+        "extract linearly separable features",
+        "novel vision model"
+      ],
+      "paper_id": "P001057",
+      "problem": [],
+      "task": [
+        "handwritten digit recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 49.130527782999934,
+    "paper_id": "P001057",
+    "usage": {
+      "input_tokens": 10227,
+      "output_tokens": 481
+    }
+  },
+  "record_sha256": "897dba08c5ba7a3acaf0cf294d93fc2f2443a13d412a36b7ec1e3af338560597",
+  "signature": "16ab9a393e639edcf1c6e576b94736cd0dde52fbac1f71b6d8bd5823700d14c5"
+}

@@ -1,0 +1,213 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 15.422525308999866,
+          "messages_sha256": "73c9ffdd3b8c5e6724b57ef4a7bf122ecde2b27368a6e2a7f94572c4a37f518c",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003579\", \"problem\": [], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"A5\"}, {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"}, {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"}, {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 83.7143,
+          "seed": 10781,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2365,
+            "output_tokens": 183
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"attention-based recurrent neural networks\"; evidence_id=\"A5\"; evidence=\"It uses an attention mechanism to learn weighting for each word.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model achieves F-values by 88.5% and 51.8% on the two datasets",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "method outperforms all the traditional baseline systems",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "NLPCC2014",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Reuters",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "attention-based recurrent neural networks",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P003579",
+        "problem": [],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 112.71463948600012,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003579",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 83.7143,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3722,
+        "output_tokens": 1513
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"attention-based recurrent neural networks\"; evidence_id=\"A5\"; evidence=\"It uses an attention mechanism to learn weighting for each word.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 48.71230011900025,
+        "messages_sha256": "10f533021be85768965365cc9e456adc7b1945a011cd894ef9db4c31d36a6952",
+        "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Text classification is one of the principal tasks of machine learning.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"It aims to design proper algorithms to enable computers to extract features and classify texts automatically.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"In the past, this has been mainly based on the classification of keywords and neural network semantic synthesis classification.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"evidence_id\": \"A3\",\n      \"span\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The method proposed in this paper considers the advantages of both methods.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"It uses an attention mechanism to learn weighting for each word.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Under the setting, key words will have a higher weight, and common words will have lower weight.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Therefore, the representation of texts not only considers all words, but also pays more attention to key words.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Then we feed the feature vector to a softmax classifier.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"At last, we conduct experiments on two news classification datasets published by NLPCC2014 and Reuters, respectively.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The proposed model achieves F-values by 88.5% and 51.8% on the two datasets.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"The experimental results show that our method outperforms all the traditional baseline systems.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10779,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 668,
+          "output_tokens": 665
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 48.57981405800001,
+        "messages_sha256": "9b0d593a85e5416aa07f2d3f2f3657e1c4aa9d79e2e35d7a6631443016ea6605",
+        "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Text classification is one of the principal tasks of machine learning.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"It aims to design proper algorithms to enable computers to extract features and classify texts automatically.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"In the past, this has been mainly based on the classification of keywords and neural network semantic synthesis classification.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"evidence_id\": \"A3\",\n      \"span\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The method proposed in this paper considers the advantages of both methods.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"It uses an attention mechanism to learn weighting for each word.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Under the setting, key words will have a higher weight, and common words will have lower weight.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Therefore, the representation of texts not only considers all words, but also pays more attention to key words.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Then we feed the feature vector to a softmax classifier.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"At last, we conduct experiments on two news classification datasets published by NLPCC2014 and Reuters, respectively.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The proposed model achieves F-values by 88.5% and 51.8% on the two datasets.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"The experimental results show that our method outperforms all the traditional baseline systems.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10780,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 689,
+          "output_tokens": 665
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.422525308999866,
+        "messages_sha256": "73c9ffdd3b8c5e6724b57ef4a7bf122ecde2b27368a6e2a7f94572c4a37f518c",
+        "raw_output": "{\"paper_id\": \"P003579\", \"problem\": [], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"A5\"}, {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"}, {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"}, {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}]}",
+        "reached_token_limit": false,
+        "seed": 10781,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2365,
+          "output_tokens": 183
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "model achieves F-values by 88.5% and 51.8% on the two datasets",
+        "method outperforms all the traditional baseline systems"
+      ],
+      "dataset": [
+        "NLPCC2014",
+        "Reuters"
+      ],
+      "method": [
+        "attention-based recurrent neural networks",
+        "softmax classifier"
+      ],
+      "paper_id": "P003579",
+      "problem": [],
+      "task": [
+        "text classification"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 112.71463948600012,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 48.71230011900025,
+        "messages_sha256": "10f533021be85768965365cc9e456adc7b1945a011cd894ef9db4c31d36a6952",
+        "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Text classification is one of the principal tasks of machine learning.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"It aims to design proper algorithms to enable computers to extract features and classify texts automatically.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"In the past, this has been mainly based on the classification of keywords and neural network semantic synthesis classification.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"evidence_id\": \"A3\",\n      \"span\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The method proposed in this paper considers the advantages of both methods.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"It uses an attention mechanism to learn weighting for each word.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Under the setting, key words will have a higher weight, and common words will have lower weight.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Therefore, the representation of texts not only considers all words, but also pays more attention to key words.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Then we feed the feature vector to a softmax classifier.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"At last, we conduct experiments on two news classification datasets published by NLPCC2014 and Reuters, respectively.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The proposed model achieves F-values by 88.5% and 51.8% on the two datasets.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"The experimental results show that our method outperforms all the traditional baseline systems.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10779,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 668,
+          "output_tokens": 665
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 48.57981405800001,
+        "messages_sha256": "9b0d593a85e5416aa07f2d3f2f3657e1c4aa9d79e2e35d7a6631443016ea6605",
+        "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Text classification is one of the principal tasks of machine learning.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"It aims to design proper algorithms to enable computers to extract features and classify texts automatically.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"In the past, this has been mainly based on the classification of keywords and neural network semantic synthesis classification.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"evidence_id\": \"A3\",\n      \"span\": \"The former emphasizes the role of keywords, while the latter focuses on the combination of words between roles.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"The method proposed in this paper considers the advantages of both methods.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"It uses an attention mechanism to learn weighting for each word.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"Under the setting, key words will have a higher weight, and common words will have lower weight.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"Therefore, the representation of texts not only considers all words, but also pays more attention to key words.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Then we feed the feature vector to a softmax classifier.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A9\",\n      \"span\": \"At last, we conduct experiments on two news classification datasets published by NLPCC2014 and Reuters, respectively.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A10\",\n      \"span\": \"The proposed model achieves F-values by 88.5% and 51.8% on the two datasets.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A11\",\n      \"span\": \"The experimental results show that our method outperforms all the traditional baseline systems.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 10780,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 689,
+          "output_tokens": 665
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 112.71463948600012,
+      "input_tokens": 3722,
+      "output_tokens": 1513
+    },
+    "paper_id": "P003579",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3722,
+      "output_tokens": 1513
+    }
+  },
+  "record_sha256": "3681e7bcc2140d885ac56ced1771d4c2a71b1d09a35d864fd58c251d7acd40b9",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

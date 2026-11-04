@@ -1,0 +1,207 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001117\",\n  \"problem\": [\n    {\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"transliteration of English query terms\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 27.754167500999756,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001117\",\n  \"problem\": [\n    {\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"transliteration of English query terms\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.3769,
+          "seed": 3393,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2492,
+            "output_tokens": 304
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001117\", \"problem\": [{\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"}, {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"}, {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"translitation of English query terms\", \"evidence_id\": \"A4\"}, {\"concept\": \"transliteration of English query terms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"}, {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"}, {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.94396209900151,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001117\",\n  \"problem\": [\n    {\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"translitation of English query terms\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 96.4392,
+          "seed": 3394,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4163,
+            "output_tokens": 304
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"translitation of English query terms\"; evidence_id=\"A4\"; evidence=\"We used all possible combination of Hindi translated query using transliteration of English query terms and choosing the best query among them for retrieval of documents.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001117\", \"problem\": [{\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"}, {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"}, {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"transliteration of English query terms\", \"evidence_id\": \"A4\"}, {\"concept\": \"choosing the best query among them for retrieval of documents\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"}, {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"}, {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 33.461006698002166,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001117\",\n  \"problem\": [\n    {\"concept\": \"poor performance of retrieval in terms of average precision\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"mismatching of query terms, lexical ambiguity and un-translated query terms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"existing problems of CLIR are needed to be addressed in order to increase the performance\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"improving the performance of English-Hindi CLIR system\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"transliteration of English query terms\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"choosing the best query among them for retrieval of documents\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"FIRE 2010 (Forum of Information Retrieval Evaluation) datasets\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed approach gives better performance of English-Hindi CLIR system\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach helps in overcoming existing problems\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.4392,
+          "seed": 3395,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4221,
+            "output_tokens": 330
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proposed approach gives better performance of English-Hindi CLIR system",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "proposed approach helps in overcoming existing problems",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "FIRE 2010 (Forum of Information Retrieval Evaluation) datasets",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "transliteration of English query terms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "choosing the best query among them for retrieval of documents",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001117",
+        "problem": [
+          {
+            "concept": "poor performance of retrieval in terms of average precision",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "mismatching of query terms, lexical ambiguity and un-translated query terms",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "existing problems of CLIR are needed to be addressed in order to increase the performance",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "improving the performance of English-Hindi CLIR system",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 92.15913629800343,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3395,
+      "selected_score": 99.4392,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10876,
+        "output_tokens": 938
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "proposed approach gives better performance of English-Hindi CLIR system",
+        "proposed approach helps in overcoming existing problems",
+        "proposed approach outperforms the existing English-Hindi CLIR system in terms of average precision"
+      ],
+      "dataset": [
+        "FIRE 2010 (Forum of Information Retrieval Evaluation) datasets"
+      ],
+      "method": [
+        "transliteration of English query terms",
+        "choosing the best query among them for retrieval of documents"
+      ],
+      "paper_id": "P001117",
+      "problem": [
+        "poor performance of retrieval in terms of average precision",
+        "mismatching of query terms, lexical ambiguity and un-translated query terms",
+        "existing problems of CLIR are needed to be addressed in order to increase the performance"
+      ],
+      "task": [
+        "improving the performance of English-Hindi CLIR system"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 92.15913629800343,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P001117",
+    "usage": {
+      "input_tokens": 10876,
+      "output_tokens": 938
+    }
+  },
+  "record_sha256": "3b0159cff1e5cb414e0a88e60fd194286a7fe1495ecfb69db0376b8cc3f02f0b",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

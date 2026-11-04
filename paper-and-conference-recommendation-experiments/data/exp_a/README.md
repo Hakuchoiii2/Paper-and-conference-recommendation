@@ -1,10 +1,51 @@
-# Thực nghiệm A — Trích năm facet bằng Qwen3 local
+# Thực nghiệm A — So sánh LLM trích năm facet
+
+**Kiến trúc chính thức (28/10/2026): [final/](final/README.md)** — Qwen3-8B + QLoRA gold400 `checkpoint-105` + V-recall ba lượt. Adapter, prompt, cấu hình và kết quả đã lưu tại `data/exp_a/final`; entrypoint sinh dữ liệu là `data/exp_a/final/generate.py`. Các mục bên dưới giữ lịch sử thử nghiệm.
+
+**Kết quả hiện tại (03/11/2026):** đã hoàn tất QLoRA và test60 cho Qwen3-4B, Qwen3-8B, Qwen3-14B, Llama3.1-8B và Gemma2-9B; cùng split280/60/60. Xem [CSV metrics 5 LLM](final/results/llm_experiment_metrics.csv) và [README final](final/README.md). Qwen8B vẫn là cấu hình sinh corpus đang chọn; điểm extraction không tự quyết định model tốt nhất cho downstream.
+
+**Reference400 hiện hành:** [human_gold.jsonl](ground_truth/gold_review/human_gold.jsonl), 400 bài /3.346 concept; người dùng chấp nhận bản v3 ngày26/10/2026, `human_review_status: accepted`. Nguồn nhãn AI-assisted và lịch sử audit được giữ trong metadata.
 
 [Chỉ mục dữ liệu](../README.md) · [Scorer/evaluator A](../../scripts/exp_a/README.md) · [Pilot](samples/README.md)
+
+## Lịch sử pipeline và bàn giao nhóm
+
+Các hướng dẫn bên dưới mô tả các lượt chạy cũ và baseline B–E. Phạm vi nghiên cứu hiện tại là A/B/conference; dùng `final/` cho bộ code/config đang bàn giao.
 
 Cả nhóm 5 người cùng chạy trích facet trên 4.210 title/abstract, chia thành
 5 phần không trùng nhau, mỗi người 842 bài. Chạy Qwen3 trên máy, không dùng
 API key. Corpus thật và schema năm facet vẫn dùng chung B–E.
+
+**[Policy matrix v4 COMPLETE và đã chấm lại](../../scripts/exp_a/docs/KAGGLE_POLICY_MATRIX_V4_EVALUATION_2026-10-16.md)**
+Qwen3-8B, 30 paper dev: original **60,65%**, policy **50,43%**, policy + ví dụ
+**52,51%** micro F1. Đủ 90 signed records, 60 raw replay và 450 ô scoring khớp local.
+Method/contribution vẫn chiếm khoảng 65% lỗi; ví dụ giảm grounding flags nhưng mất
+coverage. Output `evaluation/policy_matrix_kaggle_v4/`. Không sửa prompt theo yêu cầu
+mới, chưa thay handoff A và chưa fine-tune; reference vẫn là AI trên reused dev.
+
+**[Matrix v2 COMPLETE: 4B/8B × original/source-first](../../scripts/exp_a/docs/KAGGLE_FACET_MATRIX_V2_EVALUATION_2026-10-16.md)**
+Đủ 50 bài mỗi cấu hình; 200 raw/applied replay và chấm local khớp. 8B original
+cao nhất: micro **56,36%**, macro **56,89%**; hai nhánh tách giảm xuống **42,77%/44,36%**.
+Lỗi CUDA OOM đã qua; nhánh tách còn lỗi kind/span và nhiều nhãn sai vai trò.
+Output `evaluation/facet_matrix_v2/`; vẫn là AI-reference agreement trên dev50.
+
+**[Pilot v3.7 đã COMPLETE và được chấm](../../scripts/exp_a/docs/KAGGLE_PILOT50_V3_7_EVALUATION_2026-10-16.md)**
+kernel version9: đủ50 bài, hai Tesla T4, ~47,8 phút; hash/replay qua.
+Micro-F1 **53,85% →54,27%**, macro **56,83% →56,21%**. Method/task tăng nhưng
+contribution/problem/dataset giảm; thêm11 TP và24 FP. P002586 phục hồi hai method,
+còn thiếu qualifier/artifact/finding âm. Output `generated_v3_7_pilot50/`.
+
+Code Kaggle đã tách theo mục đích: `.kaggle/pilot/` chứa builder, dual-T4,
+settings và launcher pilot; `.kaggle/matrix/` chứa matrix/policy builder, runtime
+và launcher matrix. `build_exp_a.py`, `extraction_v3.py` và evaluator vẫn dùng chung.
+
+Chỉ giữ output pilot từ v3.5 trở đi. Output/evaluation v3.1–v3.4 và test riêng
+v3.4 đã xóa; báo cáo/audit lịch sử vẫn giữ. Danh sách tại
+[cleanup manifest](cleanup_manifest_2026-10-16.json). `generated/` vẫn giữ vì
+builder pilot và các thực nghiệm B–E dùng baseline này; corpus, reference và
+model cache cũng giữ nguyên. Các script xác minh lịch sử replay bằng source đã
+gửi trong snapshot; checksum bundle/audit giữ nguyên. Các phần chạy nhóm ở dưới
+mô tả luồng v2 cũ để đọc/kiểm tra silver đã bàn giao.
 
 ## 1. Mục đích
 
@@ -251,15 +292,24 @@ không tự tạo `facets_gold.jsonl`. Nhãn silver nằm trong tệp tham chi�
 cho toàn corpus. Xem [hướng dẫn chạy](../../docs/RUN_EXPERIMENTS.md) để biết tệp,
 preview part_1 và quy trình review.
 
-## 9. Đánh giá silver bằng human gold
+## 9. Đánh giá silver bằng reference đã review
 
-Sau khi 400 forms được người review hoàn tất (`review_status: reviewed`, có tên
-reviewer), từ gốc dự án chạy `python scripts/exp_a/evaluate_exp_a.py`. Tool xuất
-Precision/Recall/F1 từng facet, micro/macro, nhãn dư/thiếu, dẫn chứng và gợi ý
-có thể nhầm facet ở từng bài. Output tại `data/exp_a/evaluation/gold_400/`.
+Sau khi reference được review hoàn tất, từ gốc dự án chạy
+`.venv-qwen/Scripts/python.exe -B scripts/exp_a/evaluate_exp_a.py`.
+Mặc định dùng Qwen3-Embedding-0.6B local, cosine 0.85, ghép một–một trong cùng
+bài/facet sau khi giữ các cặp khớp chữ. Output tại
+`data/exp_a/evaluation/embedding_400_revised/`, có P/R/F1 từng facet, micro/macro,
+baseline khớp chữ, từng cặp/similarity, nhãn dư/thiếu và evidence. Matcher hiện
+chuẩn hóa một số tên/alias có nguồn và chặn các bất đồng số liệu, metric, phủ định
+được quy tắc nhận diện. Cặp canonical vẫn lưu cosine thật và assignment score riêng.
+Reference v2 sửa 18 bài / 21 facet theo nguồn; output Qwen 4.210 bài giữ nguyên.
+F1 mới 38.89%, so với mốc cũ 38.06%; xem
+[báo cáo reference và matcher](../../scripts/exp_a/docs/MATCHER_REFERENCE_REPORT.md).
 
-Đây là so khớp concept sau chuẩn hóa Unicode/hoa thường/khoảng trắng, giữ dấu câu;
-nhãn cùng nghĩa khác cách viết vẫn cần người đối chiếu. 400 bài ưu tiên đầy đủ
-không tự đại diện toàn corpus. Điểm chọn lượt sinh 0–100 của A không phải accuracy.
+`--matching exact` chạy khớp chữ trên CPU, không tải encoder. Reference người
+review cần tên reviewer; reference hiện hành là AI và được báo đúng nguồn.
+Điểm embedding là đồng thuận theo ngưỡng thử nghiệm, chưa phải accuracy được
+người xác nhận. 400 bài ưu tiên đầy đủ không tự đại diện toàn corpus.
+Điểm chọn lượt sinh 0–100 của A không phải accuracy.
 Xem [evaluator từng bước và ví dụ TP/FP/FN](../../scripts/exp_a/README.md),
-[quy trình review và cách đọc kết quả](../../docs/EVALUATE_QWEN.md).
+[quy trình review ngữ nghĩa](../../scripts/exp_a/docs/SEMANTIC_REVIEW_PROTOCOL.md).

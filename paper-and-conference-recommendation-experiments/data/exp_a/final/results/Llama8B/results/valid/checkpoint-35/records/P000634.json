@@ -1,0 +1,497 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}, {\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.841840725999646,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}, {\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1944,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1415,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 17.78190178300065,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1945,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3133,
+            "output_tokens": 136
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.782205051999881,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1946,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 834,
+            "output_tokens": 92
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "VEA",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable linguistic evidence",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable linguistic evidence",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "repudiated",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 49.405947561000175,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000634",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5382,
+        "output_tokens": 408
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}, {\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.841840725999646,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}, {\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1944,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1415,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 17.78190178300065,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"repudiated\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"VEA\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1945,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3133,
+            "output_tokens": 136
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "VEA",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable linguistic evidence",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "repudiated",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 38.623742509000294,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1945,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4548,
+        "output_tokens": 316
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.841840725999646,
+        "inherited": false,
+        "messages_sha256": "1de2c07e3d472eee98e0341e6180f1ee339c771215409fd86c8ae5660e0cc831",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1944,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1415,
+          "output_tokens": 180
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.78190178300065,
+        "inherited": false,
+        "messages_sha256": "5af599f363a4c35228d095ccde5c0d7cb341a47f77e3ab6d5e73b95f1a6ea91f",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000634",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 1945,
+        "usage": {
+          "input_tokens": 3133,
+          "output_tokens": 136
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.782205051999881,
+        "inherited": false,
+        "messages_sha256": "832f51e05c5ffc70255745c809ae1d00c07903cd8a80b64cddac31583eb4042d",
+        "reached_token_limit": false,
+        "seed": 1946,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 834,
+          "output_tokens": 92
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "visualizable linguistic evidence",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "VEA",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable linguistic evidence",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "repudiated",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.782205051999881,
+      "messages_sha256": "832f51e05c5ffc70255745c809ae1d00c07903cd8a80b64cddac31583eb4042d",
+      "raw_output": "{\"paper_id\": \"P000634\", \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable linguistic evidence\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 834,
+        "output_tokens": 92
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "b2ae046863a1e26a6a6dc72d3a96bd3721dfc6dd7bc7f9235bc67acecb0c4ebe",
+    "facets": {
+      "contribution": [
+        "VEA",
+        "visualizable linguistic evidence"
+      ],
+      "dataset": [
+        "Enron email dataset"
+      ],
+      "method": [
+        "visualizable evidence-driven approach",
+        "End-to-End Digital Investigation",
+        "visualizable linguistic evidence"
+      ],
+      "paper_id": "P000634",
+      "problem": [
+        "repudiated"
+      ],
+      "task": [
+        "Authorship Attribution"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 49.405947561000175,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 49.405947561000175,
+      "input_tokens": 5382,
+      "output_tokens": 408
+    },
+    "paper_id": "P000634",
+    "source_sha256": "96515666c9e30a3a990a46af65b7ef91974b3faf4ee1545093f2ae1661b691bb",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5382,
+      "output_tokens": 408
+    }
+  },
+  "record_sha256": "a9a350e1a84e342ad62ac36902d3cd1757a34d6aac7a689bbfde0eb026bac4c6",
+  "signature": "bd7a6babc43deef10639d4617b3a6627b372431f51b39a7e55d56d4d07a92bf5"
+}

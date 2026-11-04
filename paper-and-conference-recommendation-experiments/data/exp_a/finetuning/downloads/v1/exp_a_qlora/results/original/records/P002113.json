@@ -1,0 +1,146 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002113\",\n  \"problem\": [\n    {\n      \"concept\": \"key milestone in quantum algorithms field\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reliably compare power of classical computer to power of quantum computer\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"leading proposals to achieve quantum supremacy\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.333232053002575,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002113\",\n  \"problem\": [\n    {\n      \"concept\": \"key milestone in quantum algorithms field\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reliably compare power of classical computer to power of quantum computer\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"leading proposals to achieve quantum supremacy\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 53.5556,
+          "seed": 6381,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2370,
+            "output_tokens": 134
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"key milestone in quantum algorithms field\"; evidence_id=\"A1\"; evidence=\"A key milestone in this field will be when a universal quantum computer performs a computational task that is beyond the capability of any classical computer, an event known as quantum supremacy.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002113\", \"problem\": [{\"concept\": \"key milestone in this field will be when a universal quantum computer performs a computational task that is beyond the capability of any classical computer\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"reliably compare power of classical computer to power of quantum computer\", \"evidence_id\": \"A3\"}], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"leading proposals to achieve quantum supremacy\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 17.194195146999846,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002113\",\n  \"problem\": [\n    {\n      \"concept\": \"key milestone in this field will be when a universal quantum computer performs a computational task that is beyond the capability of any classical computer\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reliably compare the power of a classical computer to the power of a quantum computer\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"leading proposals to achieve quantum supremacy\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.5556,
+          "seed": 6382,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3940,
+            "output_tokens": 157
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "leading proposals to achieve quantum supremacy",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P002113",
+        "problem": [
+          {
+            "concept": "key milestone in this field will be when a universal quantum computer performs a computational task that is beyond the capability of any classical computer",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reliably compare power of classical computer to power of quantum computer",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 30.52742720000242,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6382,
+      "selected_score": 75.5556,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6310,
+        "output_tokens": 291
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "leading proposals to achieve quantum supremacy"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P002113",
+      "problem": [
+        "key milestone in this field will be when a universal quantum computer performs a computational task that is beyond the capability of any classical computer"
+      ],
+      "task": [
+        "reliably compare power of classical computer to power of quantum computer"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 30.52742720000242,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P002113",
+    "usage": {
+      "input_tokens": 6310,
+      "output_tokens": 291
+    }
+  },
+  "record_sha256": "0d0ca2fa8d588d67211bb02acdf77565b16adff08d4a6ab5294be6ffa573b7c6",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

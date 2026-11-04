@@ -1,4 +1,5 @@
 {
+  "annotation_origin": "codex_gold_readiness_revision_v3",
   "contract_version": "1.0",
   "count": 400,
   "dataset_kind": "real",
@@ -1114,14 +1115,19 @@
     "5": 335
   },
   "files": {
-    "review_annotations.jsonl": "292a545f080623a17915ddcbf68e4fccb5abaa4557f070ea9d1b67edfb2fe389",
     "review_papers.jsonl": "73cd3b172e2cc698de687fb4b6347c730adab13ac00af0e04a946213bf7a984b",
     "selection_ranking.jsonl": "b7efa529e49bb3c966ef345ee6dc23bbce2bc473a10aa7bfbce038bc68db0035",
-    "silver_reference.jsonl": "faf69a2f24f42d986e52ffcf2032fa964c43604283f46eccb26c549a69919323"
+    "silver_reference.jsonl": "faf69a2f24f42d986e52ffcf2032fa964c43604283f46eccb26c549a69919323",
+    "gpt_review_evidence.jsonl": "4a31fbc4f9e4ff877eb1ea20b395de604c52d4ca5544d40a61bc59f320cd7d1c",
+    "gpt_semantic_revision_summary.json": "cf4c6e1674c9b7d8fb59e84067ec9951343a72bb1dd1b7f2a291a09f4d53a8ad",
+    "GPT_REVIEW.md": "05e27778a78fbdae6bbd4c966e9064689e2579ccb7635abc863f55827036e856",
+    "human_gold.jsonl": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c"
   },
+  "human_review_status": "accepted",
   "input_status": "complete",
   "requested_count": 400,
-  "review_status": "pending",
+  "review_status": "reviewed",
+  "reviewer_type": "human",
   "selected_ids": [
     "P002277",
     "P004176",
@@ -1528,5 +1534,35 @@
   "selection_policy": "nonempty_facets_desc_supported_concepts_desc_paper_id_asc_v1",
   "selector_sha256": "9f526c1a55b37bf489ae6616ab34562c1a7a11a355cc42d2d00d6a9569f1fc49",
   "source_manifest_sha256": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",
-  "tier": "review_queue"
+  "tier": "review_queue",
+  "reference_revision": "3.0",
+  "source_audit_report": "data/exp_a/evaluation/reference_gold_audit_20261026_v1/report_vi.md",
+  "user_review_reported": true,
+  "user_review_attestation_reference_sha256": "3bbdb97647833f390974dfc54ebaf4472e48ad8cf2f815052f7a366da132d1c5",
+  "source_confirmation_pending_ids": [
+    "P000042",
+    "P000671",
+    "P000938",
+    "P001402",
+    "P001758",
+    "P002171",
+    "P002295",
+    "P002425",
+    "P003168",
+    "P003362",
+    "P003702",
+    "P004138"
+  ],
+  "semantic_adjudication_pending_ids": [
+    "P000609",
+    "P003788",
+    "P004106"
+  ],
+  "reference_file": "human_gold.jsonl",
+  "annotation_kind": "human_gold",
+  "reviewer": "user",
+  "human_review_date": "2026-10-26",
+  "human_review_method": "explicit_user_acceptance_of_revised_v3",
+  "annotation_author_type": "ai",
+  "acceptance_report": "data/exp_a/evaluation/reference_gold_acceptance_20261026_v1/acceptance_report.json"
 }

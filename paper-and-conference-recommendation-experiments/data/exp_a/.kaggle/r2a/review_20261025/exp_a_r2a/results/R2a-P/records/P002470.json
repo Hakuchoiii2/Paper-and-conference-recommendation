@@ -1,0 +1,181 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002470\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.358989971000028,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002470\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"study interactions between academic and technological research\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"co-word analysis techniques\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"publications in the polymer science field over 15 years\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"co-word techniques to build a bridge between scientometrics and economics of innovation\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 87.0394,
+          "seed": 7452,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2433,
+            "output_tokens": 148
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "co-word techniques to build a bridge between scientometrics and economics of innovation",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "publications in the polymer science field over 15 years",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "co-word analysis techniques",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "study interactions between academic and technological research",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 13.358989971000028,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002470",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "publications in the polymer science field over 15 years",
+            "evidence": "It is based upon a systematic content analysis of publications in the polymer science field over a period of 15 years.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 7452,
+      "selected_score": 87.0394,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2433,
+        "output_tokens": 148
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "423af38040679bcd4738e19d3f800967e065aea3619e8b20fe85eb5352b65289",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 7452
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "co-word techniques to build a bridge between scientometrics and economics of innovation"
+      ],
+      "dataset": [],
+      "method": [
+        "co-word analysis techniques"
+      ],
+      "paper_id": "P002470",
+      "problem": [],
+      "task": [
+        "study interactions between academic and technological research"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 13.358989971000028,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P002470",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 2433,
+      "output_tokens": 148
+    }
+  },
+  "record_sha256": "fd3d016fbda976b42788a2f3f57e795679a10389d911e132031cffc7e90cf333",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

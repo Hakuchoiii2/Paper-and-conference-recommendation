@@ -1,0 +1,73 @@
+{
+  "kernel": "htnkhi/exp-a-qlora-loop-probe",
+  "version": 1,
+  "status": "COMPLETE",
+  "checked_at_utc": "2026-10-18T15:44:32.096412+00:00",
+  "verified_records": 12,
+  "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+  "checksums_source_prompt_model_and_pairing_verified": true,
+  "groups": [
+    {
+      "arm": "adapter",
+      "policy": "new_v2_2",
+      "papers": 3,
+      "schema_valid": 0,
+      "no_validation_errors": 0,
+      "stop_reasons": {
+        "eos": 1,
+        "duplicate_item": 2
+      },
+      "output_tokens": 1302,
+      "generation_seconds": 173.22183451599994
+    },
+    {
+      "arm": "adapter",
+      "policy": "old_v3_7",
+      "papers": 3,
+      "schema_valid": 3,
+      "no_validation_errors": 3,
+      "stop_reasons": {
+        "eos": 3
+      },
+      "output_tokens": 472,
+      "generation_seconds": 69.36408249300007
+    },
+    {
+      "arm": "base",
+      "policy": "new_v2_2",
+      "papers": 3,
+      "schema_valid": 3,
+      "no_validation_errors": 0,
+      "stop_reasons": {
+        "eos": 3
+      },
+      "output_tokens": 931,
+      "generation_seconds": 72.01550709599996
+    },
+    {
+      "arm": "base",
+      "policy": "old_v3_7",
+      "papers": 3,
+      "schema_valid": 3,
+      "no_validation_errors": 2,
+      "stop_reasons": {
+        "eos": 3
+      },
+      "output_tokens": 843,
+      "generation_seconds": 69.538695652
+    }
+  ],
+  "format_details": [
+    {
+      "arm": "adapter",
+      "policy": "new_v2_2",
+      "paper_id": "P000151",
+      "complete_json_objects": 2,
+      "identical_json_objects": true,
+      "validation_categories": [
+        "Extra data"
+      ]
+    }
+  ],
+  "limits": "3 diagnostic papers, first drafts only; not a semantic or F1 evaluation"
+}

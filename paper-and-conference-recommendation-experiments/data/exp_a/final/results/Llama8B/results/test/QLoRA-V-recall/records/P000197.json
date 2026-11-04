@@ -1,0 +1,553 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.144211345999793,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 633,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1280,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "argument against overgeneralizing results",
+              "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.0048285569992,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 634,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2995,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "argument against overgeneralizing results",
+              "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.091867409999395,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000197\", \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 635,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 728,
+            "output_tokens": 84
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "argument against overgeneralizing results",
+              "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "importance of controlling for variables in the corpus",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "argument against overgeneralizing results",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "LIWC",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "machine learning",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000197",
+        "problem": [
+          {
+            "concept": "difficult to explain what gives rise to these results",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "risk invoking stereotyping and essentialism",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorial Gender Attribution",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 56.24090731299839,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000197",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5003,
+        "output_tokens": 454
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "argument against overgeneralizing results",
+          "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.144211345999793,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 633,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1280,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "argument against overgeneralizing results",
+              "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.0048285569992,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000197\", \"problem\": [{\"concept\": \"difficult to explain what gives rise to these results\", \"evidence_id\": \"A1\"}, {\"concept\": \"risk invoking stereotyping and essentialism\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"importance of controlling for variables in the corpus\", \"evidence_id\": \"A4\"}, {\"concept\": \"argument against overgeneralizing results\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 634,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2995,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "argument against overgeneralizing results",
+              "evidence": "Our results show the importance of controlling for variables in the corpus and we argue for taking care not to overgeneralize from the results.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "importance of controlling for variables in the corpus",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "argument against overgeneralizing results",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "LIWC",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "machine learning",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000197",
+        "problem": [
+          {
+            "concept": "difficult to explain what gives rise to these results",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "risk invoking stereotyping and essentialism",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorial Gender Attribution",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 46.14903990299899,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 634,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4275,
+        "output_tokens": 370
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.144211345999793,
+        "inherited": false,
+        "messages_sha256": "793d287491892b396511f0a9e086ad1db69aa0dbbe788fd6cd73310d87e74ebe",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 633,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1280,
+          "output_tokens": 185
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.0048285569992,
+        "inherited": false,
+        "messages_sha256": "bfbbad4789e9ba19f99845c22a300fe283c91bb23eef5ca57056e3333926341b",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000197",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 634,
+        "usage": {
+          "input_tokens": 2995,
+          "output_tokens": 185
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.091867409999395,
+        "inherited": false,
+        "messages_sha256": "696a4b9324079fa0c40d8065bfe690b2055bba63c9c9f1108e8ee0174396eff4",
+        "reached_token_limit": false,
+        "seed": 635,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 728,
+          "output_tokens": 84
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "importance of controlling for variables in the corpus",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "argument against overgeneralizing results",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "LIWC",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "machine learning",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000197",
+        "problem": [
+          {
+            "concept": "difficult to explain what gives rise to these results",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "risk invoking stereotyping and essentialism",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorial Gender Attribution",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Authorial Gender Attribution",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "LIWC",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "machine learning",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.091867409999395,
+      "messages_sha256": "696a4b9324079fa0c40d8065bfe690b2055bba63c9c9f1108e8ee0174396eff4",
+      "raw_output": "{\"paper_id\": \"P000197\", \"task\": [{\"concept\": \"Authorial Gender Attribution\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"LIWC\", \"evidence_id\": \"A3\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"machine learning\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 728,
+        "output_tokens": 84
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "501825e2287b8ab54cf389bb08f329c1f2c5b38d952fed49506ef04f8d7b9c24",
+    "facets": {
+      "contribution": [
+        "importance of controlling for variables in the corpus",
+        "argument against overgeneralizing results"
+      ],
+      "dataset": [],
+      "method": [
+        "LIWC",
+        "topic modeling",
+        "machine learning"
+      ],
+      "paper_id": "P000197",
+      "problem": [
+        "difficult to explain what gives rise to these results",
+        "risk invoking stereotyping and essentialism"
+      ],
+      "task": [
+        "Authorial Gender Attribution"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.24090731299839,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 56.24090731299839,
+      "input_tokens": 5003,
+      "output_tokens": 454
+    },
+    "paper_id": "P000197",
+    "source_sha256": "9d673c66c643907d85911e2058e0c794a9e8fca53efbb518e3eec96ef92e0606",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5003,
+      "output_tokens": 454
+    }
+  },
+  "record_sha256": "f106f23c67a48f823f75cbc05f8e7fb04e477a20d54d7121bca20959417e1d48",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

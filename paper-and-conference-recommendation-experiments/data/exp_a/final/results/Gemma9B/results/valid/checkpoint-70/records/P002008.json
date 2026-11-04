@@ -1,0 +1,454 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [{\"concept\": \"how event factuality is articulated\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.16102764400057,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [{\"concept\": \"how event factuality is articulated\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6066,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1445,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.669596800002182,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6067,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3226,
+            "output_tokens": 125
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.719094642001437,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"task\": [], \"method\": [{\"concept\": \"factuality profiler\", \"evidence_id\": \"A7\"}, {\"concept\": \"corpus built specifically for the task\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6068,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 857,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "algorithm articulating the effect of factuality relations",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "factuality profiler",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "corpus built specifically for the task",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Identifying the veracity, or factuality, of event mentions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 71.54971908600419,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002008",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5528,
+        "output_tokens": 354
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [{\"concept\": \"how event factuality is articulated\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.16102764400057,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [{\"concept\": \"how event factuality is articulated\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6066,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1445,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.669596800002182,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Identifying the veracity, or factuality, of event mentions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"algorithm articulating the effect of factuality relations\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6067,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3226,
+            "output_tokens": 125
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "algorithm articulating the effect of factuality relations",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Identifying the veracity, or factuality, of event mentions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 58.83062444400275,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6067,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4671,
+        "output_tokens": 291
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.16102764400057,
+        "inherited": false,
+        "messages_sha256": "3bcc5994e60d9bc1a7fac8ccd64805ce96c53831ff8e0b8b41d406dcd646497a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6066,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1445,
+          "output_tokens": 166
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.669596800002182,
+        "inherited": false,
+        "messages_sha256": "fcb85a361c67ef8adb3da3c8aba0750defe630953631cdd3d9b2c9aabaafc687",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002008",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 6067,
+        "usage": {
+          "input_tokens": 3226,
+          "output_tokens": 125
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.719094642001437,
+        "inherited": false,
+        "messages_sha256": "a05c304c557aa4a142fe0060fb3c105e5928cc64272e25f6480d85aac7da2c1d",
+        "reached_token_limit": false,
+        "seed": 6068,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 857,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "factuality profiler",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "corpus built specifically for the task",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "algorithm articulating the effect of factuality relations",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Identifying the veracity, or factuality, of event mentions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 12.719094642001437,
+      "messages_sha256": "a05c304c557aa4a142fe0060fb3c105e5928cc64272e25f6480d85aac7da2c1d",
+      "raw_output": "{\"paper_id\": \"P002008\", \"task\": [], \"method\": [{\"concept\": \"factuality profiler\", \"evidence_id\": \"A7\"}, {\"concept\": \"corpus built specifically for the task\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 857,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "3624d9905c7581100788aadad78806b56addf8f64dd680fa5d155af24c38fcc7",
+    "facets": {
+      "contribution": [
+        "De Facto",
+        "linguistic-oriented computational model"
+      ],
+      "dataset": [],
+      "method": [
+        "algorithm articulating the effect of factuality relations",
+        "linguistic-oriented computational model",
+        "factuality profiler",
+        "corpus built specifically for the task"
+      ],
+      "paper_id": "P002008",
+      "problem": [],
+      "task": [
+        "Identifying the veracity, or factuality, of event mentions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 71.54971908600419,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 71.54971908600419,
+      "input_tokens": 5528,
+      "output_tokens": 354
+    },
+    "paper_id": "P002008",
+    "source_sha256": "ebd68e4fc6c1a3e3d9ae66ec4e8057a3c2405cf3101216494a30fde913703432",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5528,
+      "output_tokens": 354
+    }
+  },
+  "record_sha256": "1b222643f0d35b91b65bc06e7dc395c0a8ac244d693d0d69bf2c5d7518eba743",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

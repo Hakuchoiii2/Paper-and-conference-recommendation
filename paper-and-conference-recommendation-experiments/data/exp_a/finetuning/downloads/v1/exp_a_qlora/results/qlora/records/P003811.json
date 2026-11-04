@@ -1,0 +1,191 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 25.943230541000958,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 11475,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2601,
+            "output_tokens": 166
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.85819950900259,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": false,
+          "score": 61.7143,
+          "seed": 11476,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4136,
+            "output_tokens": 165
+          },
+          "validation_errors": [
+            "method[2]: wrong concept/evidence_id keys",
+            "method[2]: unknown evidence_id",
+            "method[2]: evidence must be an exact source sentence; concept=\"comparison between the individual texts\"; evidence_id=null; evidence=\"\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 3,
+          "generation_seconds": 27.11493665300077,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003811\", \"problem\": [], \"task\": [{\"concept\": \"examine their voices in light of alternatives\", \"evidence_id\": \"A8\"}, {\"concept\": \"dynamics of collaboration\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"computer-supported collaborative learning environment\", \"evidence_id\": \"A0\"}, {\"concept\": \"analysis of the e-discussion\", \"evidence_id\": \"A8\"}, {\"concept\": \"comparison between the individual texts\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fission\", \"evidence_id\": \"A9\"}, {\"concept\": \"activity was productive\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 11477,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4195,
+            "output_tokens": 166
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "fission",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "activity was productive",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "computer-supported collaborative learning environment",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "analysis of the e-discussion",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "comparison between the individual texts",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P003811",
+        "problem": [],
+        "task": [
+          {
+            "concept": "examine their voices in light of alternatives",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "dynamics of collaboration",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 80.91636670300431,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11477,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10932,
+        "output_tokens": 497
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "fission",
+        "activity was productive"
+      ],
+      "dataset": [],
+      "method": [
+        "computer-supported collaborative learning environment",
+        "analysis of the e-discussion",
+        "comparison between the individual texts"
+      ],
+      "paper_id": "P003811",
+      "problem": [],
+      "task": [
+        "examine their voices in light of alternatives",
+        "dynamics of collaboration"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 80.91636670300431,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P003811",
+    "usage": {
+      "input_tokens": 10932,
+      "output_tokens": 497
+    }
+  },
+  "record_sha256": "bed3e90636dc10ddc746bf0f960fe45f9c434ec0a102388d9ff37861b0744641",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

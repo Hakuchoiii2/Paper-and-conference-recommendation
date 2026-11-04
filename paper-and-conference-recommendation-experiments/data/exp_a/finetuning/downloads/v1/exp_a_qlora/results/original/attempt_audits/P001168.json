@@ -1,0 +1,108 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P001168\",\n  \"problem\": [\n    {\"concept\": \"probabilistic variation of the classical minimum spanning tree problem\", \"evidence_id\": \"A0\"}\n  ],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"closed-form expression for the expected length of a given spanning tree\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"proof that the problem is NP-complete\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"PMST is within constant factors from both strategies\", \"evidence_id\": \"A6\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 18.99358210399805,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001168\",\n  \"problem\": [\n    {\"concept\": \"probabilistic variation of the classical minimum spanning tree problem\", \"evidence_id\": \"A0\"}\n  ],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"closed-form expression for the expected length of a given spanning tree\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"proof that the problem is NP-complete\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"PMST is within constant factors from both strategies\", \"evidence_id\": \"A6\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 49.0,
+      "seed": 3546,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2504,
+        "output_tokens": 202
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof that the problem is NP-complete\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"combinatorial properties of the problem and relation to MST and network design problem\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001168\", \"problem\": [{\"concept\": \"probabilistic variation of the classical minimum spanning tree problem\", \"evidence_id\": \"A0\"}], \"task\": [], \"method\": [{\"concept\": \"analysis of combinatorial properties\", \"evidence_id\": \"A4\"}, {\"concept\": \"proof of NP-completeness\", \"evidence_id\": \"A3\"}, {\"concept\": \"examination of reoptimization strategies\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"closed-form expression for the expected length of a given spanning tree\", \"evidence_id\": \"A2\"}, {\"concept\": \"proof that the problem is NP-complete\", \"evidence_id\": \"A3\"}, {\"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\", \"evidence_id\": \"A4\"}, {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"}, {\"concept\": \"PMST is within constant factors from both strategies\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 2,
+      "generation_seconds": 30.726776691997657,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001168\",\n  \"problem\": [\n    {\"concept\": \"probabilistic variation of the classical minimum spanning tree problem\", \"evidence_id\": \"A0\"}\n  ],\n  \"task\": [\n    {\"concept\": \"characterize asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"}\n  ],\n  \"method\": [\n    {\"concept\": \"analysis of combinatorial properties\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"proof of NP-completeness\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"examination of reoptimization strategies\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"closed-form expression for the expected length of a given spanning tree\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"proof that the problem is NP-complete\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"PMST is within constant factors from both strategies\", \"evidence_id\": \"A6\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 44.0,
+      "seed": 3547,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4322,
+        "output_tokens": 295
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"analysis of combinatorial properties\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof of NP-completeness\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+        "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"examination of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof that the problem is NP-complete\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"combinatorial properties of the problem and relation to MST and network design problem\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001168\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"examination of combinatorial properties\", \"evidence_id\": \"A4\"}, {\"concept\": \"proof of NP-completeness\", \"evidence_id\": \"A3\"}, {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"closed-form expression for the expected length of a given spanning tree\", \"evidence_id\": \"A2\"}, {\"concept\": \"proof that the problem is NP-complete\", \"evidence_id\": \"A3\"}, {\"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\", \"evidence_id\": \"A4\"}, {\"concept\": \"characterization of asymptotic behavior of reoptimization strategies\", \"evidence_id\": \"A5\"}, {\"concept\": \"PMST is within constant factors from both strategies\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 3,
+      "generation_seconds": 33.61985087499852,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001168\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"examination of probabilistic minimum spanning tree problem\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"examination of combinatorial properties\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"proof of NP-completeness\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"characterization of asymptotic behavior of reoptimization strategies\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"closed-form expression for the expected length of a given spanning tree\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"proof that the problem is NP-complete\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"combinatorial properties of the problem and relation to MST and network design problem\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"characterization of asymptotic behavior of reoptimization strategies\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"PMST is within constant factors from both strategies\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 29.5,
+      "seed": 3548,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4600,
+        "output_tokens": 316
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"examination of combinatorial properties\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof of NP-completeness\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+        "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof that the problem is NP-complete\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"combinatorial properties of the problem and relation to MST and network design problem\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P001168",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 1,
+  "selected_score": 49.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof that the problem is NP-complete\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+    "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"combinatorial properties of the problem and relation to MST and network design problem\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+    "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

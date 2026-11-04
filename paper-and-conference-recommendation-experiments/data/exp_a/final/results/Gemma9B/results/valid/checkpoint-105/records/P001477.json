@@ -1,0 +1,474 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 34.009300146000896,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4473,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1451,
+            "output_tokens": 178
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.336661785000615,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4474,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3258,
+            "output_tokens": 151
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.91158950800309,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"task\": [], \"method\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4475,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 870,
+            "output_tokens": 65
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "data-driven detection system",
+            "evidence_id": "A11"
+          },
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "inaccurate results",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "spam detection",
+            "evidence_id": "A7"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.2575514390046,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001477",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5579,
+        "output_tokens": 394
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 34.009300146000896,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4473,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1451,
+            "output_tokens": 178
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.336661785000615,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"inaccurate results\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4474,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3258,
+            "output_tokens": 151
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "inaccurate results",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "spam detection",
+            "evidence_id": "A7"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 66.34596193100151,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4474,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4709,
+        "output_tokens": 329
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 34.009300146000896,
+        "inherited": false,
+        "messages_sha256": "718f2170955d805ec7ec8203d89fe08e2d4150594ddb1102834c766335f39d1a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4473,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1451,
+          "output_tokens": 178
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 32.336661785000615,
+        "inherited": false,
+        "messages_sha256": "0b78785280523fb241fbd24063e851a2dcfbc0a262db6a1abddae2e53a27db75",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001477",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 4474,
+        "usage": {
+          "input_tokens": 3258,
+          "output_tokens": 151
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.91158950800309,
+        "inherited": false,
+        "messages_sha256": "5ae6872f4751e9ae0228c633b00b54b7dc1796a73e3d038a1d8cfdaf5cea47eb",
+        "reached_token_limit": false,
+        "seed": 4475,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 870,
+          "output_tokens": 65
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "inaccurate results",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "spam detection",
+            "evidence_id": "A7"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 12.91158950800309,
+      "messages_sha256": "5ae6872f4751e9ae0228c633b00b54b7dc1796a73e3d038a1d8cfdaf5cea47eb",
+      "raw_output": "{\"paper_id\": \"P001477\", \"task\": [], \"method\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 870,
+        "output_tokens": 65
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "6464d6ab2716a1b3980b6f397906ea4b92da78946439fee1e66bef30e2e32a26",
+    "facets": {
+      "contribution": [
+        "updated manual classification algorithm",
+        "new data-driven detection system"
+      ],
+      "dataset": [],
+      "method": [
+        "manual classification algorithm",
+        "data-driven detection system",
+        "updated manual classification algorithm",
+        "new data-driven detection system"
+      ],
+      "paper_id": "P001477",
+      "problem": [
+        "inaccurate results"
+      ],
+      "task": [
+        "spam detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.2575514390046,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.2575514390046,
+      "input_tokens": 5579,
+      "output_tokens": 394
+    },
+    "paper_id": "P001477",
+    "source_sha256": "ff8ff0172899955e98b3552e3f3e8344d7d2e6b1128e0d4d9caf7f3d61f3534a",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5579,
+      "output_tokens": 394
+    }
+  },
+  "record_sha256": "9142ead03930d8b0ca05bc3674dd3e487a60638a6c674c18f75a4487fba0f840",
+  "signature": "b70f7f0c11027ae63c9cadd8346e20bb7c37043c066b5705fda23b6849ae244f"
+}

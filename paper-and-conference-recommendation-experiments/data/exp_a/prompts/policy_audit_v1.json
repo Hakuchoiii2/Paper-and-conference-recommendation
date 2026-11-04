@@ -1,0 +1,534 @@
+{
+  "version": "policy_audit_v1",
+  "reviewer_type": "ai",
+  "scope": "20 source-inspected development cases; partial acceptance/rejection examples, not exhaustive gold annotations",
+  "source": "data/exp_a/pilot50/ai_reference_v1/source_papers.jsonl",
+  "cases": [
+    {
+      "paper_id": "P000268",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "Unigram",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "bigram",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "LDA content models",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "overlap of the community structures",
+          "evidence_id": "A1"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "100 discussion topics",
+          "evidence_id": "A4",
+          "reason": "Sample description, not a technique."
+        }
+      ],
+      "note": "Separate independently tested models; an overlap analysis is a method, corpus counts are not."
+    },
+    {
+      "paper_id": "P000669",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "conditional random fields",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "morphosyntactic features",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "semantic roles features",
+          "evidence_id": "A1"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "F1 of 81.4%",
+          "evidence_id": "A2",
+          "reason": "Evaluation outcome, not a method."
+        }
+      ],
+      "note": "Do not merge algorithm and independent feature groups into one label."
+    },
+    {
+      "paper_id": "P001057",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "linear classifier",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "dataset",
+          "concept": "MNIST",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "contribution",
+          "concept": "novel vision model",
+          "evidence_id": "A0"
+        }
+      ],
+      "rejected": [],
+      "note": "A named benchmark in a finding is still used data; a linear classifier is not a new artifact merely because it is used."
+    },
+    {
+      "paper_id": "P001389",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "Joint Topic Viewpoint model (JTV)",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "Qualitative and quantitative evaluations",
+          "evidence_id": "A3"
+        },
+        {
+          "facet": "contribution",
+          "concept": "Joint Topic Viewpoint model (JTV)",
+          "evidence_id": "A1"
+        }
+      ],
+      "rejected": [],
+      "note": "The introduced model can occupy method and contribution; its task suffix is not needed in the artifact name."
+    },
+    {
+      "paper_id": "P001431",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "synthesis of the literature",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "contribution",
+          "concept": "classification schema based on these four characteristics",
+          "evidence_id": "A1"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "dataset",
+          "concept": "Internet",
+          "evidence_id": "A4",
+          "reason": "Communication platform in background, not a named dataset used in an experiment."
+        }
+      ],
+      "note": "Literature synthesis and classification frameworks are valid research methods; do not force every paper into a neural-model template."
+    },
+    {
+      "paper_id": "P001604",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "category meta-graph",
+          "evidence_id": "A5"
+        },
+        {
+          "facet": "contribution",
+          "concept": "category meta-graph",
+          "evidence_id": "A5"
+        },
+        {
+          "facet": "problem",
+          "concept": "limited number of tokens in a post often implies a lack of sufficient contextual information",
+          "evidence_id": "A2"
+        }
+      ],
+      "rejected": [],
+      "note": "A new graph is both an operational method and artifact. This long source is also a context/memory stress case."
+    },
+    {
+      "paper_id": "P001806",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "attention mechanisms so as to perform temporal alignment",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "deep-distance measure on the aligned representations at video segment level",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "contribution",
+          "concept": "Temporal Attentive Relation Network (TARN)",
+          "evidence_id": "A0"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "memory networks",
+          "evidence_id": "A4",
+          "reason": "Comparison to other works; not an adopted component."
+        }
+      ],
+      "note": "Keep few-shot and zero-shot objectives distinct; retain temporal/segment qualifiers on methods."
+    },
+    {
+      "paper_id": "P001948",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "generalised multivariate Polya process",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "contribution",
+          "concept": "generalised multivariate Polya process",
+          "evidence_id": "A0"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "dataset",
+          "concept": "small test collections",
+          "evidence_id": "A4",
+          "reason": "Unnamed collections do not establish a dataset name."
+        }
+      ],
+      "note": "New framework versus named dataset: an unnamed evaluation collection should stay unnamed."
+    },
+    {
+      "paper_id": "P001963",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "Latent Dirichlet Allocation model (LDA)",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "Girvan-Newman community detection algorithm",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "contribution",
+          "concept": "TTR-LDA-Community model",
+          "evidence_id": "A1"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "TTR-LDA",
+          "evidence_id": "A4",
+          "reason": "Comparison baseline in this sentence."
+        }
+      ],
+      "note": "Method components are independent labels. Delicious is an ambiguous platform/data-source boundary requiring a consistent policy, not an automatic example target."
+    },
+    {
+      "paper_id": "P002015",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "syntactic and morphological knowledge sources",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "probabilistic model",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "contribution",
+          "concept": "proposed method is effective with a relatively small amount of data",
+          "evidence_id": "A3"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "trigram target language model",
+          "evidence_id": "A2",
+          "reason": "Baseline being outperformed."
+        }
+      ],
+      "note": "Keep low-data scope on the finding; languages alone are not named datasets."
+    },
+    {
+      "paper_id": "P002471",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "animation of the data space",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "contribution",
+          "concept": "data space animation indeed helps students learn the semantics of pointers",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "contribution",
+          "concept": "But, it is no more effective at this than text explanation of the step-by-step execution of the program.",
+          "evidence_id": "A2"
+        }
+      ],
+      "rejected": [],
+      "note": "Retain both benefit and no-advantage comparison. The pronoun in A2 needs source context; do not invent its expansion under the one-sentence grounding contract."
+    },
+    {
+      "paper_id": "P002586",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "learning robust bottle-neck features on the test data",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "semi-supervised training",
+          "evidence_id": "A3"
+        },
+        {
+          "facet": "method",
+          "concept": "speaker adaptation on the test data",
+          "evidence_id": "A3"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "contribution",
+          "concept": "Several approaches have been proposed to make this data useful during system development",
+          "evidence_id": "A1",
+          "reason": "Prior/background approaches, not this paper's claimed finding."
+        }
+      ],
+      "note": "The Tamil finding needs its leading condition and test/training data relation; do not normalize bottle-neck to unsupported source spelling."
+    },
+    {
+      "paper_id": "P002652",
+      "accepted": [
+        {
+          "facet": "problem",
+          "concept": "GMST problem is NP-hard",
+          "evidence_id": "A1"
+        },
+        {
+          "facet": "method",
+          "concept": "dynamic programming",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "mixed integer programming models of the GMST problem",
+          "evidence_id": "A3"
+        },
+        {
+          "facet": "contribution",
+          "concept": "GMST problem is NP-hard even on trees",
+          "evidence_id": "A2"
+        }
+      ],
+      "rejected": [],
+      "note": "Known NP-hardness motivates the work; the stronger even-on-trees result is a new contribution."
+    },
+    {
+      "paper_id": "P002877",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "explicit neural interlingua",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "dataset",
+          "concept": "WMT15",
+          "evidence_id": "A2"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "pairwise collection of bilingual NMT models",
+          "evidence_id": "A2",
+          "reason": "Comparison model collection, not the proposed architecture."
+        }
+      ],
+      "note": "Preserve comparable BLEU despite fewer parameters. Yelp review classifier is not by itself an unambiguous dataset name."
+    },
+    {
+      "paper_id": "P003187",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "survey of 250 British managers",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "method",
+          "concept": "antecedents–behaviours–consequences",
+          "evidence_id": "A6"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "networking",
+          "evidence_id": "A3",
+          "reason": "Observed political tactic, not the survey's analysis method."
+        }
+      ],
+      "note": "A survey is a method; reported tactics are findings. Retain the 80% no-training qualification."
+    },
+    {
+      "paper_id": "P003491",
+      "accepted": [],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "logistic regression",
+          "evidence_id": "A0",
+          "reason": "Download-page boilerplate does not establish a research method."
+        }
+      ],
+      "note": "All facets may be empty for this non-research source; the title alone does not justify extraction."
+    },
+    {
+      "paper_id": "P003565",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "maximum spanning trees (MSTs)",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "method",
+          "concept": "Chu-Liu-Edmonds",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "online large-margin learning techniques",
+          "evidence_id": "A3"
+        },
+        {
+          "facet": "dataset",
+          "concept": "Prague Dependency Treebank",
+          "evidence_id": "A3"
+        }
+      ],
+      "rejected": [],
+      "note": "Separate graph algorithm, learning technique and benchmark; used techniques are methods even when attributed to previous authors."
+    },
+    {
+      "paper_id": "P003579",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "attention mechanism to learn weighting for each word",
+          "evidence_id": "A5"
+        },
+        {
+          "facet": "method",
+          "concept": "softmax classifier",
+          "evidence_id": "A8"
+        },
+        {
+          "facet": "dataset",
+          "concept": "NLPCC2014",
+          "evidence_id": "A9"
+        },
+        {
+          "facet": "dataset",
+          "concept": "Reuters",
+          "evidence_id": "A9"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "method",
+          "concept": "F-values",
+          "evidence_id": "A10",
+          "reason": "Metric in a result, not a method."
+        },
+        {
+          "facet": "method",
+          "concept": "news classification datasets",
+          "evidence_id": "A9",
+          "reason": "Input/evaluation data, not a technique."
+        }
+      ],
+      "note": "The metric sentence names two datasets only by anaphora. A one-sentence extractor cannot copy the resource names from A9 while citing A10 alone; flag this evaluation-contract tension."
+    },
+    {
+      "paper_id": "P003809",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "iteration strategies",
+          "evidence_id": "A2"
+        },
+        {
+          "facet": "method",
+          "concept": "progressive alignment scheme",
+          "evidence_id": "A6"
+        },
+        {
+          "facet": "contribution",
+          "concept": "the average accuracy of ClustalW was improved by over 6% on the hardest test cases",
+          "evidence_id": "A5"
+        }
+      ],
+      "rejected": [
+        {
+          "facet": "dataset",
+          "concept": "ClustalW",
+          "evidence_id": "A5",
+          "reason": "Alignment software in this source, not a named benchmark."
+        }
+      ],
+      "note": "Evaluation can be the research task. Keep over 6% and hardest-test-case scope."
+    },
+    {
+      "paper_id": "P004047",
+      "accepted": [
+        {
+          "facet": "method",
+          "concept": "unsupervised morphology learning",
+          "evidence_id": "A0"
+        },
+        {
+          "facet": "method",
+          "concept": "Morfessor",
+          "evidence_id": "A5"
+        },
+        {
+          "facet": "dataset",
+          "concept": "Europarl",
+          "evidence_id": "A7"
+        },
+        {
+          "facet": "contribution",
+          "concept": "However, in our experiments we did not obtain higher BLEU scores for the morph model than for the standard word-based approach.",
+          "evidence_id": "A8"
+        }
+      ],
+      "rejected": [],
+      "note": "Keep the negative BLEU finding alongside benefits. Preserve raw OCR word breaks; do not silently repair the evidence."
+    }
+  ]
+}

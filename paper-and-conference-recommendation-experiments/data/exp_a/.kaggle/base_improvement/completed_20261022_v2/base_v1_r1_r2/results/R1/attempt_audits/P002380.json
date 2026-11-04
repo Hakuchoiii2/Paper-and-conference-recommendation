@@ -1,0 +1,71 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 14.729006073000164,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 64.0,
+      "seed": 7182,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2648,
+        "output_tokens": 162
+      },
+      "validation_errors": []
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002380\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"}, {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Pascal\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"}, {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"}, {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}]}",
+      "attempt": 2,
+      "generation_seconds": 22.299716051999894,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"language design based on semantic principles\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Pascal\", \"evidence_id\": \"A0\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 76.0,
+      "seed": 7183,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4174,
+        "output_tokens": 204
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P002380",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "Pascal",
+        "evidence": "Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 2,
+  "selected_score": 76.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

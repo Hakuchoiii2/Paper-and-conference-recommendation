@@ -1,0 +1,110 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P002997\",\n  \"problem\": [\n    {\n      \"concept\": \"Existing dialog datasets lack explicit background knowledge\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"Models treat conversation as a simplistic sequence-to-sequence task\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Human conversation relies on background knowledge, not just previous utterances\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Create a dataset for natural conversation models that mimic human conversing\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Pure generation based models\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Generation based models with background knowledge copying\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Span prediction based models\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Movie chats dataset with background knowledge\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"New dataset containing movie chats with background knowledge\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"Baseline results on the dataset using three different models\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 29.79589093100003,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002997\",\n  \"problem\": [\n    {\n      \"concept\": \"Existing dialog datasets lack explicit background knowledge\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"Models treat conversation as a simplistic sequence-to-sequence task\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Human conversation relies on background knowledge, not just previous utterances\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Create a dataset for natural conversation models that mimic human conversing\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Pure generation based models\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Generation based models with background knowledge copying\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Span prediction based models\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Movie chats dataset with background knowledge\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"New dataset containing movie chats with background knowledge\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"Baseline results on the dataset using three different models\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 28.0,
+      "seed": 9033,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2537,
+        "output_tokens": 333
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"Existing dialog datasets lack explicit background knowledge\"; evidence_id=\"A0\"; evidence=\"Existing dialog datasets contain a sequence of utterances and responses without any explicit background knowledge associated with them.\"",
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"Models treat conversation as a simplistic sequence-to-sequence task\"; evidence_id=\"A1\"; evidence=\"This has resulted in the development of models which treat conversation as a sequence-to-sequence generation task i.e, given a sequence of utterances generate the response sequence).\"",
+        "problem[2]: concept must use source words in their original order; no invented synonyms; concept=\"Human conversation relies on background knowledge, not just previous utterances\"; evidence_id=\"A2\"; evidence=\"This is not only an overly simplistic view of conversation but it is also emphatically different from the way humans converse by heavily relying on their background knowledge about the topic (as opposed to simply relying on the previous sequence of utterances).\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"Create a dataset for natural conversation models that mimic human conversing\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"Generation based models with background knowledge copying\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"Movie chats dataset with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Baseline results on the dataset using three different models\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002997\", \"problem\": [{\"concept\": \"Existing dialog datasets contain a sequence of utterances and responses without any explicit background knowledge associated with them\", \"evidence_id\": \"A0\"}, {\"concept\": \"This has resulted in the development of models which treat conversation as a sequence-to-sequence generation task\", \"evidence_id\": \"A1\"}, {\"concept\": \"This is not only an overly simplistic view of conversation but it is also emphatically different from the way humans converse by heavily relying on their background knowledge about the topic\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Create a dataset for natural conversation models that mimic human conversing\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Pure generation based models\", \"evidence_id\": \"A5\"}, {\"concept\": \"Generation based models which learn to copy information from the background knowledge when required\", \"evidence_id\": \"A5\"}, {\"concept\": \"Span prediction based models which predict the appropriate response span in the background knowledge\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Movie chats dataset with background knowledge\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"New dataset containing movie chats with background knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"Baseline results on the dataset using three different models\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 2,
+      "generation_seconds": 41.934462811997946,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002997\",\n  \"problem\": [\n    {\n      \"concept\": \"Existing dialog datasets contain a sequence of utterances and responses without any explicit background knowledge associated with them\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"This has resulted in the development of models which treat conversation as a sequence-to-sequence generation task\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"This is not only an overly simplistic view of conversation but it is also emphatically different from the way humans converse by heavily relying on their background knowledge about the topic\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Create a dataset for natural conversation models that mimic human conversing\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Pure generation based models\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Generation based models which learn to copy information from the background knowledge when required\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Span prediction based models which predict the appropriate response span in the background knowledge\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Movie chats dataset with background knowledge\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"New dataset containing movie chats with background knowledge\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"Baseline results on the dataset using three different models\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 52.0,
+      "seed": 9034,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4957,
+        "output_tokens": 390
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"Create a dataset for natural conversation models that mimic human conversing\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"Movie chats dataset with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Baseline results on the dataset using three different models\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002997\", \"problem\": [{\"concept\": \"Existing dialog datasets contain a sequence of utterances and responses without any explicit background knowledge associated with them\", \"evidence_id\": \"A0\"}, {\"concept\": \"This is not only an overly simplistic view of conversation but it is also emphatically different from the way humans converse by heavily relying on their background knowledge about the topic\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Pure generation based models which ignore the background knowledge\", \"evidence_id\": \"A5\"}, {\"concept\": \"Generation based models which learn to copy information from the background knowledge when required\", \"evidence_id\": \"A5\"}, {\"concept\": \"Span prediction based models which predict the appropriate response span in the background knowledge\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"New dataset containing movie chats with background knowledge\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"New dataset containing movie chats with background knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"Baseline results on the dataset using three different models\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 3,
+      "generation_seconds": 38.57205635599894,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002997\",\n  \"problem\": [\n    {\n      \"concept\": \"Existing dialog datasets contain a sequence of utterances and responses without any explicit background knowledge associated with them\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"This is not only an overly simplistic view of conversation but it is also emphatically different from the way humans converse by heavily relying on their background knowledge about the topic\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Pure generation based models which ignore the background knowledge\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Generation based models which learn to copy information from the background knowledge when required\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"Span prediction based models which predict the appropriate response span in the background knowledge\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"New dataset containing movie chats with background knowledge\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"New dataset containing movie chats with background knowledge\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"Baseline results on the dataset using three different models\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 66.0,
+      "seed": 9035,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4610,
+        "output_tokens": 370
+      },
+      "validation_errors": [
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Baseline results on the dataset using three different models\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P002997",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 3,
+  "selected_score": 66.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+    "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Baseline results on the dataset using three different models\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

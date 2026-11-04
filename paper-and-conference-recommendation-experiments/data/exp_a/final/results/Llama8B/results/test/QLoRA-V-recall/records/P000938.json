@@ -1,0 +1,608 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.19691443800002,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1621,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.78789741500077,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3390,
+            "output_tokens": 220
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.155212468000173,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"task\": [{\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2858,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 1104,
+            "output_tokens": 126
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "crowdsourcing",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "sampling from the n-best list",
+            "evidence_id": "A10"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "large creative effort",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 67.14002432100096,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000938",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6115,
+        "output_tokens": 546
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+          "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.19691443800002,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1621,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.78789741500077,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3390,
+            "output_tokens": 220
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "crowdsourcing",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "sampling from the n-best list",
+            "evidence_id": "A10"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "large creative effort",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 51.98481185300079,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2857,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5011,
+        "output_tokens": 420
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.19691443800002,
+        "inherited": false,
+        "messages_sha256": "84360ea90d9f3b11cc8758f1b53eb9b625ba264674f7e63cd9f3fff1ec27b8da",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2856,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1621,
+          "output_tokens": 200
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.78789741500077,
+        "inherited": false,
+        "messages_sha256": "9df2fc14107815d1ce94a7f3147e3f014514de7fb16c25905718cd443d30f62f",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000938",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12"
+          ]
+        },
+        "seed": 2857,
+        "usage": {
+          "input_tokens": 3390,
+          "output_tokens": 220
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.155212468000173,
+        "inherited": false,
+        "messages_sha256": "83823943b4466eac3de101b1b8070043152febfbda2045ea77190bff4c80f863",
+        "reached_token_limit": false,
+        "seed": 2858,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 1104,
+          "output_tokens": 126
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "crowdsourcing",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "sampling from the n-best list",
+            "evidence_id": "A10"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "large creative effort",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "crowdsourcing",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 3,
+          "item": {
+            "concept": "sampling from the n-best list",
+            "evidence_id": "A10"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.155212468000173,
+      "messages_sha256": "83823943b4466eac3de101b1b8070043152febfbda2045ea77190bff4c80f863",
+      "raw_output": "{\"paper_id\": \"P000938\", \"task\": [{\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 1104,
+        "output_tokens": 126
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "33d4b61e5c0efaa5e5860846f41ebc8224bb4442b5735e5dae5b8ab381122f14",
+    "facets": {
+      "contribution": [
+        "Bagel",
+        "system sampling from the n-best list is more natural than always returning the first-best utterance"
+      ],
+      "dataset": [],
+      "method": [
+        "Factored Language Models",
+        "structured perceptron",
+        "crowdsourcing",
+        "sampling from the n-best list"
+      ],
+      "paper_id": "P000938",
+      "problem": [
+        "handcrafted generation component",
+        "large creative effort"
+      ],
+      "task": [
+        "language generation",
+        "generating paraphrases",
+        "dialogue naturalness"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 67.14002432100096,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 67.14002432100096,
+      "input_tokens": 6115,
+      "output_tokens": 546
+    },
+    "paper_id": "P000938",
+    "source_sha256": "2b6a3d86e7fd084ccc1e2677a61177f86b2f2e1b1693a7bd8c867f30cbbce1cb",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 6115,
+      "output_tokens": 546
+    }
+  },
+  "record_sha256": "0aa8382e81705abe31106b0356e2b69986014a10d6d9e32d199e29d7e563d8bb",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

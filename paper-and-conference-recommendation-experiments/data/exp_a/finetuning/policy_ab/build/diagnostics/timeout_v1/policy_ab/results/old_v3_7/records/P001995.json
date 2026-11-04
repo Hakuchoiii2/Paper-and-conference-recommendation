@@ -1,0 +1,233 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001995\", \"problem\": [{\"concept\": \"not both\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"semantic composition of adjective-noun phrases\", \"evidence_id\": \"A1\"}, {\"concept\": \"predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"type-based VSM\", \"evidence_id\": \"A2\"}, {\"concept\": \"topic-and type-based statistics\", \"evidence_id\": \"A2\"}, {\"concept\": \"syntactically parsed corpus\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new evaluation task\", \"evidence_id\": \"A3\"}, {\"concept\": \"VSMs, with vectors for both phrases and words\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.123393439999973,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001995\", \"problem\": [{\"concept\": \"not both\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"semantic composition of adjective-noun phrases\", \"evidence_id\": \"A1\"}, {\"concept\": \"predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"type-based VSM\", \"evidence_id\": \"A2\"}, {\"concept\": \"topic-and type-based statistics\", \"evidence_id\": \"A2\"}, {\"concept\": \"syntactically parsed corpus\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new evaluation task\", \"evidence_id\": \"A3\"}, {\"concept\": \"VSMs, with vectors for both phrases and words\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6027,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2475,
+            "output_tokens": 204
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001995\", \"problem\": [{\"concept\": \"not both\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"semantic composition of adjective-noun phrases\", \"evidence_id\": \"A1\"}, {\"concept\": \"predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"type-based VSM\", \"evidence_id\": \"A2\"}, {\"concept\": \"topic-and type-based statistics\", \"evidence_id\": \"A2\"}, {\"concept\": \"syntactically parsed corpus\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new evaluation task\", \"evidence_id\": \"A3\"}, {\"concept\": \"VSMs, with vectors for both phrases and words\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.293163433000018,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001995\", \"problem\": [{\"concept\": \"not both\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"semantic composition of adjective-noun phrases\", \"evidence_id\": \"A1\"}, {\"concept\": \"predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"type-based VSM\", \"evidence_id\": \"A2\"}, {\"concept\": \"topic-and type-based statistics\", \"evidence_id\": \"A2\"}, {\"concept\": \"syntactically parsed corpus\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new evaluation task\", \"evidence_id\": \"A3\"}, {\"concept\": \"VSMs, with vectors for both phrases and words\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6028,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4050,
+            "output_tokens": 204
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new evaluation task",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "VSMs, with vectors for both phrases and words",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "type-based VSM",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "topic-and type-based statistics",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "syntactically parsed corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001995",
+        "problem": [
+          {
+            "concept": "not both",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "semantic composition of adjective-noun phrases",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 59.41655687299999,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6028,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6525,
+        "output_tokens": 408
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "new evaluation task",
+          "evidence": "We also introduce a new evaluation task wherein we predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase.",
+          "source": "abstract"
+        },
+        {
+          "concept": "VSMs, with vectors for both phrases and words",
+          "evidence": "We exploit a large syntactically parsed corpus of 16 billion tokens to build our VSMs, with vectors for both phrases and words, and make them publicly available.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "type-based VSM",
+          "evidence": "Through extensive experiments on benchmark datasets, we find that even though a type-based VSM is effective for semantic composition, it is often outperformed by a VSM built using a combination of topic-and type-based statistics.",
+          "source": "abstract"
+        },
+        {
+          "concept": "topic-and type-based statistics",
+          "evidence": "Through extensive experiments on benchmark datasets, we find that even though a type-based VSM is effective for semantic composition, it is often outperformed by a VSM built using a combination of topic-and type-based statistics.",
+          "source": "abstract"
+        },
+        {
+          "concept": "syntactically parsed corpus",
+          "evidence": "We exploit a large syntactically parsed corpus of 16 billion tokens to build our VSMs, with vectors for both phrases and words, and make them publicly available.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001995",
+      "problem": [
+        {
+          "concept": "not both",
+          "evidence": "AbstractIn most previous research on distributional semantics, Vector Space Models (VSMs) of words are built either from topical information (e.g., documents in which a word is present), or from syntactic/semantic types of words (e.g., dependency parse links of a word in sentences), but not both.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "semantic composition of adjective-noun phrases",
+          "evidence": "In this paper, we explore the utility of combining these two representations to build VSM for the task of semantic composition of adjective-noun phrases.",
+          "source": "abstract"
+        },
+        {
+          "concept": "predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase",
+          "evidence": "We also introduce a new evaluation task wherein we predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "new evaluation task",
+        "VSMs, with vectors for both phrases and words"
+      ],
+      "dataset": [],
+      "method": [
+        "type-based VSM",
+        "topic-and type-based statistics",
+        "syntactically parsed corpus"
+      ],
+      "paper_id": "P001995",
+      "problem": [
+        "not both"
+      ],
+      "task": [
+        "semantic composition of adjective-noun phrases",
+        "predict the composed vector representation of a phrase from the brain activity of a human subject reading that phrase"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.41655687299999,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001995",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6525,
+      "output_tokens": 408
+    }
+  },
+  "record_sha256": "359d777264098fa441b51e6dfaa322aa0b0dfe0cec3a6e94634b4d89ce8f1bf4",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

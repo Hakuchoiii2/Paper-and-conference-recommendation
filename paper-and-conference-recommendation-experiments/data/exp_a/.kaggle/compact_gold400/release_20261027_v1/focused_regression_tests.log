@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "papers": 400,
+  "gold_concepts": 3346,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "source_sha256": "af384643815882f3cb0903009f38928c04e61550601fcbc61cd00c78927d6ce0",
+  "signature": "4eea333ee6bb7e355142a13c1e8276f120977e914ad918cb8e7321c548752483",
+  "bundle_sha256": "709fef289cde23b54180604b305985dfaf53c95754b047abcb642ca97cd29b46",
+  "bundle_bytes": 4275471,
+  "kernel_sha256": "449cc4848f71b453b7eaaf229828df10b41060e741a265919c5f2cac0b951921",
+  "private": true,
+  "workers": 2,
+  "shard_sizes": [
+    200,
+    200
+  ],
+  "scorer_unchanged": true,
+  "helpers_unchanged": true,
+  "max_logical_calls": 3,
+  "max_output_tokens_per_call": 2048,
+  "reference_to_generator": false,
+  "training_performed": false,
+  "reused_private_dataset": "htnkhi/exp-a-v-recall-human-gold400-inputs",
+  "cloud_input_bundle_sha256": "8de9224a016f4c5f52e631cef1eb949ef062964e73f675074da20a6f10c7e5c3",
+  "cloud_overlay_files": [
+    "baseline/experiment_summary.json",
+    "data/exp_a/prompts/extraction_compact_v1.md",
+    "runner.py"
+  ],
+  "source_or_gold_uploaded": false
+}
+{
+  "status": "passed",
+  "papers": 400,
+  "gold_concepts": 3346,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "source_sha256": "af384643815882f3cb0903009f38928c04e61550601fcbc61cd00c78927d6ce0",
+  "signature": "4eea333ee6bb7e355142a13c1e8276f120977e914ad918cb8e7321c548752483",
+  "bundle_sha256": "709fef289cde23b54180604b305985dfaf53c95754b047abcb642ca97cd29b46",
+  "bundle_bytes": 4275471,
+  "kernel_sha256": "449cc4848f71b453b7eaaf229828df10b41060e741a265919c5f2cac0b951921",
+  "private": true,
+  "workers": 2,
+  "shard_sizes": [
+    200,
+    200
+  ],
+  "scorer_unchanged": true,
+  "helpers_unchanged": true,
+  "max_logical_calls": 3,
+  "max_output_tokens_per_call": 2048,
+  "reference_to_generator": false,
+  "training_performed": false,
+  "reused_private_dataset": "htnkhi/exp-a-v-recall-human-gold400-inputs",
+  "cloud_input_bundle_sha256": "8de9224a016f4c5f52e631cef1eb949ef062964e73f675074da20a6f10c7e5c3",
+  "cloud_overlay_files": [
+    "baseline/experiment_summary.json",
+    "data/exp_a/prompts/extraction_compact_v1.md",
+    "runner.py"
+  ],
+  "source_or_gold_uploaded": false
+}
+{
+  "status": "passed",
+  "papers": 400,
+  "gold_concepts": 3346,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "source_sha256": "af384643815882f3cb0903009f38928c04e61550601fcbc61cd00c78927d6ce0",
+  "signature": "4eea333ee6bb7e355142a13c1e8276f120977e914ad918cb8e7321c548752483",
+  "bundle_sha256": "709fef289cde23b54180604b305985dfaf53c95754b047abcb642ca97cd29b46",
+  "bundle_bytes": 4275471,
+  "kernel_sha256": "449cc4848f71b453b7eaaf229828df10b41060e741a265919c5f2cac0b951921",
+  "private": true,
+  "workers": 2,
+  "shard_sizes": [
+    200,
+    200
+  ],
+  "scorer_unchanged": true,
+  "helpers_unchanged": true,
+  "max_logical_calls": 3,
+  "max_output_tokens_per_call": 2048,
+  "reference_to_generator": false,
+  "training_performed": false,
+  "reused_private_dataset": "htnkhi/exp-a-v-recall-human-gold400-inputs",
+  "cloud_input_bundle_sha256": "8de9224a016f4c5f52e631cef1eb949ef062964e73f675074da20a6f10c7e5c3",
+  "cloud_overlay_files": [
+    "baseline/experiment_summary.json",
+    "data/exp_a/prompts/extraction_compact_v1.md",
+    "runner.py"
+  ],
+  "source_or_gold_uploaded": false
+}
+# Compact extraction and targeted repair on human gold400
+
+Exploratory development on previously inspected accepted AI-assisted human gold400; not an independent holdout. Approximate embedding matching. Compact draft + up to2 indexed repairs; no coverage expansion. Prior rows are frozen observed baselines; actual model call costs differ.
+
+| Stage | Precision | Recall | F1 | F2 | Macro F1 | Fallback |
+|---|---:|---:|---:|---:|---:|---:|
+| Prior-Draft | 43.1433 | 45.6964 | 44.3832 | 45.1619 | 46.4791 | 281 |
+| Prior-V-review1 | 43.1973 | 45.5469 | 44.3410 | 45.0568 | 46.3700 | 195 |
+| Prior-V-recall | 41.0297 | 46.2044 | 43.4636 | 45.0676 | 45.4870 | 255 |
+| Compact-draft | n/a | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 400 |
+| Compact-patch | n/a | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 400 |
+{
+  "status": "passed",
+  "papers": 400,
+  "gold_concepts": 3346,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "source_sha256": "af384643815882f3cb0903009f38928c04e61550601fcbc61cd00c78927d6ce0",
+  "signature": "4eea333ee6bb7e355142a13c1e8276f120977e914ad918cb8e7321c548752483",
+  "bundle_sha256": "709fef289cde23b54180604b305985dfaf53c95754b047abcb642ca97cd29b46",
+  "bundle_bytes": 4275471,
+  "kernel_sha256": "449cc4848f71b453b7eaaf229828df10b41060e741a265919c5f2cac0b951921",
+  "private": true,
+  "workers": 2,
+  "shard_sizes": [
+    200,
+    200
+  ],
+  "scorer_unchanged": true,
+  "helpers_unchanged": true,
+  "max_logical_calls": 3,
+  "max_output_tokens_per_call": 2048,
+  "reference_to_generator": false,
+  "training_performed": false,
+  "reused_private_dataset": "htnkhi/exp-a-v-recall-human-gold400-inputs",
+  "cloud_input_bundle_sha256": "8de9224a016f4c5f52e631cef1eb949ef062964e73f675074da20a6f10c7e5c3",
+  "cloud_overlay_files": [
+    "baseline/experiment_summary.json",
+    "data/exp_a/prompts/extraction_compact_v1.md",
+    "runner.py"
+  ],
+  "source_or_gold_uploaded": false
+}
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/3; score=52.00/100; validation_errors=0
+P000001: review 2/3; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000001: extract 1/2; score=52.00/100; validation_errors=0
+P000001: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=52.00/100; validation_errors=0
+P000019: review 2/2; score=52.00/100; validation_errors=0
+P000019: extract 1/2; score=0.00/100; validation_errors=1
+  Qwen output must contain one readable UTF-8 JSON object only
+P000019: review 2/2; score=52.00/100; validation_errors=0
+# V-recall on accepted human gold400
+
+Accepted AI-assisted human gold; purposively selected cohort and prior development history. Unchanged embedding scorer is approximate matching. All400 retained including audit-noted sources. No fine-tuning. Draft/first-review are diagnostics from the same3 calls, not extra arms.
+
+Gold SHA256: 3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c
+
+| Stage | Precision | Recall | F1 | F2 | Macro F1 | Fallback |
+|---|---:|---:|---:|---:|---:|---:|
+| Draft | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+| V-review1 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+| V-recall | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0 |
+----------------------------------------------------------------------
+Ran 32 tests in 15.980s
+
+OK

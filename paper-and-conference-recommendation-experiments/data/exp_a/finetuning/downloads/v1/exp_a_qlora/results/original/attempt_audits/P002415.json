@@ -1,0 +1,106 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P002415\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"Native Language Identification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"recurring word-based ngrams\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphological properties\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"realizations of particular lemmas\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"measures of complexity (for proficiency and readability classification)\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"ensemble classifier\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"TOEFL11 test set\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\", \"evidence_id\": \"A5\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 33.061150674999226,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002415\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"Native Language Identification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"recurring word-based ngrams\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphological properties\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"realizations of particular lemmas\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"measures of complexity (for proficiency and readability classification)\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"ensemble classifier\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"TOEFL11 test set\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\", \"evidence_id\": \"A5\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 77.8704,
+      "seed": 7287,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2513,
+        "output_tokens": 366
+      },
+      "validation_errors": [
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\"; evidence_id=\"A1\"; evidence=\"Starting with recurring word-based ngrams (Bykh and Meurers, 2012), we tested different linguistic abstractions such as partof-speech, dependencies, and syntactic trees as features for NLI.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\"; evidence_id=\"A4\"; evidence=\"In the open-1 task, the word-based recurring ngrams outperformed the ensemble, yielding 38.5% (rank 2).\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002415\", \"problem\": [], \"task\": [{\"concept\": \"Native Language Identification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"recurring word-based ngrams\", \"evidence_id\": \"A1\"}, {\"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphological properties\", \"evidence_id\": \"A2\"}, {\"concept\": \"realizations of particular lemmas\", \"evidence_id\": \"A2\"}, {\"concept\": \"measures of complexity (for proficiency and readability classification)\", \"evidence_id\": \"A2\"}, {\"concept\": \"ensemble classifier\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"TOEFL11 test set\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\", \"evidence_id\": \"A3\"}, {\"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\", \"evidence_id\": \"A3\"}, {\"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\", \"evidence_id\": \"A4\"}, {\"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 2,
+      "generation_seconds": 38.24925365500167,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002415\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"Native Language Identification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"recurring word-based ngrams\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"morphological properties\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"realizations of particular lemmas\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"measures of complexity (for proficiency and readability classification)\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"ensemble classifier\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"TOEFL11 test set\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\", \"evidence_id\": \"A5\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 77.8704,
+      "seed": 7288,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4622,
+        "output_tokens": 366
+      },
+      "validation_errors": [
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\"; evidence_id=\"A1\"; evidence=\"Starting with recurring word-based ngrams (Bykh and Meurers, 2012), we tested different linguistic abstractions such as partof-speech, dependencies, and syntactic trees as features for NLI.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\"; evidence_id=\"A4\"; evidence=\"In the open-1 task, the word-based recurring ngrams outperformed the ensemble, yielding 38.5% (rank 2).\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002415\", \"problem\": [], \"task\": [{\"concept\": \"Native Language Identification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"recurring word-based ngrams\", \"evidence_id\": \"A1\"}, {\"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphological properties\", \"evidence_id\": \"A2\"}, {\"concept\": \"realizations of particular lemmas\", \"evidence_id\": \"A2\"}, {\"concept\": \"measures of complexity (for proficiency and readability classification)\", \"evidence_id\": \"A2\"}, {\"concept\": \"ensemble classifier\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"TOEFL11 test set\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\", \"evidence_id\": \"A3\"}, {\"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\", \"evidence_id\": \"A3\"}, {\"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\", \"evidence_id\": \"A4\"}, {\"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 3,
+      "generation_seconds": 44.09910138699706,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002415\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"Native Language Identification\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"recurring word-based ngrams\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"morphological properties\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"realizations of particular lemmas\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"measures of complexity (for proficiency and readability classification)\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"ensemble classifier\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"TOEFL11 test set\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"best accuracy of 83.5% for standard TOEFL11 test set (second place)\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 77.8704,
+      "seed": 7289,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4683,
+        "output_tokens": 426
+      },
+      "validation_errors": [
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\"; evidence_id=\"A1\"; evidence=\"Starting with recurring word-based ngrams (Bykh and Meurers, 2012), we tested different linguistic abstractions such as partof-speech, dependencies, and syntactic trees as features for NLI.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\"; evidence_id=\"A4\"; evidence=\"In the open-1 task, the word-based recurring ngrams outperformed the ensemble, yielding 38.5% (rank 2).\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P002415",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 3,
+  "selected_score": 77.8704,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\"; evidence_id=\"A1\"; evidence=\"Starting with recurring word-based ngrams (Bykh and Meurers, 2012), we tested different linguistic abstractions such as partof-speech, dependencies, and syntactic trees as features for NLI.\"",
+    "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+    "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\"; evidence_id=\"A4\"; evidence=\"In the open-1 task, the word-based recurring ngrams outperformed the ensemble, yielding 38.5% (rank 2).\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

@@ -1,0 +1,213 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 20.44511737599987,
+          "messages_sha256": "569b62ef7625a6f61f06ca86c409de29704f189a2915221a32b4fd9bb5138f3c",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002273\", \"problem\": [{\"concept\": \"loss of phoneme contrasts over the course of language change\", \"evidence_id\": \"A1\"}], \"task\": [], \"method\": [{\"concept\": \"examination of lexical properties influencing uncertainty between word pairs in usage\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"the lemma rather than surface-form count of minimal pairs is more predictive of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than those with divergent syntactic categories\", \"evidence_id\": \"A5\"}, {\"concept\": \"the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than those with more divergent frequencies\", \"evidence_id\": \"A5\"}, {\"concept\": \"properties of individual utterances influence long-term language change\", \"evidence_id\": \"A6\"}, {\"concept\": \"phonetic cues are modulated in response to lexical uncertainty within utterances\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 43.289,
+          "seed": 6863,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2421,
+            "output_tokens": 245
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"loss of phoneme contrasts over the course of language change\"; evidence_id=\"A1\"; evidence=\"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"examination of lexical properties influencing uncertainty between word pairs in usage\"; evidence_id=\"A4\"; evidence=\"Here, we examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "the lemma rather than surface-form count of minimal pairs is more predictive of merger",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than those with divergent syntactic categories",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than those with more divergent frequencies",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "properties of individual utterances influence long-term language change",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "phonetic cues are modulated in response to lexical uncertainty within utterances",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "examination of lexical properties influencing uncertainty between word pairs in usage",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002273",
+        "problem": [
+          {
+            "concept": "loss of phoneme contrasts over the course of language change",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 101.70741997999971,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002273",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 43.289,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3890,
+        "output_tokens": 1317
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"loss of phoneme contrasts over the course of language change\"; evidence_id=\"A1\"; evidence=\"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"examination of lexical properties influencing uncertainty between word pairs in usage\"; evidence_id=\"A4\"; evidence=\"Here, we examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.29931898699988,
+        "messages_sha256": "27feb12e92e7f3e6501b6b287096b9e39f8e783248abc4a3440be08ceafc87a6",
+        "raw_output": "{\n  \"paper_id\": \"P002273\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"All languages use individually meaningless, contrastive categories in combination to create distinct words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"The century-old functional load hypothesis proposes that loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In a previous work we showed for the first time that a simple measure of functional load does significantly predict patterns of contrast loss within a diverse set of languages: the more minimal word pairs that a phoneme contrast distinguishes, the less likely those phonemes are to have merged over the course of language change.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\",\n      \"roles\": [\"method\", \"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"These findings support the broad hypothesis that properties of individual utterances influence long-term language change, and are consistent with findings suggesting that phonetic cues are modulated in response to lexical uncertainty within utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6861,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 724,
+          "output_tokens": 536
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 40.96298361699996,
+        "messages_sha256": "d1cad0e2113d1d4462ee0e31347c1b90e4f5df9abc6f439e2fec14bb34e42911",
+        "raw_output": "{\n  \"paper_id\": \"P002273\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"All languages use individually meaningless, contrastive categories in combination to create distinct words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"The century-old functional load hypothesis proposes that loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In a previous work we showed for the first time that a simple measure of functional load does significantly predict patterns of contrast loss within a diverse set of languages: the more minimal word pairs that a phoneme contrast distinguishes, the less likely those phonemes are to have merged over the course of language change.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\",\n      \"roles\": [\"method\", \"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"These findings support the broad hypothesis that properties of individual utterances influence long-term language change, and are consistent with findings suggesting that phonetic cues are modulated in response to lexical uncertainty within utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6862,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 745,
+          "output_tokens": 536
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 20.44511737599987,
+        "messages_sha256": "569b62ef7625a6f61f06ca86c409de29704f189a2915221a32b4fd9bb5138f3c",
+        "raw_output": "{\"paper_id\": \"P002273\", \"problem\": [{\"concept\": \"loss of phoneme contrasts over the course of language change\", \"evidence_id\": \"A1\"}], \"task\": [], \"method\": [{\"concept\": \"examination of lexical properties influencing uncertainty between word pairs in usage\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"the lemma rather than surface-form count of minimal pairs is more predictive of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than those with divergent syntactic categories\", \"evidence_id\": \"A5\"}, {\"concept\": \"the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than those with more divergent frequencies\", \"evidence_id\": \"A5\"}, {\"concept\": \"properties of individual utterances influence long-term language change\", \"evidence_id\": \"A6\"}, {\"concept\": \"phonetic cues are modulated in response to lexical uncertainty within utterances\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 6863,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2421,
+          "output_tokens": 245
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "the lemma rather than surface-form count of minimal pairs is more predictive of merger",
+        "the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than those with divergent syntactic categories",
+        "the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than those with more divergent frequencies",
+        "properties of individual utterances influence long-term language change",
+        "phonetic cues are modulated in response to lexical uncertainty within utterances"
+      ],
+      "dataset": [],
+      "method": [
+        "examination of lexical properties influencing uncertainty between word pairs in usage"
+      ],
+      "paper_id": "P002273",
+      "problem": [
+        "loss of phoneme contrasts over the course of language change"
+      ],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 101.70741997999971,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 40.29931898699988,
+        "messages_sha256": "27feb12e92e7f3e6501b6b287096b9e39f8e783248abc4a3440be08ceafc87a6",
+        "raw_output": "{\n  \"paper_id\": \"P002273\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"All languages use individually meaningless, contrastive categories in combination to create distinct words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"The century-old functional load hypothesis proposes that loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In a previous work we showed for the first time that a simple measure of functional load does significantly predict patterns of contrast loss within a diverse set of languages: the more minimal word pairs that a phoneme contrast distinguishes, the less likely those phonemes are to have merged over the course of language change.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\",\n      \"roles\": [\"method\", \"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"These findings support the broad hypothesis that properties of individual utterances influence long-term language change, and are consistent with findings suggesting that phonetic cues are modulated in response to lexical uncertainty within utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6861,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 724,
+          "output_tokens": 536
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 40.96298361699996,
+        "messages_sha256": "d1cad0e2113d1d4462ee0e31347c1b90e4f5df9abc6f439e2fec14bb34e42911",
+        "raw_output": "{\n  \"paper_id\": \"P002273\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"All languages use individually meaningless, contrastive categories in combination to create distinct words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"The century-old functional load hypothesis proposes that loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"In a previous work we showed for the first time that a simple measure of functional load does significantly predict patterns of contrast loss within a diverse set of languages: the more minimal word pairs that a phoneme contrast distinguishes, the less likely those phonemes are to have merged over the course of language change.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We examine several lexical properties that are predicted to influence the uncertainty between word pairs in usage.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\",\n      \"roles\": [\"method\", \"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"These findings support the broad hypothesis that properties of individual utterances influence long-term language change, and are consistent with findings suggesting that phonetic cues are modulated in response to lexical uncertainty within utterances.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 6862,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 745,
+          "output_tokens": 536
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 101.70741997999971,
+      "input_tokens": 3890,
+      "output_tokens": 1317
+    },
+    "paper_id": "P002273",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3890,
+      "output_tokens": 1317
+    }
+  },
+  "record_sha256": "4b02d11e746b834f734c1281cb7efae00e68f43059bb97cc1dfcb2ea797687be",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

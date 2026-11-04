@@ -1,0 +1,498 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.132879080999373,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8484,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1401,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.59761958099989,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8485,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3115,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.806317376999687,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8486,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 831,
+            "output_tokens": 91
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "corpus of English-Hindi texts collected from Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "language identification of every word",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "supervised classification",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "language identification of every word",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "very few English-Hindi code-mixed annotated datasets",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 52.53681603899895,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P002814",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5347,
+        "output_tokens": 428
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.132879080999373,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8484,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1401,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.59761958099989,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"very few English-Hindi code-mixed annotated datasets\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"corpus of English-Hindi texts collected from Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8485,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3115,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "corpus of English-Hindi texts collected from Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "language identification of every word",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "supervised classification",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "very few English-Hindi code-mixed annotated datasets",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.73049866199926,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8485,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4516,
+        "output_tokens": 337
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.132879080999373,
+        "inherited": false,
+        "messages_sha256": "f9ef250998a14b150db8266bfc6c11843c614c653c022b0b3abdefd540443088",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 8484,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1401,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.59761958099989,
+        "inherited": false,
+        "messages_sha256": "0cc5dcb96eb6f06a82036f2c0f4fc51b75068872084f048b91f97f74a7cd0cb6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002814",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 8485,
+        "usage": {
+          "input_tokens": 3115,
+          "output_tokens": 167
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.806317376999687,
+        "inherited": false,
+        "messages_sha256": "caff07cfddaf2509f98343796e312cb45c916e3df1dd73acc2c3d46fd58df706",
+        "reached_token_limit": false,
+        "seed": 8486,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 831,
+          "output_tokens": 91
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "language identification of every word",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "corpus of English-Hindi texts collected from Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "language identification of every word",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "supervised classification",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "very few English-Hindi code-mixed annotated datasets",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "supervised classification",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.806317376999687,
+      "messages_sha256": "caff07cfddaf2509f98343796e312cb45c916e3df1dd73acc2c3d46fd58df706",
+      "raw_output": "{\"paper_id\": \"P002814\", \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}, {\"concept\": \"language identification of every word\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 831,
+        "output_tokens": 91
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "c37565683a95057db0d0720b0b4a650906d6bcaf74986cdb9ac4c6b64c2b770d",
+    "facets": {
+      "contribution": [
+        "corpus of English-Hindi texts collected from Twitter",
+        "language identification of every word"
+      ],
+      "dataset": [
+        "Twitter"
+      ],
+      "method": [
+        "supervised classification",
+        "character and word level features",
+        "language identification of every word"
+      ],
+      "paper_id": "P002814",
+      "problem": [
+        "very few English-Hindi code-mixed annotated datasets"
+      ],
+      "task": [
+        "author's gender prediction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 52.53681603899895,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 52.53681603899895,
+      "input_tokens": 5347,
+      "output_tokens": 428
+    },
+    "paper_id": "P002814",
+    "source_sha256": "8b8bb3718951f8ca7b9a2d95dc2b83962abd4a2c201fcf2e55536c8b63865321",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5347,
+      "output_tokens": 428
+    }
+  },
+  "record_sha256": "9e89619118597359951710bb20a7a00a74e9c4a41a1acb55aa0e431c67dd8dd8",
+  "signature": "bd7a6babc43deef10639d4617b3a6627b372431f51b39a7e55d56d4d07a92bf5"
+}

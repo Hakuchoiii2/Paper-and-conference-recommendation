@@ -1,0 +1,89 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+      "attempt": 1,
+      "generation_seconds": 24.19691443800002,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 2856,
+      "semantic_entailment_verified": false,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 1621,
+        "output_tokens": 200
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+          "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+      "attempt": 2,
+      "generation_seconds": 27.78789741500077,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"large creative effort\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A2\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"crowdsourcing\", \"evidence_id\": \"A4\"}, {\"concept\": \"sampling from the n-best list\", \"evidence_id\": \"A10\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"system sampling from the n-best list is more natural than always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 2857,
+      "semantic_entailment_verified": false,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3390,
+        "output_tokens": 220
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "concept": "system sampling from the n-best list is more natural than always returning the first-best utterance",
+          "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P000938",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 2,
+  "selected_score": 100.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

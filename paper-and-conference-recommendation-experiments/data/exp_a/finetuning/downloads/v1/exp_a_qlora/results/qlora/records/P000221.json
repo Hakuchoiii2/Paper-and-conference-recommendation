@@ -1,0 +1,154 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000221\", \"problem\": [], \"task\": [{\"concept\": \"modeling compositional meaning for phrases and sentences\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Vector-based Representations\", \"evidence_id\": \"T0\"}, {\"concept\": \"distributional methods\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection\", \"evidence_id\": \"A3\"}, {\"concept\": \"sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.67294019700057,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000221\", \"problem\": [], \"task\": [{\"concept\": \"modeling compositional meaning for phrases and sentences\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Vector-based Representations\", \"evidence_id\": \"T0\"}, {\"concept\": \"distributional methods\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection\", \"evidence_id\": \"A3\"}, {\"concept\": \"sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 705,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2396,
+            "output_tokens": 178
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000221\", \"problem\": [], \"task\": [{\"concept\": \"modeling compositional meaning for phrases and sentences\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Vector-based Representations\", \"evidence_id\": \"T0\"}, {\"concept\": \"distributional methods\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection\", \"evidence_id\": \"A3\"}, {\"concept\": \"sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.003056665002077,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000221\", \"problem\": [], \"task\": [{\"concept\": \"modeling compositional meaning for phrases and sentences\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Vector-based Representations\", \"evidence_id\": \"T0\"}, {\"concept\": \"distributional methods\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection\", \"evidence_id\": \"A3\"}, {\"concept\": \"sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 706,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3941,
+            "output_tokens": 178
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Vector-based Representations",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "distributional methods",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P000221",
+        "problem": [],
+        "task": [
+          {
+            "concept": "modeling compositional meaning for phrases and sentences",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.67599686200265,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 706,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6337,
+        "output_tokens": 356
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "shallow approaches are as good as more computationally intensive alternatives with regards to two particular tests: (1) phrase similarity and (2) paraphrase detection",
+        "sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method"
+      ],
+      "dataset": [],
+      "method": [
+        "Vector-based Representations",
+        "distributional methods"
+      ],
+      "paper_id": "P000221",
+      "problem": [],
+      "task": [
+        "modeling compositional meaning for phrases and sentences"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.67599686200265,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000221",
+    "usage": {
+      "input_tokens": 6337,
+      "output_tokens": 356
+    }
+  },
+  "record_sha256": "e6c97e27a258e6de1798d40c3708d7b55cc3f9c48eaf795730685d99875fe200",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

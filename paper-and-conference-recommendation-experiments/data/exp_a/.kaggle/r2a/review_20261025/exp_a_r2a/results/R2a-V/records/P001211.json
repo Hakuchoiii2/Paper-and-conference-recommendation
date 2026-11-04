@@ -1,0 +1,372 @@
+{
+  "record": {
+    "arm": "R2a-V",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001211\",\n  \"problem\": [\n    {\"concept\": \"hate speech detection models perform well only when tested on the same type of data they were trained on\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"detection techniques are vulnerable to adversaries who can insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training does not completely mitigate the attacks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evading hate-speech detection\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"evaluating hate speech detection models\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"inserting typos\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"changing word boundaries\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adding innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using character-level features\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using word-level features\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"show that all proposed detection techniques are vulnerable to adversaries\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combination of methods is effective against Google Perspective\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"character-level features make models systematically more attack-resistant\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 32.83040235599992,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001211\",\n  \"problem\": [\n    {\"concept\": \"hate speech detection models perform well only when tested on the same type of data they were trained on\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"detection techniques are vulnerable to adversaries who can insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training does not completely mitigate the attacks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evading hate-speech detection\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"evaluating hate speech detection models\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"inserting typos\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"changing word boundaries\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adding innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using character-level features\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using word-level features\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"show that all proposed detection techniques are vulnerable to adversaries\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combination of methods is effective against Google Perspective\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"character-level features make models systematically more attack-resistant\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 77.7603,
+          "seed": 3675,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2465,
+            "output_tokens": 405
+          },
+          "validation_errors": [
+            "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"detection techniques are vulnerable to adversaries who can insert typos, change word boundaries or add innocuous words\"; evidence_id=\"A3\"; evidence=\"We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech.\"",
+            "problem[2]: concept must use source words in their original order; no invented synonyms; concept=\"adversarial training does not completely mitigate the attacks\"; evidence_id=\"A5\"; evidence=\"Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features.\"",
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluating hate speech detection models\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that all proposed detection techniques are vulnerable to adversaries\"; evidence_id=\"A3\"; evidence=\"We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"character-level features make models systematically more attack-resistant\"; evidence_id=\"A5\"; evidence=\"Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001211\", \"problem\": [{\"concept\": \"all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"adversarial training does not completely mitigate the a acks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"evading hate-speech detection\", \"evidence_id\": \"T0\"}, {\"concept\": \"reproducing and evaluating hate speech detection models\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"inserting typos\", \"evidence_id\": \"A3\"}, {\"concept\": \"changing word boundaries\", \"evidence_id\": \"A3\"}, {\"concept\": \"adding innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"adversarial training\", \"evidence_id\": \"A5\"}, {\"concept\": \"using character-level features\", \"evidence_id\": \"A5\"}, {\"concept\": \"using word-level features\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\", \"evidence_id\": \"A2\"}, {\"concept\": \"show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"combination of methods is effective against Google Perspective\", \"evidence_id\": \"A4\"}, {\"concept\": \"using character-level features makes the models systematically more a ack-resistant than using word-level features\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 46.59332628900006,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001211\",\n  \"problem\": [\n    {\"concept\": \"all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training does not completely mitigate the a acks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"evading hate-speech detection\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"reproducing and evaluating hate speech detection models\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"inserting typos\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"changing word boundaries\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adding innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"adversarial training\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using character-level features\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"using word-level features\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"combination of methods is effective against Google Perspective\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"using character-level features makes the models systematically more a ack-resistant than using word-level features\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 85.6964,
+          "seed": 3676,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 5620,
+            "output_tokens": 408
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing and evaluating hate speech detection models\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001211\", \"problem\": [{\"concept\": \"all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"adversarial training does not completely mitigate the a acks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"evading hate-speech detection\", \"evidence_id\": \"T0\"}, {\"concept\": \"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"inserting typos\", \"evidence_id\": \"A3\"}, {\"concept\": \"changing word boundaries\", \"evidence_id\": \"A3\"}, {\"concept\": \"adding innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"adversarial training\", \"evidence_id\": \"A5\"}, {\"concept\": \"using character-level features\", \"evidence_id\": \"A5\"}, {\"concept\": \"using word-level features\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\", \"evidence_id\": \"A2\"}, {\"concept\": \"show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\", \"evidence_id\": \"A3\"}, {\"concept\": \"combination of methods is effective against Google Perspective\", \"evidence_id\": \"A4\"}, {\"concept\": \"using character-level features makes the models systematically more a ack-resistant than using word-level features\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 49.71572775099992,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001211\",\n  \"problem\": [\n    {\n      \"concept\": \"all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"adversarial training does not completely mitigate the a acks\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"evading hate-speech detection\",\n      \"evidence_id\": \"T0\"\n    },\n    {\n      \"concept\": \"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"inserting typos\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"changing word boundaries\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"adding innocuous words\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"adversarial training\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using character-level features\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"using word-level features\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"argue that model architecture is less important than the type of data and labeling criteria\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"combination of methods is effective against Google Perspective\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"using character-level features makes the models systematically more a ack-resistant than using word-level features\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 85.6964,
+          "seed": 3677,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4630,
+            "output_tokens": 491
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "argue that model architecture is less important than the type of data and labeling criteria",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "combination of methods is effective against Google Perspective",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "using character-level features makes the models systematically more a ack-resistant than using word-level features",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "inserting typos",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "changing word boundaries",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "adding innocuous words",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "adversarial training",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "using character-level features",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "using word-level features",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001211",
+        "problem": [
+          {
+            "concept": "all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "adversarial training does not completely mitigate the a acks",
+            "evidence_id": "A5"
+          }
+        ],
+        "task": [
+          {
+            "concept": "evading hate-speech detection",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 129.1394563959999,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3677,
+      "selected_score": 85.6964,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 12715,
+        "output_tokens": 1304
+      },
+      "validation_errors": [
+        "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "d04ba0ef0dd606593e36c4acde8d10e0ee6bd51a171fb0f82f038fba0ba3c03d",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "cfdb9097daf0651bd0c010cbc6449e9fa022ff3b38012accf5917978963e22e6",
+        "repair_packet": null,
+        "seed": 3675
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "ec3bf2dfa7bc2d827565d5a111eda80df6a0164dff4c61f8fdaa2fe0ef3d873e",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "detection techniques are vulnerable to adversaries who can insert typos, change word boundaries or add innocuous words",
+              "error": "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"detection techniques are vulnerable to adversaries who can insert typos, change word boundaries or add innocuous words\"; evidence_id=\"A3\"; evidence=\"We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech.\"",
+              "evidence_id": "A3",
+              "facet": "problem",
+              "index": 1,
+              "source_sentence": "We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech."
+            },
+            {
+              "concept": "adversarial training does not completely mitigate the attacks",
+              "error": "problem[2]: concept must use source words in their original order; no invented synonyms; concept=\"adversarial training does not completely mitigate the attacks\"; evidence_id=\"A5\"; evidence=\"Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features.\"",
+              "evidence_id": "A5",
+              "facet": "problem",
+              "index": 2,
+              "source_sentence": "Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features."
+            },
+            {
+              "concept": "evaluating hate speech detection models",
+              "error": "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluating hate speech detection models\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\"",
+              "evidence_id": "A1",
+              "facet": "task",
+              "index": 1,
+              "source_sentence": "In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on."
+            },
+            {
+              "concept": "show that all proposed detection techniques are vulnerable to adversaries",
+              "error": "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that all proposed detection techniques are vulnerable to adversaries\"; evidence_id=\"A3\"; evidence=\"We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech.\"",
+              "evidence_id": "A3",
+              "facet": "contribution",
+              "index": 1,
+              "source_sentence": "We further show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech."
+            },
+            {
+              "concept": "character-level features make models systematically more attack-resistant",
+              "error": "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"character-level features make models systematically more attack-resistant\"; evidence_id=\"A5\"; evidence=\"Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features.\"",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 3,
+              "source_sentence": "Our experiments demonstrate that adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features."
+            }
+          ],
+          "paper_id": "P001211",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 3676
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "f0c02a66384fa086fd1557332418580cf5c59d45f85146b2fa7c334af6b5fdcc",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "reproducing and evaluating hate speech detection models",
+              "error": "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing and evaluating hate speech detection models\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\"",
+              "evidence_id": "A1",
+              "facet": "task",
+              "index": 1,
+              "source_sentence": "In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on."
+            }
+          ],
+          "paper_id": "P001211",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 3677
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on\"; evidence_id=\"A1\"; evidence=\"In this paper, we reproduce seven state-of-the-art hate speech detection models from prior work, and show that they perform well only when tested on the same type of data they were trained on.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 6,
+    "facets": {
+      "contribution": [
+        "argue that model architecture is less important than the type of data and labeling criteria",
+        "show that all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words",
+        "combination of methods is effective against Google Perspective",
+        "using character-level features makes the models systematically more a ack-resistant than using word-level features"
+      ],
+      "dataset": [],
+      "method": [
+        "inserting typos",
+        "changing word boundaries",
+        "adding innocuous words",
+        "adversarial training",
+        "using character-level features",
+        "using word-level features"
+      ],
+      "paper_id": "P001211",
+      "problem": [
+        "all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words",
+        "adversarial training does not completely mitigate the a acks"
+      ],
+      "task": [
+        "evading hate-speech detection",
+        "reproducing seven state-of-the-art hate speech detection models and showing their performance on data they were trained on"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 129.1394563959999,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": false,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 96.30905403999998,
+      "input_tokens": 10250,
+      "output_tokens": 899
+    },
+    "paper_id": "P001211",
+    "protected_items_changed": 1,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 12715,
+      "output_tokens": 1304
+    }
+  },
+  "record_sha256": "8fa0ab11b643d107d5743224934f1714f4dfae1fa716a98f6715af210e2148a3",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

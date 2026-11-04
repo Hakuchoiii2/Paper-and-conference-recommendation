@@ -1,0 +1,465 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.3251575029999,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3849,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1254,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.56475143500029,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3850,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2922,
+            "output_tokens": 122
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.577128384999924,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3851,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 655,
+            "output_tokens": 70
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "manual annotation",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "Audio information retrieval is a difficult problem",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 41.46703732300011,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001269",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4831,
+        "output_tokens": 330
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "27e928fd62b893235f9652a28ec413c773ef7f9b1ca7c3a76a9ef6a649f75152",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.3251575029999,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}, {\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3849,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1254,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.56475143500029,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"Audio information retrieval is a difficult problem\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}, {\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3850,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2922,
+            "output_tokens": 122
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "manual annotation",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "Audio information retrieval is a difficult problem",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 32.88990893800019,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3850,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4176,
+        "output_tokens": 260
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.3251575029999,
+        "inherited": false,
+        "messages_sha256": "af5ea87a97b3e2debb26f3adfea462aab275deb39c96d52518b5b531c1784bf4",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 3849,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1254,
+          "output_tokens": 138
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.56475143500029,
+        "inherited": false,
+        "messages_sha256": "d052ea6f5b7fbdecf450efb606d02adeb105bca3441ce7faafde9339e8adb462",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001269",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 3850,
+        "usage": {
+          "input_tokens": 2922,
+          "output_tokens": 122
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.577128384999924,
+        "inherited": false,
+        "messages_sha256": "5ce0a68534353e0f457eb421232e2aecd89ecfa374a56f48be63447677455cb4",
+        "reached_token_limit": false,
+        "seed": 3851,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 655,
+          "output_tokens": 70
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "manual annotation",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "Audio information retrieval is a difficult problem",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "manual annotation",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.577128384999924,
+      "messages_sha256": "5ce0a68534353e0f457eb421232e2aecd89ecfa374a56f48be63447677455cb4",
+      "raw_output": "{\"paper_id\": \"P001269\", \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"manual annotation\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 655,
+        "output_tokens": 70
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "acb49fcd41249e20711a374604938b45931c1199ca2c194947681de35fdfadf9",
+    "facets": {
+      "contribution": [
+        "42 distinct labels",
+        "noisemes"
+      ],
+      "dataset": [],
+      "method": [
+        "recognition system",
+        "manual annotation"
+      ],
+      "paper_id": "P001269",
+      "problem": [
+        "Audio information retrieval is a difficult problem"
+      ],
+      "task": [
+        "manual annotation of noise segments"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 41.46703732300011,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 41.46703732300011,
+      "input_tokens": 4831,
+      "output_tokens": 330
+    },
+    "paper_id": "P001269",
+    "source_sha256": "165f32b6826a562eecd728a0825ba73156a2cd57a9cb1a3f8d902fb39c1f2c2f",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4831,
+      "output_tokens": 330
+    }
+  },
+  "record_sha256": "121453c6ad265fe18bf67f1b1920a77ac1041b6a29f8aac92faaba36b32e0fc3",
+  "signature": "bd7a6babc43deef10639d4617b3a6627b372431f51b39a7e55d56d4d07a92bf5"
+}

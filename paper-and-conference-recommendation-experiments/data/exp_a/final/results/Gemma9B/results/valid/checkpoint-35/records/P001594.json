@@ -1,0 +1,457 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.156705175999377,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4824,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 157
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.06142015200021,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4825,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3126,
+            "output_tokens": 157
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.733178926999244,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"task\": [], \"method\": [{\"concept\": \"benchmark data set\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4826,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 783,
+            "output_tokens": 42
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "benchmark data set",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness of biomedical concepts",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 70.95130425499883,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001594",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5267,
+        "output_tokens": 356
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.156705175999377,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4824,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 157
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.06142015200021,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness of biomedical concepts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4825,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3126,
+            "output_tokens": 157
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness of biomedical concepts",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 62.21812532799959,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4825,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4484,
+        "output_tokens": 314
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 29.156705175999377,
+        "inherited": false,
+        "messages_sha256": "76cb37df276967a943092f055b8ee324df76ad79afd3bdab5d822e4205577cc8",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4824,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1358,
+          "output_tokens": 157
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 33.06142015200021,
+        "inherited": false,
+        "messages_sha256": "13a25ceb56594fcf1f60b5b1142bd4c8fbabbfed98ef97b00572ebaa34591ae6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001594",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 4825,
+        "usage": {
+          "input_tokens": 3126,
+          "output_tokens": 157
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.733178926999244,
+        "inherited": false,
+        "messages_sha256": "e5d906716745981d4bc2bc136b9b9f8b3d6d7e49e5f70305fb5336eee06bb7e0",
+        "reached_token_limit": false,
+        "seed": 4826,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 783,
+          "output_tokens": 42
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "benchmark data set",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness of biomedical concepts",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 8.733178926999244,
+      "messages_sha256": "e5d906716745981d4bc2bc136b9b9f8b3d6d7e49e5f70305fb5336eee06bb7e0",
+      "raw_output": "{\"paper_id\": \"P001594\", \"task\": [], \"method\": [{\"concept\": \"benchmark data set\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 783,
+        "output_tokens": 42
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "3714fcdbc232d085bc239f1e87dfff3cb26334ed50f401005d0b3489e3bfdc4e",
+    "facets": {
+      "contribution": [
+        "word2vec with particular language modeling seems to perform better than others"
+      ],
+      "dataset": [
+        "word2vec",
+        "GloVe"
+      ],
+      "method": [
+        "word2vec",
+        "GloVe",
+        "benchmark data set"
+      ],
+      "paper_id": "P001594",
+      "problem": [],
+      "task": [
+        "reflecting semantic similarity and relatedness of biomedical concepts"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 70.95130425499883,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 70.95130425499883,
+      "input_tokens": 5267,
+      "output_tokens": 356
+    },
+    "paper_id": "P001594",
+    "source_sha256": "076c64dd9faafe005a0f7259ee60f2686a757d2510290b4fbab1daec50edb0ba",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5267,
+      "output_tokens": 356
+    }
+  },
+  "record_sha256": "a5b84b607ef5fdcc9409b239f48fe0e35f191485dd54f1c331d19e9531ad7272",
+  "signature": "b0b21a47569879bad65e14196a6442ba43f10d52aaf1fa69c7660c743a7a59ba"
+}

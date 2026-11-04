@@ -1,0 +1,233 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 25.42624619099979,
+          "messages_sha256": "2fc3ed5e7cd1b0bc8e24258b157b795a0d1a9146ee3f5cac782c21ad994a8a12",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003199\", \"problem\": [{\"concept\": \"fields of snow cover characteristics can be considered as random fields with homogeneous increments\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"physically based distributed model of snowmelt runoff generation\", \"evidence_id\": \"A1\"}, {\"concept\": \"parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"snow cover measurement data in a number of physiographic regions and landscapes\", \"evidence_id\": \"A0\"}, {\"concept\": \"Upper Kolyma River basin\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\", \"evidence_id\": \"A2\"}, {\"concept\": \"snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt\", \"evidence_id\": \"A3\"}, {\"concept\": \"for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 9641,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2383,
+            "output_tokens": 320
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "snow cover measurement data in a number of physiographic regions and landscapes",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Upper Kolyma River basin",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "physically based distributed model of snowmelt runoff generation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P003199",
+        "problem": [
+          {
+            "concept": "fields of snow cover characteristics can be considered as random fields with homogeneous increments",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 87.32713639799931,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003199",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "snow cover measurement data in a number of physiographic regions and landscapes",
+            "evidence": "An analysis of snow cover measurement data in a number of physiographic regions and landscapes has shown that fields of snow cover characteristics can be considered as random fields with homogeneous increments and that these fields exhibit statistical self-similarity.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          },
+          {
+            "concept": "Upper Kolyma River basin",
+            "evidence": "A physically based distributed model of snowmelt runoff generation developed for the Upper Kolyma River basin (the catchment area is about 100 000 km2) has been used to estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 100.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3778,
+        "output_tokens": 1153
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.12842714599992,
+        "messages_sha256": "e17841e6b66c547d841348e17653ddde5aaf0b406846619a5ddb6daba9710753",
+        "raw_output": "{\"paper_id\":\"P003199\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"fields of snow cover characteristics can be considered as random fields with homogeneous increments and that these fields exhibit statistical self-similarity\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"A physically based distributed model of snowmelt runoff generation developed for the Upper Kolyma River basin (the catchment area is about 100 000 km2) has been used to estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Such parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt because of a too large catchment area of the basin under consideration\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"However, for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Copyright © 2001 John Wiley & Sons, Ltd.\",\"roles\":[],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"T0\",\"span\":\"Statistical self-similarity of spatial variations of snow cover: verification of the hypothesis and application in the snowmelt runoff generation models\",\"roles\":[\"contribution\"],\"origin\":\"prior\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 9639,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 686,
+          "output_tokens": 432
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.7724630609996,
+        "messages_sha256": "afcc683a813f8acecf066bd58dd3e34d15904b6205aaf661adb3b6564aca05b7",
+        "raw_output": "{\"paper_id\":\"P003199\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"An analysis of snow cover measurement data in a number of physiographic regions and landscapes has shown that fields of snow cover characteristics can be considered as random fields with homogeneous increments and that these fields exhibit statistical self-similarity.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"A physically based distributed model of snowmelt runoff generation developed for the Upper Kolyma River basin (the catchment area is about 100 000 km2) has been used to estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Such parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt because of a too large catchment area of the basin under consideration.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"However, for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Copyright © 2001 John Wiley & Sons, Ltd.\",\"roles\":[],\"origin\":\"prior\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9640,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 401
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 25.42624619099979,
+        "messages_sha256": "2fc3ed5e7cd1b0bc8e24258b157b795a0d1a9146ee3f5cac782c21ad994a8a12",
+        "raw_output": "{\"paper_id\": \"P003199\", \"problem\": [{\"concept\": \"fields of snow cover characteristics can be considered as random fields with homogeneous increments\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"physically based distributed model of snowmelt runoff generation\", \"evidence_id\": \"A1\"}, {\"concept\": \"parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"snow cover measurement data in a number of physiographic regions and landscapes\", \"evidence_id\": \"A0\"}, {\"concept\": \"Upper Kolyma River basin\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\", \"evidence_id\": \"A2\"}, {\"concept\": \"snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt\", \"evidence_id\": \"A3\"}, {\"concept\": \"for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 9641,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2383,
+          "output_tokens": 320
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 2,
+    "facets": {
+      "contribution": [
+        "improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin",
+        "snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt",
+        "for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs"
+      ],
+      "dataset": [],
+      "method": [
+        "physically based distributed model of snowmelt runoff generation",
+        "parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields"
+      ],
+      "paper_id": "P003199",
+      "problem": [
+        "fields of snow cover characteristics can be considered as random fields with homogeneous increments"
+      ],
+      "task": [
+        "estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 87.32713639799931,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.12842714599992,
+        "messages_sha256": "e17841e6b66c547d841348e17653ddde5aaf0b406846619a5ddb6daba9710753",
+        "raw_output": "{\"paper_id\":\"P003199\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"fields of snow cover characteristics can be considered as random fields with homogeneous increments and that these fields exhibit statistical self-similarity\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"A physically based distributed model of snowmelt runoff generation developed for the Upper Kolyma River basin (the catchment area is about 100 000 km2) has been used to estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Such parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt because of a too large catchment area of the basin under consideration\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"However, for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Copyright © 2001 John Wiley & Sons, Ltd.\",\"roles\":[],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"T0\",\"span\":\"Statistical self-similarity of spatial variations of snow cover: verification of the hypothesis and application in the snowmelt runoff generation models\",\"roles\":[\"contribution\"],\"origin\":\"prior\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 9639,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 686,
+          "output_tokens": 432
+        },
+        "validation_errors": [
+          "unit 5: unknown/empty roles"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.7724630609996,
+        "messages_sha256": "afcc683a813f8acecf066bd58dd3e34d15904b6205aaf661adb3b6564aca05b7",
+        "raw_output": "{\"paper_id\":\"P003199\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"An analysis of snow cover measurement data in a number of physiographic regions and landscapes has shown that fields of snow cover characteristics can be considered as random fields with homogeneous increments and that these fields exhibit statistical self-similarity.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"A physically based distributed model of snowmelt runoff generation developed for the Upper Kolyma River basin (the catchment area is about 100 000 km2) has been used to estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects based on the hypothesis of statistical self-similarity of the maximum snow water equivalent fields.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Such parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt because of a too large catchment area of the basin under consideration.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"However, for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Copyright © 2001 John Wiley & Sons, Ltd.\",\"roles\":[],\"origin\":\"prior\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 9640,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 709,
+          "output_tokens": 401
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "Qwen output must contain one readable UTF-8 JSON object only"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 87.32713639799931,
+      "input_tokens": 3778,
+      "output_tokens": 1153
+    },
+    "paper_id": "P003199",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3778,
+      "output_tokens": 1153
+    }
+  },
+  "record_sha256": "82e56a9e2e5d7a70fe10e9395e1f673309760e2af372972d98d9e18f80d91641",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

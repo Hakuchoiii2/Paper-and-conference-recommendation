@@ -1,0 +1,204 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 14.536333863999971,
+          "messages_sha256": "b276a913fbba269d2222d720589fb0ce8572bf389aa4c4379142438dfcda0539",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001407\", \"problem\": [{\"concept\": \"these kinds of language processing techniques in isolation often do not suffice for a particular task\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"refine the results of an automatic lexical discovery technique\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"statistically-based syntactic similarity measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"termsimilarity determination technique\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"union of these two corpus-based methods\", \"evidence_id\": \"A7\"}, {\"concept\": \"preliminary results\", \"evidence_id\": \"A8\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 4265,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2377,
+            "output_tokens": 168
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "union of these two corpus-based methods",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "preliminary results",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "statistically-based syntactic similarity measure",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "termsimilarity determination technique",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001407",
+        "problem": [
+          {
+            "concept": "these kinds of language processing techniques in isolation often do not suffice for a particular task",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "refine the results of an automatic lexical discovery technique",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 107.63095212500014,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001407",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 88.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3758,
+        "output_tokens": 1403
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 41.89772441700006,
+        "messages_sha256": "9a4dba2983c25a71bef81da86e32def6f2037a53f6bbe4c346ce5246a12a97ca",
+        "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Knowledge-poor corpus-based approaches to natural language processing are attractive in that they do not incur the difficulties associated with complex knowledge bases and real-world inferences.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"However, these kinds of language processing techniques in isolation often do not suffice for a particular task; for this reason we are interested in finding ways to combine various techniques and improve their results.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Accordingly, we conducted experiments to refine the results of an automatic lexical discovery technique by making use of a statistically-based syntactic similarity measure.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence\": \"A3\",\n      \"span\": \"The discovery program uses lexico-syntactic patterns to find instances of the hyponymy relation in large text bases.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"Once relations of this sort are found, they should be inserted into an existing lexicon or thesaurus.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"However, the terms in the relation may have multiple senses, thus hampering automatic placement.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Here we report some preliminary results, and make suggestions for how to improve the technique in future.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4263,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 680,
+          "output_tokens": 558
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 51.1968938440001,
+        "messages_sha256": "33c25f9bddf9478530f5be8b72791e00e09aa8203d9ed9bf51d0ddd2e4af9daf",
+        "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Knowledge-poor corpus-based approaches to natural language processing are attractive in that they do not incur the difficulties associated with complex knowledge bases and real-world inferences.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\",\n      \"context_ids\": []\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"However, these kinds of language processing techniques in isolation often do not suffice for a particular task; for this reason we are interested in finding ways to combine various techniques and improve their results.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A0\"]\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Accordingly, we conducted experiments to refine the results of an automatic lexical discovery technique by making use of a statistically-based syntactic similarity measure.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A1\"]\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"The discovery program uses lexico-syntactic patterns to find instances of the hyponymy relation in large text bases.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\",\n      \"context_ids\": []\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"Once relations of this sort are found, they should be inserted into an existing lexicon or thesaurus.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A3\"]\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"However, the terms in the relation may have multiple senses, thus hampering automatic placement.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A4\"]\n    },\n    {\n      \"evidence\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"evidence_id\": \"A6\",\n      \"span\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A5\"]\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A2\", \"A6\"]\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Here we report some preliminary results, and make suggestions for how to improve the technique in future.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A7\"]\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4264,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 701,
+          "output_tokens": 677
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.536333863999971,
+        "messages_sha256": "b276a913fbba269d2222d720589fb0ce8572bf389aa4c4379142438dfcda0539",
+        "raw_output": "{\"paper_id\": \"P001407\", \"problem\": [{\"concept\": \"these kinds of language processing techniques in isolation often do not suffice for a particular task\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"refine the results of an automatic lexical discovery technique\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"statistically-based syntactic similarity measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"termsimilarity determination technique\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"union of these two corpus-based methods\", \"evidence_id\": \"A7\"}, {\"concept\": \"preliminary results\", \"evidence_id\": \"A8\"}]}",
+        "reached_token_limit": false,
+        "seed": 4265,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2377,
+          "output_tokens": 168
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "union of these two corpus-based methods",
+        "preliminary results"
+      ],
+      "dataset": [],
+      "method": [
+        "statistically-based syntactic similarity measure",
+        "termsimilarity determination technique"
+      ],
+      "paper_id": "P001407",
+      "problem": [
+        "these kinds of language processing techniques in isolation often do not suffice for a particular task"
+      ],
+      "task": [
+        "refine the results of an automatic lexical discovery technique"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 107.63095212500014,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 41.89772441700006,
+        "messages_sha256": "9a4dba2983c25a71bef81da86e32def6f2037a53f6bbe4c346ce5246a12a97ca",
+        "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Knowledge-poor corpus-based approaches to natural language processing are attractive in that they do not incur the difficulties associated with complex knowledge bases and real-world inferences.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"However, these kinds of language processing techniques in isolation often do not suffice for a particular task; for this reason we are interested in finding ways to combine various techniques and improve their results.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Accordingly, we conducted experiments to refine the results of an automatic lexical discovery technique by making use of a statistically-based syntactic similarity measure.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence\": \"A3\",\n      \"span\": \"The discovery program uses lexico-syntactic patterns to find instances of the hyponymy relation in large text bases.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"Once relations of this sort are found, they should be inserted into an existing lexicon or thesaurus.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"However, the terms in the relation may have multiple senses, thus hampering automatic placement.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A6\",\n      \"span\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Here we report some preliminary results, and make suggestions for how to improve the technique in future.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4263,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 680,
+          "output_tokens": 558
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 51.1968938440001,
+        "messages_sha256": "33c25f9bddf9478530f5be8b72791e00e09aa8203d9ed9bf51d0ddd2e4af9daf",
+        "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Knowledge-poor corpus-based approaches to natural language processing are attractive in that they do not incur the difficulties associated with complex knowledge bases and real-world inferences.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\",\n      \"context_ids\": []\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"However, these kinds of language processing techniques in isolation often do not suffice for a particular task; for this reason we are interested in finding ways to combine various techniques and improve their results.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A0\"]\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"Accordingly, we conducted experiments to refine the results of an automatic lexical discovery technique by making use of a statistically-based syntactic similarity measure.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A1\"]\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"The discovery program uses lexico-syntactic patterns to find instances of the hyponymy relation in large text bases.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"prior\",\n      \"context_ids\": []\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"Once relations of this sort are found, they should be inserted into an existing lexicon or thesaurus.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A3\"]\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"However, the terms in the relation may have multiple senses, thus hampering automatic placement.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\",\n      \"context_ids\": [\"A4\"]\n    },\n    {\n      \"evidence\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"evidence_id\": \"A6\",\n      \"span\": \"In order to address this problem we applied a termsimilarity determination technique to the problem of choosing where, in an existing lexical hierarchy, to install a lexical relation.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A5\"]\n    },\n    {\n      \"evidence_id\": \"A7\",\n      \"span\": \"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A2\", \"A6\"]\n    },\n    {\n      \"evidence_id\": \"A8\",\n      \"span\": \"Here we report some preliminary results, and make suggestions for how to improve the technique in future.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\",\n      \"context_ids\": [\"A7\"]\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4264,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 701,
+          "output_tokens": 677
+        },
+        "validation_errors": [
+          "unit 6: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 6: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 107.63095212500014,
+      "input_tokens": 3758,
+      "output_tokens": 1403
+    },
+    "paper_id": "P001407",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3758,
+      "output_tokens": 1403
+    }
+  },
+  "record_sha256": "a87477ec63b15676ccc0178405b680d6c5b2ff5846ac18659c4ecd258eb41be7",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

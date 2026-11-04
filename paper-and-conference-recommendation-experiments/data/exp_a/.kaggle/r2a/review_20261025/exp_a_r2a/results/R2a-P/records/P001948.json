@@ -1,0 +1,306 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001948\",\n  \"problem\": [\n    {\n      \"concept\": \"existing statistical language models are limited in capturing term-specific burstiness\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"modelling term-specific burstiness in document language\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"improving retrieval effectiveness\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"generalised multivariate Polya process\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"choice of replacement matrix M\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"generalised multivariate Polya process for document language modelling\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"variant of the general model for term-specific burstiness\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"significant improvement in retrieval effectiveness over a strong baseline\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 23.278543219999847,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001948\",\n  \"problem\": [\n    {\n      \"concept\": \"existing statistical language models are limited in capturing term-specific burstiness\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"modelling term-specific burstiness in document language\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"improving retrieval effectiveness\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"generalised multivariate Polya process\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"choice of replacement matrix M\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"generalised multivariate Polya process for document language modelling\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"variant of the general model for term-specific burstiness\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"significant improvement in retrieval effectiveness over a strong baseline\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 64.5938,
+          "seed": 5886,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2393,
+            "output_tokens": 279
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing statistical language models are limited in capturing term-specific burstiness\"; evidence_id=\"A3\"; evidence=\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"modelling term-specific burstiness in document language\"; evidence_id=\"A3\"; evidence=\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"significant improvement in retrieval effectiveness over a strong baseline\"; evidence_id=\"A4\"; evidence=\"Furthermore, via experimentation we show that this variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001948\", \"problem\": [{\"concept\": \"a particular variant of the general model is useful for modelling term-specific burstiness\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"modelling term-specific burstiness\", \"evidence_id\": \"A3\"}, {\"concept\": \"improving retrieval effectiveness\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"generalised multivariate Polya process\", \"evidence_id\": \"A0\"}, {\"concept\": \"choice of replacement matrix M\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generalised multivariate Polya process for document language modelling\", \"evidence_id\": \"A0\"}, {\"concept\": \"variant of the general model for term-specific burstiness\", \"evidence_id\": \"A3\"}, {\"concept\": \"this variant significantly improves retrieval effectiveness over a strong baseline\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 13.805497360000004,
+          "operations": [
+            {
+              "before": {
+                "concept": "significant improvement in retrieval effectiveness over a strong baseline",
+                "evidence_id": "A4"
+              },
+              "concept": "this variant significantly improves retrieval effectiveness over a strong baseline",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "existing statistical language models are limited in capturing term-specific burstiness",
+                "evidence_id": "A3"
+              },
+              "concept": "a particular variant of the general model is useful for modelling term-specific burstiness",
+              "evidence_id": "A3",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "modelling term-specific burstiness in document language",
+                "evidence_id": "A3"
+              },
+              "concept": "modelling term-specific burstiness",
+              "evidence_id": "A3",
+              "facet": "task",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P001948\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":2,\"concept\":\"this variant significantly improves retrieval effectiveness over a strong baseline\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"a particular variant of the general model is useful for modelling term-specific burstiness\",\"evidence_id\":\"A3\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"task\",\"index\":0,\"concept\":\"modelling term-specific burstiness\",\"evidence_id\":\"A3\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 87.8438,
+          "seed": 5887,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2856,
+            "output_tokens": 133
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "generalised multivariate Polya process for document language modelling",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "variant of the general model for term-specific burstiness",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "this variant significantly improves retrieval effectiveness over a strong baseline",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "generalised multivariate Polya process",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "choice of replacement matrix M",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001948",
+        "problem": [
+          {
+            "concept": "a particular variant of the general model is useful for modelling term-specific burstiness",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "modelling term-specific burstiness",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "improving retrieval effectiveness",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 37.08404057999985,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001948",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 5887,
+      "selected_score": 87.8438,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5249,
+        "output_tokens": 412
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "dec50d447d8980d3803969590d04f4ed415575a7bd3089e2ba9df6dfb20d42c8",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 5886
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "5de379059a70ed870d1abee16cf5890d19e1f5a6753115f4f9b9d003eb8407fb",
+        "operations": [
+          {
+            "before": {
+              "concept": "significant improvement in retrieval effectiveness over a strong baseline",
+              "evidence_id": "A4"
+            },
+            "concept": "this variant significantly improves retrieval effectiveness over a strong baseline",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "existing statistical language models are limited in capturing term-specific burstiness",
+              "evidence_id": "A3"
+            },
+            "concept": "a particular variant of the general model is useful for modelling term-specific burstiness",
+            "evidence_id": "A3",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "modelling term-specific burstiness in document language",
+              "evidence_id": "A3"
+            },
+            "concept": "modelling term-specific burstiness",
+            "evidence_id": "A3",
+            "facet": "task",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 5887
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 3,
+    "facets": {
+      "contribution": [
+        "generalised multivariate Polya process for document language modelling",
+        "variant of the general model for term-specific burstiness",
+        "this variant significantly improves retrieval effectiveness over a strong baseline"
+      ],
+      "dataset": [],
+      "method": [
+        "generalised multivariate Polya process",
+        "choice of replacement matrix M"
+      ],
+      "paper_id": "P001948",
+      "problem": [
+        "a particular variant of the general model is useful for modelling term-specific burstiness"
+      ],
+      "task": [
+        "modelling term-specific burstiness",
+        "improving retrieval effectiveness"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 37.08404057999985,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 13.805497360000004,
+      "input_tokens": 2856,
+      "output_tokens": 133
+    },
+    "paper_id": "P001948",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0,
+        1
+      ]
+    },
+    "usage": {
+      "input_tokens": 5249,
+      "output_tokens": 412
+    }
+  },
+  "record_sha256": "8995eb451f28807a5fe94cd246cec888cf135b0cdb0ab9c57490d4211f1698a1",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

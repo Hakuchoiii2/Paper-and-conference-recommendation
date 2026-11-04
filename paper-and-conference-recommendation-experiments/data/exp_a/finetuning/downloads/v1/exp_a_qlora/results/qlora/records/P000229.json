@@ -1,0 +1,173 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000229\", \"problem\": [{\"concept\": \"whether grammaticality is a binary categorical or a gradient property\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Measuring Gradience\", \"evidence_id\": \"T0\"}, {\"concept\": \"visual image classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"machine translation\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowd sourcing\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"British National Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"high degree of correlation\", \"evidence_id\": \"A4\"}, {\"concept\": \"gradience benchmark pattern\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.348935997000808,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000229\", \"problem\": [{\"concept\": \"whether grammaticality is a binary categorical or a gradient property\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Measuring Gradience\", \"evidence_id\": \"T0\"}, {\"concept\": \"visual image classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"machine translation\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowd sourcing\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"British National Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"high degree of correlation\", \"evidence_id\": \"A4\"}, {\"concept\": \"gradience benchmark pattern\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 729,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2509,
+            "output_tokens": 182
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000229\", \"problem\": [{\"concept\": \"whether grammaticality is a binary categorical or a gradient property\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Measuring Gradience\", \"evidence_id\": \"T0\"}, {\"concept\": \"visual image classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"machine translation\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowd sourcing\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"British National Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"high degree of correlation\", \"evidence_id\": \"A4\"}, {\"concept\": \"gradience benchmark pattern\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.487028341998666,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000229\", \"problem\": [{\"concept\": \"whether grammaticality is a binary categorical or a gradient property\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Measuring Gradience\", \"evidence_id\": \"T0\"}, {\"concept\": \"visual image classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"machine translation\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowd sourcing\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"British National Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"high degree of correlation\", \"evidence_id\": \"A4\"}, {\"concept\": \"gradience benchmark pattern\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 730,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4055,
+            "output_tokens": 182
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "high degree of correlation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "gradience benchmark pattern",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "British National Corpus",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "machine translation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "crowd sourcing",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000229",
+        "problem": [
+          {
+            "concept": "whether grammaticality is a binary categorical or a gradient property",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Measuring Gradience",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "visual image classification",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 58.835964338999474,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 730,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6564,
+        "output_tokens": 364
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "high degree of correlation",
+        "gradience benchmark pattern"
+      ],
+      "dataset": [
+        "British National Corpus"
+      ],
+      "method": [
+        "machine translation",
+        "crowd sourcing"
+      ],
+      "paper_id": "P000229",
+      "problem": [
+        "whether grammaticality is a binary categorical or a gradient property"
+      ],
+      "task": [
+        "Measuring Gradience",
+        "visual image classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.835964338999474,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000229",
+    "usage": {
+      "input_tokens": 6564,
+      "output_tokens": 364
+    }
+  },
+  "record_sha256": "fbdb7a45be109360644896f8ab0abb1a73dc841a12ecd0655e36527db0192e19",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

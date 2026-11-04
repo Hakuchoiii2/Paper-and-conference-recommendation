@@ -1,0 +1,464 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "V-recall",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.693924977999814,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10779,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2520,
+            "output_tokens": 223
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003579\", \"problem\": [], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"}, {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}, {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"}], \"dataset\": [{\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"}, {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"}, {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.246771795999848,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10780,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4318,
+            "output_tokens": 223
+          },
+          "validation_errors": []
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 5.873382427999786,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P003579\",\"task\":[{\"concept\":\"text classification\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"attention mechanism\",\"evidence_id\":\"A5\"},{\"concept\":\"softmax classifier\",\"evidence_id\":\"A8\"},{\"concept\":\"attention-based recurrent neural networks\",\"evidence_id\":\"T0\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10781,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 835,
+            "output_tokens": 70
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model achieves F-values by 88.5% and 51.8% on the two datasets",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "method outperforms all the traditional baseline systems",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "NLPCC2014",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Reuters",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "attention mechanism",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "attention-based recurrent neural networks",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P003579",
+        "problem": [],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 49.81407920199945,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003579",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7673,
+        "output_tokens": 516
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "base_review_audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.693924977999814,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10779,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2520,
+            "output_tokens": 223
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003579\", \"problem\": [], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"}, {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}, {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"}], \"dataset\": [{\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"}, {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"}, {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.246771795999848,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"attention-based recurrent neural networks\", \"evidence_id\": \"T0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10780,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4318,
+            "output_tokens": 223
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model achieves F-values by 88.5% and 51.8% on the two datasets",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "method outperforms all the traditional baseline systems",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "NLPCC2014",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Reuters",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "attention mechanism",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "attention-based recurrent neural networks",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P003579",
+        "problem": [],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 43.94069677399966,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10780,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6838,
+        "output_tokens": 446
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4fe62a8059fe1ecc61dd0c58877029d6a5e7f5ad3c966deb1081190d42e02d53",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.693924977999814,
+        "inherited": true,
+        "messages_sha256": "7ba4f40bf73b331f8b52135114efb409ba77dbc6087f70fd32c6a81f5b368cda",
+        "repair_packet": null,
+        "seed": 10779,
+        "usage": {
+          "input_tokens": 2520,
+          "output_tokens": 223
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 25.246771795999848,
+        "inherited": false,
+        "messages_sha256": "d716a93c2712feb02434b32f91b5baf0a3806e95abaac96c22abf421ceb0b2f7",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003579",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 10780,
+        "usage": {
+          "input_tokens": 4318,
+          "output_tokens": 223
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 5.873382427999786,
+        "inherited": false,
+        "messages_sha256": "9da42d3b6d613532ac988e86ede8924e23733417a9ea667ce2c85c46ff459b95",
+        "reached_token_limit": false,
+        "seed": 10781,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 835,
+          "output_tokens": 70
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "model achieves F-values by 88.5% and 51.8% on the two datasets",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "method outperforms all the traditional baseline systems",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "NLPCC2014",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Reuters",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "attention mechanism",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "attention-based recurrent neural networks",
+            "evidence_id": "T0"
+          }
+        ],
+        "paper_id": "P003579",
+        "problem": [],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "attention mechanism",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "attention-based recurrent neural networks",
+            "evidence_id": "T0"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 5.873382427999786,
+      "messages_sha256": "9da42d3b6d613532ac988e86ede8924e23733417a9ea667ce2c85c46ff459b95",
+      "raw_output": "{\"paper_id\":\"P003579\",\"task\":[{\"concept\":\"text classification\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"attention mechanism\",\"evidence_id\":\"A5\"},{\"concept\":\"softmax classifier\",\"evidence_id\":\"A8\"},{\"concept\":\"attention-based recurrent neural networks\",\"evidence_id\":\"T0\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 835,
+        "output_tokens": 70
+      }
+    },
+    "coverage_fallback": false,
+    "facets": {
+      "contribution": [
+        "model achieves F-values by 88.5% and 51.8% on the two datasets",
+        "method outperforms all the traditional baseline systems"
+      ],
+      "dataset": [
+        "NLPCC2014",
+        "Reuters"
+      ],
+      "method": [
+        "attention mechanism",
+        "softmax classifier",
+        "attention-based recurrent neural networks"
+      ],
+      "paper_id": "P003579",
+      "problem": [],
+      "task": [
+        "text classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 49.81407920199945,
+    "instruction_sha256": "cffd14ee90b59058c6235bccbfff2318b8115083506d2fd1290599e4934153fd",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 31.120154223999634,
+      "input_tokens": 5153,
+      "output_tokens": 293
+    },
+    "paper_id": "P003579",
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 7673,
+      "output_tokens": 516
+    }
+  },
+  "record_sha256": "f730377139fb9fa026a2258bd24621fe8f4ed411e1d7cf1b636a4731a6b4d08f",
+  "signature": "f16d5cc94c1a5701ff4e4da03c681bd086a3e47a1545eaab01154e3ad0d0f95d"
+}

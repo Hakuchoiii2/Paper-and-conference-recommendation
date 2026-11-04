@@ -1,0 +1,84 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"text corpora have a social context embedded in them\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+      "attempt": 1,
+      "generation_seconds": 32.33934925699941,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"text corpora have a social context embedded in them\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 1539,
+      "semantic_entailment_verified": false,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 1443,
+        "output_tokens": 194
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "concept": "text corpora have a social context embedded in them",
+          "evidence": "The new dimension being that today's corpora have a social context embedded in them in terms of the community of users interested in a particular post, their profiles etc.",
+          "facet": "problem",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P00:0499\", \"problem\": [], \"task\": [{\"concept\": \"topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+      "attempt": 2,
+      "generation_seconds": 31.551069500997983,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P00:0499\", \"problem\": [], \"task\": [{\"concept\": \"topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": false,
+      "score": 90.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 1540,
+      "semantic_entailment_verified": false,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3201,
+        "output_tokens": 171
+      },
+      "validation_errors": [
+        "wrong paper_id; output uses the supplied paper_id"
+      ],
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P000499",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 1,
+  "selected_score": 100.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

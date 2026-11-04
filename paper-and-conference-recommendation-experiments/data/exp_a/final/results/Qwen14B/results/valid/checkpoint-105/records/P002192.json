@@ -1,0 +1,487 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.658878127000207,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6618,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1397,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.314351259999967,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6619,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3119,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.84547684500285,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002192\",\"task\":[{\"concept\":\"filters relevant and trustworthy information\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"trustworthiness measures\",\"evidence_id\":\"A3\"},{\"concept\":\"modern machine-learning classifiers\",\"evidence_id\":\"A4\"},{\"concept\":\"time windows\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6620,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 821,
+            "output_tokens": 74
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "trustworthiness scores assigned",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "modern machine-learning classifiers",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "time windows",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [
+          {
+            "concept": "accidental or deliberate misinformation",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 69.81870623200302,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P002192",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5337,
+        "output_tokens": 396
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.658878127000207,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6618,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1397,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.314351259999967,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [{\"concept\": \"accidental or deliberate misinformation\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}, {\"concept\": \"modern machine-learning classifiers\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}, {\"concept\": \"trustworthiness scores assigned\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6619,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3119,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "trustworthiness scores assigned",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "modern machine-learning classifiers",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [
+          {
+            "concept": "accidental or deliberate misinformation",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.973229387000174,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6619,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4516,
+        "output_tokens": 322
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.658878127000207,
+        "inherited": false,
+        "messages_sha256": "421473d55f05cadfee2d6042b3b0e15c075615edf07a3c7aa4fd9c99750fd4c9",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6618,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1397,
+          "output_tokens": 161
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.314351259999967,
+        "inherited": false,
+        "messages_sha256": "a3beabde1806164e44961c5f9b4406a38a9f61624f6689282b4f71f4f3f05a21",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002192",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 6619,
+        "usage": {
+          "input_tokens": 3119,
+          "output_tokens": 161
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.84547684500285,
+        "inherited": false,
+        "messages_sha256": "d29fca4b374f4debe8d3c1f3d625eec919249a450c937b1777bf45c75bc54439",
+        "reached_token_limit": false,
+        "seed": 6620,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 821,
+          "output_tokens": 74
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "time windows",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "trustworthiness scores assigned",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "modern machine-learning classifiers",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [
+          {
+            "concept": "accidental or deliberate misinformation",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "modern machine-learning classifiers",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.84547684500285,
+      "messages_sha256": "d29fca4b374f4debe8d3c1f3d625eec919249a450c937b1777bf45c75bc54439",
+      "raw_output": "{\"paper_id\":\"P002192\",\"task\":[{\"concept\":\"filters relevant and trustworthy information\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"trustworthiness measures\",\"evidence_id\":\"A3\"},{\"concept\":\"modern machine-learning classifiers\",\"evidence_id\":\"A4\"},{\"concept\":\"time windows\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 821,
+        "output_tokens": 74
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "b78c7f973ec3163d9da9fd57aa3b1f482ddef4e89ad0c2624367c89131de36b9",
+    "facets": {
+      "contribution": [
+        "software demonstration",
+        "trustworthiness scores assigned"
+      ],
+      "dataset": [],
+      "method": [
+        "trustworthiness measures",
+        "modern machine-learning classifiers",
+        "time windows"
+      ],
+      "paper_id": "P002192",
+      "problem": [
+        "accidental or deliberate misinformation"
+      ],
+      "task": [
+        "message-classifier",
+        "filters relevant and trustworthy information"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 69.81870623200302,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 69.81870623200302,
+      "input_tokens": 5337,
+      "output_tokens": 396
+    },
+    "paper_id": "P002192",
+    "source_sha256": "c028ddfbc0426687099636de83d5c6d72c834d2c659fadb96a61af411ceaf3a7",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5337,
+      "output_tokens": 396
+    }
+  },
+  "record_sha256": "5bf8992c7a29ef47500b62016cda217f6a5e4a4a774eda86aeb46764960b2bfb",
+  "signature": "d6a189434536ddd6406715a700026b2ff5c8849d50699394c5d64c14de105878"
+}

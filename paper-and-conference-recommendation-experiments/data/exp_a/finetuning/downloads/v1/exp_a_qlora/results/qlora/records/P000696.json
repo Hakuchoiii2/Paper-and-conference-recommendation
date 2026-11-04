@@ -1,0 +1,178 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000696\", \"problem\": [{\"concept\": \"coordination of turn exchanges\", \"evidence_id\": \"A1\"}, {\"concept\": \"correct generation and understanding\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automatic classification of affirmative cue words\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"machine learning\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Columbia Games Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"seven turn-yielding cues\", \"evidence_id\": \"A3\"}, {\"concept\": \"six backchannel-inviting cues\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.52564153500134,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000696\", \"problem\": [{\"concept\": \"coordination of turn exchanges\", \"evidence_id\": \"A1\"}, {\"concept\": \"correct generation and understanding\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automatic classification of affirmative cue words\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"machine learning\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Columbia Games Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"seven turn-yielding cues\", \"evidence_id\": \"A3\"}, {\"concept\": \"six backchannel-inviting cues\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 2130,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2620,
+            "output_tokens": 165
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000696\", \"problem\": [{\"concept\": \"coordination of turn exchanges\", \"evidence_id\": \"A1\"}, {\"concept\": \"correct generation and understanding\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automatic classification of affirmative cue words\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"machine learning\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Columbia Games Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"seven turn-yielding cues\", \"evidence_id\": \"A3\"}, {\"concept\": \"six backchannel-inviting cues\", \"evidence_id\": \"A4\"}, {\"concept\": \"differences in the acoustic/prosodic realization\", \"evidence_id\": \"A6\"}, {\"concept\": \"novel measure of speaker entrainment\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.643746663001366,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000696\", \"problem\": [{\"concept\": \"coordination of turn exchanges\", \"evidence_id\": \"A1\"}, {\"concept\": \"correct generation and understanding\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automatic classification of affirmative cue words\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"machine learning\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Columbia Games Corpus\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"seven turn-yielding cues\", \"evidence_id\": \"A3\"}, {\"concept\": \"six backchannel-inviting cues\", \"evidence_id\": \"A4\"}, {\"concept\": \"differences in the acoustic/prosodic realization\", \"evidence_id\": \"A6\"}, {\"concept\": \"novel measure of speaker entrainment\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 2131,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4152,
+            "output_tokens": 209
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "seven turn-yielding cues",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "six backchannel-inviting cues",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "differences in the acoustic/prosodic realization",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "novel measure of speaker entrainment",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Columbia Games Corpus",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "machine learning",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000696",
+        "problem": [
+          {
+            "concept": "coordination of turn exchanges",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "correct generation and understanding",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatic classification of affirmative cue words",
+            "evidence_id": "A7"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 63.16938819800271,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2131,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6772,
+        "output_tokens": 374
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "seven turn-yielding cues",
+        "six backchannel-inviting cues",
+        "differences in the acoustic/prosodic realization",
+        "novel measure of speaker entrainment"
+      ],
+      "dataset": [
+        "Columbia Games Corpus"
+      ],
+      "method": [
+        "machine learning"
+      ],
+      "paper_id": "P000696",
+      "problem": [
+        "coordination of turn exchanges",
+        "correct generation and understanding"
+      ],
+      "task": [
+        "automatic classification of affirmative cue words"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 63.16938819800271,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000696",
+    "usage": {
+      "input_tokens": 6772,
+      "output_tokens": 374
+    }
+  },
+  "record_sha256": "cf30db3f394563ce7541e79a4d84b1483863e273436e3baddace216732f7aa88",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

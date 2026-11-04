@@ -1,0 +1,988 @@
+{
+  "reviewer": "independent_ai_reviewer",
+  "human_review_status": "pending",
+  "findings": [
+    {
+      "paper_id": "P001479",
+      "facet": "task",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "missing_qualifier"
+      ],
+      "reason": "The title's large directed graph setting distinguishes the primary indexing objective; generic reachability indexing loses the scale and graph-direction scope.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "reachability indexing scheme for large directed graphs",
+            "evidence_ids": [
+              "T0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P002108",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "missing_qualifier",
+        "evidence_context"
+      ],
+      "reason": "A7 explicitly frames the origin conclusion as 'This suggests'; retain that hedge in addition to may/not/necessarily. A6 'these partitions' needs A5 to identify the hard-to-distinguish partitions. A7's inference is about the result in A6.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 1,
+          "item": {
+            "concept": "these partitions of network categories tend to have similar underlying functions, constraints and/or generative mechanisms of networks even though networks in the same partition have different origins, e.g., biological processes, results of engineering by human being, etc.",
+            "evidence_ids": [
+              "A5",
+              "A6"
+            ]
+          }
+        },
+        {
+          "op": "replace",
+          "index": 2,
+          "item": {
+            "concept": "This suggests that the origin of a network, whether it's biological, technological or social, may not necessarily be a decisive factor of the formation of similar network structure",
+            "evidence_ids": [
+              "A5",
+              "A6",
+              "A7"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003166",
+      "facet": "method",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "omitted_method"
+      ],
+      "reason": "The elicitation, AU marking and emotion labeling are covered, but the independent temporal annotation procedure in A7 is absent.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "first, peak and last frames were tagged",
+            "evidence_ids": [
+              "A7"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003168",
+      "facet": "contribution",
+      "status": "source_confirmation_pending",
+      "material": true,
+      "issue_types": [
+        "source_incomplete_comparator"
+      ],
+      "reason": "A6 reports 97% 'of the performance' without stating the comparator/denominator anywhere in the supplied title/abstract. Exact copying preserves the source's gap rather than establishing a fully interpretable quantitative comparison. Suspend this item from asserted labels and keep its exact quote pending a versioned source-completeness decision; do not fill the denominator from external full text.",
+      "operations": [
+        {
+          "op": "remove",
+          "index": 2
+        }
+      ],
+      "pending_source_ids": [
+        "A6"
+      ],
+      "pending_verbatim": {
+        "concept": "Using domain adaptation, our system can achieve 97% of the performance with as little as 60 annotated target domain abstracts",
+        "evidence_ids": [
+          "A6"
+        ]
+      }
+    },
+    {
+      "paper_id": "P003628",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "omitted_artifact",
+        "missing_qualifier"
+      ],
+      "reason": "A10 releases an AZ classifier distinct from the annotated corpus and two applications. A7/A8 findings should keep their explicit QA/summarization experimental scopes.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 3,
+          "item": {
+            "concept": "In our question answering task, biomedical researchers find relevant information significantly faster from AZ-annotated than unannotated articles",
+            "evidence_ids": [
+              "A7"
+            ]
+          }
+        },
+        {
+          "op": "replace",
+          "index": 4,
+          "item": {
+            "concept": "In the summarization task, sentences extracted from particular zones are significantly more similar to gold standard summaries than those extracted from particular sections of full articles",
+            "evidence_ids": [
+              "A8"
+            ]
+          }
+        },
+        {
+          "op": "add",
+          "item": {
+            "concept": "our AZ classifier",
+            "evidence_ids": [
+              "A10"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P000501",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A5's resulting data structure is the MPHF built in A4. Add A4 to ground the comparison's subject; the comparative wording itself is valid.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 3,
+          "item": {
+            "concept": "resulting data structure is both more space-efficient and faster than that obtained with the current state-of-the-art MPHF construction for large-scale key sets",
+            "evidence_ids": [
+              "A4",
+              "A5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003918",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A6 'these discourse relations' refers to the new narrative-specific relations introduced in A4; include that sentence so the finding's subject is evidenced.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 3,
+          "item": {
+            "concept": "these discourse relations are expressive, formal, robust, and through the use of a software system, amenable to corpus collection projects through the use of trained annotators",
+            "evidence_ids": [
+              "A4",
+              "A6"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001080",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A3 'this methodology' is statistical change detection introduced in A2. Keep A2 with A3 rather than a sentence-local unidentified methodology.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "Using clickstream data from two large university courses, one face-to-face and one online, we illustrate how this methodology can be used to detect when students change their previewing and reviewing behavior, and how these changes can be related to other aspects of students' activity and performance",
+            "evidence_ids": [
+              "A2",
+              "A3"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001150",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "omitted_finding"
+      ],
+      "reason": "A7 reports corroboration of the observed pattern using high-frequency event data, a distinct reported finding beyond the A6 local-level predictor result. Preserve the observational claim and antecedent; do not turn it into causation.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "Results show that local-level support for far-right parties is a significant and substantively meaningful predictor of online radicalization. An analysis of high-frequency data surrounding events that stir anti-Muslim hostility, such as terrorist attacks and anti-Muslim protests in Europe, shows the same pattern",
+            "evidence_ids": [
+              "A6",
+              "A7"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001790",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A7 identifies collaborative filtering and a proposed model, but the subject of 'both approaches' requires A5's song-to-playlist classifier. Add A5; retain the two frequency regimes and approximately 35/15/3 recall values.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 2,
+          "item": {
+            "concept": "both approaches achieve a recall@100 of roughly 35% for songs occurring in 5 or more training playists, whereas the proposed model achieves a recall@100 of roughly 15% for songs occurring in 4 or less training playlists, compared to the 3% achieved by collaborative filtering",
+            "evidence_ids": [
+              "A5",
+              "A7"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P002993",
+      "facet": "problem",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "wrong_scope",
+        "evidence_context"
+      ],
+      "reason": "Replacing 'these methods' by bare 'methods' leaves a generic class of methods. The antecedent is recent unsupervised lower-dimensional ensemble representation learning in A1, not methods generally.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "More recently, unsupervised learning has been used to find a lower-dimensional representation, similar in size to that of the word embeddings within the ensemble. However, these methods do not use the available manual labeled datasets that are often used solely for the purpose of evaluation",
+            "evidence_ids": [
+              "A1",
+              "A2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P000841",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A6's 'both varieties' are Persian and American English in PressTV and CNN as specified in A4. Add A4 to identify the comparison's scope without changing the finding.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "Analysis of the transcripts revealed that the most frequently used presupposition trigger in both varieties of oral discourse was Existential",
+            "evidence_ids": [
+              "A4",
+              "A6"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001860",
+      "facet": "problem",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context",
+        "wrong_scope"
+      ],
+      "reason": "The limitations in A2 apply to the cooccurrence-pattern frequency-vector approach in A1. Keeping 'it' with A2 alone leaves the failing approach unidentified; do not attribute these limitations to the compositional methods studied.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "A popular approach to represent the relations between a pair of words is to extract the patterns in which the words co-occur with from a corpus, and assign each word-pair a vector of pattern frequencies. Despite the simplicity of this approach, it suffers from data sparseness, information scalability and linguistic creativity as the model is unable to handle previously unseen word pairs in a corpus",
+            "evidence_ids": [
+              "A1",
+              "A2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P002110",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "missing_qualifier",
+        "evidence_context"
+      ],
+      "reason": "A5's generic supporting-evidence statement refers to the A2 framework tested in the specific speech/pronunciation setting of A4. The standalone utility claim loses that evidential scope. The future-use suggestion is not an established finding and need not be added.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 2,
+          "item": {
+            "concept": "semi-supervised framework for likelihood-based model selection. This approach is then validated experimentally using a state-of-the-art automatic speech recognition system to select between candidate word pronunciations using unlabeled speech data that only potentially contain instances of the words under test. Results provide supporting evidence for the utility of this approach",
+            "evidence_ids": [
+              "A2",
+              "A4",
+              "A5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P002110",
+      "facet": "problem",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "missing_qualifier",
+        "evidence_context"
+      ],
+      "reason": "A1 locates the development-data difficulty in speech processing and other large-scale practical applications; the clipped label drops that context and retains an unresolved 'such'. A0 explains the ground-truth labeled development data.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "In the context of speech processing systems and other large-scale practical applications, however, such labeled development data are typically costly and difficult to obtain",
+            "evidence_ids": [
+              "A0",
+              "A1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003587",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "A8's combined techniques are model merging and model splitting from A5/A6, not either technique alone. Include both names and their evidence; keep 'at least equivalent' rather than stronger superiority.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "model merging; model splitting: the combination of these techniques yields tagging accuracies that are at least equivalent to those of standard approaches",
+            "evidence_ids": [
+              "A5",
+              "A6",
+              "A8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003879",
+      "facet": "method",
+      "status": "policy_decision_pending",
+      "material": true,
+      "issue_types": [
+        "survey_method_boundary"
+      ],
+      "reason": "The provisional rationale excludes reviewed classifiers because the authors do not implement them, while policy allows techniques actually studied as the objective and other rows retain study subjects (P001860 compositional methods; P002633 reflexivity). A survey may consistently use only review procedures, but that boundary is not explicit in v2.1 and differs from the independent pass. Decide whether the exception is restricted to empirical comparisons or includes substantive survey techniques.",
+      "operations": [],
+      "alternatives": [
+        {
+          "decision": "review_procedures_only",
+          "items": [
+            {
+              "concept": "survey",
+              "evidence_ids": [
+                "A2"
+              ]
+            },
+            {
+              "concept": "analyze the sample selection criteria",
+              "evidence_ids": [
+                "A4"
+              ]
+            }
+          ],
+          "requires": "Record why surveys are outside the study-objective exception; apply consistently to other review-type papers."
+        },
+        {
+          "decision": "include_explicitly_studied_techniques",
+          "items": [
+            {
+              "concept": "survey",
+              "evidence_ids": [
+                "A2"
+              ]
+            },
+            {
+              "concept": "analyze the sample selection criteria",
+              "evidence_ids": [
+                "A4"
+              ]
+            },
+            {
+              "concept": "active learning",
+              "evidence_ids": [
+                "A2"
+              ]
+            },
+            {
+              "concept": "semi-supervised learning",
+              "evidence_ids": [
+                "A6"
+              ]
+            },
+            {
+              "concept": "multilabel learning",
+              "evidence_ids": [
+                "A6"
+              ]
+            },
+            {
+              "concept": "multiple instance learning",
+              "evidence_ids": [
+                "A6"
+              ]
+            }
+          ],
+          "requires": "Audit all additional items as reviewed study subjects, never as implemented systems."
+        }
+      ]
+    },
+    {
+      "paper_id": "P004130",
+      "facet": "dataset",
+      "status": "policy_decision_pending",
+      "material": true,
+      "issue_types": [
+        "ontology_dataset_boundary"
+      ],
+      "reason": "The source calls Klout Topics a lightweight ontology. The dataset rule lists corpus/benchmark/database/lexicon but does not mention ontologies. The provisional label retains it without explaining which allowed resource type applies. Under a strict reading dataset is []; under an explicit broader named-knowledge-resource rule it is valid. This is a policy boundary, not proof that Klout Topics is unsupported as an artifact or method.",
+      "operations": [],
+      "alternatives": [
+        {
+          "decision": "strict_list",
+          "items": []
+        },
+        {
+          "decision": "named_ontology_in_scope",
+          "items": [
+            {
+              "concept": "Klout Topics",
+              "evidence_ids": [
+                "A0"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "P000349",
+      "facet": "contribution",
+      "status": "evidence_completion_required",
+      "material": true,
+      "issue_types": [
+        "evidence_context"
+      ],
+      "reason": "The two findings use our/the approach, which is the two-stage discovery pipeline in A4. Add A4 to each finding's evidence so the reported threshold and F1 comparison have an explicit approach antecedent.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 3,
+          "item": {
+            "concept": "Our experiments across different domains and real-world datasets show the effectiveness of our approach, with less than 100 annotated examples needed per unique domain to recognize diverse intents",
+            "evidence_ids": [
+              "A4",
+              "A9"
+            ]
+          }
+        },
+        {
+          "op": "replace",
+          "index": 4,
+          "item": {
+            "concept": "The approach outperforms state-of-the-art baselines by 5-15% F1 score points",
+            "evidence_ids": [
+              "A4",
+              "A10"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P000349",
+      "facet": "method",
+      "status": "advisory",
+      "material": false,
+      "issue_types": [
+        "granularity_or_procedural_coverage"
+      ],
+      "reason": "The independent pass included the explicit two-stage predict-intent/tag-intent procedure. The provisional components are valid; decide whether this pipeline is an independently useful procedure or a redundant parent label. This is granularity/coverage, not an unsupported claim.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "two-stage approach to this task - predicting whether an utterance contains an intent, and then tagging the intent in the input utterance",
+            "evidence_ids": [
+              "A4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001353",
+      "facet": "method",
+      "status": "advisory",
+      "material": false,
+      "issue_types": [
+        "granularity_or_procedural_coverage"
+      ],
+      "reason": "The general learning objective capturing intra/intermodal semantic relationships is developed and operationally used to realize both algorithms in A4/A5. It can be retained as a method in addition to its contribution role; omission may instead be a deliberate granularity choice.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "general learning objective that effectively captures both intramodal and intermodal semantic relationships of data from heterogeneous sources",
+            "evidence_ids": [
+              "A4",
+              "A5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P001394",
+      "facet": "contribution",
+      "status": "advisory",
+      "material": false,
+      "issue_types": [
+        "omitted_qualitative_property"
+      ],
+      "reason": "A5 explicitly reports the proposed classifier as efficient, lightweight, multi-class and fast. A4 identifies it as MDLClass. This is a source-reported qualitative property, not an independently verified benchmark; optionally retain it rather than replacing it by the weaker and different 'promising' finding.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "The proposed method is very efficient, lightweight, multi-class, and fast",
+            "evidence_ids": [
+              "A4",
+              "A5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P000990",
+      "facet": "contribution",
+      "status": "advisory",
+      "material": false,
+      "issue_types": [
+        "artifact_scope"
+      ],
+      "reason": "One artifact is correct; the independent draft makes the French treebank identity and completed annotation explicit. The provisional corpus descriptor is supported but can carry the language scope with A0 rather than relying on the task facet.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 0,
+          "item": {
+            "concept": "treebank project for French. We have annotated a newspaper corpus of 1 Million words with part of speech, inflection, compounds, lemmas and constituency",
+            "evidence_ids": [
+              "A0",
+              "A1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003056",
+      "facet": "contribution",
+      "status": "advisory",
+      "material": false,
+      "issue_types": [
+        "granularity"
+      ],
+      "reason": "Code and data are two released artifacts in A5. Splitting them follows the independent-artifact unit rule, but preserves the same factual content; the broken URL must remain irrelevant to naming.",
+      "operations": [
+        {
+          "op": "replace",
+          "index": 2,
+          "item": {
+            "concept": "Code",
+            "evidence_ids": [
+              "A5"
+            ]
+          }
+        },
+        {
+          "op": "add",
+          "item": {
+            "concept": "data",
+            "evidence_ids": [
+              "A5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P002263",
+      "facet": "task",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "omitted_task"
+      ],
+      "reason": "A2 explicitly enumerates studying classifier-design elements such as generalizability to new courses as a current research objective. It is not a routine training/evaluation step, and is distinct from stopout detection and the intervention task.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "exploring important elements of classifier design such as generalizability to new courses",
+            "evidence_ids": [
+              "A2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "paper_id": "P003166",
+      "facet": "contribution",
+      "status": "correction_required",
+      "material": true,
+      "issue_types": [
+        "omitted_artifact"
+      ],
+      "reason": "A5 explicitly says the authors designed an effective elicitation procedure. It is a developed operational procedure distinct from the resulting CASME database, so the current contribution facet omits a source-supported artifact.",
+      "operations": [
+        {
+          "op": "add",
+          "item": {
+            "concept": "effective procedure in lab situations to elicit spontaneous micro-expressions",
+            "evidence_ids": [
+              "A5"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "facet_notes": {
+    "P000349": [
+      "Known-category restriction is explicitly the motivation.",
+      "Open intent discovery is the defined task; title and A2 name the same objective.",
+      "BiLSTM/CRF split versus one architecture is granularity; all four proposed technique labels are grounded.",
+      "25k utterance dataset is unnamed, so dataset=[] is correct.",
+      "Artifacts and both findings are supported; approach antecedents need completion."
+    ],
+    "P000905": [
+      "Unsupported online-comment arguments are the stated limitation.",
+      "The three proposition classes define one classification objective.",
+      "SVM, n-grams and verifiability/experientiality features can be split as independent model/feature units; my combined draft has equivalent factual coverage.",
+      "No proper dataset name is supplied.",
+      "Framework, created goldstandard dataset and qualified SVM comparison are all source-supported."
+    ],
+    "P001479": [
+      "The two scalability/tradeoff questions are independent explicit problems.",
+      "Dynamic maintenance is a supported second objective; primary indexing needs its large-directed-graph setting.",
+      "Path-tree, chain-tree, compression and incremental maintenance are four valid procedures.",
+      "No named data resource appears.",
+      "A chain-tree artifact plus a theoretical relationship finding are distinct roles, not duplicate synonyms; can/theoretically retained."
+    ],
+    "P002108": [
+      "Cross-domain structural-diversity study gap is explicit.",
+      "Title task includes the across-domains scope missing from a generic network-analysis label.",
+      "Random forest and confusion-matrix analysis are explicitly utilized; confusion matrix is used as an analysis procedure rather than a scalar performance metric.",
+      "Counts of real/generated networks are unnamed data, so dataset=[] is supported.",
+      "Three findings are valid but the inferential hedge and antecedent evidence need correction."
+    ],
+    "P002263": [
+      "High attrition is explicit motivation; generalizability is an objective, not an asserted existing failure.",
+      "Generalizability study is an explicit enumerated objective missing from current tasks.",
+      "Framework, dynamic survey and automatic stopout classifier are actually used; my draft omitted the classifier method.",
+      "No named corpus is introduced; HarvardX is a platform/course provider.",
+      "Framework and qualified response/return findings are supported. Shared-condition combined finding versus two items is granularity."
+    ],
+    "P003166": [
+      "Naked-eye recognition difficulty and lack of spontaneous databases are separate stated limitations.",
+      "Creating the spontaneous-microexpression database, not future lie detection, is the present objective.",
+      "Temporal frame tagging is an omitted annotation procedure.",
+      "CASME is a named introduced database; database suffix is naming only.",
+      "CASME is one artifact; designed elicitation procedure is a second developed artifact."
+    ],
+    "P003168": [
+      "Rare/costly manual SRL training instances are explicit motivation.",
+      "Biomedical SRL and comparing three adaptation algorithms are the study objectives.",
+      "Domain adaptation is adopted, and BioKIT is the described operational system; my draft omitted BioKIT from method.",
+      "BioProp is named only in availability; dataset=[] conservatively matches title/abstract role evidence.",
+      "BioKIT and reduced development cost are valid; 97% has an unspecified denominator in supplied input."
+    ],
+    "P003611": [
+      "Full sufficiency criterion statement resolves its within A2 and retains real-argument scope.",
+      "Identifying insufficient support is the concrete objective; broad quality assessment is its parent.",
+      "Both feature-rich SVMs and CNNs are actually experimented with.",
+      "New corpus is unnamed, correctly excluded from dataset.",
+      "Corpus, guideline, human sufficiency agreement and model experiment's 84% accuracy are supported; my draft's shorter clause was less grammatical."
+    ],
+    "P003628": [
+      "Costly supervision and explicit question of full-article feasibility are supported; A2+A3 is better context than my A3-only draft.",
+      "Full-article analysis, QA and summarization are actual objectives/applications.",
+      "Active learning, SVM and AZ are explicitly used/defined; compound architecture versus components is granularity.",
+      "Corpus of 50 articles is unnamed.",
+      "Classifier artifact and experiment-specific scopes need adding; other artifact/finding coverage is supported."
+    ],
+    "P004028": [
+      "The source explicitly raises how facial expressions relate to personal constructs.",
+      "Connection study and impression prediction are distinct realized objectives.",
+      "CERT, proposed behavioral cues and correlation analysis are used.",
+      "281-vlogger dataset is unnamed; YouTube is a platform.",
+      "The finding retains only Extraversion prediction, several-trait correlations, moderate R2 and sample scope; no claim of predicting all traits."
+    ],
+    "P000271": [
+      "Need for a morpheme-identification test is explicit.",
+      "Tentative morpheme segmentation is explicit; tentative is necessary.",
+      "My conservative method=[] missed the title's Report on a Computer Test; the generic title-supported method is acceptable, while detailed actual procedure remains absent from input.",
+      "No named data resource appears.",
+      "No source-supported artifact/finding can be recovered from this partial supplied paragraph; title alone does not establish results."
+    ],
+    "P000501": [
+      "Bottleneck and beyond-memory I/O impracticality are explicit and distinct.",
+      "Computing peeling orders in random hypergraphs is the main task.",
+      "Scans and sorts are separate operations; cache-oblivious model is the explicit analysis framework. My merged method differs in granularity.",
+      "No named dataset is given.",
+      "Artifact and complexity/scale/comparative findings are supported; data-structure antecedent needs A4."
+    ],
+    "P001002": [
+      "My blind problem phrase described the chosen harder generation objective, not a clearly stated unmet limitation; provisional [] is better.",
+      "Composition and decomposition retain their distinct input/output modes; example words can be omitted without changing the task.",
+      "Distributional representation and the two learning passes are used; context vector need not be a duplicate method label.",
+      "WordNet is a named vocabulary and evaluation resource.",
+      "Two-pass generation is a procedure, not explicitly a newly introduced artifact; provisional's two fully qualified result labels are better than adding it as contribution."
+    ],
+    "P001234": [
+      "Twitter-text challenge and classification class-size limit are both explicit; my draft missed the latter.",
+      "Location tagging of text is the actual task.",
+      "GeoTextTagger, POS tagging, NER, distance selection and Spark collection/processing are adopted. My blind note incorrectly applied the dataset software exclusion to method; software actually used can be a method.",
+      "OpenStreatMap retains upstream spelling; Wikipedia names the used dataset. Twitter alone is a platform.",
+      "All five current artifact/findings are supported, including potentially useful Twitter results; my draft omitted that qualitative finding."
+    ],
+    "P001353": [
+      "No explicit inadequacy is asserted beyond the chosen aim; [] is valid.",
+      "Multi-modal retrieval is the main operational objective.",
+      "Neural architectures and mini-batch training are used; the independent draft additionally retained the new learning objective as a method, an optional procedural-coverage choice.",
+      "Three real datasets are unnamed.",
+      "Learning objective and both algorithms are introduced; memory/search findings retain their limits."
+    ],
+    "P002666": [
+      "Tree-realization existence question is explicit with all assumptions.",
+      "Tree/path likeness evaluation are two objectives.",
+      "Fourth-point criterion and minimum spanning tree are used in the characterization; four-point condition is explicitly not used.",
+      "No named dataset.",
+      "Theorems retain uniqueness/existence assumptions and timing mapping respectively; A4+A5+A6 correctly grounds both quantities and tie-breaking condition."
+    ],
+    "P002811": [
+      "Manual concordance analysis and lack of accessible KRC tools are explicit.",
+      "Extraction and precision/recall refinement evaluation are realized objectives; my generic building/evaluation wording is less precise.",
+      "ESSG and Sketch Engine are actually used; random concordance sampling is a procedure. Generic software exclusion applies to dataset, not adopted methods.",
+      "EcoLexicon English Corpus is named and queried.",
+      "ESSG plus reuse capability and refinement finding are supported. My extra 64-rules artifact largely overlaps the named grammar, so keeping one artifact is preferable."
+    ],
+    "P003056": [
+      "Noisy distant-supervision labels are the explicit motivation.",
+      "Semantic typing in context is the objective; source's AbstractEntity prefix is not silently repaired.",
+      "Language-model enhancement is one technique; compatibility scoring is its described operation, not necessarily a second technique.",
+      "No named benchmark dataset appears.",
+      "Artifact and benchmark finding are supported; code/data split is optional factual-preserving granularity."
+    ],
+    "P003918": [
+      "Narrative/expository distinction neglected by existing techniques is explicit.",
+      "Narrative formal modeling and inference over encoded stories are realized objectives.",
+      "Two approaches are operationally described; characters/goals/time are representation aspects, not standalone algorithms.",
+      "Collection of encodings is unnamed.",
+      "Conversational-network approach is valid current artifact I omitted; relations finding needs its A4 antecedent. Human preference is not objective superiority."
+    ],
+    "P004191": [
+      "Importance of guide-strand prediction is background, no explicit existing shortcoming, so [] is correct.",
+      "Guide-miRNA prediction is the realized objective.",
+      "Feature families, hybrid model and cross-validation are used; siRNA-designing comparison methods are baselines. My draft omitted cross-validation but the provisional is supported.",
+      "Training/independent datasets are unnamed; miRNA/siRNA are biological types, not resource names.",
+      "SVM models/server and all numerical findings are supported. A9+A10 identifies one best-performing hybrid model, not every hybrid; supplied text supports this nearest antecedent and supplemental source report corroborates it."
+    ],
+    "P000779": [
+      "No explicit unresolved gap in supplied descriptive text.",
+      "Manipulation study and extent-of-control evaluation cover the central questions; my extra real/fictional comparison is contained by the cross-system study rather than an essential new task.",
+      "Actual speeches/writings analysis is supported.",
+      "1984 is a named literary work, not explicitly one of the policy's corpus/database/lexicon types.",
+      "All three reported findings preserve regime contrasts, negation and rhetoric/reality condition. Source type/eligibility remains separately unresolved."
+    ],
+    "P001080": [
+      "Noisy complex clickstream challenge is explicit.",
+      "Detecting behavioral changes from clickstream is the main objective.",
+      "Statistical change detection is actually utilized.",
+      "Courses are unnamed data sources.",
+      "Finding is supported but this methodology requires A2."
+    ],
+    "P001150": [
+      "European online-radicalization question is explicit.",
+      "Local hostility predictor test is the concrete objective and does not imply causal proof.",
+      "Geographic indicator matching and high-frequency event analysis are used.",
+      "Twitter and party vote shares are data descriptions without proper corpus names.",
+      "Local predictor result is preserved; A7 event-data corroboration is a distinct omitted reported finding."
+    ],
+    "P001394": [
+      "Dimensionality/cost and overfitting/learning-speed need are explicit.",
+      "Web spam filtering is the main task.",
+      "MDLClass and feature-based prediction ensemble are two actual approaches; MDL principle is not a duplicate independent method.",
+      "2006 and 2007 WEBSPAM resources remain separate.",
+      "Two introduced artifacts and promising finding are valid; qualitative multi-class/lightweight/fast property is an optional additional reported claim."
+    ],
+    "P001790": [
+      "Scarcity and popularity bias jointly cause poor rare-song recommendations; one combined problem is appropriate.",
+      "Playlist continuation is the specific task, not a duplicate parent generation task.",
+      "Classifier and multi-source song features are actual methods.",
+      "Both playlist datasets are unnamed.",
+      "Findings retain data regimes and approximate values; add classifier antecedent evidence to the both-approaches comparison."
+    ],
+    "P002501": [
+      "Scarcity covers small sample; quality and missing true negatives are additional explicit concerns. Omitting redundant small-number phrase is appropriate.",
+      "English noun-compound noncompositionality and conventionalization annotation is the objective.",
+      "Expert annotation and statistical validation are separate performed procedures, not experts as a standalone method.",
+      "No proper dataset name.",
+      "One newly created 1048-compound artifact with label dimensions is supported; no duplicate dataset contribution is needed."
+    ],
+    "P002633": [
+      "Interpretation problem is explicit in title.",
+      "Discuss/demonstrate reflexivity in IPA is the objective, without claiming universal application.",
+      "Literature/personal-example review is performed; reflexivity is a demonstrated subject rather than a diary already used. Explicit A0+A7+A10 evidence would strengthen the demonstration-role decision; this links to the survey-boundary policy question.",
+      "Named literature databases qualify; Google Scholar is a search platform.",
+      "Offered examples and qualified conclusion on reflexivity are supported. My A9 standalone rigor effect can be omitted because general conclusion already captures the contribution and A9 is advisory."
+    ],
+    "P002993": [
+      "Unspecific methods label loses the antecedent class of unsupervised ensemble representation methods.",
+      "Improving embeddings and learning word similarity are supported multitask objectives; my broad one-task draft is not definitive.",
+      "Reconstruction, Siamese Network and task-specific loss functions are used; coupled architecture description versus components is granularity.",
+      "Named counts of similarity/analogy sets do not name resources.",
+      "Title identifies the developed embedding artifact and both findings keep exact experimental/comparison and 4-of-6 scopes."
+    ],
+    "P003459": [
+      "Text-only hate-speech models' missing user/community information is explicit.",
+      "Hate-speech detection is a realized task, correctly evidenced by current experiment rather than background alone.",
+      "Community features and qualitative model analysis are actually performed; my draft omitted the latter.",
+      "16k tweet set is unnamed.",
+      "Approach, supported comparison, released code and pretrained models qualify. My all-resources-used label would falsely suggest every used resource is introduced; provisional exclusion is better."
+    ],
+    "P004198": [
+      "Correlated predictors make already difficult high-dimensional selection harder; qualifier kept.",
+      "Random-forest variable selection with correlation is the task.",
+      "Random forests, RFE and simulation are used. Permutation importance is a studied quantity in A2 and explicitly an operational ranking criterion in A5; adding A5 is a useful evidence refinement, not an unsupported method.",
+      "Landsat data is the actual resource; UCI is its repository, not a second dataset.",
+      "Theoretical study and simulation-based efficiency claim are supported without inventing the direction of correlation's effect."
+    ],
+    "P000841": [
+      "Presupposition background does not state an unmet gap; [] is appropriate.",
+      "A3+A4 is required to retain split objective and names/varieties.",
+      "Transcript trigger analysis is one procedure; the eight trigger classes are not eight independent techniques.",
+      "PressTV and CNN are channels, not proper corpus names.",
+      "Most-frequent finding is supported but the both-varieties antecedent needs A4."
+    ],
+    "P000990": [
+      "No explicit problem.",
+      "Building a French treebank is the objective.",
+      "Tagging, parsing and validation are performed; generic automatic tools/guidelines are not established separate introduced artifacts.",
+      "Treebank/newspaper corpus lacks a proper name.",
+      "One annotated corpus artifact is correct; optional A0+A1 wording adds the French treebank identity."
+    ],
+    "P001860": [
+      "The cooccurrence-pattern approach is the deficient subject; A1 is needed with A2.",
+      "Comparative representation study and KB completion are objectives. Relational-similarity measurement is evaluation procedure, not extra primary task.",
+      "Compositional techniques are actually investigated as study subjects; relational-similarity measurement is performed.",
+      "Benchmarks are unnamed.",
+      "No reported result/new artifact is stated, so [] is appropriate."
+    ],
+    "P002110": [
+      "Costly development labels need the speech/large-scale scope and previous ground-truth context.",
+      "Likelihood model selection and candidate pronunciation selection are explicit; only-potential-instance condition is retained.",
+      "Trained label-generating classifiers, censored tests and ASR are actually used; robust statistics is foundation for tests, not necessarily an independent procedure.",
+      "Unlabeled speech data are unnamed.",
+      "Framework and sign-test result are valid; empirical utility finding needs the speech experimental scope."
+    ],
+    "P003587": [
+      "No explicit unresolved shortcoming.",
+      "Structure estimation and POS tagging are valid objectives.",
+      "Both merging and splitting are studied; no evidence they are newly invented.",
+      "Text corpora are unnamed.",
+      "One combination result is valid; identity of the two techniques needs A5/A6, not separate invented novelty claims."
+    ],
+    "P003754": [
+      "No explicit problem.",
+      "Online handwritten mathematical expression parsing is the specific task.",
+      "Parser, Edmonds extraction, graph representation, stroke grouping and labeling are actual current procedures. My draft omitted representation; future n-grams/other notation are correctly excluded.",
+      "No named dataset.",
+      "Artifact and both comparisons are supported with valid-symbol condition and CYK comparator intact."
+    ],
+    "P003775": [
+      "Both translation-quality confound and explicit title research question qualify; my draft omitted title question.",
+      "English/French retrieval is the actual task.",
+      "Both translation systems and hybrid are actually investigated as empirical comparison objective. Same-data identical-model setup is retained.",
+      "No named dataset.",
+      "Hybrid superiority including human-quality query translation comparator is accurately retained."
+    ],
+    "P003879": [
+      "Survey background gives no explicit current problem.",
+      "Survey is the authors' actual objective; image/video retrieval are survey application domains, not systems the authors demonstrate.",
+      "Whether reviewed techniques count alongside review procedures is not explicit enough in current policy; requires boundary decision.",
+      "No named dataset.",
+      "Survey and five-criteria taxonomy are explicit contributions; future trends are not findings."
+    ],
+    "P004130": [
+      "No explicit unresolved gap.",
+      "Interest and expertise modeling are separable stated objectives; provisional splitting is more faithful than my single broad task.",
+      "Klout Topics is an introduced operational ontology used for modeling, supported as method.",
+      "Ontology-as-dataset eligibility is not explicit in the current resource list; requires decision.",
+      "Single ontology artifact and 780M-user application statement are supported by A0+A3; release is same artifact, not separate one."
+    ],
+    "P004190": [
+      "Speed and interface limitations are explicit.",
+      "Sequence similarity searching is the current task.",
+      "New BLAST+ software, chunking, selective retrieval, masking retrieval and modular library are actual methods/capabilities. My draft omitted valid operational elements.",
+      "My blind BLAST-databases item is too permissive: the phrase can mean generic databases in BLAST format, not a specifically named corpus/database instance. Conservative [] is defensible and should be documented.",
+      "All nine current artifact/capability/findings are supported. Program in A6 refers to rewritten BLAST in A3; optional antecedent evidence is useful but no competing current program makes the claim ambiguous."
+    ]
+  }
+}

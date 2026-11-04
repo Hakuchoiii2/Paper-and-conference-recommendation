@@ -1,0 +1,51 @@
+{
+  "kernel": "htnkhi/exp-a-qwen-facet-matrix",
+  "dataset": "htnkhi/exp-a-qwen-facet-matrix-inputs",
+  "arms": [
+    "original",
+    "policy",
+    "policy_examples"
+  ],
+  "models": [
+    "8b"
+  ],
+  "sample_size": 30,
+  "policy_cases": 20,
+  "generation_signature": "22c5003b392245266c4ec34415e5e2b83cf729329798769e4eab69615c196ea7",
+  "bundle_sha256": "6c57e37c810e6a8ffcf6ae54845641bf76ff969ea938e5035cb9189802c586c4",
+  "status": "COMPLETE",
+  "kernel_version": 4,
+  "dataset_ready": true,
+  "fine_tuning": false,
+  "source_schema": "concept+evidence_id",
+  "baseline_subset_8b_micro_f1": 0.6064516129032258,
+  "reference_kind": "ai",
+  "human_upload_approval": "Explicit user approval for named private dataset/kernel and described payload",
+  "previous_policy_attempt": {
+    "kernel_version": 3,
+    "status": "ERROR",
+    "cause": "ModuleNotFoundError: build_matrix",
+    "fix": "Move build-only import into build(); isolated bundle import and 104 exp_A regression tests passed"
+  },
+  "expected_output_root": "exp_a_policy/results",
+  "local_probe_status": "complete_and_verified",
+  "status_verified_by": "Kaggle kernels status API",
+  "local_probe_results": "data/exp_a/evaluation/policy_matrix_local_v1",
+  "expected_kaggle_records": 90,
+  "local_micro_f1": {
+    "original": 0.5882352941176471,
+    "policy": 0.4444444444444444,
+    "policy_examples": 0.2909090909090909
+  },
+  "local_conclusion": "No improvement on four selected 4B development cases; retain original. Await 8B matrix before fine-tuning decision.",
+  "kaggle_results": "data/exp_a/evaluation/policy_matrix_kaggle_v4",
+  "signed_records_checked": 90,
+  "new_records_raw_replayed": 60,
+  "scored_paper_facet_cells": 450,
+  "kaggle_micro_f1": {
+    "8b_original": 0.6064516129032258,
+    "8b_policy": 0.5043478260869565,
+    "8b_policy_examples": 0.5251141552511416
+  },
+  "conclusion": "Original remains best. No prompt modification or new run per user instruction; no fine-tuning."
+}

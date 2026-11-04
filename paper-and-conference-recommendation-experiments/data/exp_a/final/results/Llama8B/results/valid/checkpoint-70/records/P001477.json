@@ -1,0 +1,528 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.489012505000574,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4473,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1461,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.38342741699853,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4474,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3186,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.58280006699897,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}, {\"concept\": \"spam content analysis\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4475,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 888,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "spam content analysis",
+              "evidence": "In this paper, we analyze the spam content of trending hashtags on Saudi Twitter, and assess the performance of previous spam detection systems on our recently gathered dataset.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "features",
+            "evidence_id": "A11"
+          },
+          {
+            "concept": "data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "spam on Twitter is becoming smarter, fuzzier and harder to detect",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "escalating manipulation",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Detecting Evolved Spammers",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "spam content analysis",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 53.45523998899807,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001477",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5535,
+        "output_tokens": 433
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "spam content analysis",
+          "evidence": "In this paper, we analyze the spam content of trending hashtags on Saudi Twitter, and assess the performance of previous spam detection systems on our recently gathered dataset.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.489012505000574,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4473,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1461,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.38342741699853,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001477\", \"problem\": [{\"concept\": \"spam on Twitter is becoming smarter, fuzzier and harder to detect\", \"evidence_id\": \"A5\"}, {\"concept\": \"escalating manipulation\", \"evidence_id\": \"A9\"}], \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"updated manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"new data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4474,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3186,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "features",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "spam on Twitter is becoming smarter, fuzzier and harder to detect",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "escalating manipulation",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Detecting Evolved Spammers",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 40.8724399219991,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4474,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4647,
+        "output_tokens": 328
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.489012505000574,
+        "inherited": false,
+        "messages_sha256": "718f2170955d805ec7ec8203d89fe08e2d4150594ddb1102834c766335f39d1a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4473,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1461,
+          "output_tokens": 164
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.38342741699853,
+        "inherited": false,
+        "messages_sha256": "f14a97b9348d496dd1756913c601816d43ef2a4169dd62b1ff077d31e09f983a",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001477",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 4474,
+        "usage": {
+          "input_tokens": 3186,
+          "output_tokens": 164
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.58280006699897,
+        "inherited": false,
+        "messages_sha256": "87c3cb6e85576c6d2c80c012888c0801515f7cf6945ffdc41647028a639fd3d0",
+        "reached_token_limit": false,
+        "seed": 4475,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 888,
+          "output_tokens": 105
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "spam content analysis",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "data-driven detection system",
+            "evidence_id": "A11"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "updated manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "new data-driven detection system",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "features",
+            "evidence_id": "A11"
+          }
+        ],
+        "paper_id": "P001477",
+        "problem": [
+          {
+            "concept": "spam on Twitter is becoming smarter, fuzzier and harder to detect",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "escalating manipulation",
+            "evidence_id": "A9"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Detecting Evolved Spammers",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Detecting Evolved Spammers",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "manual classification algorithm",
+            "evidence_id": "A10"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "features",
+            "evidence_id": "A11"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.58280006699897,
+      "messages_sha256": "87c3cb6e85576c6d2c80c012888c0801515f7cf6945ffdc41647028a639fd3d0",
+      "raw_output": "{\"paper_id\": \"P001477\", \"task\": [{\"concept\": \"Detecting Evolved Spammers\", \"evidence_id\": \"T0\"}, {\"concept\": \"spam content analysis\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"manual classification algorithm\", \"evidence_id\": \"A10\"}, {\"concept\": \"features\", \"evidence_id\": \"A11\"}, {\"concept\": \"data-driven detection system\", \"evidence_id\": \"A11\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 888,
+        "output_tokens": 105
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "8d431dfdfe11c44094c73e9f6cd0557a8cc3c9b138dc2d23775d6c6bc01010b9",
+    "facets": {
+      "contribution": [
+        "updated manual classification algorithm",
+        "new data-driven detection system"
+      ],
+      "dataset": [],
+      "method": [
+        "manual classification algorithm",
+        "features",
+        "data-driven detection system"
+      ],
+      "paper_id": "P001477",
+      "problem": [
+        "spam on Twitter is becoming smarter, fuzzier and harder to detect",
+        "escalating manipulation"
+      ],
+      "task": [
+        "Detecting Evolved Spammers",
+        "spam content analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 53.45523998899807,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 53.45523998899807,
+      "input_tokens": 5535,
+      "output_tokens": 433
+    },
+    "paper_id": "P001477",
+    "source_sha256": "ff8ff0172899955e98b3552e3f3e8344d7d2e6b1128e0d4d9caf7f3d61f3534a",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5535,
+      "output_tokens": 433
+    }
+  },
+  "record_sha256": "c6dd5030aca4f2a66902ffb832606d46a39d3a30169b0f7b6d27df7a53a244e7",
+  "signature": "30b74f349733b3472e77d44e1714cb2630c638fc3e3ab13f025f7f748ada4987"
+}

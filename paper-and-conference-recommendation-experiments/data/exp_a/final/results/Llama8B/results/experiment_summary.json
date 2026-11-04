@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "signature": "11d612139564e38b0e259b3f5ffcc873a0b025a4bb8415c0eb69304ad03e68b2",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "counts": {
+    "test": 60,
+    "train": 280,
+    "valid": 60
+  },
+  "selected_checkpoint": "checkpoint-105",
+  "validation": {
+    "status": "selected",
+    "split": "valid",
+    "checkpoint": "checkpoint-105",
+    "micro": {
+      "tp": 356,
+      "fp": 175,
+      "fn": 154,
+      "precision": 0.6704331450094162,
+      "recall": 0.6980392156862745,
+      "f1": 0.6839577329490875
+    },
+    "criterion": "validation_v_recall_micro_f1_then_recall_then_earlier_epoch",
+    "signature": "11d612139564e38b0e259b3f5ffcc873a0b025a4bb8415c0eb69304ad03e68b2"
+  },
+  "table": [
+    {
+      "arm": "QLoRA-V-recall",
+      "tp": 329,
+      "fp": 189,
+      "fn": 173,
+      "precision": 0.6351351351351351,
+      "recall": 0.6553784860557769,
+      "f1": 0.6450980392156863,
+      "macro_f1": 0.6527879697196195,
+      "by_facet": {
+        "problem": {
+          "tp": 36,
+          "fp": 29,
+          "fn": 49,
+          "precision": 0.5538461538461539,
+          "recall": 0.4235294117647059,
+          "f1": 0.48,
+          "exact": 15
+        },
+        "task": {
+          "tp": 59,
+          "fp": 30,
+          "fn": 32,
+          "precision": 0.6629213483146067,
+          "recall": 0.6483516483516484,
+          "f1": 0.6555555555555556,
+          "exact": 20
+        },
+        "method": {
+          "tp": 135,
+          "fp": 73,
+          "fn": 24,
+          "precision": 0.6490384615384616,
+          "recall": 0.8490566037735849,
+          "f1": 0.7356948228882834,
+          "exact": 15
+        },
+        "dataset": {
+          "tp": 30,
+          "fp": 5,
+          "fn": 6,
+          "precision": 0.8571428571428571,
+          "recall": 0.8333333333333334,
+          "f1": 0.8450704225352113,
+          "exact": 51
+        },
+        "contribution": {
+          "tp": 69,
+          "fp": 52,
+          "fn": 62,
+          "precision": 0.5702479338842975,
+          "recall": 0.5267175572519084,
+          "f1": 0.5476190476190477,
+          "exact": 3
+        }
+      },
+      "fallback": 1,
+      "fresh_calls": 180
+    }
+  ],
+  "training_performed": true,
+  "gold_sha256": "3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c",
+  "wall_seconds_this_invocation": 13466.271560566,
+  "limitation": "Gold400 was purposively selected and previously inspected during pipeline development; this is a new paper-level training split, not an independent external holdout."
+}

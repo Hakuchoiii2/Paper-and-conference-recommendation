@@ -1,0 +1,41 @@
+test_publication_docs_preserve_all_sealed_adapter_checksums (scripts.exp_a.finetuning.test_collect.CollectionChecks.test_publication_docs_preserve_all_sealed_adapter_checksums) ... ok
+test_adapter_from_different_base_revision_is_rejected (scripts.exp_a.finetuning.test_experiment.ExperimentChecks.test_adapter_from_different_base_revision_is_rejected) ... ok
+test_changed_adapter_file_is_rejected (scripts.exp_a.finetuning.test_experiment.ExperimentChecks.test_changed_adapter_file_is_rejected) ... ok
+P000002: extract 1/3; score=64.00/100; validation_errors=0
+P000002: review 2/3; score=64.00/100; validation_errors=0
+original: completed P000002
+test_predictions_never_read_test_reference (scripts.exp_a.finetuning.test_experiment.ExperimentChecks.test_predictions_never_read_test_reference) ... ok
+test_additional_teacher_references_are_balanced_and_never_disguised_as_human (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_additional_teacher_references_are_balanced_and_never_disguised_as_human) ... ok
+test_bad_concept_rejects_whole_paper_and_exact_evidence_id_remaps (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_bad_concept_rejects_whole_paper_and_exact_evidence_id_remaps) ... ok
+test_corrupt_source_hash_or_corpus_fails_closed (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_corrupt_source_hash_or_corpus_fails_closed) ... ok
+test_duplicate_titles_cannot_leak_across_splits (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_duplicate_titles_cannot_leak_across_splits) ... ok
+test_exact_quotas_reproducible_and_rare_facets_reach_holdouts (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_exact_quotas_reproducible_and_rare_facets_reach_holdouts) ... ok
+test_pending_frozen_and_prompt_examples_are_excluded (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_pending_frozen_and_prompt_examples_are_excluded) ... ok
+test_token_limits_reject_complete_examples_without_truncation (scripts.exp_a.finetuning.test_prepare.PrepareChecks.test_token_limits_reject_complete_examples_without_truncation) ... ok
+test_incomplete_source_cannot_enter_the_training_pool (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_incomplete_source_cannot_enter_the_training_pool) ... ok
+test_invalid_paper_is_recorded_as_a_whole_paper_rejection (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_invalid_paper_is_recorded_as_a_whole_paper_rejection) ... ok
+test_missing_review_cannot_be_claimed_complete (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_missing_review_cannot_be_claimed_complete) ... ok
+test_review_aggregation_enters_real_data_preparation_without_dropping_concepts (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_review_aggregation_enters_real_data_preparation_without_dropping_concepts) ... ok
+test_reviewed_response_reconstructs_complete_reference_and_provenance (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_reviewed_response_reconstructs_complete_reference_and_provenance) ... ok
+test_self_review_is_rejected (scripts.exp_a.finetuning.test_review.TeacherReviewChecks.test_self_review_is_rejected) ... ok
+test_tiny_qwen3_adapter_updates_and_saves_without_base_weights (scripts.exp_a.finetuning.test_train.AdapterSmokeTests.test_tiny_qwen3_adapter_updates_and_saves_without_base_weights) ... D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\.venv-qwen\Lib\site-packages\peft\utils\save_and_load.py:295: UserWarning: Could not find a config file in  - will assume that the vocabulary was not modified.
+  warnings.warn(
+ok
+test_jsonl_duplicate_ids_and_train_dev_overlap_are_rejected (scripts.exp_a.finetuning.test_train.CompletionTests.test_jsonl_duplicate_ids_and_train_dev_overlap_are_rejected) ... ok
+test_non_json_or_extra_assistant_turn_is_rejected (scripts.exp_a.finetuning.test_train.CompletionTests.test_non_json_or_extra_assistant_turn_is_rejected) ... ok
+test_only_json_completion_and_eos_receive_labels (scripts.exp_a.finetuning.test_train.CompletionTests.test_only_json_completion_and_eos_receive_labels) ... ok
+test_overlong_examples_are_rejected_without_truncation (scripts.exp_a.finetuning.test_train.CompletionTests.test_overlong_examples_are_rejected_without_truncation) ... ok
+test_padding_is_masked_even_when_padding_and_eos_share_an_id (scripts.exp_a.finetuning.test_train.CompletionTests.test_padding_is_masked_even_when_padding_and_eos_share_an_id) ... ok
+test_actual_trainer_accumulates_completion_loss_and_restores_best_adapter (scripts.exp_a.finetuning.test_train.RunIntegrityTests.test_actual_trainer_accumulates_completion_loss_and_restores_best_adapter) ... The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 2, 'pad_token_id': 0}.
+ok
+test_checkpoint_resume_requires_matching_signature_and_intact_files (scripts.exp_a.finetuning.test_train.RunIntegrityTests.test_checkpoint_resume_requires_matching_signature_and_intact_files) ... ok
+test_completed_adapter_reuse_verifies_hashes_and_requires_explicit_opt_in (scripts.exp_a.finetuning.test_train.RunIntegrityTests.test_completed_adapter_reuse_verifies_hashes_and_requires_explicit_opt_in) ... ok
+test_incompatible_or_unmarked_nonempty_run_cannot_be_reused (scripts.exp_a.finetuning.test_train.RunIntegrityTests.test_incompatible_or_unmarked_nonempty_run_cannot_be_reused) ... ok
+test_selected_completion_logits_match_full_masked_loss_and_lora_gradients (scripts.exp_a.finetuning.test_train.RunIntegrityTests.test_selected_completion_logits_match_full_masked_loss_and_lora_gradients) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 44.847s
+
+OK
+{'eval_loss': 5.552456378936768, 'eval_runtime': 0.0164, 'eval_samples_per_second': 61.08, 'eval_steps_per_second': 61.08, 'epoch': 1.0}
+{'train_runtime': 0.4789, 'train_samples_per_second': 4.176, 'train_steps_per_second': 2.088, 'train_loss': 5.548525333404541, 'epoch': 1.0}

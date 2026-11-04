@@ -25,6 +25,8 @@ def merge(root, parts, output='data/exp_a/generated', dry_run=False):
         require(directory != output_path and directory not in output_path.parents,
                 'Merged output must not overwrite an A part')
         papers, rows, notes, manifest = load_silver(root, part, complete=False)
+        selected_ids = set(manifest['provenance']['config'].get('paper_ids', papers))
+        papers = {pid: paper for pid, paper in papers.items() if pid in selected_ids}
         provenance = dict(manifest['provenance'])
         provenance['config'] = {k: v for k, v in provenance['config'].items()
                                 if k not in ('output_dir', 'paper_range', 'cache_dir')}
@@ -52,7 +54,7 @@ def merge(root, parts, output='data/exp_a/generated', dry_run=False):
     notes = [metadata[pid] for pid in sorted(metadata)]
     manifest = dict(contract_version='1.0', dataset_kind='real', tier='silver', status='complete',
                     count=len(silver), corpus_count=len(papers), missing_ids=[], failed_annotations={},
-                    provenance=provenance, source_parts=sources, merge_version='1.0',
+                    provenance=provenance, source_parts=sources, merge_version='1.1',
                     merge_sha256=sha256(Path(__file__)),
                     fallback_annotations={row['paper_id']: row['validation_errors'] for row in notes
                                           if row.get('fallback_used')},

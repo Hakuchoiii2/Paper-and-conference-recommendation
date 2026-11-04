@@ -1,0 +1,48 @@
+{
+  "record": {
+    "arm": "base",
+    "decoder": "sampling",
+    "policy": "new_v2_2",
+    "paper_id": "P000151",
+    "seed": 495,
+    "stage": "draft",
+    "status": "measured",
+    "runtime": {
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "gpu": "Tesla T4",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "use_cache": true
+    },
+    "probe_signature": "5ad1db912e956ceaab446bb5698401324f0d1d6c7cbda0f0c2d9b5decbfffb88",
+    "messages_sha256": "3b7223d0732144a197cb154c33db07752146f58250f0ddb039ebcbaf0127e0e4",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "raw_output": "{\n  \"paper_id\": \"P000151\",\n  \"problem\": [\n    {\n      \"concept\": \"Limitation in understanding free-form factual questions\",\n      \"evidence_ids\": [\"T0\", \"A0\", \"A1\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Classifying questions to determine constraints for answering\",\n      \"evidence_ids\": [\"T0\", \"A0\", \"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Hierarchical classifier guided by semantic hierarchy\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"TREC 10 free-form questions\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Machine learning approach to question classification\",\n      \"evidence_ids\": [\"A1\"]\n    },\n    {\n      \"concept\": \"Accurate results on TREC 10 dataset\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ]\n}",
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: Concept must use selected source words in source order",
+      "task[0]: Concept must use selected source words in source order",
+      "dataset[0]: Concept must use selected source words in source order",
+      "contribution[1]: Concept must use selected source words in source order"
+    ],
+    "usage": {
+      "input_tokens": 1618,
+      "output_tokens": 235
+    },
+    "generation_seconds": 18.338518,
+    "stop_reason": "json_complete",
+    "reached_token_limit": false,
+    "bounded_stop": false,
+    "duplicate": null,
+    "raw_output_untrimmed": "{\n  \"paper_id\": \"P000151\",\n  \"problem\": [\n    {\n      \"concept\": \"Limitation in understanding free-form factual questions\",\n      \"evidence_ids\": [\"T0\", \"A0\", \"A1\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Classifying questions to determine constraints for answering\",\n      \"evidence_ids\": [\"T0\", \"A0\", \"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Hierarchical classifier guided by semantic hierarchy\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"TREC 10 free-form questions\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Machine learning approach to question classification\",\n      \"evidence_ids\": [\"A1\"]\n    },\n    {\n      \"concept\": \"Accurate results on TREC 10 dataset\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ]\n}",
+    "discarded_suffix_chars": 0
+  },
+  "record_sha256": "355b85207da30f08dcfc07941c9f2bf558de69b305edc45460e65997aeb90a62"
+}

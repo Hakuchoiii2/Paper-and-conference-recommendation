@@ -1,0 +1,19 @@
+# V-recall on accepted human_gold400 — design, plan and ledger
+
+User explicitly requested running the current V-recall on accepted human_gold.jsonl, scoring and pushing to private Kaggle. Execute inline with writing-plans, executing-plans, TDD and ponytail. No extra approval loop: this is execution of the requested experiment.
+
+Design: unchanged pinned recall.py and scoped V engine/model/prompt/scorer. New Qwen3-8B draft (the 400 gold IDs do not overlap cached pilot50) -> original first V review -> additions-only task/method coverage. Exactly3 logical calls x2048 output tokens; all3 are fresh cost, no inherited pilot calls. Two T4 workers process disjoint alternating200-paper shards of the same arm. Draft checkpoints and final signed records resume only with matching source/settings identity.
+
+Gold400 accepted human reference and matching source papers frozen by SHA256 in a new private input bundle. Workers receive title/abstract and sentence IDs only. Gold labels parsed only after all400 signed predictions are loaded/verified. Score all400, including source/audit flagged cases. Keep output/coverage failures in denominator. Unchanged frozen Qwen3 embedding/scorer threshold0.85. Report precision/recall/F1/F2 overall and per facet, signed records and intermediate draft/first-review diagnostics; intermediate stages require no extra model calls. No adapter or training; previous labels, splits/releases/kernels untouched. Selection/development history retained in report; no new independent-heldout claim.
+
+Files: dedicated data/exp_a/.kaggle/v_recall_gold400/{runner.py,build.py,bootstrap.template.py,README.md,release_20261026_v1/}; scripts/exp_a/pilot/test_v_recall_gold400.py. New private Kaggle dataset htnkhi/exp-a-v-recall-human-gold400-inputs and kernel htnkhi/exp-a-v-recall-human-gold400.
+
+- [x] Task1: behavioral RED tests for fresh draft + unchanged recall pipeline, actual3-call cost/seeds, no gold messages, malformed draft recovery, two disjoint shards and F2. Implement source-only wrapper/worker.
+- [x] Task2: freeze and package source/code/gold, test integrity/cohort/accepted metadata, packaged behavior and offline evaluation path. Run relevant regressions.
+- [x] Task3: independent code review, fix material issues; upload separate private inputs, verify cloud privacy; push two-T4 kernel, pull code and compare, save actual status. No result claim before scores exist.
+
+Ruling: use separate experiment directory on current exp_A, preserving existing uncommitted work and immutable pilot50 release. User authorized private cloud execution of these400 sources and labels. No Git reset, unrelated commit, shared branch push or automation.
+
+Task1/2 ledger: RED tests observed missing runner/bootstrap; GREEN10 behavioral tests including all400 offline scoring and gold-tamper separation. Frozen preflight:400 sources/3346 accepted concepts,2x200 shards, exact current recall/scorer bytes, no pilot ID overlap, gold hash3612e60fbcb302766ec18ca332ef7e72e103ca26b7b10e7d6d39b62ffc23c20c. Independent read-only reviewer found no launch blockers;10 tests also independently passed. Full A regression: 264 tests ran; 259 passed, 4 errors and 1 failure in legacy builders/tests after the human_gold rename and changed baseline provenance. New gold400 tests all10 passed. Preserve immutable legacy baseline instead of rewriting it for this launch. See regression_tests.log.
+
+Task3 ledger: independent review found no blockers. Private dataset uploaded, API privacy verified, downloaded individual bundle SHA matches frozen bytes. Kernel version1 pushed with T4 accelerator request. Pulled cloud code matches byte-for-byte, private/GPU/source metadata verified. Initial cloud status QUEUED; model worker startup not yet confirmed. Launch evidence: release_20261026_v1/{dataset_upload_report,launch_report,code_review,regression_report}.json. No measured scores yet.

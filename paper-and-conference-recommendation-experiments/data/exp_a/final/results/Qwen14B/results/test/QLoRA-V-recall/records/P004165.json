@@ -1,0 +1,472 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 30.802656068000942,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12537,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1369,
+            "output_tokens": 191
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.192859178001527,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12538,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3113,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 13.192205523002485,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P004165\",\"task\":[{\"concept\":\"Learning a natural language interface for database tables\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"Neural Programmer\",\"evidence_id\":\"A3\"},{\"concept\":\"weak supervision\",\"evidence_id\":\"A4\"},{\"concept\":\"enhance the objective function\",\"evidence_id\":\"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12539,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 802,
+            "output_tokens": 77
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "enhance the objective function",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Learning a natural language interface for database tables",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 75.18772076900495,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P004165",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5284,
+        "output_tokens": 438
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 30.802656068000942,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12537,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1369,
+            "output_tokens": 191
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.192859178001527,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [], \"task\": [{\"concept\": \"Learning a natural language interface for database tables\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12538,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3113,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Learning a natural language interface for database tables",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 61.99551524600247,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12538,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4482,
+        "output_tokens": 361
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 30.802656068000942,
+        "inherited": false,
+        "messages_sha256": "e73af09098325541fb332eff45c7524b24b1ffe91b90e7b0f528a280ef7424a7",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12537,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1369,
+          "output_tokens": 191
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 31.192859178001527,
+        "inherited": false,
+        "messages_sha256": "d2e26365ad76d6e226489bd43f6dc4cd76f06d8a8ac850a792f3aaa3055f3c46",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004165",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 12538,
+        "usage": {
+          "input_tokens": 3113,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 13.192205523002485,
+        "inherited": false,
+        "messages_sha256": "2884b6f18984168e2c9f67b31cb2091cb33daad838af2e362d80db139ef4da48",
+        "reached_token_limit": false,
+        "seed": 12539,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 802,
+          "output_tokens": 77
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "enhance the objective function",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Learning a natural language interface for database tables",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Learning a natural language interface for database tables",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 13.192205523002485,
+      "messages_sha256": "2884b6f18984168e2c9f67b31cb2091cb33daad838af2e362d80db139ef4da48",
+      "raw_output": "{\"paper_id\":\"P004165\",\"task\":[{\"concept\":\"Learning a natural language interface for database tables\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"Neural Programmer\",\"evidence_id\":\"A3\"},{\"concept\":\"weak supervision\",\"evidence_id\":\"A4\"},{\"concept\":\"enhance the objective function\",\"evidence_id\":\"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 802,
+        "output_tokens": 77
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "0b2d4cdfbdca3820a3d67af140567844f295b2b114d03ea841ae708b60572ee0",
+    "facets": {
+      "contribution": [
+        "weakly supervised, end-to-end neural network model",
+        "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision"
+      ],
+      "dataset": [
+        "WikiTableQuestions"
+      ],
+      "method": [
+        "Neural Programmer",
+        "weak supervision",
+        "enhance the objective function"
+      ],
+      "paper_id": "P004165",
+      "problem": [],
+      "task": [
+        "Learning a natural language interface for database tables"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 75.18772076900495,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 75.18772076900495,
+      "input_tokens": 5284,
+      "output_tokens": 438
+    },
+    "paper_id": "P004165",
+    "source_sha256": "7ebce617d63cd6f9e8ba37f266798a0e009ca6444f3e72100bea8ba3ace832d5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5284,
+      "output_tokens": 438
+    }
+  },
+  "record_sha256": "bf992a6235d2edb36c14bedf8a2e79d6f88e9e59f61f512f14cc7056af163686",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

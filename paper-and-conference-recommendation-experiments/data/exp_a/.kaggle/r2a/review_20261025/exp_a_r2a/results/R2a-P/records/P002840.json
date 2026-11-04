@@ -1,0 +1,302 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002840\",\n  \"problem\": [\n    {\n      \"concept\": \"effects of negation and modality on opinion expressions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"study the effects of negation and modality on opinion expressions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"linguistic experiments informed by native speakers\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"empirical results provide a basis for future opinion analysis systems\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"methodology applied for French and can be instantiated for other languages like English\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.495679335000204,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002840\",\n  \"problem\": [\n    {\n      \"concept\": \"effects of negation and modality on opinion expressions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"study the effects of negation and modality on opinion expressions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"linguistic experiments informed by native speakers\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"empirical results provide a basis for future opinion analysis systems\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"methodology applied for French and can be instantiated for other languages like English\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 81.7143,
+          "seed": 8562,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2414,
+            "output_tokens": 206
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology applied for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002840\", \"problem\": [{\"concept\": \"effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"study the effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic experiments informed by native speakers\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"empirical results provide a basis for future opinion analysis systems\", \"evidence_id\": \"A3\"}, {\"concept\": \"methodology used for French and can be instantiated for other languages like English\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 7.43666522500007,
+          "operations": [
+            {
+              "before": {
+                "concept": "methodology applied for French and can be instantiated for other languages like English",
+                "evidence_id": "A4"
+              },
+              "concept": "methodology used for French and can be instantiated for other languages like English",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002840\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":1,\"concept\":\"methodology used for French and can be instantiated for other languages like English\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 81.7143,
+          "seed": 8563,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2619,
+            "output_tokens": 60
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology used for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002840\", \"problem\": [{\"concept\": \"effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"study the effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"linguistic experiments informed by native speakers\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"empirical results provide a basis for future opinion analysis systems\", \"evidence_id\": \"A3\"}, {\"concept\": \"methodology used for French and can be instantiated for other languages like English\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 3,
+          "generation_seconds": 7.416307781999876,
+          "operations": [
+            {
+              "before": {
+                "concept": "methodology used for French and can be instantiated for other languages like English",
+                "evidence_id": "A4"
+              },
+              "concept": "methodology used for French and can be instantiated for other languages like English",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002840\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":1,\"concept\":\"methodology used for French and can be instantiated for other languages like English\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 81.7143,
+          "seed": 8564,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2619,
+            "output_tokens": 60
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology used for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "empirical results provide a basis for future opinion analysis systems",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "methodology used for French and can be instantiated for other languages like English",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "linguistic experiments informed by native speakers",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002840",
+        "problem": [
+          {
+            "concept": "effects of negation and modality on opinion expressions",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "study the effects of negation and modality on opinion expressions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 32.34865234200015,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002840",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 8564,
+      "selected_score": 81.7143,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7652,
+        "output_tokens": 326
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology used for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "91aaafe254e05cb7e48a1901ad159593ac5942121d5527bcab1b97cc3ed8f68f",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 8562
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "70b7e16d7785428f04059e78294694c4f580a7db0cc12befc0dfa43352c59b9c",
+        "operations": [
+          {
+            "before": {
+              "concept": "methodology applied for French and can be instantiated for other languages like English",
+              "evidence_id": "A4"
+            },
+            "concept": "methodology used for French and can be instantiated for other languages like English",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 8563
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "386701f97b23529c029084350c95a03572e4e474a47638e6da5401cc3c271838",
+        "operations": [
+          {
+            "before": {
+              "concept": "methodology used for French and can be instantiated for other languages like English",
+              "evidence_id": "A4"
+            },
+            "concept": "methodology used for French and can be instantiated for other languages like English",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 8564
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology used for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"methodology used for French and can be instantiated for other languages like English\"; evidence_id=\"A4\"; evidence=\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "empirical results provide a basis for future opinion analysis systems",
+        "methodology used for French and can be instantiated for other languages like English"
+      ],
+      "dataset": [],
+      "method": [
+        "linguistic experiments informed by native speakers"
+      ],
+      "paper_id": "P002840",
+      "problem": [
+        "effects of negation and modality on opinion expressions"
+      ],
+      "task": [
+        "study the effects of negation and modality on opinion expressions"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 32.34865234200015,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 14.852973006999946,
+      "input_tokens": 5238,
+      "output_tokens": 120
+    },
+    "paper_id": "P002840",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [],
+      "method": [
+        0
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 7652,
+      "output_tokens": 326
+    }
+  },
+  "record_sha256": "9d9162095ad1ff3ee313f74579b90a37721aa00b19ad8a389477b55557f690ad",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

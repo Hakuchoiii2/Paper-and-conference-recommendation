@@ -1,0 +1,243 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 14.67840400099999,
+          "messages_sha256": "1b72f044e826d8b2eef333d0a4310e418906679afbf0be99780889e1f03d3665",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001057\", \"problem\": [], \"task\": [{\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"A0\"}, {\"concept\": \"linear classifier\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"A0\"}, {\"concept\": \"features extracted by our model are linearly separable\", \"evidence_id\": \"A1\"}, {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 71.4945,
+          "seed": 3215,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2359,
+            "output_tokens": 170
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"handwritten digit recognition\"; evidence_id=\"A1\"; evidence=\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "novel vision model",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "features extracted by our model are linearly separable",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "model outperforms other models on the same data set",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "novel vision model",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "linear classifier",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001057",
+        "problem": [],
+        "task": [
+          {
+            "concept": "handwritten digit recognition",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 38.28822838099995,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001057",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 71.4945,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3350,
+        "output_tokens": 475
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"handwritten digit recognition\"; evidence_id=\"A1\"; evidence=\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 11.253465303999974,
+        "messages_sha256": "166aecb4c515b6438c0ad8c995eb06e9496b4b7c5935fa7785a82ef4e4a88744",
+        "raw_output": "{\"paper_id\":\"P001057\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Using only a linear classifier on these features, our model is relatively simple yet outperforms other models on the same data set.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 3213,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 485,
+          "output_tokens": 143
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 12.35635907599999,
+        "messages_sha256": "96c6ee04bd4b8c7f5a769e43af134d5ab4f1a4af416c36e680138c33799da930",
+        "raw_output": "{\"paper_id\":\"P001057\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\",\"roles\":[\"problem\",\"task\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A2\",\"span\":\"Using only a linear classifier on these features, our model is relatively simple yet outperforms other models on the same data set.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A1\"]}]}",
+        "reached_token_limit": false,
+        "seed": 3214,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 506,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.67840400099999,
+        "messages_sha256": "1b72f044e826d8b2eef333d0a4310e418906679afbf0be99780889e1f03d3665",
+        "raw_output": "{\"paper_id\": \"P001057\", \"problem\": [], \"task\": [{\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"A0\"}, {\"concept\": \"linear classifier\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"A0\"}, {\"concept\": \"features extracted by our model are linearly separable\", \"evidence_id\": \"A1\"}, {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}]}",
+        "reached_token_limit": false,
+        "seed": 3215,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2359,
+          "output_tokens": 170
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "novel vision model",
+        "features extracted by our model are linearly separable",
+        "model outperforms other models on the same data set"
+      ],
+      "dataset": [
+        "MNIST"
+      ],
+      "method": [
+        "novel vision model",
+        "linear classifier"
+      ],
+      "paper_id": "P001057",
+      "problem": [],
+      "task": [
+        "handwritten digit recognition"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 38.28822838099995,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 11.253465303999974,
+        "messages_sha256": "166aecb4c515b6438c0ad8c995eb06e9496b4b7c5935fa7785a82ef4e4a88744",
+        "raw_output": "{\"paper_id\":\"P001057\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Using only a linear classifier on these features, our model is relatively simple yet outperforms other models on the same data set.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 3213,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 485,
+          "output_tokens": 143
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 12.35635907599999,
+        "messages_sha256": "96c6ee04bd4b8c7f5a769e43af134d5ab4f1a4af416c36e680138c33799da930",
+        "raw_output": "{\"paper_id\":\"P001057\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST).\",\"roles\":[\"problem\",\"task\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A2\",\"span\":\"Using only a linear classifier on these features, our model is relatively simple yet outperforms other models on the same data set.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A1\"]}]}",
+        "reached_token_limit": false,
+        "seed": 3214,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 506,
+          "output_tokens": 162
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 38.28822838099995,
+      "input_tokens": 3350,
+      "output_tokens": 475
+    },
+    "paper_id": "P001057",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A1",
+        "origin": "current",
+        "roles": [
+          "problem",
+          "task"
+        ],
+        "span": "We show empirically that the features extracted by our model are linearly separable over a large training set (MNIST)."
+      },
+      {
+        "context_ids": [
+          "A1"
+        ],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "Using only a linear classifier on these features, our model is relatively simple yet outperforms other models on the same data set."
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3350,
+      "output_tokens": 475
+    }
+  },
+  "record_sha256": "3501493c2d78e3a64ecf7f40b296d39c5f70623f360f0b62d852b874a0d3cefa",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -1,0 +1,164 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003479\", \"problem\": [], \"task\": [{\"concept\": \"extract source–subject–predicate clauses\", \"evidence_id\": \"A0\"}, {\"concept\": \"analyze actions, issue positions and framing by different actors within a single text\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"syntactic patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus comparison\", \"evidence_id\": \"A4\"}, {\"concept\": \"semantic network analysis\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"open source R package\", \"evidence_id\": \"A0\"}, {\"concept\": \"small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.278358772997308,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003479\", \"problem\": [], \"task\": [{\"concept\": \"extract source–subject–predicate clauses\", \"evidence_id\": \"A0\"}, {\"concept\": \"analyze actions, issue positions and framing by different actors within a single text\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"syntactic patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus comparison\", \"evidence_id\": \"A4\"}, {\"concept\": \"semantic network analysis\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"open source R package\", \"evidence_id\": \"A0\"}, {\"concept\": \"small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.6894,
+          "seed": 10479,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2488,
+            "output_tokens": 195
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003479\", \"problem\": [], \"task\": [{\"concept\": \"extract source–subject–predicate clauses\", \"evidence_id\": \"A0\"}, {\"concept\": \"analyze actions, issue positions and framing by different actors within a single text\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"syntactic patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus comparison\", \"evidence_id\": \"A4\"}, {\"concept\": \"semantic network analysis\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"open source R package\", \"evidence_id\": \"A0\"}, {\"concept\": \"small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.993079432999366,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003479\", \"problem\": [], \"task\": [{\"concept\": \"extract source–subject–predicate clauses\", \"evidence_id\": \"A0\"}, {\"concept\": \"analyze actions, issue positions and framing by different actors within a single text\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"syntactic patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus comparison\", \"evidence_id\": \"A4\"}, {\"concept\": \"semantic network analysis\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"open source R package\", \"evidence_id\": \"A0\"}, {\"concept\": \"small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.6894,
+          "seed": 10480,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4058,
+            "output_tokens": 195
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "open source R package",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "syntactic patterns",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "corpus comparison",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "semantic network analysis",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003479",
+        "problem": [],
+        "task": [
+          {
+            "concept": "extract source–subject–predicate clauses",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "analyze actions, issue positions and framing by different actors within a single text",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 64.27143820599667,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10480,
+      "selected_score": 75.6894,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6546,
+        "output_tokens": 390
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "open source R package",
+        "small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order"
+      ],
+      "dataset": [],
+      "method": [
+        "syntactic patterns",
+        "corpus comparison",
+        "semantic network analysis"
+      ],
+      "paper_id": "P003479",
+      "problem": [],
+      "task": [
+        "extract source–subject–predicate clauses",
+        "analyze actions, issue positions and framing by different actors within a single text"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 64.27143820599667,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P003479",
+    "usage": {
+      "input_tokens": 6546,
+      "output_tokens": 390
+    }
+  },
+  "record_sha256": "25dc3f62c9741932341709598e4777483362ba1f74b3d6b41c06e7338202dbcf",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

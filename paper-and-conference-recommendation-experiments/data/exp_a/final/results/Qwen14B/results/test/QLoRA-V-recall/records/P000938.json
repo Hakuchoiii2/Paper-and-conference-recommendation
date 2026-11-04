@@ -1,0 +1,611 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.434039143998234,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1619,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.87339211899962,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3385,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 19.514280274001067,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000938\",\"task\":[{\"concept\":\"search for the most likely sequence of semantic concepts and realization phrases\",\"evidence_id\":\"A2\"},{\"concept\":\"vary the output utterances generated for a given semantic input\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Factored Language Models\",\"evidence_id\":\"A2\"},{\"concept\":\"n-best list\",\"evidence_id\":\"A6\"},{\"concept\":\"structured perceptron\",\"evidence_id\":\"A6\"},{\"concept\":\"crowdsourced data\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2858,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 1072,
+            "output_tokens": 116
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "method",
+              "index": 3,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "crowdsourced data",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "crowdsourced data",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "search for the most likely sequence of semantic concepts and realization phrases",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "vary the output utterances generated for a given semantic input",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 85.82171153699892,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P000938",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6076,
+        "output_tokens": 496
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "crowdsourced data",
+          "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+          "facet": "method",
+          "index": 3,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "crowdsourced data",
+          "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.434039143998234,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1619,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.87339211899962,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"crowdsourced data\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3385,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "crowdsourced data",
+              "evidence": "This article is based on the assumption that learning to produce paraphrases can be facilitated by collecting data from a large sample of untrained annotators using crowdsourcing—rather than a few domain experts—by relying on a coarse meaning representation.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "crowdsourced data",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 66.30743126299785,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2857,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5004,
+        "output_tokens": 380
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.434039143998234,
+        "inherited": false,
+        "messages_sha256": "84360ea90d9f3b11cc8758f1b53eb9b625ba264674f7e63cd9f3fff1ec27b8da",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2856,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1619,
+          "output_tokens": 190
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.87339211899962,
+        "inherited": false,
+        "messages_sha256": "8259b707f15de7514f88b113c174473ac9594c745ff9220f5b45a6252ca5c404",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000938",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12"
+          ]
+        },
+        "seed": 2857,
+        "usage": {
+          "input_tokens": 3385,
+          "output_tokens": 190
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 19.514280274001067,
+        "inherited": false,
+        "messages_sha256": "4d96f314cc57027f7498916f710f0a31cb0eafb9e88626b6296db80fde619a95",
+        "reached_token_limit": false,
+        "seed": 2858,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 1072,
+          "output_tokens": 116
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "search for the most likely sequence of semantic concepts and realization phrases",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "task",
+          "item": {
+            "concept": "vary the output utterances generated for a given semantic input",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "crowdsourced data",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 3,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "crowdsourced data",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 19.514280274001067,
+      "messages_sha256": "4d96f314cc57027f7498916f710f0a31cb0eafb9e88626b6296db80fde619a95",
+      "raw_output": "{\"paper_id\":\"P000938\",\"task\":[{\"concept\":\"search for the most likely sequence of semantic concepts and realization phrases\",\"evidence_id\":\"A2\"},{\"concept\":\"vary the output utterances generated for a given semantic input\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Factored Language Models\",\"evidence_id\":\"A2\"},{\"concept\":\"n-best list\",\"evidence_id\":\"A6\"},{\"concept\":\"structured perceptron\",\"evidence_id\":\"A6\"},{\"concept\":\"crowdsourced data\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 1072,
+        "output_tokens": 116
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "47598aa39d6ba07bcd066677c9e2bb1a4d744e83cbdfe4b268bc8acb3517c2b4",
+    "facets": {
+      "contribution": [
+        "Bagel",
+        "crowdsourced data"
+      ],
+      "dataset": [],
+      "method": [
+        "Factored Language Models",
+        "n-best list",
+        "structured perceptron",
+        "crowdsourced data"
+      ],
+      "paper_id": "P000938",
+      "problem": [
+        "handcrafted generation component",
+        "not readily available"
+      ],
+      "task": [
+        "language generation",
+        "generating paraphrases",
+        "search for the most likely sequence of semantic concepts and realization phrases",
+        "vary the output utterances generated for a given semantic input"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 85.82171153699892,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 85.82171153699892,
+      "input_tokens": 6076,
+      "output_tokens": 496
+    },
+    "paper_id": "P000938",
+    "source_sha256": "2b6a3d86e7fd084ccc1e2677a61177f86b2f2e1b1693a7bd8c867f30cbbce1cb",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 6076,
+      "output_tokens": 496
+    }
+  },
+  "record_sha256": "8eecef7add00e3aff3943a64bfef99fccadfaf4c860c7cfc195a0c2bcc63ae12",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

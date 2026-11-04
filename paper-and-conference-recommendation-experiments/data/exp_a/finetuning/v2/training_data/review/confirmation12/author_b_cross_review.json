@@ -1,0 +1,708 @@
+{
+  "reviewer_identity": "author_b",
+  "review_subject": "author_a",
+  "review_type": "source_based_AI_cross_review_after_both_drafts_sealed",
+  "status": "material_corrections_required_before_reference_acceptance",
+  "label_source": "ai_reference",
+  "human_review_status": "pending",
+  "scope": "All 12 original title/abstract records; all five facets per paper; unchanged policy v2.2 and clarifications.",
+  "independence_limit": "Author B's source-only draft was sealed before author A files were opened. This is an AI procedural cross-review, not two independent humans or human-gold certification.",
+  "own_b_draft_independently_accepted": false,
+  "sealed_drafts_modified": false,
+  "policy_assessment": {
+    "new_policy_rules_required": false,
+    "rollout_blocked_by_policy_ambiguity": false,
+    "reason": "The identified issues are ordinary annotation corrections under existing scope/coreference, actual-method versus validation-baseline, and artifact/finding coverage rules. Split/merge choices retaining the same meaning are advisory. Resolve the material corrections through source adjudication before accepting references or starting full annotation rollout."
+  },
+  "reviews": [
+    {
+      "paper_id": "P000226",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "A1 explicitly motivates negation handling through polarity effects in sentiment analysis.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "A0 states the survey objective; the surveyed scope is not mistaken for implemented prediction tasks.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "The actual survey operation is retained without listing every reviewed approach as used.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "No named used or introduced resource is supplied.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "The presented survey is an artifact; no background claim is promoted to a new empirical result.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001763",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "A0 supplies the NLI antecedent for A2's explicit systematic-comparison gap.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "A3-A4 preserve the 24 interfaces, ten sample questions, and strengths/weaknesses goal.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "Overview, question evaluation, and categorization are actual survey procedures. Category types remain reviewed objects.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "The curated question list is unnamed.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "material_correction_required",
+          "rationale": "All three conclusions are supported, but their concepts should retain the database-NLI scope rather than reading as unrestricted claims about all keyword/grammar systems.",
+          "material_issues": [
+            {
+              "code": "finding_scope",
+              "evidence_ids": [
+                "A3",
+                "A6",
+                "A7",
+                "A8"
+              ],
+              "rationale": "Policy section 4 requires the scope needed to avoid a broader claim. A3 explicitly supplies NLIs for databases; adding only evidence without this scope in the concept would leave the generalization.",
+              "suggested_corrections": [
+                {
+                  "operation": "replace_item",
+                  "target_index": 2,
+                  "concept": "NLIs for databases: keyword-based systems are enough to answer simple questions.",
+                  "evidence_ids": [
+                    "A3",
+                    "A6"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 3,
+                  "concept": "NLIs for databases: To solve more complex questions involving subqueries, the system needs to apply some sort of parsing to identify structural dependencies.",
+                  "evidence_ids": [
+                    "A3",
+                    "A7"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 4,
+                  "concept": "NLIs for databases: Grammar-based systems are overall the most powerful ones, but are highly dependent on their manually designed rules.",
+                  "evidence_ids": [
+                    "A3",
+                    "A8"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000019",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "The spam-volume need and weak manual keyword filters are explicit, with the filter antecedent resolved.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "The source explicitly investigates two learning algorithms for spam filtering.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "Naive Bayesian and memory-based methods are the primary empirical-comparison subjects. The e-mail reader's keyword filter remains only a comparator.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "The public corpus is unnamed and standard benchmarks are an aspiration.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "Introduced cost-sensitive measures are artifacts rather than model methods. The final finding names both algorithms and preserves spam filtering and its keyword-filter comparator.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000054",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "A3 supplies the Settlers of Catan expert-challenge implementation gap.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "A0+A3 ground the policy-acquisition target in the actual game.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept_with_advisory",
+          "rationale": "Both independent components and A2's retrieval/simulation decision procedure are present. This covers the actual integration content.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "Do not add a generic 'hybrid model' method merely to mirror contribution. A2 already supplies the operational workflow, and an additional parent with only 'combines' would duplicate covered content. A richer combined workflow could replace A2, but is not necessary."
+          ]
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "The human-play corpus is unnamed; the game is not a named dataset.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "material_correction_required",
+          "rationale": "The model artifact is supported, but the short preliminary finding leaves the model unspecified and omits the implemented Settlers of Catan setting.",
+          "material_issues": [
+            {
+              "code": "finding_subject_and_scope",
+              "evidence_ids": [
+                "A0",
+                "A3",
+                "A4"
+              ],
+              "rationale": "The finding must identify what is hybrid and retain the preliminary experiment's application setting. A1 remains only a superiority hypothesis.",
+              "suggested_corrections": [
+                {
+                  "operation": "replace_item",
+                  "target_index": 1,
+                  "concept": "We propose a hybrid model for automatically acquiring a policy for a complex game, which combines online learning with mining knowledge from a corpus of human game play. We implement and assess our model in an agent playing the complex win-lose board game Settlers of Catan, which lacks an implementation that would challenge a human expert. The results from the preliminary set of experiments illustrate the potential of such a joint model.",
+                  "evidence_ids": [
+                    "A0",
+                    "A3",
+                    "A4"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002222",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "The practice antecedent and complex-domain boundary limitation are complete.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept_with_advisory",
+          "rationale": "A3-A5 explicitly establish formal properties and A6 shows practical axiomatization. These theory/demonstration objectives are supported; A has better primary-objective coverage than B's A6-only draft.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "For clearer task/contribution separation, the third task can be shortened to 'axiomatize the logical interaction between concepts and metaconcepts' [A6]. The current HiLog capability wording is source-supported, so this is a role-expression refinement rather than missing coverage.",
+            "Do not remove the formal-properties objectives merely because their proofs also produce contribution findings. They are the explicit main research activity in this theoretical paper."
+          ]
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "Contextual and HiLog semantics are separately proposed. A6 also establishes HiLog's demonstration role; SHOIQ/OWL languages are analyzed objects.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "Ontology languages and description logic do not establish a named used ontology dataset.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "Both semantics and all three findings retain their subjects, undecidability cause, either-semantics condition, and HiLog antecedent.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001951",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "The shared-gene limitation retains can/may and the complex-disease condition.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept_with_advisory",
+          "rationale": "Disease similarity and term/entity similarity targets are explicit operation-and-object phrases. A's labels say measure similarity, rather than merely present a model.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "The ontology-term and annotated-entity goals can remain as distinct computational targets, or be treated as mechanism scope under the overall disease task. This granularity choice alone is not a material role error; do not add duplicate generic tasks."
+          ]
+        },
+        "method": {
+          "decision": "material_correction_required",
+          "rationale": "A4-A5 introduce the similarity functions for the disease-similarity objective. A7-A8 validate that proposed method with a benchmark, rather than establish a standalone research objective comparing baseline techniques.",
+          "material_issues": [
+            {
+              "code": "baseline_role",
+              "evidence_ids": [
+                "A4",
+                "A5",
+                "A7",
+                "A8"
+              ],
+              "rationale": "The policy permits comparison subjects as methods when comparative assessment is itself the research objective. Here the paper presents a new similarity method and uses exact matches/gene overlap to validate it. Being executed as a comparator is insufficient by itself; keep both comparators in the A8 contribution finding.",
+              "suggested_corrections": [
+                {
+                  "operation": "remove_item",
+                  "target_index": 3,
+                  "concept": "exact matches between GO Processes",
+                  "evidence_ids": [
+                    "A8"
+                  ]
+                },
+                {
+                  "operation": "remove_item",
+                  "target_index": 4,
+                  "concept": "gene overlap",
+                  "evidence_ids": [
+                    "A8"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept_with_advisory",
+          "rationale": "GO is explicitly defined and actually used as the Gene Ontology structured resource.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "Prefer the source full name 'Gene Ontology' [A7] for a less ambiguous standalone resource label. This is a source-defined alias refinement, not an invented resource."
+          ]
+        },
+        "contribution": {
+          "decision": "accept_with_advisory",
+          "rationale": "Both target levels are present in the introduced function family; A6's generic comparison preserves its unknown comparator rather than guessing it. A8-A10 retain all conditions and numbers.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "Splitting the functions artifact into term-level and annotated-entity-level items is permissible but not a material correction: the combined item already retains both targets and the shared co-occurrence/information-content basis.",
+            "Retain A8 exactly, including gene overlap's higher recall. Do not reinterpret the source's broad 'performed better' claim as superiority on every metric."
+          ]
+        }
+      }
+    },
+    {
+      "paper_id": "P001837",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "The lack of human-labeled resources is an explicit motivation.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "The source states a survey of typological information in NLP development.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "Only the literature survey is treated as performed; advocacy and possible induction developments remain future direction.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "No typological database name is supplied.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "The combined performance/explanation finding preserves to-date scope, modest gains, both database limits, and under-utilization. The causal link makes this grouping acceptable; B's split form is not inherently superior.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P003896",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "No explicit prior limitation is stated; later training-time cost is not retrofitted as motivation.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "A1 directly states empirical comparison on the word-order task.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "Both actual comparison subjects and their evaluated combination are covered; names and anaphoric links are grounded.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "Raw text and the standard benchmark are unnamed.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "material_correction_required",
+          "rationale": "The first three findings and the final combination result lose the word-order setting, making the language-model claims broader than the experiment.",
+          "material_issues": [
+            {
+              "code": "finding_task_scope",
+              "evidence_ids": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A6"
+              ],
+              "rationale": "The quality impact, raw-text benefit, performance/time tradeoff, and best-result claims are results of the A1 word-order comparison. The error-distribution finding already says in word ordering.",
+              "suggested_corrections": [
+                {
+                  "operation": "replace_item",
+                  "target_index": 0,
+                  "concept": "word order task: the quality of automatically-parsed training data has a relatively small impact on syntactic models.",
+                  "evidence_ids": [
+                    "A1",
+                    "A2"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 1,
+                  "concept": "word order task: Both of syntactic and N-gram models can benefit from large-scale raw text.",
+                  "evidence_ids": [
+                    "A1",
+                    "A3"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 2,
+                  "concept": "word order task: Compared with N-gram models, syntactic models give overall better performance, but they require much more training time.",
+                  "evidence_ids": [
+                    "A1",
+                    "A4"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 4,
+                  "concept": "N-gram and syntactic language models on word order task: A combination of the two models integrates the advantages of each model, achieving the best result in a standard benchmark.",
+                  "evidence_ids": [
+                    "A1",
+                    "A6"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000627",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "The source presents an investigation, while observed bias is a result rather than a prior asserted limitation.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "Quality, time, automatic pre-annotation, manual POS annotation, and bias are retained.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "The comparative annotation protocol contains both from-scratch and pre-annotation conditions without labeling humans as techniques.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "Penn Treebank corpus is explicitly named and annotated; the citation year is not a version.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "material_correction_required",
+          "rationale": "The actual corpus context is present, but POS annotation should be explicit so quality and speed results do not read as claims about arbitrary annotation.",
+          "material_issues": [
+            {
+              "code": "finding_annotation_scope",
+              "evidence_ids": [
+                "A0",
+                "A1",
+                "A2",
+                "A3"
+              ],
+              "rationale": "A0 supplies the manual part-of-speech annotation scope. The quality-gain/bias grouping can remain: its while-clause preserves the source's linked caveat.",
+              "suggested_corrections": [
+                {
+                  "operation": "replace_item",
+                  "target_index": 0,
+                  "concept": "manual part-of-speech annotation of the Penn Treebank corpus under various experimental setups, either from scratch or using various pre-annotations: These experiments confirm and detail the gain in quality observed before, while showing that biases do appear and should be taken into account.",
+                  "evidence_ids": [
+                    "A0",
+                    "A1",
+                    "A2"
+                  ]
+                },
+                {
+                  "operation": "replace_item",
+                  "target_index": 1,
+                  "concept": "manual part-of-speech annotation of the Penn Treebank corpus under various experimental setups, either from scratch or using various pre-annotations: even a not so accurate tagger can help improving annotation speed.",
+                  "evidence_ids": [
+                    "A0",
+                    "A1",
+                    "A3"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P000842",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "No explicit prior failure is given; future efficient/highprecision directions do not supply one.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "A2 gives parse-forest construction and best-parse extraction.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept_with_advisory",
+          "rationale": "Contractions, their weighted-FST expression, and the parse-forest algorithm are source-supported actual presentation content.",
+          "material_issues": [],
+          "advisory_refinements": [
+            "Contractions and weighted FST can be merged into one relationship-preserving method item using A0+A1. Their current split is an expression choice, provided they are not treated as unrelated independently evaluated systems."
+          ]
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "No named resource is supplied.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "material_correction_required",
+          "rationale": "The new algorithm, construction observation, and complexity result are sound. The stated algorithm's parsing-mode capabilities in A3 are missing.",
+          "material_issues": [
+            {
+              "code": "artifact_capability_coverage",
+              "evidence_ids": [
+                "A2",
+                "A3"
+              ],
+              "rationale": "A3 reports functional/bilexical customizability and a possible non-projective extension, which distinguish the introduced artifact's capability. Preserve can and prior-result attribution; this is not evidence those modes were run and must not become an actually used extension method.",
+              "suggested_corrections": [
+                {
+                  "operation": "add_item",
+                  "concept": "finite-state parsing algorithm: The algorithm is customizable to functional and bilexical dependency parsing, and it can be extended to non-projective parsing via a multi-planar encoding with prior results on high recall.",
+                  "evidence_ids": [
+                    "A2",
+                    "A3"
+                  ]
+                }
+              ]
+            }
+          ],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P002201",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "All three explicit design obstacles are preserved, including the prior-effort antecedent and limited Arabic NLP.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "The Arabic-question/knowledge-base-answer input/output objective is explicit.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "The translation/matching workflow, two feature groups with ambiguity purpose, and authored grammar rules are actual components. A6's limited use is respected.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "No name is supplied for the ontologies, knowledge base, or evaluated datasets; RDF/SW are not datasets.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "The named interface, proposed core translation approach, and defined rules are distinguishable introduced artifacts. A8 retains its two-dataset qualitative precision/recall result. These A additions over B are justified.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    },
+    {
+      "paper_id": "P001398",
+      "facets": {
+        "problem": {
+          "decision": "accept",
+          "rationale": "Temporal variation omitted by prior rumor work is explicitly the gap.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "task": {
+          "decision": "accept",
+          "rationale": "Automatic rumor detection on social media, especially microblogs, is explicit.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "method": {
+          "decision": "accept",
+          "rationale": "A's richer method identifies the content/user/propagation antecedent and actual lifecycle time-series treatment; this improves standalone clarity over B's shorter form.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "dataset": {
+          "decision": "accept",
+          "rationale": "The two microblog datasets are unnamed.",
+          "material_issues": [],
+          "advisory_refinements": []
+        },
+        "contribution": {
+          "decision": "accept",
+          "rationale": "The introduced approach and both findings preserve the method antecedent, two-dataset experimental context, state-of-the-art comparator/large margins, and early-stage-after-broadcast condition.",
+          "material_issues": [],
+          "advisory_refinements": []
+        }
+      }
+    }
+  ],
+  "target_index_basis": "zero_based_index_in_the_original_author_a_facet_list",
+  "suggested_corrections_are_proposals_not_applied": true,
+  "created_at_utc": "2026-10-19T01:51:45.641089+00:00",
+  "input_integrity": {
+    "author_a_sealed_annotation_and_audit_hashes_match": true,
+    "author_b_sealed_annotation_and_audit_hashes_match": true,
+    "sources_policy_prompt_schema_match_selection": true,
+    "both_drafts_unchanged": true,
+    "author_a_records_pass_ground_response": 12,
+    "suggested_replacement_or_addition_items_pass_ground_response": 11,
+    "all_twelve_papers_all_five_facets_reviewed": true
+  },
+  "input_sha256": {
+    "sources": "dc2274f8ccf7a438d0212e0f1ba4a4587aae5d512cca6e830383cad96dfd5421",
+    "selection": "af5ede9efd7d52a198bf9a6a149f4f2d9c195f0b92b9bd59951edfcf87984ca0",
+    "policy": "6b21f9ac8e196d0afeaf6605349346c85ff8ea549d8240ae5c8f00b56464e2e3",
+    "policy_clarifications": "816df5422772476d9d6aac3282d6f0da7fa40a496ae95e1a15a5202ff1567a6c",
+    "schema_validator": "f0167d48194cce2c1463a22e6b1cdbb05a5ffc6098ad9349509dc496321508c9",
+    "schema_contract": "2df0c73f5e81eea0b3c21fbb830208302e49f24dc288ae29d417620b242297d7",
+    "prompt": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "author_a_annotations": "ba2656a813c6b2e565302ae9b8cc63af0026daada6f0374d95f790b4f3514b50",
+    "author_a_audit": "ece108b29dd425dc42500974289147ce1e3dc3a9ea7ecaf2066116496a5a6d8e",
+    "author_a_seal": "e4d7edd16b79638d36932882db13fc437eb1aa6619488e9adc8fd27aa2143cac",
+    "author_b_annotations": "c6e63818f704f1bce99ca8c90afb9098126cab59c4a6ed5cc3bd9e3123007ce7",
+    "author_b_audit": "42d6d8b9b33c28cc105a6ee1b40354f3f1ca49903886800aff73c82d83b743ea",
+    "author_b_seal": "d272db6315941f5ac4d6f421fa556ccbb94e09ffe0af5c64f367f6532eb637d0"
+  },
+  "summary": {
+    "papers_reviewed": 12,
+    "facets_reviewed": 60,
+    "material_correction_facets": [
+      {
+        "paper_id": "P001763",
+        "facet": "contribution"
+      },
+      {
+        "paper_id": "P000054",
+        "facet": "contribution"
+      },
+      {
+        "paper_id": "P001951",
+        "facet": "method"
+      },
+      {
+        "paper_id": "P003896",
+        "facet": "contribution"
+      },
+      {
+        "paper_id": "P000627",
+        "facet": "contribution"
+      },
+      {
+        "paper_id": "P000842",
+        "facet": "contribution"
+      }
+    ],
+    "material_correction_papers": 6,
+    "facets_accepted_or_advisory": 54,
+    "material_correction_actions": 13,
+    "new_policy_rules_required": false,
+    "annotation_rollout_acceptance": "Pending source adjudication and correction of the listed ordinary annotation issues; no policy-rule change is required by this review."
+  }
+}

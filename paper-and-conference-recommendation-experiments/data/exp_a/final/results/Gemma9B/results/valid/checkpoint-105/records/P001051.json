@@ -1,0 +1,586 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 38.35098659799769,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3195,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1393,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+              "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+              "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "finding ends before a source qualification or caveat; include the limiting clause"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 43.05144800299968,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3196,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3213,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+              "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+              "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "finding ends before a source qualification or caveat; include the limiting clause"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.831344846999855,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001051\", \"task\": [], \"method\": [{\"concept\": \"analyze Twitter data\", \"evidence_id\": \"A3\"}, {\"concept\": \"Moral Foundations Theory\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3197,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 866,
+            "output_tokens": 59
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+              "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+              "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "finding ends before a source qualification or caveat; include the limiting clause"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "no evidence for elevated moral foundations among political extremists",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "text-based psychological constructs",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "analyze Twitter data",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Moral Foundations Theory",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001051",
+        "problem": [
+          {
+            "concept": "lack of access to extremist groups",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "missed psychological measures",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analyze Twitter data of 10,000 political extremists",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 93.23377944799722,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001051",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5472,
+        "output_tokens": 469
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+          "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+          "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "finding ends before a source qualification or caveat; include the limiting clause"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 38.35098659799769,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3195,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1393,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+              "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+              "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "finding ends before a source qualification or caveat; include the limiting clause"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 43.05144800299968,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001051\", \"problem\": [{\"concept\": \"lack of access to extremist groups\", \"evidence_id\": \"A1\"}, {\"concept\": \"missed psychological measures\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"analyze Twitter data of 10,000 political extremists\", \"evidence_id\": \"A3\"}, {\"concept\": \"compare extremists' text-based psychological constructs with those of liberal and conservative users\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"text-based psychological constructs\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"extremists show a lower positive emotion and a higher negative emotion than partisan users\", \"evidence_id\": \"A4\"}, {\"concept\": \"no evidence for elevated moral foundations among political extremists\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3196,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3213,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+              "evidence": "context by analyzing Twitter data of 10,000 political extremists and comparing their text-based psychological constructs with those of 5000 liberal and 5000 conservative users.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+              "evidence": "The results reveal that extremists show a lower positive emotion and a higher negative emotion than partisan users, but their differences in certainty is not significant.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "finding ends before a source qualification or caveat; include the limiting clause"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "no evidence for elevated moral foundations among political extremists",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "text-based psychological constructs",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001051",
+        "problem": [
+          {
+            "concept": "lack of access to extremist groups",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "missed psychological measures",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analyze Twitter data of 10,000 political extremists",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 81.40243460099737,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3196,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4606,
+        "output_tokens": 410
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 38.35098659799769,
+        "inherited": false,
+        "messages_sha256": "09b0847eeccc7f9d749061faf54108a77a7d27910d7c12074882bcf35e6763c8",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 3195,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1393,
+          "output_tokens": 205
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 43.05144800299968,
+        "inherited": false,
+        "messages_sha256": "fff83982436d8d7bfdb5eb29aee107a7abdca837c286ea17a4d18f481bed63fb",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001051",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 3196,
+        "usage": {
+          "input_tokens": 3213,
+          "output_tokens": 205
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.831344846999855,
+        "inherited": false,
+        "messages_sha256": "a3ffb424ff2b7ead773a2dfc1df4c826c94fbe9a061f0fabc31dfc25252d812b",
+        "reached_token_limit": false,
+        "seed": 3197,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 866,
+          "output_tokens": 59
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "analyze Twitter data",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "Moral Foundations Theory",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "no evidence for elevated moral foundations among political extremists",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "text-based psychological constructs",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001051",
+        "problem": [
+          {
+            "concept": "lack of access to extremist groups",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "missed psychological measures",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analyze Twitter data of 10,000 political extremists",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "compare extremists' text-based psychological constructs with those of liberal and conservative users",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 11.831344846999855,
+      "messages_sha256": "a3ffb424ff2b7ead773a2dfc1df4c826c94fbe9a061f0fabc31dfc25252d812b",
+      "raw_output": "{\"paper_id\": \"P001051\", \"task\": [], \"method\": [{\"concept\": \"analyze Twitter data\", \"evidence_id\": \"A3\"}, {\"concept\": \"Moral Foundations Theory\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 866,
+        "output_tokens": 59
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "72760d0b810552865861cbbc6460e7bc095fc922f78b88563d46ad4ca4d00717",
+    "facets": {
+      "contribution": [
+        "extremists show a lower positive emotion and a higher negative emotion than partisan users",
+        "no evidence for elevated moral foundations among political extremists"
+      ],
+      "dataset": [],
+      "method": [
+        "text-based psychological constructs",
+        "analyze Twitter data",
+        "Moral Foundations Theory"
+      ],
+      "paper_id": "P001051",
+      "problem": [
+        "lack of access to extremist groups",
+        "missed psychological measures"
+      ],
+      "task": [
+        "analyze Twitter data of 10,000 political extremists",
+        "compare extremists' text-based psychological constructs with those of liberal and conservative users"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 93.23377944799722,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 93.23377944799722,
+      "input_tokens": 5472,
+      "output_tokens": 469
+    },
+    "paper_id": "P001051",
+    "source_sha256": "291f6eb38cee6e4b44d25212e81063776a435aa2d64aa629b90ffebbb9361137",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5472,
+      "output_tokens": 469
+    }
+  },
+  "record_sha256": "d4582e25f589b73479074dd24ea9e8a5be81822ed5cd42208ad8aec0443edbec",
+  "signature": "b70f7f0c11027ae63c9cadd8346e20bb7c37043c066b5705fda23b6849ae244f"
+}

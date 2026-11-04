@@ -1,0 +1,244 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003085\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"dense labeling of aerial images\", \"evidence_id\": \"A2\"}\n  ],\n  \"method\": [\n    {\"concept\": \"convolutional neural network approaches\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"U-net architecture\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Inria Aerial Image Labeling Benchmark\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"four methods with the highest numerical accuracies\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"U-net architecture as a new standard in image dense labeling\", \"evidence_id\": \"A4\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 15.607565941000303,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003085\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"dense labeling of aerial images\", \"evidence_id\": \"A2\"}\n  ],\n  \"method\": [\n    {\"concept\": \"convolutional neural network approaches\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"U-net architecture\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Inria Aerial Image Labeling Benchmark\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"four methods with the highest numerical accuracies\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"U-net architecture as a new standard in image dense labeling\", \"evidence_id\": \"A4\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 83.0,
+          "seed": 9297,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2417,
+            "output_tokens": 182
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"U-net architecture as a new standard in image dense labeling\"; evidence_id=\"A4\"; evidence=\"It is remarkable that three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003085\", \"problem\": [], \"task\": [{\"concept\": \"dense labeling of aerial images\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"convolutional neural network approaches\", \"evidence_id\": \"A3\"}, {\"concept\": \"U-net architecture\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Inria Aerial Image Labeling Benchmark\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"four methods with the highest numerical accuracies\", \"evidence_id\": \"A3\"}, {\"concept\": \"three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 8.119855918000212,
+          "operations": [
+            {
+              "before": {
+                "concept": "U-net architecture as a new standard in image dense labeling",
+                "evidence_id": "A4"
+              },
+              "concept": "three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P003085\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":1,\"concept\":\"three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 9298,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2620,
+            "output_tokens": 69
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "four methods with the highest numerical accuracies",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Inria Aerial Image Labeling Benchmark",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "convolutional neural network approaches",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "U-net architecture",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003085",
+        "problem": [],
+        "task": [
+          {
+            "concept": "dense labeling of aerial images",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 23.727421859000515,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003085",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 9298,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5037,
+        "output_tokens": 251
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "ccd3c5f62caeb970b51851e1eec465ccd269163f8dd7ca3dac7986f142b859f0",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 9297
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "2fa36c01549709309249425cd4d95518c377696d98798c36361b04b99749978b",
+        "operations": [
+          {
+            "before": {
+              "concept": "U-net architecture as a new standard in image dense labeling",
+              "evidence_id": "A4"
+            },
+            "concept": "three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9298
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "four methods with the highest numerical accuracies",
+        "three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling"
+      ],
+      "dataset": [
+        "Inria Aerial Image Labeling Benchmark"
+      ],
+      "method": [
+        "convolutional neural network approaches",
+        "U-net architecture"
+      ],
+      "paper_id": "P003085",
+      "problem": [],
+      "task": [
+        "dense labeling of aerial images"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 23.727421859000515,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 8.119855918000212,
+      "input_tokens": 2620,
+      "output_tokens": 69
+    },
+    "paper_id": "P003085",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5037,
+      "output_tokens": 251
+    }
+  },
+  "record_sha256": "7cc70f59b329b1841667fab84a0ef18a9681dd95c5e01ed377698332dc00cc39",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

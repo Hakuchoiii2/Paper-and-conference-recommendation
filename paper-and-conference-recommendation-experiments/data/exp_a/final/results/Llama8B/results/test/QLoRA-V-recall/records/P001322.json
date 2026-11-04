@@ -1,0 +1,570 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.58021711999936,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4008,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1385,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "notoriously low MOOC completion rates",
+              "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+              "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.752577565001047,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4009,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3070,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "notoriously low MOOC completion rates",
+              "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+              "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.165122971000528,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001322\", \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}, {\"concept\": \"mix of click-stream data and NLP indices\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4010,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 788,
+            "output_tokens": 96
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "notoriously low MOOC completion rates",
+              "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+              "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "click-stream data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NLP approaches",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "mix of click-stream data and NLP indices",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001322",
+        "problem": [
+          {
+            "concept": "notoriously low MOOC completion rates",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predict whether students complete the MOOC",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 46.497917656000936,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001322",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5243,
+        "output_tokens": 376
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "notoriously low MOOC completion rates",
+          "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+          "facet": "problem",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+          "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.58021711999936,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4008,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1385,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "notoriously low MOOC completion rates",
+              "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+              "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.752577565001047,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001322\", \"problem\": [{\"concept\": \"notoriously low MOOC completion rates\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4009,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3070,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "notoriously low MOOC completion rates",
+              "evidence": "Completion rates for massive open online classes (MOOCs) are notoriously low.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+              "evidence": "The findings indicate that a mix of click-stream data and NLP indices can predict with substantial accuracy (78%) whether students complete the MOOC.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "click-stream data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NLP approaches",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001322",
+        "problem": [
+          {
+            "concept": "notoriously low MOOC completion rates",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predict whether students complete the MOOC",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 35.33279468500041,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4009,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4455,
+        "output_tokens": 280
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.58021711999936,
+        "inherited": false,
+        "messages_sha256": "6012a71f62b7b94197ecede749c710baeeab4f2489ba2ad4399130388d9f87ab",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4008,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1385,
+          "output_tokens": 140
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 18.752577565001047,
+        "inherited": false,
+        "messages_sha256": "78330dee0ceea840a19f38df288f44282ce094201841652c7ff03d4cdb715ce4",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001322",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 4009,
+        "usage": {
+          "input_tokens": 3070,
+          "output_tokens": 140
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.165122971000528,
+        "inherited": false,
+        "messages_sha256": "6bd0733339e37bf00f8acfe34c864bd04b7cbcaf0a6a0165aa635557f84c87bf",
+        "reached_token_limit": false,
+        "seed": 4010,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 788,
+          "output_tokens": 96
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "mix of click-stream data and NLP indices",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "click-stream data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NLP approaches",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001322",
+        "problem": [
+          {
+            "concept": "notoriously low MOOC completion rates",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predict whether students complete the MOOC",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "predict whether students complete the MOOC",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "click-stream data",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "NLP approaches",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.165122971000528,
+      "messages_sha256": "6bd0733339e37bf00f8acfe34c864bd04b7cbcaf0a6a0165aa635557f84c87bf",
+      "raw_output": "{\"paper_id\": \"P001322\", \"task\": [{\"concept\": \"predict whether students complete the MOOC\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"click-stream data\", \"evidence_id\": \"A2\"}, {\"concept\": \"NLP approaches\", \"evidence_id\": \"A4\"}, {\"concept\": \"mix of click-stream data and NLP indices\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 96
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "23e51b673b35af8e9c3e79a97e8a2fffb5584bddf33322429fc3619389688ed8",
+    "facets": {
+      "contribution": [
+        "mix of click-stream data and NLP indices can predict MOOC completion with 78% accuracy"
+      ],
+      "dataset": [],
+      "method": [
+        "click-stream data",
+        "NLP approaches",
+        "mix of click-stream data and NLP indices"
+      ],
+      "paper_id": "P001322",
+      "problem": [
+        "notoriously low MOOC completion rates"
+      ],
+      "task": [
+        "predict whether students complete the MOOC"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 46.497917656000936,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 46.497917656000936,
+      "input_tokens": 5243,
+      "output_tokens": 376
+    },
+    "paper_id": "P001322",
+    "source_sha256": "ddaea9d4fd7a90690122f0263bb80f186b60199fd9e63835d825241daa50e91c",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5243,
+      "output_tokens": 376
+    }
+  },
+  "record_sha256": "08ff93bf86019af641a30c568e45e754a02c1290ce1cd36cb0c5b3326e80f0d4",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

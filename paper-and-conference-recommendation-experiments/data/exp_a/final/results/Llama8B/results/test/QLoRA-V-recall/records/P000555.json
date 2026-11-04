@@ -1,0 +1,483 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}, {\"concept\": \"reusability of annotated data\", \"evidence_id\": \"T0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 14.742432293998718,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}, {\"concept\": \"reusability of annotated data\", \"evidence_id\": \"T0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1707,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1251,
+            "output_tokens": 125
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "annotation costs",
+              "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 2,
+          "generation_seconds": 14.691519205998702,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1708,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2901,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "annotation costs",
+              "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 6.225942834000307,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000555\", \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1709,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 619,
+            "output_tokens": 51
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "annotation costs",
+              "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "reduction rates for annotation efforts ranging up until 72%",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Active Learning",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P000555",
+        "problem": [
+          {
+            "concept": "annotation costs",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text corpus annotation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 35.65989433399773,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000555",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4771,
+        "output_tokens": 281
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "annotation costs",
+          "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+          "facet": "problem",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}, {\"concept\": \"reusability of annotated data\", \"evidence_id\": \"T0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 14.742432293998718,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}, {\"concept\": \"reusability of annotated data\", \"evidence_id\": \"T0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1707,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1251,
+            "output_tokens": 125
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "annotation costs",
+              "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 2,
+          "generation_seconds": 14.691519205998702,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000555\", \"problem\": [{\"concept\": \"annotation costs\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"reduction rates for annotation efforts ranging up until 72%\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1708,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2901,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "annotation costs",
+              "evidence": "AbstractWe consider the impact Active Learning (AL) has on effective and efficient text corpus annotation, and report on reduction rates for annotation efforts ranging up until 72%.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "reduction rates for annotation efforts ranging up until 72%",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Active Learning",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P000555",
+        "problem": [
+          {
+            "concept": "annotation costs",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text corpus annotation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 29.43395149999742,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1708,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4152,
+        "output_tokens": 230
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.742432293998718,
+        "inherited": false,
+        "messages_sha256": "3a4433e976605cfb2ef41c785e1ac7e301bc6cf627cf50d5dbf0afc11b743afb",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1707,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1251,
+          "output_tokens": 125
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.691519205998702,
+        "inherited": false,
+        "messages_sha256": "0f05b269732c549fa9144a05a160cbc967ee7eb3fa22ea9610d7ce6a7b7e58b1",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000555",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2"
+          ]
+        },
+        "seed": 1708,
+        "usage": {
+          "input_tokens": 2901,
+          "output_tokens": 105
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 6.225942834000307,
+        "inherited": false,
+        "messages_sha256": "20b037dbedb4458d50c0abc31de4aa3e490b8c19abc724a2e6e36bab2709b28e",
+        "reached_token_limit": false,
+        "seed": 1709,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 619,
+          "output_tokens": 51
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "reduction rates for annotation efforts ranging up until 72%",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Active Learning",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P000555",
+        "problem": [
+          {
+            "concept": "annotation costs",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text corpus annotation",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "text corpus annotation",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Active Learning",
+            "evidence_id": "A0"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 6.225942834000307,
+      "messages_sha256": "20b037dbedb4458d50c0abc31de4aa3e490b8c19abc724a2e6e36bab2709b28e",
+      "raw_output": "{\"paper_id\": \"P000555\", \"task\": [{\"concept\": \"text corpus annotation\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Active Learning\", \"evidence_id\": \"A0\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 619,
+        "output_tokens": 51
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "6c9cf7eb0babce37c21733468415eb003faacef60180135492f0428d55e9e5b6",
+    "facets": {
+      "contribution": [
+        "reduction rates for annotation efforts ranging up until 72%"
+      ],
+      "dataset": [],
+      "method": [
+        "Active Learning"
+      ],
+      "paper_id": "P000555",
+      "problem": [
+        "annotation costs"
+      ],
+      "task": [
+        "text corpus annotation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 35.65989433399773,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 35.65989433399773,
+      "input_tokens": 4771,
+      "output_tokens": 281
+    },
+    "paper_id": "P000555",
+    "source_sha256": "87e629d4617fa08ee4c0c0016214f779289d9e53dcf5d81cb34ef59ac9202883",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4771,
+      "output_tokens": 281
+    }
+  },
+  "record_sha256": "a67e58b90955e2eb4992a71110ddf47c0088c617344a4ce19a766ffb8f64c712",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

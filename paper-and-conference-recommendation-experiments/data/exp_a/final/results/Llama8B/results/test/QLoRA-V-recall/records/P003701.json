@@ -1,0 +1,630 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}, {\"concept\": \"visual variability limits the vocabulary of findings\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.22274770600052,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}, {\"concept\": \"visual variability limits the vocabulary of findings\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11145,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1458,
+            "output_tokens": 208
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "expert labels in clinical imaging are difficult to obtain",
+              "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "visual variability limits the vocabulary of findings",
+              "evidence": "While supervised learning yields good results if expert labeled training data is available, the visual variability, and thus the vocabulary of findings, we can detect and exploit, is limited to the annotated lesions.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "anomaly detection",
+              "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.29625982899961,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11146,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3219,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "expert labels in clinical imaging are difficult to obtain",
+              "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "anomaly detection",
+              "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.939616534999004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003701\", \"task\": [{\"concept\": \"identifying anomalous images and image segments\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}, {\"concept\": \"visual Turing test\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11147,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 908,
+            "output_tokens": 93
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "expert labels in clinical imaging are difficult to obtain",
+              "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "anomaly detection",
+              "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "f‐AnoGAN",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "fast mapping technique of new data to the GAN's latent space",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "generative adversarial network",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "encoder",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discriminator feature residual error",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "image reconstruction error",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "visual Turing test",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P003701",
+        "problem": [
+          {
+            "concept": "expert labels in clinical imaging are difficult to obtain",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "anomaly detection",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "identifying anomalous images and image segments",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 59.45862406999913,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P003701",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5585,
+        "output_tokens": 488
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "expert labels in clinical imaging are difficult to obtain",
+          "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+          "facet": "problem",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "anomaly detection",
+          "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}, {\"concept\": \"visual variability limits the vocabulary of findings\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.22274770600052,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}, {\"concept\": \"visual variability limits the vocabulary of findings\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11145,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1458,
+            "output_tokens": 208
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "expert labels in clinical imaging are difficult to obtain",
+              "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "visual variability limits the vocabulary of findings",
+              "evidence": "While supervised learning yields good results if expert labeled training data is available, the visual variability, and thus the vocabulary of findings, we can detect and exploit, is limited to the annotated lesions.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "anomaly detection",
+              "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.29625982899961,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003701\", \"problem\": [{\"concept\": \"expert labels in clinical imaging are difficult to obtain\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"anomaly detection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"generative adversarial network\", \"evidence_id\": \"A3\"}, {\"concept\": \"encoder\", \"evidence_id\": \"A5\"}, {\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"f‐AnoGAN\", \"evidence_id\": \"A3\"}, {\"concept\": \"fast mapping technique of new data to the GAN's latent space\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11146,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3219,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "expert labels in clinical imaging are difficult to obtain",
+              "evidence": "&NA; Obtaining expert labels in clinical imaging is difficult since exhaustive annotation is time‐consuming.",
+              "facet": "problem",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "anomaly detection",
+              "evidence": "Here, we present fast AnoGAN (f‐AnoGAN), a generative adversarial network (GAN) based unsupervised learning approach capable of identifying anomalous images and image segments, that can serve as imaging biomarker candidates.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "f‐AnoGAN",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "fast mapping technique of new data to the GAN's latent space",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "generative adversarial network",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "encoder",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discriminator feature residual error",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "image reconstruction error",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003701",
+        "problem": [
+          {
+            "concept": "expert labels in clinical imaging are difficult to obtain",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "anomaly detection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.51900753500013,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11146,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4677,
+        "output_tokens": 395
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.22274770600052,
+        "inherited": false,
+        "messages_sha256": "5c2b03e439d531e1cdc5795167c94c7a504d30cf8682155a704d34bbc3880464",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 11145,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1458,
+          "output_tokens": 208
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.29625982899961,
+        "inherited": false,
+        "messages_sha256": "d448b84f4208e9b3e3b625a325e4064cf417d04869d328dd08fcb785c6e58242",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003701",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 11146,
+        "usage": {
+          "input_tokens": 3219,
+          "output_tokens": 187
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.939616534999004,
+        "inherited": false,
+        "messages_sha256": "6cdbeb0b0c4ec184fd8a62b8aa1aa17490203401ea669537aed5f4edb0ed1be3",
+        "reached_token_limit": false,
+        "seed": 11147,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 908,
+          "output_tokens": 93
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "identifying anomalous images and image segments",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "visual Turing test",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "f‐AnoGAN",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "fast mapping technique of new data to the GAN's latent space",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "generative adversarial network",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "encoder",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discriminator feature residual error",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "image reconstruction error",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003701",
+        "problem": [
+          {
+            "concept": "expert labels in clinical imaging are difficult to obtain",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "anomaly detection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "discriminator feature residual error",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "image reconstruction error",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.939616534999004,
+      "messages_sha256": "6cdbeb0b0c4ec184fd8a62b8aa1aa17490203401ea669537aed5f4edb0ed1be3",
+      "raw_output": "{\"paper_id\": \"P003701\", \"task\": [{\"concept\": \"identifying anomalous images and image segments\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"discriminator feature residual error\", \"evidence_id\": \"A5\"}, {\"concept\": \"image reconstruction error\", \"evidence_id\": \"A5\"}, {\"concept\": \"visual Turing test\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 908,
+        "output_tokens": 93
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "75c4115bd3f5a4d374c16e39e32f7fad02a845d6047535f2071ec3d0874af17f",
+    "facets": {
+      "contribution": [
+        "f‐AnoGAN",
+        "fast mapping technique of new data to the GAN's latent space"
+      ],
+      "dataset": [],
+      "method": [
+        "generative adversarial network",
+        "encoder",
+        "discriminator feature residual error",
+        "image reconstruction error",
+        "visual Turing test"
+      ],
+      "paper_id": "P003701",
+      "problem": [
+        "expert labels in clinical imaging are difficult to obtain"
+      ],
+      "task": [
+        "anomaly detection",
+        "identifying anomalous images and image segments"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.45862406999913,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 59.45862406999913,
+      "input_tokens": 5585,
+      "output_tokens": 488
+    },
+    "paper_id": "P003701",
+    "source_sha256": "d628edabc2f739e0dca6b1962005cbf3fab9f5d4617f6e65df93fa8b2fabab45",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5585,
+      "output_tokens": 488
+    }
+  },
+  "record_sha256": "032ecf36f71b58ca4478901adcdb619a1c3f7ef58a27a8648241e2f0c070e5fe",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

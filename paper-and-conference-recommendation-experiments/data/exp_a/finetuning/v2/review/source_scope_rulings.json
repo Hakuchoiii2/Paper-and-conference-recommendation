@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-10-19T01:44:30.303230+00:00",
+  "scope": "Frozen-input annotation rulings for this v2 training preparation, not source replacement or corpus-eligibility certification",
+  "global_rule": "Retain every original train/dev ID and original title/abstract. Annotate only supported meaning in that input. Do not add full-text facts, silently repair spelling or drop/reassign rows. Data-quality flags remain visible; AI references, human review pending.",
+  "papers": {
+    "P000271": {
+      "status": "partial_input_retained",
+      "decision": "Use supplied introductory text only; no claims of a completed computer-test procedure/results beyond what title/abstract support. Log missing coverage instead of importing the remainder of the chapter.",
+      "training_split_unchanged": true
+    },
+    "P001234": {
+      "status": "upstream_spelling_retained",
+      "decision": "Use OpenStreatMap exactly as supplied. No silent OpenStreetMap correction or global alias; retain source spelling flag.",
+      "training_split_unchanged": true
+    },
+    "P003168": {
+      "status": "source_limited_claims",
+      "decision": "Availability-only BioProp sentence does not establish use. Do not infer denominator/comparator for the 97% claim. Keep independently supported qualitative findings/artifact; log the underdetermined numeric statement.",
+      "training_split_unchanged": true
+    },
+    "P000779": {
+      "status": "book_description_retained_with_scope_flag",
+      "decision": "This is a book description in the original dev split. Preserve the fixed split and annotate the analysis explicitly described by the supplied text; do not represent it as an IT research-paper experiment. Keep source_type/book and corpus_scope_uncertain flags visible in manifest/limitations. No replacement, exclusion or invented empty labels.",
+      "training_split_unchanged": true
+    },
+    "P004191": {
+      "status": "source_coreference_check_required",
+      "decision": "A9/A10 must be read jointly for the hybrid-model antecedent if retaining the independent-dataset 0.80 finding; use only input words, not external model/server details.",
+      "training_split_unchanged": true
+    }
+  }
+}

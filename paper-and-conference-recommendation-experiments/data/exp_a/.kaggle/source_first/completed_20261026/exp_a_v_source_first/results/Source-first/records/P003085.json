@@ -1,0 +1,204 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 14.349804641999981,
+          "messages_sha256": "8e32d485f9ad408f1924c1de72be3e34623f293c0011b641f3669612954fef93",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003085\", \"problem\": [], \"task\": [{\"concept\": \"dense labeling of aerial images into building / not building classes\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"convolutional neural network approaches\", \"evidence_id\": \"A3\"}, {\"concept\": \"U-net architecture\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Inria Aerial Image Labeling Benchmark\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"four methods with the highest numerical accuracies\", \"evidence_id\": \"A3\"}, {\"concept\": \"U-net architecture proven to become a new standard in image dense labeling\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 87.8438,
+          "seed": 9299,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2262,
+            "output_tokens": 168
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "four methods with the highest numerical accuracies",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "U-net architecture proven to become a new standard in image dense labeling",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Inria Aerial Image Labeling Benchmark",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "convolutional neural network approaches",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "U-net architecture",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003085",
+        "problem": [],
+        "task": [
+          {
+            "concept": "dense labeling of aerial images into building / not building classes",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 50.77031730099998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003085",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 87.8438,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3413,
+        "output_tokens": 652
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.25564070700011,
+        "messages_sha256": "5ca676d458642698975a81eef41a83480ed48c97a12b9d814fcbd62896188cc0",
+        "raw_output": "{\"paper_id\":\"P003085\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Over the recent years, there has been an increasing interest in large-scale classification of remote sensing images.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this context, the Inria Aerial Image Labeling Benchmark has been released online in December 2016.\",\"roles\":[\"dataset\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we discuss the outcomes of the first year of the benchmark contest, which consisted in dense labeling of aerial images into building / not building classes, covering areas of five cities not present in the training set.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We present four methods with the highest numerical accuracies, all four being convolutional neural network approaches.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"It is remarkable that three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9297,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 565,
+          "output_tokens": 242
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 18.164871951999885,
+        "messages_sha256": "a91fa03c5887c38fbeaa306d63db8232e882aedb7c89c163af4338f94bdb30b1",
+        "raw_output": "{\"paper_id\":\"P003085\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Over the recent years, there has been an increasing interest in large-scale classification of remote sensing images.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this context, the Inria Aerial Image Labeling Benchmark has been released online in December 2016.\",\"roles\":[\"dataset\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we discuss the outcomes of the first year of the benchmark contest, which consisted in dense labeling of aerial images into building / not building classes, covering areas of five cities not present in the training set.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We present four methods with the highest numerical accuracies, all four being convolutional neural network approaches.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"It is remarkable that three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9298,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 586,
+          "output_tokens": 242
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.349804641999981,
+        "messages_sha256": "8e32d485f9ad408f1924c1de72be3e34623f293c0011b641f3669612954fef93",
+        "raw_output": "{\"paper_id\": \"P003085\", \"problem\": [], \"task\": [{\"concept\": \"dense labeling of aerial images into building / not building classes\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"convolutional neural network approaches\", \"evidence_id\": \"A3\"}, {\"concept\": \"U-net architecture\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Inria Aerial Image Labeling Benchmark\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"four methods with the highest numerical accuracies\", \"evidence_id\": \"A3\"}, {\"concept\": \"U-net architecture proven to become a new standard in image dense labeling\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 9299,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2262,
+          "output_tokens": 168
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "four methods with the highest numerical accuracies",
+        "U-net architecture proven to become a new standard in image dense labeling"
+      ],
+      "dataset": [
+        "Inria Aerial Image Labeling Benchmark"
+      ],
+      "method": [
+        "convolutional neural network approaches",
+        "U-net architecture"
+      ],
+      "paper_id": "P003085",
+      "problem": [],
+      "task": [
+        "dense labeling of aerial images into building / not building classes"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 50.77031730099998,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.25564070700011,
+        "messages_sha256": "5ca676d458642698975a81eef41a83480ed48c97a12b9d814fcbd62896188cc0",
+        "raw_output": "{\"paper_id\":\"P003085\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Over the recent years, there has been an increasing interest in large-scale classification of remote sensing images.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this context, the Inria Aerial Image Labeling Benchmark has been released online in December 2016.\",\"roles\":[\"dataset\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we discuss the outcomes of the first year of the benchmark contest, which consisted in dense labeling of aerial images into building / not building classes, covering areas of five cities not present in the training set.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We present four methods with the highest numerical accuracies, all four being convolutional neural network approaches.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"It is remarkable that three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9297,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 565,
+          "output_tokens": 242
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 18.164871951999885,
+        "messages_sha256": "a91fa03c5887c38fbeaa306d63db8232e882aedb7c89c163af4338f94bdb30b1",
+        "raw_output": "{\"paper_id\":\"P003085\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Over the recent years, there has been an increasing interest in large-scale classification of remote sensing images.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this context, the Inria Aerial Image Labeling Benchmark has been released online in December 2016.\",\"roles\":[\"dataset\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we discuss the outcomes of the first year of the benchmark contest, which consisted in dense labeling of aerial images into building / not building classes, covering areas of five cities not present in the training set.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We present four methods with the highest numerical accuracies, all four being convolutional neural network approaches.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"It is remarkable that three of these methods use the U-net architecture, which has thus proven to become a new standard in image dense labeling.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9298,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 586,
+          "output_tokens": 242
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 50.77031730099998,
+      "input_tokens": 3413,
+      "output_tokens": 652
+    },
+    "paper_id": "P003085",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3413,
+      "output_tokens": 652
+    }
+  },
+  "record_sha256": "465cb3ea4e2ffe46b7dadc1aa6f79cc8ed4c5a4f1bb3a87672564635df3f7593",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

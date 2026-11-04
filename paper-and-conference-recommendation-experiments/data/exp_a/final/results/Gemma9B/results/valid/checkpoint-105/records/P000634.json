@@ -1,0 +1,496 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}, {\"concept\": \"concealing computer-mediated malicious activities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 41.71550520399978,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}, {\"concept\": \"concealing computer-mediated malicious activities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1944,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1408,
+            "output_tokens": 225
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.10377070100003,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1945,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3237,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.43932629900155,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"task\": [], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"stratified experiment\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1946,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 880,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "approach can achieve even higher accuracy than traditional methods",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "stratified experiment",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "difficult for cyber investigators or linguistic experts to interpret",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "estimates the confidence for the predicted result",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 89.25860220400136,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000634",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5525,
+        "output_tokens": 451
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}, {\"concept\": \"concealing computer-mediated malicious activities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 41.71550520399978,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}, {\"concept\": \"concealing computer-mediated malicious activities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1944,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1408,
+            "output_tokens": 225
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}, {\"concept\": \"estimates the confidence for the predicted result\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 35.10377070100003,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000634\", \"problem\": [{\"concept\": \"difficult for cyber investigators or linguistic experts to interpret\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Authorship Attribution\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Enron email dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"visualizable evidence-driven approach\", \"evidence_id\": \"A4\"}, {\"concept\": \"approach can achieve even higher accuracy than traditional methods\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1945,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3237,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "approach can achieve even higher accuracy than traditional methods",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "difficult for cyber investigators or linguistic experts to interpret",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "estimates the confidence for the predicted result",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 76.81927590499981,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1945,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4645,
+        "output_tokens": 388
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 41.71550520399978,
+        "inherited": false,
+        "messages_sha256": "1de2c07e3d472eee98e0341e6180f1ee339c771215409fd86c8ae5660e0cc831",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1944,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1408,
+          "output_tokens": 225
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.10377070100003,
+        "inherited": false,
+        "messages_sha256": "3870b06a816aa2283f897f3af69233f1274b201816cfa4a9b2e450fcd65b23c1",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000634",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 1945,
+        "usage": {
+          "input_tokens": 3237,
+          "output_tokens": 163
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.43932629900155,
+        "inherited": false,
+        "messages_sha256": "fdb70697819bc3543ff54ca1643945ab72c2c6190d6973827470f8efa285ea4b",
+        "reached_token_limit": false,
+        "seed": 1946,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 880,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "stratified experiment",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "approach can achieve even higher accuracy than traditional methods",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "visualizable evidence-driven approach",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000634",
+        "problem": [
+          {
+            "concept": "difficult for cyber investigators or linguistic experts to interpret",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Authorship Attribution",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "estimates the confidence for the predicted result",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "End-to-End Digital Investigation",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.43932629900155,
+      "messages_sha256": "fdb70697819bc3543ff54ca1643945ab72c2c6190d6973827470f8efa285ea4b",
+      "raw_output": "{\"paper_id\": \"P000634\", \"task\": [], \"method\": [{\"concept\": \"End-to-End Digital Investigation\", \"evidence_id\": \"A4\"}, {\"concept\": \"stratified experiment\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 880,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "64031ca0e4d671cfcb56d20a309768394dec8674dcc853d0337bf1da82b18078",
+    "facets": {
+      "contribution": [
+        "visualizable evidence-driven approach",
+        "approach can achieve even higher accuracy than traditional methods"
+      ],
+      "dataset": [
+        "Enron email dataset"
+      ],
+      "method": [
+        "End-to-End Digital Investigation",
+        "visualizable evidence-driven approach",
+        "stratified experiment"
+      ],
+      "paper_id": "P000634",
+      "problem": [
+        "difficult for cyber investigators or linguistic experts to interpret"
+      ],
+      "task": [
+        "Authorship Attribution",
+        "estimates the confidence for the predicted result"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 89.25860220400136,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 89.25860220400136,
+      "input_tokens": 5525,
+      "output_tokens": 451
+    },
+    "paper_id": "P000634",
+    "source_sha256": "96515666c9e30a3a990a46af65b7ef91974b3faf4ee1545093f2ae1661b691bb",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5525,
+      "output_tokens": 451
+    }
+  },
+  "record_sha256": "a9f97a9abcd0c14b0bfed6ddb3056ffc58aa8ff5d13bb97bb9401956336b94d7",
+  "signature": "b70f7f0c11027ae63c9cadd8346e20bb7c37043c066b5705fda23b6849ae244f"
+}

@@ -1,0 +1,169 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000811\",\n  \"problem\": [\n    {\n      \"concept\": \"correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reduce correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"comprehensive evaluation data set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"simple and flexible formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 20.426902934999816,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000811\",\n  \"problem\": [\n    {\n      \"concept\": \"correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reduce correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"comprehensive evaluation data set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"simple and flexible formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 2475,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2405,
+            "output_tokens": 217
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000811\", \"problem\": [{\"concept\": \"correspondence ambiguity in training data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"reduce correspondence ambiguity in training data\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"formulation of the problem\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"comprehensive evaluation data set\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"simple and flexible formulation of the problem\", \"evidence_id\": \"A4\"}, {\"concept\": \"results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.69635257900154,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000811\",\n  \"problem\": [\n    {\n      \"concept\": \"correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"reduce correspondence ambiguity in training data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"comprehensive evaluation data set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"simple and flexible formulation of the problem\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 2476,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4003,
+            "output_tokens": 217
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "simple and flexible formulation of the problem",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "comprehensive evaluation data set",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "formulation of the problem",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000811",
+        "problem": [
+          {
+            "concept": "correspondence ambiguity in training data",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reduce correspondence ambiguity in training data",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 43.12325551400136,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "comprehensive evaluation data set",
+            "evidence": "We contribute a simple and flexible formulation of the problem, and show results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2476,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6408,
+        "output_tokens": 434
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "simple and flexible formulation of the problem",
+        "results validated by a recently developed comprehensive evaluation data set and corresponding evaluation methodology"
+      ],
+      "dataset": [],
+      "method": [
+        "formulation of the problem"
+      ],
+      "paper_id": "P000811",
+      "problem": [
+        "correspondence ambiguity in training data"
+      ],
+      "task": [
+        "reduce correspondence ambiguity in training data"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 43.12325551400136,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000811",
+    "usage": {
+      "input_tokens": 6408,
+      "output_tokens": 434
+    }
+  },
+  "record_sha256": "1cb812f5abe92f08cedd2de4860a866548e15c9581fa1519e575f2edf88d1bf4",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

@@ -1,0 +1,244 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003199\",\n  \"problem\": [\n    {\n      \"concept\": \"fields exhibit statistical self-similarity\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"physically based distributed model of snowmelt runoff generation\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"snowmelt flood hydrographs may lead to significant changes of the calculated hydrographs for certain hydrometeorological conditions and for small river basins\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 24.714278006999848,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003199\",\n  \"problem\": [\n    {\n      \"concept\": \"fields exhibit statistical self-similarity\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"physically based distributed model of snowmelt runoff generation\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"snowmelt flood hydrographs may lead to significant changes of the calculated hydrographs for certain hydrometeorological conditions and for small river basins\",\n      \"evidence_id\": \"A4\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 83.0,
+          "seed": 9639,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2538,
+            "output_tokens": 300
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"snowmelt flood hydrographs may lead to significant changes of the calculated hydrographs for certain hydrometeorological conditions and for small river basins\"; evidence_id=\"A4\"; evidence=\"However, for certain hydrometeorological conditions and for small river basins this effect may lead to significant changes of the calculated hydrographs.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003199\", \"problem\": [{\"concept\": \"fields exhibit statistical self-similarity\", \"evidence_id\": \"A0\"}, {\"concept\": \"snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"physically based distributed model of snowmelt runoff generation\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin\", \"evidence_id\": \"A2\"}, {\"concept\": \"this effect may lead to significant changes of the calculated hydrographs\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 7.72844102199997,
+          "operations": [
+            {
+              "before": {
+                "concept": "snowmelt flood hydrographs may lead to significant changes of the calculated hydrographs for certain hydrometeorological conditions and for small river basins",
+                "evidence_id": "A4"
+              },
+              "concept": "this effect may lead to significant changes of the calculated hydrographs",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P003199\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":1,\"concept\":\"this effect may lead to significant changes of the calculated hydrographs\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 9640,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2868,
+            "output_tokens": 58
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "this effect may lead to significant changes of the calculated hydrographs",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "physically based distributed model of snowmelt runoff generation",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P003199",
+        "problem": [
+          {
+            "concept": "fields exhibit statistical self-similarity",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 32.44271902899982,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003199",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 9640,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5406,
+        "output_tokens": 358
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "3999303d50d86677b7e85c4f67d6ccc9ffac1abb3d93389474415d2bc0f1910f",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 9639
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "54cbf2c63393a435963a0e21a0451c8074c52ae4e4edf3fd3b9a0956fb3bf7f9",
+        "operations": [
+          {
+            "before": {
+              "concept": "snowmelt flood hydrographs may lead to significant changes of the calculated hydrographs for certain hydrometeorological conditions and for small river basins",
+              "evidence_id": "A4"
+            },
+            "concept": "this effect may lead to significant changes of the calculated hydrographs",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9640
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "parameterization of subgrid effects enables us to improve the description of snowmelt dynamics both within subgrid areas and over the entire river basin",
+        "this effect may lead to significant changes of the calculated hydrographs"
+      ],
+      "dataset": [],
+      "method": [
+        "physically based distributed model of snowmelt runoff generation"
+      ],
+      "paper_id": "P003199",
+      "problem": [
+        "fields exhibit statistical self-similarity",
+        "snowmelt flood hydrographs appear less sensitive to the self-similarity of snow cover over subgrid areas than to the dynamics of snowmelt"
+      ],
+      "task": [
+        "estimate the sensitivity of snowmelt dynamics over the basin and flood hydrographs to the parameterization of subgrid effects"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 32.44271902899982,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 7.72844102199997,
+      "input_tokens": 2868,
+      "output_tokens": 58
+    },
+    "paper_id": "P003199",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [],
+      "method": [
+        0
+      ],
+      "problem": [
+        0,
+        1
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5406,
+      "output_tokens": 358
+    }
+  },
+  "record_sha256": "6f6355e13709542b6bc9d82f66f165ca46ea613d918b323ab02ede45760e6caa",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

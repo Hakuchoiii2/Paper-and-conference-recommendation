@@ -1,0 +1,444 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.353226795999944,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9588,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1251,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.872755140000663,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9589,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2923,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.021064377000584,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003182\", \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9590,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 652,
+            "output_tokens": 75
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "significant positive correlation exists between perceived factual content and relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Heaps' Law",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003182",
+        "problem": [
+          {
+            "concept": "repetitive, verbose text with little actual content",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "perceived factual content",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 48.24704631300119,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P003182",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4826,
+        "output_tokens": 351
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.353226795999944,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9588,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1251,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.872755140000663,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003182\", \"problem\": [{\"concept\": \"repetitive, verbose text with little actual content\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"significant positive correlation exists between perceived factual content and relative information entropy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9589,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2923,
+            "output_tokens": 138
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "significant positive correlation exists between perceived factual content and relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Heaps' Law",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003182",
+        "problem": [
+          {
+            "concept": "repetitive, verbose text with little actual content",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "perceived factual content",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 38.22598193600061,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9589,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4174,
+        "output_tokens": 276
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.353226795999944,
+        "inherited": false,
+        "messages_sha256": "78808f9ec875e89fc2a41efbd2edc7a779581522b33c37b783414375c1c65a89",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 9588,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1251,
+          "output_tokens": 138
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 19.872755140000663,
+        "inherited": false,
+        "messages_sha256": "bd366d2504f67726080a1626db00ec662fd19dfd905a5ee5828c5c66734c9282",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003182",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 9589,
+        "usage": {
+          "input_tokens": 2923,
+          "output_tokens": 138
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.021064377000584,
+        "inherited": false,
+        "messages_sha256": "a15623c4047700b2d310a88df1674ff5003cd12f219e807cadf7a6ef7827f255",
+        "reached_token_limit": false,
+        "seed": 9590,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 652,
+          "output_tokens": 75
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "significant positive correlation exists between perceived factual content and relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Heaps' Law",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "relative information entropy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003182",
+        "problem": [
+          {
+            "concept": "repetitive, verbose text with little actual content",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "perceived factual content",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "perceived factual content",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Heaps' Law",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "relative information entropy",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.021064377000584,
+      "messages_sha256": "a15623c4047700b2d310a88df1674ff5003cd12f219e807cadf7a6ef7827f255",
+      "raw_output": "{\"paper_id\": \"P003182\", \"task\": [{\"concept\": \"perceived factual content\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Heaps' Law\", \"evidence_id\": \"A4\"}, {\"concept\": \"relative information entropy\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 652,
+        "output_tokens": 75
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "31c16c560fcb9059d4f75f6b6c099c9b22a86082a890315d215b2e88cd120dec",
+    "facets": {
+      "contribution": [
+        "significant positive correlation exists between perceived factual content and relative information entropy"
+      ],
+      "dataset": [],
+      "method": [
+        "Heaps' Law",
+        "relative information entropy"
+      ],
+      "paper_id": "P003182",
+      "problem": [
+        "repetitive, verbose text with little actual content"
+      ],
+      "task": [
+        "perceived factual content"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 48.24704631300119,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 48.24704631300119,
+      "input_tokens": 4826,
+      "output_tokens": 351
+    },
+    "paper_id": "P003182",
+    "source_sha256": "379c1aee2a4c9924a97b9768301e7ae6302273f6ce340277846585ba426236a9",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4826,
+      "output_tokens": 351
+    }
+  },
+  "record_sha256": "3fd0357825069ab51c2b84aeaa78c8836f5b723d34b83c742d5b5d3304504fca",
+  "signature": "e4fd28a144a597acf96ed937f950fe55c1110e4522a85d3238f1853c8763d5c1"
+}

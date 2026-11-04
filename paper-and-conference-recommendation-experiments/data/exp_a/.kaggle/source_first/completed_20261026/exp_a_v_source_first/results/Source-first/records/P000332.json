@@ -1,0 +1,250 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "attempt": 2,
+          "generation_seconds": 30.07891764499999,
+          "messages_sha256": "5e0446fb838db385645d22c0433e5c634544ff7a2b6d24c8c2a0eb15733b686d",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000332\", \"problem\": [{\"concept\": \"Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.\", \"evidence_id\": \"A0\"}, {\"concept\": \"Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.\", \"evidence_id\": \"A1\"}, {\"concept\": \"Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings.\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [{\"concept\": \"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\", \"evidence_id\": \"A3\"}, {\"concept\": \"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\", \"evidence_id\": \"A3\"}, {\"concept\": \"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\", \"evidence_id\": \"A4\"}, {\"concept\": \"The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.\", \"evidence_id\": \"A5\"}, {\"concept\": \"Policy and research implication are discussed.\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 1039,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2707,
+            "output_tokens": 366
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Policy and research implication are discussed.",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000332",
+        "problem": [
+          {
+            "concept": "Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings.",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 56.379992725999955,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000332",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 76.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3321,
+        "output_tokens": 714
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.301075080999965,
+        "messages_sha256": "ac363f125f46aec7300cb3bbcb2e17fd79ad2a8a78a725a41676fc910fcd5557",
+        "raw_output": "{\"paper_id\":\"P000332\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Policy and research implication are discussed.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 1038,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 614,
+          "output_tokens": 348
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.07891764499999,
+        "messages_sha256": "5e0446fb838db385645d22c0433e5c634544ff7a2b6d24c8c2a0eb15733b686d",
+        "raw_output": "{\"paper_id\": \"P000332\", \"problem\": [{\"concept\": \"Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.\", \"evidence_id\": \"A0\"}, {\"concept\": \"Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.\", \"evidence_id\": \"A1\"}, {\"concept\": \"Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings.\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [{\"concept\": \"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\", \"evidence_id\": \"A3\"}, {\"concept\": \"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\", \"evidence_id\": \"A3\"}, {\"concept\": \"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\", \"evidence_id\": \"A4\"}, {\"concept\": \"The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.\", \"evidence_id\": \"A5\"}, {\"concept\": \"Policy and research implication are discussed.\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 1039,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2707,
+          "output_tokens": 366
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.",
+        "We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.",
+        "The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.",
+        "Policy and research implication are discussed."
+      ],
+      "dataset": [],
+      "method": [
+        "A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.",
+        "We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages."
+      ],
+      "paper_id": "P000332",
+      "problem": [
+        "Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.",
+        "Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.",
+        "Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings."
+      ],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.379992725999955,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.301075080999965,
+        "messages_sha256": "ac363f125f46aec7300cb3bbcb2e17fd79ad2a8a78a725a41676fc910fcd5557",
+        "raw_output": "{\"paper_id\":\"P000332\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"Policy and research implication are discussed.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 1038,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 614,
+          "output_tokens": 348
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 56.379992725999955,
+      "input_tokens": 3321,
+      "output_tokens": 714
+    },
+    "paper_id": "P000332",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "problem"
+        ],
+        "span": "Prevention and intervention work done within community settings often face unique analytic challenges for rigorous evaluations."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A1",
+        "origin": "current",
+        "roles": [
+          "problem"
+        ],
+        "span": "Since community prevention work (often geographically isolated) cannot be controlled in the same way other prevention programs and these communities have an increased level of interpersonal interactions, rigorous evaluations are needed."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "problem"
+        ],
+        "span": "Even when the `gold standard' randomized control trials are implemented within community intervention work, the threats to internal validity can be called into question given informal social spread of information in closed network settings."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A3",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "A new prevention evaluation method is presented here to disentangle the social influences assumed to influence prevention effects within communities."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A4",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "We formally introduce the method and it's utility for a suicide prevention program implemented in several Alaska Native villages."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A5",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "The results show promise to explore eight sociological measures of intervention effects in the face of social diffusion, social reinforcement, and direct treatment."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A6",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "Policy and research implication are discussed."
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3321,
+      "output_tokens": 714
+    }
+  },
+  "record_sha256": "2e52cb2f8f8d892856ae6f0f0f46409c19f2e7c146ea92e14c2c98ff006304c2",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

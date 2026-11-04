@@ -1,0 +1,510 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.332849614000224,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1228,
+            "output_tokens": 141
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.506003959000736,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2902,
+            "output_tokens": 141
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.11630355700072,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001764\",\"task\":[{\"concept\":\"predict alignment scores\",\"evidence_id\":\"A2\"}], \"method\": [{\"concept\":\"natural language processing\",\"evidence_id\":\"A2\"},{\"concept\":\"discourse features\",\"evidence_id\":\"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5336,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 632,
+            "output_tokens": 60
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "up to 78% accuracy",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 47.95515713000168,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001764",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4762,
+        "output_tokens": 342
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Digital Democracy",
+          "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+          "facet": "dataset",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.332849614000224,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1228,
+            "output_tokens": 141
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.506003959000736,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}, {\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"proven learning methods\", \"evidence_id\": \"A2\"}, {\"concept\": \"up to 78% accuracy\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2902,
+            "output_tokens": 141
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "up to 78% accuracy",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 39.83885357300096,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5335,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4130,
+        "output_tokens": 282
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.332849614000224,
+        "inherited": false,
+        "messages_sha256": "c901a0782633931e97d21fc2870e352509d59f425186d94a665d07adfe01f63d",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5334,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1228,
+          "output_tokens": 141
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 20.506003959000736,
+        "inherited": false,
+        "messages_sha256": "e094bccdadfb19938fcfa95e9b244edb1b280dc53ac295cbc19da87c85397ee9",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001764",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 5335,
+        "usage": {
+          "input_tokens": 2902,
+          "output_tokens": 141
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.11630355700072,
+        "inherited": false,
+        "messages_sha256": "41fb43912ea5ec880d0b52f3d6bdbdf1c16f589e647e9c86d3c003b9e362501d",
+        "reached_token_limit": false,
+        "seed": 5336,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 632,
+          "output_tokens": 60
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "proven learning methods",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "up to 78% accuracy",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.11630355700072,
+      "messages_sha256": "41fb43912ea5ec880d0b52f3d6bdbdf1c16f589e647e9c86d3c003b9e362501d",
+      "raw_output": "{\"paper_id\":\"P001764\",\"task\":[{\"concept\":\"predict alignment scores\",\"evidence_id\":\"A2\"}], \"method\": [{\"concept\":\"natural language processing\",\"evidence_id\":\"A2\"},{\"concept\":\"discourse features\",\"evidence_id\":\"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 632,
+        "output_tokens": 60
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "f3043ff3409e5b4ae79c7b73b016ec8b6bdd6ce85061cfdcfa009368e171730f",
+    "facets": {
+      "contribution": [
+        "proven learning methods",
+        "up to 78% accuracy"
+      ],
+      "dataset": [
+        "Digital Democracy"
+      ],
+      "method": [
+        "natural language processing",
+        "discourse features"
+      ],
+      "paper_id": "P001764",
+      "problem": [],
+      "task": [
+        "predict alignment scores"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 47.95515713000168,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 47.95515713000168,
+      "input_tokens": 4762,
+      "output_tokens": 342
+    },
+    "paper_id": "P001764",
+    "source_sha256": "403840f4233b149fd5f580238a50ba131467d4d98a5d82f3afc57c0e3b2b25e4",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4762,
+      "output_tokens": 342
+    }
+  },
+  "record_sha256": "619fe20f1c664a276e319a1a1692b63115b3bf8c8e6ae18d5c2fd5873f40e120",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

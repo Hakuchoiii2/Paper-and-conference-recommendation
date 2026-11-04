@@ -1,0 +1,71 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P001366\",\n  \"problem\": [\n    {\n      \"concept\": \"systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine racial bias in Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"train classifiers on datasets and compare predictions on tweets written in African-American English with those written in Standard American English\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train classifiers on datasets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"five different sets of Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"evidence of systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"systems may discriminate against groups who are often the targets of the abuse\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 25.398076917001163,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001366\",\n  \"problem\": [\n    {\n      \"concept\": \"systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine racial bias in Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"train classifiers on datasets and compare predictions on tweets written in African-American English with those written in Standard American English\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train classifiers on datasets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"five different sets of Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"evidence of systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"systems may discriminate against groups who are often the targets of the abuse\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 99.5007,
+      "seed": 4140,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2428,
+        "output_tokens": 274
+      },
+      "validation_errors": []
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"examine racial bias in Twitter data annotated for hate speech and abusive language\", \"evidence_id\": \"A1\"}, {\"concept\": \"train classifiers on datasets and compare predictions on tweets written in African-American English with those written in Standard American English\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"train classifiers on datasets\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"five different sets of Twitter data annotated for hate speech and abusive language\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}, {\"concept\": \"systems may discriminate against groups who are often the targets of the abuse\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 2,
+      "generation_seconds": 27.930218743000296,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P001366\",\n  \"problem\": [\n    {\n      \"concept\": \"systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine racial bias in Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"train classifiers on datasets and compare predictions on tweets written in African-American English with those written in Standard American English\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"train classifiers on datasets\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"five different sets of Twitter data annotated for hate speech and abusive language\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"evidence of systematic racial bias in all datasets\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"systems may discriminate against groups who are often the targets of the abuse\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 99.5007,
+      "seed": 4141,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4069,
+        "output_tokens": 274
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P001366",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "five different sets of Twitter data annotated for hate speech and abusive language",
+        "evidence": "We examine racial bias in five different sets of Twitter data annotated for hate speech and abusive language.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 2,
+  "selected_score": 99.5007,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

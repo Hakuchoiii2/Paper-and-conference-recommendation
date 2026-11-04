@@ -1,0 +1,344 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001409\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"POS Tagging for Code-mixed Indian Social Media Text\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"Trigram Hidden Markov Model\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"ICON 2015 shared task dataset\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"System for POS Tagging in Code-mixed Indian Social Media Text\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"Average overall accuracy of 75.60% in constrained mode\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"Average overall accuracy of 70.65% in unconstrained mode\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.864980023000044,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001409\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"POS Tagging for Code-mixed Indian Social Media Text\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"Trigram Hidden Markov Model\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"ICON 2015 shared task dataset\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"System for POS Tagging in Code-mixed Indian Social Media Text\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"Average overall accuracy of 75.60% in constrained mode\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"Average overall accuracy of 70.65% in unconstrained mode\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 27.0,
+          "seed": 4269,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2539,
+            "output_tokens": 209
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"POS Tagging for Code-mixed Indian Social Media Text\"; evidence_id=\"T0\"; evidence=\"Part-of-Speech Tagging for Code-mixed Indian Social Media Text at ICON 2015\"",
+            "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"ICON 2015 shared task dataset\"; evidence_id=\"A3\"; evidence=\"Our system has been trained and tested on the datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"System for POS Tagging in Code-mixed Indian Social Media Text\"; evidence_id=\"A1\"; evidence=\"The tool that we have developed for the task is based on Trigram Hidden Markov Model that utilizes information from dictionary as well as some other word level features to enhance the observation probabilities of the known tokens as well as unknown tokens.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Average overall accuracy of 75.60% in constrained mode\"; evidence_id=\"A4\"; evidence=\"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"Average overall accuracy of 70.65% in unconstrained mode\"; evidence_id=\"A5\"; evidence=\"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001409\", \"problem\": [], \"task\": [{\"concept\": \"Part-of-Speech Tagging for Code-mixed Indian Social Media Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"Trigram Hidden Markov Model\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"The tool that we have developed for the task\", \"evidence_id\": \"A1\"}, {\"concept\": \"In constrained mode, our system obtains average overall accuracy of 75.60%\", \"evidence_id\": \"A4\"}, {\"concept\": \"In unconstrained mode, our system obtains average overall accuracy of 70.65%\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.18543780699997,
+          "operations": [
+            {
+              "before": {
+                "concept": "System for POS Tagging in Code-mixed Indian Social Media Text",
+                "evidence_id": "A1"
+              },
+              "concept": "The tool that we have developed for the task",
+              "evidence_id": "A1",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "Average overall accuracy of 75.60% in constrained mode",
+                "evidence_id": "A4"
+              },
+              "concept": "In constrained mode, our system obtains average overall accuracy of 75.60%",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "Average overall accuracy of 70.65% in unconstrained mode",
+                "evidence_id": "A5"
+              },
+              "concept": "In unconstrained mode, our system obtains average overall accuracy of 70.65%",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "ICON 2015 shared task dataset",
+                "evidence_id": "A3"
+              },
+              "concept": "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text",
+              "evidence_id": "A3",
+              "facet": "dataset",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "POS Tagging for Code-mixed Indian Social Media Text",
+                "evidence_id": "T0"
+              },
+              "concept": "Part-of-Speech Tagging for Code-mixed Indian Social Media Text",
+              "evidence_id": "T0",
+              "facet": "task",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\": \"P001409\", \"edits\": [{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":0,\"concept\":\"The tool that we have developed for the task\",\"evidence_id\":\"A1\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":1,\"concept\":\"In constrained mode, our system obtains average overall accuracy of 75.60%\",\"evidence_id\":\"A4\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":2,\"concept\":\"In unconstrained mode, our system obtains average overall accuracy of 70.65%\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"dataset\",\"index\":0,\"concept\":\"datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text\",\"evidence_id\":\"A3\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"task\",\"index\":0,\"concept\":\"Part-of-Speech Tagging for Code-mixed Indian Social Media Text\",\"evidence_id\":\"T0\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 87.7222,
+          "seed": 4270,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3327,
+            "output_tokens": 246
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "The tool that we have developed for the task",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "In constrained mode, our system obtains average overall accuracy of 75.60%",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "In unconstrained mode, our system obtains average overall accuracy of 70.65%",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Trigram Hidden Markov Model",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001409",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Part-of-Speech Tagging for Code-mixed Indian Social Media Text",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 42.050417830000015,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001409",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 4270,
+      "selected_score": 87.7222,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5866,
+        "output_tokens": 455
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "83569f37c1aae28366380f6aa4c5a5478ec3db6a4c8ce58b35df6b5d232485c1",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 4269
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "7f8486cfd2fe3a558c1bb7a05c0cfc99b5061dc8583773507069dc8d5cbeee4e",
+        "operations": [
+          {
+            "before": {
+              "concept": "System for POS Tagging in Code-mixed Indian Social Media Text",
+              "evidence_id": "A1"
+            },
+            "concept": "The tool that we have developed for the task",
+            "evidence_id": "A1",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "Average overall accuracy of 75.60% in constrained mode",
+              "evidence_id": "A4"
+            },
+            "concept": "In constrained mode, our system obtains average overall accuracy of 75.60%",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "Average overall accuracy of 70.65% in unconstrained mode",
+              "evidence_id": "A5"
+            },
+            "concept": "In unconstrained mode, our system obtains average overall accuracy of 70.65%",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "ICON 2015 shared task dataset",
+              "evidence_id": "A3"
+            },
+            "concept": "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text",
+            "evidence_id": "A3",
+            "facet": "dataset",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "POS Tagging for Code-mixed Indian Social Media Text",
+              "evidence_id": "T0"
+            },
+            "concept": "Part-of-Speech Tagging for Code-mixed Indian Social Media Text",
+            "evidence_id": "T0",
+            "facet": "task",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 4270
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 5,
+    "facets": {
+      "contribution": [
+        "The tool that we have developed for the task",
+        "In constrained mode, our system obtains average overall accuracy of 75.60%",
+        "In unconstrained mode, our system obtains average overall accuracy of 70.65%"
+      ],
+      "dataset": [
+        "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text"
+      ],
+      "method": [
+        "Trigram Hidden Markov Model"
+      ],
+      "paper_id": "P001409",
+      "problem": [],
+      "task": [
+        "Part-of-Speech Tagging for Code-mixed Indian Social Media Text"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 42.050417830000015,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 24.18543780699997,
+      "input_tokens": 3327,
+      "output_tokens": 246
+    },
+    "paper_id": "P001409",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5866,
+      "output_tokens": 455
+    }
+  },
+  "record_sha256": "4d7415a747fb662d8061bb14b5ecad6026bf394405120bcd3b6d646a65493191",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

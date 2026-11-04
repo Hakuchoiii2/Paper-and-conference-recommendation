@@ -1,0 +1,224 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 19.239457327000082,
+          "messages_sha256": "aa3815b2a2096e3e73e112b4b98d4c791c73c64f5346f0c2fc4ac20aaf1b5aad",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001806\", \"problem\": [{\"concept\": \"few-shot and zero-shot action recognition\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"few-shot action recognition\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot action recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"meta-learning approach\", \"evidence_id\": \"A1\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep-distance measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"episode-based training scheme\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Temporal Attentive Relation Network (TARN)\", \"evidence_id\": \"A0\"}, {\"concept\": \"outperforms the state of the art in few-shot action recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"achieves competitive results in zero-shot action recognition\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 87.7857,
+          "seed": 5462,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2341,
+            "output_tokens": 233
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Temporal Attentive Relation Network (TARN)",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "outperforms the state of the art in few-shot action recognition",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "achieves competitive results in zero-shot action recognition",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "meta-learning approach",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "attention mechanisms",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "deep-distance measure",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "episode-based training scheme",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001806",
+        "problem": [
+          {
+            "concept": "few-shot and zero-shot action recognition",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "few-shot action recognition",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "zero-shot action recognition",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 61.23270838999997,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001806",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 87.7857,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3650,
+        "output_tokens": 779
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.316956753999875,
+        "messages_sha256": "55def99b33c373e55bd4848dc2b3d94593868670bfc06e6ffaed8835dc951978",
+        "raw_output": "{\"paper_id\":\"P001806\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Temporal Attentive Relation Network (TARN) for the problems of few-shot and zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"meta-learning approach that learns to compare representations of variable temporal length\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"attention mechanisms so as to perform temporal alignment\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"learn a deep-distance measure on the aligned representations at video segment level\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"episode-based training scheme and train our network in an end-to-end manner\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"does not require any fine-tuning in the target domain or maintaining additional representations as is the case of memory networks\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"proposed architecture outperforms the state of the art in few-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"achieves competitive results in zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5460,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 644,
+          "output_tokens": 278
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 20.676294309000014,
+        "messages_sha256": "79d4266ab502309e171376edb0b26ae992264c0c7cbc36bff20be0912763b1e5",
+        "raw_output": "{\"paper_id\":\"P001806\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"TARN: Temporal Attentive Relation Network for Few-Shot and Zero-Shot Action Recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"At the heart of our network is a meta-learning approach that learns to compare representations of variable temporal length\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"we a) utilise attention mechanisms so as to perform temporal alignment, and b) learn a deep-distance measure on the aligned representations at video segment level\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We adopt an episode-based training scheme and train our network in an end-to-end manner\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The proposed method does not require any fine-tuning in the target domain or maintaining additional representations as is the case of memory networks\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Experimental results show that the proposed architecture outperforms the state of the art in few-shot action recognition, and achieves competitive results in zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5461,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 665,
+          "output_tokens": 268
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 19.239457327000082,
+        "messages_sha256": "aa3815b2a2096e3e73e112b4b98d4c791c73c64f5346f0c2fc4ac20aaf1b5aad",
+        "raw_output": "{\"paper_id\": \"P001806\", \"problem\": [{\"concept\": \"few-shot and zero-shot action recognition\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"few-shot action recognition\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot action recognition\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"meta-learning approach\", \"evidence_id\": \"A1\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep-distance measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"episode-based training scheme\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Temporal Attentive Relation Network (TARN)\", \"evidence_id\": \"A0\"}, {\"concept\": \"outperforms the state of the art in few-shot action recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"achieves competitive results in zero-shot action recognition\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 5462,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2341,
+          "output_tokens": 233
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "Temporal Attentive Relation Network (TARN)",
+        "outperforms the state of the art in few-shot action recognition",
+        "achieves competitive results in zero-shot action recognition"
+      ],
+      "dataset": [],
+      "method": [
+        "meta-learning approach",
+        "attention mechanisms",
+        "deep-distance measure",
+        "episode-based training scheme"
+      ],
+      "paper_id": "P001806",
+      "problem": [
+        "few-shot and zero-shot action recognition"
+      ],
+      "task": [
+        "few-shot action recognition",
+        "zero-shot action recognition"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 61.23270838999997,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.316956753999875,
+        "messages_sha256": "55def99b33c373e55bd4848dc2b3d94593868670bfc06e6ffaed8835dc951978",
+        "raw_output": "{\"paper_id\":\"P001806\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Temporal Attentive Relation Network (TARN) for the problems of few-shot and zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"meta-learning approach that learns to compare representations of variable temporal length\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"attention mechanisms so as to perform temporal alignment\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"learn a deep-distance measure on the aligned representations at video segment level\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"episode-based training scheme and train our network in an end-to-end manner\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"does not require any fine-tuning in the target domain or maintaining additional representations as is the case of memory networks\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"proposed architecture outperforms the state of the art in few-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"achieves competitive results in zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5460,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 644,
+          "output_tokens": 278
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 20.676294309000014,
+        "messages_sha256": "79d4266ab502309e171376edb0b26ae992264c0c7cbc36bff20be0912763b1e5",
+        "raw_output": "{\"paper_id\":\"P001806\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"TARN: Temporal Attentive Relation Network for Few-Shot and Zero-Shot Action Recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"At the heart of our network is a meta-learning approach that learns to compare representations of variable temporal length\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"we a) utilise attention mechanisms so as to perform temporal alignment, and b) learn a deep-distance measure on the aligned representations at video segment level\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We adopt an episode-based training scheme and train our network in an end-to-end manner\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"The proposed method does not require any fine-tuning in the target domain or maintaining additional representations as is the case of memory networks\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Experimental results show that the proposed architecture outperforms the state of the art in few-shot action recognition, and achieves competitive results in zero-shot action recognition\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5461,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 665,
+          "output_tokens": 268
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 61.23270838999997,
+      "input_tokens": 3650,
+      "output_tokens": 779
+    },
+    "paper_id": "P001806",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3650,
+      "output_tokens": 779
+    }
+  },
+  "record_sha256": "ca99b9a636e40924e1bf54f7ffdede7611dbb7cd9193c8b676482e9d637054af",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

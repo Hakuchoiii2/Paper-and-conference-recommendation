@@ -1,0 +1,216 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "attempt": 2,
+          "generation_seconds": 21.169787092000206,
+          "messages_sha256": "2a3df373dc643c3a34b760b4c6f8800fa8f72bd97383b31051a0ca779dbf6f54",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002840\", \"problem\": [{\"concept\": \"study the effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"task\": [], \"method\": [{\"concept\": \"distill these effects according to the type of modality and negation\", \"evidence_id\": \"A1\"}, {\"concept\": \"methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality\", \"evidence_id\": \"A2\"}, {\"concept\": \"empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level\", \"evidence_id\": \"A3\"}, {\"concept\": \"methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 8563,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2548,
+            "output_tokens": 259
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "distill these effects according to the type of modality and negation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002840",
+        "problem": [
+          {
+            "concept": "study the effects of negation and modality on opinion expressions",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 40.37728259300002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002840",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 76.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3110,
+        "output_tokens": 519
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.207495500999812,
+        "messages_sha256": "0bc317877b3a090ce583eb3b0d1d874a436d05b54cab54b0cbdbf0b0a61509ec",
+        "raw_output": "{\"paper_id\":\"P002840\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"we propose to study the effects of negation and modality on opinion expressions\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"we distill these effects according to the type of modality and negation\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We show that each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 8562,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 260
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.169787092000206,
+        "messages_sha256": "2a3df373dc643c3a34b760b4c6f8800fa8f72bd97383b31051a0ca779dbf6f54",
+        "raw_output": "{\"paper_id\": \"P002840\", \"problem\": [{\"concept\": \"study the effects of negation and modality on opinion expressions\", \"evidence_id\": \"A0\"}], \"task\": [], \"method\": [{\"concept\": \"distill these effects according to the type of modality and negation\", \"evidence_id\": \"A1\"}, {\"concept\": \"methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality\", \"evidence_id\": \"A2\"}, {\"concept\": \"empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level\", \"evidence_id\": \"A3\"}, {\"concept\": \"methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 8563,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2548,
+          "output_tokens": 259
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality",
+        "empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level",
+        "methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English"
+      ],
+      "dataset": [],
+      "method": [
+        "distill these effects according to the type of modality and negation",
+        "methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English"
+      ],
+      "paper_id": "P002840",
+      "problem": [
+        "study the effects of negation and modality on opinion expressions"
+      ],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 40.37728259300002,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.207495500999812,
+        "messages_sha256": "0bc317877b3a090ce583eb3b0d1d874a436d05b54cab54b0cbdbf0b0a61509ec",
+        "raw_output": "{\"paper_id\":\"P002840\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"we propose to study the effects of negation and modality on opinion expressions\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"we distill these effects according to the type of modality and negation\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We show that each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"The empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 8562,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 260
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 40.37728259300002,
+      "input_tokens": 3110,
+      "output_tokens": 519
+    },
+    "paper_id": "P002840",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "problem"
+        ],
+        "span": "we propose to study the effects of negation and modality on opinion expressions"
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A1",
+        "origin": "current",
+        "roles": [
+          "method"
+        ],
+        "span": "we distill these effects according to the type of modality and negation"
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "We show that each type has a specific effect on the opinion expression in its scope: both on the polarity and the strength for negation, and on the strength and/or the degree of certainty for modality"
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A3",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "The empirical results reported in this paper provide a basis for future opinion analysis systems that have to compute the sentiment orientation at the sentence or at the clause level"
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A4",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "The methodology we used for deriving this basis was applied for French but it can be easily instantiated for other languages like English"
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3110,
+      "output_tokens": 519
+    }
+  },
+  "record_sha256": "637a3c2637299c81ecda72eef3674df7f222c9ac40cc70b1b47ddfd101aabd24",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

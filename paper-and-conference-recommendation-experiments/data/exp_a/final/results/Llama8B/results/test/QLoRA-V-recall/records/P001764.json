@@ -1,0 +1,550 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [{\"concept\": \"quantify the extent to which a legislator's spoken language indicates their degree of alignment\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.08986158099833,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [{\"concept\": \"quantify the extent to which a legislator's spoken language indicates their degree of alignment\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1241,
+            "output_tokens": 159
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+              "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.38650843100004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2929,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+              "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.559796366000228,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5336,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 648,
+            "output_tokens": 69
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+              "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "methods surpass established baselines",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 47.0361663779986,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001764",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4818,
+        "output_tokens": 372
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Digital Democracy",
+          "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+          "facet": "dataset",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+          "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [{\"concept\": \"quantify the extent to which a legislator's spoken language indicates their degree of alignment\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.08986158099833,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [{\"concept\": \"quantify the extent to which a legislator's spoken language indicates their degree of alignment\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5334,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1241,
+            "output_tokens": 159
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+              "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.38650843100004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001764\", \"problem\": [], \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Digital Democracy\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"methods surpass established baselines\", \"evidence_id\": \"A3\"}, {\"concept\": \"up to 78% accuracy when predicting alignment scores using discourse features\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5335,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2929,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Digital Democracy",
+              "evidence": "To perform this study, we use a corpus of bill discussion transcripts provided by Digital Democracy1.",
+              "facet": "dataset",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+              "evidence": "Our methods surpass established baselines, achieving up to 78% accuracy when predicting these same scores using discourse features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "methods surpass established baselines",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 38.47637001199837,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5335,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4170,
+        "output_tokens": 303
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.08986158099833,
+        "inherited": false,
+        "messages_sha256": "c901a0782633931e97d21fc2870e352509d59f425186d94a665d07adfe01f63d",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5334,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1241,
+          "output_tokens": 159
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 19.38650843100004,
+        "inherited": false,
+        "messages_sha256": "b09f8155ff2be1796ceabe66982fdfd8a554a708f232a028a56af1bf6a30b79b",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001764",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 5335,
+        "usage": {
+          "input_tokens": 2929,
+          "output_tokens": 144
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.559796366000228,
+        "inherited": false,
+        "messages_sha256": "38d0791d26903b978c501d5dde72f1a185c78d359173d14b1b31ccf4de875a88",
+        "reached_token_limit": false,
+        "seed": 5336,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 648,
+          "output_tokens": 69
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "methods surpass established baselines",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "up to 78% accuracy when predicting alignment scores using discourse features",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Digital Democracy",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001764",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "predict alignment scores",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "discourse features",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "natural language processing",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.559796366000228,
+      "messages_sha256": "38d0791d26903b978c501d5dde72f1a185c78d359173d14b1b31ccf4de875a88",
+      "raw_output": "{\"paper_id\": \"P001764\", \"task\": [{\"concept\": \"predict alignment scores\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"discourse features\", \"evidence_id\": \"A3\"}, {\"concept\": \"natural language processing\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 648,
+        "output_tokens": 69
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "1cd3f8e1e44f49f769839e27df28ae9abff3cd276c75a53d70562c5781246fcf",
+    "facets": {
+      "contribution": [
+        "methods surpass established baselines",
+        "up to 78% accuracy when predicting alignment scores using discourse features"
+      ],
+      "dataset": [
+        "Digital Democracy"
+      ],
+      "method": [
+        "discourse features",
+        "natural language processing"
+      ],
+      "paper_id": "P001764",
+      "problem": [],
+      "task": [
+        "predict alignment scores"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 47.0361663779986,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 47.0361663779986,
+      "input_tokens": 4818,
+      "output_tokens": 372
+    },
+    "paper_id": "P001764",
+    "source_sha256": "403840f4233b149fd5f580238a50ba131467d4d98a5d82f3afc57c0e3b2b25e4",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4818,
+      "output_tokens": 372
+    }
+  },
+  "record_sha256": "f2de68b9e1a5b983fe4f8904f158e84228a2dfb59535cfd93c001113fc21b4f3",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

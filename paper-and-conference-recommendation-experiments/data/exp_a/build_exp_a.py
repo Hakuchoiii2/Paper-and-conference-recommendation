@@ -19,8 +19,17 @@ from download_sources import ROOT, sha256, write_json
 from validate_all import require, validate_facets, validate_papers
 
 FACET_NAMES = ('problem', 'task', 'method', 'dataset', 'contribution')
-GENERATOR_VERSION = '2.3'
+GENERATOR_VERSION = '3.8'
 LEGACY_GENERATORS = (
+    ('3.7', '12c7ea9bed1e1224a2908c6116a3a76c9c5d8998929876a6f79605abe42825cd'),
+    ('3.6', '1a8c94cb6013c24c13c26963004a6e125c19881dd1a587e474a758f3487f24a5'),
+    ('3.5', '079dcce5895a7dfe26de90d668f0b34481612abd44d5aba9e38aefdfd1df137e'),
+    ('3.4', 'f7ff7103653c855dd311c1c3fc742926c23a4257a12212f1de8a7eb3b20b711c'),
+    ('3.3', '54b174731e77ae5b8fbecd89a68aea0df3a4392e3299104293f4b7e331227e1a'),
+    ('3.2', '34a3b1a0d2760e653ef34581927d01aa8e453651f34e03194b15db446241c785'),
+    ('3.1', '66eefa507494dd485398a775bea61e7390b7829157a622a413b864c3e8e11425'),
+    ('3.0', 'bbeb68f330ffc8fcfe795ad6bf8b8a3d550f214f168a888725e4056797d49106'),
+    ('2.3', '930c02fbfbfd22593b542aee4e04def81d33904d49bd0919404463c4305f7e2a'),
     ('2.0', '28ea4be0f55bffcaea5a74579d5b58bb9d14395a936b9f9f1225db21d9c521ab'),
     ('2.0', 'eabb0e4b8daef859afab7f7249e6ed6693e30244adbb2800431567b557f68b8e'),
     ('2.1', '49419379061eb134e3d4de9772dd7c34ce4e688502a34952a7df5e4b572a206b'),
@@ -90,20 +99,64 @@ def inputs(root, config):
     require(not config.get('load_in_4bit') or config['device'] == 'cuda', '4-bit mode requires CUDA')
     require(0 < config['temperature'] <= 2 and 0 < config['top_p'] <= 1, 'invalid sampling parameters')
     require(type(config['seed']) is int and config['seed'] >= 0, 'seed must be nonnegative integer')
+    require(type(config.get('do_sample', True)) is bool, 'do_sample must be boolean')
+    require(config.get('extraction_protocol') in (None, 'two_pass_v3'), 'unknown extraction_protocol')
+    require(type(config.get('dataset_resource_filter', False)) is bool, 'dataset_resource_filter must be boolean')
+    require(not config.get('dataset_resource_filter') or
+            (config.get('extraction_protocol') == 'two_pass_v3' and config.get('prompt_version') in ('3.1', '3.3', '3.4', '3.5', '3.6', '3.7')),
+            'dataset_resource_filter uses the v3.1 extraction baseline')
+    if config.get('extraction_protocol') == 'two_pass_v3':
+        from extraction_v3 import policy_for_prompt
+        policy_for_prompt(config.get('prompt_version', '3.1'))
+        require(config['max_attempts'] >= 2 and config.get('do_sample') is False,
+                'two_pass_v3 requires at least two attempts and do_sample=false')
     require(isinstance(config['revision'], str) and config['revision'], 'model revision is required')
     paths = {name: root / config[name] for name in ('corpus', 'prompt', 'guideline')}
     papers = sorted(read_jsonl(paths['corpus']), key=lambda row: row['paper_id'])
     validate_papers(papers)
+    if 'paper_ids' in config:
+        ids = config['paper_ids']
+        require(isinstance(ids, list) and ids and all(isinstance(pid, str) for pid in ids)
+                and len(ids) == len(set(ids)) and set(ids) <= {p['paper_id'] for p in papers},
+                'paper_ids must be a nonempty unique subset of the corpus')
+        papers = [paper for paper in papers if paper['paper_id'] in set(ids)]
     paper_bounds(config, len(papers))
     stable_config = {k: v for k, v in config.items() if k not in ('max_new_tokens', 'max_attempts')}
     provenance = dict(config=stable_config, generator_version=GENERATOR_VERSION,
                       generator_sha256=sha256(Path(__file__)), schema=SCHEMA,
                       input_hashes={name: sha256(path) for name, path in paths.items()})
+    if config.get('extraction_protocol') == 'two_pass_v3':
+        provenance['protocol_sha256'] = sha256(Path(__file__).with_name('extraction_v3.py'))
     instruction = paths['guideline'].read_text(encoding='utf-8') + '\n\n' + paths['prompt'].read_text(encoding='utf-8')
     return papers, provenance, instruction
 
 
 def compatible_provenance(previous, current, root=None):
+    # Saved runs replay their original policy; only known protocol fingerprints migrate.
+    legacy_protocols = {
+        '3.1': {'27806f24e1503603af796f5c62c462d233d4be1f2c5511df77895293693781d4',
+                'e538ccc9a66f6683ca4c84c1a7dc794596b209b6d7cccac2280b8e55ff2dcdb1',
+                'b2a96b50b3a8a4e4f078dfd5e02f8d09c3e55c4be6be12dfe428065aa25c5d98',
+                'bbc520ad39f69b540156b70d28db66042b5f29856da0d961023c31dabc3b9c79',
+                '0db4ebc15e8793e1bcd8aca535ea57e82c1b472e2baee64a1dc5e9beb304714a',
+                '1bc8fc647d4baf82b15340d9dc2370d14ad6351074213d534d0bc9222a1bf073'},
+        '3.2': {'27806f24e1503603af796f5c62c462d233d4be1f2c5511df77895293693781d4',
+                'e538ccc9a66f6683ca4c84c1a7dc794596b209b6d7cccac2280b8e55ff2dcdb1',
+                'b2a96b50b3a8a4e4f078dfd5e02f8d09c3e55c4be6be12dfe428065aa25c5d98',
+                '0db4ebc15e8793e1bcd8aca535ea57e82c1b472e2baee64a1dc5e9beb304714a',
+                '1bc8fc647d4baf82b15340d9dc2370d14ad6351074213d534d0bc9222a1bf073'},
+        '3.3': {'27806f24e1503603af796f5c62c462d233d4be1f2c5511df77895293693781d4',
+                'e538ccc9a66f6683ca4c84c1a7dc794596b209b6d7cccac2280b8e55ff2dcdb1',
+                'b2a96b50b3a8a4e4f078dfd5e02f8d09c3e55c4be6be12dfe428065aa25c5d98'},
+        '3.4': {'27806f24e1503603af796f5c62c462d233d4be1f2c5511df77895293693781d4',
+                'e538ccc9a66f6683ca4c84c1a7dc794596b209b6d7cccac2280b8e55ff2dcdb1'},
+        '3.5': {'27806f24e1503603af796f5c62c462d233d4be1f2c5511df77895293693781d4'},
+    }
+    for version in ('3.1', '3.2', '3.3', '3.4', '3.5', '3.6'):
+        legacy_protocols.setdefault(version, set()).add('29fb3eb7518ca5740f8652615a3a7e7142bbf4c1f1bbed243c841ab7d1640f3e')
+    if (current['config'].get('extraction_protocol') == 'two_pass_v3'
+            and previous.get('protocol_sha256') in legacy_protocols.get(current['config'].get('prompt_version'), set())):
+        previous = dict(previous, protocol_sha256=current['protocol_sha256'])
     # LF/CRLF exports are equivalent only when the text itself is unchanged.
     if root is not None and previous['input_hashes'] != current['input_hashes']:
         hashes = dict(previous['input_hashes'])
@@ -281,7 +334,7 @@ def ground_response(value, paper):
     return grounded
 
 
-def assess_generation(raw, paper):
+def assess_generation(raw, paper, validator=None, *, score_version='3.1'):
     """Recover a stable output shape, audit every issue, and score source support."""
     value = dict(paper_id=paper['paper_id'], **{facet: [] for facet in FACET_NAMES})
     try:
@@ -330,18 +383,25 @@ def assess_generation(raw, paper):
             one = dict(paper_id=paper['paper_id'], **{name: [] for name in FACET_NAMES})
             one[facet] = [grounded]
             try:
-                validate_response(one, paper)
+                (validator or validate_response)(one, paper)
             except ValueError as error:
-                issues.append(f'{where}: {error}')
+                detail = (f'; concept={json.dumps(concept)}; evidence_id={json.dumps(evidence_id)}; '
+                          f'evidence={json.dumps(grounded["evidence"])}' if validator else '')
+                issues.append(f'{where}: {error}{detail}')
             else:
                 valid += 1
                 supported_facets.add(facet)
             retention += source_phrase_coverage(concept, grounded['evidence'])
     schema_valid = not shape_errors
     # ponytail: lexical support is a heuristic, not semantic confidence; keep human silver review.
-    score = (60 * len(supported_facets) / len(FACET_NAMES)
-             + (25 * valid / total + 5 * retention / total if total else 0)
-             + 10 * schema_valid)
+    require(score_version in ('3.1', '3.2'), 'Unknown source-support scoring policy')
+    if score_version == '3.2':
+        # Empty facets and longer supported phrases carry no scoring penalty.
+        score = 10 * schema_valid + (90 * valid / total if total else 0)
+    else:
+        score = (60 * len(supported_facets) / len(FACET_NAMES)
+                 + (25 * valid / total + 5 * retention / total if total else 0)
+                 + 10 * schema_valid)
     return value, selection, dict(score=round(score, 4), schema_valid=schema_valid, parseable=True,
                                  validation_errors=shape_errors + issues)
 
@@ -350,8 +410,16 @@ def attempt_rank(attempt):
     return attempt['score'], attempt['parseable'], -len(attempt['validation_errors'])
 
 
-def validate_annotation(value, paper, metadata):
+def validate_annotation(value, paper, metadata, *, config=None):
     """Fallbacks relax quality checks only when the selected raw and audit agree."""
+    if config is not None:
+        if config.get('extraction_protocol') == 'two_pass_v3':
+            require(metadata.get('extraction_protocol') == 'two_pass_v3', 'v3 annotation protocol differs')
+        require(metadata.get('request_parameters', {}).get('dataset_resource_filter', False)
+                == config.get('dataset_resource_filter', False), 'dataset filter config differs from annotation')
+    if metadata.get('extraction_protocol') == 'two_pass_v3':
+        from extraction_v3 import validate_saved
+        return validate_saved(value, paper, metadata)
     fallback = metadata.get('fallback_used', False)
     require(type(fallback) is bool, 'fallback_used must be boolean')
     if not fallback:
@@ -505,9 +573,10 @@ def load_qwen(root, config):
                 'Paper exceeds model context; input was not silently truncated')
         started = time.monotonic()
         with torch.inference_mode():
-            generated = model.generate(**encoded, max_new_tokens=config['max_new_tokens'],
-                                       do_sample=True, temperature=config['temperature'],
-                                       top_p=config['top_p'], top_k=config['top_k'],
+            sampling = (dict(temperature=config['temperature'], top_p=config['top_p'], top_k=config['top_k'])
+                        if config.get('do_sample', True) else {})
+            generated = model.generate(**encoded, max_new_tokens=config['max_new_tokens'], **sampling,
+                                       do_sample=config.get('do_sample', True),
                                        pad_token_id=tokenizer.eos_token_id)
         output_ids = generated[0, input_tokens:]
         raw = tokenizer.decode(output_ids, skip_special_tokens=True).strip()
@@ -515,6 +584,10 @@ def load_qwen(root, config):
                          generation_seconds=round(time.monotonic()-started, 3))
 
     def extract(paper, instruction):
+        if config.get('extraction_protocol') == 'two_pass_v3':
+            from extraction_v3 import annotate as extract_reviewed
+            return extract_reviewed(paper, instruction, config, runtime, generate_text,
+                                    root / config['output_dir'] / 'last_failure.json')
         return annotate(paper, instruction, config, runtime, generate_text,
                         root / config['output_dir'] / 'last_failure.json')
 
@@ -578,7 +651,7 @@ def restore_jsonl(root, directory, config, papers, provenance, db):
                 'wrong annotation provenance')
         require(annotation['prompt_version'] == config['prompt_version']
                 and annotation['guideline_version'] == config['guideline_version'], 'annotation versions differ')
-        facets = validate_annotation(annotation['evidence'], catalog[paper_id], annotation)
+        facets = validate_annotation(annotation['evidence'], catalog[paper_id], annotation, config=config)
         require(facets['paper_id'] == paper_id, 'metadata IDs differ')
         records.append(dict(facets=facets, metadata=annotation))
     facets = [record['facets'] for record in records]
@@ -627,9 +700,11 @@ def generate(root, config, limit=None):
         for payload, in db.execute('SELECT payload FROM annotations'):
             record = json.loads(payload)
             paper = catalog[record['facets']['paper_id']]
-            require(validate_annotation(record['metadata']['evidence'], paper, record['metadata']) == record['facets'],
+            require(validate_annotation(record['metadata']['evidence'], paper, record['metadata'], config=config) == record['facets'],
                     'checkpoint facets differ from evidence')
-            if (record['metadata'].get('extraction_policy_version') != GENERATOR_VERSION
+            # Mandatory v3 self-review already ran; this upgrade rule is only for legacy v2.
+            if (record['metadata'].get('extraction_protocol') != 'two_pass_v3'
+                    and record['metadata'].get('extraction_policy_version') != GENERATOR_VERSION
                     and not record['metadata'].get('sparse_reviewed')
                     and sum(not record['facets'][facet] for facet in FACET_NAMES) >= SPARSE_REVIEW_THRESHOLD):
                 review_ids.add(paper['paper_id'])
@@ -652,6 +727,11 @@ def generate(root, config, limit=None):
                 try:
                     value, local = extractor(paper, instruction)
                 except AnnotationError as failure:
+                    if config.get('extraction_protocol') == 'two_pass_v3':
+                        with db:
+                            db.execute('INSERT OR REPLACE INTO failures VALUES (?, ?)', (current, str(failure)))
+                        print(f'FAILED {current}: {failure}; left missing for resume', flush=True)
+                        continue
                     if current in done:
                         print(f'REVIEW FAILED {current}: {failure}; previous accepted result retained', flush=True)
                         continue
@@ -661,7 +741,10 @@ def generate(root, config, limit=None):
                 if current in done and local.get('fallback_used', False):
                     print(f'REVIEW FALLBACK {current}: previous accepted result retained', flush=True)
                     continue
-                facets = validate_annotation(value, paper, local)
+                if config.get('extraction_protocol') == 'two_pass_v3':
+                    require(local.get('extraction_protocol') == 'two_pass_v3'
+                            and local.get('self_review_completed') is True, 'v3 extractor omitted self-review')
+                facets = validate_annotation(value, paper, local, config=config)
                 metadata = dict(paper_id=current, tier='silver', dataset_kind='real', annotator_type='qwen_local',
                                 review_status='unreviewed', guideline_version=config['guideline_version'],
                                  prompt_version=config['prompt_version'], extraction_policy_version=GENERATOR_VERSION,
@@ -672,6 +755,8 @@ def generate(root, config, limit=None):
                     db.execute('DELETE FROM failures WHERE paper_id = ?', (current,))
                 added += current not in done
                 done.add(current)
+                if config.get('extraction_protocol') == 'two_pass_v3':
+                    export(root, config, papers, provenance, db)
         except (ValueError, RuntimeError) as error:
             raise RuntimeError(f'{current}: {error}') from None
         finally:
@@ -693,10 +778,12 @@ def check_outputs(root, config, allow_partial=False):
     validate_facets(facets, set(catalog))
     require([row['paper_id'] for row in facets] == [row['paper_id'] for row in metadata], 'metadata IDs differ')
     for row, annotation in zip(facets, metadata):
+        if config.get('extraction_protocol') == 'two_pass_v3':
+            require(annotation.get('extraction_protocol') == 'two_pass_v3', 'v3 annotation protocol differs')
         require(annotation['tier'] == 'silver' and annotation['dataset_kind'] == 'real'
                 and annotation['review_status'] == 'unreviewed' and annotation['annotator_type'] == 'qwen_local', 'wrong annotation provenance')
         require(annotation['prompt_version'] == config['prompt_version'] and annotation['guideline_version'] == config['guideline_version'], 'annotation versions differ')
-        require(validate_annotation(annotation['evidence'], catalog[row['paper_id']], annotation) == row,
+        require(validate_annotation(annotation['evidence'], catalog[row['paper_id']], annotation, config=config) == row,
                 'facet labels differ from evidence')
     missing = sorted(set(catalog) - {row['paper_id'] for row in facets})
     require(manifest['count'] == len(facets) and manifest['corpus_count'] == len(papers) and manifest['missing_ids'] == missing, 'wrong output counts/coverage')
@@ -747,4 +834,6 @@ def main():
 
 
 if __name__ == '__main__':
+    # Keep protocol imports bound to this module when invoked as a script.
+    sys.modules.setdefault('build_exp_a', sys.modules[__name__])
     main()

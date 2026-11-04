@@ -1,0 +1,217 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 17.996604598999966,
+          "messages_sha256": "d28ea4cc011a152d83e630add91f76ec728ff31bdb2cfc4ac5abdc285b5d688d",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001409\", \"problem\": [], \"task\": [{\"concept\": \"POS Tagging for Code-mixed Indian Social Media Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"Trigram Hidden Markov Model\", \"evidence_id\": \"A1\"}, {\"concept\": \"dictionary\", \"evidence_id\": \"A1\"}, {\"concept\": \"word level features\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode\", \"evidence_id\": \"A4\"}, {\"concept\": \"system obtains average overall accuracy of 70.65% in unconstrained mode\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 51.1429,
+          "seed": 4271,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2384,
+            "output_tokens": 219
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"POS Tagging for Code-mixed Indian Social Media Text\"; evidence_id=\"T0\"; evidence=\"Part-of-Speech Tagging for Code-mixed Indian Social Media Text at ICON 2015\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode\"; evidence_id=\"A4\"; evidence=\"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"system obtains average overall accuracy of 70.65% in unconstrained mode\"; evidence_id=\"A5\"; evidence=\"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "system obtains average overall accuracy of 70.65% in unconstrained mode",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Trigram Hidden Markov Model",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "dictionary",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "word level features",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P001409",
+        "problem": [],
+        "task": [
+          {
+            "concept": "POS Tagging for Code-mixed Indian Social Media Text",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 83.87401713000008,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001409",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 51.1429,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3786,
+        "output_tokens": 1099
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"POS Tagging for Code-mixed Indian Social Media Text\"; evidence_id=\"T0\"; evidence=\"Part-of-Speech Tagging for Code-mixed Indian Social Media Text at ICON 2015\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode\"; evidence_id=\"A4\"; evidence=\"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"system obtains average overall accuracy of 70.65% in unconstrained mode\"; evidence_id=\"A5\"; evidence=\"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 30.358507173000135,
+        "messages_sha256": "888ae378da571677c9bd54f6fea4ea9cb7734934081a5545992a17ce80cd1e20",
+        "raw_output": "{\"paper_id\":\"P001409\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper discusses the experiments carried out by us at Jadavpur University as part of the participation in ICON 2015 task: POS Tagging for Code-mixed Indian Social Media Text.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"The tool that we have developed for the task is based on Trigram Hidden Markov Model that utilizes information from dictionary as well as some other word level features to enhance the observation probabilities of the known tokens as well as unknown tokens.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We submitted runs for Bengali-English, Hindi-English and Tamil-English Language pairs.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Our system has been trained and tested on the datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4269,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 687,
+          "output_tokens": 403
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.518905357999984,
+        "messages_sha256": "a2979864d1680c3bd719b03654ecfc7af1a94f3447e5cf54814333ad9caf0a1c",
+        "raw_output": "{\n  \"paper_id\": \"P001409\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper discusses the experiments carried out by us at Jadavpur University as part of the participation in ICON 2015 task: POS Tagging for Code-mixed Indian Social Media Text.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"The tool that we have developed for the task is based on Trigram Hidden Markov Model that utilizes information from dictionary as well as some other word level features to enhance the observation probabilities of the known tokens as well as unknown tokens.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"We submitted runs for Bengali-English, Hindi-English and Tamil-English Language pairs.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Our system has been trained and tested on the datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4270,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 715,
+          "output_tokens": 477
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 17.996604598999966,
+        "messages_sha256": "d28ea4cc011a152d83e630add91f76ec728ff31bdb2cfc4ac5abdc285b5d688d",
+        "raw_output": "{\"paper_id\": \"P001409\", \"problem\": [], \"task\": [{\"concept\": \"POS Tagging for Code-mixed Indian Social Media Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"Trigram Hidden Markov Model\", \"evidence_id\": \"A1\"}, {\"concept\": \"dictionary\", \"evidence_id\": \"A1\"}, {\"concept\": \"word level features\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode\", \"evidence_id\": \"A4\"}, {\"concept\": \"system obtains average overall accuracy of 70.65% in unconstrained mode\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 4271,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2384,
+          "output_tokens": 219
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "system obtains average overall accuracy (averaged over all three language pairs) of 75.60% in constrained mode",
+        "system obtains average overall accuracy of 70.65% in unconstrained mode"
+      ],
+      "dataset": [
+        "datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text"
+      ],
+      "method": [
+        "Trigram Hidden Markov Model",
+        "dictionary",
+        "word level features"
+      ],
+      "paper_id": "P001409",
+      "problem": [],
+      "task": [
+        "POS Tagging for Code-mixed Indian Social Media Text"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 83.87401713000008,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 30.358507173000135,
+        "messages_sha256": "888ae378da571677c9bd54f6fea4ea9cb7734934081a5545992a17ce80cd1e20",
+        "raw_output": "{\"paper_id\":\"P001409\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"This paper discusses the experiments carried out by us at Jadavpur University as part of the participation in ICON 2015 task: POS Tagging for Code-mixed Indian Social Media Text.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"The tool that we have developed for the task is based on Trigram Hidden Markov Model that utilizes information from dictionary as well as some other word level features to enhance the observation probabilities of the known tokens as well as unknown tokens.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We submitted runs for Bengali-English, Hindi-English and Tamil-English Language pairs.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"Our system has been trained and tested on the datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 4269,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 687,
+          "output_tokens": 403
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 35.518905357999984,
+        "messages_sha256": "a2979864d1680c3bd719b03654ecfc7af1a94f3447e5cf54814333ad9caf0a1c",
+        "raw_output": "{\n  \"paper_id\": \"P001409\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"This paper discusses the experiments carried out by us at Jadavpur University as part of the participation in ICON 2015 task: POS Tagging for Code-mixed Indian Social Media Text.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"The tool that we have developed for the task is based on Trigram Hidden Markov Model that utilizes information from dictionary as well as some other word level features to enhance the observation probabilities of the known tokens as well as unknown tokens.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"We submitted runs for Bengali-English, Hindi-English and Tamil-English Language pairs.\",\n      \"roles\": [\"task\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Our system has been trained and tested on the datasets released for ICON 2015 shared task: POS Tagging For Code-mixed Indian Social Media Text.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"In constrained mode, our system obtains average overall accuracy (averaged over all three language pairs) of 75.60% which is very close to other participating two systems (76.79% for IIITH and 75.79% for AMRITA_CEN) ranked higher than our system.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"In unconstrained mode, our system obtains average overall accuracy of 70.65% which is also close to the system (72.85% for AMRITA_CEN) which obtains the highest average overall accuracy.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 4270,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 715,
+          "output_tokens": 477
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 83.87401713000008,
+      "input_tokens": 3786,
+      "output_tokens": 1099
+    },
+    "paper_id": "P001409",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3786,
+      "output_tokens": 1099
+    }
+  },
+  "record_sha256": "4dad48870b95c1a8e74d8e4314eebd42ac8611135e9886840bde677214b4e1cc",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

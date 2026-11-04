@@ -1,0 +1,15 @@
+{
+  "total": 275,
+  "passed": 269,
+  "failures": 1,
+  "errors": 5,
+  "issues": [
+    "test_diagnostic_bundle_has_no_training_or_reference_payload_and_keeps_split (scripts.exp_a.finetuning.test_v2_preparation.V2PreparationTests.test_diagnostic_bundle_has_no_training_or_reference_payload_and_keeps_split)",
+    "test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos)",
+    "test_bundle_contains_same_source_ids_and_isolates_reference_from_model_inputs (scripts.exp_a.matrix.test_matrix.MatrixChecks.test_bundle_contains_same_source_ids_and_isolates_reference_from_model_inputs)",
+    "test_bundle_excludes_policy_papers_and_keeps_reference_out_of_generation (scripts.exp_a.matrix.test_policy_matrix.PolicyMatrixChecks.test_bundle_excludes_policy_papers_and_keeps_reference_out_of_generation)",
+    "test_kaggle_archive_has_exact_pilot_ids_without_reference_or_credentials (scripts.exp_a.pilot.test_qwen_pipeline.PipelineChecks.test_kaggle_archive_has_exact_pilot_ids_without_reference_or_credentials)",
+    "test_recovery_rejects_changed_embedded_split_prompt (scripts.exp_a.matrix.test_matrix.MatrixChecks.test_recovery_rejects_changed_embedded_split_prompt)"
+  ],
+  "notes": "Legacy finetuning preparation rejects pre-existing protected gpt_review_evidence.jsonl changes; training tokenizer needs blocked HuggingFace access; matrix builders reject changed baseline provenance; old pilot builder references removed review_annotations.jsonl. Focused32 tests pass including12 new compact tests."
+}

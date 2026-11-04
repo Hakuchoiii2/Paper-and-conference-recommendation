@@ -1,0 +1,209 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 14.97187527899996,
+          "messages_sha256": "b3ec8f53a8b2bff5d8f9618d8c8037856e0052b2724fa78dc17a063dd645a067",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002877\", \"problem\": [], \"task\": [{\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"}, {\"concept\": \"create an English Yelp review classifier\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}, {\"concept\": \"multilingual encoder-decoder neural machine translation (NMT) architecture\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"WMT15\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"}, {\"concept\": \"comparable BLEU scores for each language pair\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 8675,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2225,
+            "output_tokens": 177
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "language-independent representation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "comparable BLEU scores for each language pair",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WMT15",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "neural interlingua",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "multilingual encoder-decoder neural machine translation (NMT) architecture",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002877",
+        "problem": [],
+        "task": [
+          {
+            "concept": "direct zero-shot translation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "create an English Yelp review classifier",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 43.962472457999866,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002877",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 88.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3302,
+        "output_tokens": 564
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.40884470300034,
+        "messages_sha256": "abe42f5cf2e2b67957d822f4fe2cddac3182017f3a3bf74360eb5faf17202904",
+        "raw_output": "{\"paper_id\":\"P002877\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We incorporate an explicit neural interlingua into a multilingual encoder-decoder neural machine translation (NMT) architecture.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We demonstrate that our model learns a language-independent representation by performing direct zero-shot translation (without using pivot translation), and by using the source sentence embeddings to create an English Yelp review classifier that, through the mediation of the neural interlingua, can also classify French and German reviews.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Furthermore, we show that, despite using a smaller number of parameters than a pairwise collection of bilingual NMT models, our approach produces comparable BLEU scores for each language pair in WMT15.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8673,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 528,
+          "output_tokens": 192
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.581752475999565,
+        "messages_sha256": "cc6efffbd6c182e14e053a2378354c25e585c0ae1917c206e39ec4d411946b89",
+        "raw_output": "{\"paper_id\": \"P002877\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"We incorporate an explicit neural interlingua into a multilingual encoder-decoder neural machine translation (NMT) architecture.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We demonstrate that our model learns a language-independent representation by performing direct zero-shot translation (without using pivot translation), and by using the source sentence embeddings to create an English Yelp review classifier that, through the mediation of the neural interlingua, can also classify French and German reviews.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Furthermore, we show that, despite using a smaller number of parameters than a pairwise collection of bilingual NMT models, our approach produces comparable BLEU scores for each language pair in WMT15.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8674,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 549,
+          "output_tokens": 195
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.97187527899996,
+        "messages_sha256": "b3ec8f53a8b2bff5d8f9618d8c8037856e0052b2724fa78dc17a063dd645a067",
+        "raw_output": "{\"paper_id\": \"P002877\", \"problem\": [], \"task\": [{\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"}, {\"concept\": \"create an English Yelp review classifier\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"}, {\"concept\": \"multilingual encoder-decoder neural machine translation (NMT) architecture\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"WMT15\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"}, {\"concept\": \"comparable BLEU scores for each language pair\", \"evidence_id\": \"A2\"}]}",
+        "reached_token_limit": false,
+        "seed": 8675,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2225,
+          "output_tokens": 177
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "language-independent representation",
+        "comparable BLEU scores for each language pair"
+      ],
+      "dataset": [
+        "WMT15"
+      ],
+      "method": [
+        "neural interlingua",
+        "multilingual encoder-decoder neural machine translation (NMT) architecture"
+      ],
+      "paper_id": "P002877",
+      "problem": [],
+      "task": [
+        "direct zero-shot translation",
+        "create an English Yelp review classifier"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 43.962472457999866,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.40884470300034,
+        "messages_sha256": "abe42f5cf2e2b67957d822f4fe2cddac3182017f3a3bf74360eb5faf17202904",
+        "raw_output": "{\"paper_id\":\"P002877\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We incorporate an explicit neural interlingua into a multilingual encoder-decoder neural machine translation (NMT) architecture.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We demonstrate that our model learns a language-independent representation by performing direct zero-shot translation (without using pivot translation), and by using the source sentence embeddings to create an English Yelp review classifier that, through the mediation of the neural interlingua, can also classify French and German reviews.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Furthermore, we show that, despite using a smaller number of parameters than a pairwise collection of bilingual NMT models, our approach produces comparable BLEU scores for each language pair in WMT15.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8673,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 528,
+          "output_tokens": 192
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.581752475999565,
+        "messages_sha256": "cc6efffbd6c182e14e053a2378354c25e585c0ae1917c206e39ec4d411946b89",
+        "raw_output": "{\"paper_id\": \"P002877\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"We incorporate an explicit neural interlingua into a multilingual encoder-decoder neural machine translation (NMT) architecture.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We demonstrate that our model learns a language-independent representation by performing direct zero-shot translation (without using pivot translation), and by using the source sentence embeddings to create an English Yelp review classifier that, through the mediation of the neural interlingua, can also classify French and German reviews.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Furthermore, we show that, despite using a smaller number of parameters than a pairwise collection of bilingual NMT models, our approach produces comparable BLEU scores for each language pair in WMT15.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 8674,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 549,
+          "output_tokens": 195
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 43.962472457999866,
+      "input_tokens": 3302,
+      "output_tokens": 564
+    },
+    "paper_id": "P002877",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3302,
+      "output_tokens": 564
+    }
+  },
+  "record_sha256": "8caa96c32dac063c56a643d9ba945a257406469817a1b19a70c184a740669469",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

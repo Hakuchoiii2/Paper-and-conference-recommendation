@@ -1,46 +1,42 @@
-# Dữ liệu thực nghiệm
+# Dữ liệu nghiên cứu A/B/conference
 
-Đây là chỉ mục chuẩn bị đầu vào. README trong từng exp giải thích generator; README tương ứng trong `scripts/` giải thích scorer và đánh giá.
+Phạm vi hiện tại là so sánh LLM trích năm facet, paper ranking và manuscript-based conference recommendation. Xem [tổng quan đề tài](../README.md) và [đề cương hiện hành](../docs/PAPER_STRUCTURE_SHARED_FACET_WEIGHTS_2026-10-23.md).
 
-## Các phần dữ liệu
+## Dữ liệu đang dùng
 
 | Phần | Vai trò | Đọc tiếp |
 |---|---|---|
-| `raw/` | Bản tải nguồn, giấy phép, checksum | [Nguồn gốc](raw/README.md) |
-| `processed/` | Corpus canonical: ID, title, abstract, metadata | [Corpus và rebuild](processed/README.md) |
-| A | Qwen trích năm facet, metadata/evidence, gộp, chọn gold | [Generator A](exp_a/README.md) |
-| B | Bài mốc × ứng viên, nhãn graded, split theo bài mốc | [Generator B](exp_b/README.md) |
-| C | Users, latent profile, lịch sử/search/exposure, holdout | [Generator C](exp_c/README.md) |
-| D | Phiên có hướng tương tự/khác biệt và tín hiệu quan sát | [Generator D](exp_d/README.md) |
-| E | Chuỗi thời gian stable/drift và rolling holdout | [Generator E](exp_e/README.md) |
+| `raw/` | Nguồn tải, giấy phép và checksum | [Nguồn gốc](raw/README.md) |
+| `processed/` | Corpus canonical 4.210 title/abstract và metadata | [Corpus và rebuild](processed/README.md) |
+| A | Trích problem/task/method/dataset/contribution cùng evidence | [Dữ liệu và lịch sử A](exp_a/README.md) |
+| `exp_a/final/` | Code/prompt/config chung, reference400, kết quả và adapter theo model | [Bộ final](exp_a/final/README.md) |
+| B | Bài mốc, candidates, relevance labels và split | [Generator baseline B](exp_b/README.md) |
+| Conference | Cần chốt catalog, metadata venue/year, cutoff và nhãn; chưa có pipeline riêng | [Thiết kế conference](../docs/PAPER_STRUCTURE_SHARED_FACET_WEIGHTS_2026-10-23.md) |
 
-## Phụ thuộc khi giao cho các thành viên
+## Trạng thái thực nghiệm
 
-1. Hoàn thành và gộp A thành silver + metadata + manifest toàn corpus.
-2. B/C có thể tạo dữ liệu độc lập sau A. Generator loại bài fallback/còn validation errors khỏi pool khuyến nghị.
-3. Tạo bộ C hoàn chỉnh một lần, rồi bàn giao cùng manifest và các tệp liên quan.
-4. D dùng users và lịch sử/search/exposure C. E dùng danh sách users C rồi sinh chuỗi riêng.
-5. Thành viên D/E chạy baseline riêng ngay khi có dữ liệu; không phải đợi kết quả scorer C.
+- A đã hoàn tất QLoRA và đánh giá cho Qwen3-4B/8B/14B, Llama3.1-8B và Gemma2-9B; cùng 280 bài train, 60 valid, 60 test. [Bảng metrics 5 LLM](exp_a/final/results/llm_experiment_metrics.csv) dùng thang 0–1.
+- Reference400 hiện hành ở [human_gold.jsonl](exp_a/ground_truth/gold_review/human_gold.jsonl): nhãn AI-assisted đã được người dùng kiểm tra/chấp nhận. Cohort từng được dùng trong phát triển pipeline; test60 chưa phải external holdout độc lập.
+- Facet mới do model sinh vẫn là silver/unreviewed. Fine-tune trên reference được chấp nhận không tự biến output mới thành human gold.
+- B hiện có baseline lexical và dữ liệu mock: manifest ghi 18 query/1.800 cặp có nhãn, trong khi quota cấu hình là 300 query ×100 candidates. Nhãn weighted overlap chưa thay thế relevance labels độc lập.
 
-Gold A là bước kiểm tra chất lượng extraction riêng. B–E hiện dùng ground truth mô phỏng, không cần thêm bộ nhãn relevance do người kiểm duyệt để chạy baseline.
+## Chuẩn bị cho hướng nghiên cứu hiện tại
 
-## Quy mô cấu hình chính
+1. Giữ cùng paper IDs, văn bản nguồn, prompt/schema, split và provenance để đối chiếu các extractor.
+2. Chọn và đóng băng bộ facet tham chiếu `F_ref` cho B. B không cần đợi A chọn model có điểm test cao nhất.
+3. Chọn encoder, scorer, trọng số và missing policy trên train/dev B; khóa cấu hình trước test và dùng chung giữa các extractor trong phép thử kết nối.
+4. Chuẩn bị lịch sử hội nghị trước cutoff, catalog và nhãn venue riêng cho conference.
 
-| Exp | Mục tiêu generator | Lưu ý |
-|---|---|---|
-| A | 4.210 bài, 5 phần × 842; chọn 400 bài review | Form pending chưa phải gold |
-| B | 300 bài mốc × 100 ứng viên | 30.000 cặp, không phải 30.000 bài |
-| C | 300 users × 50 events | 30 lịch sử + 20 holdout/user |
-| D | 300 users × 5 sessions × 20 ứng viên | Có thể thiếu quota nếu pool không đủ |
-| E | 300 users × 4 kỳ × 15 events | 3 lần đánh giá rolling/user |
+## Dữ liệu và quy trình lịch sử
 
-Đây là **quota trong cấu hình**, không phải xác nhận dataset đã được sinh đủ. Kiểm tra số lượng thực tế và trạng thái trong manifest/report. Generator không chèn ID hoặc nhãn giả để bù thiếu.
+C/D/E thuộc hướng cũ, được giữ để tra cứu và tái lập:
 
-## Đọc tiếp
+| Phần | Nội dung lịch sử |
+|---|---|
+| [C](exp_c/README.md) | Users, profile, lịch sử/search/exposure và holdout |
+| [D](exp_d/README.md) | Ý định trong phiên và ranking theo hướng |
+| [E](exp_e/README.md) | Profile thay đổi theo thời gian và rolling holdout |
 
-- [Cách chạy script thực nghiệm](../scripts/README.md) và [lệnh chuẩn bị/chạy nhanh](../docs/RUN_EXPERIMENTS.md).
-- [Hợp đồng dữ liệu](../DATA_CONTRACT.md), [protocol A–E](../docs/EXPERIMENT_PROTOCOL.md).
-- [Quản lý corpus, freeze và bàn giao](../docs/PROJECT_OPERATIONS.md).
-- Pilot nhỏ: [A](exp_a/samples/README.md), [B](exp_b/samples/README.md), [C](exp_c/samples/README.md), [D](exp_d/samples/README.md), [E](exp_e/samples/README.md).
+Generator baseline B–E hiện dùng silver A đã gộp và lọc cờ chất lượng; D/E còn phụ thuộc danh tính hoặc lịch sử C. Đây là phụ thuộc của code mô phỏng cũ, không phải yêu cầu phải hoàn tất C/D/E cho đề tài mới. Quota và hướng dẫn lịch sử nằm trong README từng exp, [data contract](../DATA_CONTRACT.md) và [protocol A–E](../docs/EXPERIMENT_PROTOCOL.md).
 
-Bài báo là dữ liệu thật; facet A là silver chưa review; profile/intent/hành vi/nhãn B–E là dữ liệu mô phỏng. Cần giữ rõ ba mức này khi viết báo cáo.
+Đọc tiếp: [chỉ mục scripts](../scripts/README.md), [quản lý corpus và bàn giao](../docs/PROJECT_OPERATIONS.md). Bài báo là dữ liệu thật; silver extraction và nhãn/hành vi mô phỏng cần được phân biệt rõ khi báo cáo.

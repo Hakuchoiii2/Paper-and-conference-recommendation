@@ -1,0 +1,44 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "old_v3_7",
+    "paper_id": "P000962",
+    "seed": 2928,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "messages_sha256": "821e06dc720e4bf8a6d79f944da053a57bb00a5c36cd4eb9ebd886d7429a64d6",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P000962\",\n  \"problem\": [\n    {\n      \"concept\": \"privacy sensitive data and large quantity of data preclude logging to the data center\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"learn a shared model by aggregating locally-computed updates\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"iterative model averaging\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"four datasets\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"practical method for federated learning of deep networks\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"approach is robust to unbalanced and non-IID data distributions\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"reduction in required communication rounds by 10-100x\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 21.892589130000033,
+    "usage": {
+      "input_tokens": 2502,
+      "output_tokens": 263
+    },
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"privacy sensitive data and large quantity of data preclude logging to the data center\"; evidence_id=\"A2\"; evidence=\"However, this rich data is often privacy sensitive, large in quantity, or both, which may preclude logging to the data center and training there using conventional approaches.\""
+    ],
+    "bounded_stop": false
+  },
+  "record_sha256": "62c940e2d6f8ba4db3fd1045448f2a54e3bf09a92eb15ef22772c512c7147ca1"
+}

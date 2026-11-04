@@ -1,0 +1,71 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P002283\", \"problem\": [], \"task\": [{\"concept\": \"compare patterns of television and radio use across Spanish-speaking Hispanics, English-speaking Hispanics, and non-Hispanics in Houston, Texas\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Portable People Meter data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Cultural proximity\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"Arbitron, Inc.\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language preferences play a powerful role in determining audience behavior\", \"evidence_id\": \"A3\"}, {\"concept\": \"English-speaking Hispanics exhibit multicultural fluency\", \"evidence_id\": \"A4\"}, {\"concept\": \"other two populations show evidence of cultural polarization\", \"evidence_id\": \"A4\"}]}",
+      "attempt": 1,
+      "generation_seconds": 31.880985447001876,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P002283\", \"problem\": [], \"task\": [{\"concept\": \"compare patterns of television and radio use across Spanish-speaking Hispanics, English-speaking Hispanics, and non-Hispanics in Houston, Texas\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Portable People Meter data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Cultural proximity\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"Arbitron, Inc.\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language preferences play a powerful role in determining audience behavior\", \"evidence_id\": \"A3\"}, {\"concept\": \"English-speaking Hispanics exhibit multicultural fluency\", \"evidence_id\": \"A4\"}, {\"concept\": \"other two populations show evidence of cultural polarization\", \"evidence_id\": \"A4\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 88.0,
+      "seed": 6891,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2397,
+        "output_tokens": 196
+      },
+      "validation_errors": []
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002283\", \"problem\": [], \"task\": [{\"concept\": \"compare patterns of television and radio use across Spanish-speaking Hispanics, English-speaking Hispanics, and non-Hispanics in Houston, Texas\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Portable People Meter data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Cultural proximity\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"Arbitron, Inc.\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language preferences play a powerful role in determining audience behavior\", \"evidence_id\": \"A3\"}, {\"concept\": \"English-speaking Hispanics exhibit multicultural fluency\", \"evidence_id\": \"A4\"}, {\"concept\": \"other two populations show evidence of cultural polarization\", \"evidence_id\": \"A4\"}]}",
+      "attempt": 2,
+      "generation_seconds": 33.39890259599997,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P002283\", \"problem\": [], \"task\": [{\"concept\": \"compare patterns of television and radio use across Spanish-speaking Hispanics, English-speaking Hispanics, and non-Hispanics in Houston, Texas\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Portable People Meter data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Cultural proximity\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"Arbitron, Inc.\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"language preferences play a powerful role in determining audience behavior\", \"evidence_id\": \"A3\"}, {\"concept\": \"English-speaking Hispanics exhibit multicultural fluency\", \"evidence_id\": \"A4\"}, {\"concept\": \"other two populations show evidence of cultural polarization\", \"evidence_id\": \"A4\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 88.0,
+      "seed": 6892,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3957,
+        "output_tokens": 196
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P002283",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "Arbitron, Inc.",
+        "evidence": "Portable People Meter data from Arbitron, Inc., was used to compare patterns of television and radio use across Spanish-speaking Hispanics, English-speaking Hispanics, and non-Hispanics in Houston, Texas.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 2,
+  "selected_score": 88.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

@@ -1,0 +1,193 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002877\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"multilingual encoder-decoder neural machine translation (NMT) architecture\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"WMT15\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.844157563999943,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002877\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"direct zero-shot translation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"create an English Yelp review classifier that can also classify French and German reviews\", \"evidence_id\": \"A1\"}\n  ],\n  \"method\": [\n    {\"concept\": \"neural interlingua\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"multilingual encoder-decoder neural machine translation (NMT) architecture\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"WMT15\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"language-independent representation\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"comparable BLEU scores for each language pair in WMT15\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 87.7619,
+          "seed": 8673,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2380,
+            "output_tokens": 213
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "language-independent representation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "comparable BLEU scores for each language pair in WMT15",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WMT15",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "neural interlingua",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "multilingual encoder-decoder neural machine translation (NMT) architecture",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002877",
+        "problem": [],
+        "task": [
+          {
+            "concept": "direct zero-shot translation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "create an English Yelp review classifier that can also classify French and German reviews",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 17.844157563999943,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002877",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 8673,
+      "selected_score": 87.7619,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2380,
+        "output_tokens": 213
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4bd13606a5be872619498daee219da6d56dee09aa2cfd1dc1597a0b739a1edd7",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 8673
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "language-independent representation",
+        "comparable BLEU scores for each language pair in WMT15"
+      ],
+      "dataset": [
+        "WMT15"
+      ],
+      "method": [
+        "neural interlingua",
+        "multilingual encoder-decoder neural machine translation (NMT) architecture"
+      ],
+      "paper_id": "P002877",
+      "problem": [],
+      "task": [
+        "direct zero-shot translation",
+        "create an English Yelp review classifier that can also classify French and German reviews"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 17.844157563999943,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P002877",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [],
+      "task": [
+        0,
+        1
+      ]
+    },
+    "usage": {
+      "input_tokens": 2380,
+      "output_tokens": 213
+    }
+  },
+  "record_sha256": "22ee384e52e34c9f8a287b93748693dbac12743d3036b8a3013c46bf6f4925d7",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

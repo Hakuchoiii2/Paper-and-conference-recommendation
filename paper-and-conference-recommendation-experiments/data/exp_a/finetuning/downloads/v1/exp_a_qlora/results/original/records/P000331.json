@@ -1,0 +1,227 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000331\",\n  \"problem\": [\n    {\n      \"concept\": \"reliance on a large manually annotated training set\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Latent Words Language Model\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"using word similarities from unlabeled texts\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"semi-supervised SRL methods as additional features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"automatically expanding a small training set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"PropBank dataset\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Latent Words Language Model for semi-supervised SRL\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"error reduction of 33.27% F1-measure for small training sizes\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 25.839120355998602,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000331\",\n  \"problem\": [\n    {\n      \"concept\": \"reliance on a large manually annotated training set\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Latent Words Language Model\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"using word similarities from unlabeled texts\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"semi-supervised SRL methods as additional features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"automatically expanding a small training set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"PropBank dataset\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Latent Words Language Model for semi-supervised SRL\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"error reduction of 33.27% F1-measure for small training sizes\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 47.3333,
+          "seed": 1035,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2465,
+            "output_tokens": 309
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"reliance on a large manually annotated training set\"; evidence_id=\"A1\"; evidence=\"Currently however, most systems rely on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised semantic role labeling\"; evidence_id=\"A2\"; evidence=\"A possible solution for this problem is semi-supervised learning, where a small set of training examples is automatically expanded using unlabeled texts.\"",
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using word similarities from unlabeled texts\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Latent Words Language Model for semi-supervised SRL\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"error reduction of 33.27% F1-measure for small training sizes\"; evidence_id=\"A5\"; evidence=\"We evaluate the methods on the PropBank dataset and find that for small training sizes our best performing system achieves an error reduction of 33.27% F1-measure compared to a state-of-the-art supervised baseline.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000331\", \"problem\": [{\"concept\": \"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"semi-supervised semantic role labeling\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Latent Words Language Model\", \"evidence_id\": \"A3\"}, {\"concept\": \"using word similarities from unlabeled texts\", \"evidence_id\": \"A3\"}, {\"concept\": \"semi-supervised SRL methods as additional features\", \"evidence_id\": \"A4\"}, {\"concept\": \"automatically expanding a small training set\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PropBank dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"Latent Words Language Model for semi-supervised semantic role labeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"error reduction of 33.27% F1-measure for small training sizes\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.8084711479969,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000331\",\n  \"problem\": [\n    {\n      \"concept\": \"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Latent Words Language Model\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"using word similarities from unlabeled texts\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"semi-supervised SRL methods as additional features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"automatically expanding a small training set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"PropBank dataset\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Latent Words Language Model for semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"error reduction of 33.27% F1-measure for small training sizes\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 47.3333,
+          "seed": 1036,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4519,
+            "output_tokens": 337
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\"; evidence_id=\"A1\"; evidence=\"Currently however, most systems rely on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised semantic role labeling\"; evidence_id=\"A2\"; evidence=\"A possible solution for this problem is semi-supervised learning, where a small set of training examples is automatically expanded using unlabeled texts.\"",
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using word similarities from unlabeled texts\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Latent Words Language Model for semi-supervised semantic role labeling\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"error reduction of 33.27% F1-measure for small training sizes\"; evidence_id=\"A5\"; evidence=\"We evaluate the methods on the PropBank dataset and find that for small training sizes our best performing system achieves an error reduction of 33.27% F1-measure compared to a state-of-the-art supervised baseline.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000331\", \"problem\": [{\"concept\": \"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"semi-supervised semantic role labeling\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"Latent Words Language Model\", \"evidence_id\": \"A3\"}, {\"concept\": \"using word similarities from unlabeled texts\", \"evidence_id\": \"A3\"}, {\"concept\": \"semi-supervised SRL methods as additional features\", \"evidence_id\": \"A4\"}, {\"concept\": \"automatically expanding a small training set\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"PropBank dataset\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"Latent Words Language Model for semi-supervised semantic role labeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"error reduction of 33.27% F1-measure for small training sizes\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 34.76685338899915,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000331\",\n  \"problem\": [\n    {\n      \"concept\": \"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Latent Words Language Model\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"using word similarities from unlabeled texts\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"semi-supervised SRL methods as additional features\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"automatically expanding a small training set\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"PropBank dataset\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Latent Words Language Model for semi-supervised semantic role labeling\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"error reduction of 33.27% F1-measure for small training sizes\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 47.3333,
+          "seed": 1037,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4503,
+            "output_tokens": 337
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\"; evidence_id=\"A1\"; evidence=\"Currently however, most systems rely on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised semantic role labeling\"; evidence_id=\"A2\"; evidence=\"A possible solution for this problem is semi-supervised learning, where a small set of training examples is automatically expanded using unlabeled texts.\"",
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using word similarities from unlabeled texts\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Latent Words Language Model for semi-supervised semantic role labeling\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"error reduction of 33.27% F1-measure for small training sizes\"; evidence_id=\"A5\"; evidence=\"We evaluate the methods on the PropBank dataset and find that for small training sizes our best performing system achieves an error reduction of 33.27% F1-measure compared to a state-of-the-art supervised baseline.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Latent Words Language Model for semi-supervised semantic role labeling",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "error reduction of 33.27% F1-measure for small training sizes",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "PropBank dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Latent Words Language Model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "using word similarities from unlabeled texts",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "semi-supervised SRL methods as additional features",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "automatically expanding a small training set",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000331",
+        "problem": [
+          {
+            "concept": "reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "semi-supervised semantic role labeling",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 95.41444489299465,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1037,
+      "selected_score": 47.3333,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11487,
+        "output_tokens": 983
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\"; evidence_id=\"A1\"; evidence=\"Currently however, most systems rely on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised semantic role labeling\"; evidence_id=\"A2\"; evidence=\"A possible solution for this problem is semi-supervised learning, where a small set of training examples is automatically expanded using unlabeled texts.\"",
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using word similarities from unlabeled texts\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Latent Words Language Model for semi-supervised semantic role labeling\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"error reduction of 33.27% F1-measure for small training sizes\"; evidence_id=\"A5\"; evidence=\"We evaluate the methods on the PropBank dataset and find that for small training sizes our best performing system achieves an error reduction of 33.27% F1-measure compared to a state-of-the-art supervised baseline.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "Latent Words Language Model for semi-supervised semantic role labeling",
+        "error reduction of 33.27% F1-measure for small training sizes"
+      ],
+      "dataset": [
+        "PropBank dataset"
+      ],
+      "method": [
+        "Latent Words Language Model",
+        "using word similarities from unlabeled texts",
+        "semi-supervised SRL methods as additional features",
+        "automatically expanding a small training set"
+      ],
+      "paper_id": "P000331",
+      "problem": [
+        "reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application"
+      ],
+      "task": [
+        "semi-supervised semantic role labeling"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 95.41444489299465,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000331",
+    "usage": {
+      "input_tokens": 11487,
+      "output_tokens": 983
+    }
+  },
+  "record_sha256": "3bfd86b110f608af083edd176b853a24babd7b06e533e0b0e1ae9a9cdd91b9f5",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

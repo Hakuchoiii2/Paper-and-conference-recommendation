@@ -1,0 +1,199 @@
+{
+  "record": {
+    "adapter_sha256": "fa80cb7e26a1ca34ec98ce1f967b095659779b1f45b3ea4963e6f12167c0ccc7",
+    "arm": "base",
+    "audit": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "bounded_stop": false,
+          "discarded_suffix_chars": 0,
+          "duplicate": null,
+          "generation_seconds": 16.13554,
+          "raw_output": "{\n  \"paper_id\": \"P000510\",\n  \"problem\": [\n    {\n      \"concept\": \"Limitation in sentiment classification models\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Sentence-level sentiment classification\",\n      \"evidence_ids\": [\"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Linguistically Regularized LSTMs\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"Linguistically coherent representations\",\n      \"evidence_ids\": [\"A3\"]\n    },\n    {\n      \"concept\": \"Effective sentiment shifting effect capture\",\n      \"evidence_ids\": [\"A4\"]\n    },\n    {\n      \"concept\": \"Competitive results with model simplicity\",\n      \"evidence_ids\": [\"A4\"]\n    }\n  ]\n}",
+          "raw_output_untrimmed": "{\n  \"paper_id\": \"P000510\",\n  \"problem\": [\n    {\n      \"concept\": \"Limitation in sentiment classification models\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Sentence-level sentiment classification\",\n      \"evidence_ids\": [\"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Linguistically Regularized LSTMs\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"Linguistically coherent representations\",\n      \"evidence_ids\": [\"A3\"]\n    },\n    {\n      \"concept\": \"Effective sentiment shifting effect capture\",\n      \"evidence_ids\": [\"A4\"]\n    },\n    {\n      \"concept\": \"Competitive results with model simplicity\",\n      \"evidence_ids\": [\"A4\"]\n    }\n  ]\n}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "seed": 1062,
+          "stage": "extract",
+          "stop_reason": "json_complete",
+          "usage": {
+            "input_tokens": 1678,
+            "output_tokens": 204
+          },
+          "validation_errors": [
+            "problem[0]: Concept must use selected source words in source order",
+            "method[0]: Concept must use selected source words in source order",
+            "contribution[1]: Concept must use selected source words in source order",
+            "contribution[2]: Concept must use selected source words in source order"
+          ]
+        },
+        {
+          "attempt": 2,
+          "bounded_stop": false,
+          "discarded_suffix_chars": 0,
+          "duplicate": null,
+          "generation_seconds": 18.098514,
+          "raw_output": "{\n  \"paper_id\": \"P000510\",\n  \"problem\": [\n    {\n      \"concept\": \"previous models either depend on expensive phrase-level annotation or do not fully employ linguistic resources\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"sentence-level sentiment classification\",\n      \"evidence_ids\": [\"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"linguistically regularized lSTMs\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"linguistically coherent representations\",\n      \"evidence_ids\": [\"A3\"]\n    },\n    {\n      \"concept\": \"capture the sentiment shifting effect of sentiment, negation, and intensity words\",\n      \"evidence_ids\": [\"A4\"]\n    },\n    {\n      \"concept\": \"competitive results without sacrificing the models' simplicity\",\n      \"evidence_ids\": [\"A4\"]\n    }\n  ]\n}",
+          "raw_output_untrimmed": "{\n  \"paper_id\": \"P000510\",\n  \"problem\": [\n    {\n      \"concept\": \"previous models either depend on expensive phrase-level annotation or do not fully employ linguistic resources\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"sentence-level sentiment classification\",\n      \"evidence_ids\": [\"A1\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"linguistically regularized lSTMs\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"linguistically coherent representations\",\n      \"evidence_ids\": [\"A3\"]\n    },\n    {\n      \"concept\": \"capture the sentiment shifting effect of sentiment, negation, and intensity words\",\n      \"evidence_ids\": [\"A4\"]\n    },\n    {\n      \"concept\": \"competitive results without sacrificing the models' simplicity\",\n      \"evidence_ids\": [\"A4\"]\n    }\n  ]\n}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "seed": 1063,
+          "stage": "review",
+          "stop_reason": "json_complete",
+          "usage": {
+            "input_tokens": 2022,
+            "output_tokens": 225
+          },
+          "validation_errors": [
+            "method[0]: Concept must use selected source words in source order"
+          ]
+        }
+      ],
+      "selected_attempt": 2,
+      "validation_errors": [
+        "method[0]: Concept must use selected source words in source order"
+      ]
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "linguistically coherent representations",
+          "evidence": [
+            {
+              "evidence": "In this paper, we propose simple models trained with sentence-level annotation, but also attempt to generating linguistically coherent representations by employing regularizers that model the linguistic role of sentiment lexicons, negation words, and intensity words.",
+              "evidence_id": "A3",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "capture the sentiment shifting effect of sentiment, negation, and intensity words",
+          "evidence": [
+            {
+              "evidence": "Results show that our models are effective to capture the sentiment shifting effect of sentiment, negation, and intensity words, while still obtain competitive results without sacrificing the models' simplicity.",
+              "evidence_id": "A4",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "competitive results without sacrificing the models' simplicity",
+          "evidence": [
+            {
+              "evidence": "Results show that our models are effective to capture the sentiment shifting effect of sentiment, negation, and intensity words, while still obtain competitive results without sacrificing the models' simplicity.",
+              "evidence_id": "A4",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P000510",
+      "problem": [
+        {
+          "concept": "previous models either depend on expensive phrase-level annotation or do not fully employ linguistic resources",
+          "evidence": [
+            {
+              "evidence": "Though a variety of neural network models have been proposed very recently, however, previous models either depend on expensive phrase-level annotation, whose performance drops substantially when trained with only sentence-level annotation; or do not fully employ linguistic resources (e.g., sentiment lexicons, negation words, intensity words), thus not being able to produce linguistically coherent representations.",
+              "evidence_id": "A2",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "sentence-level sentiment classification",
+          "evidence": [
+            {
+              "evidence": "This paper deals with sentence-level sentiment classification.",
+              "evidence_id": "A1",
+              "source": "abstract"
+            }
+          ]
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "linguistically coherent representations",
+        "capture the sentiment shifting effect of sentiment, negation, and intensity words",
+        "competitive results without sacrificing the models' simplicity"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P000510",
+      "problem": [
+        "previous models either depend on expensive phrase-level annotation or do not fully employ linguistic resources"
+      ],
+      "task": [
+        "sentence-level sentiment classification"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 34.234054,
+    "instruction_sha256": "65bf8ff8661bd076f658337b6f921f5ba360851bff3c3ca8d182ed95da2c0d8b",
+    "paper_id": "P000510",
+    "runtime": {
+      "adapter_enabled": false,
+      "attention": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "quantization": "nf4_double_fp16",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "use_cache": true
+    },
+    "selection": {
+      "contribution": [
+        {
+          "concept": "linguistically coherent representations",
+          "evidence_ids": [
+            "A3"
+          ]
+        },
+        {
+          "concept": "capture the sentiment shifting effect of sentiment, negation, and intensity words",
+          "evidence_ids": [
+            "A4"
+          ]
+        },
+        {
+          "concept": "competitive results without sacrificing the models' simplicity",
+          "evidence_ids": [
+            "A4"
+          ]
+        }
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P000510",
+      "problem": [
+        {
+          "concept": "previous models either depend on expensive phrase-level annotation or do not fully employ linguistic resources",
+          "evidence_ids": [
+            "A2"
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "sentence-level sentiment classification",
+          "evidence_ids": [
+            "A1"
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "input_tokens": 3700,
+      "output_tokens": 429
+    }
+  },
+  "record_sha256": "5f16af4fc4148d4bf8aa734882366cbaa65dcfaa73d9bfb6625aecf7cd4bea0b",
+  "signature": "377f9938a35bda4132f03f08ac326847c0ae9f5807404e0562daa7c247822ef6"
+}

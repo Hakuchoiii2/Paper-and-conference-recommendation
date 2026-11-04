@@ -1,0 +1,304 @@
+{
+  "record": {
+    "arm": "R2a-V",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003565\",\n  \"problem\": [\n    {\n      \"concept\": \"existing approaches for non-projective dependency parsing are inefficient\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"non-projective dependency parsing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"maximum spanning trees (MSTs) in directed graphs\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"Chu-Liu-Edmonds MST algorithm\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"online large-margin learning techniques\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Prague Dependency Treebank\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"an O(n2) parsing algorithm for non-projective dependencies\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 23.72904159000018,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003565\",\n  \"problem\": [\n    {\n      \"concept\": \"existing approaches for non-projective dependency parsing are inefficient\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"non-projective dependency parsing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"maximum spanning trees (MSTs) in directed graphs\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"Chu-Liu-Edmonds MST algorithm\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"online large-margin learning techniques\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Prague Dependency Treebank\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"an O(n2) parsing algorithm for non-projective dependencies\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 80.2656,
+          "seed": 10737,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2428,
+            "output_tokens": 285
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing approaches for non-projective dependency parsing are inefficient\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"an O(n2) parsing algorithm for non-projective dependencies\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [{\"concept\": \"non-projective dependency parsing\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}, {\"concept\": \"online large-margin learning techniques\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"non-projective parsing using Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}, {\"concept\": \"show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.981086915000105,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003565\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"non-projective dependency parsing\",\n      \"evidence_id\": \"T0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"maximum spanning trees (MSTs) in directed graphs\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"Chu-Liu-Edmonds MST algorithm\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"online large-margin learning techniques\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Prague Dependency Treebank\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"non-projective parsing using Chu-Liu-Edmonds MST algorithm\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"MST parsing increases efficiency and accuracy for languages with non-projective dependencies\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.875,
+          "seed": 10738,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4828,
+            "output_tokens": 253
+          },
+          "validation_errors": [
+            "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [{\"concept\": \"non-projective dependency parsing\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}, {\"concept\": \"online large-margin learning techniques\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\", \"evidence_id\": \"A2\"}, {\"concept\": \"show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 3,
+          "generation_seconds": 24.43033995199994,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003565\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"non-projective dependency parsing\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"online large-margin learning techniques\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.9566,
+          "seed": 10739,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4447,
+            "output_tokens": 228
+          },
+          "validation_errors": [
+            "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Prague Dependency Treebank",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "maximum spanning trees (MSTs) in directed graphs",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Chu-Liu-Edmonds MST algorithm",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "online large-margin learning techniques",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003565",
+        "problem": [],
+        "task": [
+          {
+            "concept": "non-projective dependency parsing",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 76.14046845700022,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10739,
+      "selected_score": 83.9566,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11703,
+        "output_tokens": 766
+      },
+      "validation_errors": [
+        "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "f75617eca53a058b902f4757f19fdbe9fa0017192a93a89d67ffc6ca5a64d97d",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "14027a8d112645397bfc61ef87f7bc2b7d75aa01b695dd442444a51356f9f1c4",
+        "repair_packet": null,
+        "seed": 10737
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "b0c6ff7acb6a5d0decd179e8f60bc8d20dc0cdad17b56df9773b0c1020fbc3e1",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "existing approaches for non-projective dependency parsing are inefficient",
+              "error": "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing approaches for non-projective dependency parsing are inefficient\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\"",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "source_sentence": "More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm."
+            },
+            {
+              "concept": "an O(n2) parsing algorithm for non-projective dependencies",
+              "error": "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"an O(n2) parsing algorithm for non-projective dependencies\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\"",
+              "evidence_id": "A2",
+              "facet": "contribution",
+              "index": 0,
+              "source_sentence": "More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm."
+            }
+          ],
+          "paper_id": "P003565",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 10738
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "02496fa50fc71f02ad6df307c9d47875c69ea57c17e70d3f33235e5026ae1fc2",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "non-projective parsing using Chu-Liu-Edmonds MST algorithm",
+              "error": "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\"",
+              "evidence_id": "A2",
+              "facet": "contribution",
+              "index": 0,
+              "source_sentence": "More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm."
+            }
+          ],
+          "paper_id": "P003565",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ]
+        },
+        "seed": 10739
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "contribution[0]: shortening drops a quantity inside the finding; concept=\"non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "non-projective parsing using Chu-Liu-Edmonds MST algorithm, yielding an O(n2) parsing algorithm",
+        "show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies"
+      ],
+      "dataset": [
+        "Prague Dependency Treebank"
+      ],
+      "method": [
+        "maximum spanning trees (MSTs) in directed graphs",
+        "Chu-Liu-Edmonds MST algorithm",
+        "online large-margin learning techniques"
+      ],
+      "paper_id": "P003565",
+      "problem": [],
+      "task": [
+        "non-projective dependency parsing"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 76.14046845700022,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": false,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 52.411426867000046,
+      "input_tokens": 9275,
+      "output_tokens": 481
+    },
+    "paper_id": "P003565",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 11703,
+      "output_tokens": 766
+    }
+  },
+  "record_sha256": "ecb7f1b2aec5a0d4b745e14474c558ce644dc6753eb72d75bb68caa313c77d9f",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

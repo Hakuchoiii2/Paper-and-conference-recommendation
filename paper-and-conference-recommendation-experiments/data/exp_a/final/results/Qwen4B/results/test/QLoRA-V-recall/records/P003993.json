@@ -1,0 +1,460 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.26606114900096,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12021,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1372,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.145364350999444,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12022,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3100,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.34333142200012,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003993\", \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12023,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 806,
+            "output_tokens": 76
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "generic algorithm for a general multiple testing procedure",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Monte Carlo simulation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "step-up and step-down procedures",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003993",
+        "problem": [
+          {
+            "concept": "p-values cannot be computed explicitly",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multiple testing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 57.754756922000524,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P003993",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5278,
+        "output_tokens": 418
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.26606114900096,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12021,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1372,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.145364350999444,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003993\", \"problem\": [{\"concept\": \"p-values cannot be computed explicitly\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generic algorithm for a general multiple testing procedure\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12022,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3100,
+            "output_tokens": 171
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "generic algorithm for a general multiple testing procedure",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Monte Carlo simulation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "step-up and step-down procedures",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003993",
+        "problem": [
+          {
+            "concept": "p-values cannot be computed explicitly",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multiple testing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 47.411425500000405,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12022,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4472,
+        "output_tokens": 342
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 23.26606114900096,
+        "inherited": false,
+        "messages_sha256": "f5a8d5e7fecffaab2af33cb8ff674e2e3f5ae6fd90dfdc63d734fb48962a16c6",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12021,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1372,
+          "output_tokens": 171
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.145364350999444,
+        "inherited": false,
+        "messages_sha256": "82179f54ec02c83aae74c0c7d5f231722be355c517ac9c66dd699dd0cd4d73c4",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003993",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 12022,
+        "usage": {
+          "input_tokens": 3100,
+          "output_tokens": 171
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.34333142200012,
+        "inherited": false,
+        "messages_sha256": "20dd415271748227f46eaaa9f62ea650297d8eda1a96287f062a7ecd6760eadc",
+        "reached_token_limit": false,
+        "seed": 12023,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 806,
+          "output_tokens": 76
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "generic algorithm for a general multiple testing procedure",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Monte Carlo simulation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "step-up and step-down procedures",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003993",
+        "problem": [
+          {
+            "concept": "p-values cannot be computed explicitly",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "multiple testing",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "multiple testing",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Monte Carlo simulation",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "step-up and step-down procedures",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.34333142200012,
+      "messages_sha256": "20dd415271748227f46eaaa9f62ea650297d8eda1a96287f062a7ecd6760eadc",
+      "raw_output": "{\"paper_id\": \"P003993\", \"task\": [{\"concept\": \"multiple testing\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Monte Carlo simulation\", \"evidence_id\": \"A0\"}, {\"concept\": \"step-up and step-down procedures\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 806,
+        "output_tokens": 76
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "7eaf8e4587ef7813e391208520cfa44f0cae9d4ed8d499df67d8409057118cfc",
+    "facets": {
+      "contribution": [
+        "generic algorithm for a general multiple testing procedure",
+        "conditions which guarantee that the rejections and non-rejections obtained through Monte Carlo simulations are identical to the ones obtained with the p-values"
+      ],
+      "dataset": [],
+      "method": [
+        "Monte Carlo simulation",
+        "step-up and step-down procedures"
+      ],
+      "paper_id": "P003993",
+      "problem": [
+        "p-values cannot be computed explicitly"
+      ],
+      "task": [
+        "multiple testing"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 57.754756922000524,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 57.754756922000524,
+      "input_tokens": 5278,
+      "output_tokens": 418
+    },
+    "paper_id": "P003993",
+    "source_sha256": "0624b082af3a189e9bcc9e5fc27135dcde0b8e8f3c3bfe9a25631acd2f38a107",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5278,
+      "output_tokens": 418
+    }
+  },
+  "record_sha256": "d3e5707d04f5909b198246186ce89b2aa3b4f8ab8de795bb1f4502c6a463c53f",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

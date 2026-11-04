@@ -1,0 +1,213 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_id\": \"A3\"}, {\"concept\": \"label-partially-unseen\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_id\": \"A4\"}, {\"concept\": \"label-fully-unseen\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.63270817500006,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_id\": \"A3\"}, {\"concept\": \"label-partially-unseen\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_id\": \"A4\"}, {\"concept\": \"label-fully-unseen\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5718,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2642,
+            "output_tokens": 144
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_id\": \"A3\"}, {\"concept\": \"label-partially-unseen\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_id\": \"A4\"}, {\"concept\": \"label-fully-unseen\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.299968119999903,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_id\": \"A3\"}, {\"concept\": \"label-partially-unseen\", \"evidence_id\": \"A6\"}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_id\": \"A4\"}, {\"concept\": \"label-fully-unseen\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5719,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4153,
+            "output_tokens": 144
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "unified datasets",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "label-fully-unseen",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "textual entailment",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P001892",
+        "problem": [
+          {
+            "concept": "chaotic experiments",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "label-partially-unseen",
+            "evidence_id": "A6"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Zero-shot text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 44.932676294999965,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5719,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6795,
+        "output_tokens": 288
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "unified datasets",
+          "evidence": "This work benchmarks the 0Shot-TC problem by providing unified datasets, standardized evaluations, and state-of-the-art baselines.",
+          "source": "abstract"
+        },
+        {
+          "concept": "label-fully-unseen",
+          "evidence": "ii) We extend the existing evaluation setup (label-partially-unseen) -- given a dataset, train on some labels, test on all labels -- to include a more challenging yet realistic evaluation label-fully-unseen 0Shot-TC (Chang et al., 2008), aiming at classifying text snippets without seeing task specific training data at all.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "textual entailment",
+          "evidence": "iii) We unify the 0Shot-TC of diverse aspects within a textual entailment formulation and study it this way.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001892",
+      "problem": [
+        {
+          "concept": "chaotic experiments",
+          "evidence": "In addition, the chaotic experiments in literature make no uniform comparison, which blurs the progress.",
+          "source": "abstract"
+        },
+        {
+          "concept": "label-partially-unseen",
+          "evidence": "ii) We extend the existing evaluation setup (label-partially-unseen) -- given a dataset, train on some labels, test on all labels -- to include a more challenging yet realistic evaluation label-fully-unseen 0Shot-TC (Chang et al., 2008), aiming at classifying text snippets without seeing task specific training data at all.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "Zero-shot text classification",
+          "evidence": "Zero-shot text classification (0Shot-TC) is a challenging NLU problem to which little attention has been paid by the research community.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "unified datasets",
+        "label-fully-unseen"
+      ],
+      "dataset": [],
+      "method": [
+        "textual entailment"
+      ],
+      "paper_id": "P001892",
+      "problem": [
+        "chaotic experiments",
+        "label-partially-unseen"
+      ],
+      "task": [
+        "Zero-shot text classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 44.932676294999965,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001892",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6795,
+      "output_tokens": 288
+    }
+  },
+  "record_sha256": "f40a1a13dab6bead674310c024f1dcf2753397a8b9b3655f3133bf06cb8852f8",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

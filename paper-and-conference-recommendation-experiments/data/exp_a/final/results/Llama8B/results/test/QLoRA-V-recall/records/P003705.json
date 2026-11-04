@@ -1,0 +1,548 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.260721838998506,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11157,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1296,
+            "output_tokens": 135
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"DBLP\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.630577004998486,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"DBLP\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11158,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2972,
+            "output_tokens": 201
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.265468026000235,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003705\", \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11159,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 760,
+            "output_tokens": 104
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "interactive community visualization",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "profile-aware community ranking",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "DBLP",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "interactive community visualization",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "profile-aware community ranking",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003705",
+        "problem": [
+          {
+            "concept": "membership alone, without a complete profile",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "searching and browsing communities",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 54.15676686999723,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P003705",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5028,
+        "output_tokens": 440
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 16.260721838998506,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11157,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1296,
+            "output_tokens": 135
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"DBLP\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.630577004998486,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003705\", \"problem\": [{\"concept\": \"membership alone, without a complete profile\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Twitter\", \"evidence_id\": \"A5\"}, {\"concept\": \"DBLP\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11158,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2972,
+            "output_tokens": 201
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "interactive community visualization",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "profile-aware community ranking",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "DBLP",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003705",
+        "problem": [
+          {
+            "concept": "membership alone, without a complete profile",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "searching and browsing communities",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.89129884399699,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11158,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4268,
+        "output_tokens": 336
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.260721838998506,
+        "inherited": false,
+        "messages_sha256": "04eff780be2cffeab71cfc77ce3f1e3acc8972006e22b4d9e556bcff1451cbd6",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 11157,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1296,
+          "output_tokens": 135
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 25.630577004998486,
+        "inherited": false,
+        "messages_sha256": "4a451b489da56694f24601a5c045210b1a09fee8789dd495f2e46ed1b89974d9",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003705",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 11158,
+        "usage": {
+          "input_tokens": 2972,
+          "output_tokens": 201
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.265468026000235,
+        "inherited": false,
+        "messages_sha256": "4605363c53a4ab1141de5941307797f60d53739a1260e9a65ff5f02056d40c1e",
+        "reached_token_limit": false,
+        "seed": 11159,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 760,
+          "output_tokens": 104
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "interactive community visualization",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "profile-aware community ranking",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "interactive community visualization",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "profile-aware community ranking",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Twitter",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "DBLP",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003705",
+        "problem": [
+          {
+            "concept": "membership alone, without a complete profile",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "searching and browsing communities",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "community profiling",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "searching and browsing communities",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "SocialLens",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.265468026000235,
+      "messages_sha256": "4605363c53a4ab1141de5941307797f60d53739a1260e9a65ff5f02056d40c1e",
+      "raw_output": "{\"paper_id\": \"P003705\", \"task\": [{\"concept\": \"community profiling\", \"evidence_id\": \"A4\"}, {\"concept\": \"searching and browsing communities\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"SocialLens\", \"evidence_id\": \"A4\"}, {\"concept\": \"interactive community visualization\", \"evidence_id\": \"A6\"}, {\"concept\": \"profile-aware community ranking\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 760,
+        "output_tokens": 104
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "46b8e8d7a20bcef1f66bc188ed4b41b99f3a172bb7b66b5e33a9dd977172e242",
+    "facets": {
+      "contribution": [
+        "SocialLens",
+        "community profiling",
+        "interactive community visualization",
+        "profile-aware community ranking"
+      ],
+      "dataset": [
+        "Twitter",
+        "DBLP"
+      ],
+      "method": [
+        "SocialLens",
+        "interactive community visualization",
+        "profile-aware community ranking"
+      ],
+      "paper_id": "P003705",
+      "problem": [
+        "membership alone, without a complete profile"
+      ],
+      "task": [
+        "community profiling",
+        "searching and browsing communities"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 54.15676686999723,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 54.15676686999723,
+      "input_tokens": 5028,
+      "output_tokens": 440
+    },
+    "paper_id": "P003705",
+    "source_sha256": "47e3b8efdcc12f3f5b93d10efb1eb332fc12ed01eebe6d569b7e20bb697bdc52",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5028,
+      "output_tokens": 440
+    }
+  },
+  "record_sha256": "dc1a5feed2dff2951db52d9d5bcdad45efd1cebe71ae3494a3478eef8a82fa4a",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

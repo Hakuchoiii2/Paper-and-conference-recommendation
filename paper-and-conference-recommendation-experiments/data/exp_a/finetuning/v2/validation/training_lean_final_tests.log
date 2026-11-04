@@ -1,0 +1,37 @@
+test_confirmation_support_cannot_be_deleted_or_resealed_after_acceptance (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_confirmation_support_cannot_be_deleted_or_resealed_after_acceptance) ... ok
+test_deterministic_private_bundle_runtime_gates_and_training_only_kernel (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_deterministic_private_bundle_runtime_gates_and_training_only_kernel) ... Exception in thread Thread-4 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe1 in position 144: invalid continuation byte
+ERROR
+test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_offline_tokenizer_load_uses_pinned_snapshot_without_offline_environment) ... ok
+test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos) ... ok
+test_real_tokenizer_rejects_sequence_and_assistant_overflow_without_truncation (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_real_tokenizer_rejects_sequence_and_assistant_overflow_without_truncation) ... ok
+test_review_gate_rejects_missing_duplicate_reassigned_and_unsealed_inputs (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_review_gate_rejects_missing_duplicate_reassigned_and_unsealed_inputs) ... ok
+test_accepted_multi_evidence_keeps_independent_review_provenance (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_accepted_multi_evidence_keeps_independent_review_provenance) ... ok
+test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) ... ok
+test_sampled_batch_lineage_and_review_coverage_cannot_be_inflated (scripts.exp_a.finetuning.test_v2_training.SampledReviewTests.test_sampled_batch_lineage_and_review_coverage_cannot_be_inflated) ... ok
+test_unreviewed_provenance_is_explicit_and_never_self_accepted (scripts.exp_a.finetuning.test_v2_training.SampledReviewTests.test_unreviewed_provenance_is_explicit_and_never_self_accepted) ... ok
+
+======================================================================
+ERROR: test_deterministic_private_bundle_runtime_gates_and_training_only_kernel (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_deterministic_private_bundle_runtime_gates_and_training_only_kernel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\năm 3\HK1 2025-2026\DS300\Đồ án\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 353, in test_deterministic_private_bundle_runtime_gates_and_training_only_kernel
+    self.assertIn('experiment_io', missing.stderr)
+  File "C:\Users\khai\anaconda3\envs\transcript311\Lib\unittest\case.py", line 1137, in assertIn
+    if member not in container:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+----------------------------------------------------------------------
+Ran 10 tests in 36.827s
+
+FAILED (errors=1)

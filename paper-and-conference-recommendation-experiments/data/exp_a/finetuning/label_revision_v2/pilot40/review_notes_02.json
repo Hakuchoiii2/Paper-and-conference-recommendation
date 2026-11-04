@@ -1,0 +1,47 @@
+{
+  "P000271": {
+    "problem": "scope_or_qualification|Câu A5 cũ gồm cả mục tiêu/phương án phân đoạn và tiêu chuẩn hậu xử lý. Giữ nhu cầu test xác định morphemes làm problem, không ép toàn bộ câu vào một nhãn.",
+    "task": "scope_or_qualification|Nguồn A5 cho thao tác segment phonemic sequence into morphemes; cụ thể hơn chủ đề Morpheme Boundaries trong title.",
+    "method": "source_uncertainty|Computer Test trong title là evidence hiện tại hợp lệ và được giữ từ nhãn cũ. Abstract không mô tả test/kết quả; cần nguồn đầy đủ để kiểm tra coverage, không tự thêm phương pháp nền."
+  },
+  "P000501": {
+    "problem": "coverage|Lượt blind bỏ sót bottleneck most time-consuming ở A0. Sau đối chiếu, giữ nguyên cả hai nhãn cũ hợp lệ.",
+    "method": "granularity|Sequential scans và sorts là hai phép thao tác riêng được nêu; giữ cách tách cũ thay vì gộp tùy tiện trong blind.",
+    "contribution": "coverage|Nhãn artifact theo title và ba finding/complexity cũ đều có căn cứ, giữ nguyên. Không mặc định bản blind tốt hơn reference cũ."
+  },
+  "P001002": {
+    "task": "scope_or_qualification|Giữ nguyên hai task cũ: nguồn/input mode noun-modifier bigram và noun unigram phân biệt composition với decomposition; blind đã lược mất context vector.",
+    "method": "granularity|Context vector là cách biểu diễn của chính distributional approach, chưa phải một kỹ thuật độc lập thêm. Giữ approach và hai thuật toán unsupervised/supervised.",
+    "contribution": "facet_role|Lượt blind thêm generate ranked lists in two passes như artifact, nhưng A8 chỉ nêu thủ tục, chưa khẳng định artifact mới. Giữ hai finding WordNet với mode và tỷ lệ đầy đủ."
+  },
+  "P001234": {
+    "method": "granularity|Giữ GeoTextTagger, POS tagger, NER và Spark. Distance scoring/repeated best-score selection là một thủ tục chọn location, gộp thành nhãn có đủ hành động và đối tượng.",
+    "problem": "coverage|Lượt blind bỏ sót hạn chế class size của classification approaches ở A5; nhãn cũ hợp lệ được phục hồi.",
+    "contribution": "coverage|Các finding cũ gồm Twitter potentially useful results và caveat may/high accuracy for some texts đều hợp lệ; phục hồi các mục blind bỏ sót."
+  },
+  "P001353": {
+    "method": "granularity|Giữ ba kỹ thuật neural độc lập. Mini-batch và cập nhật mapping mỗi batch là một thủ tục training, giữ mini-batches, bỏ nhãn bước phụ trùng. Không loại batching chỉ vì không phải tên mô hình.",
+    "contribution": "scope_or_qualification|Giữ ba artifact/proposal. Hai finding viết đủ chủ thể và giới hạn kết luận vào thử nghiệm trên ba dataset; đây chủ yếu là làm rõ cách trình bày, không tự coi nhãn cũ là sai thực tế."
+  },
+  "P002666": {
+    "contribution": "multi_sentence_evidence,scope_or_qualification|Bốn theorem/artifact cũ được giữ về nghĩa. A6 These quantities cần A4+A5 để gắn spanning tree/path-likeness với O(n^4)/O(n^3), giữ respectively và điều kiện tie-breaking. Không suy ra hai độ phức tạp có thể hoán đổi."
+  },
+  "P002811": {
+    "task": "scope_or_qualification|Evaluation with refinement purposes cần đối tượng và thước đo: precision/recall của 64 English rules về hyponymy/meronymy/causality.",
+    "method": "naming_or_alias,granularity,facet_role|ESSG là tên được định nghĩa ở A2. Word sketches là representation đầu ra, không thêm kỹ thuật độc lập. Shallow precision/recall là mục đích đo đã thể hiện trong task; giữ hai thủ tục random sampling làm method.",
+    "contribution": "naming_or_alias|Giữ cùng artifact ESSG, khả năng reuse trên English corpus và finding false positives/negatives giúp refinement. Chỉ chuẩn hóa tên artifact; không tự coi các finding cũ là thiếu căn cứ."
+  },
+  "P003056": {
+    "method": "granularity|Language model đo compatibility chính là cách thực hiện entity typing with language model enhancement, gộp thành một kỹ thuật thay vì model cha và mô tả thành phần trùng.",
+    "contribution": "scope_or_qualification|Giữ artifact và Code and data được bài cung cấp; finding giữ phạm vi experiments on benchmark datasets. Không suy ra acronym LME hay tên dataset từ URL hỏng."
+  },
+  "P003918": {
+    "task": "scope_or_qualification|Task similarity/analogy giữ đối tượng encoded stories và cơ sở proposed relations; giữ task formal modeling narrative discourse.",
+    "method": "granularity,facet_role|Giữ hai approach: conversational-network analysis và narrative discourse relations. Agentive characters/goals/plans/beliefs/time là khía cạnh của representation, không năm thuật toán; generic software implementation không thêm method độc lập.",
+    "contribution": "coverage,scope_or_qualification|Phục hồi contribution conversational-network approach hợp lệ mà blind bỏ sót. Giữ corpus encoding, tính chất discourse relations và finding human raters prefer; không đổi preference thành khách quan tốt hơn."
+  },
+  "P004191": {
+    "method": "naming_or_alias,facet_role,granularity|SVM được định nghĩa trong A3; giữ các feature family thực sự thử, cross-validation và hybrid. Various siRNA-designing methods ở A11 chỉ làm baseline so sánh, loại khỏi method của mô hình mới; secondary structure + binary pattern là phương án kết hợp.",
+    "contribution": "multi_sentence_evidence,scope_or_qualification|Giữ artifact SVM models cho guide-miRNA, server và mọi kết quả composition/binary/hybrid/secondary structure. Ghép A9+A10 để thay this model bằng hybrid model trong accuracy 0.80 trên independent set; liên kết đại từ là quyết định ngữ nghĩa cần reviewer kiểm tra, không do schema chứng minh."
+  }
+}

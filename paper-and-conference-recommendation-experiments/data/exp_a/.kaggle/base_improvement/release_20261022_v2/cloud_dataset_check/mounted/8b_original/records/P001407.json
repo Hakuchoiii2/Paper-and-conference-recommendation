@@ -1,0 +1,165 @@
+{
+  "record": {
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001407\",\n  \"problem\": [\n    {\n      \"concept\": \"terms may have multiple senses hampering automatic placement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"techniques in isolation often do not suffice for a particular task\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"refine results of automatic lexical discovery technique\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistically-based syntactic similarity measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"termsimilarity determination technique\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"union of two corpus-based methods is promising but only partially successful\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"preliminary results and suggestions for improving the technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.238126047999913,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"problem\": [\n    {\n      \"concept\": \"terms may have multiple senses hampering automatic placement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"techniques in isolation often do not suffice for a particular task\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"refine results of automatic lexical discovery technique\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistically-based syntactic similarity measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"termsimilarity determination technique\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"union of two corpus-based methods is promising but only partially successful\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"preliminary results and suggestions for improving the technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.1227,
+          "seed": 4263,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2532,
+            "output_tokens": 254
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"union of two corpus-based methods is promising but only partially successful\"; evidence_id=\"A7\"; evidence=\"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001407\", \"problem\": [{\"concept\": \"terms may have multiple senses hampering automatic placement\", \"evidence_id\": \"A5\"}, {\"concept\": \"techniques in isolation often do not suffice for a particular task\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"refine results of automatic lexical discovery technique\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"statistically-based syntactic similarity measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"termsimilarity determination technique\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"union of two corpus-based methods is promising, although only partially successful\", \"evidence_id\": \"A7\"}, {\"concept\": \"preliminary results and suggestions for improving the technique\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.628133627000125,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"problem\": [\n    {\n      \"concept\": \"terms may have multiple senses hampering automatic placement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"techniques in isolation often do not suffice for a particular task\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"refine results of automatic lexical discovery technique\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistically-based syntactic similarity measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"termsimilarity determination technique\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"union of two corpus-based methods is promising, although only partially successful\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"preliminary results and suggestions for improving the technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 87.3534,
+          "seed": 4264,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4216,
+            "output_tokens": 255
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "union of two corpus-based methods is promising, although only partially successful",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "preliminary results and suggestions for improving the technique",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "statistically-based syntactic similarity measure",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "termsimilarity determination technique",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001407",
+        "problem": [
+          {
+            "concept": "terms may have multiple senses hampering automatic placement",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "techniques in isolation often do not suffice for a particular task",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "refine results of automatic lexical discovery technique",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 47.86625967500004,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4264,
+      "selected_score": 87.3534,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6748,
+        "output_tokens": 509
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "union of two corpus-based methods is promising, although only partially successful",
+        "preliminary results and suggestions for improving the technique"
+      ],
+      "dataset": [],
+      "method": [
+        "statistically-based syntactic similarity measure",
+        "termsimilarity determination technique"
+      ],
+      "paper_id": "P001407",
+      "problem": [
+        "terms may have multiple senses hampering automatic placement",
+        "techniques in isolation often do not suffice for a particular task"
+      ],
+      "task": [
+        "refine results of automatic lexical discovery technique"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 47.86625967500004,
+    "paper_id": "P001407",
+    "usage": {
+      "input_tokens": 6748,
+      "output_tokens": 509
+    }
+  },
+  "record_sha256": "894394e9aa17632dec57e32c7177879969dee0ee71e2aeec6c9d982b93217e23",
+  "signature": "16ab9a393e639edcf1c6e576b94736cd0dde52fbac1f71b6d8bd5823700d14c5"
+}

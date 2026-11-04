@@ -1,0 +1,508 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.992507949000355,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1119,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1476,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.84003914999994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1120,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3220,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.527664231999552,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000359\",\"task\":[{\"concept\":\"Measuring Emotional Contagion\",\"evidence_id\":\"T0\"},{\"concept\":\"determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce\",\"evidence_id\":\"A8\"}],\"method\":[{\"concept\":\"null model\",\"evidence_id\":\"A5\"},{\"concept\":\"measure the emotional valence of content\",\"evidence_id\":\"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1121,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 919,
+            "output_tokens": 95
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce",
+              "evidence": "We highlight the presence of a linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [
+          {
+            "concept": "ethical concerns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Measuring Emotional Contagion",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 61.360211330999846,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P000359",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5615,
+        "output_tokens": 455
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce",
+          "evidence": "We highlight the presence of a linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.992507949000355,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1119,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1476,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.84003914999994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000359\", \"problem\": [{\"concept\": \"ethical concerns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"Measuring Emotional Contagion\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"measure the emotional valence of content\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"null model\", \"evidence_id\": \"A5\"}, {\"concept\": \"linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce\", \"evidence_id\": \"A8\"}, {\"concept\": \"two different classes of individuals\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1120,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3220,
+            "output_tokens": 180
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [
+          {
+            "concept": "ethical concerns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Measuring Emotional Contagion",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.832547099000294,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1120,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4696,
+        "output_tokens": 360
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 23.992507949000355,
+        "inherited": false,
+        "messages_sha256": "4fdcd3fb303f5281201200afd0b2fccc0aa5e44dc871bca9c879d21485dc8fef",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1119,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1476,
+          "output_tokens": 180
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.84003914999994,
+        "inherited": false,
+        "messages_sha256": "0228a1d3e65938c1c504f390359e45514e8bdbbbfa464f24641fdba7d7558bb4",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000359",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 1120,
+        "usage": {
+          "input_tokens": 3220,
+          "output_tokens": 180
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.527664231999552,
+        "inherited": false,
+        "messages_sha256": "5de7b16e9243bbdf0efb97dde13ac7ce46f4b24d5e554e971212ccedcc6fe614",
+        "reached_token_limit": false,
+        "seed": 1121,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 95
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce",
+            "evidence_id": "A8"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "two different classes of individuals",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "null model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000359",
+        "problem": [
+          {
+            "concept": "ethical concerns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Measuring Emotional Contagion",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Measuring Emotional Contagion",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "null model",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "measure the emotional valence of content",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.527664231999552,
+      "messages_sha256": "5de7b16e9243bbdf0efb97dde13ac7ce46f4b24d5e554e971212ccedcc6fe614",
+      "raw_output": "{\"paper_id\":\"P000359\",\"task\":[{\"concept\":\"Measuring Emotional Contagion\",\"evidence_id\":\"T0\"},{\"concept\":\"determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce\",\"evidence_id\":\"A8\"}],\"method\":[{\"concept\":\"null model\",\"evidence_id\":\"A5\"},{\"concept\":\"measure the emotional valence of content\",\"evidence_id\":\"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 919,
+        "output_tokens": 95
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "cab16396ffbbc609e56f582f0bc38cc805660fde7cf2754e1cc9c023dba13921",
+    "facets": {
+      "contribution": [
+        "null model",
+        "linear relationship between the average emotional valence of the stimuli users are exposed to, and that of the responses they produce",
+        "two different classes of individuals"
+      ],
+      "dataset": [],
+      "method": [
+        "null model",
+        "measure the emotional valence of content"
+      ],
+      "paper_id": "P000359",
+      "problem": [
+        "ethical concerns"
+      ],
+      "task": [
+        "Measuring Emotional Contagion",
+        "determine the average emotional valence of the stimuli users are exposed to and that of the responses they produce"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 61.360211330999846,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 61.360211330999846,
+      "input_tokens": 5615,
+      "output_tokens": 455
+    },
+    "paper_id": "P000359",
+    "source_sha256": "9fbc73051d37f8ec8a10f09f4193d6f3748bffe3bf1556c1dd29a4a7601598ac",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5615,
+      "output_tokens": 455
+    }
+  },
+  "record_sha256": "ce641b38deba6635e8a384df115990384f9f6f6e26c19a2bb307201ef3b8138b",
+  "signature": "e4fd28a144a597acf96ed937f950fe55c1110e4522a85d3238f1853c8763d5c1"
+}

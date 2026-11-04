@@ -1,0 +1,568 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.450759572000607,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 486,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1430,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Topic-Sensitive PageRank algorithm extensions",
+              "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.476887668000927,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 487,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3153,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Topic-Sensitive PageRank algorithm extensions",
+              "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.981205595000574,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000148\", \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}, {\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"topic-based similarity scores\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 488,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 863,
+            "output_tokens": 131
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Topic-Sensitive PageRank algorithm extensions",
+              "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "author-reader influence model",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "three different extensions of the Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "content-based citation graph",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank algorithm extensions",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "author-reader influence model",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "topic-based similarity scores",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000148",
+        "problem": [
+          {
+            "concept": "topic uniqueness aspect in user interests",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detecting topic-based influencers",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 58.90885283500211,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000148",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5446,
+        "output_tokens": 471
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Topic-Sensitive PageRank algorithm extensions",
+          "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+          "facet": "method",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.450759572000607,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 486,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1430,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Topic-Sensitive PageRank algorithm extensions",
+              "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.476887668000927,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000148\", \"problem\": [{\"concept\": \"topic uniqueness aspect in user interests\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"three different extensions of the Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 487,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3153,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Topic-Sensitive PageRank algorithm extensions",
+              "evidence": "We then present three different extensions of the Topic-Sensitive PageRank algorithm that exploit the similarity scores to find topic-based influencers.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "author-reader influence model",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "three different extensions of the Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "content-based citation graph",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank algorithm extensions",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000148",
+        "problem": [
+          {
+            "concept": "topic uniqueness aspect in user interests",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detecting topic-based influencers",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.927647240001534,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 487,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4583,
+        "output_tokens": 340
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.450759572000607,
+        "inherited": false,
+        "messages_sha256": "38021cd2de6dcd89505db690fd68ed713aa9b5b3a2101d2a9be2b24fc2313e83",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 486,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1430,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.476887668000927,
+        "inherited": false,
+        "messages_sha256": "c3f163252e24b64c2f40fd9e16018385053789968e106aa597bfe9dd95097f83",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000148",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 487,
+        "usage": {
+          "input_tokens": 3153,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.981205595000574,
+        "inherited": false,
+        "messages_sha256": "85ed8631612413add3df43bb85183a04f3b88280bcd09e45c81c4919a6e4ef7a",
+        "reached_token_limit": false,
+        "seed": 488,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 863,
+          "output_tokens": 131
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "author-reader influence model",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "topic-based similarity scores",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "author-reader influence model",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "three different extensions of the Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "content-based citation graph",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Topic-Sensitive PageRank algorithm extensions",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000148",
+        "problem": [
+          {
+            "concept": "topic uniqueness aspect in user interests",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "detecting topic-based influencers",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "detecting topic-based influencers",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "content-based citation graph",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Topic-Sensitive PageRank",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "Topic-Sensitive PageRank algorithm extensions",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.981205595000574,
+      "messages_sha256": "85ed8631612413add3df43bb85183a04f3b88280bcd09e45c81c4919a6e4ef7a",
+      "raw_output": "{\"paper_id\": \"P000148\", \"task\": [{\"concept\": \"detecting topic-based influencers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"content-based citation graph\", \"evidence_id\": \"A2\"}, {\"concept\": \"Topic-Sensitive PageRank\", \"evidence_id\": \"A4\"}, {\"concept\": \"Topic-Sensitive PageRank algorithm extensions\", \"evidence_id\": \"A4\"}, {\"concept\": \"author-reader influence model\", \"evidence_id\": \"T0\"}, {\"concept\": \"topic-based similarity scores\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 863,
+        "output_tokens": 131
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "a3585c80ad0210a2a75543f7267b8f8763bf8e7cbd6cac945568e367386500b9",
+    "facets": {
+      "contribution": [
+        "author-reader influence model",
+        "three different extensions of the Topic-Sensitive PageRank"
+      ],
+      "dataset": [],
+      "method": [
+        "content-based citation graph",
+        "Topic-Sensitive PageRank",
+        "Topic-Sensitive PageRank algorithm extensions",
+        "author-reader influence model",
+        "topic-based similarity scores"
+      ],
+      "paper_id": "P000148",
+      "problem": [
+        "topic uniqueness aspect in user interests"
+      ],
+      "task": [
+        "detecting topic-based influencers"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.90885283500211,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 58.90885283500211,
+      "input_tokens": 5446,
+      "output_tokens": 471
+    },
+    "paper_id": "P000148",
+    "source_sha256": "29913b7dd3ff3883d7cc6b4523a961c58f880d1a8c8690e34448b0e2916a9173",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5446,
+      "output_tokens": 471
+    }
+  },
+  "record_sha256": "11373a30b71f9fa1a74ab341e29e1a5b67e54f4d301340b69dd539d8a338b0a8",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}
