@@ -12,7 +12,7 @@ from exp_b.run_exp_b import predict as baseline_predict
 from experiment_io import FACETS
 from experiment_runner import main
 
-print("--> Đang khởi tạo mô hình ngôn ngữ 'all-MiniLM-L6-v2'...")
+print("--> Đang khởi tạo mô hình 'all-MiniLM-L6-v2'...")
 ENCODER = SentenceTransformer('all-MiniLM-L6-v2')
 
 
