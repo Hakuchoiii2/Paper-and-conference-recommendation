@@ -56,16 +56,31 @@ def parse_args():
 def run_multi_extractor_benchmark():
     args = parse_args()
     repo_root = get_repo_root()
-    split_dir = "data/conference_recommendation_dataset/5_mapping_reviewed/splits/temporal_2015_2016_2019"
+    split_dir = "data/conference_recommendation_dataset/5_mapping_reviewed/splits/temporal_2015_2016_2019_clean"
     output_dir = repo_root / args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Danh sách các bộ trích xuất LLM cần so sánh
-    # (Nhóm bổ sung thêm tệp hoặc đường dẫn khi Quỳnh xuất các kết quả mới)
     extractors = [
         {
-            "name": "Qwen-Local (Silver)",
+            "name": "Qwen-8B (Corpus)",
             "path": repo_root / "data/exp_a/generated/facets_silver.jsonl",
+        },
+        {
+            "name": "Qwen-14B",
+            "path": repo_root / "data/conference_recommendation_dataset/generated_facets/Qwen14B/facets_silver.jsonl",
+        },
+        {
+            "name": "Qwen-4B",
+            "path": repo_root / "data/conference_recommendation_dataset/generated_facets/Qwen4B/facets_silver.jsonl",
+        },
+        {
+            "name": "Llama-8B (Instruct)",
+            "path": repo_root / "data/conference_recommendation_dataset/generated_facets/Llama8B/facets_silver.jsonl",
+        },
+        {
+            "name": "Gemma-9B (Top 1 Exp A)",
+            "path": repo_root / "data/conference_recommendation_dataset/generated_facets/Gemma9B/facets_silver.jsonl",
         },
         {
             "name": "Gemini-1.5-Flash",

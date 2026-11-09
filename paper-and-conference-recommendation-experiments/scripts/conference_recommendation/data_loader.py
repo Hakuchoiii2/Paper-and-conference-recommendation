@@ -117,13 +117,13 @@ def load_dataset(
         enriched = []
         for r in raw_list:
             pid = r["paper_id"]
-            # Nếu bản ghi đã có sẵn trường facets (đã merge trên đĩa), ưu tiên sử dụng
-            facets = r.get("facets")
-            if not facets or not isinstance(facets, dict):
-                facets = facets_dict.get(
-                    pid,
-                    {f: [] for f in FACET_KEYS}
-                )
+            # Ưu tiên sử dụng facets từ facets_dict (dùng khi so sánh giữa các LLM)
+            if pid in facets_dict:
+                facets = facets_dict[pid]
+            else:
+                facets = r.get("facets")
+                if not facets or not isinstance(facets, dict):
+                    facets = {f: [] for f in FACET_KEYS}
             item = {
                 "paper_id": pid,
                 "title": r.get("title", "").strip(),

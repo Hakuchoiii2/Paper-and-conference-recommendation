@@ -1,0 +1,37 @@
+{
+  "split_name": "temporal_2015_2016_2019_clean",
+  "description": "Tập chia dữ liệu sạch theo thời gian, loại bỏ hoàn toàn các bài báo từng xuất hiện trong tập huấn luyện/thẩm định của khối Adapter Exp A",
+  "provenance": {
+    "source_raw_split": "data\\conference_recommendation_dataset\\5_mapping_reviewed\\splits\\temporal_2015_2016_2019",
+    "adapter_splits_reference": "data\\exp_a\\final\\reference\\splits.json"
+  },
+  "statistics": {
+    "initial_test_count": 186,
+    "excluded_train_leakage_count": 15,
+    "excluded_train_leakage_ids": [
+      "P000671",
+      "P000802",
+      "P001080",
+      "P001517",
+      "P001811",
+      "P002360",
+      "P002373",
+      "P002765",
+      "P002821",
+      "P002823",
+      "P002862",
+      "P002901",
+      "P002930",
+      "P003611",
+      "P003732"
+    ],
+    "excluded_valid_leakage_count": 3,
+    "excluded_valid_leakage_ids": [
+      "P002079",
+      "P002585",
+      "P003060"
+    ],
+    "clean_test_count": 168,
+    "train_count": 602
+  }
+}
