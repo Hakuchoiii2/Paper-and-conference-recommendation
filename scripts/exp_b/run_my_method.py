@@ -13,7 +13,10 @@ from experiment_io import FACETS
 from experiment_runner import main
 
 print("--> Đang khởi tạo mô hình 'all-MiniLM-L6-v2'...")
-ENCODER = SentenceTransformer('all-MiniLM-L6-v2')
+try:
+    ENCODER = SentenceTransformer('all-MiniLM-L6-v2', local_files_only=True)
+except Exception:
+    ENCODER = SentenceTransformer('all-MiniLM-L6-v2')
 
 
 def predict(papers, facets, cases, history, options):

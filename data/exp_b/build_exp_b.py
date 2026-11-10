@@ -13,11 +13,43 @@ def build_b(facets, config, rng):
     validate_sampling(config,'num_queries','candidates_per_query')
     require(config['label_rule_version'] == 'weighted_overlap_v2','Unsupported B label rule')
     weights = normalized_weights(config['fixed_weights'])
-    anchors = sorted(pid for pid,row in facets.items() if sum(bool(row[f]) for f in FACETS) >= 2)
-    rng.shuffle(anchors)
+
+    # Fast inverted index to identify related candidate papers
+    inverted = {}
+    for pid, row in facets.items():
+        for f in FACETS:
+            for c in row[f]:
+                inverted.setdefault((f, c), set()).add(pid)
+
+    # Rank anchors by cluster richness to guarantee nuanced queries (avoid 1-vs-49 degeneration)
+    pool = []
+    for pid, row in sorted(facets.items()):
+        if sum(bool(row[f]) for f in FACETS) < 2:
+            continue
+        related = set()
+        for f in FACETS:
+            for c in row[f]:
+                related.update(inverted.get((f, c), set()))
+        related.discard(pid)
+        grades = {cand: retrieval_grade(row, facets[cand], weights) for cand in related}
+        pos = sum(1 for v in grades.values() if v >= config['positive_grade'])
+        hard = sum(1 for v in grades.values() if 0 < v < config['positive_grade'])
+        if pos >= config.get('min_positives', 1) and hard >= config.get('min_hard_negatives', 1):
+            pool.append((pos, hard, pos + hard, pid))
+
+    if len(pool) >= config['num_queries']:
+        # Prioritize multi-positive and nuanced hard-negative clusters
+        pool.sort(key=lambda x: (x[0] >= 2, x[2], x[0], x[1]), reverse=True)
+        selected_anchors = [x[3] for x in pool[:config['num_queries']]]
+        rng.shuffle(selected_anchors)
+    else:
+        anchors = sorted(pid for pid,row in facets.items() if sum(bool(row[f]) for f in FACETS) >= 2)
+        rng.shuffle(anchors)
+        selected_anchors = anchors
+
     queries, labels, provenance = [], [], []
     skipped = collections.Counter()
-    for anchor in anchors:
+    for anchor in selected_anchors:
         if len(queries) == config['num_queries']:
             break
         grades = {pid: retrieval_grade(facets[anchor],row,weights)
