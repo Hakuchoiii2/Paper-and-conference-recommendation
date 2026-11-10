@@ -183,12 +183,19 @@ class SentenceTransformerBackend(BaseEmbeddingBackend):
 
     def __init__(
         self,
-        model_name: str = "allenai/specter2_base",
+        model_name: str = "sentence-transformers/allenai-specter",
         device: Optional[str] = None,
-        batch_size: int = 32,
+        batch_size: int = 64,
     ):
         self.model_name = model_name
-        self.device = device
+        if device is None:
+            try:
+                import torch
+                self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            except ImportError:
+                self.device = "cpu"
+        else:
+            self.device = device
         self.batch_size = batch_size
         self._model = None
 
@@ -357,7 +364,7 @@ class FacetFeatureStore:
 
         elif backend_str in ("specter2", "specter"):
             model_name = self.backend_config.get(
-                "model_name", "allenai/specter2_base"
+                "model_name", "sentence-transformers/allenai-specter"
             )
             device = self.backend_config.get("device")
             batch_size = self.backend_config.get("batch_size", 32)

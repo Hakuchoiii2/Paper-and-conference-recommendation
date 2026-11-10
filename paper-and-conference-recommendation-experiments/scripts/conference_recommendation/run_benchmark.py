@@ -41,9 +41,9 @@ def parse_args():
     )
     parser.add_argument(
         "--embedding-backend",
-        choices=["tfidf", "specter2", "sentence_transformers", "precomputed"],
-        default="tfidf",
-        help="Backend embedding dùng để vector hóa 5 facets (mặc định: 'tfidf').",
+        choices=["tfidf", "specter", "specter2", "sentence_transformers", "precomputed"],
+        default="specter",
+        help="Backend embedding dùng để vector hóa 5 facets (mặc định: 'specter').",
     )
     parser.add_argument(
         "--output-dir",
