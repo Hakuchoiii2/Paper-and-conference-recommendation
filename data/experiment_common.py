@@ -9,13 +9,40 @@ import collections
 import datetime as dt
 import math
 import random
+import re
 from experiment_io import FACETS
 from validate_all import require, validate_time
+
+STOPWORDS = {'and', 'the', 'for', 'with', 'using', 'based', 'from', 'that', 'this', 'into', 'our', 'are', 'via', 'can', 'not'}
+
+def concept_tokens(concept_set):
+    tokens = set()
+    for c in concept_set:
+        for w in re.findall(r'\w+', c.lower()):
+            if len(w) > 2 and w not in STOPWORDS:
+                if w.endswith('ies') and len(w) > 4:
+                    w = w[:-3] + 'y'
+                elif w.endswith('s') and not w.endswith('ss') and len(w) > 3:
+                    w = w[:-1]
+                tokens.add(w)
+    return tokens
 
 def facet_relevance(query, candidate):
     if not query or not candidate:
         return None
-    return 2 if query == candidate else 1 if query & candidate else 0
+    if query == candidate or (query & candidate):
+        return 2.0
+    q_tok = concept_tokens(query)
+    c_tok = concept_tokens(candidate)
+    inter = q_tok & c_tok
+    if not inter:
+        return 0.0
+    jaccard = len(inter) / len(q_tok | c_tok)
+    if jaccard >= 0.25 or len(inter) >= 2:
+        return 1.5
+    elif len(inter) >= 1:
+        return 1.0
+    return 0.0
 
 def facet_index(facets):
     index = {f: collections.defaultdict(set) for f in FACETS}

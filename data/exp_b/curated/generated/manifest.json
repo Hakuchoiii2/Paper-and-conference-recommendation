@@ -1,6 +1,6 @@
 {
   "config": {
-    "candidates_per_query": 50,
+    "candidates_per_query": 100,
     "corpus_path": "data/processed/papers.jsonl",
     "dataset_kind": "mock",
     "facets_path": "data/exp_a/generated/facets_silver.jsonl",
@@ -11,40 +11,40 @@
       "problem": 0.4,
       "task": 0.2
     },
-    "hard_negative_fraction": 0.7,
+    "hard_negative_fraction": 0.65,
     "label_rule_version": "weighted_overlap_v2",
     "num_queries": 50,
     "output_dir": "data/exp_b/curated/generated",
     "positive_fraction": 0.1,
-    "positive_grade": 0.3,
+    "positive_grade": 0.5,
     "seed": 42,
     "truth_dir": "data/exp_b/curated/ground_truth"
   },
   "contract_version": "2.0",
   "counts": {
-    "label_provenance.jsonl": 2500,
-    "retrieval_labels.jsonl": 2500,
+    "label_provenance.jsonl": 5000,
+    "retrieval_labels.jsonl": 5000,
     "retrieval_queries.jsonl": 50
   },
   "dataset_kind": "mock",
   "experiment": "b",
   "files": {
-    "data/exp_b/curated/generated/generation_report.json": "d902e3510b974fac06636cf6269bbb6044403114ce568be9c084cd50680a2a5f",
-    "data/exp_b/curated/generated/retrieval_queries.jsonl": "15964c0734702eaef57e6749f80846ae52c14c40c9771764fe6e949ec327a432",
-    "data/exp_b/curated/generated/splits.json": "693a8bd943e4dcbf3336073829b19b828acdfc2ec0ababfae2135d80ffa1dbb2",
-    "data/exp_b/curated/ground_truth/label_provenance.jsonl": "fac639c51b64b76cf22c2169503e09799426b785b8407b5ea403aa566ca9521e",
-    "data/exp_b/curated/ground_truth/retrieval_labels.jsonl": "f253023b13ad45c11352456590ecd25d96391d220569b2efba642ff3f2ec9fa5"
+    "data/exp_b/curated/generated/generation_report.json": "0fd65cf02d251cd52bcc503e5810f0270cd6a3d4b964b401406be6f4a1b1f570",
+    "data/exp_b/curated/generated/retrieval_queries.jsonl": "f98b8313d264e35393fcfc467818cbc5a5e39eca0d2e7ab77aa36ad37fd0c42d",
+    "data/exp_b/curated/generated/splits.json": "681f1e0bfc5911be5fc09bfd4a3b117c11db588c5cc4dafa83e0fc00beb76007",
+    "data/exp_b/curated/ground_truth/label_provenance.jsonl": "a9f9a3f0feb39be0a17a1e47aab1c0008db267e4d46e0c0e3b43eda76fbdbaa3",
+    "data/exp_b/curated/ground_truth/retrieval_labels.jsonl": "f63600b818b74e63cc7a04719fd39015491ace4fb79b1faf272788986270ee65"
   },
   "generator_hashes": {
     "data/build_experiments.py": "73fb07bf0fbbf94bfcf6a44d519a86331b0e5496bf258a4d263107a52b0ee4c0",
-    "data/exp_b/build_exp_b.py": "a808f116231eab8a774a052da148264802586737b86bbd025ac0d767bdbb3d3f",
-    "data/experiment_common.py": "8bb819409e04e9cb1903cf3fbc938a5043c1a137ef258324f7ca5173c713d47a",
+    "data/exp_b/build_exp_b.py": "2b6a6fb3657233571ac1705139637101424764e80e41d199f0fd65895dfff9be",
+    "data/experiment_common.py": "ea868c0bd5871adbc5ef1e52b02f66386df375fad2d6378d24d8fe32233dca33",
     "scripts/build_corpus.py": "bd318f6ee8912dd128264e4570dc83635b8934f01ba42bcd243f3c59e73438c8",
     "scripts/experiment_io.py": "3dcc53d093ecbfd9cfe72e01e661b798d9fe74281aae2f27e7cc59b1e515e999"
   },
   "generator_version": "2.0",
   "input_hashes": {
-    "configs/exp_b_curated.json": "e1ae2bf7040b709ff81f5dc0aac7f7f89c78ff946161486ca803bcb0904256a5",
+    "configs/exp_b_curated.json": "a296644cd9a66076b017d65ea53c8dcf2de9adef3eb2abe995662111d7233c5e",
     "data/exp_a/generated/annotation_metadata.jsonl": "f0acf7139661873d465892d02550aff4c9ec8dd804735fbe0f830b6a7149de4b",
     "data/exp_a/generated/facets_silver.jsonl": "f46b7812d2e9392dfe71da43fb377ed95dc6693429e0df89ffc8ebc8f1c7260e",
     "data/exp_a/generated/manifest.json": "20df6050b3ec63184555c6f994b0669acf4340d15c881f1b13f38c3333a5b40e",

@@ -5,8 +5,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(PROJECT_ROOT))
 sys.path.insert(0,str(PROJECT_ROOT / 'scripts'))
 import collections
-from data.experiment_common import (FACETS, candidate_sample, grouped_splits, normalized_weights,
-                                    retrieval_grade, validate_sampling)
+from data.experiment_common import (FACETS, candidate_sample, concept_tokens, grouped_splits,
+                                    normalized_weights, retrieval_grade, validate_sampling)
 from validate_all import require
 
 def build_b(facets, config, rng):
@@ -14,32 +14,32 @@ def build_b(facets, config, rng):
     require(config['label_rule_version'] == 'weighted_overlap_v2','Unsupported B label rule')
     weights = normalized_weights(config['fixed_weights'])
 
-    # Fast inverted index to identify related candidate papers
+    # Fast inverted index on concept tokens to quickly identify candidate clusters
     inverted = {}
     for pid, row in facets.items():
         for f in FACETS:
-            for c in row[f]:
-                inverted.setdefault((f, c), set()).add(pid)
+            for tok in concept_tokens(row[f]):
+                inverted.setdefault((f, tok), set()).add(pid)
 
-    # Rank anchors by cluster richness to guarantee nuanced queries (avoid 1-vs-49 degeneration)
+    # Rank anchors by cluster richness to guarantee nuanced queries
     pool = []
     for pid, row in sorted(facets.items()):
         if sum(bool(row[f]) for f in FACETS) < 2:
             continue
         related = set()
         for f in FACETS:
-            for c in row[f]:
-                related.update(inverted.get((f, c), set()))
+            for tok in concept_tokens(row[f]):
+                related.update(inverted.get((f, tok), set()))
         related.discard(pid)
         grades = {cand: retrieval_grade(row, facets[cand], weights) for cand in related}
         pos = sum(1 for v in grades.values() if v >= config['positive_grade'])
         hard = sum(1 for v in grades.values() if 0 < v < config['positive_grade'])
-        if pos >= config.get('min_positives', 1) and hard >= config.get('min_hard_negatives', 1):
+        if pos >= config.get('min_positives', 5) and hard >= config.get('min_hard_negatives', 20):
             pool.append((pos, hard, pos + hard, pid))
 
     if len(pool) >= config['num_queries']:
-        # Prioritize multi-positive and nuanced hard-negative clusters
-        pool.sort(key=lambda x: (x[0] >= 2, x[2], x[0], x[1]), reverse=True)
+        # Prioritize rich multi-positive and high-hard-negative clusters
+        pool.sort(key=lambda x: (x[0] >= 5, x[2], x[0], x[1]), reverse=True)
         selected_anchors = [x[3] for x in pool[:config['num_queries']]]
         rng.shuffle(selected_anchors)
     else:
