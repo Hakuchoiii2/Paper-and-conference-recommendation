@@ -1,0 +1,238 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001588\",\n  \"problem\": [\n    {\"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"analyze existing VQA algorithms\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"multi-modal compact bilinear pooling (MCB)\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"neural module networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"recurrent answering units\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"establish how attention helps certain categories more than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"determine which models work better than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 38.98646607199771,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001588\",\n  \"problem\": [\n    {\"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"analyze existing VQA algorithms\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"multi-modal compact bilinear pooling (MCB)\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"neural module networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"recurrent answering units\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"establish how attention helps certain categories more than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"determine which models work better than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.6868,
+          "seed": 4806,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2533,
+            "output_tokens": 434
+          },
+          "validation_errors": [
+            "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001588\", \"problem\": [{\"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"analyze existing VQA algorithms\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"multi-modal compact bilinear pooling (MCB)\", \"evidence_id\": \"A7\"}, {\"concept\": \"neural module networks\", \"evidence_id\": \"A7\"}, {\"concept\": \"recurrent answering units\", \"evidence_id\": \"A7\"}, {\"concept\": \"introduce questions that are meaningless for a given image\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}, {\"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\", \"evidence_id\": \"A5\"}, {\"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\", \"evidence_id\": \"A6\"}, {\"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\", \"evidence_id\": \"A7\"}, {\"concept\": \"establish how attention helps certain categories more than others\", \"evidence_id\": \"A8\"}, {\"concept\": \"determine which models work better than others\", \"evidence_id\": \"A8\"}, {\"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 44.30463113299993,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001588\",\n  \"problem\": [\n    {\"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"analyze existing VQA algorithms\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"multi-modal compact bilinear pooling (MCB)\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"neural module networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"recurrent answering units\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"establish how attention helps certain categories more than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"determine which models work better than others\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.6868,
+          "seed": 4807,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4481,
+            "output_tokens": 434
+          },
+          "validation_errors": [
+            "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001588\", \"problem\": [{\"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"analyze existing VQA algorithms\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"multi-modal compact bilinear pooling (MCB)\", \"evidence_id\": \"A7\"}, {\"concept\": \"neural module networks\", \"evidence_id\": \"A7\"}, {\"concept\": \"recurrent answering units\", \"evidence_id\": \"A7\"}, {\"concept\": \"introduce questions that are meaningless for a given image\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\", \"evidence_id\": \"A4\"}, {\"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\", \"evidence_id\": \"A5\"}, {\"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\", \"evidence_id\": \"A6\"}, {\"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\", \"evidence_id\": \"A7\"}, {\"concept\": \"establish how attention helps certain categories more than others\", \"evidence_id\": \"A8\"}, {\"concept\": \"determine which models work better than others\", \"evidence_id\": \"A8\"}, {\"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 3,
+          "generation_seconds": 51.18581197800086,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001588\",\n  \"problem\": [\n    {\n      \"concept\": \"evaluation scores are inflated and predominantly determined by answering easier questions\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"analyze existing VQA algorithms\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"multi-modal compact bilinear pooling (MCB)\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"neural module networks\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"recurrent answering units\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"introduce questions that are meaningless for a given image\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"new dataset containing over 1.6 million questions organized into 12 different categories\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"introduce questions that are meaningless for a given image to force a VQA system to reason about image content\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"propose new evaluation schemes that compensate for over-represented question-types\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"analyze performance of both baseline and state-of-the-art VQA models\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"establish how attention helps certain categories more than others\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"determine which models work better than others\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 83.6868,
+          "seed": 4808,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4538,
+            "output_tokens": 504
+          },
+          "validation_errors": [
+            "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new dataset containing over 1.6 million questions organized into 12 different categories",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "introduce questions that are meaningless for a given image to force a VQA system to reason about image content",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "propose new evaluation schemes that compensate for over-represented question-types",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "analyze performance of both baseline and state-of-the-art VQA models",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "establish how attention helps certain categories more than others",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "determine which models work better than others",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "new dataset containing over 1.6 million questions organized into 12 different categories",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "multi-modal compact bilinear pooling (MCB)",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "neural module networks",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "recurrent answering units",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "introduce questions that are meaningless for a given image",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001588",
+        "problem": [
+          {
+            "concept": "evaluation scores are inflated and predominantly determined by answering easier questions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "analyze existing VQA algorithms",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 134.4769091829985,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4808,
+      "selected_score": 83.6868,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11552,
+        "output_tokens": 1372
+      },
+      "validation_errors": [
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "new dataset containing over 1.6 million questions organized into 12 different categories",
+        "introduce questions that are meaningless for a given image to force a VQA system to reason about image content",
+        "propose new evaluation schemes that compensate for over-represented question-types",
+        "analyze performance of both baseline and state-of-the-art VQA models",
+        "establish how attention helps certain categories more than others",
+        "determine which models work better than others",
+        "explain how simple models (e.g. MLP) can surpass more complex models (MCB) by simply learning to answer large, easy question categories"
+      ],
+      "dataset": [
+        "new dataset containing over 1.6 million questions organized into 12 different categories"
+      ],
+      "method": [
+        "multi-modal compact bilinear pooling (MCB)",
+        "neural module networks",
+        "recurrent answering units",
+        "introduce questions that are meaningless for a given image"
+      ],
+      "paper_id": "P001588",
+      "problem": [
+        "evaluation scores are inflated and predominantly determined by answering easier questions"
+      ],
+      "task": [
+        "analyze existing VQA algorithms"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 134.4769091829985,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P001588",
+    "usage": {
+      "input_tokens": 11552,
+      "output_tokens": 1372
+    }
+  },
+  "record_sha256": "f3e81ef66bf5eb4c79cb3518dd3037d3ca106de3f4afa957a28a6ac8cb12cbf1",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

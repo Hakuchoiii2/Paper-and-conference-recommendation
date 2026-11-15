@@ -1,0 +1,223 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000487\", \"problem\": [{\"concept\": \"lack of uniqueness\", \"evidence_id\": \"A3\"}, {\"concept\": \"incomplete, noisy\", \"evidence_id\": \"A10\"}], \"task\": [{\"concept\": \"distinguishability analysis\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"linear programming\", \"evidence_id\": \"A5\"}, {\"concept\": \"sparsity enforcing\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"structural uniqueness\", \"evidence_id\": \"A11\"}, {\"concept\": \"identifiability\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.121018729999832,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000487\", \"problem\": [{\"concept\": \"lack of uniqueness\", \"evidence_id\": \"A3\"}, {\"concept\": \"incomplete, noisy\", \"evidence_id\": \"A10\"}], \"task\": [{\"concept\": \"distinguishability analysis\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"linear programming\", \"evidence_id\": \"A5\"}, {\"concept\": \"sparsity enforcing\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"structural uniqueness\", \"evidence_id\": \"A11\"}, {\"concept\": \"identifiability\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1503,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2676,
+            "output_tokens": 158
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000487\", \"problem\": [{\"concept\": \"lack of uniqueness\", \"evidence_id\": \"A3\"}, {\"concept\": \"incomplete, noisy\", \"evidence_id\": \"A10\"}], \"task\": [{\"concept\": \"distinguishability analysis\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"linear programming\", \"evidence_id\": \"A5\"}, {\"concept\": \"sparsity enforcing\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"structural uniqueness\", \"evidence_id\": \"A11\"}, {\"concept\": \"identifiability\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.213814348999676,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000487\", \"problem\": [{\"concept\": \"lack of uniqueness\", \"evidence_id\": \"A3\"}, {\"concept\": \"incomplete, noisy\", \"evidence_id\": \"A10\"}], \"task\": [{\"concept\": \"distinguishability analysis\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"linear programming\", \"evidence_id\": \"A5\"}, {\"concept\": \"sparsity enforcing\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"structural uniqueness\", \"evidence_id\": \"A11\"}, {\"concept\": \"identifiability\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1504,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4218,
+            "output_tokens": 158
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "structural uniqueness",
+            "evidence_id": "A11"
+          },
+          {
+            "concept": "identifiability",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "linear programming",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "sparsity enforcing",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P000487",
+        "problem": [
+          {
+            "concept": "lack of uniqueness",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "incomplete, noisy",
+            "evidence_id": "A10"
+          }
+        ],
+        "task": [
+          {
+            "concept": "distinguishability analysis",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.33483307899951,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1504,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6894,
+        "output_tokens": 316
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "structural uniqueness",
+          "evidence": "In this paper, we show how the structural uniqueness and identifiability of the models can be guaranteed by carefully adding extra constraints, and that these important properties can be checked through appropriate computation methods.",
+          "source": "abstract"
+        },
+        {
+          "concept": "identifiability",
+          "evidence": "In this paper, we show how the structural uniqueness and identifiability of the models can be guaranteed by carefully adding extra constraints, and that these important properties can be checked through appropriate computation methods.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "linear programming",
+          "evidence": "The novel methods are based on linear programming (LP), therefore they allow the efficient analysis of CRNs containing several hundred complexes and reactions.",
+          "source": "abstract"
+        },
+        {
+          "concept": "sparsity enforcing",
+          "evidence": "It is also shown that sparsity enforcing approaches for determining 'true' reaction structures are generally not enough without additional prior information.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P000487",
+      "problem": [
+        {
+          "concept": "lack of uniqueness",
+          "evidence": "RESULTS We claim that another major difficulty for solving these inference problems is the frequent lack of uniqueness of many of these networks, especially when prior assumptions have not been taken properly into account.",
+          "source": "abstract"
+        },
+        {
+          "concept": "incomplete, noisy",
+          "evidence": "Unfortunately, the practical situation is often more complex than that, since the measurements are typically incomplete, noisy and sometimes dynamically not rich enough, introducing further obstacles to the structure/parameter estimation process.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "distinguishability analysis",
+          "evidence": "Our contributions aid the distinguishability analysis of chemical reaction network (CRN) models with mass action dynamics.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "structural uniqueness",
+        "identifiability"
+      ],
+      "dataset": [],
+      "method": [
+        "linear programming",
+        "sparsity enforcing"
+      ],
+      "paper_id": "P000487",
+      "problem": [
+        "lack of uniqueness",
+        "incomplete, noisy"
+      ],
+      "task": [
+        "distinguishability analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 48.33483307899951,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P000487",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6894,
+      "output_tokens": 316
+    }
+  },
+  "record_sha256": "373c5fafd2ad59061ea646b694671981dbd79a3729acb37c64737438af7800d1",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

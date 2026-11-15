@@ -1,0 +1,503 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.064999549000277,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5646,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1378,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.95409943800041,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5647,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3122,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.334746400001677,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001868\",\"task\":[{\"concept\":\"harness external knowledge\",\"evidence_id\":\"A3\"}],\"method\":[{\"concept\":\"hierarchically attend and copy\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5648,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 828,
+            "output_tokens": 50
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "harness external knowledge",
+              "evidence": "In this paper, we propose and experiment with a series of response generation models that aim to serve in the general scenario where in addition to the dialogue context, relevant unstructured external knowledge in the form of text is also assumed to be available for models to harness.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "response generation models",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "generate short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not ground conversational responses on knowledge and facts",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "harness external knowledge",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 74.35384538700237,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P001868",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5328,
+        "output_tokens": 424
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "harness external knowledge",
+          "evidence": "In this paper, we propose and experiment with a series of response generation models that aim to serve in the general scenario where in addition to the dialogue context, relevant unstructured external knowledge in the form of text is also assumed to be available for models to harness.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.064999549000277,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5646,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1378,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.95409943800041,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001868\", \"problem\": [{\"concept\": \"generate short and dull responses\", \"evidence_id\": \"A1\"}, {\"concept\": \"not ground conversational responses on knowledge and facts\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"response generation\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"pointer-generator networks\", \"evidence_id\": \"A4\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"CONVAI2\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"response generation models\", \"evidence_id\": \"A3\"}, {\"concept\": \"hierarchically attend and copy\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5647,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3122,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "response generation models",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "generate short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not ground conversational responses on knowledge and facts",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 65.01909898700069,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5647,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4500,
+        "output_tokens": 374
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.064999549000277,
+        "inherited": false,
+        "messages_sha256": "472193cb4d7b93c3b88efed0d41e2f3aae47bc2b1a0f50e6f5345d4daa7775ca",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5646,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1378,
+          "output_tokens": 187
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 33.95409943800041,
+        "inherited": false,
+        "messages_sha256": "871c783fb40634a19dcd802b946f61a83fe176a72fb896b3974946be3225cbf5",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001868",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 5647,
+        "usage": {
+          "input_tokens": 3122,
+          "output_tokens": 187
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.334746400001677,
+        "inherited": false,
+        "messages_sha256": "7d390a8877a2fb4795b971e4e4ebba34fb5ec7aaa60293f234662d8fb04d7eb7",
+        "reached_token_limit": false,
+        "seed": 5648,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 828,
+          "output_tokens": 50
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "harness external knowledge",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "response generation models",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CONVAI2",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "pointer-generator networks",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001868",
+        "problem": [
+          {
+            "concept": "generate short and dull responses",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not ground conversational responses on knowledge and facts",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "response generation",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "hierarchically attend and copy",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.334746400001677,
+      "messages_sha256": "7d390a8877a2fb4795b971e4e4ebba34fb5ec7aaa60293f234662d8fb04d7eb7",
+      "raw_output": "{\"paper_id\":\"P001868\",\"task\":[{\"concept\":\"harness external knowledge\",\"evidence_id\":\"A3\"}],\"method\":[{\"concept\":\"hierarchically attend and copy\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 828,
+        "output_tokens": 50
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "1fb211f1f1fbcf0f34e3ee82bf43781cfd782ef6fba1ae88667f8d83dafc75de",
+    "facets": {
+      "contribution": [
+        "response generation models",
+        "hierarchically attend and copy"
+      ],
+      "dataset": [
+        "CONVAI2"
+      ],
+      "method": [
+        "pointer-generator networks",
+        "hierarchically attend and copy"
+      ],
+      "paper_id": "P001868",
+      "problem": [
+        "generate short and dull responses",
+        "not ground conversational responses on knowledge and facts"
+      ],
+      "task": [
+        "response generation",
+        "harness external knowledge"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 74.35384538700237,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 74.35384538700237,
+      "input_tokens": 5328,
+      "output_tokens": 424
+    },
+    "paper_id": "P001868",
+    "source_sha256": "8a9815623564b7ddc997d40143f82a442cfa2afa7c1f282b3d4d02068cb570de",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5328,
+      "output_tokens": 424
+    }
+  },
+  "record_sha256": "af18531ef65e37b8949fb8ed8e4f83bbdaef5305ea25819caa61085046eed91f",
+  "signature": "00e715520073513e9263fcec14927a2b49d375d827733a5b64a706327a6292cb"
+}

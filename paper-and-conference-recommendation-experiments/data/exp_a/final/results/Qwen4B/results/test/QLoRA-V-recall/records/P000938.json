@@ -1,0 +1,629 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 1,
+          "generation_seconds": 36.99465748500006,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1619,
+            "output_tokens": 279
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.81536151399996,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3474,
+            "output_tokens": 279
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.317589334999866,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000938\",\"task\":[{\"concept\":\"language generation\",\"evidence_id\":\"A0\"},{\"concept\":\"generating paraphrases\",\"evidence_id\":\"A6\"},{\"concept\":\"dialogue naturalness\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Bagel\",\"evidence_id\":\"A2\"},{\"concept\":\"Factored Language Models\",\"evidence_id\":\"A2\"},{\"concept\":\"structured perceptron\",\"evidence_id\":\"A6\"},{\"concept\":\"n-best list\",\"evidence_id\":\"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2858,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 1161,
+            "output_tokens": 111
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Bagel outperforms utterance class LM baselines on this domain",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available for most natural language generation tasks",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 91.12760833399989,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P000938",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6254,
+        "output_tokens": 669
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+          "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+          "facet": "contribution",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 1,
+          "generation_seconds": 36.99465748500006,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2856,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1619,
+            "output_tokens": 279
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.81536151399996,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000938\", \"problem\": [{\"concept\": \"handcrafted generation component\", \"evidence_id\": \"A1\"}, {\"concept\": \"not readily available for most natural language generation tasks\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"language generation\", \"evidence_id\": \"A0\"}, {\"concept\": \"generating paraphrases\", \"evidence_id\": \"A6\"}, {\"concept\": \"dialogue naturalness\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Factored Language Models\", \"evidence_id\": \"A2\"}, {\"concept\": \"structured perceptron\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-best list\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Bagel\", \"evidence_id\": \"A2\"}, {\"concept\": \"Bagel outperforms utterance class LM baselines on this domain\", \"evidence_id\": \"A8\"}, {\"concept\": \"system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2857,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3474,
+            "output_tokens": 279
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+              "evidence": "Interestingly, human judges find the system sampling from the n-best list to be more natural than a system always returning the first-best utterance.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Bagel outperforms utterance class LM baselines on this domain",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available for most natural language generation tasks",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 75.81001899900002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2857,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5093,
+        "output_tokens": 558
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 36.99465748500006,
+        "inherited": false,
+        "messages_sha256": "84360ea90d9f3b11cc8758f1b53eb9b625ba264674f7e63cd9f3fff1ec27b8da",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2856,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1619,
+          "output_tokens": 279
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 38.81536151399996,
+        "inherited": false,
+        "messages_sha256": "895ae8899d657e9a837486152a85e84cf85d16bf5b07cf6625480c76bcec4cc8",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000938",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12"
+          ]
+        },
+        "seed": 2857,
+        "usage": {
+          "input_tokens": 3474,
+          "output_tokens": 279
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.317589334999866,
+        "inherited": false,
+        "messages_sha256": "f17a72bedab360c96cf38b17488eae5041bb415e8fcba320c37fd1594c52ce23",
+        "reached_token_limit": false,
+        "seed": 2858,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 1161,
+          "output_tokens": 111
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Bagel outperforms utterance class LM baselines on this domain",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P000938",
+        "problem": [
+          {
+            "concept": "handcrafted generation component",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "not readily available for most natural language generation tasks",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "language generation",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "generating paraphrases",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 2,
+          "item": {
+            "concept": "dialogue naturalness",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Bagel",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Factored Language Models",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "structured perceptron",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 3,
+          "item": {
+            "concept": "n-best list",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.317589334999866,
+      "messages_sha256": "f17a72bedab360c96cf38b17488eae5041bb415e8fcba320c37fd1594c52ce23",
+      "raw_output": "{\"paper_id\":\"P000938\",\"task\":[{\"concept\":\"language generation\",\"evidence_id\":\"A0\"},{\"concept\":\"generating paraphrases\",\"evidence_id\":\"A6\"},{\"concept\":\"dialogue naturalness\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"Bagel\",\"evidence_id\":\"A2\"},{\"concept\":\"Factored Language Models\",\"evidence_id\":\"A2\"},{\"concept\":\"structured perceptron\",\"evidence_id\":\"A6\"},{\"concept\":\"n-best list\",\"evidence_id\":\"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 1161,
+        "output_tokens": 111
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "24ab295b0e55431683fec0ce8c5ff63345936951378deb7806cd1b426cff3b67",
+    "facets": {
+      "contribution": [
+        "Bagel",
+        "Bagel outperforms utterance class LM baselines on this domain",
+        "system sampling from the n-best list produces dialogue utterances judged more natural than a system always returning the first-best utterance"
+      ],
+      "dataset": [],
+      "method": [
+        "Bagel",
+        "Factored Language Models",
+        "structured perceptron",
+        "n-best list"
+      ],
+      "paper_id": "P000938",
+      "problem": [
+        "handcrafted generation component",
+        "not readily available for most natural language generation tasks"
+      ],
+      "task": [
+        "language generation",
+        "generating paraphrases",
+        "dialogue naturalness"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 91.12760833399989,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 91.12760833399989,
+      "input_tokens": 6254,
+      "output_tokens": 669
+    },
+    "paper_id": "P000938",
+    "source_sha256": "2b6a3d86e7fd084ccc1e2677a61177f86b2f2e1b1693a7bd8c867f30cbbce1cb",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 6254,
+      "output_tokens": 669
+    }
+  },
+  "record_sha256": "be67efaff135f7fbe2ad9641cbf386dcb2b79823dc6bac99c4f7c9f26aef838c",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

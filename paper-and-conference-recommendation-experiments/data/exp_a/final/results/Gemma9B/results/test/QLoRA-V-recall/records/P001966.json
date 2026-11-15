@@ -1,0 +1,638 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.8234535599986,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5940,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1395,
+            "output_tokens": 204
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+              "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 39.11869832699813,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5941,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3207,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+              "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.578691097001865,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001966\", \"task\": [], \"method\": [{\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}, {\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5942,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 867,
+            "output_tokens": 61
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+              "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proposed protocol achieves more robust performance and higher system throughput than comparable schemes",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "physical-layer network coding",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001966",
+        "problem": [
+          {
+            "concept": "extension to multipath channels is problematic",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 88.52084298399859,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001966",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5469,
+        "output_tokens": 452
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+          "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+          "facet": "problem",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "network coding with diversity",
+          "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "network coding with diversity",
+          "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.8234535599986,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5940,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1395,
+            "output_tokens": 204
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+              "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 39.11869832699813,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001966\", \"problem\": [{\"concept\": \"extension to multipath channels is problematic\", \"evidence_id\": \"A1\"}, {\"concept\": \"amplitude compensation is inefficient and yields no diversity even with perfect channel estimates\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"network coding with diversity\", \"evidence_id\": \"A4\"}, {\"concept\": \"proposed protocol achieves more robust performance and higher system throughput than comparable schemes\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5941,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3207,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+              "evidence": "Phase compensation requires accurate distributed phase tracking, whereas the required amplitude compensation is even more troubling, as it leads to an inefficient system that yields no diversity even in the presence of perfect channel estimates.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "network coding with diversity",
+              "evidence": "Since the resulting scheme will achieve a form of selection diversity, we term it ldquonetwork coding with diversityrdquo (NCD).",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proposed protocol achieves more robust performance and higher system throughput than comparable schemes",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "physical-layer network coding",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001966",
+        "problem": [
+          {
+            "concept": "extension to multipath channels is problematic",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 76.94215188699673,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5941,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4602,
+        "output_tokens": 391
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 37.8234535599986,
+        "inherited": false,
+        "messages_sha256": "ce2ccf014427a4dd836ce3806fe546c24f7d3cf38842b71fe1ef212cd86888cb",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5940,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1395,
+          "output_tokens": 204
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 39.11869832699813,
+        "inherited": false,
+        "messages_sha256": "0565c6fe85fe82c4003009605dc54dc1b505ac92d6cff96c43f1423f9527b2fc",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001966",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 5941,
+        "usage": {
+          "input_tokens": 3207,
+          "output_tokens": 187
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.578691097001865,
+        "inherited": false,
+        "messages_sha256": "bd5213842a1e2664032798f2a7beca3ee3e35ec09537536a54ae0f467497a1fb",
+        "reached_token_limit": false,
+        "seed": 5942,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 867,
+          "output_tokens": 61
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "proposed protocol achieves more robust performance and higher system throughput than comparable schemes",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "physical-layer network coding",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001966",
+        "problem": [
+          {
+            "concept": "extension to multipath channels is problematic",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "network coding with diversity",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "distributed relay selection",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "physical-layer network coding",
+            "evidence_id": "A0"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.578691097001865,
+      "messages_sha256": "bd5213842a1e2664032798f2a7beca3ee3e35ec09537536a54ae0f467497a1fb",
+      "raw_output": "{\"paper_id\": \"P001966\", \"task\": [], \"method\": [{\"concept\": \"distributed relay selection\", \"evidence_id\": \"A3\"}, {\"concept\": \"physical-layer network coding\", \"evidence_id\": \"A0\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 867,
+        "output_tokens": 61
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "4bca1a76d0ccb79450c81fd6fe535df48ec7e45976a4107f8671da1498407a8b",
+    "facets": {
+      "contribution": [
+        "network coding with diversity",
+        "proposed protocol achieves more robust performance and higher system throughput than comparable schemes"
+      ],
+      "dataset": [],
+      "method": [
+        "physical-layer network coding",
+        "distributed relay selection"
+      ],
+      "paper_id": "P001966",
+      "problem": [
+        "extension to multipath channels is problematic",
+        "amplitude compensation is inefficient and yields no diversity even with perfect channel estimates"
+      ],
+      "task": [
+        "network coding with diversity",
+        "distributed relay selection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 88.52084298399859,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 88.52084298399859,
+      "input_tokens": 5469,
+      "output_tokens": 452
+    },
+    "paper_id": "P001966",
+    "source_sha256": "0732edbc4ce791a95ad4b652c129e4f26cd52c0c20bb1efb6c1169415710d7fd",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5469,
+      "output_tokens": 452
+    }
+  },
+  "record_sha256": "d7b0e37370ba122e9f7d78e697dd5361e001134ca26b9905c2824b3198a6bb3d",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

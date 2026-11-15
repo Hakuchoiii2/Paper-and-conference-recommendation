@@ -1,0 +1,499 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.520038141999976,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5187,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1374,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.535901713001294,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5188,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3106,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.309774052999273,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}, {\"concept\": \"inference\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5189,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 804,
+            "output_tokens": 87
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model naturally allows actors to belong to multiple communities",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "inference",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.365713908000544,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001715",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5284,
+        "output_tokens": 421
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 19.520038141999976,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5187,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1374,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.535901713001294,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model naturally allows actors to belong to multiple communities\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5188,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3106,
+            "output_tokens": 167
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model naturally allows actors to belong to multiple communities",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.05593985500127,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5188,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4480,
+        "output_tokens": 334
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 19.520038141999976,
+        "inherited": false,
+        "messages_sha256": "ffd754f5aaac3bfac9591296cda211f3dfbd48ff4b413499d92a66fde1a6fbd2",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5187,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1374,
+          "output_tokens": 167
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.535901713001294,
+        "inherited": false,
+        "messages_sha256": "dde49de041306e1268f793b9edf8ad6e23ffb5699b187fc9d1d689ea796f0f85",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001715",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 5188,
+        "usage": {
+          "input_tokens": 3106,
+          "output_tokens": 167
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.309774052999273,
+        "inherited": false,
+        "messages_sha256": "d81fdf83664031a467ec528ddb006b09c995ee0dc6bdfac619bc578f575535a3",
+        "reached_token_limit": false,
+        "seed": 5189,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 804,
+          "output_tokens": 87
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "inference",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model naturally allows actors to belong to multiple communities",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.309774052999273,
+      "messages_sha256": "d81fdf83664031a467ec528ddb006b09c995ee0dc6bdfac619bc578f575535a3",
+      "raw_output": "{\"paper_id\": \"P001715\", \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}, {\"concept\": \"inference\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 804,
+        "output_tokens": 87
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "5afe23d6f7f186c6c0ff89038b207fc01a6310f0534c21f635d82b303ae1b4ed",
+    "facets": {
+      "contribution": [
+        "Bayesian generative model for community extraction",
+        "model naturally allows actors to belong to multiple communities"
+      ],
+      "dataset": [
+        "Enron email corpus"
+      ],
+      "method": [
+        "Bayesian generative model",
+        "Gibbs sampling",
+        "inference"
+      ],
+      "paper_id": "P001715",
+      "problem": [
+        "ignore the content of social interactions"
+      ],
+      "task": [
+        "community extraction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.365713908000544,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.365713908000544,
+      "input_tokens": 5284,
+      "output_tokens": 421
+    },
+    "paper_id": "P001715",
+    "source_sha256": "5bdbe93d62bf93b570ceb55fdaf038abd81f10a10a9f35b22739e28407d80eb2",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5284,
+      "output_tokens": 421
+    }
+  },
+  "record_sha256": "1213d730be6fec348d2bc207a66ff3bb6be0ea4f2b76f07117004b0be93b31e6",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

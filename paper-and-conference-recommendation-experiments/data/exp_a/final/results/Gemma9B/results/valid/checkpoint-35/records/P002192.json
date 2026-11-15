@@ -1,0 +1,455 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.51913702600359,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6618,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1399,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.211127173999557,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6619,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3169,
+            "output_tokens": 127
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.518521641999541,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"task\": [], \"method\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6620,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 814,
+            "output_tokens": 41
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "autonomous message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "machine-learning classifiers",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [],
+        "task": [
+          {
+            "concept": "making sense from social media data",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 66.24878584200269,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002192",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5382,
+        "output_tokens": 315
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "628eccbaad96c40a2d7eb4978ada5e328b0ae987209163ec2935a53ebaa961ee",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.51913702600359,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6618,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1399,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"making sense from social media data\", \"evidence_id\": \"A1\"}, {\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.211127173999557,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002192\", \"problem\": [], \"task\": [{\"concept\": \"filters relevant and trustworthy information\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"machine-learning classifiers\", \"evidence_id\": \"A4\"}, {\"concept\": \"trustworthiness measures\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"autonomous message-classifier\", \"evidence_id\": \"A1\"}, {\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6619,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3169,
+            "output_tokens": 127
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "autonomous message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "machine-learning classifiers",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [],
+        "task": [
+          {
+            "concept": "making sense from social media data",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 57.73026420000315,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6619,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4568,
+        "output_tokens": 274
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 28.51913702600359,
+        "inherited": false,
+        "messages_sha256": "421473d55f05cadfee2d6042b3b0e15c075615edf07a3c7aa4fd9c99750fd4c9",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6618,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1399,
+          "output_tokens": 147
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.211127173999557,
+        "inherited": false,
+        "messages_sha256": "403328dce2c5670de786673a932623e82537a0c910a8fcf2fbaeb41d53a351ce",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002192",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 6619,
+        "usage": {
+          "input_tokens": 3169,
+          "output_tokens": 127
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.518521641999541,
+        "inherited": false,
+        "messages_sha256": "a3db59d2889ad0c38617b0db97a48ae81b8412e5caee40d5081781f1c9209b25",
+        "reached_token_limit": false,
+        "seed": 6620,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 814,
+          "output_tokens": 41
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "autonomous message-classifier",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "software demonstration",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "machine-learning classifiers",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "trustworthiness measures",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002192",
+        "problem": [],
+        "task": [
+          {
+            "concept": "making sense from social media data",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "filters relevant and trustworthy information",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 8.518521641999541,
+      "messages_sha256": "a3db59d2889ad0c38617b0db97a48ae81b8412e5caee40d5081781f1c9209b25",
+      "raw_output": "{\"paper_id\": \"P002192\", \"task\": [], \"method\": [{\"concept\": \"software demonstration\", \"evidence_id\": \"A8\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 814,
+        "output_tokens": 41
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "b1058cfbaaa9b7516da7b9ce8b519d0ab0dddb1c11a6a7421ddba29b7758e6a1",
+    "facets": {
+      "contribution": [
+        "autonomous message-classifier",
+        "software demonstration"
+      ],
+      "dataset": [],
+      "method": [
+        "machine-learning classifiers",
+        "trustworthiness measures",
+        "software demonstration"
+      ],
+      "paper_id": "P002192",
+      "problem": [],
+      "task": [
+        "making sense from social media data",
+        "filters relevant and trustworthy information"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 66.24878584200269,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 66.24878584200269,
+      "input_tokens": 5382,
+      "output_tokens": 315
+    },
+    "paper_id": "P002192",
+    "source_sha256": "c028ddfbc0426687099636de83d5c6d72c834d2c659fadb96a61af411ceaf3a7",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5382,
+      "output_tokens": 315
+    }
+  },
+  "record_sha256": "a02533e42dbfae03f2d59fd4238fd42df8996b5c901c737553e36fba1c46b724",
+  "signature": "b0b21a47569879bad65e14196a6442ba43f10d52aaf1fa69c7660c743a7a59ba"
+}

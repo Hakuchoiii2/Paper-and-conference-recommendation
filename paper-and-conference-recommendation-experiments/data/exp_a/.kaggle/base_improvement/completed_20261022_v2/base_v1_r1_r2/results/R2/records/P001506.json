@@ -1,0 +1,416 @@
+{
+  "record": {
+    "arm": "R2",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001506\",\n  \"problem\": [\n    {\n      \"concept\": \"existing VAE-based text generative models lack integration of syntactic structures\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"generate sentences with improved grammar\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"two separate latent spaces for sentences and syntactic trees\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"evidence lower bound objective with joint distribution\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"long short-term memory architectures for joint generation\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"conditional prior network for latent variable dependencies\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"independent latent variables for syntactically-controlled generation\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"generative superiority on reconstruction and syntactic evaluations\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 32.518187635000004,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001506\",\n  \"problem\": [\n    {\n      \"concept\": \"existing VAE-based text generative models lack integration of syntactic structures\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"generate sentences with improved grammar\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"two separate latent spaces for sentences and syntactic trees\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"evidence lower bound objective with joint distribution\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"long short-term memory architectures for joint generation\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"conditional prior network for latent variable dependencies\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"independent latent variables for syntactically-controlled generation\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"generative superiority on reconstruction and syntactic evaluations\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 43.8485,
+          "seed": 4560,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2471,
+            "output_tokens": 404
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing VAE-based text generative models lack integration of syntactic structures\"; evidence_id=\"A1\"; evidence=\"Distinct from existing VAE-based text generative models, SIVAE contains two separate latent spaces, for sentences and syntactic trees.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"generate sentences with improved grammar\"; evidence_id=\"A0\"; evidence=\"We present a syntax-infused variational autoencoder (SIVAE), that integrates sentences with their syntactic trees to improve the grammar of generated sentences.\"",
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+            "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+            "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001506\", \"problem\": [], \"task\": [{\"concept\": \"integrate sentences with syntactic trees to improve grammar\", \"evidence_id\": \"A0\"}, {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"}, {\"concept\": \"two separate latent spaces for sentences and syntactic trees\", \"evidence_id\": \"A1\"}, {\"concept\": \"evidence lower bound objective with joint distribution\", \"evidence_id\": \"A2\"}, {\"concept\": \"long short-term memory architectures for joint generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional prior network for latent variable dependencies\", \"evidence_id\": \"A4\"}, {\"concept\": \"independent latent variables for syntactically-controlled generation\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"}, {\"concept\": \"generative superiority on reconstruction and syntactic evaluations\", \"evidence_id\": \"A5\"}, {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 45.50398143299992,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001506\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"integrate sentences with syntactic trees to improve grammar\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"two separate latent spaces for sentences and syntactic trees\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"evidence lower bound objective with joint distribution\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"long short-term memory architectures for joint generation\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"conditional prior network for latent variable dependencies\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"independent latent variables for syntactically-controlled generation\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"syntax-infused variational autoencoder (SIVAE)\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"generative superiority on reconstruction and syntactic evaluations\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"unsupervised paraphrasing with syntactic tree templates\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 59.3802,
+          "seed": 4561,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 6120,
+            "output_tokens": 373
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+            "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+            "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001506\", \"problem\": [], \"task\": [{\"concept\": \"integrate sentences with syntactic trees to improve grammar\", \"evidence_id\": \"A0\"}, {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"}, {\"concept\": \"two separate latent spaces for sentences and syntactic trees\", \"evidence_id\": \"A1\"}, {\"concept\": \"evidence lower bound objective with joint distribution\", \"evidence_id\": \"A2\"}, {\"concept\": \"long short-term memory architectures for joint generation\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional prior network for latent variable dependencies\", \"evidence_id\": \"A4\"}, {\"concept\": \"independent latent variables for syntactically-controlled generation\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"}, {\"concept\": \"generative superiority on reconstruction and syntactic evaluations\", \"evidence_id\": \"A5\"}, {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 37.474637816999916,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001506\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"integrate sentences with syntactic trees to improve grammar\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}\n  ],\n  \"method\": [\n    {\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"two separate latent spaces for sentences and syntactic trees\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"evidence lower bound objective with joint distribution\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"long short-term memory architectures for joint generation\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"conditional prior network for latent variable dependencies\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"independent latent variables for syntactically-controlled generation\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"syntax-infused variational autoencoder (SIVAE)\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"generative superiority on reconstruction and syntactic evaluations\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"unsupervised paraphrasing with syntactic tree templates\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 59.3802,
+          "seed": 4562,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 5586,
+            "output_tokens": 318
+          },
+          "validation_errors": [
+            "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+            "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+            "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "syntax-infused variational autoencoder (SIVAE)",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "generative superiority on reconstruction and syntactic evaluations",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "unsupervised paraphrasing with syntactic tree templates",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "syntax-infused variational autoencoder (SIVAE)",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "two separate latent spaces for sentences and syntactic trees",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "evidence lower bound objective with joint distribution",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "long short-term memory architectures for joint generation",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "conditional prior network for latent variable dependencies",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "independent latent variables for syntactically-controlled generation",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P001506",
+        "problem": [],
+        "task": [
+          {
+            "concept": "integrate sentences with syntactic trees to improve grammar",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "unsupervised paraphrasing with syntactic tree templates",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 115.49680688499984,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4562,
+      "selected_score": 59.3802,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 14177,
+        "output_tokens": 1095
+      },
+      "validation_errors": [
+        "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+        "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+        "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+        "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+        "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "c8f8be90e454cffcfd4904fc374054976d9c372257970a21d4ea3b2b667d36b5",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "9098b256cc4a977fd2313f30df015636ea7509bac74a432c77f9a36b00639bfc",
+        "repair_packet": null,
+        "seed": 4560
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "3f5c8685a1454e7d29ce0d83cf22588efd22e1757fbb31bdc6682f18b6d8fa0f",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "existing VAE-based text generative models lack integration of syntactic structures",
+              "error": "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing VAE-based text generative models lack integration of syntactic structures\"; evidence_id=\"A1\"; evidence=\"Distinct from existing VAE-based text generative models, SIVAE contains two separate latent spaces, for sentences and syntactic trees.\"",
+              "evidence_id": "A1",
+              "facet": "problem",
+              "index": 0,
+              "source_sentence": "Distinct from existing VAE-based text generative models, SIVAE contains two separate latent spaces, for sentences and syntactic trees."
+            },
+            {
+              "concept": "generate sentences with improved grammar",
+              "error": "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"generate sentences with improved grammar\"; evidence_id=\"A0\"; evidence=\"We present a syntax-infused variational autoencoder (SIVAE), that integrates sentences with their syntactic trees to improve the grammar of generated sentences.\"",
+              "evidence_id": "A0",
+              "facet": "task",
+              "index": 0,
+              "source_sentence": "We present a syntax-infused variational autoencoder (SIVAE), that integrates sentences with their syntactic trees to improve the grammar of generated sentences."
+            },
+            {
+              "concept": "unsupervised paraphrasing with syntactic tree templates",
+              "error": "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+              "evidence_id": "A6",
+              "facet": "task",
+              "index": 1,
+              "source_sentence": "Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates."
+            },
+            {
+              "concept": "evidence lower bound objective with joint distribution",
+              "error": "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+              "evidence_id": "A2",
+              "facet": "method",
+              "index": 2,
+              "source_sentence": "The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders."
+            },
+            {
+              "concept": "long short-term memory architectures for joint generation",
+              "error": "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+              "evidence_id": "A3",
+              "facet": "method",
+              "index": 3,
+              "source_sentence": "SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees."
+            },
+            {
+              "concept": "conditional prior network for latent variable dependencies",
+              "error": "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+              "evidence_id": "A4",
+              "facet": "method",
+              "index": 4,
+              "source_sentence": "Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed."
+            },
+            {
+              "concept": "independent latent variables for syntactically-controlled generation",
+              "error": "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+              "evidence_id": "A4",
+              "facet": "method",
+              "index": 5,
+              "source_sentence": "Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed."
+            },
+            {
+              "concept": "unsupervised paraphrasing with syntactic tree templates",
+              "error": "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 2,
+              "source_sentence": "Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates."
+            }
+          ],
+          "paper_id": "P001506",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 4561
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "ae8f65b374a7a00d3f32efa374fd1867eff24765271ff68c1af6cf4f598b166a",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "unsupervised paraphrasing with syntactic tree templates",
+              "error": "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+              "evidence_id": "A6",
+              "facet": "task",
+              "index": 1,
+              "source_sentence": "Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates."
+            },
+            {
+              "concept": "evidence lower bound objective with joint distribution",
+              "error": "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"evidence lower bound objective with joint distribution\"; evidence_id=\"A2\"; evidence=\"The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders.\"",
+              "evidence_id": "A2",
+              "facet": "method",
+              "index": 2,
+              "source_sentence": "The evidence lower bound objective is redesigned correspondingly, by optimizing a joint distribution that accommodates two encoders and two decoders."
+            },
+            {
+              "concept": "long short-term memory architectures for joint generation",
+              "error": "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"long short-term memory architectures for joint generation\"; evidence_id=\"A3\"; evidence=\"SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees.\"",
+              "evidence_id": "A3",
+              "facet": "method",
+              "index": 3,
+              "source_sentence": "SIVAE works with long short-term memory architectures to simultaneously generate sentences and syntactic trees."
+            },
+            {
+              "concept": "conditional prior network for latent variable dependencies",
+              "error": "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"conditional prior network for latent variable dependencies\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+              "evidence_id": "A4",
+              "facet": "method",
+              "index": 4,
+              "source_sentence": "Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed."
+            },
+            {
+              "concept": "independent latent variables for syntactically-controlled generation",
+              "error": "method[5]: concept must use source words in their original order; no invented synonyms; concept=\"independent latent variables for syntactically-controlled generation\"; evidence_id=\"A4\"; evidence=\"Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed.\"",
+              "evidence_id": "A4",
+              "facet": "method",
+              "index": 5,
+              "source_sentence": "Two versions of SIVAE are proposed: one captures the dependencies between the latent variables through a conditional prior network, and the other treats the latent variables independently such that syntactically-controlled sentence generation can be performed."
+            },
+            {
+              "concept": "unsupervised paraphrasing with syntactic tree templates",
+              "error": "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"unsupervised paraphrasing with syntactic tree templates\"; evidence_id=\"A6\"; evidence=\"Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates.\"",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 2,
+              "source_sentence": "Finally, we show that the proposed models can be used for unsupervised paraphrasing given different syntactic tree templates."
+            }
+          ],
+          "paper_id": "P001506",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 4562
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "syntax-infused variational autoencoder (SIVAE)",
+        "generative superiority on reconstruction and syntactic evaluations",
+        "unsupervised paraphrasing with syntactic tree templates"
+      ],
+      "dataset": [],
+      "method": [
+        "syntax-infused variational autoencoder (SIVAE)",
+        "two separate latent spaces for sentences and syntactic trees",
+        "evidence lower bound objective with joint distribution",
+        "long short-term memory architectures for joint generation",
+        "conditional prior network for latent variable dependencies",
+        "independent latent variables for syntactically-controlled generation"
+      ],
+      "paper_id": "P001506",
+      "problem": [],
+      "task": [
+        "integrate sentences with syntactic trees to improve grammar",
+        "unsupervised paraphrasing with syntactic tree templates"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 115.49680688499984,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 82.97861924999984,
+      "input_tokens": 11706,
+      "output_tokens": 691
+    },
+    "paper_id": "P001506",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 14177,
+      "output_tokens": 1095
+    }
+  },
+  "record_sha256": "8b27a97d4147ff30fdddcf6a8c6de84ee53116b27601baf39b13cb73fea3182f",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

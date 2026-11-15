@@ -1,0 +1,267 @@
+{
+  "record": {
+    "arm": "R2",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002471\",\n  \"problem\": [\n    {\n      \"concept\": \"students struggle to learn the semantics of C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"develop a web-based tutor for solving problems on C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"animation of the data space\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"data space animation helps students learn the semantics of pointers\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"data space animation is no more effective than text explanation of step-by-step execution\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 17.14750160299991,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002471\",\n  \"problem\": [\n    {\n      \"concept\": \"students struggle to learn the semantics of C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"develop a web-based tutor for solving problems on C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"animation of the data space\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"data space animation helps students learn the semantics of pointers\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"data space animation is no more effective than text explanation of step-by-step execution\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 45.9091,
+          "seed": 7455,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2334,
+            "output_tokens": 203
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"students struggle to learn the semantics of C++ pointers\"; evidence_id=\"A0\"; evidence=\"We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"develop a web-based tutor for solving problems on C++ pointers\"; evidence_id=\"A0\"; evidence=\"We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"data space animation is no more effective than text explanation of step-by-step execution\"; evidence_id=\"A2\"; evidence=\"But, it is no more effective at this than text explanation of the step-by-step execution of the program.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002471\", \"problem\": [], \"task\": [{\"concept\": \"incorporate animation of the data space into a web-based tutor for solving problems on C++ pointers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"animation of the data space\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data space animation helps students learn the semantics of pointers\", \"evidence_id\": \"A1\"}, {\"concept\": \"data space animation is no more effective than text explanation of step-by-step execution of the program\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.070885037999915,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002471\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"incorporate animation of the data space into a web-based tutor for solving problems on C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"animation of the data space\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"data space animation helps students learn the semantics of pointers\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"data space animation is no more effective than text explanation of step-by-step execution of the program\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 68.3864,
+          "seed": 7456,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4695,
+            "output_tokens": 182
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"data space animation is no more effective than text explanation of step-by-step execution of the program\"; evidence_id=\"A2\"; evidence=\"But, it is no more effective at this than text explanation of the step-by-step execution of the program.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002471\", \"problem\": [], \"task\": [{\"concept\": \"incorporate animation of the data space into a web-based tutor for solving problems on C++ pointers\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"animation of the data space\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"data space animation helps students learn the semantics of pointers\", \"evidence_id\": \"A1\"}, {\"concept\": \"it is no more effective than text explanation of step-by-step execution of the program\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 3,
+          "generation_seconds": 18.448182151000083,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002471\",\n  \"problem\": [],\n  \"task\": [\n    {\n      \"concept\": \"solve problems on C++ pointers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"animation of the data space\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"data space animation helps students learn the semantics of pointers\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"it is no more effective than text explanation of step-by-step execution of the program\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 75.689,
+          "seed": 7457,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4222,
+            "output_tokens": 166
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "data space animation helps students learn the semantics of pointers",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "it is no more effective than text explanation of step-by-step execution of the program",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "animation of the data space",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P002471",
+        "problem": [],
+        "task": [
+          {
+            "concept": "incorporate animation of the data space into a web-based tutor for solving problems on C++ pointers",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.66656879199991,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7457,
+      "selected_score": 75.689,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11251,
+        "output_tokens": 551
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4aeb32d9e26173f7c9f4145f112e5bb2954b8ec86bb2d133306951b0d299595b",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "c562da2205bbd9ccd71f33934447724e90169184506a23d81f23a8aec027ac48",
+        "repair_packet": null,
+        "seed": 7455
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "ab8240f3fa23f5670c7cd3d342ee25826030150b81da945f1f8064483aa5c585",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "students struggle to learn the semantics of C++ pointers",
+              "error": "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"students struggle to learn the semantics of C++ pointers\"; evidence_id=\"A0\"; evidence=\"We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.\"",
+              "evidence_id": "A0",
+              "facet": "problem",
+              "index": 0,
+              "source_sentence": "We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students."
+            },
+            {
+              "concept": "develop a web-based tutor for solving problems on C++ pointers",
+              "error": "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"develop a web-based tutor for solving problems on C++ pointers\"; evidence_id=\"A0\"; evidence=\"We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.\"",
+              "evidence_id": "A0",
+              "facet": "task",
+              "index": 0,
+              "source_sentence": "We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students."
+            },
+            {
+              "concept": "data space animation is no more effective than text explanation of step-by-step execution",
+              "error": "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"data space animation is no more effective than text explanation of step-by-step execution\"; evidence_id=\"A2\"; evidence=\"But, it is no more effective at this than text explanation of the step-by-step execution of the program.\"",
+              "evidence_id": "A2",
+              "facet": "contribution",
+              "index": 1,
+              "source_sentence": "But, it is no more effective at this than text explanation of the step-by-step execution of the program."
+            }
+          ],
+          "paper_id": "P002471",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2"
+          ]
+        },
+        "seed": 7456
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "d447fc78f168d8d4a67333eb3162f78e8c090ecf3032d4449d7d361d6fc5afe4",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [
+            {
+              "concept": "data space animation is no more effective than text explanation of step-by-step execution of the program",
+              "error": "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"data space animation is no more effective than text explanation of step-by-step execution of the program\"; evidence_id=\"A2\"; evidence=\"But, it is no more effective at this than text explanation of the step-by-step execution of the program.\"",
+              "evidence_id": "A2",
+              "facet": "contribution",
+              "index": 1,
+              "source_sentence": "But, it is no more effective at this than text explanation of the step-by-step execution of the program."
+            }
+          ],
+          "paper_id": "P002471",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2"
+          ]
+        },
+        "seed": 7457
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "data space animation helps students learn the semantics of pointers",
+        "it is no more effective than text explanation of step-by-step execution of the program"
+      ],
+      "dataset": [],
+      "method": [
+        "animation of the data space"
+      ],
+      "paper_id": "P002471",
+      "problem": [],
+      "task": [
+        "incorporate animation of the data space into a web-based tutor for solving problems on C++ pointers"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.66656879199991,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 39.519067189,
+      "input_tokens": 8917,
+      "output_tokens": 348
+    },
+    "paper_id": "P002471",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 11251,
+      "output_tokens": 551
+    }
+  },
+  "record_sha256": "ecfff1674a8836f1db28ea448f2928b10d3083a8145c3f784646f13ba5d54d8a",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

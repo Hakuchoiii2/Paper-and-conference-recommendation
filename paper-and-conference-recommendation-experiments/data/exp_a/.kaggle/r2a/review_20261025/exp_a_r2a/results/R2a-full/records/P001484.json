@@ -1,0 +1,365 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"measure of cost efficiency assuming uniform costs for all tokens is inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"three different approaches to incorporate costs into AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved compared to random selection\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 19.718336316999967,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"measure of cost efficiency assuming uniform costs for all tokens is inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"three different approaches to incorporate costs into AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved compared to random selection\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 65.8052,
+          "seed": 4494,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2454,
+            "output_tokens": 233
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"measure of cost efficiency assuming uniform costs for all tokens is inadequate\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"incorporate costs into AL selection mechanism\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"cost-sensitive version of semi-supervised AL\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"three different approaches to incorporate costs into AL selection mechanism\", \"evidence_id\": \"A4\"}, {\"concept\": \"up to 54% of true annotation time can be saved compared to random selection\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 10.528656240999908,
+          "operations": [
+            {
+              "before": {
+                "concept": "cost-sensitive version of semi-supervised AL",
+                "evidence_id": "A5"
+              },
+              "concept": "cost-sensitive version of semi-supervised AL",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+                "evidence_id": "A2"
+              },
+              "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\": \"P001484\", \"edits\": [{\"op\":\"replace\",\"facet\":\"method\",\"index\":0,\"concept\":\"cost-sensitive version of semi-supervised AL\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\",\"evidence_id\":\"A2\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 65.8052,
+          "seed": 4495,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2800,
+            "output_tokens": 96
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"measure of cost efficiency assuming uniform costs for all tokens is inadequate\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"incorporate costs into AL selection mechanism\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"cost-sensitive version of semi-supervised AL\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"three different approaches to incorporate costs into AL selection mechanism\", \"evidence_id\": \"A4\"}, {\"concept\": \"up to 54% of true annotation time can be saved compared to random selection\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 10.52582713999982,
+          "operations": [
+            {
+              "before": {
+                "concept": "cost-sensitive version of semi-supervised AL",
+                "evidence_id": "A5"
+              },
+              "concept": "cost-sensitive version of semi-supervised AL",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+                "evidence_id": "A2"
+              },
+              "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\": \"P001484\", \"edits\": [{\"op\":\"replace\",\"facet\":\"method\",\"index\":0,\"concept\":\"cost-sensitive version of semi-supervised AL\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\",\"evidence_id\":\"A2\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 65.8052,
+          "seed": 4496,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2800,
+            "output_tokens": 96
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "three different approaches to incorporate costs into AL selection mechanism",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "up to 54% of true annotation time can be saved compared to random selection",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MUC7 T corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "cost-sensitive version of semi-supervised AL",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001484",
+        "problem": [
+          {
+            "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "incorporate costs into AL selection mechanism",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 40.772819697999694,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001484",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 4496,
+      "selected_score": 65.8052,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 8054,
+        "output_tokens": 425
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "a9c96bc745518fdcec8023cc7d5aa764a1b1855e02c71eb656a6ea563d043291",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 4494
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "a4b2e2331e6a8174b011ec1debee77d0ae5a649e7fec1c93747e13c55e2ce7ad",
+        "operations": [
+          {
+            "before": {
+              "concept": "cost-sensitive version of semi-supervised AL",
+              "evidence_id": "A5"
+            },
+            "concept": "cost-sensitive version of semi-supervised AL",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+              "evidence_id": "A2"
+            },
+            "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 4495
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "a4b2e2331e6a8174b011ec1debee77d0ae5a649e7fec1c93747e13c55e2ce7ad",
+        "operations": [
+          {
+            "before": {
+              "concept": "cost-sensitive version of semi-supervised AL",
+              "evidence_id": "A5"
+            },
+            "concept": "cost-sensitive version of semi-supervised AL",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+              "evidence_id": "A2"
+            },
+            "concept": "measure of cost efficiency assuming uniform costs for all tokens is inadequate",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 4496
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency assuming uniform costs for all tokens is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "three different approaches to incorporate costs into AL selection mechanism",
+        "up to 54% of true annotation time can be saved compared to random selection"
+      ],
+      "dataset": [
+        "MUC7 T corpus"
+      ],
+      "method": [
+        "cost-sensitive version of semi-supervised AL"
+      ],
+      "paper_id": "P001484",
+      "problem": [
+        "measure of cost efficiency assuming uniform costs for all tokens is inadequate"
+      ],
+      "task": [
+        "incorporate costs into AL selection mechanism"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 40.772819697999694,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 21.054483380999727,
+      "input_tokens": 5600,
+      "output_tokens": 192
+    },
+    "paper_id": "P001484",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 8054,
+      "output_tokens": 425
+    }
+  },
+  "record_sha256": "69cfdefc20433da8d320e44b4c7e89bce563b425a7c11285b8ce2772099ee4ad",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

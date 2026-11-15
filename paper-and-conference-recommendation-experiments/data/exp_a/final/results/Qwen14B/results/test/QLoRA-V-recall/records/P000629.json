@@ -1,0 +1,444 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"topical coherence in the communities\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.349371398002404,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"topical coherence in the communities\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1929,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1344,
+            "output_tokens": 156
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.441791698998713,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1930,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3069,
+            "output_tokens": 136
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.240285828000196,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000629\",\"task\":[{\"concept\":\"latent community topic analysis\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"community discovery\",\"evidence_id\":\"A4\"},{\"concept\":\"topic modeling\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1931,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 743,
+            "output_tokens": 57
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "one community can correspond to multiple topics and multiple communities can share the same topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 63.031448925001314,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P000629",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5156,
+        "output_tokens": 349
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "26b19ce63df96a647818d6097933f448fd4dfeedacf0d2a4ae88a65e0cd63bb1",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"topical coherence in the communities\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.349371398002404,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"topical coherence in the communities\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1929,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1344,
+            "output_tokens": 156
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.441791698998713,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}, {\"concept\": \"one community can correspond to multiple topics and multiple communities can share the same topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1930,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3069,
+            "output_tokens": 136
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "one community can correspond to multiple topics and multiple communities can share the same topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 52.79116309700112,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1930,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4413,
+        "output_tokens": 292
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.349371398002404,
+        "inherited": false,
+        "messages_sha256": "4af7ca32e1ef5b214457b6623c15ceb9165b7d5b3aeefd05bf900a4ef31919bd",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1929,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1344,
+          "output_tokens": 156
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 26.441791698998713,
+        "inherited": false,
+        "messages_sha256": "eba3c02fa4df15060417167d92bd78723d851096f15203de18b0e83c1314e8d1",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000629",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 1930,
+        "usage": {
+          "input_tokens": 3069,
+          "output_tokens": 136
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.240285828000196,
+        "inherited": false,
+        "messages_sha256": "d21d0676443d4be05ee0cca74041148f1fb3d4028313044866915a77e5e01619",
+        "reached_token_limit": false,
+        "seed": 1931,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 743,
+          "output_tokens": 57
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "one community can correspond to multiple topics and multiple communities can share the same topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "topic modeling",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.240285828000196,
+      "messages_sha256": "d21d0676443d4be05ee0cca74041148f1fb3d4028313044866915a77e5e01619",
+      "raw_output": "{\"paper_id\":\"P000629\",\"task\":[{\"concept\":\"latent community topic analysis\",\"evidence_id\":\"A0\"}],\"method\":[{\"concept\":\"community discovery\",\"evidence_id\":\"A4\"},{\"concept\":\"topic modeling\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 743,
+        "output_tokens": 57
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "db07c4760bb8008cf5389e215d89281e21ccb862019b02046011ea3de6c88bb3",
+    "facets": {
+      "contribution": [
+        "separate the concepts of community and topic",
+        "one community can correspond to multiple topics and multiple communities can share the same topic"
+      ],
+      "dataset": [],
+      "method": [
+        "community discovery",
+        "topic modeling"
+      ],
+      "paper_id": "P000629",
+      "problem": [],
+      "task": [
+        "latent community topic analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 63.031448925001314,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 63.031448925001314,
+      "input_tokens": 5156,
+      "output_tokens": 349
+    },
+    "paper_id": "P000629",
+    "source_sha256": "bf2232eea25834a03f5150188144297f2fad32d48cb143303bbfb3b1b0ad499d",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5156,
+      "output_tokens": 349
+    }
+  },
+  "record_sha256": "1b009af6a2cd6c61ee89f4857a9fc7d0e56aa885dde13a6ce0e535c8db531af4",
+  "signature": "b492ce866b39f0302a589324e7c5fd972307eaec09c7d3862445f1a60866a7d8"
+}

@@ -1,0 +1,178 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002808\", \"problem\": [{\"concept\": \"effects of actions are often implicit (unstated)\", \"evidence_id\": \"A1\"}, {\"concept\": \"background knowledge and inference\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"answer questions about change\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}, {\"concept\": \"rulebase\", \"evidence_id\": \"A2\"}, {\"concept\": \"commonsense knowledge of persistence\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Lexicon\", \"evidence_id\": \"A2\"}, {\"concept\": \"ProComp\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.91828907300078,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002808\", \"problem\": [{\"concept\": \"effects of actions are often implicit (unstated)\", \"evidence_id\": \"A1\"}, {\"concept\": \"background knowledge and inference\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"answer questions about change\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}, {\"concept\": \"rulebase\", \"evidence_id\": \"A2\"}, {\"concept\": \"commonsense knowledge of persistence\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Lexicon\", \"evidence_id\": \"A2\"}, {\"concept\": \"ProComp\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 8466,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2516,
+            "output_tokens": 179
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002808\", \"problem\": [{\"concept\": \"effects of actions are often implicit (unstated)\", \"evidence_id\": \"A1\"}, {\"concept\": \"background knowledge and inference\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"answer questions about change\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}, {\"concept\": \"rulebase\", \"evidence_id\": \"A2\"}, {\"concept\": \"commonsense knowledge of persistence\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"Semantic Lexicon\", \"evidence_id\": \"A2\"}, {\"concept\": \"ProComp\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.36956567400193,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002808\", \"problem\": [{\"concept\": \"effects of actions are often implicit (unstated)\", \"evidence_id\": \"A1\"}, {\"concept\": \"background knowledge and inference\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"answer questions about change\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}, {\"concept\": \"rulebase\", \"evidence_id\": \"A2\"}, {\"concept\": \"commonsense knowledge of persistence\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"VerbNet\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"Semantic Lexicon\", \"evidence_id\": \"A2\"}, {\"concept\": \"ProComp\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 8467,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4059,
+            "output_tokens": 195
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Semantic Lexicon",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "ProComp",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "VerbNet",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "VerbNet",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "rulebase",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "commonsense knowledge of persistence",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P002808",
+        "problem": [
+          {
+            "concept": "effects of actions are often implicit (unstated)",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "background knowledge and inference",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "answer questions about change",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 62.28785474700271,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8467,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6575,
+        "output_tokens": 374
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "Semantic Lexicon",
+        "ProComp"
+      ],
+      "dataset": [
+        "VerbNet"
+      ],
+      "method": [
+        "VerbNet",
+        "rulebase",
+        "commonsense knowledge of persistence"
+      ],
+      "paper_id": "P002808",
+      "problem": [
+        "effects of actions are often implicit (unstated)",
+        "background knowledge and inference"
+      ],
+      "task": [
+        "answer questions about change"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 62.28785474700271,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P002808",
+    "usage": {
+      "input_tokens": 6575,
+      "output_tokens": 374
+    }
+  },
+  "record_sha256": "d1a40756560ed879ebd41349c20ed613aa00e5c05dd75a89db342c63d9b4c41f",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

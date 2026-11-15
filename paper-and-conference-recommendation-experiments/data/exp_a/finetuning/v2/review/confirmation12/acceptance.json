@@ -1,0 +1,61 @@
+{
+  "status": "accepted",
+  "accepted_at_utc": "2026-10-19T01:57:21.288538+00:00",
+  "scope": "Operational AI source-review confirmation for the frozen v2.2 train/dev annotation task, not a corpus-wide policy/model benchmark",
+  "paper_ids": [
+    "P000226",
+    "P001763",
+    "P000019",
+    "P000054",
+    "P002222",
+    "P001951",
+    "P001837",
+    "P003896",
+    "P000627",
+    "P000842",
+    "P002201",
+    "P001398"
+  ],
+  "split_counts": {
+    "train": 6,
+    "dev": 6
+  },
+  "independent_author_ids": [
+    "source_confirmation_a",
+    "source_confirmation_b"
+  ],
+  "independent_actor_mapping": {
+    "source_confirmation_a": "author_a",
+    "source_confirmation_b": "author_b"
+  },
+  "adjudicator_id": "root",
+  "unresolved_material_issues": 0,
+  "policy_changed": false,
+  "label_source": "ai_reference",
+  "human_review_status": "pending",
+  "annotations_sha256": "9b75e66bda7d9e4142ec7ddc2a17acfcd89f0b69a520d76dadaf43c7e15b836d",
+  "policy_sha256": "6b21f9ac8e196d0afeaf6605349346c85ff8ea549d8240ae5c8f00b56464e2e3",
+  "prompt_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+  "schema_sha256": "2df0c73f5e81eea0b3c21fbb830208302e49f24dc288ae29d417620b242297d7",
+  "files": {
+    "adjudicated_annotations.jsonl": "9b75e66bda7d9e4142ec7ddc2a17acfcd89f0b69a520d76dadaf43c7e15b836d",
+    "adjudication.json": "df1f43795f708d7c5af006d0940a115deb78709f75d919d7fd089f3ad56e83a4",
+    "author_a_annotations.jsonl": "ba2656a813c6b2e565302ae9b8cc63af0026daada6f0374d95f790b4f3514b50",
+    "author_a_audit.jsonl": "ece108b29dd425dc42500974289147ce1e3dc3a9ea7ecaf2066116496a5a6d8e",
+    "author_a_cross_review.json": "a1cb6386f8c8daaef030cb6039b4e464d31a8feed3135bd90e66a28aff19f6e1",
+    "author_a_final_recheck.json": "2b44386d881c68af68d8cf9a9003b617827b924e74a498b801432f5c96c9ef73",
+    "author_a_seal.json": "e4d7edd16b79638d36932882db13fc437eb1aa6619488e9adc8fd27aa2143cac",
+    "author_b_annotations.jsonl": "c6e63818f704f1bce99ca8c90afb9098126cab59c4a6ed5cc3bd9e3123007ce7",
+    "author_b_audit.jsonl": "42d6d8b9b33c28cc105a6ee1b40354f3f1ca49903886800aff73c82d83b743ea",
+    "author_b_cross_review.json": "31618b01ef066f21461768d00a1327016df095e14294d78b1ec3f1b4e6d4c8de",
+    "author_b_final_recheck.json": "65f3bafa465097d4dd71597a1c291bbd212d843309512f835157f21bb7a274db",
+    "author_b_seal.json": "d272db6315941f5ac4d6f421fa556ccbb94e09ffe0af5c64f367f6532eb637d0",
+    "selection.json": "af5ede9efd7d52a198bf9a6a149f4f2d9c195f0b92b9bd59951edfcf87984ca0",
+    "sources.jsonl": "dc2274f8ccf7a438d0212e0f1ba4a4587aae5d512cca6e830383cad96dfd5421"
+  },
+  "limitations": [
+    "12 purposive train/dev sources, not representative sampling",
+    "Two separate AI contexts and source-based adjudication; correlated model errors remain possible",
+    "AI references with human review pending; no new F1 or adapter v2 yet"
+  ]
+}

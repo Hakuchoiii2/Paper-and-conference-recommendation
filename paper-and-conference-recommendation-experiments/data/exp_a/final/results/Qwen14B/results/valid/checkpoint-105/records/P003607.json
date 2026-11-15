@@ -1,0 +1,515 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.279048937998596,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10863,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1288,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.414113880000514,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10864,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3006,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.99417085800087,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P003607\",\"task\":[{\"concept\":\"Identification of Multiword Expressions\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"Graph Convolutional Network\",\"evidence_id\":\"A2\"},{\"concept\":\"multi-head self-attention\",\"evidence_id\":\"A2\"},{\"concept\":\"gating mechanism\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10865,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 728,
+            "output_tokens": 78
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Identification of Multiword Expressions",
+              "evidence": "We specifically target discontinuity, an under-explored aspect that poses a significant challenge to computational treatment of MWEs.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "combined model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "new method",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Graph Convolutional Network",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "multi-head self-attention",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "gating mechanism",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003607",
+        "problem": [
+          {
+            "concept": "discontinuity",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "under-explored aspect",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "tag Multiword Expressions",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Identification of Multiword Expressions",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 74.68733367599998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P003607",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5022,
+        "output_tokens": 432
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Identification of Multiword Expressions",
+          "evidence": "We specifically target discontinuity, an under-explored aspect that poses a significant challenge to computational treatment of MWEs.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.279048937998596,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10863,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1288,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.414113880000514,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003607\", \"problem\": [{\"concept\": \"discontinuity\", \"evidence_id\": \"A1\"}, {\"concept\": \"under-explored aspect\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"tag Multiword Expressions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Graph Convolutional Network\", \"evidence_id\": \"A2\"}, {\"concept\": \"multi-head self-attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"gating mechanism\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"combined model\", \"evidence_id\": \"A4\"}, {\"concept\": \"new method\", \"evidence_id\": \"A0\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10864,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3006,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "combined model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "new method",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Graph Convolutional Network",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "multi-head self-attention",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "gating mechanism",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003607",
+        "problem": [
+          {
+            "concept": "discontinuity",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "under-explored aspect",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "tag Multiword Expressions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 61.69316281799911,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10864,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4294,
+        "output_tokens": 354
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 29.279048937998596,
+        "inherited": false,
+        "messages_sha256": "682950caaa9a5bc6387dde100d5e095c028505bd4d6e5dc5485aace17646ebac",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 10863,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1288,
+          "output_tokens": 177
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 32.414113880000514,
+        "inherited": false,
+        "messages_sha256": "83b3234ebb53ede90c980a88a1cf5b56929b6ded62779da064bd15d3f25d030c",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003607",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 10864,
+        "usage": {
+          "input_tokens": 3006,
+          "output_tokens": 177
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.99417085800087,
+        "inherited": false,
+        "messages_sha256": "19468da3963b03a860e0b3fae8cf3ab55b80f04fc04c8c55c2120fb17f658738",
+        "reached_token_limit": false,
+        "seed": 10865,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 728,
+          "output_tokens": 78
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "Identification of Multiword Expressions",
+            "evidence_id": "A1"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "combined model",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "new method",
+            "evidence_id": "A0"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Graph Convolutional Network",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "multi-head self-attention",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "gating mechanism",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003607",
+        "problem": [
+          {
+            "concept": "discontinuity",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "under-explored aspect",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "tag Multiword Expressions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Graph Convolutional Network",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "multi-head self-attention",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "gating mechanism",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.99417085800087,
+      "messages_sha256": "19468da3963b03a860e0b3fae8cf3ab55b80f04fc04c8c55c2120fb17f658738",
+      "raw_output": "{\"paper_id\":\"P003607\",\"task\":[{\"concept\":\"Identification of Multiword Expressions\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"Graph Convolutional Network\",\"evidence_id\":\"A2\"},{\"concept\":\"multi-head self-attention\",\"evidence_id\":\"A2\"},{\"concept\":\"gating mechanism\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 728,
+        "output_tokens": 78
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "e041814af8fdf419a636ed399581351927e1e341457a0264d962a2155ac9b6f8",
+    "facets": {
+      "contribution": [
+        "combined model",
+        "new method"
+      ],
+      "dataset": [],
+      "method": [
+        "Graph Convolutional Network",
+        "multi-head self-attention",
+        "gating mechanism"
+      ],
+      "paper_id": "P003607",
+      "problem": [
+        "discontinuity",
+        "under-explored aspect"
+      ],
+      "task": [
+        "tag Multiword Expressions",
+        "Identification of Multiword Expressions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 74.68733367599998,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 74.68733367599998,
+      "input_tokens": 5022,
+      "output_tokens": 432
+    },
+    "paper_id": "P003607",
+    "source_sha256": "9d7f8e5fadaa1cedc2a86915c4bc9bcd358a492ed516b2f86086f981f674386a",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5022,
+      "output_tokens": 432
+    }
+  },
+  "record_sha256": "4d963603b37b437724a3947492ccf94a48288539ef5340e63223baf0228c7ea7",
+  "signature": "d6a189434536ddd6406715a700026b2ff5c8849d50699394c5d64c14de105878"
+}

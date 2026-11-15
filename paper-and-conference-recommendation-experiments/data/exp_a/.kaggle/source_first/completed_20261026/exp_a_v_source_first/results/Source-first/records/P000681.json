@@ -1,0 +1,232 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 20.300541556999974,
+          "messages_sha256": "4163a3dc31f29285ad35a6b66a320e5dae521d46ff36fa6eb08fcd8a2470551b",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000681\", \"problem\": [{\"concept\": \"Previous research on stemming has shown both positive and negative effects on retrieval performance\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"linguistic stemming restricted to inflection\", \"evidence_id\": \"A2\"}, {\"concept\": \"compound analysis\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Dutch test collection\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming\", \"evidence_id\": \"A2\"}, {\"concept\": \"a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming\", \"evidence_id\": \"A3\"}, {\"concept\": \"linguistic stemming restricted to inflection improves both average Precision and R-Recall\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 61.0,
+          "seed": 2087,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2231,
+            "output_tokens": 251
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"Previous research on stemming has shown both positive and negative effects on retrieval performance\"; evidence_id=\"A0\"; evidence=\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection\"; evidence_id=\"A1\"; evidence=\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming\"; evidence_id=\"A3\"; evidence=\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic stemming restricted to inflection improves both average Precision and R-Recall\"; evidence_id=\"A2\"; evidence=\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "linguistic stemming restricted to inflection improves both average Precision and R-Recall",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Dutch test collection",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "linguistic stemming restricted to inflection",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "compound analysis",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000681",
+        "problem": [
+          {
+            "concept": "Previous research on stemming has shown both positive and negative effects on retrieval performance",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 55.030952552999906,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000681",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Dutch test collection",
+            "evidence": "This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 61.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3320,
+        "output_tokens": 710
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"Previous research on stemming has shown both positive and negative effects on retrieval performance\"; evidence_id=\"A0\"; evidence=\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection\"; evidence_id=\"A1\"; evidence=\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming\"; evidence_id=\"A3\"; evidence=\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic stemming restricted to inflection improves both average Precision and R-Recall\"; evidence_id=\"A2\"; evidence=\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 17.67311073899998,
+        "messages_sha256": "c661928ebcae245bf1bdca22337c936d9f66bd28527efc27392940f9fa93fbae",
+        "raw_output": "{\"paper_id\":\"P000681\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A1\"]},{\"evidence_id\":\"A3\",\"span\":\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This version has a significantly better Recall than a system without stemming, without a significant deterioration of Precision.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2085,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 534,
+          "output_tokens": 233
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.05730025699995,
+        "messages_sha256": "3c65ba3b13ef3d034f534427a6eb4f4a1235f175a87cc82351c7147b681193a6",
+        "raw_output": "{\"paper_id\":\"P000681\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This version has a significantly better Recall than a system without stemming, without a significant deterioration of Precision.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2086,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 226
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 20.300541556999974,
+        "messages_sha256": "4163a3dc31f29285ad35a6b66a320e5dae521d46ff36fa6eb08fcd8a2470551b",
+        "raw_output": "{\"paper_id\": \"P000681\", \"problem\": [{\"concept\": \"Previous research on stemming has shown both positive and negative effects on retrieval performance\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"linguistic stemming restricted to inflection\", \"evidence_id\": \"A2\"}, {\"concept\": \"compound analysis\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Dutch test collection\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming\", \"evidence_id\": \"A2\"}, {\"concept\": \"a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming\", \"evidence_id\": \"A3\"}, {\"concept\": \"linguistic stemming restricted to inflection improves both average Precision and R-Recall\", \"evidence_id\": \"A2\"}]}",
+        "reached_token_limit": false,
+        "seed": 2087,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2231,
+          "output_tokens": 251
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming",
+        "a linguistic stemmer which is enhanced with compound analysis has a significantly better Recall than a system without stemming",
+        "linguistic stemming restricted to inflection improves both average Precision and R-Recall"
+      ],
+      "dataset": [],
+      "method": [
+        "linguistic stemming restricted to inflection",
+        "compound analysis"
+      ],
+      "paper_id": "P000681",
+      "problem": [
+        "Previous research on stemming has shown both positive and negative effects on retrieval performance"
+      ],
+      "task": [
+        "evaluation of several linguistic and non-linguistic stemmers on a Dutch test collection"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 55.030952552999906,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 17.67311073899998,
+        "messages_sha256": "c661928ebcae245bf1bdca22337c936d9f66bd28527efc27392940f9fa93fbae",
+        "raw_output": "{\"paper_id\":\"P000681\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A1\"]},{\"evidence_id\":\"A3\",\"span\":\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This version has a significantly better Recall than a system without stemming, without a significant deterioration of Precision.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2085,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 534,
+          "output_tokens": 233
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.05730025699995,
+        "messages_sha256": "3c65ba3b13ef3d034f534427a6eb4f4a1235f175a87cc82351c7147b681193a6",
+        "raw_output": "{\"paper_id\":\"P000681\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractPrevious research on stemming has shown both positive and negative effects on retrieval performance.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"This paper describes an experiment in which several linguistic and non-linguistic stemmers are evaluated on a Dutch test collection.Experiments especially focus on the measurement of Recall.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Results show that linguistic stemming restricted to inflection yields a significant improvement over full linguistic and non-linguistic stemming, both in average Precision and R-Recall.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"Best results are obtained with a linguistic stemmer which is enhanced with compound analysis.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This version has a significantly better Recall than a system without stemming, without a significant deterioration of Precision.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2086,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 226
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 55.030952552999906,
+      "input_tokens": 3320,
+      "output_tokens": 710
+    },
+    "paper_id": "P000681",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3320,
+      "output_tokens": 710
+    }
+  },
+  "record_sha256": "90ae80868fe3064686bfc6aff26d14e597e5c4a8e62897619bbe850c64dda5aa",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

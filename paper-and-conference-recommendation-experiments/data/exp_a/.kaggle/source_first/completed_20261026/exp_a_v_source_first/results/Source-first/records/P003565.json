@@ -1,0 +1,248 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 2,
+          "generation_seconds": 17.9729633500001,
+          "messages_sha256": "292fd5f450d77b0afcbb4425a049e5a3ed7652c9e7790862eff14093c85bb25e",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time\", \"evidence_id\": \"A1\"}, {\"concept\": \"extend representation to non-projective parsing using Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"Non-Projective Dependency Parsing using Spanning Tree Algorithms\", \"evidence_id\": \"T0\"}, {\"concept\": \"MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 70.902,
+          "seed": 10738,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2607,
+            "output_tokens": 210
+          },
+          "validation_errors": [
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"extend representation to non-projective parsing using Chu-Liu-Edmonds MST algorithm\"; evidence_id=\"A2\"; evidence=\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\""
+          ]
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 18.98747835899985,
+          "messages_sha256": "c29f949aad0c11563156eadbc53e7a402d7b1754f40261c473b4e8c41becf357",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time\", \"evidence_id\": \"A1\"}, {\"concept\": \"representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"Non-Projective Dependency Parsing using Spanning Tree Algorithms\", \"evidence_id\": \"T0\"}, {\"concept\": \"MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 75.652,
+          "seed": 10739,
+          "stage": "repair",
+          "usage": {
+            "input_tokens": 2959,
+            "output_tokens": 212
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Non-Projective Dependency Parsing using Spanning Tree Algorithms",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "MST parsing increases efficiency and accuracy for languages with non-projective dependencies",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Prague Dependency Treebank",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds MST algorithm",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003565",
+        "problem": [],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 59.624247964000006,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003565",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 75.652,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6142,
+        "output_tokens": 727
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.663806255000054,
+        "messages_sha256": "1c85995e207515d0f484b1a248838be167f871f3d7229f50f3fe8d0e378ecfd8",
+        "raw_output": "{\"paper_id\":\"P003565\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Using this representation, the parsing algorithm of Eisner (1996) is sufficient for searching over all projective trees in O(n3) time.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We evaluate these methods on the Prague Dependency Treebank using online large-margin learning techniques (Crammer et al., 2003; McDonald et al., 2005) and show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"T0\",\"span\":\"Non-Projective Dependency Parsing using Spanning Tree Algorithms\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 10737,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 576,
+          "output_tokens": 305
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.9729633500001,
+        "messages_sha256": "292fd5f450d77b0afcbb4425a049e5a3ed7652c9e7790862eff14093c85bb25e",
+        "raw_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time\", \"evidence_id\": \"A1\"}, {\"concept\": \"extend representation to non-projective parsing using Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"Non-Projective Dependency Parsing using Spanning Tree Algorithms\", \"evidence_id\": \"T0\"}, {\"concept\": \"MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 10738,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2607,
+          "output_tokens": 210
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.98747835899985,
+        "messages_sha256": "c29f949aad0c11563156eadbc53e7a402d7b1754f40261c473b4e8c41becf357",
+        "raw_output": "{\"paper_id\": \"P003565\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs\", \"evidence_id\": \"A0\"}, {\"concept\": \"parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time\", \"evidence_id\": \"A1\"}, {\"concept\": \"representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds MST algorithm\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"Prague Dependency Treebank\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"Non-Projective Dependency Parsing using Spanning Tree Algorithms\", \"evidence_id\": \"T0\"}, {\"concept\": \"MST parsing increases efficiency and accuracy for languages with non-projective dependencies\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 10739,
+        "stage": "repair",
+        "usage": {
+          "input_tokens": 2959,
+          "output_tokens": 212
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "Non-Projective Dependency Parsing using Spanning Tree Algorithms",
+        "MST parsing increases efficiency and accuracy for languages with non-projective dependencies"
+      ],
+      "dataset": [
+        "Prague Dependency Treebank"
+      ],
+      "method": [
+        "formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs",
+        "parsing algorithm of Eisner (1996) for searching over all projective trees in O(n3) time",
+        "representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds MST algorithm"
+      ],
+      "paper_id": "P003565",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.624247964000006,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.663806255000054,
+        "messages_sha256": "1c85995e207515d0f484b1a248838be167f871f3d7229f50f3fe8d0e378ecfd8",
+        "raw_output": "{\"paper_id\":\"P003565\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Using this representation, the parsing algorithm of Eisner (1996) is sufficient for searching over all projective trees in O(n3) time.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We evaluate these methods on the Prague Dependency Treebank using online large-margin learning techniques (Crammer et al., 2003; McDonald et al., 2005) and show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"T0\",\"span\":\"Non-Projective Dependency Parsing using Spanning Tree Algorithms\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 10737,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 576,
+          "output_tokens": 305
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 59.624247964000006,
+      "input_tokens": 6142,
+      "output_tokens": 727
+    },
+    "paper_id": "P003565",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "method"
+        ],
+        "span": "We formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A1",
+        "origin": "current",
+        "roles": [
+          "method"
+        ],
+        "span": "Using this representation, the parsing algorithm of Eisner (1996) is sufficient for searching over all projective trees in O(n3) time."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A3",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "We evaluate these methods on the Prague Dependency Treebank using online large-margin learning techniques (Crammer et al., 2003; McDonald et al., 2005) and show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "T0",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "Non-Projective Dependency Parsing using Spanning Tree Algorithms"
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 6142,
+      "output_tokens": 727
+    }
+  },
+  "record_sha256": "9cfc8c2156bef7545529d850f0dbdebb5499d155efa91fa995bc1d73aa17b2b5",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

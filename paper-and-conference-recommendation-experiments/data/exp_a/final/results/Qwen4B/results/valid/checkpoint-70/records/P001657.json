@@ -1,0 +1,532 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.742672893000417,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5013,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1413,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Sentence Completion",
+              "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.764063800000258,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5014,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3103,
+            "output_tokens": 156
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Sentence Completion",
+              "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.495912852999936,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5015,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 832,
+            "output_tokens": 70
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Sentence Completion",
+              "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 50.00264954600061,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001657",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5348,
+        "output_tokens": 366
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Sentence Completion",
+          "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.742672893000417,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5013,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1413,
+            "output_tokens": 140
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Sentence Completion",
+              "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.764063800000258,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5014,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3103,
+            "output_tokens": 156
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Sentence Completion",
+              "evidence": "For each sentence the task is then to determine which of the five choices for that word is the correct one.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 40.506736693000676,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5014,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4516,
+        "output_tokens": 296
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.742672893000417,
+        "inherited": false,
+        "messages_sha256": "f95cddad44a2091ac7316a68a3c9052ad88ff48131741f41e0ad68f55587380b",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5013,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1413,
+          "output_tokens": 140
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.764063800000258,
+        "inherited": false,
+        "messages_sha256": "422d6028c856c45a4e07609640b4e6f978ff2bb047f00348d5849c045801ffe0",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001657",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 5014,
+        "usage": {
+          "input_tokens": 3103,
+          "output_tokens": 156
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.495912852999936,
+        "inherited": false,
+        "messages_sha256": "d90659eaba199ab4a6200d65a718fc682faf0b489364577477b06e1d0af365bb",
+        "reached_token_limit": false,
+        "seed": 5015,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 832,
+          "output_tokens": 70
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Sentence Completion",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "language model",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.495912852999936,
+      "messages_sha256": "d90659eaba199ab4a6200d65a718fc682faf0b489364577477b06e1d0af365bb",
+      "raw_output": "{\"paper_id\": \"P001657\", \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 832,
+        "output_tokens": 70
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "c18d72f886b97a07724b96fae124e2f071846bd616d218a345a006c65a0866ca",
+    "facets": {
+      "contribution": [
+        "MSR Sentence Completion Challenge Data"
+      ],
+      "dataset": [
+        "MSR Sentence Completion Challenge Data",
+        "Project Gutenberg"
+      ],
+      "method": [
+        "language model",
+        "human judges"
+      ],
+      "paper_id": "P001657",
+      "problem": [
+        "few public datasets"
+      ],
+      "task": [
+        "Sentence Completion"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 50.00264954600061,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 50.00264954600061,
+      "input_tokens": 5348,
+      "output_tokens": 366
+    },
+    "paper_id": "P001657",
+    "source_sha256": "b38eb8626939f7fb68b8dfbdb0c7c344c5cd35815308580bfdb26d44b19597ee",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5348,
+      "output_tokens": 366
+    }
+  },
+  "record_sha256": "28bd0fe61d93f347b654af5a847a35ada3acb31e845aa0e735d52b8c71b7fc2f",
+  "signature": "92e05be08d5cef64b24efa1fe72c2ec75197bf4db7ba04f6c1db5025cee48eaf"
+}

@@ -1,0 +1,189 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 10.488839561000077,
+          "messages_sha256": "cb1e64e6ad129ff92a2de125452d9ef672cbc1dc15c0faab8c61973e3a09e79e",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003661\", \"problem\": [{\"concept\": \"differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"a number of different statistical tests for determining if differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}, {\"concept\": \"one can test the assumption of normality using simple diagnostic plots\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 53.8246,
+          "seed": 11027,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2235,
+            "output_tokens": 115
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"one can test the assumption of normality using simple diagnostic plots\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "a number of different statistical tests for determining if differences in performance between retrieval methods are significant",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "one can test the assumption of normality using simple diagnostic plots",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P003661",
+        "problem": [
+          {
+            "concept": "differences in performance between retrieval methods are significant",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 43.67838653400031,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003661",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 53.8246,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3332,
+        "output_tokens": 560
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"one can test the assumption of normality using simple diagnostic plots\"; evidence_id=\"A4\"; evidence=\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.549910700000055,
+        "messages_sha256": "72efcb2d30b46ab08f940655ddfc459d7e3a6533767881c7a01cdcce3d2452e4",
+        "raw_output": "{\"paper_id\":\"P003661\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"The standard strategies for evaluation based on precision and recall are examined and their relative advantages and disadvantages are discussed.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"These tests have often been ignored in the past because most are based on an assumption of normality which is not strictly valid for the standard performance measures.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11025,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 538,
+          "output_tokens": 221
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.63963627300018,
+        "messages_sha256": "ccb1f0679c4b1e9e0073b3321d7c04abdf7afc582b107ee2923479c9c096520c",
+        "raw_output": "{\"paper_id\": \"P003661\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"The standard strategies for evaluation based on precision and recall are examined and their relative advantages and disadvantages are discussed.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"These tests have often been ignored in the past because most are based on an assumption of normality which is not strictly valid for the standard performance measures.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11026,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 559,
+          "output_tokens": 224
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.488839561000077,
+        "messages_sha256": "cb1e64e6ad129ff92a2de125452d9ef672cbc1dc15c0faab8c61973e3a09e79e",
+        "raw_output": "{\"paper_id\": \"P003661\", \"problem\": [{\"concept\": \"differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": [{\"concept\": \"a number of different statistical tests for determining if differences in performance between retrieval methods are significant\", \"evidence_id\": \"A2\"}, {\"concept\": \"one can test the assumption of normality using simple diagnostic plots\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 11027,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2235,
+          "output_tokens": 115
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "a number of different statistical tests for determining if differences in performance between retrieval methods are significant",
+        "one can test the assumption of normality using simple diagnostic plots"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P003661",
+      "problem": [
+        "differences in performance between retrieval methods are significant"
+      ],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 43.67838653400031,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.549910700000055,
+        "messages_sha256": "72efcb2d30b46ab08f940655ddfc459d7e3a6533767881c7a01cdcce3d2452e4",
+        "raw_output": "{\"paper_id\":\"P003661\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"The standard strategies for evaluation based on precision and recall are examined and their relative advantages and disadvantages are discussed.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"These tests have often been ignored in the past because most are based on an assumption of normality which is not strictly valid for the standard performance measures.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11025,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 538,
+          "output_tokens": 221
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.63963627300018,
+        "messages_sha256": "ccb1f0679c4b1e9e0073b3321d7c04abdf7afc582b107ee2923479c9c096520c",
+        "raw_output": "{\"paper_id\": \"P003661\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"The standard strategies for evaluation based on precision and recall are examined and their relative advantages and disadvantages are discussed.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In particular, it is suggested that relevance feedback be evaluated from the perspective of the user.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"A number of different statistical tests are described for determining if differences in performance between retrieval methods are significant.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"These tests have often been ignored in the past because most are based on an assumption of normality which is not strictly valid for the standard performance measures.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"However, one can test this assumption using simple diagnostic plots, and if it is a poor approximation, there are a number of non-parametric alternatives.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11026,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 559,
+          "output_tokens": 224
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 43.67838653400031,
+      "input_tokens": 3332,
+      "output_tokens": 560
+    },
+    "paper_id": "P003661",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3332,
+      "output_tokens": 560
+    }
+  },
+  "record_sha256": "d53951764ce31324d4c879c07f2e3774f8ca3d7c6bd46afc83d2646f8c3129fa",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

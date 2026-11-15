@@ -1,0 +1,198 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003556\",\n  \"problem\": [\n    {\"concept\": \"security uncertainties caused by spam emails\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"network resources consumed by spam emails\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"relocating filtering system to the sender mail server\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"new and efficient approach to prevent spam emails from being transferred\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 16.535439037998003,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003556\",\n  \"problem\": [\n    {\"concept\": \"security uncertainties caused by spam emails\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"network resources consumed by spam emails\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"relocating filtering system to the sender mail server\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"new and efficient approach to prevent spam emails from being transferred\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 44.0,
+          "seed": 10710,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2434,
+            "output_tokens": 193
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"security uncertainties caused by spam emails\"; evidence_id=\"A1\"; evidence=\"Spam emails consume the network resources and cause lots of security uncertainties.\"",
+            "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"network resources consumed by spam emails\"; evidence_id=\"A1\"; evidence=\"Spam emails consume the network resources and cause lots of security uncertainties.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"relocating filtering system to the sender mail server\"; evidence_id=\"A2\"; evidence=\"As we studied, the location where the spam filter operates in is an important parameter to preserve network resources.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"detect spam emails in the shortest time by focusing on sender mail server\"; evidence_id=\"A5\"; evidence=\"The result shows that if we focus on developing a filtering method for spams emails in the sender mail server rather than the receiver mail server, we can detect the spam emails in the shortest time consequently to avoid wasting network resources.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003556\", \"problem\": [{\"concept\": \"Spam emails consume the network resources and cause lots of security uncertainties\", \"evidence_id\": \"A1\"}, {\"concept\": \"the location where the spam filter operates is an important parameter to preserve network resources\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"relocating filtering system to the sender mail server\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new and efficient approach to prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}, {\"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.257334665999224,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003556\",\n  \"problem\": [\n    {\"concept\": \"Spam emails consume the network resources and cause lots of security uncertainties\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"the location where the spam filter operates is an important parameter to preserve network resources\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}\n  ],\n  \"method\": [\n    {\"concept\": \"relocating filtering system to the sender mail server\", \"evidence_id\": \"A2\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"new and efficient approach to prevent spam emails from being transferred\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\", \"evidence_id\": \"A5\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 65.9479,
+          "seed": 10711,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4237,
+            "output_tokens": 209
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"relocating filtering system to the sender mail server\"; evidence_id=\"A2\"; evidence=\"As we studied, the location where the spam filter operates in is an important parameter to preserve network resources.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"detect spam emails in the shortest time by focusing on sender mail server\"; evidence_id=\"A5\"; evidence=\"The result shows that if we focus on developing a filtering method for spams emails in the sender mail server rather than the receiver mail server, we can detect the spam emails in the shortest time consequently to avoid wasting network resources.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003556\", \"problem\": [{\"concept\": \"Spam emails consume the network resources and cause lots of security uncertainties\", \"evidence_id\": \"A1\"}, {\"concept\": \"the location where the spam filter operates is an important parameter to preserve network resources\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"relocating filtering system to the sender mail server\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new and efficient approach to prevent spam emails from being transferred\", \"evidence_id\": \"A4\"}, {\"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 24.619146691002243,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003556\",\n  \"problem\": [\n    {\n      \"concept\": \"Spam emails consume the network resources and cause lots of security uncertainties\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"the location where the spam filter operates is an important parameter to preserve network resources\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"prevent spam emails from being transferred\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"relocating filtering system to the sender mail server\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"new and efficient approach to prevent spam emails from being transferred\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"detect spam emails in the shortest time by focusing on sender mail server\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 65.9479,
+          "seed": 10712,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4133,
+            "output_tokens": 239
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"relocating filtering system to the sender mail server\"; evidence_id=\"A2\"; evidence=\"As we studied, the location where the spam filter operates in is an important parameter to preserve network resources.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"detect spam emails in the shortest time by focusing on sender mail server\"; evidence_id=\"A5\"; evidence=\"The result shows that if we focus on developing a filtering method for spams emails in the sender mail server rather than the receiver mail server, we can detect the spam emails in the shortest time consequently to avoid wasting network resources.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new and efficient approach to prevent spam emails from being transferred",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "detect spam emails in the shortest time by focusing on sender mail server",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "relocating filtering system to the sender mail server",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003556",
+        "problem": [
+          {
+            "concept": "Spam emails consume the network resources and cause lots of security uncertainties",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "the location where the spam filter operates is an important parameter to preserve network resources",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "prevent spam emails from being transferred",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 63.41192039499947,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10712,
+      "selected_score": 65.9479,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10804,
+        "output_tokens": 641
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"relocating filtering system to the sender mail server\"; evidence_id=\"A2\"; evidence=\"As we studied, the location where the spam filter operates in is an important parameter to preserve network resources.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"detect spam emails in the shortest time by focusing on sender mail server\"; evidence_id=\"A5\"; evidence=\"The result shows that if we focus on developing a filtering method for spams emails in the sender mail server rather than the receiver mail server, we can detect the spam emails in the shortest time consequently to avoid wasting network resources.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "new and efficient approach to prevent spam emails from being transferred",
+        "detect spam emails in the shortest time by focusing on sender mail server"
+      ],
+      "dataset": [],
+      "method": [
+        "relocating filtering system to the sender mail server"
+      ],
+      "paper_id": "P003556",
+      "problem": [
+        "Spam emails consume the network resources and cause lots of security uncertainties",
+        "the location where the spam filter operates is an important parameter to preserve network resources"
+      ],
+      "task": [
+        "prevent spam emails from being transferred"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 63.41192039499947,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P003556",
+    "usage": {
+      "input_tokens": 10804,
+      "output_tokens": 641
+    }
+  },
+  "record_sha256": "70c8ac12df7a7cdf8b657478ba957dfcf1da43b28ad4bbe74a0285607128bb1b",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

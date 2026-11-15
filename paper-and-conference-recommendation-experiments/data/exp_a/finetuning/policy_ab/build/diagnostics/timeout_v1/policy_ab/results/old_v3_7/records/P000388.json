@@ -1,0 +1,223 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000388\", \"problem\": [{\"concept\": \"fail to capture nonlocal contextual cues\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Sentence-level Sentiment Analysis\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"posterior regularization\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional random field models\", \"evidence_id\": \"A3\"}, {\"concept\": \"structured modeling of sentiment\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"context-aware method\", \"evidence_id\": \"A0\"}, {\"concept\": \"context-aware constraints\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.743979698999738,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000388\", \"problem\": [{\"concept\": \"fail to capture nonlocal contextual cues\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Sentence-level Sentiment Analysis\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"posterior regularization\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional random field models\", \"evidence_id\": \"A3\"}, {\"concept\": \"structured modeling of sentiment\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"context-aware method\", \"evidence_id\": \"A0\"}, {\"concept\": \"context-aware constraints\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1206,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2434,
+            "output_tokens": 162
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000388\", \"problem\": [{\"concept\": \"fail to capture nonlocal contextual cues\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Sentence-level Sentiment Analysis\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"posterior regularization\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional random field models\", \"evidence_id\": \"A3\"}, {\"concept\": \"structured modeling of sentiment\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"context-aware method\", \"evidence_id\": \"A0\"}, {\"concept\": \"context-aware constraints\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.36748139700012,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000388\", \"problem\": [{\"concept\": \"fail to capture nonlocal contextual cues\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"Sentence-level Sentiment Analysis\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"posterior regularization\", \"evidence_id\": \"A3\"}, {\"concept\": \"conditional random field models\", \"evidence_id\": \"A3\"}, {\"concept\": \"structured modeling of sentiment\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"context-aware method\", \"evidence_id\": \"A0\"}, {\"concept\": \"context-aware constraints\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 1207,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3967,
+            "output_tokens": 162
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "context-aware method",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "context-aware constraints",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "posterior regularization",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "conditional random field models",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "structured modeling of sentiment",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P000388",
+        "problem": [
+          {
+            "concept": "fail to capture nonlocal contextual cues",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence-level Sentiment Analysis",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 49.11146109599986,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1207,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6401,
+        "output_tokens": 324
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "context-aware method",
+          "evidence": "This paper proposes a novel context-aware method for analyzing sentiment at the level of individual sentences.",
+          "source": "abstract"
+        },
+        {
+          "concept": "context-aware constraints",
+          "evidence": "The context-aware constraints provide additional power to the CRF model and can guide semi-supervised learning when labeled data is limited.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "posterior regularization",
+          "evidence": "Specifically, we encode intuitive lexical and discourse knowledge as expressive constraints and integrate them into the learning of conditional random field models via posterior regularization.",
+          "source": "abstract"
+        },
+        {
+          "concept": "conditional random field models",
+          "evidence": "Specifically, we encode intuitive lexical and discourse knowledge as expressive constraints and integrate them into the learning of conditional random field models via posterior regularization.",
+          "source": "abstract"
+        },
+        {
+          "concept": "structured modeling of sentiment",
+          "evidence": "In contrast, our approach allows structured modeling of sentiment while taking into account both local and global contextual information.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P000388",
+      "problem": [
+        {
+          "concept": "fail to capture nonlocal contextual cues",
+          "evidence": "Most existing machine learning approaches suffer from limitations in the modeling of complex linguistic structures across sentences and often fail to capture nonlocal contextual cues that are important for sentiment interpretation.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "Sentence-level Sentiment Analysis",
+          "evidence": "Context-aware Learning for Sentence-level Sentiment Analysis with Posterior Regularization",
+          "source": "title"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "context-aware method",
+        "context-aware constraints"
+      ],
+      "dataset": [],
+      "method": [
+        "posterior regularization",
+        "conditional random field models",
+        "structured modeling of sentiment"
+      ],
+      "paper_id": "P000388",
+      "problem": [
+        "fail to capture nonlocal contextual cues"
+      ],
+      "task": [
+        "Sentence-level Sentiment Analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 49.11146109599986,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P000388",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6401,
+      "output_tokens": 324
+    }
+  },
+  "record_sha256": "e83e0a1d4c48de608e01490f8c28378e0ca25871495c8d14789de3c437a1d2a2",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

@@ -1,0 +1,518 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.96932089999973,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2379,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1461,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "actual totalitarian regimes were not nearly so successful",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.291283893999207,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2380,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3183,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "actual totalitarian regimes were not nearly so successful",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.71364651300064,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P000779\",\"task\":[{\"concept\":\"manipulation of language\",\"evidence_id\":\"A0\"},{\"concept\":\"thought and behaviour of a people\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"analysis of the speeches and writings of actual dictators\",\"evidence_id\":\"A4\"},{\"concept\":\"linguistic determinism\",\"evidence_id\":\"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2381,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 893,
+            "output_tokens": 85
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "actual totalitarian regimes were not nearly so successful",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Newspeak was a potent instrument of control over the thought and behaviour of the citizens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "actual totalitarian regimes were not nearly so successful",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "linguistic determinism",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [],
+        "task": [
+          {
+            "concept": "manipulation of language",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "thought and behaviour of a people",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 58.97425130699958,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P000779",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5537,
+        "output_tokens": 423
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "actual totalitarian regimes were not nearly so successful",
+          "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.96932089999973,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2379,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1461,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "actual totalitarian regimes were not nearly so successful",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.291283893999207,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000779\", \"problem\": [], \"task\": [{\"concept\": \"manipulation of language\", \"evidence_id\": \"A0\"}, {\"concept\": \"thought and behaviour of a people\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"analysis of the speeches and writings of actual dictators\", \"evidence_id\": \"A4\"}, {\"concept\": \"linguistic determinism\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Newspeak was a potent instrument of control over the thought and behaviour of the citizens\", \"evidence_id\": \"A5\"}, {\"concept\": \"actual totalitarian regimes were not nearly so successful\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2380,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3183,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "actual totalitarian regimes were not nearly so successful",
+              "evidence": "Young's analysis of the effects of these languages on the subjects of totalitarian dictatorships reveals that although Orwell's Newspeak was a potent instrument of control over the thought and behaviour of the citizens, the language of actual totalitarian regimes was not nearly so successful.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Newspeak was a potent instrument of control over the thought and behaviour of the citizens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "actual totalitarian regimes were not nearly so successful",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "linguistic determinism",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [],
+        "task": [
+          {
+            "concept": "manipulation of language",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "thought and behaviour of a people",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 47.26060479399894,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2380,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4644,
+        "output_tokens": 338
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.96932089999973,
+        "inherited": false,
+        "messages_sha256": "d5500d6aaff4be328a516029a2d77946e6737a0b2c4faff4b489860a381f10ed",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2379,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1461,
+          "output_tokens": 169
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.291283893999207,
+        "inherited": false,
+        "messages_sha256": "5a7360e37589fe90329bd5103644bdbc800ef65724edafe2c8063b30914392f0",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000779",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 2380,
+        "usage": {
+          "input_tokens": 3183,
+          "output_tokens": 169
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.71364651300064,
+        "inherited": false,
+        "messages_sha256": "7ad52dd3130b8b0fcccab5f263712071639c8c166227bae02175290b456d98d6",
+        "reached_token_limit": false,
+        "seed": 2381,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 893,
+          "output_tokens": 85
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Newspeak was a potent instrument of control over the thought and behaviour of the citizens",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "actual totalitarian regimes were not nearly so successful",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "linguistic determinism",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000779",
+        "problem": [],
+        "task": [
+          {
+            "concept": "manipulation of language",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "thought and behaviour of a people",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "manipulation of language",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "thought and behaviour of a people",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "analysis of the speeches and writings of actual dictators",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "linguistic determinism",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.71364651300064,
+      "messages_sha256": "7ad52dd3130b8b0fcccab5f263712071639c8c166227bae02175290b456d98d6",
+      "raw_output": "{\"paper_id\":\"P000779\",\"task\":[{\"concept\":\"manipulation of language\",\"evidence_id\":\"A0\"},{\"concept\":\"thought and behaviour of a people\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"analysis of the speeches and writings of actual dictators\",\"evidence_id\":\"A4\"},{\"concept\":\"linguistic determinism\",\"evidence_id\":\"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 893,
+        "output_tokens": 85
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "482a4f37573515cf3e1d219857b42db9d447cdd59757b3ee072945dd063bf472",
+    "facets": {
+      "contribution": [
+        "Newspeak was a potent instrument of control over the thought and behaviour of the citizens",
+        "actual totalitarian regimes were not nearly so successful"
+      ],
+      "dataset": [],
+      "method": [
+        "analysis of the speeches and writings of actual dictators",
+        "linguistic determinism"
+      ],
+      "paper_id": "P000779",
+      "problem": [],
+      "task": [
+        "manipulation of language",
+        "thought and behaviour of a people"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.97425130699958,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 58.97425130699958,
+      "input_tokens": 5537,
+      "output_tokens": 423
+    },
+    "paper_id": "P000779",
+    "source_sha256": "80b66a3ea65224fab11a847c744568c4f1b6afea5cbf495726b0075ed20babf5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5537,
+      "output_tokens": 423
+    }
+  },
+  "record_sha256": "dc982fbe7ffa98596622c4ff59e30497f677f526b61ead5a50d09d7d93e7992c",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

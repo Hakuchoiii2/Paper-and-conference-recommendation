@@ -1,0 +1,398 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003614\",\n  \"problem\": [\n    {\n      \"concept\": \"RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"focus on two levels of analysis\",\n      \"evidence_id\": \"A9\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Rhetorical Structure Theory (RST)\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"focus on two levels of analysis: the informational level and the plan level\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"introduce the concept of intentional structure as crucial for responding effectively to questions that address a previous utterance\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"argue that discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 33.51298655599976,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"problem\": [\n    {\n      \"concept\": \"RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"focus on two levels of analysis\",\n      \"evidence_id\": \"A9\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Rhetorical Structure Theory (RST)\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"focus on two levels of analysis: the informational level and the plan level\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"introduce the concept of intentional structure as crucial for responding effectively to questions that address a previous utterance\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"argue that discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 67.0,
+          "seed": 10884,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2895,
+            "output_tokens": 394
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"focus on two levels of analysis: the informational level and the plan level\"; evidence_id=\"A9\"; evidence=\"In this paper, we focus on two levels of analysis.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"introduce the concept of intentional structure as crucial for responding effectively to questions that address a previous utterance\"; evidence_id=\"A5\"; evidence=\"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"argue that discourse elements are related simultaneously on multiple levels\"; evidence_id=\"A8\"; evidence=\"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003614\", \"problem\": [{\"concept\": \"RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system\", \"evidence_id\": \"A4\"}, {\"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\", \"evidence_id\": \"A4\"}, {\"concept\": \"the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses\", \"evidence_id\": \"A6\"}, {\"concept\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements\", \"evidence_id\": \"A7\"}, {\"concept\": \"discourse elements are related simultaneously on multiple levels\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"focus on two levels of analysis\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"Rhetorical Structure Theory (RST)\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"focus on two levels of analysis\", \"evidence_id\": \"A9\"}, {\"concept\": \"introduce the concept of intentional structure\", \"evidence_id\": \"A5\"}, {\"concept\": \"argue that discourse elements are related simultaneously on multiple levels\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.990327226999852,
+          "operations": [
+            {
+              "before": {
+                "concept": "focus on two levels of analysis: the informational level and the plan level",
+                "evidence_id": "A9"
+              },
+              "concept": "focus on two levels of analysis",
+              "evidence_id": "A9",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "introduce the concept of intentional structure as crucial for responding effectively to questions that address a previous utterance",
+                "evidence_id": "A5"
+              },
+              "concept": "introduce the concept of intentional structure",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "argue that discourse elements are related simultaneously on multiple levels",
+                "evidence_id": "A8"
+              },
+              "concept": "argue that discourse elements are related simultaneously on multiple levels",
+              "evidence_id": "A8",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 0,\n      \"concept\": \"focus on two levels of analysis\",\n      \"evidence_id\": \"A9\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 1,\n      \"concept\": \"introduce the concept of intentional structure\",\n      \"evidence_id\": \"A5\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 2,\n      \"concept\": \"argue that discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 82.0,
+          "seed": 10885,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3521,
+            "output_tokens": 202
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"introduce the concept of intentional structure\"; evidence_id=\"A5\"; evidence=\"Intentional structure is crucial for responding effectively to questions that address a previous utterance: without a record of what an utterance was intended to achieve, it is impossible to elaborate or clarify that utterance.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"argue that discourse elements are related simultaneously on multiple levels\"; evidence_id=\"A8\"; evidence=\"In fact, as has been noted in other work on discourse structure (Grosz and Sidner 1986), discourse elements are related simultaneously on multiple levels.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003614\", \"problem\": [{\"concept\": \"RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system\", \"evidence_id\": \"A4\"}, {\"concept\": \"RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions\", \"evidence_id\": \"A4\"}, {\"concept\": \"the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses\", \"evidence_id\": \"A6\"}, {\"concept\": \"RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements\", \"evidence_id\": \"A7\"}, {\"concept\": \"discourse elements are related simultaneously on multiple levels\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"focus on two levels of analysis\", \"evidence_id\": \"A9\"}], \"method\": [{\"concept\": \"Rhetorical Structure Theory (RST)\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"focus on two levels of analysis\", \"evidence_id\": \"A9\"}, {\"concept\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance\", \"evidence_id\": \"A5\"}, {\"concept\": \"discourse elements are related simultaneously on multiple levels\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 3,
+          "generation_seconds": 16.578393728000265,
+          "operations": [
+            {
+              "before": {
+                "concept": "introduce the concept of intentional structure",
+                "evidence_id": "A5"
+              },
+              "concept": "Intentional structure is crucial for responding effectively to questions that address a previous utterance",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "argue that discourse elements are related simultaneously on multiple levels",
+                "evidence_id": "A8"
+              },
+              "concept": "discourse elements are related simultaneously on multiple levels",
+              "evidence_id": "A8",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003614\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 1,\n      \"concept\": \"Intentional structure is crucial for responding effectively to questions that address a previous utterance\",\n      \"evidence_id\": \"A5\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 2,\n      \"concept\": \"discourse elements are related simultaneously on multiple levels\",\n      \"evidence_id\": \"A8\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10886,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3366,
+            "output_tokens": 153
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "focus on two levels of analysis",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Intentional structure is crucial for responding effectively to questions that address a previous utterance",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discourse elements are related simultaneously on multiple levels",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Rhetorical Structure Theory (RST)",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P003614",
+        "problem": [
+          {
+            "concept": "RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "discourse elements are related simultaneously on multiple levels",
+            "evidence_id": "A8"
+          }
+        ],
+        "task": [
+          {
+            "concept": "focus on two levels of analysis",
+            "evidence_id": "A9"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 71.08170751099988,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003614",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 10886,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 9782,
+        "output_tokens": 749
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "dc3161edae246528ce7189d63adb2acc31eae95cf98b52006a66c0789bb3be51",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 10884
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "d0d677aeed4f1b934f54be90a8ccb099524b1a59458f50fd711d8dbe8dd2c1e9",
+        "operations": [
+          {
+            "before": {
+              "concept": "focus on two levels of analysis: the informational level and the plan level",
+              "evidence_id": "A9"
+            },
+            "concept": "focus on two levels of analysis",
+            "evidence_id": "A9",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "introduce the concept of intentional structure as crucial for responding effectively to questions that address a previous utterance",
+              "evidence_id": "A5"
+            },
+            "concept": "introduce the concept of intentional structure",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "argue that discourse elements are related simultaneously on multiple levels",
+              "evidence_id": "A8"
+            },
+            "concept": "argue that discourse elements are related simultaneously on multiple levels",
+            "evidence_id": "A8",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 10885
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "cd26732d3f7679121135be54f9343ee157193d65f8158f6315092bbeff793f96",
+        "operations": [
+          {
+            "before": {
+              "concept": "introduce the concept of intentional structure",
+              "evidence_id": "A5"
+            },
+            "concept": "Intentional structure is crucial for responding effectively to questions that address a previous utterance",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "argue that discourse elements are related simultaneously on multiple levels",
+              "evidence_id": "A8"
+            },
+            "concept": "discourse elements are related simultaneously on multiple levels",
+            "evidence_id": "A8",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 10886
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 3,
+    "facets": {
+      "contribution": [
+        "focus on two levels of analysis",
+        "Intentional structure is crucial for responding effectively to questions that address a previous utterance",
+        "discourse elements are related simultaneously on multiple levels"
+      ],
+      "dataset": [],
+      "method": [
+        "Rhetorical Structure Theory (RST)"
+      ],
+      "paper_id": "P003614",
+      "problem": [
+        "RST cannot be used as the sole means of controlling discourse structure in an interactive dialogue system",
+        "RST representations provide insufficient information to support the generation of appropriate responses to follow-up questions",
+        "the difficulty observed by Moore and Paris stems from a more fundamental problem with RST analyses",
+        "RST presumes that, in general, there will be a single, preferred rhetorical relation holding between consecutive discourse elements",
+        "discourse elements are related simultaneously on multiple levels"
+      ],
+      "task": [
+        "focus on two levels of analysis"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 71.08170751099988,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 37.56872095500012,
+      "input_tokens": 6887,
+      "output_tokens": 355
+    },
+    "paper_id": "P003614",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2
+      ],
+      "dataset": [],
+      "method": [
+        0
+      ],
+      "problem": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 9782,
+      "output_tokens": 749
+    }
+  },
+  "record_sha256": "af9ebb5da29e2236a0e6dafb0da8e3219df41717d8422adaedd4d0a5aca73286",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

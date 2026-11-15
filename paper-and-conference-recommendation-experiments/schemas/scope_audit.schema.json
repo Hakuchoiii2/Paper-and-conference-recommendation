@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source": {
+      "enum": [
+        "csfcube",
+        "scifact"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "raw_line": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "included": {
+      "type": "boolean"
+    },
+    "reason": {
+      "enum": [
+        "source_cs_scope",
+        "it_term_in_title",
+        "it_method_in_abstract",
+        "review_pending",
+        "no_explicit_it_evidence",
+        "scope_override",
+        "missing_title_or_abstract"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "source",
+    "source_id",
+    "title",
+    "raw_line",
+    "included",
+    "reason",
+    "evidence",
+    "reviewer"
+  ],
+  "additionalProperties": false
+}

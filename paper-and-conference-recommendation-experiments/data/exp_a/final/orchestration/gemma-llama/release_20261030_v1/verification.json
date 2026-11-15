@@ -1,0 +1,25 @@
+{
+  "status": "cpu_verified_not_submitted",
+  "tests": {
+    "comparison": 12,
+    "project": 38,
+    "legacy_training": 10,
+    "qwen_final": 3
+  },
+  "qwen_final_integrity": "73 current files verified; checkpoint-105",
+  "review": "Independent review findings fixed and rechecked: partial checkpoint recovery, partial export recovery, ZIP publication before completion marker.",
+  "runtime_gates": [
+    "Kaggle secret HF_TOKEN with access to both gated repositories",
+    "Both model tokenizers and train/validation lengths verified before training",
+    "Gemma revision resolved and locked before training",
+    "Two visible CUDA GPUs; training one GPU, inference two sharded workers"
+  ],
+  "not_measured": [
+    "Full model training and generation memory on Tesla T4",
+    "New models' review/coverage prompt lengths under actual generations",
+    "Total runtime and extraction quality"
+  ],
+  "kaggle_submitted": false,
+  "layout": "data/exp_a/final/orchestration/{Qwen8B,gemma-llama}; shared runtime/prompts/config outside",
+  "layout_tests": 2
+}

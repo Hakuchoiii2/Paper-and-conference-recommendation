@@ -1,0 +1,224 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000202\",\n  \"problem\": [\n    {\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}\n  ],\n  \"method\": [\n    {\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 25.871299187998375,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000202\",\n  \"problem\": [\n    {\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}\n  ],\n  \"method\": [\n    {\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 94.0,
+          "seed": 648,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2590,
+            "output_tokens": 305
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"MailNET system to better adjust to diverse networks\"; evidence_id=\"A7\"; evidence=\"A complete spam detection system MailNET is devised to better adjust to diverse networks.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\"; evidence_id=\"A10\"; evidence=\"We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"}, {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [{\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}], \"contribution\": [{\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"}, {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"}, {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.685568457000045,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000202\",\n  \"problem\": [\n    {\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}\n  ],\n  \"method\": [\n    {\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 94.0,
+          "seed": 649,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4414,
+            "output_tokens": 305
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"MailNET system to better adjust to diverse networks\"; evidence_id=\"A7\"; evidence=\"A complete spam detection system MailNET is devised to better adjust to diverse networks.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\"; evidence_id=\"A10\"; evidence=\"We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"}, {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [{\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}], \"contribution\": [{\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"}, {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"}, {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 3,
+          "generation_seconds": 31.846114043000853,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000202\",\n  \"problem\": [\n    {\"concept\": \"system is not robust in diverse environments\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"spam detection on dynamic email social networks\", \"evidence_id\": \"A6\"}\n  ],\n  \"method\": [\n    {\"concept\": \"incremental support vector machine (SVM) model\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"live data set from a university-scale email server\", \"evidence_id\": \"A10\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"incremental support vector machine (SVM) model for spam detection\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"MailNET system to better adjust to diverse networks\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"incremental update scheme to efficiently re-train an SVM model\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\", \"evidence_id\": \"A10\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 94.0,
+          "seed": 650,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4475,
+            "output_tokens": 305
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"MailNET system to better adjust to diverse networks\"; evidence_id=\"A7\"; evidence=\"A complete spam detection system MailNET is devised to better adjust to diverse networks.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\"; evidence_id=\"A10\"; evidence=\"We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "incremental support vector machine (SVM) model for spam detection",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "MailNET system to better adjust to diverse networks",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "incremental update scheme to efficiently re-train an SVM model",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "evaluation on a live data set from a university-scale email server showing efficiency and effectiveness",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "live data set from a university-scale email server",
+            "evidence_id": "A10"
+          }
+        ],
+        "method": [
+          {
+            "concept": "incremental support vector machine (SVM) model",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "incremental update scheme",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P000202",
+        "problem": [
+          {
+            "concept": "system is not robust in diverse environments",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "no update scheme is provided to catch the feature changes of evolving networks",
+            "evidence_id": "A5"
+          }
+        ],
+        "task": [
+          {
+            "concept": "spam detection on dynamic email social networks",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 89.40298168799927,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "live data set from a university-scale email server",
+            "evidence": "We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 650,
+      "selected_score": 94.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11479,
+        "output_tokens": 915
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"MailNET system to better adjust to diverse networks\"; evidence_id=\"A7\"; evidence=\"A complete spam detection system MailNET is devised to better adjust to diverse networks.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\"; evidence_id=\"A10\"; evidence=\"We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "incremental support vector machine (SVM) model for spam detection",
+        "MailNET system to better adjust to diverse networks",
+        "incremental update scheme to efficiently re-train an SVM model",
+        "evaluation on a live data set from a university-scale email server showing efficiency and effectiveness"
+      ],
+      "dataset": [],
+      "method": [
+        "incremental support vector machine (SVM) model",
+        "incremental update scheme"
+      ],
+      "paper_id": "P000202",
+      "problem": [
+        "system is not robust in diverse environments",
+        "no update scheme is provided to catch the feature changes of evolving networks"
+      ],
+      "task": [
+        "spam detection on dynamic email social networks"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 89.40298168799927,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000202",
+    "usage": {
+      "input_tokens": 11479,
+      "output_tokens": 915
+    }
+  },
+  "record_sha256": "0c47940f94ce994c66fdb20aae7340a10b32e1b5b098c0202160cf6232eaa73c",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

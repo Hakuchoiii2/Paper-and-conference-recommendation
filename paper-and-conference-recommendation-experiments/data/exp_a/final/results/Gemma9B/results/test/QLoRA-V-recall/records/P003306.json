@@ -1,0 +1,533 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 35.32979825000075,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9960,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1407,
+            "output_tokens": 191
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}, {\"concept\": \"extended system is able to achieve high accuracies with relatively small amounts of training data\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 44.967724423993786,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}, {\"concept\": \"extended system is able to achieve high accuracies with relatively small amounts of training data\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9961,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3244,
+            "output_tokens": 222
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.202729516000545,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003306\", \"task\": [], \"method\": [{\"concept\": \"orthographic and phonetic transcriptions\", \"evidence_id\": \"A7\"}, {\"concept\": \"n-gram segmentation\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9962,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 897,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "n-gram segmentation",
+              "evidence": "Experiments were carried out on orthographic and phonetic transcriptions of commands, segmented on different levels of n-gram granularity.",
+              "facet": "method",
+              "index": 3,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "extended system is able to achieve high accuracies with relatively small amounts of training data",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "PATCOR",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "orthographic and phonetic transcriptions",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "n-gram segmentation",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P003306",
+        "problem": [
+          {
+            "concept": "no prior information on the alignment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "semantic frames in the training data can contain information that is not expressed in the utterances",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "induction of semantic frames",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 92.50025218999508,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P003306",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5548,
+        "output_tokens": 476
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "n-gram segmentation",
+          "evidence": "Experiments were carried out on orthographic and phonetic transcriptions of commands, segmented on different levels of n-gram granularity.",
+          "facet": "method",
+          "index": 3,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 35.32979825000075,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9960,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1407,
+            "output_tokens": 191
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}, {\"concept\": \"extended system is able to achieve high accuracies with relatively small amounts of training data\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 44.967724423993786,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003306\", \"problem\": [{\"concept\": \"no prior information on the alignment\", \"evidence_id\": \"A2\"}, {\"concept\": \"semantic frames in the training data can contain information that is not expressed in the utterances\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"induction of semantic frames\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"PATCOR\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"hierarchical HMM\", \"evidence_id\": \"A5\"}, {\"concept\": \"expression sharing\", \"evidence_id\": \"A5\"}, {\"concept\": \"extended system is able to achieve high accuracies with relatively small amounts of training data\", \"evidence_id\": \"A9\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9961,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3244,
+            "output_tokens": 222
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "extended system is able to achieve high accuracies with relatively small amounts of training data",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "PATCOR",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003306",
+        "problem": [
+          {
+            "concept": "no prior information on the alignment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "semantic frames in the training data can contain information that is not expressed in the utterances",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "induction of semantic frames",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 80.29752267399454,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9961,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4651,
+        "output_tokens": 413
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 35.32979825000075,
+        "inherited": false,
+        "messages_sha256": "b533f3e263ddb93d1bba2be20e388794596aadf945edd8cf808db2a71e12b3be",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 9960,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1407,
+          "output_tokens": 191
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 44.967724423993786,
+        "inherited": false,
+        "messages_sha256": "e7c2df5a0869eb41d16e75d9df23504f75d142a78accc02351d52a5a370ca1cb",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003306",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ]
+        },
+        "seed": 9961,
+        "usage": {
+          "input_tokens": 3244,
+          "output_tokens": 222
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.202729516000545,
+        "inherited": false,
+        "messages_sha256": "cc0a6933beeb6555f88fb6cb7f6bf8e15b3c8aeff6697514b3c34abeeba69c72",
+        "reached_token_limit": false,
+        "seed": 9962,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 897,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "orthographic and phonetic transcriptions",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "n-gram segmentation",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "extended system is able to achieve high accuracies with relatively small amounts of training data",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "PATCOR",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchical HMM",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "expression sharing",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003306",
+        "problem": [
+          {
+            "concept": "no prior information on the alignment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "semantic frames in the training data can contain information that is not expressed in the utterances",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "induction of semantic frames",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 12.202729516000545,
+      "messages_sha256": "cc0a6933beeb6555f88fb6cb7f6bf8e15b3c8aeff6697514b3c34abeeba69c72",
+      "raw_output": "{\"paper_id\": \"P003306\", \"task\": [], \"method\": [{\"concept\": \"orthographic and phonetic transcriptions\", \"evidence_id\": \"A7\"}, {\"concept\": \"n-gram segmentation\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 897,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "3fb91052f055addd500e326c603eafc0ff1705711f820dc46a8f4235d1723a61",
+    "facets": {
+      "contribution": [
+        "hierarchical HMM",
+        "expression sharing",
+        "extended system is able to achieve high accuracies with relatively small amounts of training data"
+      ],
+      "dataset": [
+        "PATCOR"
+      ],
+      "method": [
+        "hierarchical HMM",
+        "expression sharing",
+        "orthographic and phonetic transcriptions",
+        "n-gram segmentation"
+      ],
+      "paper_id": "P003306",
+      "problem": [
+        "no prior information on the alignment",
+        "semantic frames in the training data can contain information that is not expressed in the utterances"
+      ],
+      "task": [
+        "induction of semantic frames"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 92.50025218999508,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 92.50025218999508,
+      "input_tokens": 5548,
+      "output_tokens": 476
+    },
+    "paper_id": "P003306",
+    "source_sha256": "2fcf8e7237964970aa239effa861a0d9663c4b8cf8dcf5471ac910f6449bb8d1",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5548,
+      "output_tokens": 476
+    }
+  },
+  "record_sha256": "4692db795ab1c9940b627df8f45e71cf01aba170fb84d87d02253891fabe2c2f",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

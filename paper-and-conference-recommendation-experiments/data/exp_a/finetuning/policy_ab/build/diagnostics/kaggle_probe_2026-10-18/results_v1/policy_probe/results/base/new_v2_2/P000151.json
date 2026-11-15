@@ -1,0 +1,47 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "new_v2_2",
+    "paper_id": "P000151",
+    "seed": 495,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "messages_sha256": "3b7223d0732144a197cb154c33db07752146f58250f0ddb039ebcbaf0127e0e4",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P000151\",\n  \"problem\": [\n    {\n      \"concept\": \"Limitation in understanding free-form factual questions\",\n      \"evidence_ids\": [\"T0\", \"A0\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Classifying questions into fine-grained answer types\",\n      \"evidence_ids\": [\"A1\", \"A2\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Hierarchical classifier guided by semantic hierarchy\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"TREC 10 free-form questions\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"Machine learning approach to question classification\",\n      \"evidence_ids\": [\"A1\"]\n    },\n    {\n      \"concept\": \"Accurate results on TREC 10 dataset\",\n      \"evidence_ids\": [\"A3\"]\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 18.317765320000035,
+    "usage": {
+      "input_tokens": 1618,
+      "output_tokens": 229
+    },
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: Concept must use selected source words in source order",
+      "task[0]: Concept must use selected source words in source order",
+      "dataset[0]: Concept must use selected source words in source order",
+      "contribution[1]: Concept must use selected source words in source order"
+    ],
+    "bounded_stop": false
+  },
+  "record_sha256": "a7486b6642ba966b9441d16bbb2b58f2546c919a8e2187946ce2101d7a6dc8cb"
+}

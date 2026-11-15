@@ -1,0 +1,209 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000299\",\n  \"problem\": [\n    {\"concept\": \"challenge in understanding latest trends and summarizing state or general opinions due to big diversity and size of social media data\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"automated and real time opinion extraction and mining\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"sentiment classification of special group of sentences including change or deviation from desired range or value\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"patient's reviews on several different cholesterol lowering drugs\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"experimental results demonstrating over 72 percent F1 value\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.316619727000216,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000299\",\n  \"problem\": [\n    {\"concept\": \"challenge in understanding latest trends and summarizing state or general opinions due to big diversity and size of social media data\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"automated and real time opinion extraction and mining\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"sentiment classification of special group of sentences including change or deviation from desired range or value\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"patient's reviews on several different cholesterol lowering drugs\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"experimental results demonstrating over 72 percent F1 value\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 79.0745,
+          "seed": 939,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2512,
+            "output_tokens": 247
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in understanding latest trends and summarizing state or general opinions due to big diversity and size of social media data\"; evidence_id=\"A1\"; evidence=\"However, it is challenging to understand the latest trends and summarize the state or general opinions about products due to the big diversity and size of social media data and this creates the need of automated and real time opinion extraction and mining.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\"; evidence_id=\"A3\"; evidence=\"In this paper, fuzzy based knowledge engineering model has been developed for sentiment classification of special group of such sentences including the change or deviation from desired range or value.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automated and real time opinion extraction and mining\", \"evidence_id\": \"A1\"}, {\"concept\": \"sentiment classification of special group of sentences including change or deviation from desired range or value\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"patient's reviews on several different cholesterol lowering drugs\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"}, {\"concept\": \"experimental results demonstrating over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.37877642699823,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000299\",\n  \"problem\": [\n    {\"concept\": \"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"automated and real time opinion extraction and mining\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"}\n  ],\n  \"method\": [\n    {\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"patient's reviews on several different cholesterol lowering drugs\", \"evidence_id\": \"A5\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"experimental results demonstrating over 72 percent F1 value\", \"evidence_id\": \"A7\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 79.0745,
+          "seed": 940,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4303,
+            "output_tokens": 241
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\"; evidence_id=\"A1\"; evidence=\"However, it is challenging to understand the latest trends and summarize the state or general opinions about products due to the big diversity and size of social media data and this creates the need of automated and real time opinion extraction and mining.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\"; evidence_id=\"A3\"; evidence=\"In this paper, fuzzy based knowledge engineering model has been developed for sentiment classification of special group of such sentences including the change or deviation from desired range or value.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"automated and real time opinion extraction and mining\", \"evidence_id\": \"A1\"}, {\"concept\": \"sentiment classification of special group of sentences including change or deviation from desired range or value\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"patient's reviews on several different cholesterol lowering drugs\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\", \"evidence_id\": \"A3\"}, {\"concept\": \"experimental results demonstrating over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 3,
+          "generation_seconds": 29.19776183999784,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000299\",\n  \"problem\": [\n    {\n      \"concept\": \"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"automated and real time opinion extraction and mining\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"sentiment classification of special group of sentences including change or deviation from desired range or value\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"fuzzy based knowledge engineering model\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"patient's reviews on several different cholesterol lowering drugs\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"experimental results demonstrating over 72 percent F1 value\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 79.0745,
+          "seed": 941,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4282,
+            "output_tokens": 284
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\"; evidence_id=\"A1\"; evidence=\"However, it is challenging to understand the latest trends and summarize the state or general opinions about products due to the big diversity and size of social media data and this creates the need of automated and real time opinion extraction and mining.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\"; evidence_id=\"A3\"; evidence=\"In this paper, fuzzy based knowledge engineering model has been developed for sentiment classification of special group of such sentences including the change or deviation from desired range or value.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "experimental results demonstrating over 72 percent F1 value",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "patient's reviews on several different cholesterol lowering drugs",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "fuzzy based knowledge engineering model",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000299",
+        "problem": [
+          {
+            "concept": "challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automated and real time opinion extraction and mining",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "sentiment classification of special group of sentences including change or deviation from desired range or value",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 75.89315799399628,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "patient's reviews on several different cholesterol lowering drugs",
+            "evidence": "Therefore, in this research, some experiments were carried out on patient's reviews on several different cholesterol lowering drugs to determine their sentiment polarity.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 941,
+      "selected_score": 79.0745,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11097,
+        "output_tokens": 772
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\"; evidence_id=\"A1\"; evidence=\"However, it is challenging to understand the latest trends and summarize the state or general opinions about products due to the big diversity and size of social media data and this creates the need of automated and real time opinion extraction and mining.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\"; evidence_id=\"A3\"; evidence=\"In this paper, fuzzy based knowledge engineering model has been developed for sentiment classification of special group of such sentences including the change or deviation from desired range or value.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment",
+        "experimental results demonstrating over 72 percent F1 value"
+      ],
+      "dataset": [],
+      "method": [
+        "fuzzy based knowledge engineering model"
+      ],
+      "paper_id": "P000299",
+      "problem": [
+        "challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data"
+      ],
+      "task": [
+        "automated and real time opinion extraction and mining",
+        "sentiment classification of special group of sentences including change or deviation from desired range or value"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 75.89315799399628,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000299",
+    "usage": {
+      "input_tokens": 11097,
+      "output_tokens": 772
+    }
+  },
+  "record_sha256": "3e4315b82a77b9746379765af34686c9e02f99e785dd6d016712b42f561c43f2",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

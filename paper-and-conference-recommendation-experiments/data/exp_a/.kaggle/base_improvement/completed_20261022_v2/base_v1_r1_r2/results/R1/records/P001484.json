@@ -1,0 +1,231 @@
+{
+  "record": {
+    "arm": "R1",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"measure of cost efficiency in natural language data annotation is inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into active learning selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised active learning\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.430694196999866,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"measure of cost efficiency in natural language data annotation is inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into active learning selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised active learning\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 28.0,
+          "seed": 4494,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2754,
+            "output_tokens": 207
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of cost efficiency in natural language data annotation is inadequate\"; evidence_id=\"A2\"; evidence=\"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate and should be replaced by a more adequate cost indicator, viz.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"incorporate costs into active learning selection mechanism\"; evidence_id=\"A4\"; evidence=\"We here propose three different approaches to incorporate costs into the AL selection mechanism and evaluate them on the MUC7 T corpus, an extension of the MUC7 newspaper corpus that contains such annotation time information.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised active learning\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"incorporate costs into the AL selection mechanism\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"cost-sensitive version of semi-supervised active learning\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.13027629499993,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into the AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised active learning\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 4495,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4645,
+            "output_tokens": 220
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised active learning\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001484\", \"problem\": [{\"concept\": \"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"incorporate costs into the AL selection mechanism\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"cost-sensitive version of semi-supervised active learning\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"MUC7 T corpus\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 24.551378531999944,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P001484\",\n  \"problem\": [\n    {\n      \"concept\": \"This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"incorporate costs into the AL selection mechanism\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"cost-sensitive version of semi-supervised active learning\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"MUC7 T corpus\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 4496,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4451,
+            "output_tokens": 220
+          },
+          "validation_errors": [
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised active learning\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MUC7 T corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "cost-sensitive version of semi-supervised active learning",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001484",
+        "problem": [
+          {
+            "concept": "This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "incorporate costs into the AL selection mechanism",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 68.11234902399974,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4496,
+      "selected_score": 64.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11850,
+        "output_tokens": 647
+      },
+      "validation_errors": [
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"cost-sensitive version of semi-supervised active learning\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL\"; evidence_id=\"A5\"; evidence=\"Our experiments reveal that using a costsensitive version of semi-supervised AL, up to 54% of true annotation time can be saved compared to random selection.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "a9c96bc745518fdcec8023cc7d5aa764a1b1855e02c71eb656a6ea563d043291",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": false,
+        "messages_sha256": "82723cf700e6221819ac1116f1e6191e2545d5a46ee6a48baa89d8a36e164656",
+        "repair_packet": null,
+        "seed": 4494
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "9b0e97968d8ff0b9bb483cd00ea531309519298d40050824f9d94954256204ad",
+        "repair_packet": null,
+        "seed": 4495
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "d4a8b20e3d0ce136c68b16e671bdf00e0bd62267ad6e45c7016b982115a1ec75",
+        "repair_packet": null,
+        "seed": 4496
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "up to 54% of true annotation time can be saved using cost-sensitive semi-supervised AL"
+      ],
+      "dataset": [
+        "MUC7 T corpus"
+      ],
+      "method": [
+        "cost-sensitive version of semi-supervised active learning"
+      ],
+      "paper_id": "P001484",
+      "problem": [
+        "This measure, assuming uniform costs for all tokens involved, is, from a linguistic perspective at least, intrinsically inadequate"
+      ],
+      "task": [
+        "incorporate costs into the AL selection mechanism"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 68.11234902399974,
+    "instruction_sha256": "e154398ed4976b8a39d6e0c8e55f325e4f0dd64f196d0c6a65232d998bac3993",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 68.11234902399974,
+      "input_tokens": 11850,
+      "output_tokens": 647
+    },
+    "paper_id": "P001484",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 11850,
+      "output_tokens": 647
+    }
+  },
+  "record_sha256": "5ac061d5f43098be482bee49cdcebf7b7df7491487a0a35871b7e3a65dbe267c",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

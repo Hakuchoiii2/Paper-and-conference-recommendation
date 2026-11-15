@@ -1,0 +1,342 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002652\",\n  \"problem\": [\n    {\"concept\": \"GMST problem is NP-hard even on trees\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"present a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}\n  ],\n  \"method\": [\n    {\"concept\": \"exact exponential time algorithm based on dynamic programming\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"mixed integer programming models\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"solution procedure for solving the problem to optimality\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"advantages of the method in comparison with earlier methods\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 23.391055983000115,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002652\",\n  \"problem\": [\n    {\"concept\": \"GMST problem is NP-hard even on trees\", \"evidence_id\": \"A2\"}\n  ],\n  \"task\": [\n    {\"concept\": \"present a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}\n  ],\n  \"method\": [\n    {\"concept\": \"exact exponential time algorithm based on dynamic programming\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"mixed integer programming models\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"solution procedure for solving the problem to optimality\", \"evidence_id\": \"A5\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"advantages of the method in comparison with earlier methods\", \"evidence_id\": \"A6\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 81.1818,
+          "seed": 7998,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2439,
+            "output_tokens": 288
+          },
+          "validation_errors": [
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"solution procedure for solving the problem to optimality\"; evidence_id=\"A5\"; evidence=\"Based on a new model of the GMST we present a solution procedure that solves the problem to optimality for graphs with nodes up to 240.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"advantages of the method in comparison with earlier methods\"; evidence_id=\"A6\"; evidence=\"We discuss the advantages of our method in comparison with earlier methods.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002652\", \"problem\": [{\"concept\": \"GMST problem is NP-hard even on trees\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"present a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"exact exponential time algorithm based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"mixed integer programming models\", \"evidence_id\": \"A3\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"}, {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}, {\"concept\": \"discussion of the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 11.424162367999998,
+          "operations": [
+            {
+              "before": {
+                "concept": "solution procedure for solving the problem to optimality",
+                "evidence_id": "A5"
+              },
+              "concept": "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "advantages of the method in comparison with earlier methods",
+                "evidence_id": "A6"
+              },
+              "concept": "discussion of the advantages of our method in comparison with earlier methods",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 3,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002652\",\"edits\":[{\"op\":\"replace\",\"facet\":\"method\",\"index\":2,\"concept\":\"solution procedure that solves the problem to optimality for graphs with nodes up to 240\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":3,\"concept\":\"discussion of the advantages of our method in comparison with earlier methods\",\"evidence_id\":\"A6\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 84.5152,
+          "seed": 7999,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2844,
+            "output_tokens": 105
+          },
+          "validation_errors": [
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"discussion of the advantages of our method in comparison with earlier methods\"; evidence_id=\"A6\"; evidence=\"We discuss the advantages of our method in comparison with earlier methods.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002652\", \"problem\": [{\"concept\": \"GMST problem is NP-hard even on trees\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"present a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"exact exponential time algorithm based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"mixed integer programming models\", \"evidence_id\": \"A3\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"}, {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}, {\"concept\": \"discuss the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 7.297873049999907,
+          "operations": [
+            {
+              "before": {
+                "concept": "discussion of the advantages of our method in comparison with earlier methods",
+                "evidence_id": "A6"
+              },
+              "concept": "discuss the advantages of our method in comparison with earlier methods",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 3,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002652\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":3,\"concept\":\"discuss the advantages of our method in comparison with earlier methods\",\"evidence_id\":\"A6\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 87.8485,
+          "seed": 8000,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2744,
+            "output_tokens": 58
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new mixed integer programming models of the GMST problem",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "relationships between the polytopes corresponding to their linear relaxations",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discuss the advantages of our method in comparison with earlier methods",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "exact exponential time algorithm based on dynamic programming",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "mixed integer programming models",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002652",
+        "problem": [
+          {
+            "concept": "GMST problem is NP-hard even on trees",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "present a solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 42.11309140100002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002652",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 8000,
+      "selected_score": 87.8485,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 8027,
+        "output_tokens": 451
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "c0ae80f044074b49881dc24882117d8de2bef86a0ccfea5a5382382f404dbdae",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 7998
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "68f2353deb9516d037292268e1b66f04d31717505a129edeb2a8db309a0e6253",
+        "operations": [
+          {
+            "before": {
+              "concept": "solution procedure for solving the problem to optimality",
+              "evidence_id": "A5"
+            },
+            "concept": "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "advantages of the method in comparison with earlier methods",
+              "evidence_id": "A6"
+            },
+            "concept": "discussion of the advantages of our method in comparison with earlier methods",
+            "evidence_id": "A6",
+            "facet": "contribution",
+            "index": 3,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 7999
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "a552ea4e15194f3044a656badf876b32f2a59e704029f7155d1260b42bde1e89",
+        "operations": [
+          {
+            "before": {
+              "concept": "discussion of the advantages of our method in comparison with earlier methods",
+              "evidence_id": "A6"
+            },
+            "concept": "discuss the advantages of our method in comparison with earlier methods",
+            "evidence_id": "A6",
+            "facet": "contribution",
+            "index": 3,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 8000
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "new mixed integer programming models of the GMST problem",
+        "relationships between the polytopes corresponding to their linear relaxations",
+        "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+        "discuss the advantages of our method in comparison with earlier methods"
+      ],
+      "dataset": [],
+      "method": [
+        "exact exponential time algorithm based on dynamic programming",
+        "mixed integer programming models",
+        "solution procedure that solves the problem to optimality for graphs with nodes up to 240"
+      ],
+      "paper_id": "P002652",
+      "problem": [
+        "GMST problem is NP-hard even on trees"
+      ],
+      "task": [
+        "present a solution procedure that solves the problem to optimality for graphs with nodes up to 240"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 42.11309140100002,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 18.722035417999905,
+      "input_tokens": 5588,
+      "output_tokens": 163
+    },
+    "paper_id": "P002652",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1,
+        2
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 8027,
+      "output_tokens": 451
+    }
+  },
+  "record_sha256": "126dce8facf8da2f5295dbf9de9aeae8b6d0a9508f804700a16abf5f9a80afc4",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

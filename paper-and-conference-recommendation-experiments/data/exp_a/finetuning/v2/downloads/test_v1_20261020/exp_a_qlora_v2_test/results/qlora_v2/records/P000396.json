@@ -1,0 +1,233 @@
+{
+  "record": {
+    "adapter_sha256": "fa80cb7e26a1ca34ec98ce1f967b095659779b1f45b3ea4963e6f12167c0ccc7",
+    "arm": "qlora_v2",
+    "audit": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "bounded_stop": false,
+          "discarded_suffix_chars": 0,
+          "duplicate": null,
+          "generation_seconds": 32.358846,
+          "raw_output": "{\"paper_id\": \"P000396\", \"problem\": [{\"concept\": \"neural relation extraction: seldom considered syntax information to model the entities.\", \"evidence_ids\": [\"A1\"]}], \"task\": [{\"concept\": \"neural relation extraction\", \"evidence_ids\": [\"A2\"]}], \"method\": [{\"concept\": \"tree-GRU\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"intra-sentence and inter-sentence attentions\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"combine both sentence embedding and entity embedding for relation classification.\", \"evidence_ids\": [\"A5\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-aware entity embedding for neural relation extraction.\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.\", \"evidence_ids\": [\"A2\", \"A6\"]}]}",
+          "raw_output_untrimmed": "{\"paper_id\": \"P000396\", \"problem\": [{\"concept\": \"neural relation extraction: seldom considered syntax information to model the entities.\", \"evidence_ids\": [\"A1\"]}], \"task\": [{\"concept\": \"neural relation extraction\", \"evidence_ids\": [\"A2\"]}], \"method\": [{\"concept\": \"tree-GRU\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"intra-sentence and inter-sentence attentions\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"combine both sentence embedding and entity embedding for relation classification.\", \"evidence_ids\": [\"A5\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-aware entity embedding for neural relation extraction.\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.\", \"evidence_ids\": [\"A2\", \"A6\"]}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "seed": 834,
+          "stage": "extract",
+          "stop_reason": "json_complete",
+          "usage": {
+            "input_tokens": 1699,
+            "output_tokens": 231
+          },
+          "validation_errors": []
+        },
+        {
+          "attempt": 2,
+          "bounded_stop": false,
+          "discarded_suffix_chars": 0,
+          "duplicate": null,
+          "generation_seconds": 32.696132,
+          "raw_output": "{\"paper_id\": \"P000396\", \"problem\": [{\"concept\": \"neural relation extraction: seldom considered syntax information to model the entities.\", \"evidence_ids\": [\"A1\"]}], \"task\": [{\"concept\": \"neural relation extraction\", \"evidence_ids\": [\"A2\"]}], \"method\": [{\"concept\": \"tree-GRU\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"intra-sentence and inter-sentence attentions\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"combine both sentence embedding and entity embedding for relation classification.\", \"evidence_ids\": [\"A5\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-aware entity embedding for neural relation extraction.\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.\", \"evidence_ids\": [\"A2\", \"A6\"]}]}",
+          "raw_output_untrimmed": "{\"paper_id\": \"P000396\", \"problem\": [{\"concept\": \"neural relation extraction: seldom considered syntax information to model the entities.\", \"evidence_ids\": [\"A1\"]}], \"task\": [{\"concept\": \"neural relation extraction\", \"evidence_ids\": [\"A2\"]}], \"method\": [{\"concept\": \"tree-GRU\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"intra-sentence and inter-sentence attentions\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"combine both sentence embedding and entity embedding for relation classification.\", \"evidence_ids\": [\"A5\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"syntax-aware entity embedding for neural relation extraction.\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.\", \"evidence_ids\": [\"A2\", \"A6\"]}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "seed": 835,
+          "stage": "review",
+          "stop_reason": "json_complete",
+          "usage": {
+            "input_tokens": 2013,
+            "output_tokens": 231
+          },
+          "validation_errors": []
+        }
+      ],
+      "selected_attempt": 2,
+      "validation_errors": []
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "syntax-aware entity embedding for neural relation extraction.",
+          "evidence": [
+            {
+              "evidence": "In this paper, we propose to learn syntax-aware entity embedding for neural relation extraction.",
+              "evidence_id": "A2",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.",
+          "evidence": [
+            {
+              "evidence": "In this paper, we propose to learn syntax-aware entity embedding for neural relation extraction.",
+              "evidence_id": "A2",
+              "source": "abstract"
+            },
+            {
+              "evidence": "We conduct experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.",
+              "evidence_id": "A6",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "tree-GRU",
+          "evidence": [
+            {
+              "evidence": "First, we encode the context of entities on a dependency tree as sentence-level entity embedding based on tree-GRU.",
+              "evidence_id": "A3",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "intra-sentence and inter-sentence attentions",
+          "evidence": [
+            {
+              "evidence": "Then, we utilize both intra-sentence and inter-sentence attentions to obtain sentence set-level entity embedding over all sentences containing the focus entity pair.",
+              "evidence_id": "A4",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "combine both sentence embedding and entity embedding for relation classification.",
+          "evidence": [
+            {
+              "evidence": "Finally, we combine both sentence embedding and entity embedding for relation classification.",
+              "evidence_id": "A5",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "paper_id": "P000396",
+      "problem": [
+        {
+          "concept": "neural relation extraction: seldom considered syntax information to model the entities.",
+          "evidence": [
+            {
+              "evidence": "Recent studies on neural relation extraction have shown great progress on this task via modeling the sentences in low-dimensional spaces, but seldom considered syntax information to model the entities.",
+              "evidence_id": "A1",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "neural relation extraction",
+          "evidence": [
+            {
+              "evidence": "In this paper, we propose to learn syntax-aware entity embedding for neural relation extraction.",
+              "evidence_id": "A2",
+              "source": "abstract"
+            }
+          ]
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "syntax-aware entity embedding for neural relation extraction.",
+        "syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction."
+      ],
+      "dataset": [],
+      "method": [
+        "tree-GRU",
+        "intra-sentence and inter-sentence attentions",
+        "combine both sentence embedding and entity embedding for relation classification."
+      ],
+      "paper_id": "P000396",
+      "problem": [
+        "neural relation extraction: seldom considered syntax information to model the entities."
+      ],
+      "task": [
+        "neural relation extraction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 65.054978,
+    "instruction_sha256": "65bf8ff8661bd076f658337b6f921f5ba360851bff3c3ca8d182ed95da2c0d8b",
+    "paper_id": "P000396",
+    "runtime": {
+      "adapter_enabled": true,
+      "attention": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "quantization": "nf4_double_fp16",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "use_cache": true
+    },
+    "selection": {
+      "contribution": [
+        {
+          "concept": "syntax-aware entity embedding for neural relation extraction.",
+          "evidence_ids": [
+            "A2"
+          ]
+        },
+        {
+          "concept": "syntax-aware entity embedding for neural relation extraction: experiments on a widely used real-world dataset and the experimental results show that our model can make full use of all informative instances and achieve state-of-the-art performance of relation extraction.",
+          "evidence_ids": [
+            "A2",
+            "A6"
+          ]
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "tree-GRU",
+          "evidence_ids": [
+            "A3"
+          ]
+        },
+        {
+          "concept": "intra-sentence and inter-sentence attentions",
+          "evidence_ids": [
+            "A4"
+          ]
+        },
+        {
+          "concept": "combine both sentence embedding and entity embedding for relation classification.",
+          "evidence_ids": [
+            "A5"
+          ]
+        }
+      ],
+      "paper_id": "P000396",
+      "problem": [
+        {
+          "concept": "neural relation extraction: seldom considered syntax information to model the entities.",
+          "evidence_ids": [
+            "A1"
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "neural relation extraction",
+          "evidence_ids": [
+            "A2"
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "input_tokens": 3712,
+      "output_tokens": 462
+    }
+  },
+  "record_sha256": "9ae6c3aa302223c92f21c196a8ebc1efb18e5500af39eadd09c30dfcd2495a3d",
+  "signature": "377f9938a35bda4132f03f08ac326847c0ae9f5807404e0562daa7c247822ef6"
+}

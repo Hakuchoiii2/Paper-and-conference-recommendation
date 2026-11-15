@@ -1,0 +1,473 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.08900549900045,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8484,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1387,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.512441982000382,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8485,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3098,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.307685342000696,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002814\",\"task\":[{\"concept\":\"author's gender prediction\",\"evidence_id\":\"A5\"},{\"concept\":\"language identification\",\"evidence_id\":\"A6\"}],\"method\":[{\"concept\":\"supervised classification baseline system\",\"evidence_id\":\"A7\"},{\"concept\":\"character and word level features\",\"evidence_id\":\"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8486,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 813,
+            "output_tokens": 75
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "English-Hindi texts collected from Twitter annotated with author's gender",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "supervised classification baseline system",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "code-mixing",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "variations in spelling, non-grammatical structure and transliteration",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "language identification",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 55.90913282300153,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P002814",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5298,
+        "output_tokens": 401
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.08900549900045,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8484,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1387,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.512441982000382,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002814\", \"problem\": [{\"concept\": \"code-mixing\", \"evidence_id\": \"A3\"}, {\"concept\": \"variations in spelling, non-grammatical structure and transliteration\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"author's gender prediction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"supervised classification baseline system\", \"evidence_id\": \"A7\"}, {\"concept\": \"character and word level features\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"English-Hindi texts collected from Twitter annotated with author's gender\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 8485,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3098,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "English-Hindi texts collected from Twitter annotated with author's gender",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "supervised classification baseline system",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "code-mixing",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "variations in spelling, non-grammatical structure and transliteration",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 45.60144748100083,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 8485,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4485,
+        "output_tokens": 326
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.08900549900045,
+        "inherited": false,
+        "messages_sha256": "f9ef250998a14b150db8266bfc6c11843c614c653c022b0b3abdefd540443088",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 8484,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1387,
+          "output_tokens": 163
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 23.512441982000382,
+        "inherited": false,
+        "messages_sha256": "85eff07d0bd758d8f334fa830f9b5a828a8ed535534cefcd908b657e52dfdecb",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002814",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 8485,
+        "usage": {
+          "input_tokens": 3098,
+          "output_tokens": 163
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.307685342000696,
+        "inherited": false,
+        "messages_sha256": "5a4cdbcfc7f2331a6f224c23145a053c9c7e1e3d8d4da29758a1bea093f0b462",
+        "reached_token_limit": false,
+        "seed": 8486,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 813,
+          "output_tokens": 75
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "language identification",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "English-Hindi texts collected from Twitter annotated with author's gender",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "supervised classification baseline system",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002814",
+        "problem": [
+          {
+            "concept": "code-mixing",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "variations in spelling, non-grammatical structure and transliteration",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "author's gender prediction",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "supervised classification baseline system",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "character and word level features",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.307685342000696,
+      "messages_sha256": "5a4cdbcfc7f2331a6f224c23145a053c9c7e1e3d8d4da29758a1bea093f0b462",
+      "raw_output": "{\"paper_id\":\"P002814\",\"task\":[{\"concept\":\"author's gender prediction\",\"evidence_id\":\"A5\"},{\"concept\":\"language identification\",\"evidence_id\":\"A6\"}],\"method\":[{\"concept\":\"supervised classification baseline system\",\"evidence_id\":\"A7\"},{\"concept\":\"character and word level features\",\"evidence_id\":\"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 813,
+        "output_tokens": 75
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "1cc868d11df917bfb882eaaaedeb3b299f12f8a8805f7960fcb2be9067e25879",
+    "facets": {
+      "contribution": [
+        "English-Hindi texts collected from Twitter annotated with author's gender"
+      ],
+      "dataset": [],
+      "method": [
+        "supervised classification baseline system",
+        "character and word level features"
+      ],
+      "paper_id": "P002814",
+      "problem": [
+        "code-mixing",
+        "variations in spelling, non-grammatical structure and transliteration"
+      ],
+      "task": [
+        "author's gender prediction",
+        "language identification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 55.90913282300153,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 55.90913282300153,
+      "input_tokens": 5298,
+      "output_tokens": 401
+    },
+    "paper_id": "P002814",
+    "source_sha256": "8b8bb3718951f8ca7b9a2d95dc2b83962abd4a2c201fcf2e55536c8b63865321",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5298,
+      "output_tokens": 401
+    }
+  },
+  "record_sha256": "9d98e60f3d2b852e16590125026c37cefb3d6c5c80745a27e2350378e8d578ba",
+  "signature": "c4e41850ab9239cde830284e89193f54b9e906492bcc07dfd709400a389b78fc"
+}

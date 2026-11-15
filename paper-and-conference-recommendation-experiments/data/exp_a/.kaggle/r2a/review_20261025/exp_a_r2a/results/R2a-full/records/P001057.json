@@ -1,0 +1,238 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 13.444642505000047,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001057\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"},\n    {\"concept\": \"biological vision results\", \"evidence_id\": \"A0\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 81.6923,
+          "seed": 3213,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2337,
+            "output_tokens": 151
+          },
+          "validation_errors": [
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"biological vision results\"; evidence_id=\"A0\"; evidence=\"We use well-established results in biological vision to construct a novel vision model for handwritten digit recognition.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001057\", \"problem\": [], \"task\": [{\"concept\": \"handwritten digit recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"novel vision model\", \"evidence_id\": \"T0\"}, {\"concept\": \"well-established results in biological vision\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"MNIST\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"model outperforms other models on the same data set\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 6.259846532999973,
+          "operations": [
+            {
+              "before": {
+                "concept": "biological vision results",
+                "evidence_id": "A0"
+              },
+              "concept": "well-established results in biological vision",
+              "evidence_id": "A0",
+              "facet": "method",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P001057\",\"edits\":[{\"op\":\"replace\",\"facet\":\"method\",\"index\":1,\"concept\":\"well-established results in biological vision\",\"evidence_id\":\"A0\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 87.6923,
+          "seed": 3214,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2485,
+            "output_tokens": 51
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model outperforms other models on the same data set",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MNIST",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "novel vision model",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "well-established results in biological vision",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P001057",
+        "problem": [],
+        "task": [
+          {
+            "concept": "handwritten digit recognition",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 19.70448903800002,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001057",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 3214,
+      "selected_score": 87.6923,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4822,
+        "output_tokens": 202
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4cc9142494e450dd8a40ad8951951b22ab4a0ca67e35cd67f792ff5dc4efc172",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 3213
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "f33baf03ba7993cd682d034ddbfc4b362c92702f2bd14a7287544bbc6bdd6529",
+        "operations": [
+          {
+            "before": {
+              "concept": "biological vision results",
+              "evidence_id": "A0"
+            },
+            "concept": "well-established results in biological vision",
+            "evidence_id": "A0",
+            "facet": "method",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 3214
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "model outperforms other models on the same data set"
+      ],
+      "dataset": [
+        "MNIST"
+      ],
+      "method": [
+        "novel vision model",
+        "well-established results in biological vision"
+      ],
+      "paper_id": "P001057",
+      "problem": [],
+      "task": [
+        "handwritten digit recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 19.70448903800002,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 6.259846532999973,
+      "input_tokens": 2485,
+      "output_tokens": 51
+    },
+    "paper_id": "P001057",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 4822,
+      "output_tokens": 202
+    }
+  },
+  "record_sha256": "962a27dfc3b4566ca61f3c998cf02000fd3f9d661ece0a61ba747fe837ecd64a",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

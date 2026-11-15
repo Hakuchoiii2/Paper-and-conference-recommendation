@@ -1,0 +1,166 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"limited work has been reported for objective statements that imply sentiment\", \"evidence_id\": \"A2\"}, {\"concept\": \"big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"sentiment classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"opinion extraction and mining\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}, {\"concept\": \"over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.232974151000235,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"limited work has been reported for objective statements that imply sentiment\", \"evidence_id\": \"A2\"}, {\"concept\": \"big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"sentiment classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"opinion extraction and mining\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}, {\"concept\": \"over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 939,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2512,
+            "output_tokens": 180
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"limited work has been reported for objective statements that imply sentiment\", \"evidence_id\": \"A2\"}, {\"concept\": \"big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"sentiment classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"opinion extraction and mining\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}, {\"concept\": \"over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.76548035399901,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000299\", \"problem\": [{\"concept\": \"limited work has been reported for objective statements that imply sentiment\", \"evidence_id\": \"A2\"}, {\"concept\": \"big diversity and size of social media data\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"sentiment classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"opinion extraction and mining\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"fuzzy based knowledge engineering model\", \"evidence_id\": \"A3\"}, {\"concept\": \"over 72 percent F1 value\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 940,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4063,
+            "output_tokens": 180
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "fuzzy based knowledge engineering model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "over 72 percent F1 value",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "fuzzy based knowledge engineering model",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000299",
+        "problem": [
+          {
+            "concept": "limited work has been reported for objective statements that imply sentiment",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "big diversity and size of social media data",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "sentiment classification",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "opinion extraction and mining",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 57.998454504999245,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 940,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6575,
+        "output_tokens": 360
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "fuzzy based knowledge engineering model",
+        "over 72 percent F1 value"
+      ],
+      "dataset": [],
+      "method": [
+        "fuzzy based knowledge engineering model"
+      ],
+      "paper_id": "P000299",
+      "problem": [
+        "limited work has been reported for objective statements that imply sentiment",
+        "big diversity and size of social media data"
+      ],
+      "task": [
+        "sentiment classification",
+        "opinion extraction and mining"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 57.998454504999245,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000299",
+    "usage": {
+      "input_tokens": 6575,
+      "output_tokens": 360
+    }
+  },
+  "record_sha256": "f5b124cf285873c6a4bd0ebb6fc345f03b238a98ec7685b550a3d4b3df952210",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

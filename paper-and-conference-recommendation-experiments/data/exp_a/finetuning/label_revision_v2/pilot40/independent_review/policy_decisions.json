@@ -1,0 +1,48 @@
+{
+  "reviewer": "independent_ai_reviewer",
+  "human_review_status": "pending",
+  "ruleset_reviewed": "policy_v2_1.md",
+  "decision_status": "unresolved_until_parent_adjudication",
+  "choices": [
+    {
+      "id": "survey_vs_comparison_vs_demonstration",
+      "affected_facets": [
+        {
+          "paper_id": "P003879",
+          "facet": "method"
+        },
+        {
+          "paper_id": "P001860",
+          "facet": "method"
+        },
+        {
+          "paper_id": "P002633",
+          "facet": "method"
+        }
+      ],
+      "current_ambiguity": "v2.1 admits techniques actually studied as the objective, with a comparative-baseline exception, but does not state whether a nonempirical survey's reviewed models are method labels.",
+      "recommended_resolution": "Use the study's actually performed procedures for a topic survey: review, synthesis, analysis and taxonomy. Do not turn merely described models into implemented methods. Compared techniques qualify in an empirical comparative study because they are actually evaluated. A methodological demonstration can qualify when the source reports concrete supplied examples or a described operational procedure, even without a deployment experiment.",
+      "application": {
+        "P003879": "Retain survey and analysis of selection criteria; exclude reviewed classification models under the clarified boundary. This is a defensible resolution, not already unambiguously required by the v2.1 text.",
+        "P001860": "Retain compositional methods and relational-similarity evaluation; the study investigates their performance in benchmark/KB completion experiments.",
+        "P002633": "Reflexivity is a demonstration subject only if the actual offered examples establish that role. Use A0+A7+A10 together for role evidence, rather than A7's review mention alone; retain the performed literature/personal-example review. Do not add reflexive diary, IPA or A11 recommendations as performed methods without source support."
+      },
+      "rule_change_assessment": "If the operational rule is changed to draw this boundary and it changes eligible labels versus the blind interpretation, version it as a policy clarification with changed annotation consequences and test it on a fresh train/dev sample under section 6.5. The sealed pass remains a valid blind v2.1 extraction; it does not retroactively test the clarified rule."
+    },
+    {
+      "id": "ontology_as_dataset",
+      "affected_facets": [
+        {
+          "paper_id": "P004130",
+          "facet": "dataset"
+        }
+      ],
+      "current_ambiguity": "Current keep-list names corpus/benchmark/database/lexicon; source calls Klout Topics a lightweight ontology. It is clearly named and introduced, but ontology eligibility is not explicit.",
+      "recommended_resolution": "Allow a named ontology or structured knowledge resource in dataset when the source explicitly introduces or uses the resource. Keep Klout Topics in dataset under that amended definition. Do not use the user count, Klout.com platform, unnamed data or knowledge-base entities merely referenced as separate datasets.",
+      "alternative_resolution": "Under a strictly closed resource list, set dataset=[] while retaining Klout Topics as method and contribution.",
+      "rule_change_assessment": "Explicitly adding named ontologies/structured knowledge resources changes the eligible resource class under a strict reading of v2.1. This is an operational semantic rule expansion; version it and test an untouched train/dev sample before declaring stability. It need not change v1 or any test scores."
+    }
+  ],
+  "fresh_sample_requirement": "Use train/dev only, source-first and sealed before labels, under the final clarified policy. Include relevant boundary cases without using student outputs or test results. Do not claim the current review tested policy text written after its unblinding.",
+  "rollout_gate": "Resolve all material facet corrections and source-exclusion decisions, then test changed policy boundaries on fresh train/dev sources. Human review remains pending; AI agreement is not accuracy or human gold."
+}

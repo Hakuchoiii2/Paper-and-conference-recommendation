@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-03",
+  "cause": "Manifest retained pre-logging release checksums",
+  "changes": [
+    {
+      "path": "data/exp_a/final/orchestration/gemma-llama/bootstrap.py",
+      "old_sha256": "1c7ead89ef7329aeee635ea0df7249033337d2b09c8dbf03cefb9c06b8f216b0",
+      "new_sha256": "b1ace7e2acb9eaf3325e7b33d8b1f82c60de422866d2564953a9f1331f1c94bc"
+    },
+    {
+      "path": "data/exp_a/final/orchestration/gemma-llama/compat.py",
+      "old_sha256": "063432e653a26131126f0059855f1e72d81a1961b0bb2ae580971eb3a6fe943e",
+      "new_sha256": "0013519d78f75a95585f1dfe46b2e086f38752f23140cadb9eaca49b921af7c9"
+    },
+    {
+      "path": "data/exp_a/final/orchestration/gemma-llama/test_compare.py",
+      "old_sha256": "1685c77c32745b7f21643a9225c707aa4272fd141d812451c76db513eb50888e",
+      "new_sha256": "5ce58bf02e3de1b4b26b70262fbe7c9ac28412a91ecea5da289626eea12ec8de"
+    }
+  ],
+  "evidence": [
+    "bootstrap equals release_20261031_logging_v1 after substituting bundle placeholder",
+    "compat byte-identical to logging release input bundle",
+    "15 existing comparison tests passed before resealing"
+  ],
+  "code_modified": false
+}

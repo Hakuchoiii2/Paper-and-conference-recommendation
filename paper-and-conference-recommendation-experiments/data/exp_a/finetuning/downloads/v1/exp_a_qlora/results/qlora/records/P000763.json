@@ -1,0 +1,159 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000763\", \"problem\": [], \"task\": [{\"concept\": \"generalise these ideas to tensor-based models\", \"evidence_id\": \"A1\"}, {\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"prior disambiguation step\", \"evidence_id\": \"A0\"}, {\"concept\": \"disambiguation algorithms\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}, {\"concept\": \"disambiguation can provide better compositional representation even for the case of tensor-based models\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.076785093999206,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000763\", \"problem\": [], \"task\": [{\"concept\": \"generalise these ideas to tensor-based models\", \"evidence_id\": \"A1\"}, {\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"prior disambiguation step\", \"evidence_id\": \"A0\"}, {\"concept\": \"disambiguation algorithms\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}, {\"concept\": \"disambiguation can provide better compositional representation even for the case of tensor-based models\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 2331,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2431,
+            "output_tokens": 180
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000763\", \"problem\": [], \"task\": [{\"concept\": \"generalise these ideas to tensor-based models\", \"evidence_id\": \"A1\"}, {\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"prior disambiguation step\", \"evidence_id\": \"A0\"}, {\"concept\": \"disambiguation algorithms\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}, {\"concept\": \"disambiguation can provide better compositional representation even for the case of tensor-based models\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.03788188999897,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000763\", \"problem\": [], \"task\": [{\"concept\": \"generalise these ideas to tensor-based models\", \"evidence_id\": \"A1\"}, {\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"prior disambiguation step\", \"evidence_id\": \"A0\"}, {\"concept\": \"disambiguation algorithms\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"disambiguation algorithms for a number of tensor-based models\", \"evidence_id\": \"A2\"}, {\"concept\": \"disambiguation can provide better compositional representation even for the case of tensor-based models\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 2332,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3986,
+            "output_tokens": 180
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "disambiguation algorithms for a number of tensor-based models",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "disambiguation can provide better compositional representation even for the case of tensor-based models",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "prior disambiguation step",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "disambiguation algorithms",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P000763",
+        "problem": [],
+        "task": [
+          {
+            "concept": "generalise these ideas to tensor-based models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "disambiguation algorithms for a number of tensor-based models",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 60.11466698399818,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2332,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6417,
+        "output_tokens": 360
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "disambiguation algorithms for a number of tensor-based models",
+        "disambiguation can provide better compositional representation even for the case of tensor-based models"
+      ],
+      "dataset": [],
+      "method": [
+        "prior disambiguation step",
+        "disambiguation algorithms"
+      ],
+      "paper_id": "P000763",
+      "problem": [],
+      "task": [
+        "generalise these ideas to tensor-based models",
+        "disambiguation algorithms for a number of tensor-based models"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 60.11466698399818,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000763",
+    "usage": {
+      "input_tokens": 6417,
+      "output_tokens": 360
+    }
+  },
+  "record_sha256": "68cf83ec12f3cdfd02711110748880d5c19f1c08683296b169d4bfae7679e3a2",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

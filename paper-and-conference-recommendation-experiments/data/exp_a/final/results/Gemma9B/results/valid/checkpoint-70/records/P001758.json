@@ -1,0 +1,467 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.677609741997003,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5316,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1244,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.56638638000004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5317,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3007,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.177891807998094,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001758\", \"task\": [], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5318,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 676,
+            "output_tokens": 82
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "algorithm that maintains explicit, lambda-calculus representations of salient discourse entities",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ATIS",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hidden-variable variant of the perception algorithm",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "linear model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "context-dependent analysis pipeline",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001758",
+        "problem": [],
+        "task": [
+          {
+            "concept": "learning context-dependent mappings from sentences to logical form",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.42188792999514,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001758",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4927,
+        "output_tokens": 410
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.677609741997003,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5316,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1244,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.56638638000004,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001758\", \"problem\": [], \"task\": [{\"concept\": \"learning context-dependent mappings from sentences to logical form\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"ATIS\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"algorithm that maintains explicit, lambda-calculus representations of salient discourse entities\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5317,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3007,
+            "output_tokens": 164
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "algorithm that maintains explicit, lambda-calculus representations of salient discourse entities",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ATIS",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hidden-variable variant of the perception algorithm",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "linear model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "context-dependent analysis pipeline",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001758",
+        "problem": [],
+        "task": [
+          {
+            "concept": "learning context-dependent mappings from sentences to logical form",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 64.24399612199704,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5317,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4251,
+        "output_tokens": 328
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 29.677609741997003,
+        "inherited": false,
+        "messages_sha256": "46f07cdee8dc3381b802f54e0397447497caf24169016ee62e1934adb457721c",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5316,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1244,
+          "output_tokens": 164
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.56638638000004,
+        "inherited": false,
+        "messages_sha256": "9373dd75c200850d6a2a48f96d50ae24df60b8194171a9367a0835dc5a5950a7",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001758",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 5317,
+        "usage": {
+          "input_tokens": 3007,
+          "output_tokens": 164
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.177891807998094,
+        "inherited": false,
+        "messages_sha256": "379f47fd6e063fe3151c64c9b49da8d0cf239ff85c0040720ae5bd8bc65cab46",
+        "reached_token_limit": false,
+        "seed": 5318,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 676,
+          "output_tokens": 82
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "algorithm that maintains explicit, lambda-calculus representations of salient discourse entities",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ATIS",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hidden-variable variant of the perception algorithm",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "linear model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "context-dependent analysis pipeline",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001758",
+        "problem": [],
+        "task": [
+          {
+            "concept": "learning context-dependent mappings from sentences to logical form",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "hidden-variable variant of the perception algorithm",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "linear model",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "context-dependent analysis pipeline",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.177891807998094,
+      "messages_sha256": "379f47fd6e063fe3151c64c9b49da8d0cf239ff85c0040720ae5bd8bc65cab46",
+      "raw_output": "{\"paper_id\": \"P001758\", \"task\": [], \"method\": [{\"concept\": \"hidden-variable variant of the perception algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"linear model\", \"evidence_id\": \"A3\"}, {\"concept\": \"context-dependent analysis pipeline\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 676,
+        "output_tokens": 82
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "d5f3977a27df3040dc7358bc3777f5b1d1eef065aa2486a68eba9d17bf69e290",
+    "facets": {
+      "contribution": [
+        "algorithm that maintains explicit, lambda-calculus representations of salient discourse entities"
+      ],
+      "dataset": [
+        "ATIS"
+      ],
+      "method": [
+        "hidden-variable variant of the perception algorithm",
+        "linear model",
+        "context-dependent analysis pipeline"
+      ],
+      "paper_id": "P001758",
+      "problem": [],
+      "task": [
+        "learning context-dependent mappings from sentences to logical form"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.42188792999514,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.42188792999514,
+      "input_tokens": 4927,
+      "output_tokens": 410
+    },
+    "paper_id": "P001758",
+    "source_sha256": "dc6e219a7bd10221608d1c7ae45d4a897101fda1758d87f3cde0001a7113b865",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4927,
+      "output_tokens": 410
+    }
+  },
+  "record_sha256": "11173169d6c008f4bea28407814aacc5998e2d7df113ac81a45bba5f1c648839",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

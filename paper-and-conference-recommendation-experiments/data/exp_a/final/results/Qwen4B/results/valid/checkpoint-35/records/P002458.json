@@ -1,0 +1,544 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.660626725999464,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7416,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1409,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.624961797999276,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7417,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3135,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 18.758560064999983,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002458\",\"task\":[{\"concept\":\"extracting arc skeletons\",\"evidence_id\":\"A1\"},{\"concept\":\"evaluating accuracy of the algorithm\",\"evidence_id\":\"A5\"},{\"concept\":\"examining performance of the method in terms of false and missing skeletal branches\",\"evidence_id\":\"A6\"}],\"method\":[{\"concept\":\"minimum-cost geodesic path\",\"evidence_id\":\"A2\"},{\"concept\":\"fuzzy distance transform field\",\"evidence_id\":\"A3\"},{\"concept\":\"iteratively expanding the skeleton by adding a new branch in each iteration that connects the farthest voxel to the current skeleton\",\"evidence_id\":\"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7418,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 841,
+            "output_tokens": 137
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evaluating accuracy of the algorithm",
+              "evidence": "Accuracy of the algorithm has been evaluated using computer-generated blurred and noisy phantoms with known skeletons.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "examining performance of the method in terms of false and missing skeletal branches",
+              "evidence": "Performance of the method in terms of false and missing skeletal branches, as defined by human expert, has been examined using in vivo CT imaging of human intrathoracic airways.",
+              "facet": "task",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new robust approach of extracting arc skeletons",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "fuzzy distance transform field",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "iteratively expanding the skeleton by adding a new branch in each iteration that connects the farthest voxel to the current skeleton",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P002458",
+        "problem": [
+          {
+            "concept": "unwanted spurious branches",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "boundary irregularities",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting arc skeletons",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "evaluating accuracy of the algorithm",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "examining performance of the method in terms of false and missing skeletal branches",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 67.04414858899872,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P002458",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5385,
+        "output_tokens": 475
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "evaluating accuracy of the algorithm",
+          "evidence": "Accuracy of the algorithm has been evaluated using computer-generated blurred and noisy phantoms with known skeletons.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "examining performance of the method in terms of false and missing skeletal branches",
+          "evidence": "Performance of the method in terms of false and missing skeletal branches, as defined by human expert, has been examined using in vivo CT imaging of human intrathoracic airways.",
+          "facet": "task",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "729561787961e05b8af063cc89236fc100ff85ceb91d5e7a0906549c115f5fab",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.660626725999464,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7416,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1409,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.624961797999276,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002458\", \"problem\": [{\"concept\": \"unwanted spurious branches\", \"evidence_id\": \"A0\"}, {\"concept\": \"boundary irregularities\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"extracting arc skeletons\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}, {\"concept\": \"fuzzy distance transform field\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"new robust approach of extracting arc skeletons\", \"evidence_id\": \"A1\"}, {\"concept\": \"minimum-cost geodesic path\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7417,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3135,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new robust approach of extracting arc skeletons",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "fuzzy distance transform field",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002458",
+        "problem": [
+          {
+            "concept": "unwanted spurious branches",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "boundary irregularities",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting arc skeletons",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.28558852399874,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7417,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4544,
+        "output_tokens": 338
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 23.660626725999464,
+        "inherited": false,
+        "messages_sha256": "1c0c3775b5785a9fe11469f44f02ea008502c05f8a2da16652ca0263e6afc14f",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7416,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1409,
+          "output_tokens": 169
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.624961797999276,
+        "inherited": false,
+        "messages_sha256": "100997f95e0f87e77c13b7c5c1f990008daebe98081df5dea310d98e79c53d8d",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002458",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 7417,
+        "usage": {
+          "input_tokens": 3135,
+          "output_tokens": 169
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.758560064999983,
+        "inherited": false,
+        "messages_sha256": "d11c1c1e7b4c95da06a8d72cc1cf67056c019a4fe53aee231b834b22f38a98c6",
+        "reached_token_limit": false,
+        "seed": 7418,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 841,
+          "output_tokens": 137
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "evaluating accuracy of the algorithm",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "task",
+          "item": {
+            "concept": "examining performance of the method in terms of false and missing skeletal branches",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "iteratively expanding the skeleton by adding a new branch in each iteration that connects the farthest voxel to the current skeleton",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "accepted_count": 3,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "new robust approach of extracting arc skeletons",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "fuzzy distance transform field",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002458",
+        "problem": [
+          {
+            "concept": "unwanted spurious branches",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "boundary irregularities",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting arc skeletons",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "extracting arc skeletons",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "minimum-cost geodesic path",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "fuzzy distance transform field",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 18.758560064999983,
+      "messages_sha256": "d11c1c1e7b4c95da06a8d72cc1cf67056c019a4fe53aee231b834b22f38a98c6",
+      "raw_output": "{\"paper_id\":\"P002458\",\"task\":[{\"concept\":\"extracting arc skeletons\",\"evidence_id\":\"A1\"},{\"concept\":\"evaluating accuracy of the algorithm\",\"evidence_id\":\"A5\"},{\"concept\":\"examining performance of the method in terms of false and missing skeletal branches\",\"evidence_id\":\"A6\"}],\"method\":[{\"concept\":\"minimum-cost geodesic path\",\"evidence_id\":\"A2\"},{\"concept\":\"fuzzy distance transform field\",\"evidence_id\":\"A3\"},{\"concept\":\"iteratively expanding the skeleton by adding a new branch in each iteration that connects the farthest voxel to the current skeleton\",\"evidence_id\":\"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 841,
+        "output_tokens": 137
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "e2e923613a61ff981bc234032dd1f0952b76f385634c56994201a717e823bb4a",
+    "facets": {
+      "contribution": [
+        "new robust approach of extracting arc skeletons",
+        "minimum-cost geodesic path"
+      ],
+      "dataset": [],
+      "method": [
+        "minimum-cost geodesic path",
+        "fuzzy distance transform field",
+        "iteratively expanding the skeleton by adding a new branch in each iteration that connects the farthest voxel to the current skeleton"
+      ],
+      "paper_id": "P002458",
+      "problem": [
+        "unwanted spurious branches",
+        "boundary irregularities"
+      ],
+      "task": [
+        "extracting arc skeletons",
+        "evaluating accuracy of the algorithm",
+        "examining performance of the method in terms of false and missing skeletal branches"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 67.04414858899872,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 67.04414858899872,
+      "input_tokens": 5385,
+      "output_tokens": 475
+    },
+    "paper_id": "P002458",
+    "source_sha256": "bc0897d15e0b1ac28b592febddcd6f832ed6983eb194609e1c0501962547ab3e",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5385,
+      "output_tokens": 475
+    }
+  },
+  "record_sha256": "c4ade4ff25f05e695f3e7ebc3943c355305b30eb222cd21026fd62dea6964684",
+  "signature": "c4e41850ab9239cde830284e89193f54b9e906492bcc07dfd709400a389b78fc"
+}

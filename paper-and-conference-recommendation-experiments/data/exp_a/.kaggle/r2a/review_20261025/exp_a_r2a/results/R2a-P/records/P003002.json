@@ -1,0 +1,324 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003002\",\n  \"problem\": [\n    {\n      \"concept\": \"existing approaches require many annotated training examples\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"mapping natural language instructions to sequences of executable actions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"reinforcement learning approach\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"policy gradient algorithm\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"log-linear model for action selection\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"method that rivals supervised learning techniques with few or no annotated training examples\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.094893562999914,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003002\",\n  \"problem\": [\n    {\n      \"concept\": \"existing approaches require many annotated training examples\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"mapping natural language instructions to sequences of executable actions\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"reinforcement learning approach\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"policy gradient algorithm\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"log-linear model for action selection\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"method that rivals supervised learning techniques with few or no annotated training examples\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 54.0,
+          "seed": 9048,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2393,
+            "output_tokens": 214
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing approaches require many annotated training examples\"; evidence_id=\"A5\"; evidence=\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"method that rivals supervised learning techniques with few or no annotated training examples\"; evidence_id=\"A5\"; evidence=\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003002\", \"problem\": [{\"concept\": \"existing approaches require many annotated training examples\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"}, {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"log-linear model for action selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"this method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 10.302064469000015,
+          "operations": [
+            {
+              "before": {
+                "concept": "method that rivals supervised learning techniques with few or no annotated training examples",
+                "evidence_id": "A5"
+              },
+              "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "existing approaches require many annotated training examples",
+                "evidence_id": "A5"
+              },
+              "concept": "existing approaches require many annotated training examples",
+              "evidence_id": "A5",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P003002\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":0,\"concept\":\"this method can rival supervised learning techniques while requiring few or no annotated training examples\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"existing approaches require many annotated training examples\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 71.0,
+          "seed": 9049,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2694,
+            "output_tokens": 96
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing approaches require many annotated training examples\"; evidence_id=\"A5\"; evidence=\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003002\", \"problem\": [{\"concept\": \"this method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"}, {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}, {\"concept\": \"log-linear model for action selection\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"this method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 3,
+          "generation_seconds": 7.439760230000047,
+          "operations": [
+            {
+              "before": {
+                "concept": "existing approaches require many annotated training examples",
+                "evidence_id": "A5"
+              },
+              "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+              "evidence_id": "A5",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P003002\",\"edits\":[{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"this method can rival supervised learning techniques while requiring few or no annotated training examples\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 9050,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2582,
+            "output_tokens": 60
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "reinforcement learning approach",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "policy gradient algorithm",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "log-linear model for action selection",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003002",
+        "problem": [
+          {
+            "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5"
+          }
+        ],
+        "task": [
+          {
+            "concept": "mapping natural language instructions to sequences of executable actions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 35.83671826199998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003002",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 9050,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7669,
+        "output_tokens": 370
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4ec354f6600795e5fa4434088972bfb44a663867decbb9f6f870fb5a3904923c",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 9048
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "dd5805ae565e9153cdd9e69197bf2e9dc04a487f04860826369339b63d10e7ed",
+        "operations": [
+          {
+            "before": {
+              "concept": "method that rivals supervised learning techniques with few or no annotated training examples",
+              "evidence_id": "A5"
+            },
+            "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "existing approaches require many annotated training examples",
+              "evidence_id": "A5"
+            },
+            "concept": "existing approaches require many annotated training examples",
+            "evidence_id": "A5",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9049
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "c29988181018bd1487d47fb731c6477fda9acf775d48edd96cd2c67df9762630",
+        "operations": [
+          {
+            "before": {
+              "concept": "existing approaches require many annotated training examples",
+              "evidence_id": "A5"
+            },
+            "concept": "this method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9050
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "this method can rival supervised learning techniques while requiring few or no annotated training examples"
+      ],
+      "dataset": [],
+      "method": [
+        "reinforcement learning approach",
+        "policy gradient algorithm",
+        "log-linear model for action selection"
+      ],
+      "paper_id": "P003002",
+      "problem": [
+        "this method can rival supervised learning techniques while requiring few or no annotated training examples"
+      ],
+      "task": [
+        "mapping natural language instructions to sequences of executable actions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 35.83671826199998,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 17.741824699000063,
+      "input_tokens": 5276,
+      "output_tokens": 156
+    },
+    "paper_id": "P003002",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1,
+        2
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 7669,
+      "output_tokens": 370
+    }
+  },
+  "record_sha256": "f4fe581c84a0de9bb6585bd734d693553bac72e9c46ce336296cb4949ab0c3ad",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

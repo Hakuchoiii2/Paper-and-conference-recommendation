@@ -1,0 +1,171 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "qlora",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"features of each user\", \"evidence_id\": \"A8\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.624934521001705,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"features of each user\", \"evidence_id\": \"A8\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 648,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2590,
+            "output_tokens": 168
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"features of each user\", \"evidence_id\": \"A8\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET\", \"evidence_id\": \"A7\"}, {\"concept\": \"proposed model is efficient and effective\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.975118638998538,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000202\", \"problem\": [{\"concept\": \"no update scheme is provided to catch the feature changes of evolving networks\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"spam detection\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"features of each user\", \"evidence_id\": \"A8\"}, {\"concept\": \"incremental update scheme\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"incremental support vector machine\", \"evidence_id\": \"A6\"}, {\"concept\": \"MailNET\", \"evidence_id\": \"A7\"}, {\"concept\": \"proposed model is efficient and effective\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 649,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4140,
+            "output_tokens": 190
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "incremental support vector machine",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "MailNET",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "proposed model is efficient and effective",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "incremental support vector machine",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "features of each user",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "incremental update scheme",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P000202",
+        "problem": [
+          {
+            "concept": "no update scheme is provided to catch the feature changes of evolving networks",
+            "evidence_id": "A5"
+          }
+        ],
+        "task": [
+          {
+            "concept": "spam detection",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 58.60005316000024,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 649,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6730,
+        "output_tokens": 358
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "facets": {
+      "contribution": [
+        "incremental support vector machine",
+        "MailNET",
+        "proposed model is efficient and effective"
+      ],
+      "dataset": [],
+      "method": [
+        "incremental support vector machine",
+        "features of each user",
+        "incremental update scheme"
+      ],
+      "paper_id": "P000202",
+      "problem": [
+        "no update scheme is provided to catch the feature changes of evolving networks"
+      ],
+      "task": [
+        "spam detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.60005316000024,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000202",
+    "usage": {
+      "input_tokens": 6730,
+      "output_tokens": 358
+    }
+  },
+  "record_sha256": "9340f874c2148098fa213f73115e2af7d4d578f0acff0c18a32afbf14182329d",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

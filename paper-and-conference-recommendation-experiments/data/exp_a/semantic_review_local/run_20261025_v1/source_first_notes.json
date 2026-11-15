@@ -1,0 +1,68 @@
+{
+  "assessor": "Codex source-based provisional assessment, recorded before reviewer inference; not independent human ground truth",
+  "scope": "Existing item semantics only; omissions and lexical-validator defects are not scored as reviewer targets",
+  "P001181": {
+    "supported": ["problem:0", "task:0", "task:1", "method:0", "contribution:0", "contribution:1"],
+    "issues": {},
+    "ambiguous": {"dataset:0": "WSJ is explicitly named for prior in-domain parser training; whether current work uses it is not completely explicit. Do not automatically remove."},
+    "reason": "Prior negative finding is a valid motivating limitation. Positive findings retain domain and semantic-role-labeler qualification. Method with and without reranking covers the compared variants; splitting is a granularity choice."
+  },
+  "P001211": {
+    "supported": ["problem:0", "problem:1", "task:0", "method:0", "method:1", "method:2", "method:3", "method:4", "method:5", "contribution:1", "contribution:2"],
+    "issues": {
+      "problem:2": "Combines a limitation with a positive character-feature finding; latter is not a motivating problem.",
+      "task:1": "Reports achieved generalization finding with unresolved they, rather than naming operational research objective.",
+      "contribution:3": "Two independent findings, incomplete attack mitigation and character-versus-word robustness, merged into one item."
+    },
+    "ambiguous": {"contribution:0": "Hate speech detection scope omitted in label but context supplies it; treat need for explicit scope as debatable."},
+    "reason": "Attacks are actually evaluated (A4 combination effective); methods need not be novel. Copied OCR damage is source corruption, not semantic fabrication."
+  },
+  "P002471": {
+    "supported": ["task:0", "method:0", "contribution:1"],
+    "issues": {
+      "problem:0": "No sentence states students struggle; this is inferred background.",
+      "contribution:0": "Unqualified helpfulness finding separated from following no-more-effective-than-text caveat; should preserve relationship."
+    },
+    "ambiguous": {},
+    "reason": "Building tutor is a supported operational objective. Comparative negative clause is supported when read with supplied preceding item, though antecedent alone is unclear."
+  },
+  "P003211": {
+    "supported": ["task:0", "method:0", "method:1", "method:2"],
+    "issues": {
+      "dataset:0": "Generic collected brain data is not an explicit named dataset/resource.",
+      "contribution:0": "Omits F7/P3 channels and 1/2 Hz restriction and direction of higher hardcore potential; overbroad result."
+    },
+    "ambiguous": {"problem:0": "Can express research question in A1; also resembles task. Source ID does not contain label wording, but title supports meaning."},
+    "reason": "Devices and 10-20 electrode arrangement are used techniques. Gameplay data analysis is supported by A3 despite paraphrase."
+  },
+  "P001506": {
+    "supported": ["task:0", "task:1", "method:0", "method:1", "method:2", "method:3", "method:4", "method:5", "contribution:0", "contribution:1", "contribution:2"],
+    "issues": {"problem:0": "Contrast in A1 establishes separate latent spaces as distinction, not that all existing VAE models lack syntactic integration."},
+    "ambiguous": {},
+    "reason": "Novel SIVAE can be method and contribution. Paraphrasing is both supported use objective and explicitly demonstrated capability."
+  },
+  "P001604": {
+    "supported": ["problem:0", "task:0", "task:1", "method:0", "method:1", "method:2", "method:3", "contribution:0", "contribution:1", "contribution:2", "contribution:4", "contribution:5"],
+    "issues": {
+      "dataset:0": "Linked knowledge sources is a generic resource category, no concrete resource name.",
+      "contribution:3": "31.4% F1 improvement omits the compared single-KS/no-linked-data and Twitter-only approaches."
+    },
+    "ambiguous": {},
+    "reason": "Task:1 cites A8 but meaning is explicit in A7; semantic support across full abstract counts. Introduced methods may legitimately be contributions too."
+  },
+  "P002380": {
+    "supported": ["method:0", "method:1", "contribution:0", "contribution:1", "contribution:2"],
+    "issues": {},
+    "ambiguous": {},
+    "reason": "A0-A2 explicitly present language-design methods and obtained Pascal extensions; use of theory principles as methods is supported."
+  },
+  "P002652": {
+    "supported": ["method:0", "method:1", "method:2", "contribution:0", "contribution:1", "contribution:2"],
+    "issues": {"contribution:3": "Discussing advantages without any stated result is not itself a concrete artifact/finding."},
+    "ambiguous": {
+      "problem:0": "NP-hard even on trees is new finding rather than prior-known general hardness; may also express complexity limitation. Role requires policy clarification.",
+      "task:0": "Procedure with achieved 240-node performance mixes goal and finding; core solving objective is supported."
+    },
+    "reason": "MIP models, exact DP algorithm and solution procedure are methods. New models and solution ability are explicit contributions; overlap alone is valid."
+  }
+}

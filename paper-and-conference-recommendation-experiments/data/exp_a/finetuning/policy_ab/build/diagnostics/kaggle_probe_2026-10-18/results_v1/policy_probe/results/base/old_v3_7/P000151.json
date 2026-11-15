@@ -1,0 +1,42 @@
+{
+  "record": {
+    "arm": "base",
+    "policy": "old_v3_7",
+    "paper_id": "P000151",
+    "seed": 495,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "messages_sha256": "7f0b5fbcae7f5c2d787087315860178ca1c48118d8792c27c75b60fbb326a529",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\n  \"paper_id\": \"P000151\",\n  \"problem\": [\n    {\n      \"concept\": \"understanding the question to a level that allows determining constraints on a possible answer\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"respond correctly to a free form factual question given a large collection of texts\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"hierarchical classifier guided by a layered semantic hierarchy of answer types\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"large collection of free-form questions used in TREC 10\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"machine learning approach to question classification\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 20.92238144600003,
+    "usage": {
+      "input_tokens": 2387,
+      "output_tokens": 251
+    },
+    "schema_valid": true,
+    "validation_errors": [],
+    "bounded_stop": false
+  },
+  "record_sha256": "7e71f5306f399d78ac9b2b7e3f75e0901a4c838f1f06f4660dfeeca7afce5a0d"
+}

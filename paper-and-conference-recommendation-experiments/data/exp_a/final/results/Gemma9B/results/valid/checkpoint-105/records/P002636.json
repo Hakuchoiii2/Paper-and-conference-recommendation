@@ -1,0 +1,465 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.4020215979981,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7950,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1598,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.77249431599921,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation between Related Languages\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7951,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3373,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.955542073999823,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"task\": [], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7952,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 1010,
+            "output_tokens": 61
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "substantial parallel corpus",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 72.13005798799713,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002636",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5981,
+        "output_tokens": 352
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.4020215979981,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7950,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1598,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.77249431599921,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002636\", \"problem\": [{\"concept\": \"high accuracy difficult\", \"evidence_id\": \"A0\"}, {\"concept\": \"substantial parallel corpus\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Statistical Machine Translation between Related Languages\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"toolbox of methods\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7951,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3373,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "substantial parallel corpus",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 60.17451591399731,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7951,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4971,
+        "output_tokens": 291
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 27.4020215979981,
+        "inherited": false,
+        "messages_sha256": "7482a2e18856609fef7b03e346e965c2bb8172648a58f279575e6713129d64d6",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7950,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1598,
+          "output_tokens": 144
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 32.77249431599921,
+        "inherited": false,
+        "messages_sha256": "e7300648d4025d5d797bb9c5f138ddbdd7a85a8e183f2f4c6f63ae46a5e0b1fc",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002636",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ]
+        },
+        "seed": 7951,
+        "usage": {
+          "input_tokens": 3373,
+          "output_tokens": 147
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.955542073999823,
+        "inherited": false,
+        "messages_sha256": "9e29438c3f79092b208fa7c3e24b659d580d8fbaad35cd11753f45fc0f1b863e",
+        "reached_token_limit": false,
+        "seed": 7952,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 1010,
+          "output_tokens": 61
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "toolbox of methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P002636",
+        "problem": [
+          {
+            "concept": "high accuracy difficult",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "substantial parallel corpus",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Statistical Machine Translation",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "pivotbased and multisource methods",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "deep learning",
+            "evidence_id": "A9"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.955542073999823,
+      "messages_sha256": "9e29438c3f79092b208fa7c3e24b659d580d8fbaad35cd11753f45fc0f1b863e",
+      "raw_output": "{\"paper_id\": \"P002636\", \"task\": [], \"method\": [{\"concept\": \"pivotbased and multisource methods\", \"evidence_id\": \"A8\"}, {\"concept\": \"deep learning\", \"evidence_id\": \"A9\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 1010,
+        "output_tokens": 61
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "c4bdfc67f641098f910dc5adf887d87012ea9bcfa2efcddc640642474f9a0498",
+    "facets": {
+      "contribution": [
+        "toolbox of methods"
+      ],
+      "dataset": [],
+      "method": [
+        "pivotbased and multisource methods",
+        "deep learning"
+      ],
+      "paper_id": "P002636",
+      "problem": [
+        "high accuracy difficult",
+        "substantial parallel corpus"
+      ],
+      "task": [
+        "Statistical Machine Translation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 72.13005798799713,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 72.13005798799713,
+      "input_tokens": 5981,
+      "output_tokens": 352
+    },
+    "paper_id": "P002636",
+    "source_sha256": "623d4c54505e9488bc94af5f5ef1e191b911bac843418cefd9a5e5921aa3c1bf",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5981,
+      "output_tokens": 352
+    }
+  },
+  "record_sha256": "10663ffc659bef2aefe9ceb00f3a176cdad905198311c35c704f0cff19dea005",
+  "signature": "b70f7f0c11027ae63c9cadd8346e20bb7c37043c066b5705fda23b6849ae244f"
+}

@@ -1,0 +1,200 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 16.354803074000074,
+          "messages_sha256": "3c58576c39907da498f6ea0e06b1f692c1481c2225608cd671487c963d830b3e",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001948\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"generalised multivariate Polya process\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generalised multivariate Polya process for document language modelling\", \"evidence_id\": \"A0\"}, {\"concept\": \"framework generalises statistical language models used in information retrieval\", \"evidence_id\": \"A1\"}, {\"concept\": \"choice of replacement matrix M defines type of random process and document language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"particular variant of the general model is useful for modelling term-specific burstiness\", \"evidence_id\": \"A3\"}, {\"concept\": \"variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 63.3994,
+          "seed": 5888,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2238,
+            "output_tokens": 192
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "generalised multivariate Polya process for document language modelling",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "framework generalises statistical language models used in information retrieval",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "choice of replacement matrix M defines type of random process and document language model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "particular variant of the general model is useful for modelling term-specific burstiness",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "generalised multivariate Polya process",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P001948",
+        "problem": [],
+        "task": []
+      },
+      "fallback_used": true,
+      "generation_seconds": 49.5715783200003,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001948",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 63.3994,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 628
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.579965294000203,
+        "messages_sha256": "5f5ac1abcdb0cbdf902a49c2b371bf2bdac197f72897ff7d8a3c968d8aee833c",
+        "raw_output": "{\"paper_id\":\"P001948\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We introduce a generalised multivariate Polya process for document language modelling.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The framework outlined here generalises a number of statistical language models used in information retrieval for modelling document generation.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"In particular, we show that the choice of replacement matrix M ultimately defines the type of random process and therefore defines a particular type of document language model.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Furthermore, via experimentation we show that this variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5886,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 541,
+          "output_tokens": 218
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.63680995200002,
+        "messages_sha256": "af5501ac0041d770ed65a61f7ca5478a78adf092f62450ccd1584caca2c5956a",
+        "raw_output": "{\"paper_id\":\"P001948\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We introduce a generalised multivariate Polya process for document language modelling.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The framework outlined here generalises a number of statistical language models used in information retrieval for modelling document generation.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"In particular, we show that the choice of replacement matrix M ultimately defines the type of random process and therefore defines a particular type of document language model.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Furthermore, via experimentation we show that this variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5887,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 218
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 16.354803074000074,
+        "messages_sha256": "3c58576c39907da498f6ea0e06b1f692c1481c2225608cd671487c963d830b3e",
+        "raw_output": "{\"paper_id\": \"P001948\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"generalised multivariate Polya process\", \"evidence_id\": \"A0\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"generalised multivariate Polya process for document language modelling\", \"evidence_id\": \"A0\"}, {\"concept\": \"framework generalises statistical language models used in information retrieval\", \"evidence_id\": \"A1\"}, {\"concept\": \"choice of replacement matrix M defines type of random process and document language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"particular variant of the general model is useful for modelling term-specific burstiness\", \"evidence_id\": \"A3\"}, {\"concept\": \"variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections\", \"evidence_id\": \"A4\"}]}",
+        "reached_token_limit": false,
+        "seed": 5888,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2238,
+          "output_tokens": 192
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "generalised multivariate Polya process for document language modelling",
+        "framework generalises statistical language models used in information retrieval",
+        "choice of replacement matrix M defines type of random process and document language model",
+        "particular variant of the general model is useful for modelling term-specific burstiness",
+        "variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections"
+      ],
+      "dataset": [],
+      "method": [
+        "generalised multivariate Polya process"
+      ],
+      "paper_id": "P001948",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": true,
+    "generation_seconds": 49.5715783200003,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 16.579965294000203,
+        "messages_sha256": "5f5ac1abcdb0cbdf902a49c2b371bf2bdac197f72897ff7d8a3c968d8aee833c",
+        "raw_output": "{\"paper_id\":\"P001948\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We introduce a generalised multivariate Polya process for document language modelling.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The framework outlined here generalises a number of statistical language models used in information retrieval for modelling document generation.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"In particular, we show that the choice of replacement matrix M ultimately defines the type of random process and therefore defines a particular type of document language model.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Furthermore, via experimentation we show that this variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5886,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 541,
+          "output_tokens": 218
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 16.63680995200002,
+        "messages_sha256": "af5501ac0041d770ed65a61f7ca5478a78adf092f62450ccd1584caca2c5956a",
+        "raw_output": "{\"paper_id\":\"P001948\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We introduce a generalised multivariate Polya process for document language modelling.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"The framework outlined here generalises a number of statistical language models used in information retrieval for modelling document generation.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"In particular, we show that the choice of replacement matrix M ultimately defines the type of random process and therefore defines a particular type of document language model.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We show that a particular variant of the general model is useful for modelling term-specific burstiness.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"Furthermore, via experimentation we show that this variant significantly improves retrieval effectiveness over a strong baseline on a number of small test collections.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 5887,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 218
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 49.5715783200003,
+      "input_tokens": 3341,
+      "output_tokens": 628
+    },
+    "paper_id": "P001948",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3341,
+      "output_tokens": 628
+    }
+  },
+  "record_sha256": "77e7b9a46aa8ef24a8cc2b9dae5ec7b7ac9fad969770e7bb386c3e0a48e92b76",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

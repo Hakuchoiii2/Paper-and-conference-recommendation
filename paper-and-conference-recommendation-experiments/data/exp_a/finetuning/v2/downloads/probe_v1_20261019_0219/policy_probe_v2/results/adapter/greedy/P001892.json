@@ -1,0 +1,49 @@
+{
+  "record": {
+    "arm": "adapter",
+    "decoder": "greedy",
+    "policy": "new_v2_2",
+    "paper_id": "P001892",
+    "seed": 5718,
+    "stage": "draft",
+    "status": "measured",
+    "runtime": {
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "gpu": "Tesla T4",
+      "adapter_enabled": true,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "use_cache": true
+    },
+    "probe_signature": "5ad1db912e956ceaab446bb5698401324f0d1d6c7cbda0f0c2d9b5decbfffb88",
+    "messages_sha256": "cffee8593bda1e3b481edbfa11c2b86b8bf4b6cf5d44a0c2a040695517c12a34",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "raw_output": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"little attention\", \"evidence_ids\": [\"A0\"]}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_ids\": [\"A0\"]}, {\"concept\": \"text classification\", \"evidence_ids\": [\"A6\"]}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"label-fully-unseen\", \"evidence_ids\": [\"A6\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"label-fully-unseen\", \"evidence_ids\": [\"A6\"]}, {\"concept\": \"textual entailment\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"standardized evaluations\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"state-of-the-art baselines\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"unified datasets\", \"evidence_ids\": [\"A5\"]},",
+    "schema_valid": false,
+    "validation_errors": [
+      "Expecting value: line 1 column 820 (char 819)",
+      "Generation stopped: duplicate_concept"
+    ],
+    "usage": {
+      "input_tokens": 1873,
+      "output_tokens": 254
+    },
+    "generation_seconds": 35.416448,
+    "stop_reason": "duplicate_concept",
+    "reached_token_limit": false,
+    "bounded_stop": true,
+    "duplicate": {
+      "facet": "contribution",
+      "concept": "unified datasets"
+    },
+    "raw_output_untrimmed": "{\"paper_id\": \"P001892\", \"problem\": [{\"concept\": \"chaotic experiments\", \"evidence_ids\": [\"A3\"]}, {\"concept\": \"little attention\", \"evidence_ids\": [\"A0\"]}], \"task\": [{\"concept\": \"Zero-shot text classification\", \"evidence_ids\": [\"A0\"]}, {\"concept\": \"text classification\", \"evidence_ids\": [\"A6\"]}], \"method\": [{\"concept\": \"textual entailment\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"label-fully-unseen\", \"evidence_ids\": [\"A6\"]}], \"dataset\": [], \"contribution\": [{\"concept\": \"unified datasets\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"label-fully-unseen\", \"evidence_ids\": [\"A6\"]}, {\"concept\": \"textual entailment\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"standardized evaluations\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"state-of-the-art baselines\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"unified datasets\", \"evidence_ids\": [\"A5\"]},",
+    "discarded_suffix_chars": 0
+  },
+  "record_sha256": "b0060ed04b33ae935ab6ef97b6a4960eb279b3e4bd6627df3da070092bc16eff"
+}

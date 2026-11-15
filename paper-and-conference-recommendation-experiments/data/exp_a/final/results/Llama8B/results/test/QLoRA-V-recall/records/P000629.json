@@ -1,0 +1,507 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.734919546999663,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1929,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.33212923300016,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1930,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3081,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.072210164000353,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"task\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"guarantee topical coherence in communities\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1931,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 779,
+            "output_tokens": 103
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Latent Community Topic Analysis",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "guarantee topical coherence in communities",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [
+          {
+            "concept": "traditional topic modeling methods considering links",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.139258944000176,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000629",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5218,
+        "output_tokens": 419
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.734919546999663,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1929,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.33212923300016,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000629\", \"problem\": [{\"concept\": \"traditional topic modeling methods considering links\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"latent community topic analysis\", \"evidence_id\": \"A0\"}, {\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Latent Community Topic Analysis\", \"evidence_id\": \"T0\"}, {\"concept\": \"separate the concepts of community and topic\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1930,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3081,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Latent Community Topic Analysis",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [
+          {
+            "concept": "traditional topic modeling methods considering links",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 39.06704877999982,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1930,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4439,
+        "output_tokens": 316
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.734919546999663,
+        "inherited": false,
+        "messages_sha256": "4af7ca32e1ef5b214457b6623c15ceb9165b7d5b3aeefd05bf900a4ef31919bd",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1929,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1358,
+          "output_tokens": 158
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 20.33212923300016,
+        "inherited": false,
+        "messages_sha256": "4460f876c17ac0860209eb70d237a4b9330d9c9409736fc5cf3c367ccd6c6dea",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000629",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 1930,
+        "usage": {
+          "input_tokens": 3081,
+          "output_tokens": 158
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.072210164000353,
+        "inherited": false,
+        "messages_sha256": "f6bdd716aef73bd54bf5187e6c3c324d4c49820a8c7cdd90a5ec4eb90d63550d",
+        "reached_token_limit": false,
+        "seed": 1931,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 779,
+          "output_tokens": 103
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "guarantee topical coherence in communities",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Latent Community Topic Analysis",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "separate the concepts of community and topic",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000629",
+        "problem": [
+          {
+            "concept": "traditional topic modeling methods considering links",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "latent community topic analysis",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "community discovery",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "topic modeling",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.072210164000353,
+      "messages_sha256": "f6bdd716aef73bd54bf5187e6c3c324d4c49820a8c7cdd90a5ec4eb90d63550d",
+      "raw_output": "{\"paper_id\": \"P000629\", \"task\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"community discovery\", \"evidence_id\": \"A4\"}, {\"concept\": \"topic modeling\", \"evidence_id\": \"A3\"}, {\"concept\": \"guarantee topical coherence in communities\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 779,
+        "output_tokens": 103
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "bc822f360b5f01bd1a2cdbf59d718c0b0d0cc954f7c73a9e295488f73e50473c",
+    "facets": {
+      "contribution": [
+        "Latent Community Topic Analysis",
+        "separate the concepts of community and topic"
+      ],
+      "dataset": [],
+      "method": [
+        "community discovery",
+        "topic modeling",
+        "guarantee topical coherence in communities"
+      ],
+      "paper_id": "P000629",
+      "problem": [
+        "traditional topic modeling methods considering links"
+      ],
+      "task": [
+        "latent community topic analysis",
+        "community discovery",
+        "topic modeling"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.139258944000176,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.139258944000176,
+      "input_tokens": 5218,
+      "output_tokens": 419
+    },
+    "paper_id": "P000629",
+    "source_sha256": "bf2232eea25834a03f5150188144297f2fad32d48cb143303bbfb3b1b0ad499d",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5218,
+      "output_tokens": 419
+    }
+  },
+  "record_sha256": "c726b211aaa68e48abc0c5bc311a0773ebd2213dc35f85a3edc1993668e261d5",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

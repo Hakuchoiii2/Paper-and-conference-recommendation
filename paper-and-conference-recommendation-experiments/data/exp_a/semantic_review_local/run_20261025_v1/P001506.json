@@ -1,0 +1,17 @@
+{
+  "paper_id": "P001506",
+  "raw_output": "{\"paper_id\":\"P001506\",\"warnings\":[{\"item_id\":\"facet:problem:0\",\"decision\":\"flag\",\"category\":\"unsupported\",\"source_id\":\"A1\",\"quote\":\"Distinct from existing VAE-based text generative models, SIVAE contains two separate latent spaces, for sentences and syntactic trees.\",\"reason\":\"The source sentence does not explicitly state that existing VAE-based models lack integration of syntactic structures; it only notes that SIVAE differs by having two latent spaces. The claim of a limitation in existing models is not directly or explicitly stated, making the problem facet unsupported.\"},{\"item_id\":\"facet:task:0\",\"decision\":\"uncertain\",\"category\":\"meaning_loss\",\"source_id\":\"A0\",\"quote\":\"We present a syntax-infused variational autoencoder (SIVAE), that integrates sentences with their syntactic trees to improve the grammar of generated sentences.\",\"reason\":\"The task is described as improving grammar via integration of syntactic trees, but the source does not explicitly define the task as 'generate sentences with improved grammar'—this is an interpretation. The original task may be more precisely defined as 'generate sentences with syntactic structure guidance', and the grammar improvement is a consequence, not necessarily the primary task.\"}]}",
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "quantization": "NF4_double",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "generation_seconds": 16.296000000002095,
+  "input_tokens": 1042,
+  "output_tokens": 256,
+  "reached_token_limit": false,
+  "schema_valid": false,
+  "parse_error": "AssertionError()"
+}

@@ -1,0 +1,225 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 14.783492325999987,
+          "messages_sha256": "8bcad27183b19319b25136b5077066ab391567218d466376a685f5cbbdc44619",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002015\", \"problem\": [], \"task\": [{\"concept\": \"predicting inflected word forms\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"probabilistic model\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphological and syntactic features\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Russian sentences\", \"evidence_id\": \"A1\"}, {\"concept\": \"Arabic sentences\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"model substantially outperforms trigram target language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"method is effective with small data\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 82.7418,
+          "seed": 6089,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2225,
+            "output_tokens": 170
+          },
+          "validation_errors": [
+            "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"morphological and syntactic features\"; evidence_id=\"A1\"; evidence=\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model, and evaluate their contribution in generating Russian and Arabic sentences.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model substantially outperforms trigram target language model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "method is effective with small data",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Russian sentences",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Arabic sentences",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic model",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "morphological and syntactic features",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002015",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predicting inflected word forms",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 44.2865648999998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002015",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Russian sentences",
+            "evidence": "We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model, and evaluate their contribution in generating Russian and Arabic sentences.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          },
+          {
+            "concept": "Arabic sentences",
+            "evidence": "We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model, and evaluate their contribution in generating Russian and Arabic sentences.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 82.7418,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3302,
+        "output_tokens": 559
+      },
+      "validation_errors": [
+        "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"morphological and syntactic features\"; evidence_id=\"A1\"; evidence=\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model, and evaluate their contribution in generating Russian and Arabic sentences.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.789561323999806,
+        "messages_sha256": "7b4508d87e335172b0a9e95bd14b7f0c09c3c1cdf7f4c58cdea534c7bafc5b28",
+        "raw_output": "{\"paper_id\":\"P002015\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"present a novel method for predicting inflected word forms for generating morphologically rich languages in machine translation\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our results show that the proposed model substantially outperforms the commonly used baseline of a trigram target language model; in particular, the use of morphological and syntactic features leads to large gains in prediction accuracy\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also show that the proposed method is effective with a relatively small amount of data\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6087,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 528,
+          "output_tokens": 194
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.71351125000001,
+        "messages_sha256": "cd4763eff7360d04cffa26b56fecff99538623c87fbdd659dde12543dd0432a7",
+        "raw_output": "{\"paper_id\": \"P002015\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"present a novel method for predicting inflected word forms for generating morphologically rich languages in machine translation\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our results show that the proposed model substantially outperforms the commonly used baseline of a trigram target language model; in particular, the use of morphological and syntactic features leads to large gains in prediction accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also show that the proposed method is effective with a relatively small amount of data.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6088,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 549,
+          "output_tokens": 195
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.783492325999987,
+        "messages_sha256": "8bcad27183b19319b25136b5077066ab391567218d466376a685f5cbbdc44619",
+        "raw_output": "{\"paper_id\": \"P002015\", \"problem\": [], \"task\": [{\"concept\": \"predicting inflected word forms\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"probabilistic model\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphological and syntactic features\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Russian sentences\", \"evidence_id\": \"A1\"}, {\"concept\": \"Arabic sentences\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"model substantially outperforms trigram target language model\", \"evidence_id\": \"A2\"}, {\"concept\": \"method is effective with small data\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 6089,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2225,
+          "output_tokens": 170
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 2,
+    "facets": {
+      "contribution": [
+        "model substantially outperforms trigram target language model",
+        "method is effective with small data"
+      ],
+      "dataset": [],
+      "method": [
+        "probabilistic model",
+        "morphological and syntactic features"
+      ],
+      "paper_id": "P002015",
+      "problem": [],
+      "task": [
+        "predicting inflected word forms"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 44.2865648999998,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 14.789561323999806,
+        "messages_sha256": "7b4508d87e335172b0a9e95bd14b7f0c09c3c1cdf7f4c58cdea534c7bafc5b28",
+        "raw_output": "{\"paper_id\":\"P002015\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"present a novel method for predicting inflected word forms for generating morphologically rich languages in machine translation\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our results show that the proposed model substantially outperforms the commonly used baseline of a trigram target language model; in particular, the use of morphological and syntactic features leads to large gains in prediction accuracy\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also show that the proposed method is effective with a relatively small amount of data\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6087,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 528,
+          "output_tokens": 194
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 14.71351125000001,
+        "messages_sha256": "cd4763eff7360d04cffa26b56fecff99538623c87fbdd659dde12543dd0432a7",
+        "raw_output": "{\"paper_id\": \"P002015\", \"units\": [{\"evidence_id\":\"A0\",\"span\":\"present a novel method for predicting inflected word forms for generating morphologically rich languages in machine translation\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We utilize a rich set of syntactic and morphological knowledge sources from both source and target sentences in a probabilistic model\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our results show that the proposed model substantially outperforms the commonly used baseline of a trigram target language model; in particular, the use of morphological and syntactic features leads to large gains in prediction accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We also show that the proposed method is effective with a relatively small amount of data.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 6088,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 549,
+          "output_tokens": 195
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 44.2865648999998,
+      "input_tokens": 3302,
+      "output_tokens": 559
+    },
+    "paper_id": "P002015",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3302,
+      "output_tokens": 559
+    }
+  },
+  "record_sha256": "6c0ecfba63a39e376a8923dd11d77d694a3fdf7b471fa63c9ce5edde11464acf",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -1,0 +1,553 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.645300567997765,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4452,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1316,
+            "output_tokens": 184
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "simple word replacement",
+              "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+              "facet": "method",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.45556610800122,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4453,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3107,
+            "output_tokens": 184
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "simple word replacement",
+              "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+              "facet": "method",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.550650967001275,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"task\": [], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"five judges per headline\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4454,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 768,
+            "output_tokens": 78
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "simple word replacement",
+              "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+              "facet": "method",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "simple word replacement",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "five judges per headline",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "automatically generating humorous headlines",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 86.65151764300026,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001470",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5191,
+        "output_tokens": 446
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "simple word replacement",
+          "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+          "facet": "method",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.645300567997765,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4452,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1316,
+            "output_tokens": 184
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "simple word replacement",
+              "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+              "facet": "method",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.45556610800122,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatically generating humorous headlines\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4453,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3107,
+            "output_tokens": 184
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "simple word replacement",
+              "evidence": "Our publicly available data consists of regular English news headlines paired with versions of the same headlines that contain simple replacement edits designed to make them funny.",
+              "facet": "method",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "simple word replacement",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "automatically generating humorous headlines",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 72.10086667599899,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4453,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4423,
+        "output_tokens": 368
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 33.645300567997765,
+        "inherited": false,
+        "messages_sha256": "04eaffc0cc2e3053768a47e28f4e55aa2f19e560a98f8595a69e2c3c3626e006",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4452,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1316,
+          "output_tokens": 184
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 38.45556610800122,
+        "inherited": false,
+        "messages_sha256": "c02a4b5002a8f4a9dc7b1f370730a05cb353e521c9763e3f38b3bc2e0ffbbb61",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001470",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 4453,
+        "usage": {
+          "input_tokens": 3107,
+          "output_tokens": 184
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.550650967001275,
+        "inherited": false,
+        "messages_sha256": "4620f87c0fa05c0cae8eb71963ddddcd6a6d297a71aabac09e1f65652cbdd99e",
+        "reached_token_limit": false,
+        "seed": 4454,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 768,
+          "output_tokens": 78
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "five judges per headline",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "simple word replacement",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "automatically generating humorous headlines",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "simple word replacement",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.550650967001275,
+      "messages_sha256": "4620f87c0fa05c0cae8eb71963ddddcd6a6d297a71aabac09e1f65652cbdd99e",
+      "raw_output": "{\"paper_id\": \"P001470\", \"task\": [], \"method\": [{\"concept\": \"simple word replacement\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"five judges per headline\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 768,
+        "output_tokens": 78
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "f0f2ff77cf08b9e5311fe8692f3cbc4a78af71a1f22da9344aaed07828e85709",
+    "facets": {
+      "contribution": [
+        "Humicroedit",
+        "baseline classifiers"
+      ],
+      "dataset": [
+        "Humicroedit"
+      ],
+      "method": [
+        "simple word replacement",
+        "crowdsourced editors",
+        "baseline classifiers",
+        "five judges per headline"
+      ],
+      "paper_id": "P001470",
+      "problem": [],
+      "task": [
+        "predict whether or not an edited headline is funny",
+        "automatically generating humorous headlines"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 86.65151764300026,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 86.65151764300026,
+      "input_tokens": 5191,
+      "output_tokens": 446
+    },
+    "paper_id": "P001470",
+    "source_sha256": "f1187e72bd30d88c2b03b9e14edfe19cc6946b87bfcbdd05edf7f15b55fb1c22",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5191,
+      "output_tokens": 446
+    }
+  },
+  "record_sha256": "f67ca4adc3e7e62d429f8a815996d9139e115058d4a607b08cbcf69483932102",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

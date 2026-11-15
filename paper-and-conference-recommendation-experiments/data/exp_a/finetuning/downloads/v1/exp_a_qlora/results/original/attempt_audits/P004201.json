@@ -1,0 +1,110 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P004201\",\n  \"problem\": [\n    {\"concept\": \"lack of genomic resources for less well-known species\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\", \"evidence_id\": \"A2\"}\n  ],\n  \"method\": [\n    {\"concept\": \"genotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"genotype–haplotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"direct estimation without calling genotypes\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"individual resequencing data\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\", \"evidence_id\": \"A9\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 33.02625422399797,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P004201\",\n  \"problem\": [\n    {\"concept\": \"lack of genomic resources for less well-known species\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\", \"evidence_id\": \"A2\"}\n  ],\n  \"method\": [\n    {\"concept\": \"genotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"genotype–haplotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"direct estimation without calling genotypes\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"individual resequencing data\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\", \"evidence_id\": \"A9\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 93.1278,
+      "seed": 12645,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2614,
+        "output_tokens": 397
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of genomic resources for less well-known species\"; evidence_id=\"A1\"; evidence=\"However, experimental designs and analysis of NGS data from less well-known species are challenging because of the lack of genomic resources.\"",
+        "contribution[1]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"genotype\\u2013haplotype calling returns more accurate estimates irrespective of divergence to reference genome\"; evidence_id=\"A6\"; evidence=\"Genotype\\u2013haplotype calling returns more accurate estimates irrespective of the divergence to the reference genome, but requires moderate depth (8\\u201320X).\"",
+        "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"recommend moderate to high depth and genotype\\u2013haplotype calling when individual genotypes are essential\"; evidence_id=\"A9\"; evidence=\"Otherwise, aiming for moderate to high depth at the expense of number of individuals, and using genotype\\u2013haplotype calling, is recommended.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P004201\", \"problem\": [{\"concept\": \"lack of genomic resources for less well-known species\", \"evidence_id\": \"A1\"}, {\"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\", \"evidence_id\": \"A2\"}, {\"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"genotype calling\", \"evidence_id\": \"A4\"}, {\"concept\": \"genotype–haplotype calling\", \"evidence_id\": \"A4\"}, {\"concept\": \"direct estimation without calling genotypes\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"individual resequencing data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\", \"evidence_id\": \"A5\"}, {\"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\", \"evidence_id\": \"A6\"}, {\"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\", \"evidence_id\": \"A7\"}, {\"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\", \"evidence_id\": \"A8\"}, {\"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\", \"evidence_id\": \"A9\"}]}",
+      "attempt": 2,
+      "generation_seconds": 41.3064988469996,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P004201\",\n  \"problem\": [\n    {\"concept\": \"lack of genomic resources for less well-known species\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\", \"evidence_id\": \"A5\"}\n  ],\n  \"task\": [\n    {\"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\", \"evidence_id\": \"A2\"}\n  ],\n  \"method\": [\n    {\"concept\": \"genotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"genotype–haplotype calling\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"direct estimation without calling genotypes\", \"evidence_id\": \"A4\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"individual resequencing data\", \"evidence_id\": \"A2\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\", \"evidence_id\": \"A9\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 93.1278,
+      "seed": 12646,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4617,
+        "output_tokens": 397
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of genomic resources for less well-known species\"; evidence_id=\"A1\"; evidence=\"However, experimental designs and analysis of NGS data from less well-known species are challenging because of the lack of genomic resources.\"",
+        "contribution[1]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"genotype\\u2013haplotype calling returns more accurate estimates irrespective of divergence to reference genome\"; evidence_id=\"A6\"; evidence=\"Genotype\\u2013haplotype calling returns more accurate estimates irrespective of the divergence to the reference genome, but requires moderate depth (8\\u201320X).\"",
+        "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"recommend moderate to high depth and genotype\\u2013haplotype calling when individual genotypes are essential\"; evidence_id=\"A9\"; evidence=\"Otherwise, aiming for moderate to high depth at the expense of number of individuals, and using genotype\\u2013haplotype calling, is recommended.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P004201\", \"problem\": [{\"concept\": \"lack of genomic resources for less well-known species\", \"evidence_id\": \"A1\"}, {\"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\", \"evidence_id\": \"A2\"}, {\"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"genotype calling\", \"evidence_id\": \"A4\"}, {\"concept\": \"genotype–haplotype calling\", \"evidence_id\": \"A4\"}, {\"concept\": \"direct estimation without calling genotypes\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"individual resequencing data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\", \"evidence_id\": \"A5\"}, {\"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\", \"evidence_id\": \"A6\"}, {\"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\", \"evidence_id\": \"A7\"}, {\"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\", \"evidence_id\": \"A8\"}, {\"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\", \"evidence_id\": \"A9\"}]}",
+      "attempt": 3,
+      "generation_seconds": 47.712516895997396,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P004201\",\n  \"problem\": [\n    {\n      \"concept\": \"lack of genomic resources for less well-known species\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"biased estimates of population genetic statistics at low to moderate read depth\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"investigate performance of alternative experimental designs and bioinformatics approaches\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"estimate variability and neutrality tests based on site-frequency-spectrum (SFS)\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"genotype calling\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"genotype–haplotype calling\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"direct estimation without calling genotypes\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"individual resequencing data\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"find that genotype calls provide biased estimates at low to moderate read depth\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"genotype–haplotype calling returns more accurate estimates irrespective of divergence to reference genome\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"direct estimation without calling genotypes returns most accurate estimates of variability and SFS tests\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"studies without species-specific reference genome should aim for low read depth and avoid genotype calling\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"recommend moderate to high depth and genotype–haplotype calling when individual genotypes are essential\",\n      \"evidence_id\": \"A9\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 93.1278,
+      "seed": 12647,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4675,
+        "output_tokens": 462
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of genomic resources for less well-known species\"; evidence_id=\"A1\"; evidence=\"However, experimental designs and analysis of NGS data from less well-known species are challenging because of the lack of genomic resources.\"",
+        "contribution[1]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"genotype\\u2013haplotype calling returns more accurate estimates irrespective of divergence to reference genome\"; evidence_id=\"A6\"; evidence=\"Genotype\\u2013haplotype calling returns more accurate estimates irrespective of the divergence to the reference genome, but requires moderate depth (8\\u201320X).\"",
+        "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"recommend moderate to high depth and genotype\\u2013haplotype calling when individual genotypes are essential\"; evidence_id=\"A9\"; evidence=\"Otherwise, aiming for moderate to high depth at the expense of number of individuals, and using genotype\\u2013haplotype calling, is recommended.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P004201",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "individual resequencing data",
+        "evidence": "In this work, we investigate the performance of alternative experimental designs and bioinformatics approaches in estimating variability and neutrality tests based on the site-frequency-spectrum (SFS) from individual resequencing data.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 3,
+  "selected_score": 93.1278,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of genomic resources for less well-known species\"; evidence_id=\"A1\"; evidence=\"However, experimental designs and analysis of NGS data from less well-known species are challenging because of the lack of genomic resources.\"",
+    "contribution[1]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"genotype\\u2013haplotype calling returns more accurate estimates irrespective of divergence to reference genome\"; evidence_id=\"A6\"; evidence=\"Genotype\\u2013haplotype calling returns more accurate estimates irrespective of the divergence to the reference genome, but requires moderate depth (8\\u201320X).\"",
+    "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"recommend moderate to high depth and genotype\\u2013haplotype calling when individual genotypes are essential\"; evidence_id=\"A9\"; evidence=\"Otherwise, aiming for moderate to high depth at the expense of number of individuals, and using genotype\\u2013haplotype calling, is recommended.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

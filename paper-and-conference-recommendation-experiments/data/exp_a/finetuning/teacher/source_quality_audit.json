@@ -1,0 +1,19 @@
+{
+  "protocol": "Pre-training title and abstract comparison across all 400 existing references, 330 new candidates and pilot50; conservative paper-family exclusion before split, without student predictions or test scores.",
+  "candidate_screen": "Normalized title SequenceMatcher >=0.83 for titles longer than20characters, or abstract word-fivegram Jaccard >=0.55; each candidate inspected from full local corpus title and abstract.",
+  "excluded": {
+    "P003189": "Conservative PyMC3 paper-family exclusion: 2015source introduces PyMC3; retain the 2016P003646tutorial with almost identical normalized title instead. Different abstracts, so exact text deduplication would miss this relationship.",
+    "P003350": "Conservative self-attention biological relation extraction paper-family exclusion: 2017source and existing2018P002535 share full-abstract all-pairs self-attention, multi-instance pooling, joint NER, weakly labeled data and the same BiocreativeVCDR no-KB finding. Retain the existing2018reference."
+  },
+  "retained_distinct_pairs": [
+    {
+      "paper_ids": ["P000329", "P001168"],
+      "reason": "Quadratic-cost and probabilistic-vertex minimum spanning tree problems are distinct problems and contributions; similar title structure alone does not justify exclusion."
+    }
+  ],
+  "known_sources_for_independent_completeness_review": [
+    {"paper_id": "P001701", "reason": "Draft extractor flagged a visibly cut-off final clause."},
+    {"paper_id": "P002189", "reason": "Grammar-universals title and log-slasher patent abstract are incoherent together."}
+  ],
+  "limitation": "Conservative local source comparison, not a complete bibliographic version-resolution system. No related-title candidates were found involving pilot50."
+}

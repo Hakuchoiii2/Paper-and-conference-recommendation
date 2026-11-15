@@ -1,0 +1,294 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 29.23958777300004,
+          "messages_sha256": "29d05dae2cc17bc4220e08d3e0e0014152f6b585dab40a0709afc5a4659c6338",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002652\", \"problem\": [{\"concept\": \"the GMST problem is NP-hard\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"discuss the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"exact exponential time algorithm for the problem based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"}, {\"concept\": \"establish relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints\", \"evidence_id\": \"A3\"}, {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}, {\"concept\": \"discuss the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 8000,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2678,
+            "output_tokens": 356
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "relationships between the polytopes corresponding to their linear relaxations",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "a solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "discuss the advantages of our method in comparison with earlier methods",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "exact exponential time algorithm for the problem based on dynamic programming",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "new mixed integer programming models of the GMST problem",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "establish relationships between the polytopes corresponding to their linear relaxations",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002652",
+        "problem": [
+          {
+            "concept": "the GMST problem is NP-hard",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "discuss the advantages of our method in comparison with earlier methods",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.45857165100006,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002652",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 88.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3880,
+        "output_tokens": 1012
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.205063455000072,
+        "messages_sha256": "7f13fa6c62775f69630c4b7d59fe741d8cded7a5a1ecef68cae79941d1ddf9f4",
+        "raw_output": "{\"paper_id\":\"P002652\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We consider a generalization of the Minimum Spanning Tree Problem, called the Generalized Minimum Spanning Tree Problem, denoted by GMST.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"It is known that the GMST problem is NP-hard.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We describe new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We establish relationships between the polytopes corresponding to their linear relaxations.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Based on a new model of the GM...\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"We discuss the advantages of our method in comparison with earlier methods.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 7998,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 587,
+          "output_tokens": 313
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 26.013920422999945,
+        "messages_sha256": "175a4a0b6226a2ebd1ac5adedec57734035d911b026afe9f82e57a1bccca4a08",
+        "raw_output": "{\"paper_id\":\"P002652\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We consider a generalization of the Minimum Spanning Tree Problem, called the Generalized Minimum Spanning Tree Problem, denoted by GMST.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"It is known that the GMST problem is NP-hard.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We describe new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We establish relationships between the polytopes corresponding to their linear relaxations.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Based on a new model of the GMST we present a solution procedure that solves the problem to optimality for graphs with nodes up to 240.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"We discuss the advantages of our method in comparison with earlier methods.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 7999,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 615,
+          "output_tokens": 343
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 29.23958777300004,
+        "messages_sha256": "29d05dae2cc17bc4220e08d3e0e0014152f6b585dab40a0709afc5a4659c6338",
+        "raw_output": "{\"paper_id\": \"P002652\", \"problem\": [{\"concept\": \"the GMST problem is NP-hard\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"discuss the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"exact exponential time algorithm for the problem based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"new mixed integer programming models of the GMST problem\", \"evidence_id\": \"A3\"}, {\"concept\": \"establish relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming\", \"evidence_id\": \"A2\"}, {\"concept\": \"new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints\", \"evidence_id\": \"A3\"}, {\"concept\": \"relationships between the polytopes corresponding to their linear relaxations\", \"evidence_id\": \"A4\"}, {\"concept\": \"a solution procedure that solves the problem to optimality for graphs with nodes up to 240\", \"evidence_id\": \"A5\"}, {\"concept\": \"discuss the advantages of our method in comparison with earlier methods\", \"evidence_id\": \"A6\"}]}",
+        "reached_token_limit": false,
+        "seed": 8000,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2678,
+          "output_tokens": 356
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming",
+        "new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints",
+        "relationships between the polytopes corresponding to their linear relaxations",
+        "a solution procedure that solves the problem to optimality for graphs with nodes up to 240",
+        "discuss the advantages of our method in comparison with earlier methods"
+      ],
+      "dataset": [],
+      "method": [
+        "exact exponential time algorithm for the problem based on dynamic programming",
+        "new mixed integer programming models of the GMST problem",
+        "establish relationships between the polytopes corresponding to their linear relaxations",
+        "solution procedure that solves the problem to optimality for graphs with nodes up to 240"
+      ],
+      "paper_id": "P002652",
+      "problem": [
+        "the GMST problem is NP-hard"
+      ],
+      "task": [
+        "discuss the advantages of our method in comparison with earlier methods"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.45857165100006,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.205063455000072,
+        "messages_sha256": "7f13fa6c62775f69630c4b7d59fe741d8cded7a5a1ecef68cae79941d1ddf9f4",
+        "raw_output": "{\"paper_id\":\"P002652\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We consider a generalization of the Minimum Spanning Tree Problem, called the Generalized Minimum Spanning Tree Problem, denoted by GMST.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"It is known that the GMST problem is NP-hard.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We describe new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We establish relationships between the polytopes corresponding to their linear relaxations.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Based on a new model of the GM...\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"We discuss the advantages of our method in comparison with earlier methods.\",\"roles\":[\"task\"],\"origin\":\"current\",\"context_ids\":[]}]}}",
+        "reached_token_limit": false,
+        "seed": 7998,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 587,
+          "output_tokens": 313
+        },
+        "validation_errors": [
+          "Qwen output must contain one readable UTF-8 JSON object only"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 26.013920422999945,
+        "messages_sha256": "175a4a0b6226a2ebd1ac5adedec57734035d911b026afe9f82e57a1bccca4a08",
+        "raw_output": "{\"paper_id\":\"P002652\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"We consider a generalization of the Minimum Spanning Tree Problem, called the Generalized Minimum Spanning Tree Problem, denoted by GMST.\",\"roles\":[\"problem\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"It is known that the GMST problem is NP-hard.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[]},{\"evidence_id\":\"A2\",\"span\":\"We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A3\",\"span\":\"We describe new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A4\",\"span\":\"We establish relationships between the polytopes corresponding to their linear relaxations.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A5\",\"span\":\"Based on a new model of the GMST we present a solution procedure that solves the problem to optimality for graphs with nodes up to 240.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A6\",\"span\":\"We discuss the advantages of our method in comparison with earlier methods.\",\"roles\":[\"task\",\"contribution\"],\"origin\":\"current\",\"context_ids\":[]}]}",
+        "reached_token_limit": false,
+        "seed": 7999,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 615,
+          "output_tokens": 343
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.45857165100006,
+      "input_tokens": 3880,
+      "output_tokens": 1012
+    },
+    "paper_id": "P002652",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "problem"
+        ],
+        "span": "We consider a generalization of the Minimum Spanning Tree Problem, called the Generalized Minimum Spanning Tree Problem, denoted by GMST."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A1",
+        "origin": "prior",
+        "roles": [
+          "problem"
+        ],
+        "span": "It is known that the GMST problem is NP-hard."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "contribution",
+          "method"
+        ],
+        "span": "We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A3",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "We describe new mixed integer programming models of the GMST problem, mainly containing a polynomial number of constraints."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A4",
+        "origin": "current",
+        "roles": [
+          "method",
+          "contribution"
+        ],
+        "span": "We establish relationships between the polytopes corresponding to their linear relaxations."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A5",
+        "origin": "current",
+        "roles": [
+          "contribution",
+          "method"
+        ],
+        "span": "Based on a new model of the GMST we present a solution procedure that solves the problem to optimality for graphs with nodes up to 240."
+      },
+      {
+        "context_ids": [],
+        "evidence_id": "A6",
+        "origin": "current",
+        "roles": [
+          "task",
+          "contribution"
+        ],
+        "span": "We discuss the advantages of our method in comparison with earlier methods."
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3880,
+      "output_tokens": 1012
+    }
+  },
+  "record_sha256": "57880435bdd550a11b9e82c14e2b7bfcb5c313200b1e66278f81ba5c546be36f",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

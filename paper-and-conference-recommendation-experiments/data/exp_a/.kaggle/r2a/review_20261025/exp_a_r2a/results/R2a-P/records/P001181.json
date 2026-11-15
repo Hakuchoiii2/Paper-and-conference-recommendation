@@ -1,0 +1,315 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001181\",\n  \"problem\": [\n    {\n      \"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"parser domain adaptation\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"examine the impact of syntactic parser adaptation on a semantic role labeling system\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"self-training with and without reranking\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"WSJ Penn Treebank\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"self-training without reranking is surprisingly effective for parser domain adaptation\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 22.922186709000016,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001181\",\n  \"problem\": [\n    {\n      \"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"parser domain adaptation\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"examine the impact of syntactic parser adaptation on a semantic role labeling system\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"self-training with and without reranking\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"WSJ Penn Treebank\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"self-training without reranking is surprisingly effective for parser domain adaptation\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler\",\n      \"evidence_id\": \"A2\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 95.9598,
+          "seed": 3585,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2363,
+            "output_tokens": 278
+          },
+          "validation_errors": [
+            "contribution[0]: shortening drops source negation; concept=\"self-training without reranking is surprisingly effective for parser domain adaptation\"; evidence_id=\"A1\"; evidence=\"Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, we show that it is surprisingly effective for parser domain adaptation.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001181\", \"problem\": [{\"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"parser domain adaptation\", \"evidence_id\": \"A0\"}, {\"concept\": \"examine the impact of syntactic parser adaptation on a semantic role labeling system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"self-training with and without reranking\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"WSJ Penn Treebank\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\", \"evidence_id\": \"A1\"}, {\"concept\": \"simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 8.97382096399997,
+          "operations": [
+            {
+              "before": {
+                "concept": "self-training without reranking is surprisingly effective for parser domain adaptation",
+                "evidence_id": "A1"
+              },
+              "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+              "evidence_id": "A1",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P001181\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":0,\"concept\":\"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\",\"evidence_id\":\"A1\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 95.7143,
+          "seed": 3586,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2629,
+            "output_tokens": 79
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\"; evidence_id=\"A1\"; evidence=\"Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, we show that it is surprisingly effective for parser domain adaptation.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001181\", \"problem\": [{\"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"parser domain adaptation\", \"evidence_id\": \"A0\"}, {\"concept\": \"examine the impact of syntactic parser adaptation on a semantic role labeling system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"self-training with and without reranking\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"WSJ Penn Treebank\", \"evidence_id\": \"A1\"}], \"contribution\": [{\"concept\": \"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\", \"evidence_id\": \"A1\"}, {\"concept\": \"simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 3,
+          "generation_seconds": 8.963540340999998,
+          "operations": [
+            {
+              "before": {
+                "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+                "evidence_id": "A1"
+              },
+              "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+              "evidence_id": "A1",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P001181\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":0,\"concept\":\"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\",\"evidence_id\":\"A1\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 95.7143,
+          "seed": 3587,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2699,
+            "output_tokens": 79
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation\"; evidence_id=\"A1\"; evidence=\"Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, we show that it is surprisingly effective for parser domain adaptation.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "self-training without reranking is surprisingly effective for parser domain adaptation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WSJ Penn Treebank",
+            "evidence_id": "A1"
+          }
+        ],
+        "method": [
+          {
+            "concept": "self-training with and without reranking",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P001181",
+        "problem": [
+          {
+            "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "parser domain adaptation",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "examine the impact of syntactic parser adaptation on a semantic role labeling system",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 40.859548013999984,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001181",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 3585,
+      "selected_score": 95.9598,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7691,
+        "output_tokens": 436
+      },
+      "validation_errors": [
+        "contribution[0]: shortening drops source negation; concept=\"self-training without reranking is surprisingly effective for parser domain adaptation\"; evidence_id=\"A1\"; evidence=\"Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, we show that it is surprisingly effective for parser domain adaptation.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "a29facf3151c8616c30095754839737e993dba3905e137c1f9d0c3c3b49e831c",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 3585
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "ce7ccb51e465413ed2ba661ad6c3db5619a1a3e5dcb30d9d3693255af685a88f",
+        "operations": [
+          {
+            "before": {
+              "concept": "self-training without reranking is surprisingly effective for parser domain adaptation",
+              "evidence_id": "A1"
+            },
+            "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+            "evidence_id": "A1",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 3586
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "4f15eaf65ea8dd831670f8bb180e7562dbb44827579e932a5d7da08ece9d1439",
+        "operations": [
+          {
+            "before": {
+              "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+              "evidence_id": "A1"
+            },
+            "concept": "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, but is surprisingly effective for parser domain adaptation",
+            "evidence_id": "A1",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 3587
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "contribution[0]: shortening drops source negation; concept=\"self-training without reranking is surprisingly effective for parser domain adaptation\"; evidence_id=\"A1\"; evidence=\"Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank, we show that it is surprisingly effective for parser domain adaptation.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "self-training without reranking is surprisingly effective for parser domain adaptation",
+        "simple self-training of a syntactic parser improves out-of-domain accuracy of a semantic role labeler"
+      ],
+      "dataset": [
+        "WSJ Penn Treebank"
+      ],
+      "method": [
+        "self-training with and without reranking"
+      ],
+      "paper_id": "P001181",
+      "problem": [
+        "self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank"
+      ],
+      "task": [
+        "parser domain adaptation",
+        "examine the impact of syntactic parser adaptation on a semantic role labeling system"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 40.859548013999984,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 17.937361304999968,
+      "input_tokens": 5328,
+      "output_tokens": 158
+    },
+    "paper_id": "P001181",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0,
+        1
+      ]
+    },
+    "usage": {
+      "input_tokens": 7691,
+      "output_tokens": 436
+    }
+  },
+  "record_sha256": "cf9af797ed3ead97140655c7cd525870b83923aaf6848b58ddf9334200e0e4cf",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

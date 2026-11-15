@@ -1,0 +1,246 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003309\", \"problem\": [{\"concept\": \"lack certain components critical for machine learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep but only weakly detectable homology\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"protein structure prediction\", \"evidence_id\": \"A0\"}, {\"concept\": \"protein design\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"high-performance computing\", \"evidence_id\": \"A5\"}, {\"concept\": \"evolution-based distance metrics\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}, {\"concept\": \"validation sets\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 29.001117366000017,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003309\", \"problem\": [{\"concept\": \"lack certain components critical for machine learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep but only weakly detectable homology\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"protein structure prediction\", \"evidence_id\": \"A0\"}, {\"concept\": \"protein design\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"high-performance computing\", \"evidence_id\": \"A5\"}, {\"concept\": \"evolution-based distance metrics\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}, {\"concept\": \"validation sets\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.6667,
+          "seed": 9969,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2566,
+            "output_tokens": 199
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003309\", \"problem\": [{\"concept\": \"lack certain components critical for machine learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep but only weakly detectable homology\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"protein structure prediction\", \"evidence_id\": \"A0\"}, {\"concept\": \"protein design\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"high-performance computing\", \"evidence_id\": \"A5\"}, {\"concept\": \"evolution-based distance metrics\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}, {\"concept\": \"validation sets\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.557117787000152,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003309\", \"problem\": [{\"concept\": \"lack certain components critical for machine learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"deep but only weakly detectable homology\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"protein structure prediction\", \"evidence_id\": \"A0\"}, {\"concept\": \"protein design\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"high-performance computing\", \"evidence_id\": \"A5\"}, {\"concept\": \"evolution-based distance metrics\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"ProteinNet\", \"evidence_id\": \"A3\"}, {\"concept\": \"validation sets\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 99.6667,
+          "seed": 9970,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4144,
+            "output_tokens": 199
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "ProteinNet",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "validation sets",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "ProteinNet",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "high-performance computing",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "evolution-based distance metrics",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P003309",
+        "problem": [
+          {
+            "concept": "lack certain components critical for machine learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "deep but only weakly detectable homology",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "protein structure prediction",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "protein design",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 59.55823515300017,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "ProteinNet",
+            "evidence": "We have created the ProteinNet series of data sets to provide a standardized mechanism for training and assessing data-driven models of protein sequence-structure relationships.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9970,
+      "selected_score": 99.6667,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6710,
+        "output_tokens": 398
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "ProteinNet",
+          "evidence": "We have created the ProteinNet series of data sets to provide a standardized mechanism for training and assessing data-driven models of protein sequence-structure relationships.",
+          "source": "abstract"
+        },
+        {
+          "concept": "validation sets",
+          "evidence": "Utilizing sensitive evolution-based distance metrics to segregate distantly related proteins, we have additionally created validation sets distinct from the official CASP sets that faithfully mimic their difficulty.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "high-performance computing",
+          "evidence": "Multiple sequence alignments of all structurally characterized proteins were created using substantial high-performance computing resources.",
+          "source": "abstract"
+        },
+        {
+          "concept": "evolution-based distance metrics",
+          "evidence": "Utilizing sensitive evolution-based distance metrics to segregate distantly related proteins, we have additionally created validation sets distinct from the official CASP sets that faithfully mimic their difficulty.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P003309",
+      "problem": [
+        {
+          "concept": "lack certain components critical for machine learning",
+          "evidence": "While data sets of protein sequence and structure exist, they lack certain components critical for machine learning, including high-quality multiple sequence alignments and insulated training / validation splits that account for deep but only weakly detectable homology across protein space.",
+          "source": "abstract"
+        },
+        {
+          "concept": "deep but only weakly detectable homology",
+          "evidence": "While data sets of protein sequence and structure exist, they lack certain components critical for machine learning, including high-quality multiple sequence alignments and insulated training / validation splits that account for deep but only weakly detectable homology across protein space.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "protein structure prediction",
+          "evidence": "Rapid progress in deep learning has spurred its application to bioinformatics problems including protein structure prediction and design.",
+          "source": "abstract"
+        },
+        {
+          "concept": "protein design",
+          "evidence": "Rapid progress in deep learning has spurred its application to bioinformatics problems including protein structure prediction and design.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "ProteinNet",
+        "validation sets"
+      ],
+      "dataset": [],
+      "method": [
+        "high-performance computing",
+        "evolution-based distance metrics"
+      ],
+      "paper_id": "P003309",
+      "problem": [
+        "lack certain components critical for machine learning",
+        "deep but only weakly detectable homology"
+      ],
+      "task": [
+        "protein structure prediction",
+        "protein design"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 59.55823515300017,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P003309",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6710,
+      "output_tokens": 398
+    }
+  },
+  "record_sha256": "9016b1d822a3e5fcb208d48fb3bebf182c755ab9b50a6f51bc1767bb223b0ab9",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

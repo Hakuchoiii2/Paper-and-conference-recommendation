@@ -1,0 +1,478 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.339241870002297,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6942,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1309,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.79350846500165,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6943,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3082,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.964296655001817,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002300\", \"task\": [], \"method\": [{\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}, {\"concept\": \"weighted combination from a set of metrics\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6944,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 743,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "adaptive metric learning approach",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "adaptive metric learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "meta-training",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "weighted combination from a set of metrics",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002300",
+        "problem": [
+          {
+            "concept": "single metric is insufficient to capture complex task variations",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "sentiment analysis",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "dialog intent classification",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 78.09704699000577,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002300",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5134,
+        "output_tokens": 395
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.339241870002297,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6942,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1309,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.79350846500165,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002300\", \"problem\": [{\"concept\": \"single metric is insufficient to capture complex task variations\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A4\"}, {\"concept\": \"dialog intent classification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"adaptive metric learning\", \"evidence_id\": \"A3\"}, {\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"adaptive metric learning approach\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6943,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3082,
+            "output_tokens": 166
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "adaptive metric learning approach",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "adaptive metric learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "meta-training",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002300",
+        "problem": [
+          {
+            "concept": "single metric is insufficient to capture complex task variations",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "sentiment analysis",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "dialog intent classification",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 66.13275033500395,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6943,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4391,
+        "output_tokens": 332
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.339241870002297,
+        "inherited": false,
+        "messages_sha256": "06b7c4e9bcf812a1df5da9dca57513b5e2879337e25915e5858f2061bb607e4d",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6942,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1309,
+          "output_tokens": 166
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.79350846500165,
+        "inherited": false,
+        "messages_sha256": "39bb4c98b327ef7d11cd6d5aef33b8632c157658b57229fdf341d5e916287454",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002300",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 6943,
+        "usage": {
+          "input_tokens": 3082,
+          "output_tokens": 166
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.964296655001817,
+        "inherited": false,
+        "messages_sha256": "59f5172f804050f97e03f36e14c185facb69daab247db988cc8bdaad2054eafc",
+        "reached_token_limit": false,
+        "seed": 6944,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 743,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "weighted combination from a set of metrics",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "adaptive metric learning approach",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "adaptive metric learning",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "meta-training",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002300",
+        "problem": [
+          {
+            "concept": "single metric is insufficient to capture complex task variations",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "sentiment analysis",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "dialog intent classification",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "meta-training",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.964296655001817,
+      "messages_sha256": "59f5172f804050f97e03f36e14c185facb69daab247db988cc8bdaad2054eafc",
+      "raw_output": "{\"paper_id\": \"P002300\", \"task\": [], \"method\": [{\"concept\": \"meta-training\", \"evidence_id\": \"A3\"}, {\"concept\": \"weighted combination from a set of metrics\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 743,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "a8f915bd1601de2c9e4dee47b2832b62b911c4207ba5ddc48e348c5f2a0c3816",
+    "facets": {
+      "contribution": [
+        "adaptive metric learning approach"
+      ],
+      "dataset": [],
+      "method": [
+        "adaptive metric learning",
+        "meta-training",
+        "weighted combination from a set of metrics"
+      ],
+      "paper_id": "P002300",
+      "problem": [
+        "single metric is insufficient to capture complex task variations"
+      ],
+      "task": [
+        "few-shot learning",
+        "sentiment analysis",
+        "dialog intent classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 78.09704699000577,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 78.09704699000577,
+      "input_tokens": 5134,
+      "output_tokens": 395
+    },
+    "paper_id": "P002300",
+    "source_sha256": "1b09ab8533daa134b8f9770ea039ce8b314f414b90043714faca23e58374d122",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5134,
+      "output_tokens": 395
+    }
+  },
+  "record_sha256": "81adf6a5adfb527fad36e47c57f63cd6cddee6d51ac10a4dde0bfd7c423912fd",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

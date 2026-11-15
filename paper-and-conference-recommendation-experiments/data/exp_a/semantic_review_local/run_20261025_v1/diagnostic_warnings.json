@@ -1,0 +1,434 @@
+[
+  {
+    "paper_id": "P001181",
+    "raw_item_id": "problem:0",
+    "diagnostic_item_id": "problem:0",
+    "decision": "flag",
+    "category": "unsupported",
+    "pre_review_label": "supported",
+    "raw_id_valid": true,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "problem:0",
+      "decision": "flag",
+      "category": "unsupported",
+      "source_id": "A1",
+      "quote": "Although self-training without reranking has been found not to improve in-domain accuracy for parsers trained on the WSJ Penn Treebank",
+      "reason": "The source sentence states that self-training without reranking does not improve in-domain accuracy, but this is presented as a prior finding, not a problem motivating the work. The problem should be the limitation or question that the paper addresses. The actual problem is not explicitly stated; instead, the sentence describes a prior result. This constitutes an unsupported claim of a problem, as the paper does not frame this as a problem to be solved."
+    }
+  },
+  {
+    "paper_id": "P001211",
+    "raw_item_id": "facet:problem:1",
+    "diagnostic_item_id": "problem:1",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:1",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A3",
+      "quote": "all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech",
+      "reason": "The source sentence describes the techniques as being 'bri le' (likely a typo for 'vulnerable' or 'weak') against adversaries, implying they are easily attacked. However, this is a property of the detection methods, not a problem. A problem should be a limitation or question motivating the work. This is a method-level observation, not a problem. It is incorrectly assigned to the 'problem' facet."
+    }
+  },
+  {
+    "paper_id": "P001211",
+    "raw_item_id": "facet:problem:2",
+    "diagnostic_item_id": "problem:2",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:2",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A5",
+      "quote": "adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features",
+      "reason": "This sentence describes a finding about model robustness, not a problem. It states a limitation (adversarial training is insufficient), which could be a problem, but the phrasing is more of a contribution or observation. The claim that adversarial training fails is a limitation, but it is presented as a result of an experiment, not as a motivating problem. The original problem is not clearly stated here. This is better categorized as a contribution or method-level finding, not a problem."
+    }
+  },
+  {
+    "paper_id": "P001211",
+    "raw_item_id": "facet:contribution:1",
+    "diagnostic_item_id": "contribution:1",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:1",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A3",
+      "quote": "all proposed detection techniques are bri le against adversaries who can (automatically) insert typos, change word boundaries or add innocuous words to the original hate speech",
+      "reason": "This sentence describes a vulnerability of the detection methods, not a contribution. A contribution should be a new finding or artifact. This is a negative observation about model robustness, not a positive contribution. It should be under 'problem' or 'method', not 'contribution'."
+    }
+  },
+  {
+    "paper_id": "P001211",
+    "raw_item_id": "facet:contribution:3",
+    "diagnostic_item_id": "contribution:3",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:3",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A5",
+      "quote": "adversarial training does not completely mitigate the a acks, and using character-level features makes the models systematically more a ack-resistant than using word-level features",
+      "reason": "This is a factual result from the experiment, not a new contribution. The claim about character-level features being more robust is a valid finding, but it is presented as a result of the study, not as a novel artifact or insight. It is better classified as a method-level finding or a task-level observation, not a contribution in the sense of a new claim or insight."
+    }
+  },
+  {
+    "paper_id": "P002471",
+    "raw_item_id": "facet:problem:0",
+    "diagnostic_item_id": "problem:0",
+    "decision": "flag",
+    "category": "unsupported",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:0",
+      "decision": "flag",
+      "category": "unsupported",
+      "source_id": "A0",
+      "quote": "We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.",
+      "reason": "The source sentence describes the implementation and deployment of a tutor, not a problem students face. The claim that 'students struggle to learn the semantics of C++ pointers' is not explicitly stated or supported in the source; it is inferred from the evaluation result, which is later addressed in A1. This constitutes an unsupported problem statement."
+    }
+  },
+  {
+    "paper_id": "P002471",
+    "raw_item_id": "facet:task:0",
+    "diagnostic_item_id": "task:0",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:task:0",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A0",
+      "quote": "We incorporated animation of the data space into a web-based tutor for solving problems on C++ pointers and made the tutor available to students.",
+      "reason": "The source mentions developing and deploying a tutor, but does not explicitly state the task as 'developing a web-based tutor for solving problems on C++ pointers'. The task is implied but not directly asserted. The verb 'incorporated' suggests integration rather than development as the primary objective, potentially shifting the task's focus."
+    }
+  },
+  {
+    "paper_id": "P002471",
+    "raw_item_id": "facet:contribution:1",
+    "diagnostic_item_id": "contribution:1",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:1",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A2",
+      "quote": "But, it is no more effective at this than text explanation of the step-by-step execution of the program.",
+      "reason": "This sentence describes a limitation (equivalence in effectiveness), not a contribution. Contributions are new findings or artifacts, not comparative limitations. This should be categorized under 'problem' or 'evaluation result', not as a contribution."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:problem:0",
+    "diagnostic_item_id": "problem:0",
+    "decision": "flag",
+    "category": "unsupported",
+    "pre_review_label": "ambiguous",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:0",
+      "decision": "flag",
+      "category": "unsupported",
+      "source_id": "A1",
+      "quote": "It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.",
+      "reason": "The source sentence states that different gamer categories have different brain interactions, but does not explicitly identify the problem as 'differentiation of Gamer category between a Newbie and a Hardcore'. The problem is implied, not explicitly stated or framed as a limitation or question. The actual problem should be the need to identify a measurable difference between Newbie and Hardcore gamers, not just the observation of differing brain interactions."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:task:0",
+    "diagnostic_item_id": "task:0",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:task:0",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A1",
+      "quote": "It is known that each category of gamers provides a different brain interaction, because of that it is required to know what is the clearest difference by comparing 2 gamers, a Newbie and a Hardcore.",
+      "reason": "The task is labeled as 'differentiation of Gamer category', but the source does not describe a specific operational research objective (e.g., classification, signal detection, pattern analysis). The sentence expresses a need to identify differences, but does not specify the task's operational goal. This may be a misattribution of a problem to a task."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:method:0",
+    "diagnostic_item_id": "method:0",
+    "decision": "uncertain",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:method:0",
+      "decision": "uncertain",
+      "category": "wrong_role",
+      "source_id": "A2",
+      "quote": "It took data from gamers, a Newbie and a Hardcore to know their brain interaction for this was used Cyton and Daysi Boards that are devices capable of receiving brain data",
+      "reason": "The use of Cyton and Daysi Boards is described as a data collection tool, not a method of analysis. The method facet should refer to analytical techniques (e.g., signal processing, classification), not just the hardware used. This is a role misclassification: the device is part of the dataset or setup, not a method of analysis."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:method:1",
+    "diagnostic_item_id": "method:1",
+    "decision": "uncertain",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:method:1",
+      "decision": "uncertain",
+      "category": "wrong_role",
+      "source_id": "A2",
+      "quote": "in addition to using the connection 10-20 for the placement of the electrodes, being these 16 channels (Fp1, Fp2, C3, C4, T5, T6, O1, O2, F7, F8, F3, F4, T3, T4, P3 and P4)",
+      "reason": "The 10-20 electrode placement is a method of electrode positioning, not a method of data analysis. It is a technical setup detail, not a research method. Assigning it to 'method' without specifying its analytical role misrepresents the nature of the technique. It belongs more appropriately in a dataset or experimental design facet."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:method:2",
+    "diagnostic_item_id": "method:2",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:method:2",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A3",
+      "quote": "The obtaining data was when the gamers were playing DOTA 1, having 22 minutes analyzed in both parts, with a sampling frequency of 250 and obtaining 128 data per second.",
+      "reason": "The sentence describes data collection timing and sampling parameters, not an analytical method. The phrase 'analysis of brainwave data during gameplay' is not explicitly stated or supported in the source. The source does not describe any analytical process (e.g., filtering, feature extraction, classification), only when and how data was collected. This is a misattribution of a method to a data collection event."
+    }
+  },
+  {
+    "paper_id": "P003211",
+    "raw_item_id": "facet:contribution:0",
+    "diagnostic_item_id": "contribution:0",
+    "decision": "flag",
+    "category": "unsupported",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:0",
+      "decision": "flag",
+      "category": "unsupported",
+      "source_id": "A4",
+      "quote": "Having as a result that in the channels F7 and P3 in the frequencies of 1 and 2 Hz a difference of signals, due to their separation indicating the difference of the cerebral interaction of the players, showing that the hardcore brainwave has more potential than the newbie brainwave in those channels.",
+      "reason": "The contribution claims a difference in brainwave signals and that 'hardcore brainwave has more potential' — this is not explicitly stated or supported. The source only reports a difference in signals in specific channels and frequencies, not a comparative claim about 'potential'. The term 'more potential' is not in the source and introduces a value judgment not justified by the data. This is an unsupported interpretation or overstatement."
+    }
+  },
+  {
+    "paper_id": "P001506",
+    "raw_item_id": "facet:problem:0",
+    "diagnostic_item_id": "problem:0",
+    "decision": "flag",
+    "category": "unsupported",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:0",
+      "decision": "flag",
+      "category": "unsupported",
+      "source_id": "A1",
+      "quote": "Distinct from existing VAE-based text generative models, SIVAE contains two separate latent spaces, for sentences and syntactic trees.",
+      "reason": "The source sentence does not explicitly state that existing VAE-based models lack integration of syntactic structures; it only notes that SIVAE differs by having two latent spaces. The claim of a limitation in existing models is not directly or explicitly stated, making the problem facet unsupported."
+    }
+  },
+  {
+    "paper_id": "P001506",
+    "raw_item_id": "facet:task:0",
+    "diagnostic_item_id": "task:0",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:task:0",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A0",
+      "quote": "We present a syntax-infused variational autoencoder (SIVAE), that integrates sentences with their syntactic trees to improve the grammar of generated sentences.",
+      "reason": "The task is described as improving grammar via integration of syntactic trees, but the source does not explicitly define the task as 'generate sentences with improved grammar'—this is an interpretation. The original task may be more precisely defined as 'generate sentences with syntactic structure guidance', and the grammar improvement is a consequence, not necessarily the primary task."
+    }
+  },
+  {
+    "paper_id": "P001604",
+    "raw_item_id": "facet:problem:0",
+    "diagnostic_item_id": "problem:0",
+    "decision": "flag",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:problem:0",
+      "decision": "flag",
+      "category": "meaning_loss",
+      "source_id": "A2",
+      "quote": "The accurate TC of Microposts however is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information.",
+      "reason": "The source sentence states that accurate TC is challenging due to limited tokens and lack of contextual information, but the annotation frames this as a problem without explicitly identifying the core limitation (e.g., lack of context) as a distinct problem. The phrase 'limited number of tokens' is not clearly linked to the 'lack of sufficient contextual information' as a problem; this is a causal claim not explicitly stated as a problem. The annotation misrepresents the problem as being solely about token count, when the actual problem is the lack of context, which is a more fundamental issue. The original sentence does not explicitly state 'topic classification' as the problem, only that it is challenging. Thus, the problem facet is misaligned with the actual motivation."
+    }
+  },
+  {
+    "paper_id": "P001604",
+    "raw_item_id": "facet:task:1",
+    "diagnostic_item_id": "task:1",
+    "decision": "uncertain",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": false,
+    "warning": {
+      "item_id": "facet:task:1",
+      "decision": "uncertain",
+      "category": "wrong_role",
+      "source_id": "A8",
+      "quote": "Our goal is also to understand which semantic feature contributes to the performance of a topic classifier.",
+      "reason": "The sentence expresses a goal, not a task. A 'task' refers to the primary objective of the work, which is topic classification. The goal of understanding feature contribution is a research objective or sub-objective, not a task per se. While it may be a secondary task, the primary task is clearly topic classification (A1). This annotation incorrectly assigns a secondary goal as a 'task' without justification. However, given that the paper studies multiple aspects, some ambiguity exists in the boundary between tasks and goals. Thus, this is uncertain rather than clearly erroneous."
+    }
+  },
+  {
+    "paper_id": "P001604",
+    "raw_item_id": "facet:method:2",
+    "diagnostic_item_id": "method:2",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": false,
+    "warning": {
+      "item_id": "facet:method:2",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A8",
+      "quote": "We propose an approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts.",
+      "reason": "This is a methodological contribution, not a method. The annotation assigns it to 'method' when it is actually a novel approach for estimation — a contribution or evaluation component. It does not describe a technique used in feature extraction or classification, but rather a prediction mechanism. This is a misclassification of role: it is a contribution (prediction of accuracy loss), not a method of classification or feature generation."
+    }
+  },
+  {
+    "paper_id": "P001604",
+    "raw_item_id": "facet:contribution:3",
+    "diagnostic_item_id": "contribution:3",
+    "decision": "flag",
+    "category": "merged_findings",
+    "pre_review_label": "issues",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:3",
+      "decision": "flag",
+      "category": "merged_findings",
+      "source_id": "A9",
+      "quote": "Extensive evaluation in the context of Emergency Response (ER) and Violence Detection (VD) revealed that our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure.",
+      "reason": "This sentence reports a performance outcome (F1 improvement), but it does not explicitly state that the evaluation was conducted in ER and VD contexts. The claim that 'our approach outperforms previous approaches' is a finding, but the annotation merges it with the context and performance metric without clear separation. Moreover, the 31.4% improvement is not explicitly tied to the category meta-graph or the semantic graph features — it is attributed to the overall approach. This is a merged finding that combines multiple elements (context, performance, comparison) into one contribution without clear attribution to specific components. The performance gain is a result, not a standalone contribution, and should be tied to specific features or models."
+    }
+  },
+  {
+    "paper_id": "P002380",
+    "raw_item_id": "facet:method",
+    "diagnostic_item_id": "method",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "unmappable",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:method",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A0",
+      "quote": "Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.",
+      "reason": "The sentence describes the overall topic and context, not a specific method. The actual methods (correspondence between parametric and declarative mechanisms, principle of abstraction) are introduced in A1, not A0. A0 does not explicitly describe a method but rather the scope of the work. Thus, assigning 'method' to the contribution in A0 is a wrong role."
+    }
+  },
+  {
+    "paper_id": "P002380",
+    "raw_item_id": "facet:contribution",
+    "diagnostic_item_id": "contribution",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "unmappable",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A2",
+      "quote": "Several useful extensions and generalizations of Pascal emerge by applying these principles, including a solution to the array parameter problem, and a modularization facility.",
+      "reason": "The source states that extensions emerge by applying the principles, but does not explicitly claim that the solution to the array parameter problem or modularization facility are new artifacts or findings. These are outcomes, not independently claimed contributions. While plausible, the claim of contribution requires stronger explicit assertion. The loss of explicit contribution claim makes this uncertain."
+    }
+  },
+  {
+    "paper_id": "P002652",
+    "raw_item_id": "facet:method:0",
+    "diagnostic_item_id": "method:0",
+    "decision": "flag",
+    "category": "wrong_role",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:method:0",
+      "decision": "flag",
+      "category": "wrong_role",
+      "source_id": "A2",
+      "quote": "We present a stronger result regarding its complexity, namely, the GMST problem is NP-hard even on trees as well an exact exponential time algorithm for the problem based on dynamic programming.",
+      "reason": "The source sentence mentions both NP-hardness on trees and an exact exponential time algorithm based on dynamic programming, but attributes them to the same sentence. However, the 'method' facet should refer to a technique used, not a complexity result or a problem statement. The claim of an 'exact exponential time algorithm' is not clearly tied to a method used in the paper's solution procedure; it is presented as a result of complexity analysis, not as a method for solving the problem. Thus, assigning 'exact exponential time algorithm based on dynamic programming' to 'method' is incorrect because it is a complexity result, not a solution method. The actual solution method is described in A5 via the solution procedure based on the new MIP models."
+    }
+  },
+  {
+    "paper_id": "P002652",
+    "raw_item_id": "facet:contribution:2",
+    "diagnostic_item_id": "contribution:2",
+    "decision": "uncertain",
+    "category": "meaning_loss",
+    "pre_review_label": "supported",
+    "raw_id_valid": false,
+    "quote_is_exact": true,
+    "warning": {
+      "item_id": "facet:contribution:2",
+      "decision": "uncertain",
+      "category": "meaning_loss",
+      "source_id": "A5",
+      "quote": "Based on a new model of the GMST we present a solution procedure that solves the problem to optimality for graphs with nodes up to 240.",
+      "reason": "The contribution is described as presenting a solution procedure, which is correctly attributed to the contribution. However, the source sentence does not explicitly state that this is a new or novel solution procedure beyond the MIP models. It only says 'based on a new model', which may imply the procedure is derived from the model, but does not confirm it is a new artifact. Thus, the claim of a new solution procedure as a contribution may be ambiguous without explicit novelty. This is a borderline case of meaning loss due to lack of explicit novelty assertion."
+    }
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.0",
+  "experiment": "b",
+  "encoder": "all-MiniLM-L6-v2",
+  "weights": {
+    "problem": 0.25,
+    "task": 0.15,
+    "method": 0.4,
+    "dataset": 0.1,
+    "contribution": 0.1
+  },
+  "scoring": {
+    "similarity": "cosine",
+    "normalization": "L2-normalized embeddings",
+    "missing_facet_policy": "mask missing facets; normalize by active weight; fallback to whole-text cosine when none are shared"
+  },
+  "selection": {
+    "status": "frozen",
+    "objective": "mean nDCG@10",
+    "train_split": "train",
+    "dev_split": "dev",
+    "grid_step": 0.05,
+    "train_grid_candidates": 10626,
+    "dev_shortlist_size": 100,
+    "train_ndcg_at_10": 0.8819847885638096,
+    "dev_ndcg_at_10": 0.9562423194975871,
+    "test_used_for_selection": false
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.00859783499982,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4452,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1310,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.47228345700023,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"Creative Text Editing\", \"evidence_id\": \"T0\"}, {\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4453,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3009,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.296703141000762,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001470\",\"task\":[{\"concept\":\"predict whether or not an edited headline is funny\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"crowdsourced editors\",\"evidence_id\":\"A2\"},{\"concept\":\"analysis techniques\",\"evidence_id\":\"A3\"},{\"concept\":\"classifiers\",\"evidence_id\":\"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4454,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 731,
+            "output_tokens": 76
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "analysis techniques",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 55.77758443300081,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001470",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5050,
+        "output_tokens": 409
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.00859783499982,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4452,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1310,
+            "output_tokens": 158
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.47228345700023,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001470\", \"problem\": [], \"task\": [{\"concept\": \"Creative Text Editing\", \"evidence_id\": \"T0\"}, {\"concept\": \"predict whether or not an edited headline is funny\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"crowdsourced editors\", \"evidence_id\": \"A2\"}, {\"concept\": \"analysis techniques\", \"evidence_id\": \"A3\"}, {\"concept\": \"classifiers\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Humicroedit\", \"evidence_id\": \"A0\"}, {\"concept\": \"baseline classifiers\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4453,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3009,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "analysis techniques",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 45.48088129200005,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4453,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4319,
+        "output_tokens": 333
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.00859783499982,
+        "inherited": false,
+        "messages_sha256": "04eaffc0cc2e3053768a47e28f4e55aa2f19e560a98f8595a69e2c3c3626e006",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4452,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1310,
+          "output_tokens": 158
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.47228345700023,
+        "inherited": false,
+        "messages_sha256": "3b26feaf7026ee5d688ed516d88c1ebc9207d5edc2b3e896097050444d2527f6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001470",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 4453,
+        "usage": {
+          "input_tokens": 3009,
+          "output_tokens": 175
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.296703141000762,
+        "inherited": false,
+        "messages_sha256": "1e9b4cb0dc259307ec9e68e33aba67660bc3ab26b9135b32797f1726dce0a1c8",
+        "reached_token_limit": false,
+        "seed": 4454,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 731,
+          "output_tokens": 76
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "baseline classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Humicroedit",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "analysis techniques",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "classifiers",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P001470",
+        "problem": [],
+        "task": [
+          {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "predict whether or not an edited headline is funny",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "crowdsourced editors",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "analysis techniques",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "classifiers",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.296703141000762,
+      "messages_sha256": "1e9b4cb0dc259307ec9e68e33aba67660bc3ab26b9135b32797f1726dce0a1c8",
+      "raw_output": "{\"paper_id\":\"P001470\",\"task\":[{\"concept\":\"predict whether or not an edited headline is funny\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"crowdsourced editors\",\"evidence_id\":\"A2\"},{\"concept\":\"analysis techniques\",\"evidence_id\":\"A3\"},{\"concept\":\"classifiers\",\"evidence_id\":\"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 731,
+        "output_tokens": 76
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "db1c401507658d493106ec9d217458edef3add83083c63e9c48f4d8ad6d40020",
+    "facets": {
+      "contribution": [
+        "Humicroedit",
+        "baseline classifiers"
+      ],
+      "dataset": [
+        "Humicroedit"
+      ],
+      "method": [
+        "crowdsourced editors",
+        "analysis techniques",
+        "classifiers"
+      ],
+      "paper_id": "P001470",
+      "problem": [],
+      "task": [
+        "predict whether or not an edited headline is funny"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 55.77758443300081,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 55.77758443300081,
+      "input_tokens": 5050,
+      "output_tokens": 409
+    },
+    "paper_id": "P001470",
+    "source_sha256": "f1187e72bd30d88c2b03b9e14edfe19cc6946b87bfcbdd05edf7f15b55fb1c22",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5050,
+      "output_tokens": 409
+    }
+  },
+  "record_sha256": "30142895a7f38594fd0b837e6aef5ad1d3137b1b99817bb80a719340d47b582f",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

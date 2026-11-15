@@ -1,0 +1,653 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.548799083999256,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3933,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1319,
+            "output_tokens": 252
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Information extraction",
+              "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "multi-instance learning",
+              "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.97034812499987,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3934,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3112,
+            "output_tokens": 252
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Information extraction",
+              "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "multi-instance learning",
+              "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.790363612000874,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001297\", \"task\":[{\"concept\":\"Information extraction\", \"evidence_id\":\"A0\"}, {\"concept\":\"learn extractors\", \"evidence_id\":\"A4\"}], \"method\":[{\"concept\":\"Knowledge-based weak supervision\", \"evidence_id\":\"A1\"}, {\"concept\":\"multi-instance learning\", \"evidence_id\":\"A2\"}, {\"concept\":\"sentence-level extraction model\", \"evidence_id\":\"A3\"}, {\"concept\":\"corpus-level component\", \"evidence_id\":\"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3935,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 834,
+            "output_tokens": 111
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Information extraction",
+              "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "multi-instance learning",
+              "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "novel approach for multi-instance learning with overlapping relations",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "approach runs quickly and yields surprising gains in accuracy",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Freebase",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Knowledge-based weak supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "multi-instance learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "sentence-level extraction model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "corpus-level component",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001297",
+        "problem": [
+          {
+            "concept": "noisy training data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Information extraction",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "learn extractors",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 83.309510821,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001297",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5265,
+        "output_tokens": 615
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Information extraction",
+          "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "multi-instance learning",
+          "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+          "facet": "method",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.548799083999256,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3933,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1319,
+            "output_tokens": 252
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Information extraction",
+              "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "multi-instance learning",
+              "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.97034812499987,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001297\", \"problem\": [{\"concept\": \"noisy training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"Information extraction\", \"evidence_id\": \"A0\"}, {\"concept\": \"learn extractors\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Knowledge-based weak supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"multi-instance learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"sentence-level extraction model\", \"evidence_id\": \"A3\"}, {\"concept\": \"corpus-level component\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Freebase\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"novel approach for multi-instance learning with overlapping relations\", \"evidence_id\": \"A3\"}, {\"concept\": \"approach runs quickly and yields surprising gains in accuracy\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3934,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3112,
+            "output_tokens": 252
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Information extraction",
+              "evidence": "AbstractInformation extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "multi-instance learning",
+              "evidence": "Recently, researchers have developed multiinstance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint -for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple).",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "novel approach for multi-instance learning with overlapping relations",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "approach runs quickly and yields surprising gains in accuracy",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Freebase",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Knowledge-based weak supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "multi-instance learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "sentence-level extraction model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "corpus-level component",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001297",
+        "problem": [
+          {
+            "concept": "noisy training data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Information extraction",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "learn extractors",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 68.51914720899913,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3934,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4431,
+        "output_tokens": 504
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 33.548799083999256,
+        "inherited": false,
+        "messages_sha256": "dc6f6b909422cb32978d8004cffd78bf1e47b0dd27845ac1bf3335c6e9c807f0",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 3933,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1319,
+          "output_tokens": 252
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.97034812499987,
+        "inherited": false,
+        "messages_sha256": "656bc4b4800a5e80a6c8f1a90ceb1488746c83f7f6a5b534ef72a25c9785ee41",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001297",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 3934,
+        "usage": {
+          "input_tokens": 3112,
+          "output_tokens": 252
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.790363612000874,
+        "inherited": false,
+        "messages_sha256": "0cf849ac038e92e371677459a48b6be36566c864d9d7c116f05c7000ff031ded",
+        "reached_token_limit": false,
+        "seed": 3935,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 834,
+          "output_tokens": 111
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "novel approach for multi-instance learning with overlapping relations",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "approach runs quickly and yields surprising gains in accuracy",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Freebase",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Knowledge-based weak supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "multi-instance learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "sentence-level extraction model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "corpus-level component",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001297",
+        "problem": [
+          {
+            "concept": "noisy training data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Information extraction",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "learn extractors",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Information extraction",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "learn extractors",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Knowledge-based weak supervision",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "multi-instance learning",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "sentence-level extraction model",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 3,
+          "item": {
+            "concept": "corpus-level component",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.790363612000874,
+      "messages_sha256": "0cf849ac038e92e371677459a48b6be36566c864d9d7c116f05c7000ff031ded",
+      "raw_output": "{\"paper_id\":\"P001297\", \"task\":[{\"concept\":\"Information extraction\", \"evidence_id\":\"A0\"}, {\"concept\":\"learn extractors\", \"evidence_id\":\"A4\"}], \"method\":[{\"concept\":\"Knowledge-based weak supervision\", \"evidence_id\":\"A1\"}, {\"concept\":\"multi-instance learning\", \"evidence_id\":\"A2\"}, {\"concept\":\"sentence-level extraction model\", \"evidence_id\":\"A3\"}, {\"concept\":\"corpus-level component\", \"evidence_id\":\"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 834,
+        "output_tokens": 111
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "efa2ab7616688e2af5b761765ac6ed041a8a11e8af5e52766880a141c3be372d",
+    "facets": {
+      "contribution": [
+        "novel approach for multi-instance learning with overlapping relations",
+        "approach runs quickly and yields surprising gains in accuracy"
+      ],
+      "dataset": [
+        "Freebase"
+      ],
+      "method": [
+        "Knowledge-based weak supervision",
+        "multi-instance learning",
+        "sentence-level extraction model",
+        "corpus-level component"
+      ],
+      "paper_id": "P001297",
+      "problem": [
+        "noisy training data",
+        "cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple)"
+      ],
+      "task": [
+        "Information extraction",
+        "learn extractors"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 83.309510821,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 83.309510821,
+      "input_tokens": 5265,
+      "output_tokens": 615
+    },
+    "paper_id": "P001297",
+    "source_sha256": "e9d89fbe457f0f4e9b7e6d9e122bad859b11e21d8213726e766bb8ef90b3f88d",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5265,
+      "output_tokens": 615
+    }
+  },
+  "record_sha256": "3698036f3e336cc38a57cf3ed7f5582473722a7a34fa35cec8bcd3698abd9402",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

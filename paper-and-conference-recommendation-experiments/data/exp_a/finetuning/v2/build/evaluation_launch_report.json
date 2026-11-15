@@ -1,0 +1,73 @@
+{
+  "verified_at_utc": "2026-10-19T16:53:33.060576+00:00",
+  "kernel": "htnkhi/exp-a-qwen-qlora-v2-test",
+  "kernel_id": 139650988,
+  "kernel_url": "https://www.kaggle.com/code/htnkhi/exp-a-qwen-qlora-v2-test",
+  "kernel_version": 1,
+  "status": "RUNNING",
+  "is_private": true,
+  "source_code_cloud_sha256_verified": true,
+  "kernel_sha256": "3c4095fc640b5554f3a1e84d4c159b7b4ae2db5660a46a67faa19049fab6043d",
+  "bundle_sha256": "1699b9df16e625d6c3a3a5f384749587b1619234fedfeea1534a49de1e720663",
+  "signature": "377f9938a35bda4132f03f08ac326847c0ae9f5807404e0562daa7c247822ef6",
+  "arms": [
+    "base",
+    "qlora_v2"
+  ],
+  "test_papers": 100,
+  "reference_kind": "frozen_existing_ai_reference_pre_v2_policy",
+  "human_review_status": "pending",
+  "generation": {
+    "do_sample": false,
+    "max_attempts": 2,
+    "max_new_tokens": 2048,
+    "seconds_per_call": 180,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "top_p": 0.8
+  },
+  "best_checkpoint": "checkpoint-118",
+  "adapter_sha256": "fa80cb7e26a1ca34ec98ce1f967b095659779b1f45b3ea4963e6f12167c0ccc7",
+  "preflight": {
+    "approval_rejection_resolution": "No test content upload. Attach existing private v1 dataset; push only code and already-hosted instruction.",
+    "bootstrap_main_verified": true,
+    "bundle_sha256": "1699b9df16e625d6c3a3a5f384749587b1619234fedfeea1534a49de1e720663",
+    "embedding_metadata_reused_from_existing_bundle": true,
+    "kernel_code_bytes": 110683,
+    "kernel_sha256": "3c4095fc640b5554f3a1e84d4c159b7b4ae2db5660a46a67faa19049fab6043d",
+    "max_new_tokens": 2048,
+    "max_prompt_tokens": 1980,
+    "new_dataset_created": false,
+    "new_upload_contains_test_content": false,
+    "papers": 100,
+    "prompt_matches_training": true,
+    "protected_v1_verified": 38,
+    "references": 100,
+    "reused_private_dataset": "htnkhi/exp-a-qwen-qlora-inputs",
+    "signature": "377f9938a35bda4132f03f08ac326847c0ae9f5807404e0562daa7c247822ef6",
+    "status": "pass",
+    "test_ids_disjoint": true,
+    "title_slug_matches": true,
+    "unit_tests_passed": 3
+  },
+  "local_release": "data/exp_a/finetuning/v2/evaluation_release_v2",
+  "existing_dataset": "htnkhi/exp-a-qwen-qlora-inputs",
+  "training_output": "htnkhi/exp-a-qwen-qlora-v2",
+  "new_dataset_created": false,
+  "test_content_uploaded": false,
+  "automation_created": false,
+  "expected_outputs": [
+    "exp_a_qlora_v2_test/results/experiment_summary.json",
+    "exp_a_qlora_v2_test/results/experiment_table.csv",
+    "exp_a_qlora_v2_test/results/experiment_table.md"
+  ],
+  "limitations": [
+    "Running is not completion; no new F1 yet",
+    "Frozen pre-v2 AI test references; human review pending"
+  ],
+  "launch_issues_resolved": [
+    "Auto-review rejected creating a dataset containing test papers/references. No dataset was created; reused the existing private v1 dataset instead.",
+    "Kaggle rejected oversized code; reused existing embedding metadata and pushed the verified 110683-byte code release."
+  ]
+}

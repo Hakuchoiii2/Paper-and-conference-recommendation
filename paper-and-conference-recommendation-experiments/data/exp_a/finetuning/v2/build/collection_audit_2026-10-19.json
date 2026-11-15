@@ -1,0 +1,636 @@
+{
+  "collected_at_utc": "2026-10-18T20:18:59.961032+00:00",
+  "kernel": "htnkhi/exp-a-v2-decoding-probe",
+  "version_from_saved_push_report": 1,
+  "kaggle_status_observed": "COMPLETE",
+  "download_directory": "D:\\KHAI\\mon hoc\\năm 3\\HK1 2025-2026\\DS300\\Đồ án\\paper-and-conference-recommendation-experiments\\data\\exp_a\\finetuning\\v2\\downloads\\probe_v1_20261019_0219",
+  "verified_records": 12,
+  "probe_signature": "5ad1db912e956ceaab446bb5698401324f0d1d6c7cbda0f0c2d9b5decbfffb88",
+  "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+  "collector_and_validator_replay": "PASS",
+  "protected_v1_files_verified": 38,
+  "protected_v1_mismatches": [],
+  "readiness_payload_hash_checks": {
+    "probe_code_sha256": "e4b357b4ed44fbc0872e460c6b404588338af7257e31f78b4866b5cf4684c1b7",
+    "kernel_code_sha256": "b3cf08851f1a81df6f08abca80f333023626b974068f90ce0a30fb5eab89bf85",
+    "source_bundle_sha256": "38e77ec72990909c9dfe9dae3be4421af4e1c2313adb0d8904a6964399032b35",
+    "policy_sha256": "6b21f9ac8e196d0afeaf6605349346c85ff8ea549d8240ae5c8f00b56464e2e3",
+    "prompt_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "schema_sha256": "2df0c73f5e81eea0b3c21fbb830208302e49f24dc288ae29d417620b242297d7",
+    "frozen_split_sha256": "6018831e631d8a606fc5adeeb37f206ae063e4f81e49105919b5842842e1ca6a",
+    "review_queue_sha256": "c4e3939b723ba61a91ec76de30c5786aa0bc0ed85a92ff382d2b7ab51f72f030"
+  },
+  "downloaded_source_bytes_match_frozen_bundle": true,
+  "downloaded_instruction_matches_candidate_prompt": true,
+  "stop_reasons": {
+    "json_complete": 9,
+    "duplicate_concept": 3
+  },
+  "incomplete_json_due_duplicate_stop": 3,
+  "time_budget_stops": 0,
+  "token_limit_stops": 0,
+  "discarded_suffix_chars": 0,
+  "total_input_tokens": 20896,
+  "total_output_tokens": 3736,
+  "max_output_tokens": 528,
+  "max_generation_seconds": 71.354043,
+  "groups": [
+    {
+      "arm": "base",
+      "decoder": "greedy",
+      "papers": 3,
+      "schema_valid": 3,
+      "error_free": 0,
+      "stop_reasons": {
+        "json_complete": 3
+      },
+      "output_tokens": 928,
+      "mean_seconds": 24.01,
+      "median_seconds": 23.219
+    },
+    {
+      "arm": "base",
+      "decoder": "sampling",
+      "papers": 3,
+      "schema_valid": 3,
+      "error_free": 0,
+      "stop_reasons": {
+        "json_complete": 3
+      },
+      "output_tokens": 990,
+      "mean_seconds": 25.384,
+      "median_seconds": 21.931
+    },
+    {
+      "arm": "adapter",
+      "decoder": "greedy",
+      "papers": 3,
+      "schema_valid": 1,
+      "error_free": 1,
+      "stop_reasons": {
+        "json_complete": 1,
+        "duplicate_concept": 2
+      },
+      "output_tokens": 985,
+      "mean_seconds": 44.84,
+      "median_seconds": 35.416
+    },
+    {
+      "arm": "adapter",
+      "decoder": "sampling",
+      "papers": 3,
+      "schema_valid": 2,
+      "error_free": 2,
+      "stop_reasons": {
+        "json_complete": 2,
+        "duplicate_concept": 1
+      },
+      "output_tokens": 833,
+      "mean_seconds": 37.847,
+      "median_seconds": 34.207
+    }
+  ],
+  "records": [
+    {
+      "arm": "adapter",
+      "decoder": "greedy",
+      "paper_id": "P000151",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/greedy/P000151.json",
+      "file_sha256": "780ea1668efd49a0cabaa4fec2a684fa7806ac47d764f4bb8af0081b5d0ff732",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": true,
+      "grounding_error_count": 0,
+      "validation_errors": [],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1618,
+      "output_tokens": 203,
+      "generation_seconds": 27.749256,
+      "discarded_suffix_chars": 0,
+      "seed": 495,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "adapter",
+      "decoder": "greedy",
+      "paper_id": "P000962",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/greedy/P000962.json",
+      "file_sha256": "7c1c2d2ae042bc1c3cc37b57b1343cb700ee47c07be09b475a865aaf0ed0aac5",
+      "schema_valid": false,
+      "complete_json": false,
+      "grounding_assessable": false,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 0,
+      "validation_errors": [
+        "Expecting value: line 1 column 2016 (char 2015)",
+        "Generation stopped: duplicate_concept"
+      ],
+      "stop_reason": "duplicate_concept",
+      "bounded_stop": true,
+      "duplicate": {
+        "facet": "contribution",
+        "concept": "Communication costs are the principal constraint"
+      },
+      "input_tokens": 1733,
+      "output_tokens": 528,
+      "generation_seconds": 71.354043,
+      "discarded_suffix_chars": 0,
+      "seed": 2928,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "adapter",
+      "decoder": "greedy",
+      "paper_id": "P001892",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/greedy/P001892.json",
+      "file_sha256": "afeddf62f8db9a0cad30cc7d5f892dcd8ac167ef272b1aabf253c824e6d8b4c1",
+      "schema_valid": false,
+      "complete_json": false,
+      "grounding_assessable": false,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 0,
+      "validation_errors": [
+        "Expecting value: line 1 column 820 (char 819)",
+        "Generation stopped: duplicate_concept"
+      ],
+      "stop_reason": "duplicate_concept",
+      "bounded_stop": true,
+      "duplicate": {
+        "facet": "contribution",
+        "concept": "unified datasets"
+      },
+      "input_tokens": 1873,
+      "output_tokens": 254,
+      "generation_seconds": 35.416448,
+      "discarded_suffix_chars": 0,
+      "seed": 5718,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "adapter",
+      "decoder": "sampling",
+      "paper_id": "P000151",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/sampling/P000151.json",
+      "file_sha256": "0f150745c0a29c0990adc05af0c1d7f5f15011ae561ec4ca4696b1f776f6cccb",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": true,
+      "grounding_error_count": 0,
+      "validation_errors": [],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1618,
+      "output_tokens": 179,
+      "generation_seconds": 24.582116,
+      "discarded_suffix_chars": 0,
+      "seed": 495,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "adapter",
+      "decoder": "sampling",
+      "paper_id": "P000962",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/sampling/P000962.json",
+      "file_sha256": "a68a37548f92eaa01123afbe6fe1689e9de7702f5c4ebb96e59f76c8a8df23ea",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": true,
+      "grounding_error_count": 0,
+      "validation_errors": [],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1733,
+      "output_tokens": 247,
+      "generation_seconds": 34.206857,
+      "discarded_suffix_chars": 0,
+      "seed": 2928,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "adapter",
+      "decoder": "sampling",
+      "paper_id": "P001892",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/adapter/sampling/P001892.json",
+      "file_sha256": "b6650e6ded1801b074d0d738d31d925b6b9124495c9ae641caff9f8159a09b38",
+      "schema_valid": false,
+      "complete_json": false,
+      "grounding_assessable": false,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 0,
+      "validation_errors": [
+        "Expecting value: line 1 column 1285 (char 1284)",
+        "Generation stopped: duplicate_concept"
+      ],
+      "stop_reason": "duplicate_concept",
+      "bounded_stop": true,
+      "duplicate": {
+        "facet": "contribution",
+        "concept": "new evaluation"
+      },
+      "input_tokens": 1873,
+      "output_tokens": 407,
+      "generation_seconds": 54.750735,
+      "discarded_suffix_chars": 0,
+      "seed": 5718,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": true,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "greedy",
+      "paper_id": "P000151",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/greedy/P000151.json",
+      "file_sha256": "2161885b4db2a97f7e81be9076d7397d666e4e9e278edc16e02a9c46ed998385",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 4,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "dataset[0]: Concept must use selected source words in source order",
+        "contribution[1]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1618,
+      "output_tokens": 228,
+      "generation_seconds": 17.951119,
+      "discarded_suffix_chars": 0,
+      "seed": 495,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "greedy",
+      "paper_id": "P000962",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/greedy/P000962.json",
+      "file_sha256": "e8da36c22e3b2f768daa31109cb96b57026dda0f5781164b2f4cb0b011c8bc3f",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 7,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "problem[1]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "method[0]: Concept must use selected source words in source order",
+        "method[1]: Concept must use selected source words in source order",
+        "contribution[0]: Concept must use selected source words in source order",
+        "contribution[1]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1733,
+      "output_tokens": 293,
+      "generation_seconds": 23.218551,
+      "discarded_suffix_chars": 0,
+      "seed": 2928,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "greedy",
+      "paper_id": "P001892",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/greedy/P001892.json",
+      "file_sha256": "5ea7a95b4ad981610c1b32686d1d1fa85c59da5e8af2d0e0c1d130ca0a4f584f",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 8,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "problem[1]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "method[0]: Concept must use selected source words in source order",
+        "method[2]: Concept must use selected source words in source order",
+        "dataset[0]: Concept must use selected source words in source order",
+        "contribution[0]: Concept must use selected source words in source order",
+        "contribution[2]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1873,
+      "output_tokens": 407,
+      "generation_seconds": 30.859372,
+      "discarded_suffix_chars": 0,
+      "seed": 5718,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "sampling",
+      "paper_id": "P000151",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/sampling/P000151.json",
+      "file_sha256": "6916ca3f29b8e229a7666f5c2c1385b32da33f651d34fb9231ab5d81aca757dd",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 4,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "dataset[0]: Concept must use selected source words in source order",
+        "contribution[1]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1618,
+      "output_tokens": 235,
+      "generation_seconds": 18.338518,
+      "discarded_suffix_chars": 0,
+      "seed": 495,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "sampling",
+      "paper_id": "P000962",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/sampling/P000962.json",
+      "file_sha256": "d3f6968073945f06105ba18e55a4d8900eb464598327c0bacab3d40f8dedc89b",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 5,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "method[0]: Concept must use selected source words in source order",
+        "contribution[1]: Concept must use selected source words in source order",
+        "contribution[2]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1733,
+      "output_tokens": 278,
+      "generation_seconds": 21.930582,
+      "discarded_suffix_chars": 0,
+      "seed": 2928,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    },
+    {
+      "arm": "base",
+      "decoder": "sampling",
+      "paper_id": "P001892",
+      "path": "data/exp_a/finetuning/v2/downloads/probe_v1_20261019_0219/policy_probe_v2/results/base/sampling/P001892.json",
+      "file_sha256": "ead3eef63efba9365a6962b0d563ddfa2280b64f1a8acf0584cc927c0e94b931",
+      "schema_valid": true,
+      "complete_json": true,
+      "grounding_assessable": true,
+      "lexical_grounding_pass": false,
+      "grounding_error_count": 9,
+      "validation_errors": [
+        "problem[0]: Concept must use selected source words in source order",
+        "problem[1]: Concept must use selected source words in source order",
+        "task[0]: Concept must use selected source words in source order",
+        "method[0]: Concept must use selected source words in source order",
+        "method[1]: Concept must use selected source words in source order",
+        "dataset[0]: Concept must use selected source words in source order",
+        "contribution[0]: Concept must use selected source words in source order",
+        "contribution[1]: Concept must use selected source words in source order",
+        "contribution[3]: Concept must use selected source words in source order"
+      ],
+      "stop_reason": "json_complete",
+      "bounded_stop": false,
+      "duplicate": null,
+      "input_tokens": 1873,
+      "output_tokens": 477,
+      "generation_seconds": 35.882768,
+      "discarded_suffix_chars": 0,
+      "seed": 5718,
+      "runtime": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "torch": "2.11.0+cu128",
+        "transformers": "4.57.6",
+        "gpu": "Tesla T4",
+        "adapter_enabled": false,
+        "quantization": "nf4_double_fp16",
+        "attention": "matrix_efficient_no_gqa",
+        "enable_thinking": false,
+        "use_cache": true
+      }
+    }
+  ],
+  "semantic_spot_check": {
+    "review_status": "collector-agent source spot check, not independent label review; no labels authored or accepted",
+    "findings": [
+      {
+        "arm": "adapter",
+        "decoder": "sampling",
+        "paper_id": "P000962",
+        "facet": "contribution",
+        "concept": "reduction in required communication rounds",
+        "evidence_ids": [
+          "A7"
+        ],
+        "source": "Communication costs are the principal constraint, and we show a reduction in required communication rounds by 10-100x as compared to synchronized stochastic gradient descent.",
+        "issue": "The phrase omits the 10-100x magnitude and synchronized-SGD comparator required for this finding by candidate policy v2.2. Lexical grounding accepts the phrase but does not establish semantic completeness."
+      },
+      {
+        "arm": "adapter",
+        "decoder": "sampling",
+        "paper_id": "P000151",
+        "facet": "contribution",
+        "concept": "accurate results",
+        "evidence_ids": [
+          "A3"
+        ],
+        "source": "We show accurate results on a large collection of free-form questions used in TREC 10.",
+        "issue": "The output removes the empirical setting, a large collection of free-form questions used in TREC 10. This passes the lexical validator but fails the policy requirement to retain the setting of performance findings."
+      },
+      {
+        "arm": "adapter",
+        "decoder": "sampling",
+        "paper_id": "P000151",
+        "facet": "contribution",
+        "concept": "semantic classification",
+        "evidence_ids": [
+          "A1"
+        ],
+        "source": "These constraints may include a semantic classification of the sought after answer and may even suggest using different strategies when looking for and verifying a candidate answer.This paper presents a machine learning approach to question classification.",
+        "issue": "The selected phrase appears in a modal background statement about possible question constraints; the source does not identify that phrase itself as an introduced artifact or reported result."
+      },
+      {
+        "arm": "base",
+        "decoder": "greedy",
+        "paper_id": "P000962",
+        "facet": "dataset",
+        "concept": "Five different model architectures; Four datasets",
+        "evidence_ids": [
+          "A5"
+        ],
+        "source": "We present a practical method for the federated learning of deep networks based on iterative model averaging, and conduct an extensive empirical evaluation, considering five different model architectures and four datasets.",
+        "issue": "Model architectures are not datasets and an unnamed count of four datasets does not satisfy the named-resource rule. Item word grounding alone cannot check this role distinction."
+      }
+    ]
+  },
+  "tests": {
+    "command": ".venv-qwen/Scripts/python.exe -X utf8 -B -m unittest scripts.exp_a.finetuning.test_v2_generation scripts.exp_a.finetuning.test_v2_collection -v",
+    "passed": 10,
+    "log": "data/exp_a/finetuning/v2/validation/probe_collection_tests_2026-10-19.log",
+    "first_attempt": "9 passed; collection test could not write to sandbox default Temp; rerun used a workspace Temp directory and all 10 passed"
+  },
+  "decision": {
+    "training_ready": false,
+    "normalization_started": false,
+    "dataset_updated": false,
+    "train_pushed": false,
+    "new_gpu_run_pushed": false,
+    "reason": "No arm/decoder passes both content and operational smoke-test gates. Loop guards bound runtime but return incomplete JSON in 3 adapter drafts; base drafts all fail lexical grounding. Even two adapter-sampling validator passes have semantic role/qualifier issues.",
+    "next_step": "Pause the monitor with no pending GPU run; require a concrete recovery-strategy decision for generation and grounding before another bounded experiment."
+  },
+  "limitations": [
+    "Three fixed diagnostic papers, one seed, first draft only",
+    "No v2 adapter trained; no F1 or generalization claim",
+    "No new policy-confirmation source sample or 567-paper normalization attempted after smoke-test failure",
+    "Mandatory draft/review pipeline was not measured",
+    "Source-first references remain AI references, human review pending",
+    "Test was not opened for tuning; protected test artifacts were hashed only"
+  ],
+  "monitor": {
+    "automation_id": "theo-d-i-exp-a-v2",
+    "status": "PAUSED",
+    "verified_at_utc": "2026-10-18T20:21:36.368796+00:00",
+    "other_configuration_preserved": true,
+    "reason": "Probe complete; content and operational gates failed; no pending GPU run and recovery strategy needs decision",
+    "new_training_monitor_created": false
+  }
+}

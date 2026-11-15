@@ -1,0 +1,207 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 16.365110277999975,
+          "messages_sha256": "9732fd784b54169ec11ddcbb8339867643f0b4755f1be595400cad838e4ce369",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000669\", \"problem\": [], \"task\": [{\"concept\": \"event recognition\", \"evidence_id\": \"A0\"}, {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"}, {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"}, {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 75.6429,
+          "seed": 2051,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2207,
+            "output_tokens": 189
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "system achieves an F1 of 81.4% in recognition and a 64.2% in classification",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "application of semantic roles improves the performance of the presented system, especially for nominal events",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "conditional random fields",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "morphosyntactic features",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "semantic roles features",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P000669",
+        "problem": [],
+        "task": [
+          {
+            "concept": "event recognition",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "event classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 43.76054473999989,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P000669",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 75.6429,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3248,
+        "output_tokens": 547
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 13.61880943299991,
+        "messages_sha256": "59700cc1b75de83b67bdd14a65d1f2626db9bbd0fec65e63208c15238d2f2d32",
+        "raw_output": "{\"paper_id\":\"P000669\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractThis paper analyzes the contribution of semantic roles to TimeML event recognition and classification.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"For that purpose, an approach using conditional random fields with a variety of morphosyntactic features plus semantic roles features is developed and evaluated.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our system achieves an F1 of 81.4% in recognition and a 64.2% in classification.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We demonstrate that the application of semantic roles improves the performance of the presented system, especially for nominal events.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2049,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 510,
+          "output_tokens": 179
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 13.776625029000002,
+        "messages_sha256": "2881973fc8184d18785a151b53a7372286b1fe6fe83e5d9ead77aa2ce4aef364",
+        "raw_output": "{\"paper_id\":\"P000669\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractThis paper analyzes the contribution of semantic roles to TimeML event recognition and classification.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"For that purpose, an approach using conditional random fields with a variety of morphosyntactic features plus semantic roles features is developed and evaluated.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our system achieves an F1 of 81.4% in recognition and a 64.2% in classification.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We demonstrate that the application of semantic roles improves the performance of the presented system, especially for nominal events.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2050,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 531,
+          "output_tokens": 179
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 16.365110277999975,
+        "messages_sha256": "9732fd784b54169ec11ddcbb8339867643f0b4755f1be595400cad838e4ce369",
+        "raw_output": "{\"paper_id\": \"P000669\", \"problem\": [], \"task\": [{\"concept\": \"event recognition\", \"evidence_id\": \"A0\"}, {\"concept\": \"event classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"conditional random fields\", \"evidence_id\": \"A1\"}, {\"concept\": \"morphosyntactic features\", \"evidence_id\": \"A1\"}, {\"concept\": \"semantic roles features\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"system achieves an F1 of 81.4% in recognition and a 64.2% in classification\", \"evidence_id\": \"A2\"}, {\"concept\": \"application of semantic roles improves the performance of the presented system, especially for nominal events\", \"evidence_id\": \"A3\"}]}",
+        "reached_token_limit": false,
+        "seed": 2051,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2207,
+          "output_tokens": 189
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "system achieves an F1 of 81.4% in recognition and a 64.2% in classification",
+        "application of semantic roles improves the performance of the presented system, especially for nominal events"
+      ],
+      "dataset": [],
+      "method": [
+        "conditional random fields",
+        "morphosyntactic features",
+        "semantic roles features"
+      ],
+      "paper_id": "P000669",
+      "problem": [],
+      "task": [
+        "event recognition",
+        "event classification"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 43.76054473999989,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 13.61880943299991,
+        "messages_sha256": "59700cc1b75de83b67bdd14a65d1f2626db9bbd0fec65e63208c15238d2f2d32",
+        "raw_output": "{\"paper_id\":\"P000669\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractThis paper analyzes the contribution of semantic roles to TimeML event recognition and classification.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"For that purpose, an approach using conditional random fields with a variety of morphosyntactic features plus semantic roles features is developed and evaluated.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our system achieves an F1 of 81.4% in recognition and a 64.2% in classification.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We demonstrate that the application of semantic roles improves the performance of the presented system, especially for nominal events.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2049,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 510,
+          "output_tokens": 179
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 13.776625029000002,
+        "messages_sha256": "2881973fc8184d18785a151b53a7372286b1fe6fe83e5d9ead77aa2ce4aef364",
+        "raw_output": "{\"paper_id\":\"P000669\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"AbstractThis paper analyzes the contribution of semantic roles to TimeML event recognition and classification.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"For that purpose, an approach using conditional random fields with a variety of morphosyntactic features plus semantic roles features is developed and evaluated.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"Our system achieves an F1 of 81.4% in recognition and a 64.2% in classification.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We demonstrate that the application of semantic roles improves the performance of the presented system, especially for nominal events.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 2050,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 531,
+          "output_tokens": 179
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 43.76054473999989,
+      "input_tokens": 3248,
+      "output_tokens": 547
+    },
+    "paper_id": "P000669",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3248,
+      "output_tokens": 547
+    }
+  },
+  "record_sha256": "ef85a59c875296b333863dd3eb534828496cdab363481483d523ce6379afd1e8",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

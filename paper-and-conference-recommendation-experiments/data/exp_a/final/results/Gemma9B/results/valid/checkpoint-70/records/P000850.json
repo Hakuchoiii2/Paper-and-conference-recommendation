@@ -1,0 +1,501 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 36.455440122001164,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2592,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1329,
+            "output_tokens": 196
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.83408338699883,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2593,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3160,
+            "output_tokens": 179
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.196760347000236,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000850\", \"task\": [], \"method\": [{\"concept\": \"fine-tuning adaptation methods\", \"evidence_id\": \"A6\"}, {\"concept\": \"Model combination based adaptation\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2594,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 793,
+            "output_tokens": 62
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "language model adaptation dataset",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CLMAD",
+            "evidence_id": "T0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "recurrent neural network language models",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-gram",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "lattice rescoring",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "fine-tuning adaptation methods",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Model combination based adaptation",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000850",
+        "problem": [
+          {
+            "concept": "no public Chinese text dataset",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language model adaptation",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 85.48628385600023,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000850",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5282,
+        "output_tokens": 437
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 36.455440122001164,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2592,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1329,
+            "output_tokens": 196
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}, {\"concept\": \"lattice rescoring\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.83408338699883,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000850\", \"problem\": [{\"concept\": \"no public Chinese text dataset\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"language model adaptation\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"recurrent neural network language models\", \"evidence_id\": \"A6\"}, {\"concept\": \"n-gram\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"CLMAD\", \"evidence_id\": \"T0\"}], \"contribution\": [{\"concept\": \"language model adaptation dataset\", \"evidence_id\": \"A3\"}, {\"concept\": \"absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2593,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3160,
+            "output_tokens": 179
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "language model adaptation dataset",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CLMAD",
+            "evidence_id": "T0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "recurrent neural network language models",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-gram",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "lattice rescoring",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P000850",
+        "problem": [
+          {
+            "concept": "no public Chinese text dataset",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language model adaptation",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 73.28952350899999,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2593,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4489,
+        "output_tokens": 375
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 36.455440122001164,
+        "inherited": false,
+        "messages_sha256": "88f2768b0d7b1697cfdd5663d1a4a9b6ffd718ff00af58d128d5520803d896a5",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2592,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1329,
+          "output_tokens": 196
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 36.83408338699883,
+        "inherited": false,
+        "messages_sha256": "d32f37e73aafa6c8957c3290274c3e9ee6bdddea2c8cf940edb15eeb32c51de9",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000850",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 2593,
+        "usage": {
+          "input_tokens": 3160,
+          "output_tokens": 179
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.196760347000236,
+        "inherited": false,
+        "messages_sha256": "689b9949d1b6b3bec159738822287882e6177e561093815d23f68ba00b951919",
+        "reached_token_limit": false,
+        "seed": 2594,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 62
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "fine-tuning adaptation methods",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "Model combination based adaptation",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "language model adaptation dataset",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CLMAD",
+            "evidence_id": "T0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "recurrent neural network language models",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "n-gram",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "lattice rescoring",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P000850",
+        "problem": [
+          {
+            "concept": "no public Chinese text dataset",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language model adaptation",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 12.196760347000236,
+      "messages_sha256": "689b9949d1b6b3bec159738822287882e6177e561093815d23f68ba00b951919",
+      "raw_output": "{\"paper_id\": \"P000850\", \"task\": [], \"method\": [{\"concept\": \"fine-tuning adaptation methods\", \"evidence_id\": \"A6\"}, {\"concept\": \"Model combination based adaptation\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 793,
+        "output_tokens": 62
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "bd4ca6b35c2525a6d7f5aa0bffa198aa69c8dfefc08a23bb0404dd535081aac6",
+    "facets": {
+      "contribution": [
+        "language model adaptation dataset",
+        "absolute WER reduction of lattice rescoring with adapted RNNLM is 4.74%"
+      ],
+      "dataset": [
+        "CLMAD"
+      ],
+      "method": [
+        "recurrent neural network language models",
+        "n-gram",
+        "lattice rescoring",
+        "fine-tuning adaptation methods",
+        "Model combination based adaptation"
+      ],
+      "paper_id": "P000850",
+      "problem": [
+        "no public Chinese text dataset"
+      ],
+      "task": [
+        "language model adaptation"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 85.48628385600023,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 85.48628385600023,
+      "input_tokens": 5282,
+      "output_tokens": 437
+    },
+    "paper_id": "P000850",
+    "source_sha256": "13d2cc835deec05532949892285ba767fa120c2b382da68a80c8144c8f6afe6a",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5282,
+      "output_tokens": 437
+    }
+  },
+  "record_sha256": "c9224e24277ea8c2f7ab214a2660ba79029c01a5a6296f64a7f63783193bbd3e",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

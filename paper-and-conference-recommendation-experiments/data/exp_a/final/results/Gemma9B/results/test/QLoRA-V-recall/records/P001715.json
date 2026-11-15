@@ -1,0 +1,534 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.12147495700265,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5187,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1369,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "model extracts relevant topics mappable to real-life Enron events",
+              "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.986227828001574,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5188,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3175,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "model extracts relevant topics mappable to real-life Enron events",
+              "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.17814354499933,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"task\": [], \"method\": [{\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}, {\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5189,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 812,
+            "output_tokens": 58
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "model extracts relevant topics mappable to real-life Enron events",
+              "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model extracts relevant topics mappable to real-life Enron events",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 80.28584633000355,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001715",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5356,
+        "output_tokens": 408
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "model extracts relevant topics mappable to real-life Enron events",
+          "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.12147495700265,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5187,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1369,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "model extracts relevant topics mappable to real-life Enron events",
+              "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.986227828001574,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001715\", \"problem\": [{\"concept\": \"ignore the content of social interactions\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"community extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}, {\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Enron email corpus\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"Bayesian generative model for community extraction\", \"evidence_id\": \"A3\"}, {\"concept\": \"model extracts relevant topics mappable to real-life Enron events\", \"evidence_id\": \"A8\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5188,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3175,
+            "output_tokens": 175
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "model extracts relevant topics mappable to real-life Enron events",
+              "evidence": "Additionally, the model extracts relevant topics that can be mapped back to corresponding real-life events involving Enron.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model extracts relevant topics mappable to real-life Enron events",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 69.10770278500422,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5188,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4544,
+        "output_tokens": 350
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.12147495700265,
+        "inherited": false,
+        "messages_sha256": "ffd754f5aaac3bfac9591296cda211f3dfbd48ff4b413499d92a66fde1a6fbd2",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5187,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1369,
+          "output_tokens": 175
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 36.986227828001574,
+        "inherited": false,
+        "messages_sha256": "9e52146d4d937c8e9759683f00d8973f374b47b06d256fc6f50538c96566ecd5",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001715",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 5188,
+        "usage": {
+          "input_tokens": 3175,
+          "output_tokens": 175
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.17814354499933,
+        "inherited": false,
+        "messages_sha256": "f0c73d4ddd560a0214834d6c6e58c99151d436806e5161e2aad1e448c4fe42b3",
+        "reached_token_limit": false,
+        "seed": 5189,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 812,
+          "output_tokens": 58
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Bayesian generative model for community extraction",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model extracts relevant topics mappable to real-life Enron events",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Enron email corpus",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001715",
+        "problem": [
+          {
+            "concept": "ignore the content of social interactions",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "community extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Gibbs sampling",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Bayesian generative model",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.17814354499933,
+      "messages_sha256": "f0c73d4ddd560a0214834d6c6e58c99151d436806e5161e2aad1e448c4fe42b3",
+      "raw_output": "{\"paper_id\": \"P001715\", \"task\": [], \"method\": [{\"concept\": \"Gibbs sampling\", \"evidence_id\": \"A6\"}, {\"concept\": \"Bayesian generative model\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 812,
+        "output_tokens": 58
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "8cf74c4f3ee708defc10b69f7cb089c2868dd2dcb95c1aa21d4e3137fbd7c80f",
+    "facets": {
+      "contribution": [
+        "Bayesian generative model for community extraction",
+        "model extracts relevant topics mappable to real-life Enron events"
+      ],
+      "dataset": [
+        "Enron email corpus"
+      ],
+      "method": [
+        "Bayesian generative model",
+        "Gibbs sampling"
+      ],
+      "paper_id": "P001715",
+      "problem": [
+        "ignore the content of social interactions"
+      ],
+      "task": [
+        "community extraction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 80.28584633000355,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 80.28584633000355,
+      "input_tokens": 5356,
+      "output_tokens": 408
+    },
+    "paper_id": "P001715",
+    "source_sha256": "5bdbe93d62bf93b570ceb55fdaf038abd81f10a10a9f35b22739e28407d80eb2",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5356,
+      "output_tokens": 408
+    }
+  },
+  "record_sha256": "9cf051b55f12b1795602a2a5d9ec3f7a2f9a5e225baa6e4bb270d9c73470709c",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

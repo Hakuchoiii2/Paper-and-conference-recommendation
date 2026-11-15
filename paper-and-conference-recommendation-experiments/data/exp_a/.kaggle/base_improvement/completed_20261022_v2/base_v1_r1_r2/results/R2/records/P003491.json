@@ -1,0 +1,166 @@
+{
+  "record": {
+    "arm": "R2",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003491\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": []\n}",
+          "attempt": 1,
+          "generation_seconds": 5.24699524000016,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003491\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": []\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 10.0,
+          "seed": 10515,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2417,
+            "output_tokens": 43
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003491\", \"problem\": [], \"task\": [], \"method\": [], \"dataset\": [], \"contribution\": []}",
+          "attempt": 2,
+          "generation_seconds": 7.2298695399999815,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003491\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": []\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 10.0,
+          "seed": 10516,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3997,
+            "output_tokens": 43
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P003491",
+        "problem": [],
+        "task": []
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 12.476864780000142,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10516,
+      "selected_score": 10.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [
+          "Abstract contains download/book-server boilerplate; inspect the original source"
+        ],
+        "status": "suspected_non_research"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6414,
+        "output_tokens": 86
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "8aff69eed5eb4a9e429b6250752bb29dfb32762b16d94fbc9cea994771de745f",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "messages_sha256": "2a750eaa7cf84c0bbc16295d21755e0caa26a9de54db6f739400f94e56cd57e3",
+        "repair_packet": null,
+        "seed": 10515
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "bd76b354f15fe62b9026e9160364c81ff88741f36d3d48bfaef9a8ad093733b2",
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003491",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 10516
+      }
+    ],
+    "facets": {
+      "contribution": [],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P003491",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 12.476864780000142,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 7.2298695399999815,
+      "input_tokens": 3997,
+      "output_tokens": 43
+    },
+    "paper_id": "P003491",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 6414,
+      "output_tokens": 86
+    }
+  },
+  "record_sha256": "5590cc02a4b631b1c4cc84594ce70bda9b7dd557fe076e2840e2d7e633350c66",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}
