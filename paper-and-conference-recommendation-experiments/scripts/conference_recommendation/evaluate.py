@@ -70,9 +70,9 @@ def parse_args():
     )
     parser.add_argument(
         "--embedding-backend",
-        choices=["tfidf", "specter2", "sentence_transformers", "precomputed"],
+        choices=["tfidf", "specter", "specter2", "bge-small", "bge", "sentence_transformers", "precomputed"],
         default=None,
-        help="Loại backend vector hóa văn bản (mặc định lấy theo config, ví dụ: 'tfidf', 'specter2').",
+        help="Loại backend vector hóa văn bản (mặc định lấy theo config, ví dụ: 'tfidf', 'specter', 'bge-small').",
     )
     parser.add_argument(
         "--embedding-model",
@@ -128,16 +128,16 @@ def run_evaluation():
     # Ghi đè tham số nếu truyền qua CLI
     split_dir = cfg["dataset_split_dir"]
     facets_path = args.facets_path or cfg.get("facets_path")
-    k = args.k or cfg.get("k_neighbors", 10)
-    tau = args.tau or cfg.get("context_gate", {}).get("tau", 0.45)
-    kappa = args.kappa or cfg.get("context_gate", {}).get("kappa", 10.0)
+    k = args.k if args.k is not None else cfg.get("k_neighbors", 10)
+    tau = args.tau if args.tau is not None else cfg.get("context_gate", {}).get("tau", 0.45)
+    kappa = args.kappa if args.kappa is not None else cfg.get("context_gate", {}).get("kappa", 10.0)
     facet_weights = cfg.get("facet_weights")
 
     embedding_backend = args.embedding_backend or cfg.get("feature_type", "tfidf")
     backend_config = {}
     if args.embedding_model:
         backend_config["model_name"] = args.embedding_model
-    elif "embedding_model" in cfg:
+    elif args.embedding_backend is None and "embedding_model" in cfg:
         backend_config["model_name"] = cfg["embedding_model"]
 
     if args.embedding_path:
@@ -202,6 +202,7 @@ def run_evaluation():
             feature_store=feature_store,
             train_papers=train_papers,
             k=k,
+            weights=cfg.get("flat_facet_weights"),
         )
     if args.model in ("whole_text_knn", "all"):
         models_to_run["Baseline: Whole-Text k-NN"] = WholeTextKNNReranker(

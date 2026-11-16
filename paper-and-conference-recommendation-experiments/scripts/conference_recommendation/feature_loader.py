@@ -166,7 +166,8 @@ class TfidfEmbeddingBackend(BaseEmbeddingBackend):
                 continue
             tokens = text.split()
             tf = collections.Counter(tokens)
-            raw_vec = {t: count * self.idf_dict.get(t, 1.0) for t, count in tf.items()}
+            # Validation/test vocabulary must not alter the fitted feature space.
+            raw_vec = {t: count * self.idf_dict[t] for t, count in tf.items() if t in self.idf_dict}
             vectors.append(unit_vector_sparse(raw_vec))
         return vectors
 
@@ -314,6 +315,9 @@ class FacetFeatureStore:
         self.train_papers = train_papers
         self.test_papers = test_papers
         self.all_papers = train_papers + test_papers
+        pids = [p["paper_id"] for p in self.all_papers]
+        if len(pids) != len(set(pids)):
+            raise ValueError("Duplicate paper_id or overlapping train/query sets")
         self.backend_config = backend_config or {}
 
         # 1. Trích xuất văn bản phẳng cho toàn văn và 5 facets
@@ -354,12 +358,8 @@ class FacetFeatureStore:
         backend_str = str(backend).lower().strip()
 
         if backend_str in ("tfidf", "sparse"):
-            # Thu thập toàn bộ văn bản để fit IDF
-            corpus_texts = []
-            for fields in self.text_store.values():
-                for t in fields.values():
-                    if t:
-                        corpus_texts.append(t)
+            # Fit only the reference partition, never validation or test queries.
+            corpus_texts = [self.text_store[p["paper_id"]]["whole_text"] for p in self.train_papers]
             return TfidfEmbeddingBackend(corpus_texts=corpus_texts)
 
         elif backend_str in ("specter2", "specter"):
@@ -367,7 +367,17 @@ class FacetFeatureStore:
                 "model_name", "sentence-transformers/allenai-specter"
             )
             device = self.backend_config.get("device")
-            batch_size = self.backend_config.get("batch_size", 32)
+            batch_size = self.backend_config.get("batch_size", 64)
+            return SentenceTransformerBackend(
+                model_name=model_name, device=device, batch_size=batch_size
+            )
+
+        elif backend_str in ("bge", "bge-small", "bge_small"):
+            model_name = self.backend_config.get(
+                "model_name", "BAAI/bge-small-en-v1.5"
+            )
+            device = self.backend_config.get("device")
+            batch_size = self.backend_config.get("batch_size", 64)
             return SentenceTransformerBackend(
                 model_name=model_name, device=device, batch_size=batch_size
             )
@@ -409,10 +419,18 @@ class FacetFeatureStore:
 
         # Thu thập theo batch theo từng field để tối ưu tốc độ encoding của Transformer / TF-IDF
         vector_store = {pid: {} for pid in self.text_store}
+        self.field_backends = {}
         for field in FIELD_NAMES:
             pids = list(self.text_store.keys())
             texts = [self.text_store[pid][field] for pid in pids]
-            field_vectors = self.backend.encode_batch(texts)
+            encoder = self.backend
+            if isinstance(encoder, TfidfEmbeddingBackend):
+                # Separate vocabularies keep Whole-Text independent of LLM facets.
+                encoder = TfidfEmbeddingBackend([
+                    self.text_store[p["paper_id"]][field] for p in self.train_papers
+                ])
+                self.field_backends[field] = encoder
+            field_vectors = encoder.encode_batch(texts)
             for pid, vec in zip(pids, field_vectors):
                 vector_store[pid][field] = vec
 

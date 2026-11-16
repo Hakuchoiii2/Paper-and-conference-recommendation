@@ -8,6 +8,7 @@ Gated 5-Facet k-NN Reranker
 import math
 from typing import Any, Dict, List, Optional, Tuple, Union
 from .feature_loader import FacetFeatureStore, cosine_similarity
+from .ranking import observed, validate_weights, rank_neighbors
 
 
 def sigmoid(z: float) -> float:
@@ -45,12 +46,12 @@ class GatedFacetKNNReranker:
         self.kappa = kappa
 
         # Trọng số mặc định cho các facets giải pháp
-        self.weights = weights or {
+        self.weights = validate_weights(weights if weights is not None else {
             "task": 0.3,
             "method": 0.3,
             "dataset": 0.2,
             "contribution": 0.2,
-        }
+        }, ("task", "method", "dataset", "contribution"))
 
         # Lưu danh sách ID và nhãn venue của tập train
         self.train_pids = [p["paper_id"] for p in train_papers]
@@ -63,7 +64,7 @@ class GatedFacetKNNReranker:
         Tính giá trị Cổng Ngữ Cảnh Problem:
         Nếu không có problem (vector rỗng), dùng ngưỡng trung tính 0.5.
         """
-        if q_vec is None or p_vec is None:
+        if not observed(q_vec) or not observed(p_vec):
             return 0.5
         # Kiểm tra nếu rỗng (dict hoặc array)
         if isinstance(q_vec, dict) and not q_vec:
@@ -89,7 +90,7 @@ class GatedFacetKNNReranker:
         for f, w in self.weights.items():
             qv = q_vecs.get(f)
             pv = p_vecs.get(f)
-            if qv is not None and pv is not None:
+            if observed(qv) and observed(pv):
                 if isinstance(qv, dict) and not qv:
                     continue
                 if isinstance(pv, dict) and not pv:
@@ -138,18 +139,8 @@ class GatedFacetKNNReranker:
             scores.append((p_pid, venue, sim))
 
         # 2. Lấy Top-k bài train có độ tương đồng cao nhất
-        scores.sort(key=lambda x: x[2], reverse=True)
-        top_k = scores[: self.k]
-
-        # 3. Bỏ phiếu tích lũy điểm cho từng hội nghị (Kernel Voting)
-        venue_scores = {v: 0.0 for v in candidate_venues}
-        for _, venue, sim in top_k:
-            if venue in venue_scores:
-                venue_scores[venue] += sim
-
-        # 4. Sắp xếp các hội nghị theo điểm số giảm dần
-        ranked = sorted(venue_scores.items(), key=lambda x: x[1], reverse=True)
-        return ranked
+        return rank_neighbors(self.train_pids, self.train_venues,
+                              [s for _, _, s in scores], candidate_venues, self.k)
 
 
 # Alias tương thích ngược

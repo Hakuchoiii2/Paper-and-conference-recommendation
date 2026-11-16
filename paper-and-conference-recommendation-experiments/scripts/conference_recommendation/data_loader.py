@@ -53,9 +53,11 @@ def load_facets(facets_path: Path) -> Dict[str, Dict[str, List[str]]]:
     for r in records:
         pid = r.get("paper_id")
         if not pid:
-            continue
+            raise ValueError(f"Missing paper_id in {facets_path}")
+        if pid in paper_facets:
+            raise ValueError(f"Duplicate paper_id {pid} in {facets_path}")
         paper_facets[pid] = {
-            f: r.get(f, []) if isinstance(r.get(f), list) else [str(r.get(f))]
+            f: r.get(f, []) if isinstance(r.get(f), list) else ([] if r.get(f) is None else [str(r[f])])
             for f in FACET_KEYS
         }
     return paper_facets
@@ -65,6 +67,8 @@ def load_dataset(
     split_dir: Path,
     facets_path: Optional[Path] = None,
     repo_root: Optional[Path] = None,
+    test_facets_path: Optional[Path] = None,
+    require_coverage: bool = False,
 ) -> Tuple[List[Dict], List[Dict], Dict[str, Dict], Dict[str, int]]:
     """
     Nạp toàn bộ tập Train, Test, Catalog hội nghị và nhãn số học.
@@ -111,15 +115,34 @@ def load_dataset(
 
     # 2. Nạp 5 facets từ Exp A
     facets_dict = load_facets(facets_path)
+    test_facets_dict = facets_dict
+    if test_facets_path is not None:
+        test_facets_path = Path(test_facets_path)
+        if not test_facets_path.is_absolute():
+            test_facets_path = repo_root / test_facets_path
+        test_facets_dict = load_facets(test_facets_path)
+
+    train_ids = [r["paper_id"] for r in train_raw]
+    test_ids = [r["paper_id"] for r in test_raw]
+    if len(set(train_ids)) != len(train_ids) or len(set(test_ids)) != len(test_ids) or set(train_ids) & set(test_ids):
+        raise ValueError("Duplicate IDs or train/test overlap in dataset")
+    if any(r.get("conference_id") not in catalog for r in train_raw + test_raw):
+        raise ValueError("Dataset label outside conference catalog")
+    if require_coverage:
+        for ids, source, split_name in [(train_ids, facets_dict, "train"), (test_ids, test_facets_dict, "test")]:
+            missing = sorted(set(ids) - set(source))
+            if missing:
+                raise ValueError(f"Missing facets for {len(missing)} {split_name} papers: {missing[:5]}")
 
     # 3. Ghép nối (Merge) văn bản gốc và 5 facets
     def enrich_papers(raw_list: List[Dict], split_name: str) -> List[Dict]:
         enriched = []
+        source = facets_dict if split_name == "train" else test_facets_dict
         for r in raw_list:
             pid = r["paper_id"]
             # Ưu tiên sử dụng facets từ facets_dict (dùng khi so sánh giữa các LLM)
-            if pid in facets_dict:
-                facets = facets_dict[pid]
+            if pid in source:
+                facets = source[pid]
             else:
                 facets = r.get("facets")
                 if not facets or not isinstance(facets, dict):
