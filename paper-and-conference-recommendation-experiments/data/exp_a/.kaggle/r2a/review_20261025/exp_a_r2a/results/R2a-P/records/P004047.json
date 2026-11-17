@@ -1,0 +1,445 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P004047\",\n  \"problem\": [\n    {\"concept\": \"system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}\n  ],\n  \"task\": [\n    {\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"translation and language models trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed morph-based solution has clear benefits\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"morpho logically well motivated structures (phrases) are learned\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 26.628101559000243,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"problem\": [\n    {\"concept\": \"system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}\n  ],\n  \"task\": [\n    {\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"},\n    {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"translation and language models trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed morph-based solution has clear benefits\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"morpho logically well motivated structures (phrases) are learned\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 79.0,
+          "seed": 12183,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2561,
+            "output_tokens": 322
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004047\", \"problem\": [{\"concept\": \"system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"}, {\"concept\": \"translation and language models trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"proposed morph-based solution has clear benefits\", \"evidence_id\": \"A9\"}, {\"concept\": \"morpho logically well motivated structures (phrases) are learned\", \"evidence_id\": \"A9\"}, {\"concept\": \"proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.250140155999816,
+          "operations": [
+            {
+              "before": {
+                "concept": "translation and language models trained directly on morphs instead of words",
+                "evidence_id": "A6"
+              },
+              "concept": "translation and language models trained directly on morphs instead of words",
+              "evidence_id": "A6",
+              "facet": "method",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "system generalizes poorly to word forms that do not occur in the training data",
+                "evidence_id": "A2"
+              },
+              "concept": "system generalizes poorly to word forms that do not occur in the training data",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+                "evidence_id": "A0"
+              },
+              "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+              "evidence_id": "A0",
+              "facet": "task",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"method\",\n      \"index\": 2,\n      \"concept\": \"translation and language models trained directly on morphs instead of words\",\n      \"evidence_id\": \"A6\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"problem\",\n      \"index\": 0,\n      \"concept\": \"system generalizes poorly to word forms that do not occur in the training data\",\n      \"evidence_id\": \"A2\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"task\",\n      \"index\": 0,\n      \"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\",\n      \"evidence_id\": \"A0\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 79.0,
+          "seed": 12184,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3197,
+            "output_tokens": 227
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004047\", \"problem\": [{\"concept\": \"system generalizes poorly to word forms that do not occur in the training data\", \"evidence_id\": \"A2\"}, {\"concept\": \"problematic for languages that are highly compounding, highly inflecting, or both\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"unsupervised morphology learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"Morfessor algorithm\", \"evidence_id\": \"A5\"}, {\"concept\": \"translation and language models trained directly on morphs instead of words\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"Europarl corpus consisting of the Proceedings of the European Parliament\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"proposed morph-based solution has clear benefits\", \"evidence_id\": \"A9\"}, {\"concept\": \"morpho logically well motivated structures (phrases) are learned\", \"evidence_id\": \"A9\"}, {\"concept\": \"proportion of words left untranslated is clearly reduced\", \"evidence_id\": \"A9\"}]}",
+          "attempt": 3,
+          "generation_seconds": 22.234559146000038,
+          "operations": [
+            {
+              "before": {
+                "concept": "translation and language models trained directly on morphs instead of words",
+                "evidence_id": "A6"
+              },
+              "concept": "translation and language models trained directly on morphs instead of words",
+              "evidence_id": "A6",
+              "facet": "method",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "system generalizes poorly to word forms that do not occur in the training data",
+                "evidence_id": "A2"
+              },
+              "concept": "system generalizes poorly to word forms that do not occur in the training data",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+                "evidence_id": "A0"
+              },
+              "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+              "evidence_id": "A0",
+              "facet": "task",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P004047\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"method\",\n      \"index\": 2,\n      \"concept\": \"translation and language models trained directly on morphs instead of words\",\n      \"evidence_id\": \"A6\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"problem\",\n      \"index\": 0,\n      \"concept\": \"system generalizes poorly to word forms that do not occur in the training data\",\n      \"evidence_id\": \"A2\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"task\",\n      \"index\": 0,\n      \"concept\": \"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\",\n      \"evidence_id\": \"A0\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 79.0,
+          "seed": 12185,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3197,
+            "output_tokens": 227
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proposed morph-based solution has clear benefits",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "morpho logically well motivated structures (phrases) are learned",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "proportion of words left untranslated is clearly reduced",
+            "evidence_id": "A9"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Europarl corpus consisting of the Proceedings of the European Parliament",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "unsupervised morphology learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Morfessor algorithm",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "translation and language models trained directly on morphs instead of words",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P004047",
+        "problem": [
+          {
+            "concept": "system generalizes poorly to word forms that do not occur in the training data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "problematic for languages that are highly compounding, highly inflecting, or both",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 71.1128008610001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P004047",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 12185,
+      "selected_score": 79.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [
+          "Possible split source words detected; raw source was preserved"
+        ],
+        "status": "suspected_text_corruption"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 8955,
+        "output_tokens": 776
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+        "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "1c91b62c03261b240db1b0e964c363785575ca79107502d36b043dfd620494f3",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 12183
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "fd2f9d3ef007fe5c71f05f11a311a3936b518302fa8cc74ff6b39649816fda63",
+        "operations": [
+          {
+            "before": {
+              "concept": "translation and language models trained directly on morphs instead of words",
+              "evidence_id": "A6"
+            },
+            "concept": "translation and language models trained directly on morphs instead of words",
+            "evidence_id": "A6",
+            "facet": "method",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "system generalizes poorly to word forms that do not occur in the training data",
+              "evidence_id": "A2"
+            },
+            "concept": "system generalizes poorly to word forms that do not occur in the training data",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+              "evidence_id": "A0"
+            },
+            "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+            "evidence_id": "A0",
+            "facet": "task",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 12184
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "fd2f9d3ef007fe5c71f05f11a311a3936b518302fa8cc74ff6b39649816fda63",
+        "operations": [
+          {
+            "before": {
+              "concept": "translation and language models trained directly on morphs instead of words",
+              "evidence_id": "A6"
+            },
+            "concept": "translation and language models trained directly on morphs instead of words",
+            "evidence_id": "A6",
+            "facet": "method",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "system generalizes poorly to word forms that do not occur in the training data",
+              "evidence_id": "A2"
+            },
+            "concept": "system generalizes poorly to word forms that do not occur in the training data",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+              "evidence_id": "A0"
+            },
+            "concept": "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system",
+            "evidence_id": "A0",
+            "facet": "task",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 12185
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; possible split source word: poorl y -> poorly; preserve raw evidence; concept=\"system generalizes poorly to word forms that do not occur in the training data\"; evidence_id=\"A2\"; evidence=\"Such a system generalizes poorl y to word forms that do not occur in the training data.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; possible split source word: ma chine -> machine; preserve raw evidence; concept=\"apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system\"; evidence_id=\"A0\"; evidence=\"In this paper, we apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical ma chine translation (SMT) system.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; possible split source word: transl ation -> translation; preserve raw evidence; concept=\"translation and language models trained directly on morphs instead of words\"; evidence_id=\"A6\"; evidence=\"Transl ation and language models are trained directly on morphs instead of words.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "proposed morph-based solution has clear benefits",
+        "morpho logically well motivated structures (phrases) are learned",
+        "proportion of words left untranslated is clearly reduced"
+      ],
+      "dataset": [
+        "Europarl corpus consisting of the Proceedings of the European Parliament"
+      ],
+      "method": [
+        "unsupervised morphology learning",
+        "Morfessor algorithm",
+        "translation and language models trained directly on morphs instead of words"
+      ],
+      "paper_id": "P004047",
+      "problem": [
+        "system generalizes poorly to word forms that do not occur in the training data",
+        "problematic for languages that are highly compounding, highly inflecting, or both"
+      ],
+      "task": [
+        "apply a method of unsupervised morphology learning to a state-of-the-art phrase-based statistical machine translation (SMT) system"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 71.1128008610001,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 44.484699301999854,
+      "input_tokens": 6394,
+      "output_tokens": 454
+    },
+    "paper_id": "P004047",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0,
+        1,
+        2
+      ],
+      "problem": [
+        0,
+        1
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 8955,
+      "output_tokens": 776
+    }
+  },
+  "record_sha256": "09908ec6989eb32951847483fbdbcd5e0ba3a4bdbca09b7104d53a91a095ea89",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

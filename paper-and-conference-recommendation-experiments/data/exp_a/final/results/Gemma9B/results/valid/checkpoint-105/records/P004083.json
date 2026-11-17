@@ -1,0 +1,490 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.286395099999936,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12291,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1271,
+            "output_tokens": 179
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.008473847999994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12292,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3050,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.548964166999212,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004083\", \"task\": [], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12293,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 718,
+            "output_tokens": 59
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "pattern generalization",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "word lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004083",
+        "problem": [
+          {
+            "concept": "low recall and precision",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "highly variable syntactic structures",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "definition and hypernym extraction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 78.84383311499914,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P004083",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5039,
+        "output_tokens": 401
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 33.286395099999936,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12291,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1271,
+            "output_tokens": 179
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}, {\"concept\": \"word lattices\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.008473847999994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004083\", \"problem\": [{\"concept\": \"low recall and precision\", \"evidence_id\": \"A2\"}, {\"concept\": \"highly variable syntactic structures\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"definition and hypernym extraction\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12292,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3050,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "pattern generalization",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "word lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004083",
+        "problem": [
+          {
+            "concept": "low recall and precision",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "highly variable syntactic structures",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "definition and hypernym extraction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 67.29486894799993,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12292,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4321,
+        "output_tokens": 342
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 33.286395099999936,
+        "inherited": false,
+        "messages_sha256": "f3b9195422bb16afc0555c0046e9252eb8233ba371e2b86f178f07f68d9dee1a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12291,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1271,
+          "output_tokens": 179
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.008473847999994,
+        "inherited": false,
+        "messages_sha256": "8a23723d277e391ce710c295050b00d7e0333a6e313cac4ff1e8643f5b7261c0",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004083",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 12292,
+        "usage": {
+          "input_tokens": 3050,
+          "output_tokens": 163
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.548964166999212,
+        "inherited": false,
+        "messages_sha256": "a50d66c211568fb73374a3f692dfded4e7121d1e063709f49322070ca2781545",
+        "reached_token_limit": false,
+        "seed": 12293,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 718,
+          "output_tokens": 59
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "pattern generalization",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "word lattices",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004083",
+        "problem": [
+          {
+            "concept": "low recall and precision",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "highly variable syntactic structures",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "definition and hypernym extraction",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "WordClass Lattices",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "pattern generalization",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.548964166999212,
+      "messages_sha256": "a50d66c211568fb73374a3f692dfded4e7121d1e063709f49322070ca2781545",
+      "raw_output": "{\"paper_id\": \"P004083\", \"task\": [], \"method\": [{\"concept\": \"WordClass Lattices\", \"evidence_id\": \"A3\"}, {\"concept\": \"pattern generalization\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 718,
+        "output_tokens": 59
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "f6d39b9eaece6ab63222779c50804f4f3a5095613d819fe67f2da305d44415dd",
+    "facets": {
+      "contribution": [
+        "WordClass Lattices"
+      ],
+      "dataset": [
+        "Wikipedia"
+      ],
+      "method": [
+        "WordClass Lattices",
+        "pattern generalization",
+        "word lattices"
+      ],
+      "paper_id": "P004083",
+      "problem": [
+        "low recall and precision",
+        "highly variable syntactic structures"
+      ],
+      "task": [
+        "definition and hypernym extraction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 78.84383311499914,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 78.84383311499914,
+      "input_tokens": 5039,
+      "output_tokens": 401
+    },
+    "paper_id": "P004083",
+    "source_sha256": "02f3fd966320645c17f9263ae5d033f6fe05f359b6e05c675e1c78237f82cc1b",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5039,
+      "output_tokens": 401
+    }
+  },
+  "record_sha256": "ee486522853d1da37e49ee11ac34884e0e7590f72081302b77b443d77d65099e",
+  "signature": "b70f7f0c11027ae63c9cadd8346e20bb7c37043c066b5705fda23b6849ae244f"
+}

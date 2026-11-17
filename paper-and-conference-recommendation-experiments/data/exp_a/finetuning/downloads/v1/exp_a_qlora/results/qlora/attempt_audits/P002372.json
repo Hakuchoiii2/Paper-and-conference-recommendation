@@ -1,0 +1,71 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P002372\", \"problem\": [], \"task\": [{\"concept\": \"sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"predict sentiment distributions\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"recursive autoencoders\", \"evidence_id\": \"A0\"}, {\"concept\": \"vector space representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"experience project\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"recursive autoencoders for sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"new dataset based on confessions from the experience project\", \"evidence_id\": \"A3\"}]}",
+      "attempt": 1,
+      "generation_seconds": 28.51855760699982,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P002372\", \"problem\": [], \"task\": [{\"concept\": \"sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"predict sentiment distributions\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"recursive autoencoders\", \"evidence_id\": \"A0\"}, {\"concept\": \"vector space representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"experience project\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"recursive autoencoders for sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"new dataset based on confessions from the experience project\", \"evidence_id\": \"A3\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 88.0,
+      "seed": 7158,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2419,
+        "output_tokens": 174
+      },
+      "validation_errors": []
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002372\", \"problem\": [], \"task\": [{\"concept\": \"sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"predict sentiment distributions\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"recursive autoencoders\", \"evidence_id\": \"A0\"}, {\"concept\": \"vector space representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"experience project\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"recursive autoencoders for sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"new dataset based on confessions from the experience project\", \"evidence_id\": \"A3\"}, {\"concept\": \"In sentiment prediction tasks these representations outperform other state-of-the-art approaches on commonly used datasets, such as movie reviews, without using any pre-defined sentiment lexica or polarity shifting rules\", \"evidence_id\": \"A2\"}, {\"concept\": \"Our algorithm can more accurately predict distributions over such labels compared to several competitive baselines\", \"evidence_id\": \"A5\"}]}",
+      "attempt": 2,
+      "generation_seconds": 41.942509159998735,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P002372\", \"problem\": [], \"task\": [{\"concept\": \"sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"predict sentiment distributions\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"recursive autoencoders\", \"evidence_id\": \"A0\"}, {\"concept\": \"vector space representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"experience project\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"recursive autoencoders for sentence-level prediction of sentiment label distributions\", \"evidence_id\": \"A0\"}, {\"concept\": \"new dataset based on confessions from the experience project\", \"evidence_id\": \"A3\"}, {\"concept\": \"In sentiment prediction tasks these representations outperform other state-of-the-art approaches on commonly used datasets, such as movie reviews, without using any pre-defined sentiment lexica or polarity shifting rules\", \"evidence_id\": \"A2\"}, {\"concept\": \"Our algorithm can more accurately predict distributions over such labels compared to several competitive baselines\", \"evidence_id\": \"A5\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 88.0,
+      "seed": 7159,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3964,
+        "output_tokens": 254
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P002372",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "experience project",
+        "evidence": "We also evaluate the model's ability to predict sentiment distributions on a new dataset based on confessions from the experience project.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 2,
+  "selected_score": 88.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

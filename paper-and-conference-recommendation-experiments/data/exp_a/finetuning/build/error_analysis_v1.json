@@ -1,0 +1,833 @@
+{
+  "status": "locally_verified",
+  "created_at_utc": "2026-10-18T01:54:23.534913+00:00",
+  "experiment_signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b",
+  "test_count": 100,
+  "reference_kind": "GPT/Codex AI reference; human review pending",
+  "threshold": 0.85,
+  "matching_counts_equal_cloud": true,
+  "table": [
+    {
+      "arm": "original",
+      "contribution_f1": 0.4423791821561338,
+      "dataset_f1": 0.5102040816326531,
+      "fallback_count": 69,
+      "fn": 464,
+      "fp": 420,
+      "generation_seconds": 8155.583686093949,
+      "macro_f1": 0.4698566773173143,
+      "method_f1": 0.5416666666666666,
+      "micro_f1": 0.47443519619500596,
+      "output_tokens": 82995,
+      "precision": 0.48717948717948717,
+      "problem_f1": 0.37446808510638296,
+      "recall": 0.4623406720741599,
+      "task_f1": 0.48056537102473496,
+      "tp": 399
+    },
+    {
+      "arm": "qlora",
+      "contribution_f1": 0.52,
+      "dataset_f1": 0.7317073170731707,
+      "fallback_count": 9,
+      "fn": 363,
+      "fp": 324,
+      "generation_seconds": 7139.579133997988,
+      "macro_f1": 0.6100288865046946,
+      "method_f1": 0.6466431095406361,
+      "micro_f1": 0.5927682276229994,
+      "output_tokens": 43984,
+      "precision": 0.6067961165048543,
+      "problem_f1": 0.5304347826086957,
+      "recall": 0.5793742757821553,
+      "task_f1": 0.6213592233009708,
+      "tp": 500
+    }
+  ],
+  "by_origin": {
+    "original": {
+      "additional_ai_reference": {
+        "papers": 45,
+        "tp": 205,
+        "fp": 145,
+        "fn": 215,
+        "micro_f1": 0.5324675324675324
+      },
+      "existing_ai_reference": {
+        "papers": 55,
+        "tp": 194,
+        "fp": 275,
+        "fn": 249,
+        "micro_f1": 0.42543859649122806
+      }
+    },
+    "qlora": {
+      "additional_ai_reference": {
+        "papers": 45,
+        "tp": 221,
+        "fp": 139,
+        "fn": 199,
+        "micro_f1": 0.5666666666666667
+      },
+      "existing_ai_reference": {
+        "papers": 55,
+        "tp": 279,
+        "fp": 185,
+        "fn": 164,
+        "micro_f1": 0.6152149944873209
+      }
+    }
+  },
+  "qlora_remaining_errors": {
+    "contribution": {
+      "tp": 130,
+      "fp": 119,
+      "fn": 121,
+      "errors": 240
+    },
+    "dataset": {
+      "tp": 30,
+      "fp": 6,
+      "fn": 16,
+      "errors": 22
+    },
+    "method": {
+      "tp": 183,
+      "fp": 93,
+      "fn": 107,
+      "errors": 200
+    },
+    "problem": {
+      "tp": 61,
+      "fp": 50,
+      "fn": 58,
+      "errors": 108
+    },
+    "task": {
+      "tp": 96,
+      "fp": 56,
+      "fn": 61,
+      "errors": 117
+    }
+  },
+  "method_contribution_error_share": 0.6404657933042213,
+  "fallback": {
+    "original": [
+      {
+        "paper_id": "P000049",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"failure of fine pathways in one-shot approaches for large displacements\"; evidence_id=\"A7\"; evidence=\"We also show that our approach outperforms one-shot approaches to alignment, because the fine pathways in the latter approach may fail to contribute to alignment accuracy when displacements are large.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"self-supervised training\"; evidence_id=\"A4\"; evidence=\"The entire architecture of encoder and aligner nets is trained in a self-supervised manner to minimize the squared error between source and target remaining after alignment.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"outperforms one-shot approaches for alignment\"; evidence_id=\"A7\"; evidence=\"We also show that our approach outperforms one-shot approaches to alignment, because the fine pathways in the latter approach may fail to contribute to alignment accuracy when displacements are large.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of masking penalty function near discontinuities\"; evidence_id=\"A9\"; evidence=\"We demonstrate that\\\"masking out\\\"the penalty function near discontinuities leads to correct recovery of non-smooth transforms.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000053",
+        "validation_errors": [
+          "dataset[1]: duplicate concept",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"factual density can separate between articles of similar lengths with an F-measure of 90.4%\"; evidence_id=\"A6\"; evidence=\"However, for articles of similar lengths the word count measure fails while factual density can separate between them with an F-measure of 90.4%.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\"; evidence_id=\"A8\"; evidence=\"If articles have similar lengths, we achieve an F-measure of 86.7% and 84% otherwise.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000121",
+        "validation_errors": [
+          "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of movie review excerpts\"; evidence_id=\"A11\"; evidence=\"We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"test accuracy of 45.4% in movie review excerpts dataset\"; evidence_id=\"A12\"; evidence=\"Our network achieves test accuracy of 45.4% in this dataset, which is a better performance than some other neural network model like Recursive Neural Network (RNN) and Matrix-Vector Recursive Neural Network (MV-RNN).\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000200",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"manually collected and annotated lexicon at sentence level with semantic orientation (positive or negative)\"; evidence_id=\"A5\"; evidence=\"AIPSeLEX is manually collected and annotated at sentence level with semantic orientation (positive or negative).\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000202",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"MailNET system to better adjust to diverse networks\"; evidence_id=\"A7\"; evidence=\"A complete spam detection system MailNET is devised to better adjust to diverse networks.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation on a live data set from a university-scale email server showing efficiency and effectiveness\"; evidence_id=\"A10\"; evidence=\"We evaluate MailNET on a live data set from a university-scale email server and show that the proposed model is efficient and effective, thus applicable to the real world.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000221",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"the fit between the meaning representation and compositional method is more important than the size of training corpora and generated vectors\"; evidence_id=\"A4\"; evidence=\"The sizes of the involved training corpora and the generated vectors are not as important as the fit between the meaning representation and compositional method.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000299",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in understanding latest trends and summarizing state or general opinions about products due to big diversity and size of social media data\"; evidence_id=\"A1\"; evidence=\"However, it is challenging to understand the latest trends and summarize the state or general opinions about products due to the big diversity and size of social media data and this creates the need of automated and real time opinion extraction and mining.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"fuzzy based knowledge engineering model for sentiment classification of objective statements that imply sentiment\"; evidence_id=\"A3\"; evidence=\"In this paper, fuzzy based knowledge engineering model has been developed for sentiment classification of special group of such sentences including the change or deviation from desired range or value.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000331",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"reliance on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application\"; evidence_id=\"A1\"; evidence=\"Currently however, most systems rely on a large training set, which is manually annotated, an effort that needs to be repeated whenever different languages or a different set of semantic roles is used in a certain application.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"semi-supervised semantic role labeling\"; evidence_id=\"A2\"; evidence=\"A possible solution for this problem is semi-supervised learning, where a small set of training examples is automatically expanded using unlabeled texts.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"using word similarities from unlabeled texts\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Latent Words Language Model for semi-supervised semantic role labeling\"; evidence_id=\"A3\"; evidence=\"We present the Latent Words Language Model, which is a language model that learns word similarities from unlabeled texts.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"error reduction of 33.27% F1-measure for small training sizes\"; evidence_id=\"A5\"; evidence=\"We evaluate the methods on the PropBank dataset and find that for small training sizes our best performing system achieves an error reduction of 33.27% F1-measure compared to a state-of-the-art supervised baseline.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000345",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"mathematical analysis of the Rasch model\"; evidence_id=\"A6\"; evidence=\"This paper pursues the mathematics of the Rasch model and establishes, through a special case when the sizes of the categories are equal and when the model is expressed in the multiplicative metric, that its probability distribution reflects the precision with which the data are collected, and that if a pair of categories is collapsed after the data are collected, it no longer reflects the original precision.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establishes that the probability distribution of the Rasch model reflects the precision of data collection\"; evidence_id=\"A6\"; evidence=\"This paper pursues the mathematics of the Rasch model and establishes, through a special case when the sizes of the categories are equal and when the model is expressed in the multiplicative metric, that its probability distribution reflects the precision with which the data are collected, and that if a pair of categories is collapsed after the data are collected, it no longer reflects the original precision.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"shows that collapsing categories destroys the joining assumption\"; evidence_id=\"A7\"; evidence=\"As a consequence, and not because of a qualitative change in the variable, the joining assumption is destroyed when categories are combined.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"discusses implications of choosing between models satisfying the joining assumption or reflecting data precision\"; evidence_id=\"A8\"; evidence=\"Implications of the choice between a model which satisfies the joining assumption or one which reflects on the precision of the data collection considered are discussed.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000376",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"absence of objective measures and empirical evidence for systematic bias\"; evidence_id=\"A2\"; evidence=\"However, in the absence of objective measures and empirical evidence, the direction and extent of systematicity remains widely disputed.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"quantifying and characterizing systematic bias in media outlets\"; evidence_id=\"A3\"; evidence=\"In this paper we propose a framework based on quoting patterns for quantifying and characterizing the degree to which media outlets exhibit systematic bias.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"exposes striking differences across latent dimensions in how media outlets portray realities\"; evidence_id=\"A8\"; evidence=\"A linguistic analysis exposes striking differences across these latent dimensions, showing how the different types of media outlets portray different realities even when reporting on the same events.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"shows how outlets mapped to the mainstream conservative side focus on quotes portraying a presidential persona disproportionately characterized by negativity\"; evidence_id=\"A9\"; evidence=\"For example, outlets mapped to the mainstream conservative side of the latent space focus on quotes that portray a presidential persona disproportionately characterized by negativity.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000434",
+        "validation_errors": [
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"English Lexical Substitution task for SemEval\"; evidence_id=\"T0\"; evidence=\"SemEval-2007 Task 10: English Lexical Substitution Task\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000455",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"data-hungry nature of neural-based end-to-end approaches to natural language generation\"; evidence_id=\"A0\"; evidence=\"Neural-based end-to-end approaches to natural language generation (NLG) from structured data or knowledge are data-hungry, making their adoption for real-world applications difficult with limited data.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"approach that achieves very reasonable performances with just 200 training examples\"; evidence_id=\"A6\"; evidence=\"With just 200 training examples, we show that our approach achieves very reasonable performances and outperforms the strongest baseline by an average of over 8.0 BLEU points improvement.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000476",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"compare evolutionary programming network-based learning and novel evolution strategy algorithm-based learning\"; evidence_id=\"T0\"; evidence=\"On Comparison between Evolutionary Programming Network-based Learning and Novel Evolution Strategy Algorithm-based Learning\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"results and comparison between EPNet and NES\"; evidence_id=\"A6\"; evidence=\"The results and the comparison between them are also presented in this paper.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000510",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"linguistically regularized LSTMs\"; evidence_id=\"A3\"; evidence=\"In this paper, we propose simple models trained with sentence-level annotation, but also attempt to generating linguistically coherent representations by employing regularizers that model the linguistic role of sentiment lexicons, negation words, and intensity words.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000559",
+        "validation_errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate the proposed method on short message dictation and voice search tasks\"; evidence_id=\"A5\"; evidence=\"The proposed method is evaluated on short message dictation and voice search tasks in supervised, unsupervised, and semi-supervised setups.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"formulates the adaptation technique in a linear regression fashion\"; evidence_id=\"A3\"; evidence=\"We show that this adaptation technique can be formulated in a linear regression fashion, analogous to other speak adaptation algorithms that apply additional linear transformations to the DNN layers.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000566",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"demonstrate end-to-end use of semantically rich data in computational chemistry\"; evidence_id=\"A2\"; evidence=\"In this paper an end-to-end use of semantically rich data in computational chemistry is demonstrated utilizing the Chemical Markup Language (CML) framework.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"modify NWChem to write CML compliant XML data files\"; evidence_id=\"A4\"; evidence=\"RESULTS The NWChem computational chemistry software has been modified and coupled to the FoX library to write CML compliant XML data files.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"expand FoX library to represent lexical input files and molecular orbitals\"; evidence_id=\"A5\"; evidence=\"The FoX library was expanded to represent the lexical input files and molecular orbitals used by the computational chemistry software.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"develop draft dictionary entries and format for molecular orbitals within CML CompChem\"; evidence_id=\"A6\"; evidence=\"Draft dictionary entries and a format for molecular orbitals within CML CompChem were developed.\"",
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"extend Avogadro to read CML data and display molecular geometry and electronic structure\"; evidence_id=\"A7\"; evidence=\"The Avogadro application was extended to read in CML data, and display molecular geometry and electronic structure in the GUI allowing for an end-to-end solution where Avogadro can create input structures, generate input files, NWChem can run the calculation and Avogadro can then read in and analyse the CML output produced.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"modified NWChem to write CML compliant XML data files\"; evidence_id=\"A4\"; evidence=\"RESULTS The NWChem computational chemistry software has been modified and coupled to the FoX library to write CML compliant XML data files.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"expanded FoX library to represent lexical input files and molecular orbitals\"; evidence_id=\"A5\"; evidence=\"The FoX library was expanded to represent the lexical input files and molecular orbitals used by the computational chemistry software.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"developed draft dictionary entries and format for molecular orbitals within CML CompChem\"; evidence_id=\"A6\"; evidence=\"Draft dictionary entries and a format for molecular orbitals within CML CompChem were developed.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"extended Avogadro to read CML data and display molecular geometry and electronic structure\"; evidence_id=\"A7\"; evidence=\"The Avogadro application was extended to read in CML data, and display molecular geometry and electronic structure in the GUI allowing for an end-to-end solution where Avogadro can create input structures, generate input files, NWChem can run the calculation and Avogadro can then read in and analyse the CML output produced.\"",
+          "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"produced CML compliant XML files for computational chemistry software such as NWChem using the FoX library\"; evidence_id=\"A9\"; evidence=\"CONCLUSIONS The production of CML compliant XML files for computational chemistry software such as NWChem can be accomplished relatively easily using the FoX library.\"",
+          "contribution[5]: concept must use source words in their original order; no invented synonyms; concept=\"developed a reader in Avogadro to read CML data and analyse or visualize it\"; evidence_id=\"A10\"; evidence=\"The CML data can be read in by a newly developed reader in Avogadro and analysed or visualized in various ways.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000570",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"document ranking\"; evidence_id=\"A0\"; evidence=\"This paper presents a word-entity duet framework for utilizing knowledge bases in ad-hoc retrieval.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"interactions between word-based and entity-based representations\"; evidence_id=\"A2\"; evidence=\"Ranking features are generated by the interactions between the two representations, incorporating information from the word space, the entity space, and the cross-space connections through the knowledge graph.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"attention mechanism to steer model away from noisy entities\"; evidence_id=\"A3\"; evidence=\"To handle the uncertainties from the automatically constructed entity representations, an attention-based ranking model AttR-Duet is developed.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000648",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate impact of word embeddings and explicit features on part-of-speech tagging\"; evidence_id=\"A4\"; evidence=\"We evaluate the impact of using different types of word embeddings and explicit features as input.\"",
+          "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"two previous versions of the Mac-Morpho corpus\"; evidence_id=\"A3\"; evidence=\"We tested our classifier in different corpora: a new revision of the Mac-Morpho corpus, in which we merged some tags and performed corrections and two previous versions of it.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000696",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenges of interactive voice response systems are not solely associated to their synthesis and recognition capabilities\"; evidence_id=\"A0\"; evidence=\"As interactive voice response systems spread at a rapid pace, providing an increasingly more complex functionality, it is becoming clear that the challenges of such systems are not solely associated to their synthesis and recognition capabilities.\"",
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"issues such as coordination of turn exchanges and correct generation and understanding of words with multiple meanings\"; evidence_id=\"A1\"; evidence=\"Rather, issues such as the coordination of turn exchanges between system and user, or the correct generation and understanding of words that may convey multiple meanings, appear to play an important role in system usability.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"exploring turn-yielding cues in task-oriented dialogues\"; evidence_id=\"A2\"; evidence=\"This thesis explores those two issues in the Columbia Games Corpus, a collection of spontaneous task-oriented dialogues in Standard American English.\"",
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"exploring backchannel-inviting cues in task-oriented dialogues\"; evidence_id=\"A4\"; evidence=\"We present similar results related to six backchannel-inviting cues\\u2014events that invite the interlocutor to produce a short utterance conveying continued attention.\"",
+          "task[3]: concept must use source words in their original order; no invented synonyms; concept=\"examining a novel measure of speaker entrainment related to usage of affirmative cue words\"; evidence_id=\"A8\"; evidence=\"Finally, we examine a novel measure of speaker entrainment related to the usage of these words, showing its association with task success and dialogue coordination.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"machine learning experiments for automatic classification of affirmative cue words\"; evidence_id=\"A7\"; evidence=\"We also conduct machine learning experiments to explore the automatic classification of affirmative cue words.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"evidence of existence of seven turn-yielding cues and their association with turn endings\"; evidence_id=\"A3\"; evidence=\"We provide evidence of the existence of seven turn-yielding cues\\u2014prosodic, acoustic and syntactic events strongly associated with conversational turn endings and show that the likelihood of a turn-taking attempt from the interlocutor increases linearly with the number of cues conjointly displayed by the speaker.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"results related to six backchannel-inviting cues and their association with interlocutor utterances\"; evidence_id=\"A4\"; evidence=\"We present similar results related to six backchannel-inviting cues\\u2014events that invite the interlocutor to produce a short utterance conveying continued attention.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"description of studies of affirmative cue words and their multiple purposes in conversation\"; evidence_id=\"A5\"; evidence=\"Additionally, we describe a series of studies of affirmative cue words\\u2014a family of cue words such as okay or alright that speakers use frequently in conversation for several purposes: for acknowledging what the interlocutor has said, or for cueing the start of a new topic, among others.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"novel measure of speaker entrainment related to usage of affirmative cue words\"; evidence_id=\"A8\"; evidence=\"Finally, we examine a novel measure of speaker entrainment related to the usage of these words, showing its association with task success and dialogue coordination.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000737",
+        "validation_errors": [
+          "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"dataset of phrases that include various negators, modals, and degree adverbs, as well as their combinations\"; evidence_id=\"A2\"; evidence=\"We created a dataset of phrases that include various negators, modals, and degree adverbs, as well as their combinations.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000763",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"existing approaches lack disambiguation for tensor-based models\"; evidence_id=\"A1\"; evidence=\"The purpose of this paper is to generalise these ideas to tensor-based models, where relational words such as verbs and adjectives are represented by linear maps (higher order tensors) acting on a number of arguments (vectors).\"",
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"test disambiguation algorithms on a variety of tasks\"; evidence_id=\"A2\"; evidence=\"We propose disambiguation algorithms for a number of tensor-based models, which we then test on a variety of tasks.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"confirm previous findings on disambiguation's positive effect on vector mixture models\"; evidence_id=\"A4\"; evidence=\"Furthermore, we confirm previous findings regarding the positive effect of disambiguation on vector mixture models, and we compare the effectiveness of the two approaches.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"compare effectiveness of disambiguation approaches\"; evidence_id=\"A4\"; evidence=\"Furthermore, we confirm previous findings regarding the positive effect of disambiguation on vector mixture models, and we compare the effectiveness of the two approaches.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001065",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"natural language access to data\"; evidence_id=\"T0\"; evidence=\"Developing a natural language interface to complex data\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"natural language system for database interfaces\"; evidence_id=\"A3\"; evidence=\"Attention is then focused on the first of the insulating components, the natural language system.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"special language features for usability\"; evidence_id=\"A5\"; evidence=\"Special language features that increase system usability, such as spelling correction, processing of incomplete inputs, and run-time system personalization, are also discussed.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001092",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"Fast-Slow RNN (FS-RNN) architecture\"; evidence_id=\"A1\"; evidence=\"Here, we address this challenge by proposing a novel recurrent neural network (RNN) architecture, the Fast-Slow RNN (FS-RNN).\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"Fast-Slow RNN (FS-RNN) architecture\"; evidence_id=\"A1\"; evidence=\"Here, we address this challenge by proposing a novel recurrent neural network (RNN) architecture, the Fast-Slow RNN (FS-RNN).\"",
+          "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"general approach applicable to any kind of RNN cell\"; evidence_id=\"A6\"; evidence=\"Our approach is general as any kind of RNN cell is a possible building block for the FS-RNN architecture, and thus can be flexibly applied to different tasks.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001099",
+        "validation_errors": [
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"sequence-to-sequence model\"; evidence_id=\"A3\"; evidence=\"The model takes as input a sequence of dialogue contexts and outputs a sequence of dialogue acts corresponding to user intentions.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001168",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"proof that the problem is NP-complete\"; evidence_id=\"A3\"; evidence=\"Based on these expressions, we prove that the problem is NP-complete.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"combinatorial properties of the problem and relation to MST and network design problem\"; evidence_id=\"A4\"; evidence=\"We further examine some interesting combinatorial properties of the problem, establish the relation of the PMST with the MST and the network design problem, and examine some cases where the problem is solvable in polynomial time.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"characterization of asymptotic behavior of reoptimization strategies\"; evidence_id=\"A5\"; evidence=\"We finally characterize the asymptotic behavior of reoptimization strategies, in which we find the MST or the Steiner tree, respectively, among the points that are present on a particular instance, and the PMST, in the case in which points are randomly distributed in the Euclidean plane and in the case in which the costs of the arcs are randomly distributed.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001228",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"predicting boundary strength using feature pools\"; evidence_id=\"A6\"; evidence=\"We furthermore trained generalized linear regression models for boundary strength prediction on each feature pool.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"fitting base- and topline to peaks and valleys\"; evidence_id=\"A2\"; evidence=\"(1985) base- and topline are fitted to peaks and valleys of the pitch contour, whereas in Reichel&Mady (2013) these lines are fitted to medians below and above certain pitch percentiles.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"fitting base- and topline to medians below and above certain pitch percentiles\"; evidence_id=\"A2\"; evidence=\"(1985) base- and topline are fitted to peaks and valleys of the pitch contour, whereas in Reichel&Mady (2013) these lines are fitted to medians below and above certain pitch percentiles.\"",
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"inducing four feature pools representing register discontinuity\"; evidence_id=\"A3\"; evidence=\"From each of the stylizations four feature pools were induced representing different aspects of register discontinuity at word boundaries: discontinuities related to the base-, mid-, and topline, as well as to the range between base- and topline.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"median-based fitting approach is more robust to declination line crossing errors\"; evidence_id=\"A4\"; evidence=\"Concerning stylization the median-based fitting approach turned out to be more robust with respect to declination line crossing errors and yielded base-, topline and range-related discontinuity characteristics with higher correlations to perceived boundary strength.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"neither stylization method nor register representation significantly influenced prediction performance\"; evidence_id=\"A7\"; evidence=\"It turned out that neither the stylization method nor the register representation had a significant influence on the overall good prediction performance.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001414",
+        "validation_errors": [
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"discussion of the use of various approaches in commercial and non-commercial anti-spam software solutions\"; evidence_id=\"A3\"; evidence=\"We also provide a brief description of other branches of anti-spam protection and discuss the use of various approaches in commercial and non-commercial anti-spam software solutions.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001494",
+        "validation_errors": [
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"dataset considered an important milestone in understanding and combating SUD\"; evidence_id=\"A3\"; evidence=\"We consider this dataset to be an important milestone in understanding and combating SUD for both languages.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001567",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"detecting sentence-level agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"classifier trained to detect agreement and disagreement\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+          "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of web forum debates\"; evidence_id=\"A0\"; evidence=\"Topic-independent expressions for conveying agreement and disagreement were annotated in a corpus of web forum debates, in order to evaluate a classifier trained to detect these two categories.\"",
+          "dataset[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation set of 175 expressions\"; evidence_id=\"A1\"; evidence=\"Among the 175 expressions annotated in the evaluation set, 163 were unique, which shows that there is large variation in expressions used.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"F-scores of 0.44 and 0.37 achieved for agreement and disagreement detection\"; evidence_id=\"A3\"; evidence=\"F-scores of 0.44 and 0.37 were achieved by a classifier trained on 2,000 debate sentences for detecting sentence-level agreement and disagreement.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001588",
+        "validation_errors": [
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"new dataset containing over 1.6 million questions organized into 12 different categories\"; evidence_id=\"A4\"; evidence=\"It contains over 1.6 million questions organized into 12 different categories.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001657",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"a living document that will be updated as new datasets are constructed and new results are reported\"; evidence_id=\"A8\"; evidence=\"This technical report is a living document and will be updated appropriately as new datasets are constructed and new results on existing datasets (for example, using human subjects) are reported.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001710",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"chicken-and-egg problem hindering the Semantic Web\"; evidence_id=\"A0\"; evidence=\"Berners-Lee's compelling vision of a Semantic Web is hindered by a chicken-and-egg problem, which can be best solved by a bootstrapping method - creating enough structured data to motivate the development of applications.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001737",
+        "validation_errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"distinguishing hate speech from general profanity\"; evidence_id=\"A0\"; evidence=\"In this paper we examine methods to detect hate speech in social media, while distinguishing this from general profanity.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"establish lexical baselines for detecting hate speech\"; evidence_id=\"A1\"; evidence=\"We aim to establish lexical baselines for this task by applying supervised classification methods using a recently released dataset annotated for this purpose.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001777",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"neglecting the importance of feature embedding\"; evidence_id=\"A2\"; evidence=\"However, the importance of feature embedding, i.e., exploring the relationship among training samples, is neglected.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"few-shot classification\"; evidence_id=\"A0\"; evidence=\"The goal of few-shot learning is to recognize new visual concepts with just a few amount of labeled samples in each class.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"superior generalization to unseen classes\"; evidence_id=\"A7\"; evidence=\"More importantly, when evaluated on completely different datasets (Caltech-101, CUB-200, Stanford Dogs and Cars) using the model trained with miniImageNet, our method significantly outperforms prior methods, demonstrating its superior capability to generalize to unseen classes.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"outperforms other metric-based few-shot classification methods on miniImageNet\"; evidence_id=\"A6\"; evidence=\"Our result on the miniImageNet benchmark outperforms other metric-based few-shot classification methods.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001854",
+        "validation_errors": [
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"poor embeddings for infrequent words and weak capabilities for handling out-of-vocabulary words\"; evidence_id=\"A3\"; evidence=\"With regard to word embedding techniques, this leads to not only poor embeddings for infrequent words in long-tailed text corpora but also weak capabilities for handling out-of-vocabulary words.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"parsimony criterion for hierarchical morpheme segmentation\"; evidence_id=\"A5\"; evidence=\"MorphMine applies a parsimony criterion to hierarchically segment words into the fewest number of morphemes at each level of the hierarchy.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"improves embedding quality using MorphMine morphemes\"; evidence_id=\"A8\"; evidence=\"Additionally, we experimentally demonstrate that utilizing MorphMine morphemes to enrich word embeddings consistently improves embedding quality on a variety of of embedding evaluations and a downstream language modeling task.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001868",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"hierarchical pointer networks\"; evidence_id=\"A4\"; evidence=\"Our proposed approach extends pointer-generator networks (See et al., 2017) by allowing the decoder to hierarchically attend and copy from external knowledge in addition to the dialogue context.\"",
+          "contribution[0]: shortening drops a quantity inside the finding; concept=\"proposed approach extends pointer-generator networks to hierarchically attend and copy from external knowledge\"; evidence_id=\"A4\"; evidence=\"Our proposed approach extends pointer-generator networks (See et al., 2017) by allowing the decoder to hierarchically attend and copy from external knowledge in addition to the dialogue context.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002208",
+        "validation_errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate deep nonlinear metric learning based method on large scale corpus\"; evidence_id=\"A5\"; evidence=\"We perform the evaluation of the deep nonlinear metric learning based method on the large scale corpus and give the recognition rate results in different scales.\"",
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"large scale voiceprint corpus\"; evidence_id=\"A4\"; evidence=\"In this paper, we try to introduce a deep nonlinear metric learning based speaker identification algorithm and construct a larger scale of voiceprint corpus consisting of about 440 thousand people.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluation results on large scale corpus\"; evidence_id=\"A5\"; evidence=\"We perform the evaluation of the deep nonlinear metric learning based method on the large scale corpus and give the recognition rate results in different scales.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"recognition rate of Top 50 is stable at about 95% for 400 thousand scale\"; evidence_id=\"A7\"; evidence=\"But for the scale of 400 thousand, the recognition rate of Top 50 is stable at about 95%, which means that it could be used in some real applications.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002279",
+        "validation_errors": [
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"SOAP: A Social network Aided Personalized and effective spam filter\"; evidence_id=\"A5\"; evidence=\"In order to develop an accurate and user-friendly spam filter, in this paper, we propose a SOcial network Aided Personalized and effective spam filter (SOAP).\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002283",
+        "validation_errors": [
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"extending the construct of cultural proximity to explain audience formation\"; evidence_id=\"A1\"; evidence=\"The present study extends the construct, revealing its power to explain audience formation within a multicultural society.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"demonstrating the role of language preferences in audience behavior\"; evidence_id=\"A3\"; evidence=\"The results indicate that language preferences play a powerful role in determining audience behavior.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"showing evidence of cultural polarization in non-English-speaking Hispanics and non-Hispanics\"; evidence_id=\"A4\"; evidence=\"Furthermore, while English-speaking Hispanics exhibit multicultural fluency, the other two populations show evidence of cultural polarization.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002331",
+        "validation_errors": [
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"illustrates the benefits of RR through several synthetic and real examples with applications to head pose estimation from images, image and video classification and facial attribute classification with missing data\"; evidence_id=\"A8\"; evidence=\"Several synthetic and real examples with applications to head pose estimation from images, image and video classification and facial attribute classification with missing data are used to illustrate the benefits of RR.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002415",
+        "validation_errors": [
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"linguistic abstractions (part-of-speech, dependencies, syntactic trees)\"; evidence_id=\"A1\"; evidence=\"Starting with recurring word-based ngrams (Bykh and Meurers, 2012), we tested different linguistic abstractions such as partof-speech, dependencies, and syntactic trees as features for NLI.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 82.2% accuracy (rank 5) in closed task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble classifier achieving 83.5% accuracy (rank 1) in open-2 task\"; evidence_id=\"A3\"; evidence=\"Employing an ensemble classifier incorporating all of our features we achieved an accuracy of 82.2% (rank 5) in the closed task and 83.5% (rank 1) in the open-2 task.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"word-based recurring ngrams outperforming ensemble in open-1 task (38.5%, rank 2)\"; evidence_id=\"A4\"; evidence=\"In the open-1 task, the word-based recurring ngrams outperformed the ensemble, yielding 38.5% (rank 2).\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002434",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenge in modelling compositional meaning for sentences using empirical distributional methods\"; evidence_id=\"A0\"; evidence=\"Modelling compositional meaning for sentences using empirical distributional methods has been a challenge for computational linguists.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"implementation of the abstract categorical model of Coecke et al.\"; evidence_id=\"A1\"; evidence=\"We implement the abstract categorical model of Coecke et al.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"applying matrices to the vectors of their arguments\"; evidence_id=\"A3\"; evidence=\"The implementation is based on unsupervised learning of matrices for relational words and applying them to the vectors of their arguments.\"",
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"BNC (British National Corpus)\"; evidence_id=\"A2\"; evidence=\"(arXiv:1003.4394v1 [cs.CL]) using data from the BNC and evaluate it.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model betters competitors in the second experiment\"; evidence_id=\"A5\"; evidence=\"Our model matches the results of its competitors in the first experiment, and betters them in the second.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002508",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"inducing task-based dialogue systems from minimal data\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 74% of the bAbI dataset with only 0.13% of the data\"; evidence_id=\"A4\"; evidence=\"Our experiments show that our model can process 74% of the Facebook AI bAbI dataset even when trained on only 0.13% of the data (5 dialogues).\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 65% of bAbI+\"; evidence_id=\"A5\"; evidence=\"It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of poor robustness of MemN2N to bAbI+ transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002585",
+        "validation_errors": [
+          "contribution[0]: shortening drops a quantity inside the finding; concept=\"TACRED dataset\"; evidence_id=\"A4\"; evidence=\"Then we build TACRED, a large (119,474 examples) supervised relation extraction dataset, obtained via crowdsourcing and targeted towards TAC KBP relations.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002636",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"leveraging language relatedness\"; evidence_id=\"A4\"; evidence=\"The objective of the tutorial is to discuss how the relatedness among languages can be leveraged to bridge this language divergence thereby achieving some/all of these goals: (i) improving translation quality, (ii) achieving better generalization, (iii) sharing linguistic resources, and (iv) reducing resource requirements.We will look at the existing research in SMT from the perspective of related languages, with the goal to build a toolbox of methods that are useful for translation between related languages.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"pivot-based and multisource methods\"; evidence_id=\"A8\"; evidence=\"Lexical similarity will receive special attention since related languages share a significant vocabulary in terms of cognates, loanwords, etc.Then, we look beyond bilingual MT and present how pivotbased and multisource methods incorporate knowledge from multiple languages, and handle language pairs lacking parallel corpora.We present some studies concerning the implications of languages relatedness to pivotbased SMT, and ways of handling language divergence in the pivotbased SMT scenario.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"studies on implications of language relatedness to pivot-based SMT\"; evidence_id=\"A8\"; evidence=\"Lexical similarity will receive special attention since related languages share a significant vocabulary in terms of cognates, loanwords, etc.Then, we look beyond bilingual MT and present how pivotbased and multisource methods incorporate knowledge from multiple languages, and handle language pairs lacking parallel corpora.We present some studies concerning the implications of languages relatedness to pivotbased SMT, and ways of handling language divergence in the pivotbased SMT scenario.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"ways of handling language divergence in pivot-based SMT\"; evidence_id=\"A8\"; evidence=\"Lexical similarity will receive special attention since related languages share a significant vocabulary in terms of cognates, loanwords, etc.Then, we look beyond bilingual MT and present how pivotbased and multisource methods incorporate knowledge from multiple languages, and handle language pairs lacking parallel corpora.We present some studies concerning the implications of languages relatedness to pivotbased SMT, and ways of handling language divergence in the pivotbased SMT scenario.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002735",
+        "validation_errors": [
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"algorithm that induces a grammar for the problem\"; evidence_id=\"A2\"; evidence=\"The algorithm induces a grammar for the problem, along with a log-linear model that represents a distribution over syntactic and semantic analyses conditioned on the input sentence.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002785",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"evaluate proposed hierarchical sampling training algorithm\"; evidence_id=\"A4\"; evidence=\"After identifying limitations in terms of runtime, memory, and hyperparameter optimization, we propose a hierarchical sampling training algorithm to address all three issues.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"visualization method for performance evaluation\"; evidence_id=\"A6\"; evidence=\"In addition, we also present a new visualization method for qualitatively evaluating the performance with respect to the interpretability and disentanglement.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"hierarchical sampling training algorithm to address runtime, memory, and hyperparameter optimization\"; evidence_id=\"A4\"; evidence=\"After identifying limitations in terms of runtime, memory, and hyperparameter optimization, we propose a hierarchical sampling training algorithm to address all three issues.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002818",
+        "validation_errors": [
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"Concept phrases are represented by category labels, losing word morphological information inside the concept\"; evidence_id=\"A3\"; evidence=\"(2) Since these methods handle the normalization task as a classification issue, concept phrases are represented by category labels.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"Medical concept normalization\"; evidence_id=\"A0\"; evidence=\"Recognizing standard medical concepts in the colloquial text is significant for kinds of applications such as the medical question answering system.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"Validates robustness of the model against common noises in colloquial text\"; evidence_id=\"A12\"; evidence=\"Besides, by adding four types noises to the datasets, we validate the robustness of our model against common noises in the colloquial text.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002878",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"unresolved research question on the dynamics of emotions and their expression\"; evidence_id=\"T0\"; evidence=\"Does putting your emotions into words make you feel better? Measuring the minute-scale dynamics of emotions from online data\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"estimating the duration of positive and negative emotions from onset to evanescence\"; evidence_id=\"A5\"; evidence=\"We estimate that positive and negative emotions last approximately 1.25 and 1.5 hours from onset to evanescence.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"suggestive analysis of possible gender-specific differences in emotional dynamics\"; evidence_id=\"A6\"; evidence=\"A separate analysis for male and female subjects is suggestive of possible gender-specific differences in emotional dynamics.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002997",
+        "validation_errors": [
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"New dataset containing movie chats with background knowledge\"; evidence_id=\"A4\"; evidence=\"To facilitate the development of such natural conversation models which mimic the human process of conversing, we create a new dataset containing movie chats wherein each response is explicitly generated by copying and/or modifying sentences from unstructured background knowledge such as plots, comments and reviews about the movie.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"Baseline results on the dataset using three different models\"; evidence_id=\"A5\"; evidence=\"We establish baseline results on this dataset (90K utterances from 9K conversations) using three different models: (i) pure generation based models which ignore the background knowledge (ii) generation based models which learn to copy information from the background knowledge when required and (iii) span prediction based models which predict the appropriate response span in the background knowledge.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003014",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"verifying a Minimum Spanning Tree (MST) in a distributed setting\"; evidence_id=\"A0\"; evidence=\"The problem of verifying a Minimum Spanning Tree (MST) was introduced by Tarjan in a sequential setting.\"",
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"checking whether a given tree is an MST\"; evidence_id=\"A1\"; evidence=\"Given a graph and a tree that spans it, the algorithm is required to check whether this tree is an MST.\"",
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"label vertices to detect MST edges\"; evidence_id=\"A4\"; evidence=\"Label the vertices of the graph in such a way that for every node, given its own label and the labels of its neighbors only, the node can detect whether these edges are indeed its MST edges.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"distributed verification scheme\"; evidence_id=\"A5\"; evidence=\"In this paper we present such a verification scheme with a maximum label size of O(log n log W), where n is the number of nodes and W is the largest weight of an edge.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"labeling scheme with maximum label size\"; evidence_id=\"A5\"; evidence=\"In this paper we present such a verification scheme with a maximum label size of O(log n log W), where n is the number of nodes and W is the largest weight of an edge.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"lower bound analysis\"; evidence_id=\"A6\"; evidence=\"We also give a matching lower bound of \\u03a9(log n log W) (except when W \\u2264 log n).\"",
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"upper bound analysis\"; evidence_id=\"A6\"; evidence=\"We also give a matching lower bound of \\u03a9(log n log W) (except when W \\u2264 log n).\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"efficient schemes for distributed and sequential settings of tree sensitivity\"; evidence_id=\"A7\"; evidence=\"Both our bounds improve previously known bounds for the problem.For the related problem of tree sensitivity also presented by Tarjan, our method yields rather efficient schemes for both the distributed and the sequential settings.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003080",
+        "validation_errors": [
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"reading and conditioning on knowledge\"; evidence_id=\"A4\"; evidence=\"We then design architectures capable of retrieving knowledge, reading and conditioning on it, and finally generating natural responses.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003237",
+        "validation_errors": [
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"loss function for neural network-based models\"; evidence_id=\"A2\"; evidence=\"We formulate this approach, present a probabilistic graphical model for it, and derive a surprisingly simple loss function that can be used to learn neural network-based models.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"meta classification learning method\"; evidence_id=\"A1\"; evidence=\"The proposed method, meta classification learning, optimizes a binary classifier for pairwise similarity prediction and through this process learns a multi-class classifier as a submodule.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"probabilistic graphical model for multi-class classification\"; evidence_id=\"A2\"; evidence=\"We formulate this approach, present a probabilistic graphical model for it, and derive a surprisingly simple loss function that can be used to learn neural network-based models.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"superior or comparable accuracy in all three learning paradigms\"; evidence_id=\"A4\"; evidence=\"Our method is evaluated against state of the art in all three learning paradigms and shows a superior or comparable accuracy, providing evidence that learning multi-class classification without multi-class labels is a viable learning option.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003246",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"embedding translation models in a retrieval model\"; evidence_id=\"A3\"; evidence=\"The resulting translation models can be embedded in several ways in a retrieval model.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003365",
+        "validation_errors": [
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\"; evidence_id=\"A4\"; evidence=\"However, if corpus size grow in topics which are not specific to the domain of interest, signal to noise ratio may weaken.\"",
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"progressive elimination of documents (random vs. unrelated to a specific task)\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\"; evidence_id=\"A9\"; evidence=\"On the contrary, the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003372",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"maximum likelihood ratio model\"; evidence_id=\"A0\"; evidence=\"ABSTRACTIn this paper we present a novel probabilistic information retrieval model that scores documents based on the relative change in the document likelihoods, expressed as the ratio of the conditional probability of the document given the query and the prior probability of the document before the query is specified.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"automatic and dynamic parameter estimation\"; evidence_id=\"A1\"; evidence=\"The document likelihoods are computed using statistical language modeling techniques and the model parameters are estimated automatically and dynamically for each query to optimize well-specified (maximum likelihood) objective functions.\"",
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"automatic feedback method\"; evidence_id=\"A2\"; evidence=\"We derive the basic retrieval model, describe the details of the model, and present some extensions to the model including a method to perform automatic feedback.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"maximum likelihood ratio information retrieval model\"; evidence_id=\"A0\"; evidence=\"ABSTRACTIn this paper we present a novel probabilistic information retrieval model that scores documents based on the relative change in the document likelihoods, expressed as the ratio of the conditional probability of the document given the query and the prior probability of the document before the query is specified.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"automatic feedback method\"; evidence_id=\"A2\"; evidence=\"We derive the basic retrieval model, describe the details of the model, and present some extensions to the model including a method to perform automatic feedback.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003415",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"relation extraction\"; evidence_id=\"A2\"; evidence=\"In this paper we investigate four orthogonal improvements: integrating named entity linking (NEL) and coreference resolution into argument identification for training and extraction, enforcing type constraints of linked arguments, and partitioning the model by relation type signature.\"",
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"NY Times articles partially annotated by Hoffmann et al. (2011)\"; evidence_id=\"A3\"; evidence=\"We evaluate sentential extraction performance on two datasets: the popular set of NY Times articles partially annotated by Hoffmann et al.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"using argument types provides further improvement\"; evidence_id=\"A5\"; evidence=\"We find that using NEL for argument identification boosts performance over the traditional approach (named entity recognition with string match), and there is further improvement from using argument types.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003479",
+        "validation_errors": [
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"2008\\u20132009 Gaza war texts\"; evidence_id=\"A4\"; evidence=\"Taking the 2008\\u20132009 Gaza war as an example, we further show how corpus comparison and semantic network analysis applied to the results of the clause analysis can show differences in citation and framing patterns between U.S.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"syntactic patterns to extract clauses and identify quotes\"; evidence_id=\"A3\"; evidence=\"We show that a small set of syntactic patterns can extract clauses and identify quotes with good accuracy, significantly outperforming a baseline system based on word order.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"differences in citation and framing patterns between U.S. and English-language Chinese coverage\"; evidence_id=\"A5\"; evidence=\"and English-language Chinese coverage of this war.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003496",
+        "validation_errors": [
+          "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"dataset of Cai and Yates (2013)\"; evidence_id=\"A5\"; evidence=\"On the dataset of Cai and Yates (2013), despite not having annotated logical forms, our system outperforms their state-of-the-art parser.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"system outperforms their state-of-the-art parser on the dataset of Cai and Yates (2013) despite not having annotated logical forms\"; evidence_id=\"A5\"; evidence=\"On the dataset of Cai and Yates (2013), despite not having annotated logical forms, our system outperforms their state-of-the-art parser.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003522",
+        "validation_errors": [
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"integration with NormCRM\"; evidence_id=\"A2\"; evidence=\"In this work we propose an active learning algorithm, which combines a novel measure of sample uncertainty with a novel clustering-based approach for determining sample density and diversity and integrate it with NormCRM.\"",
+          "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"iteratively refined clusters\"; evidence_id=\"A3\"; evidence=\"The clusters are also iteratively refined to ensure both feature and label-level agreement among samples.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003556",
+        "validation_errors": [
+          "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"relocating filtering system to the sender mail server\"; evidence_id=\"A2\"; evidence=\"As we studied, the location where the spam filter operates in is an important parameter to preserve network resources.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"detect spam emails in the shortest time by focusing on sender mail server\"; evidence_id=\"A5\"; evidence=\"The result shows that if we focus on developing a filtering method for spams emails in the sender mail server rather than the receiver mail server, we can detect the spam emails in the shortest time consequently to avoid wasting network resources.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003641",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"high cost and time consumption of human linguistic annotation\"; evidence_id=\"A0\"; evidence=\"Human linguistic annotation is crucial for many natural language processing tasks but can be expensive and time-consuming.\"",
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"investigating five specific natural language tasks\"; evidence_id=\"A2\"; evidence=\"We investigate five tasks: affect recognition, word similarity, recognizing textual entailment, event temporal ordering, and word sense disambiguation.\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"bias correction technique\"; evidence_id=\"A5\"; evidence=\"We propose a technique for bias correction that significantly improves annotation quality on two tasks.\"",
+          "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"five natural language tasks\"; evidence_id=\"A2\"; evidence=\"We investigate five tasks: affect recognition, word similarity, recognizing textual entailment, event temporal ordering, and word sense disambiguation.\"",
+          "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"showing high agreement between Mechanical Turk non-expert annotations and expert labels\"; evidence_id=\"A3\"; evidence=\"For all five, we show high agreement between Mechanical Turk non-expert annotations and existing gold standard labels provided by expert labelers.\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"demonstrating effectiveness of non-expert labels for training machine learning algorithms\"; evidence_id=\"A4\"; evidence=\"For the task of affect recognition, we also show that using non-expert labels for training machine learning algorithms can be as effective as using gold standard annotations from experts.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"proposing a bias correction technique that significantly improves annotation quality\"; evidence_id=\"A5\"; evidence=\"We propose a technique for bias correction that significantly improves annotation quality on two tasks.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"concluding that large labeling tasks can be effectively carried out at lower cost\"; evidence_id=\"A6\"; evidence=\"We conclude that many large labeling tasks can be effectively designed and carried out in this method at a fraction of the usual expense.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003677",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"noise in topic groups caused by frequent words\"; evidence_id=\"A1\"; evidence=\"Unfortunately, when a few words frequently appear in a dataset, the topic groups identified by topic models become noisy because these frequent words repeatedly appear in \\\"irrelevant\\\" topic groups.\"",
+          "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"popularity problem in social network datasets\"; evidence_id=\"A3\"; evidence=\"However, in a social network dataset we are interested in, they correspond to popular persons (e.g., Barack Obama and Justin Bieber) and cannot be simply removed because most people are interested in them.\"",
+          "problem[2]: concept must use source words in their original order; no invented synonyms; concept=\"effect of outgoing edge degree on perplexity\"; evidence_id=\"A8\"; evidence=\"In addition to the popularity problem caused by the nodes with high incoming edge degree, we also investigate the effect of the outgoing edge degree with another topic model extensions.\"",
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"evaluating effectiveness of topic models\"; evidence_id=\"A6\"; evidence=\"We evaluate the effectiveness of our models with a real-world Twitter dataset.\"",
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"modeling outgoing edge degree\"; evidence_id=\"A8\"; evidence=\"In addition to the popularity problem caused by the nodes with high incoming edge degree, we also investigate the effect of the outgoing edge degree with another topic model extensions.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"investigated outgoing edge degree effect\"; evidence_id=\"A8\"; evidence=\"In addition to the popularity problem caused by the nodes with high incoming edge degree, we also investigate the effect of the outgoing edge degree with another topic model extensions.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003811",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"examine what collaboration means when students\\u2019 voices do not converge\"; evidence_id=\"A3\"; evidence=\"The setting enabled us to further our understanding of what collaboration means when students\\u2019 voices do not converge.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003899",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"develop a common description language for biophysically detailed neuronal and network models\"; evidence_id=\"A2\"; evidence=\"To overcome these problems we have used an Open Source software approach to develop NeuroML, a neuronal model description language based on XML (Extensible Markup Language).\"",
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"XML-based language\"; evidence_id=\"A2\"; evidence=\"To overcome these problems we have used an Open Source software approach to develop NeuroML, a neuronal model description language based on XML (Extensible Markup Language).\"",
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"demonstrated scope by converting into NeuroML models of different conductances, electrical coupling, synaptic transmission, short-term plasticity, and morphologically detailed neurons\"; evidence_id=\"A4\"; evidence=\"Here we describe the structure of NeuroML and demonstrate its scope by converting into NeuroML models of a number of different voltage- and ligand-gated conductances, models of electrical coupling, synaptic transmission and short-term plasticity, together with morphologically detailed models of individual neurons.\"",
+          "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"validated NeuroML-based model descriptions by demonstrating similar model behavior across five simulators\"; evidence_id=\"A6\"; evidence=\"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P004034",
+        "validation_errors": [
+          "method[3]: concept must use source words in their original order; no invented synonyms; concept=\"using sentiment lexicon\"; evidence_id=\"A3\"; evidence=\"SA utilizes two linguistic resources for the analysis: the sentiment lexicon and the sentiment pattern database.\"",
+          "method[4]: concept must use source words in their original order; no invented synonyms; concept=\"using sentiment pattern database\"; evidence_id=\"A3\"; evidence=\"SA utilizes two linguistic resources for the analysis: the sentiment lexicon and the sentiment pattern database.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P004052",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"framework for meta-unsupervised-learning\"; evidence_id=\"A2\"; evidence=\"We demonstrate the versatility of our framework via comprehensive expositions and detailed experiments on several unsupervised problems such as (a) clustering, (b) outlier detection, and (c) similarity prediction under a common umbrella of meta-unsupervised-learning.\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"theoretical foundations via PAC-agnostic bounds\"; evidence_id=\"A3\"; evidence=\"We also provide rigorous PAC-agnostic bounds to establish the theoretical foundations of our framework, and show that our framing of meta-clustering circumvents Kleinberg's impossibility theorem for clustering.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P004165",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"learning a natural language interface for database tables\"; evidence_id=\"T0\"; evidence=\"Learning a Natural Language Interface with Neural Programmer\"",
+          "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"ensemble of 15 models achieves 37.7% accuracy, competitive with state-of-the-art accuracy of 37.1%\"; evidence_id=\"A6\"; evidence=\"An ensemble of 15 models, with a trivial combination technique, achieves 37.7% accuracy, which is competitive to the current state-of-the-art accuracy of 37.1% obtained by a traditional natural language semantic parser.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P004201",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of genomic resources for less well-known species\"; evidence_id=\"A1\"; evidence=\"However, experimental designs and analysis of NGS data from less well-known species are challenging because of the lack of genomic resources.\"",
+          "contribution[1]: finding ends before a source qualification or caveat; include the limiting clause; concept=\"genotype\\u2013haplotype calling returns more accurate estimates irrespective of divergence to reference genome\"; evidence_id=\"A6\"; evidence=\"Genotype\\u2013haplotype calling returns more accurate estimates irrespective of the divergence to the reference genome, but requires moderate depth (8\\u201320X).\"",
+          "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"recommend moderate to high depth and genotype\\u2013haplotype calling when individual genotypes are essential\"; evidence_id=\"A9\"; evidence=\"Otherwise, aiming for moderate to high depth at the expense of number of individuals, and using genotype\\u2013haplotype calling, is recommended.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      }
+    ],
+    "qlora": [
+      {
+        "paper_id": "P000376",
+        "validation_errors": [
+          "task[1]: concept must use source words in their original order; no invented synonyms; concept=\"predicting quotes\"; evidence_id=\"A5\"; evidence=\"Moreover, we show that this pattern can be successfully exploited in an unsupervised prediction setting, to determine which new quotes an outlet will select to broadcast.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P000570",
+        "validation_errors": [
+          "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"attenuate noisy entities\"; evidence_id=\"A5\"; evidence=\"Evaluation results on TREC Web Track ad-hoc task demonstrate that all of the four-way interactions in the duet are useful, the attention mechanism successfully steers the model away from noisy entities, and together they significantly outperform both word-based and entity-based learning to rank systems.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001092",
+        "validation_errors": [
+          "contribution[1]: shortening drops a quantity inside the finding; concept=\"1.19 bits-per-character\"; evidence_id=\"A3\"; evidence=\"We evaluate the FS-RNN on two character level language modeling data sets, Penn Treebank and Hutter Prize Wikipedia, where we improve state of the art results to $1.19$ and $1.25$ bits-per-character (BPC), respectively.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P001777",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"few-shot classification\"; evidence_id=\"A1\"; evidence=\"Recent effective metric-based few-shot approaches employ neural networks to learn a feature similarity comparison between query and support examples.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P002508",
+        "validation_errors": [
+          "dataset[1]: duplicate concept",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003014",
+        "validation_errors": [
+          "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"Distributed MST verification\"; evidence_id=\"A2\"; evidence=\"This paper investigates the problem in the distributed setting, where the input is given in a distributed manner, i.e., every node \\\"knows\\\" which of its own emanating edges belong to the tree.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003365",
+        "validation_errors": [
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"elimination of documents unrelated to a specific task\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P003677",
+        "validation_errors": [
+          "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"noise\"; evidence_id=\"A1\"; evidence=\"Unfortunately, when a few words frequently appear in a dataset, the topic groups identified by topic models become noisy because these frequent words repeatedly appear in \\\"irrelevant\\\" topic groups.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      },
+      {
+        "paper_id": "P004079",
+        "validation_errors": [
+          "method[1]: concept must use source words in their original order; no invented synonyms; concept=\"SMT\"; evidence_id=\"A3\"; evidence=\"In NMTs, words that are out of vocabulary are represented by a single unknown token.\"",
+          "No valid self-review within the attempt budget; best available output requires review"
+        ]
+      }
+    ]
+  },
+  "manual_source_examples": [
+    {
+      "paper_id": "P000566",
+      "kind": "model_coverage_and_granularity",
+      "finding": "The model omits distinct FoX/NWChem/Avogadro modifications and dictionary entries, often retaining only generic artifact names. The source states each development explicitly. Short method names Avogadro/CML/NWChem are also scored as unmatched against expanded descriptions, so the measured error mixes missing information with alias/granularity sensitivity."
+    },
+    {
+      "paper_id": "P001494",
+      "kind": "reference_and_matching_review_candidate",
+      "finding": "The source title explicitly names the FRENK Datasets; the model outputs FRENK Datasets while the reference uses FRENK. This appears to identify the same resource yet scores as an unmatched pair. Contributions also differ between the named dataset and generic dataset description; source review is needed before treating every FP/FN as a factual model error."
+    },
+    {
+      "paper_id": "P003080",
+      "kind": "model_role_and_coverage_plus_reference_review",
+      "finding": "The sequence to sequence models are described as a background limitation, but the model includes them under method. It omits Wikipedia/Wizard of Wikipedia under dataset. It splits the retrieval/reading/conditioning method differently from the reference, causing additional FP/FN. Its long contribution claim about knowledgeable discussions is source-supported but absent from the reference, a candidate reference omission."
+    },
+    {
+      "paper_id": "P004079",
+      "kind": "evidence_alignment_validation",
+      "finding": "The SMT method selects A3, a sentence about out-of-vocabulary words in NMTs. Validation correctly flags that SMT is not in its selected evidence sentence."
+    }
+  ],
+  "interpretation": "Positive paired improvement on this held-out cohort. All five facets improve, but gains differ by annotation source. Source review examples indicate both model errors and reference/matching granularity issues; these examples do not estimate their population proportions.",
+  "limitations": [
+    "One training seed and 100 test papers",
+    "Existing-reference papers have prior project history; train/dev/test and pilot50 IDs are disjoint",
+    "AI reference labels have not been independently human validated",
+    "Post-evaluation manual examples are exploratory diagnosis; reported labels, threshold and official scores are unchanged"
+  ]
+}

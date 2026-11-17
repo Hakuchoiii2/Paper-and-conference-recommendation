@@ -1,0 +1,492 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.448324515000422,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4824,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1365,
+            "output_tokens": 153
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"http://rxinformatics.umn.edu\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.058262929000193,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"http://rxinformatics.umn.edu\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4825,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3059,
+            "output_tokens": 174
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.681916749001175,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4826,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 802,
+            "output_tokens": 89
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "http://rxinformatics.umn.edu",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "language modeling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [
+          {
+            "concept": "efficiency of such representation has not been systematically evaluated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.18850419300179,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001594",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5226,
+        "output_tokens": 416
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.448324515000422,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4824,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1365,
+            "output_tokens": 153
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"http://rxinformatics.umn.edu\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.058262929000193,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001594\", \"problem\": [{\"concept\": \"efficiency of such representation has not been systematically evaluated\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"http://rxinformatics.umn.edu\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"word2vec with particular language modeling seems to perform better than others\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4825,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3059,
+            "output_tokens": 174
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "http://rxinformatics.umn.edu",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "language modeling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [
+          {
+            "concept": "efficiency of such representation has not been systematically evaluated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 40.506587444000616,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4825,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4424,
+        "output_tokens": 327
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.448324515000422,
+        "inherited": false,
+        "messages_sha256": "76cb37df276967a943092f055b8ee324df76ad79afd3bdab5d822e4205577cc8",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4824,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1365,
+          "output_tokens": 153
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.058262929000193,
+        "inherited": false,
+        "messages_sha256": "316dcc3038b2b8b1d50cfa42171a588c4cc6a79b79631a05fb2642d9f8074145",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001594",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 4825,
+        "usage": {
+          "input_tokens": 3059,
+          "output_tokens": 174
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.681916749001175,
+        "inherited": false,
+        "messages_sha256": "0fb0470cbffd3990a4d19a7dcca767b9448b6f9a09e70f336da3d4cb937bc1a1",
+        "reached_token_limit": false,
+        "seed": 4826,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 802,
+          "output_tokens": 89
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "word2vec with particular language modeling seems to perform better than others",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "http://rxinformatics.umn.edu",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "language modeling",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001594",
+        "problem": [
+          {
+            "concept": "efficiency of such representation has not been systematically evaluated",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "reflecting semantic similarity and relatedness",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "reflecting semantic similarity and relatedness",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "word2vec",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "GloVe",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "language modeling",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.681916749001175,
+      "messages_sha256": "0fb0470cbffd3990a4d19a7dcca767b9448b6f9a09e70f336da3d4cb937bc1a1",
+      "raw_output": "{\"paper_id\": \"P001594\", \"task\": [{\"concept\": \"reflecting semantic similarity and relatedness\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A3\"}, {\"concept\": \"GloVe\", \"evidence_id\": \"A3\"}, {\"concept\": \"language modeling\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 802,
+        "output_tokens": 89
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "866c90a714455b83fafa21beeb6f01118de81dc94d590aee34217f4cd7019205",
+    "facets": {
+      "contribution": [
+        "word2vec with particular language modeling seems to perform better than others"
+      ],
+      "dataset": [
+        "http://rxinformatics.umn.edu"
+      ],
+      "method": [
+        "word2vec",
+        "GloVe",
+        "language modeling"
+      ],
+      "paper_id": "P001594",
+      "problem": [
+        "efficiency of such representation has not been systematically evaluated"
+      ],
+      "task": [
+        "reflecting semantic similarity and relatedness"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.18850419300179,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.18850419300179,
+      "input_tokens": 5226,
+      "output_tokens": 416
+    },
+    "paper_id": "P001594",
+    "source_sha256": "076c64dd9faafe005a0f7259ee60f2686a757d2510290b4fbab1daec50edb0ba",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5226,
+      "output_tokens": 416
+    }
+  },
+  "record_sha256": "487191b6ecfe359c69e74450375fa9c16125ab06ffaa38f1a3269bbc766ab78c",
+  "signature": "0607e0b146eeed5d4d2fe44eb5bcde929d29cc9e051683e7318148f8ade02414"
+}

@@ -1,0 +1,1 @@
+Private gold400 QLoRA trial. Existing CSFCube/SciFact provenance and license metadata are retained in the frozen payload. AI-assisted labels explicitly accepted by the user. Split 280/60/60, seed42. Never use test labels for training or checkpoint selection.

@@ -1,0 +1,501 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.909450364000804,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10848,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1376,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}, {\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.355219904000478,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10849,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3082,
+            "output_tokens": 143
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.742491320001136,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003602\", \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}, {\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10850,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 800,
+            "output_tokens": 109
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "non-linear semantic composition",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "complex-valued vector word representation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end neural network",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "non-linear semantic composition",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003602",
+        "problem": [
+          {
+            "concept": "semantic linearity does not always hold",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.00716158800242,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P003602",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5258,
+        "output_tokens": 413
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.909450364000804,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10848,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1376,
+            "output_tokens": 161
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}, {\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 19.355219904000478,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003602\", \"problem\": [{\"concept\": \"semantic linearity does not always hold\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10849,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3082,
+            "output_tokens": 143
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "non-linear semantic composition",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "complex-valued vector word representation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end neural network",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003602",
+        "problem": [
+          {
+            "concept": "semantic linearity does not always hold",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 38.26467026800128,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10849,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4458,
+        "output_tokens": 304
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.909450364000804,
+        "inherited": false,
+        "messages_sha256": "e24ce4e98f17cd4c57fab0775a788b466f7d54741defb23e7398249e3358d63a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 10848,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1376,
+          "output_tokens": 161
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 19.355219904000478,
+        "inherited": false,
+        "messages_sha256": "6e2ac6fc98570a18e2c7f1dd27e6d8ef322821d513e91a0afb3df44201cb7146",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003602",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 10849,
+        "usage": {
+          "input_tokens": 3082,
+          "output_tokens": 143
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.742491320001136,
+        "inherited": false,
+        "messages_sha256": "dc1bbcb7d73f862d59d2c4596f0a446d8dd1683d82f4a8c6a510443e92b4be47",
+        "reached_token_limit": false,
+        "seed": 10850,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 800,
+          "output_tokens": 109
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "non-linear semantic composition",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "non-linear semantic composition",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "complex-valued vector word representation",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end neural network",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003602",
+        "problem": [
+          {
+            "concept": "semantic linearity does not always hold",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "text classification",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "complex-valued vector word representation",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "end-to-end neural network",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "Semantic Hilbert Space",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.742491320001136,
+      "messages_sha256": "dc1bbcb7d73f862d59d2c4596f0a446d8dd1683d82f4a8c6a510443e92b4be47",
+      "raw_output": "{\"paper_id\": \"P003602\", \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"complex-valued vector word representation\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end neural network\", \"evidence_id\": \"A5\"}, {\"concept\": \"Semantic Hilbert Space\", \"evidence_id\": \"A4\"}, {\"concept\": \"non-linear semantic composition\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 800,
+        "output_tokens": 109
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "f9936bdfe08d61c1d8f92f9ac2246488882b5802c982593a600ea82aa4d10e5d",
+    "facets": {
+      "contribution": [
+        "Semantic Hilbert Space",
+        "non-linear semantic composition"
+      ],
+      "dataset": [],
+      "method": [
+        "complex-valued vector word representation",
+        "end-to-end neural network",
+        "Semantic Hilbert Space",
+        "non-linear semantic composition"
+      ],
+      "paper_id": "P003602",
+      "problem": [
+        "semantic linearity does not always hold"
+      ],
+      "task": [
+        "text classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.00716158800242,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.00716158800242,
+      "input_tokens": 5258,
+      "output_tokens": 413
+    },
+    "paper_id": "P003602",
+    "source_sha256": "0f06c6fe5355f0b5b8b0a299cd216c1a06f70d449cdf533e20d7a9603a3f437f",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5258,
+      "output_tokens": 413
+    }
+  },
+  "record_sha256": "fefd28fc12c2315d6f61cc9519756585d6967688715f6a73da7dfc158e4eeb17",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

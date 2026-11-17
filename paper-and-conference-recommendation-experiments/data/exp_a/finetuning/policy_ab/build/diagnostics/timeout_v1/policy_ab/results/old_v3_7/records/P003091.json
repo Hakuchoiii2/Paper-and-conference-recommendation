@@ -1,0 +1,233 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003091\", \"problem\": [{\"concept\": \"interaction between relation types and entity mentions is not fully modeled\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Relation Extraction\", \"evidence_id\": \"T0\"}, {\"concept\": \"extracting overlapping relations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"two-level RL policies\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchy of two-level RL policies\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.611453274999803,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003091\", \"problem\": [{\"concept\": \"interaction between relation types and entity mentions is not fully modeled\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Relation Extraction\", \"evidence_id\": \"T0\"}, {\"concept\": \"extracting overlapping relations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"two-level RL policies\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchy of two-level RL policies\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 9315,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2417,
+            "output_tokens": 169
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003091\", \"problem\": [{\"concept\": \"interaction between relation types and entity mentions is not fully modeled\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Relation Extraction\", \"evidence_id\": \"T0\"}, {\"concept\": \"extracting overlapping relations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"two-level RL policies\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchy of two-level RL policies\", \"evidence_id\": \"A3\"}, {\"concept\": \"model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 31.555603651000183,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003091\", \"problem\": [{\"concept\": \"interaction between relation types and entity mentions is not fully modeled\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Relation Extraction\", \"evidence_id\": \"T0\"}, {\"concept\": \"extracting overlapping relations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"two-level RL policies\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical reinforcement learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchy of two-level RL policies\", \"evidence_id\": \"A3\"}, {\"concept\": \"model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 9316,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3957,
+            "output_tokens": 213
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchical reinforcement learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "hierarchy of two-level RL policies",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "hierarchical reinforcement learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "two-level RL policies",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003091",
+        "problem": [
+          {
+            "concept": "interaction between relation types and entity mentions is not fully modeled",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Relation Extraction",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "extracting overlapping relations",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.16705692599999,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9316,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6374,
+        "output_tokens": 382
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "hierarchical reinforcement learning",
+          "evidence": "We apply a hierarchical reinforcement learning (HRL) framework in this paradigm to enhance the interaction between entity mentions and relation types.",
+          "source": "abstract"
+        },
+        {
+          "concept": "hierarchy of two-level RL policies",
+          "evidence": "The whole extraction process is decomposed into a hierarchy of two-level RL policies for relation detection and entity extraction respectively, so that it is more feasible and natural to deal with overlapping relations.",
+          "source": "abstract"
+        },
+        {
+          "concept": "model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations",
+          "evidence": "Our model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "hierarchical reinforcement learning",
+          "evidence": "We apply a hierarchical reinforcement learning (HRL) framework in this paradigm to enhance the interaction between entity mentions and relation types.",
+          "source": "abstract"
+        },
+        {
+          "concept": "two-level RL policies",
+          "evidence": "The whole extraction process is decomposed into a hierarchy of two-level RL policies for relation detection and entity extraction respectively, so that it is more feasible and natural to deal with overlapping relations.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P003091",
+      "problem": [
+        {
+          "concept": "interaction between relation types and entity mentions is not fully modeled",
+          "evidence": "Most existing methods determine relation types only after all the entities have been recognized, thus the interaction between relation types and entity mentions is not fully modeled.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "Relation Extraction",
+          "evidence": "A Hierarchical Framework for Relation Extraction with Reinforcement Learning",
+          "source": "title"
+        },
+        {
+          "concept": "extracting overlapping relations",
+          "evidence": "Our model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "hierarchical reinforcement learning",
+        "hierarchy of two-level RL policies",
+        "model was evaluated on public datasets collected via distant supervision, and results show that it gains better performance than existing methods and is more powerful for extracting overlapping relations"
+      ],
+      "dataset": [],
+      "method": [
+        "hierarchical reinforcement learning",
+        "two-level RL policies"
+      ],
+      "paper_id": "P003091",
+      "problem": [
+        "interaction between relation types and entity mentions is not fully modeled"
+      ],
+      "task": [
+        "Relation Extraction",
+        "extracting overlapping relations"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 56.16705692599999,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P003091",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6374,
+      "output_tokens": 382
+    }
+  },
+  "record_sha256": "4541d1c47ceed484a3207ac2cce476229e093bec8a4c4eb0bd5cacbd9fd17751",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

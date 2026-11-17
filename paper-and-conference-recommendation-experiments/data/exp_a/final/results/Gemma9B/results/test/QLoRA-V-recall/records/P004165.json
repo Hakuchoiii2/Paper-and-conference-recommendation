@@ -1,0 +1,563 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}, {\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 45.50437241700274,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}, {\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12537,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1386,
+            "output_tokens": 257
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "end-to-end training",
+              "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}, {\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 45.54581978499482,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}, {\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12538,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3254,
+            "output_tokens": 235
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "end-to-end training",
+              "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.063745033003215,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"task\": [], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"trivial combination technique\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12539,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 889,
+            "output_tokens": 58
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "end-to-end training",
+              "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end training",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "trivial combination technique",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [
+          {
+            "concept": "domain-specific grammars, rules, or annotations",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "natural language interface for database tables",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "program induction",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 102.11393723500078,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P004165",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5529,
+        "output_tokens": 550
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "end-to-end training",
+          "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+          "facet": "method",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}, {\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 45.50437241700274,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"deep language understanding and multi-step reasoning\", \"evidence_id\": \"A0\"}, {\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}, {\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12537,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1386,
+            "output_tokens": 257
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "end-to-end training",
+              "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+              "facet": "method",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}, {\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 45.54581978499482,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004165\", \"problem\": [{\"concept\": \"domain-specific grammars, rules, or annotations\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"natural language interface for database tables\", \"evidence_id\": \"A0\"}, {\"concept\": \"program induction\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"end-to-end training\", \"evidence_id\": \"A2\"}, {\"concept\": \"Neural Programmer\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"WikiTableQuestions\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"weakly supervised, end-to-end neural network model\", \"evidence_id\": \"A2\"}, {\"concept\": \"single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12538,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3254,
+            "output_tokens": 235
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "end-to-end training",
+              "evidence": "To our knowledge, this paper presents the first weakly supervised, end-to-end neural network model to induce such programs on a real-world dataset.",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end training",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [
+          {
+            "concept": "domain-specific grammars, rules, or annotations",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "natural language interface for database tables",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "program induction",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 91.05019220199756,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12538,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4640,
+        "output_tokens": 492
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 45.50437241700274,
+        "inherited": false,
+        "messages_sha256": "e73af09098325541fb332eff45c7524b24b1ffe91b90e7b0f528a280ef7424a7",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12537,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1386,
+          "output_tokens": 257
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 45.54581978499482,
+        "inherited": false,
+        "messages_sha256": "9eb9f36ea0c89709bb63d478106172d130d1d55fbf578be876e9cab89e1cef6e",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004165",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 12538,
+        "usage": {
+          "input_tokens": 3254,
+          "output_tokens": 235
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.063745033003215,
+        "inherited": false,
+        "messages_sha256": "4dc2601160472b9fc20da5efdc9a8ebe3fd4b05319ac2501e3716be333433249",
+        "reached_token_limit": false,
+        "seed": 12539,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 889,
+          "output_tokens": 58
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "trivial combination technique",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "weakly supervised, end-to-end neural network model",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WikiTableQuestions",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "end-to-end training",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Neural Programmer",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P004165",
+        "problem": [
+          {
+            "concept": "domain-specific grammars, rules, or annotations",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "natural language interface for database tables",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "program induction",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "weak supervision",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.063745033003215,
+      "messages_sha256": "4dc2601160472b9fc20da5efdc9a8ebe3fd4b05319ac2501e3716be333433249",
+      "raw_output": "{\"paper_id\": \"P004165\", \"task\": [], \"method\": [{\"concept\": \"weak supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"trivial combination technique\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 889,
+        "output_tokens": 58
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "ab45ae7e108788ab7737d41672ef71f1514e203efa7fbee665a34c1b422f0ed2",
+    "facets": {
+      "contribution": [
+        "weakly supervised, end-to-end neural network model",
+        "single Neural Programmer model achieves 34.2% accuracy using only 10,000 examples with weak supervision"
+      ],
+      "dataset": [
+        "WikiTableQuestions"
+      ],
+      "method": [
+        "weak supervision",
+        "end-to-end training",
+        "Neural Programmer",
+        "trivial combination technique"
+      ],
+      "paper_id": "P004165",
+      "problem": [
+        "domain-specific grammars, rules, or annotations"
+      ],
+      "task": [
+        "natural language interface for database tables",
+        "program induction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 102.11393723500078,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 102.11393723500078,
+      "input_tokens": 5529,
+      "output_tokens": 550
+    },
+    "paper_id": "P004165",
+    "source_sha256": "7ebce617d63cd6f9e8ba37f266798a0e009ca6444f3e72100bea8ba3ace832d5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5529,
+      "output_tokens": 550
+    }
+  },
+  "record_sha256": "575b10919a1f16b8ce8dc11adaf1106bb220179b22ed946345c629306deff14e",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

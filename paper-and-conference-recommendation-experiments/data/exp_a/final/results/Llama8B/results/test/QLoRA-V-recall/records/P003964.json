@@ -1,0 +1,501 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.351210392998837,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11934,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 154
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}, {\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.27248175599925,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11935,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3052,
+            "output_tokens": 137
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.993030356999952,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003964\", \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}, {\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11936,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 775,
+            "output_tokens": 103
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "methods are trained on a per-predicate basis",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "embeddings",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "per-predicate basis",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003964",
+        "problem": [
+          {
+            "concept": "implicit cues",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting personal attributes",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 48.61672250599804,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P003964",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5185,
+        "output_tokens": 394
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 18.351210392998837,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11934,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1358,
+            "output_tokens": 154
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}, {\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 18.27248175599925,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003964\", \"problem\": [{\"concept\": \"implicit cues\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"methods are trained on a per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11935,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3052,
+            "output_tokens": 137
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "methods are trained on a per-predicate basis",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "embeddings",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003964",
+        "problem": [
+          {
+            "concept": "implicit cues",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting personal attributes",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 36.62369214899809,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11935,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4410,
+        "output_tokens": 291
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 18.351210392998837,
+        "inherited": false,
+        "messages_sha256": "c4af8b5a53a1d3cfd0c56293c3633b7d7764f825363b477237d8ae2e0205be89",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 11934,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1358,
+          "output_tokens": 154
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 18.27248175599925,
+        "inherited": false,
+        "messages_sha256": "691bbac582383ff5f97b61cf6d4230765fa7fa419590b2420950b93a4e80258a",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003964",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 11935,
+        "usage": {
+          "input_tokens": 3052,
+          "output_tokens": 137
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.993030356999952,
+        "inherited": false,
+        "messages_sha256": "4168ff49da69e068f5fdd87d87a0c5a1df89f31d3629441305188ff5898615fb",
+        "reached_token_limit": false,
+        "seed": 11936,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 775,
+          "output_tokens": 103
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "per-predicate basis",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "methods are trained on a per-predicate basis",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "attention mechanisms",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "embeddings",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003964",
+        "problem": [
+          {
+            "concept": "implicit cues",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extracting personal attributes",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "extracting personal attributes",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "attention mechanisms",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "embeddings",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "Hidden Attribute Models",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.993030356999952,
+      "messages_sha256": "4168ff49da69e068f5fdd87d87a0c5a1df89f31d3629441305188ff5898615fb",
+      "raw_output": "{\"paper_id\": \"P003964\", \"task\": [{\"concept\": \"extracting personal attributes\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"attention mechanisms\", \"evidence_id\": \"A4\"}, {\"concept\": \"embeddings\", \"evidence_id\": \"A4\"}, {\"concept\": \"Hidden Attribute Models\", \"evidence_id\": \"A4\"}, {\"concept\": \"per-predicate basis\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 775,
+        "output_tokens": 103
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "2706d4990742e8410a179dd97bb98d12445e50f88c0608ebbeb63bdea57249ca",
+    "facets": {
+      "contribution": [
+        "Hidden Attribute Models",
+        "methods are trained on a per-predicate basis"
+      ],
+      "dataset": [],
+      "method": [
+        "attention mechanisms",
+        "embeddings",
+        "Hidden Attribute Models",
+        "per-predicate basis"
+      ],
+      "paper_id": "P003964",
+      "problem": [
+        "implicit cues"
+      ],
+      "task": [
+        "extracting personal attributes"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 48.61672250599804,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 48.61672250599804,
+      "input_tokens": 5185,
+      "output_tokens": 394
+    },
+    "paper_id": "P003964",
+    "source_sha256": "aaf28b8f9116cf052a9cf7cf113ffdda10a5042dd5d7fb7705c1e9b12607f89c",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5185,
+      "output_tokens": 394
+    }
+  },
+  "record_sha256": "f12fdcb8b30ba3da7f7dede32c64683b2373040342920c6e79e6e9f618456424",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

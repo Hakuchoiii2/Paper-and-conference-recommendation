@@ -1,0 +1,232 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P000053\",\n  \"problem\": [\n    {\"concept\": \"assessment of the quality and credibility of Web content\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"identify featured/good articles in Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\", \"evidence_id\": \"A7\"}\n  ],\n  \"method\": [\n    {\"concept\": \"factual density\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A7\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"factual density measure\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"factual density achieves F-measure of 90.4% for articles of similar lengths\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"relational features achieve F-measure of 86.7% for articles of similar lengths and 84% otherwise\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 26.082725838998158,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000053\",\n  \"problem\": [\n    {\"concept\": \"assessment of the quality and credibility of Web content\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"identify featured/good articles in Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\", \"evidence_id\": \"A7\"}\n  ],\n  \"method\": [\n    {\"concept\": \"factual density\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A7\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"factual density measure\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"factual density achieves F-measure of 90.4% for articles of similar lengths\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"relational features achieve F-measure of 86.7% for articles of similar lengths and 84% otherwise\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 91.5152,
+          "seed": 201,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2508,
+            "output_tokens": 309
+          },
+          "validation_errors": [
+            "dataset[1]: duplicate concept",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"factual density achieves F-measure of 90.4% for articles of similar lengths\"; evidence_id=\"A6\"; evidence=\"However, for articles of similar lengths the word count measure fails while factual density can separate between them with an F-measure of 90.4%.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"relational features achieve F-measure of 86.7% for articles of similar lengths and 84% otherwise\"; evidence_id=\"A8\"; evidence=\"If articles have similar lengths, we achieve an F-measure of 86.7% and 84% otherwise.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"assessment of the quality and credibility of Web content\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"identify featured/good articles in Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"Wikipedia\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"factual density measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"factual density can separate between articles of similar lengths with an F-measure of 90.4%\", \"evidence_id\": \"A6\"}, {\"concept\": \"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 32.1467147580006,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000053\",\n  \"problem\": [\n    {\"concept\": \"assessment of the quality and credibility of Web content\", \"evidence_id\": \"A1\"}\n  ],\n  \"task\": [\n    {\"concept\": \"identify featured/good articles in Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\", \"evidence_id\": \"A7\"}\n  ],\n  \"method\": [\n    {\"concept\": \"factual density\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"Wikipedia\", \"evidence_id\": \"A7\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"factual density measure\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"factual density can separate between articles of similar lengths with an F-measure of 90.4%\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\", \"evidence_id\": \"A8\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 91.5152,
+          "seed": 202,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4353,
+            "output_tokens": 312
+          },
+          "validation_errors": [
+            "dataset[1]: duplicate concept",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"factual density can separate between articles of similar lengths with an F-measure of 90.4%\"; evidence_id=\"A6\"; evidence=\"However, for articles of similar lengths the word count measure fails while factual density can separate between them with an F-measure of 90.4%.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\"; evidence_id=\"A8\"; evidence=\"If articles have similar lengths, we achieve an F-measure of 86.7% and 84% otherwise.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000053\", \"problem\": [{\"concept\": \"assessment of the quality and credibility of Web content\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"identify featured/good articles in Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\", \"evidence_id\": \"A7\"}], \"method\": [{\"concept\": \"factual density\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Information Extraction\", \"evidence_id\": \"A2\"}, {\"concept\": \"relational features\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"Wikipedia\", \"evidence_id\": \"A7\"}], \"contribution\": [{\"concept\": \"factual density measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"factual density can separate between articles of similar lengths with an F-measure of 90.4%\", \"evidence_id\": \"A6\"}, {\"concept\": \"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 3,
+          "generation_seconds": 37.33293122000032,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P000053\",\n  \"problem\": [\n    {\n      \"concept\": \"assessment of the quality and credibility of Web content\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"identify featured/good articles in Wikipedia\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"categorize Wikipedia articles into featured/good versus non-featured ones\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"factual density\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"Open Information Extraction\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"relational features\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Wikipedia\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"Wikipedia\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"factual density measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"factual density can separate between articles of similar lengths with an F-measure of 90.4%\",\n      \"evidence_id\": \"A6\"\n    },\n    {\n      \"concept\": \"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 91.5152,
+          "seed": 203,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4331,
+            "output_tokens": 367
+          },
+          "validation_errors": [
+            "dataset[1]: duplicate concept",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"factual density can separate between articles of similar lengths with an F-measure of 90.4%\"; evidence_id=\"A6\"; evidence=\"However, for articles of similar lengths the word count measure fails while factual density can separate between them with an F-measure of 90.4%.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\"; evidence_id=\"A8\"; evidence=\"If articles have similar lengths, we achieve an F-measure of 86.7% and 84% otherwise.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "factual density measure",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "factual density can separate between articles of similar lengths with an F-measure of 90.4%",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A7"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factual density",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Open Information Extraction",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "relational features",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000053",
+        "problem": [
+          {
+            "concept": "assessment of the quality and credibility of Web content",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "identify featured/good articles in Wikipedia",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "categorize Wikipedia articles into featured/good versus non-featured ones",
+            "evidence_id": "A7"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 95.56237181699908,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Wikipedia",
+            "evidence": "In a first case study, we use this measure to identify featured/good articles in Wikipedia.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 203,
+      "selected_score": 91.5152,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11192,
+        "output_tokens": 988
+      },
+      "validation_errors": [
+        "dataset[1]: duplicate concept",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"factual density can separate between articles of similar lengths with an F-measure of 90.4%\"; evidence_id=\"A6\"; evidence=\"However, for articles of similar lengths the word count measure fails while factual density can separate between them with an F-measure of 90.4%.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise\"; evidence_id=\"A8\"; evidence=\"If articles have similar lengths, we achieve an F-measure of 86.7% and 84% otherwise.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "factual density measure",
+        "factual density can separate between articles of similar lengths with an F-measure of 90.4%",
+        "relational features achieve an F-measure of 86.7% for articles of similar lengths and 84% otherwise"
+      ],
+      "dataset": [],
+      "method": [
+        "factual density",
+        "Open Information Extraction",
+        "relational features"
+      ],
+      "paper_id": "P000053",
+      "problem": [
+        "assessment of the quality and credibility of Web content"
+      ],
+      "task": [
+        "identify featured/good articles in Wikipedia",
+        "categorize Wikipedia articles into featured/good versus non-featured ones"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 95.56237181699908,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P000053",
+    "usage": {
+      "input_tokens": 11192,
+      "output_tokens": 988
+    }
+  },
+  "record_sha256": "78e6adeef24813271c7bc14eedd550578b571d3cace96c4a08d4fb3bbbb9c6a2",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

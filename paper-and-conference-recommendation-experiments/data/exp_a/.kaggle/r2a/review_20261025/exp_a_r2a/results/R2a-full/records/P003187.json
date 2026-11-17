@@ -1,0 +1,551 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003187\",\n  \"problem\": [\n    {\n      \"concept\": \"lack of training in political behaviour\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"survey of managers' experience and perceptions of organization politics\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"survey\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"survey of 250 British managers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"findings on managers' perceptions of political behaviour in organizations\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"common tactics such as networking and self-promotion\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"rare but not unknown tactics such as misinformation and blackmail\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"attitude of 'you stab my back, I'll stab yours' in political behaviour\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"discussion using an 'antecedents–behaviours–consequences' framework\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 26.577724075000333,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003187\",\n  \"problem\": [\n    {\n      \"concept\": \"lack of training in political behaviour\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"survey of managers' experience and perceptions of organization politics\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"survey\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"survey of 250 British managers\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"findings on managers' perceptions of political behaviour in organizations\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"common tactics such as networking and self-promotion\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"rare but not unknown tactics such as misinformation and blackmail\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"attitude of 'you stab my back, I'll stab yours' in political behaviour\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"discussion using an 'antecedents–behaviours–consequences' framework\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 55.8291,
+          "seed": 9603,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2493,
+            "output_tokens": 322
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"lack of training in political behaviour\"; evidence_id=\"A2\"; evidence=\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"findings on managers' perceptions of political behaviour in organizations\"; evidence_id=\"A0\"; evidence=\"This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"common tactics such as networking and self-promotion\"; evidence_id=\"A3\"; evidence=\"Tactics experienced frequently included networking, using \\u2018key players\\u2019 to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"rare but not unknown tactics such as misinformation and blackmail\"; evidence_id=\"A4\"; evidence=\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping \\u2018dirt files\\u2019 for blackmail.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"attitude of 'you stab my back, I'll stab yours' in political behaviour\"; evidence_id=\"A5\"; evidence=\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of \\u2018you stab my back, I\\u2019ll stab yours\\u2019.\"",
+            "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"discussion using an 'antecedents\\u2013behaviours\\u2013consequences' framework\"; evidence_id=\"A6\"; evidence=\"Findings are discussed using an \\u2018antecedents\\u2013behaviours\\u2013consequences\\u2019 framework of perceived organization politics to guide research.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003187\", \"problem\": [{\"concept\": \"80% of managers had no training in political behaviour\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"survey of managers' experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"survey\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"survey of 250 British managers\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"findings of a survey of 250 British managers exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}, {\"concept\": \"tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion\", \"evidence_id\": \"A3\"}, {\"concept\": \"tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail\", \"evidence_id\": \"A4\"}, {\"concept\": \"attitude of 'you stab my back, I'll stab yours' in political behaviour\", \"evidence_id\": \"A5\"}, {\"concept\": \"discussion using an 'antecedents–behaviours–consequences' framework\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 41.119218143000126,
+          "operations": [
+            {
+              "before": {
+                "concept": "findings on managers' perceptions of political behaviour in organizations",
+                "evidence_id": "A0"
+              },
+              "concept": "findings of a survey of 250 British managers exploring their experience and perceptions of organization politics",
+              "evidence_id": "A0",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "common tactics such as networking and self-promotion",
+                "evidence_id": "A3"
+              },
+              "concept": "tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+              "evidence_id": "A3",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "rare but not unknown tactics such as misinformation and blackmail",
+                "evidence_id": "A4"
+              },
+              "concept": "tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+                "evidence_id": "A5"
+              },
+              "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 3,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+                "evidence_id": "A6"
+              },
+              "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 4,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "lack of training in political behaviour",
+                "evidence_id": "A2"
+              },
+              "concept": "80% of managers had no training in political behaviour",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003187\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 0,\n      \"concept\": \"findings of a survey of 250 British managers exploring their experience and perceptions of organization politics\",\n      \"evidence_id\": \"A0\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 1,\n      \"concept\": \"tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion\",\n      \"evidence_id\": \"A3\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 2,\n      \"concept\": \"tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail\",\n      \"evidence_id\": \"A4\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 3,\n      \"concept\": \"attitude of 'you stab my back, I'll stab yours' in political behaviour\",\n      \"evidence_id\": \"A5\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 4,\n      \"concept\": \"discussion using an 'antecedents–behaviours–consequences' framework\",\n      \"evidence_id\": \"A6\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"problem\",\n      \"index\": 0,\n      \"concept\": \"80% of managers had no training in political behaviour\",\n      \"evidence_id\": \"A2\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 71.1624,
+          "seed": 9604,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3475,
+            "output_tokens": 435
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"80% of managers had no training in political behaviour\"; evidence_id=\"A2\"; evidence=\"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion\"; evidence_id=\"A3\"; evidence=\"Tactics experienced frequently included networking, using \\u2018key players\\u2019 to support initiatives, making friends with power brokers, bending the rules, and self-promotion.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail\"; evidence_id=\"A4\"; evidence=\"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping \\u2018dirt files\\u2019 for blackmail.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"attitude of 'you stab my back, I'll stab yours' in political behaviour\"; evidence_id=\"A5\"; evidence=\"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of \\u2018you stab my back, I\\u2019ll stab yours\\u2019.\"",
+            "contribution[4]: concept must use source words in their original order; no invented synonyms; concept=\"discussion using an 'antecedents\\u2013behaviours\\u2013consequences' framework\"; evidence_id=\"A6\"; evidence=\"Findings are discussed using an \\u2018antecedents\\u2013behaviours\\u2013consequences\\u2019 framework of perceived organization politics to guide research.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003187\", \"problem\": [{\"concept\": \"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"survey of managers' experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"survey\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"survey of 250 British managers\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"findings of a survey of 250 British managers exploring their experience and perceptions of organization politics\", \"evidence_id\": \"A0\"}, {\"concept\": \"Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion\", \"evidence_id\": \"A3\"}, {\"concept\": \"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail\", \"evidence_id\": \"A4\"}, {\"concept\": \"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'\", \"evidence_id\": \"A5\"}, {\"concept\": \"Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 41.70566117999988,
+          "operations": [
+            {
+              "before": {
+                "concept": "tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+                "evidence_id": "A3"
+              },
+              "concept": "Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+              "evidence_id": "A3",
+              "facet": "contribution",
+              "index": 1,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail",
+                "evidence_id": "A4"
+              },
+              "concept": "Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail",
+              "evidence_id": "A4",
+              "facet": "contribution",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+                "evidence_id": "A5"
+              },
+              "concept": "A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'",
+              "evidence_id": "A5",
+              "facet": "contribution",
+              "index": 3,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+                "evidence_id": "A6"
+              },
+              "concept": "Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research",
+              "evidence_id": "A6",
+              "facet": "contribution",
+              "index": 4,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "80% of managers had no training in political behaviour",
+                "evidence_id": "A2"
+              },
+              "concept": "Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area",
+              "evidence_id": "A2",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003187\",\n  \"edits\": [\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 1,\n      \"concept\": \"Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion\",\n      \"evidence_id\": \"A3\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 2,\n      \"concept\": \"Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail\",\n      \"evidence_id\": \"A4\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 3,\n      \"concept\": \"A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'\",\n      \"evidence_id\": \"A5\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"contribution\",\n      \"index\": 4,\n      \"concept\": \"Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research\",\n      \"evidence_id\": \"A6\",\n      \"reason\": \"source-based explanation\"\n    },\n    {\n      \"op\": \"replace\",\n      \"facet\": \"problem\",\n      \"index\": 0,\n      \"concept\": \"Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area\",\n      \"evidence_id\": \"A2\",\n      \"reason\": \"source-based explanation\"\n    }\n  ]\n}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 99.8291,
+          "seed": 9605,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3447,
+            "output_tokens": 443
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "findings of a survey of 250 British managers exploring their experience and perceptions of organization politics",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "survey of 250 British managers",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "survey",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P003187",
+        "problem": [
+          {
+            "concept": "Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "survey of managers' experience and perceptions of organization politics",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 109.40260339800034,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003187",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "survey of 250 British managers",
+            "evidence": "This paper reports the findings of a survey of 250 British managers, exploring their experience and perceptions of organization politics.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 9605,
+      "selected_score": 99.8291,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 9415,
+        "output_tokens": 1200
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "6c6f617c22e1ded445e11bb820db6409ef48b094935c0e95f500d8fc3e3bfeb6",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 9603
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "5c960edf3d2e7cb86db1cdc2a175c65c9f82eaf849b86e7c0c454c029743ed14",
+        "operations": [
+          {
+            "before": {
+              "concept": "findings on managers' perceptions of political behaviour in organizations",
+              "evidence_id": "A0"
+            },
+            "concept": "findings of a survey of 250 British managers exploring their experience and perceptions of organization politics",
+            "evidence_id": "A0",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "common tactics such as networking and self-promotion",
+              "evidence_id": "A3"
+            },
+            "concept": "tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+            "evidence_id": "A3",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "rare but not unknown tactics such as misinformation and blackmail",
+              "evidence_id": "A4"
+            },
+            "concept": "tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+              "evidence_id": "A5"
+            },
+            "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 3,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+              "evidence_id": "A6"
+            },
+            "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+            "evidence_id": "A6",
+            "facet": "contribution",
+            "index": 4,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "lack of training in political behaviour",
+              "evidence_id": "A2"
+            },
+            "concept": "80% of managers had no training in political behaviour",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9604
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "53358f8d368b99c362868046764d2d4a71dc7c6f89aa75afb83892003b7b5de7",
+        "operations": [
+          {
+            "before": {
+              "concept": "tactics such as networking, using key players to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+              "evidence_id": "A3"
+            },
+            "concept": "Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+            "evidence_id": "A3",
+            "facet": "contribution",
+            "index": 1,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "tactics such as misinformation, spreading rumours, and keeping dirt files for blackmail",
+              "evidence_id": "A4"
+            },
+            "concept": "Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail",
+            "evidence_id": "A4",
+            "facet": "contribution",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "attitude of 'you stab my back, I'll stab yours' in political behaviour",
+              "evidence_id": "A5"
+            },
+            "concept": "A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'",
+            "evidence_id": "A5",
+            "facet": "contribution",
+            "index": 3,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "discussion using an 'antecedents–behaviours–consequences' framework",
+              "evidence_id": "A6"
+            },
+            "concept": "Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research",
+            "evidence_id": "A6",
+            "facet": "contribution",
+            "index": 4,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "80% of managers had no training in political behaviour",
+              "evidence_id": "A2"
+            },
+            "concept": "Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area",
+            "evidence_id": "A2",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9605
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 7,
+    "facets": {
+      "contribution": [
+        "findings of a survey of 250 British managers exploring their experience and perceptions of organization politics",
+        "Tactics experienced frequently included networking, using 'key players' to support initiatives, making friends with power brokers, bending the rules, and self-promotion",
+        "Tactics experienced as rare, but not unknown, included misinformation, spreading rumours, and keeping 'dirt files' for blackmail",
+        "A consistent pattern of responses concerning willingness to engage in politics, the need to act ruthlessly and the appropriateness of reciprocity when faced with political behaviour implies an attitude of 'you stab my back, I'll stab yours'",
+        "Findings are discussed using an 'antecedents–behaviours–consequences' framework of perceived organization politics to guide research"
+      ],
+      "dataset": [],
+      "method": [
+        "survey"
+      ],
+      "paper_id": "P003187",
+      "problem": [
+        "Most managers viewed political behaviour as ethical and necessary, and aspects of organizational effectiveness, change, resourcing and reputation were attributed to political tactics, although 80% had no training in this area"
+      ],
+      "task": [
+        "survey of managers' experience and perceptions of organization politics"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 109.40260339800034,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 82.824879323,
+      "input_tokens": 6922,
+      "output_tokens": 878
+    },
+    "paper_id": "P003187",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "dataset": [
+        0
+      ],
+      "method": [
+        0
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 9415,
+      "output_tokens": 1200
+    }
+  },
+  "record_sha256": "64e4b7f93ff4a219ef61e655a426f80d415734ef16187b75efde0d7939113a21",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

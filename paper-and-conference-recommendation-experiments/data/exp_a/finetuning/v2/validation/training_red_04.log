@@ -1,0 +1,34 @@
+test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) ... 
+  test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x00000228D8D48180>) ... FAIL
+test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos) ... FAIL
+test_deterministic_private_bundle_runtime_gates_and_training_only_kernel (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_deterministic_private_bundle_runtime_gates_and_training_only_kernel) ... FAIL
+
+======================================================================
+FAIL: test_rejects_self_review_missing_facet_and_resealed_wrong_source (scripts.exp_a.finetuning.test_v2_training.ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source) (mutate=<function ReviewDecisionTests.test_rejects_self_review_missing_facet_and_resealed_wrong_source.<locals>.<lambda> at 0x00000228D8D48180>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 81, in test_rejects_self_review_missing_facet_and_resealed_wrong_source
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 182, in test_preparation_keeps_exact_frozen_splits_and_real_token_prefix_eos
+    self.assertEqual((output / 'instruction.txt').read_text(encoding='utf-8'), prompt)
+AssertionError: "# Quy t\u1eafc nh�n n\u0103m facet � v2.2 candidate, [13839 chars]s.\n" != "# Source-grounded five-facet extraction � v[4695 chars]s.\n"
+Diff is 14091 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deterministic_private_bundle_runtime_gates_and_training_only_kernel (scripts.exp_a.finetuning.test_v2_training.PreparationTests.test_deterministic_private_bundle_runtime_gates_and_training_only_kernel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\KHAI\mon hoc\n\u0103m 3\HK1 2025-2026\DS300\\u0110\u1ed3 �n\paper-and-conference-recommendation-experiments\scripts\exp_a\finetuning\test_v2_training.py", line 243, in test_deterministic_private_bundle_runtime_gates_and_training_only_kernel
+    self.assertTrue(callable(getattr(self.module, 'verify_build', None)), 'V2 build metadata gate is not implemented')
+AssertionError: False is not true : V2 build metadata gate is not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 38.695s
+
+FAILED (failures=3)

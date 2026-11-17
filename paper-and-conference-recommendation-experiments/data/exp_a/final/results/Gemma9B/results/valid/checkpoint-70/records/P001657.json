@@ -1,0 +1,480 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.641204966999794,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5013,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1417,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.79009018000215,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5014,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3173,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.367225298999983,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"task\": [], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5015,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 845,
+            "output_tokens": 57
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 73.79852044600193,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P001657",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5435,
+        "output_tokens": 361
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "df7e1b0ee52b6932565792dcf8e356637002a1cf077792295beb78fa6167889a",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.641204966999794,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5013,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1417,
+            "output_tokens": 144
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 34.79009018000215,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001657\", \"problem\": [{\"concept\": \"few public datasets\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"Sentence Completion\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}, {\"concept\": \"Project Gutenberg\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MSR Sentence Completion Challenge Data\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 5014,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3173,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 62.43129514700195,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5014,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4590,
+        "output_tokens": 304
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 27.641204966999794,
+        "inherited": false,
+        "messages_sha256": "f95cddad44a2091ac7316a68a3c9052ad88ff48131741f41e0ad68f55587380b",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 5013,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1417,
+          "output_tokens": 144
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 34.79009018000215,
+        "inherited": false,
+        "messages_sha256": "d3bceef7660eff066526de6fce8540b83dd6f9d066a3df0aa7d03f1671485cd2",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001657",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 5014,
+        "usage": {
+          "input_tokens": 3173,
+          "output_tokens": 160
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.367225298999983,
+        "inherited": false,
+        "messages_sha256": "639f6606705e2d6bbf27a8b28ef925b14dcb024fa315941f685670b86ec7d674",
+        "reached_token_limit": false,
+        "seed": 5015,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 845,
+          "output_tokens": 57
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "MSR Sentence Completion Challenge Data",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Project Gutenberg",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "language model",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001657",
+        "problem": [
+          {
+            "concept": "few public datasets",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Sentence Completion",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "language model",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "human judges",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.367225298999983,
+      "messages_sha256": "639f6606705e2d6bbf27a8b28ef925b14dcb024fa315941f685670b86ec7d674",
+      "raw_output": "{\"paper_id\": \"P001657\", \"task\": [], \"method\": [{\"concept\": \"language model\", \"evidence_id\": \"A5\"}, {\"concept\": \"human judges\", \"evidence_id\": \"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 845,
+        "output_tokens": 57
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "8b53d13f766e2a9c6a8aa7d249f3a79ceacdefc7fbc5ddd9569fadab8cb80d39",
+    "facets": {
+      "contribution": [
+        "MSR Sentence Completion Challenge Data"
+      ],
+      "dataset": [
+        "MSR Sentence Completion Challenge Data",
+        "Project Gutenberg"
+      ],
+      "method": [
+        "language model",
+        "human judges"
+      ],
+      "paper_id": "P001657",
+      "problem": [
+        "few public datasets"
+      ],
+      "task": [
+        "Sentence Completion"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 73.79852044600193,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 73.79852044600193,
+      "input_tokens": 5435,
+      "output_tokens": 361
+    },
+    "paper_id": "P001657",
+    "source_sha256": "b38eb8626939f7fb68b8dfbdb0c7c344c5cd35815308580bfdb26d44b19597ee",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5435,
+      "output_tokens": 361
+    }
+  },
+  "record_sha256": "c92b6ee1050e36f4259b04014131aad6c6dc0a07945db5209eb5afed7b200354",
+  "signature": "1848cf9a0a3b5e38e7b0b077578a7b3287e3347879fe4a99201a259bf30a0088"
+}

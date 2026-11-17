@@ -1,0 +1,106 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P000121\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"word2vec\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"normalization\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"dropout\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"movie review excerpts corpus\", \"evidence_id\": \"A11\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 25.449449823001487,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P000121\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"word2vec\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"normalization\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"dropout\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"movie review excerpts corpus\", \"evidence_id\": \"A11\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 70.9167,
+      "seed": 405,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2657,
+        "output_tokens": 305
+      },
+      "validation_errors": [
+        "dataset[0]: concept must use source words in their original order; no invented synonyms; concept=\"movie review excerpts corpus\"; evidence_id=\"A11\"; evidence=\"We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"test accuracy of 45.4% in movie review excerpts dataset\"; evidence_id=\"A12\"; evidence=\"Our network achieves test accuracy of 45.4% in this dataset, which is a better performance than some other neural network model like Recursive Neural Network (RNN) and Matrix-Vector Recursive Neural Network (MV-RNN).\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P000121\", \"problem\": [], \"task\": [{\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A4\"}, {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"}, {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"}, {\"concept\": \"normalization\", \"evidence_id\": \"A10\"}, {\"concept\": \"dropout\", \"evidence_id\": \"A10\"}, {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"}, {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"corpus of movie review excerpts\", \"evidence_id\": \"A11\"}], \"contribution\": [{\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"}, {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"}, {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}]}",
+      "attempt": 2,
+      "generation_seconds": 32.313986607001425,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P000121\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"word2vec\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"normalization\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"dropout\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"corpus of movie review excerpts\", \"evidence_id\": \"A11\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 71.3333,
+      "seed": 406,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4521,
+        "output_tokens": 307
+      },
+      "validation_errors": [
+        "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of movie review excerpts\"; evidence_id=\"A11\"; evidence=\"We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"test accuracy of 45.4% in movie review excerpts dataset\"; evidence_id=\"A12\"; evidence=\"Our network achieves test accuracy of 45.4% in this dataset, which is a better performance than some other neural network model like Recursive Neural Network (RNN) and Matrix-Vector Recursive Neural Network (MV-RNN).\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P000121\", \"problem\": [], \"task\": [{\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"word2vec\", \"evidence_id\": \"A4\"}, {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"}, {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"}, {\"concept\": \"normalization\", \"evidence_id\": \"A10\"}, {\"concept\": \"dropout\", \"evidence_id\": \"A10\"}, {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"}, {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"corpus of movie review excerpts\", \"evidence_id\": \"A11\"}], \"contribution\": [{\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"}, {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"}, {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}]}",
+      "attempt": 3,
+      "generation_seconds": 32.2682059630024,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P000121\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"sentiment analysis\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"word2vec\", \"evidence_id\": \"A4\"},\n    {\"concept\": \"convolutional neural network\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"parametric rectified linear unit\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"normalization\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"dropout\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"convolutional layers\", \"evidence_id\": \"A8\"},\n    {\"concept\": \"pooling layers\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"corpus of movie review excerpts\", \"evidence_id\": \"A11\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"framework called Word2vec + Convolutional Neural Network (CNN)\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"7-layers architecture model using word2vec and CNN\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"test accuracy of 45.4% in movie review excerpts dataset\", \"evidence_id\": \"A12\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 71.3333,
+      "seed": 407,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4495,
+        "output_tokens": 307
+      },
+      "validation_errors": [
+        "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of movie review excerpts\"; evidence_id=\"A11\"; evidence=\"We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"test accuracy of 45.4% in movie review excerpts dataset\"; evidence_id=\"A12\"; evidence=\"Our network achieves test accuracy of 45.4% in this dataset, which is a better performance than some other neural network model like Recursive Neural Network (RNN) and Matrix-Vector Recursive Neural Network (MV-RNN).\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P000121",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": [
+      {
+        "concept": "corpus of movie review excerpts",
+        "evidence": "We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.",
+        "index": 0,
+        "reason": "dataset requires an explicit named resource, not a collection description",
+        "source": "abstract"
+      }
+    ]
+  },
+  "selected_attempt": 3,
+  "selected_score": 71.3333,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "dataset[0]: dataset requires an explicit named resource, not a collection description; concept=\"corpus of movie review excerpts\"; evidence_id=\"A11\"; evidence=\"We test our framework in a public dataset which is the corpus of movie review excerpts that includes fives labels: negative, somewhat negative, neural, somewhat positive and positive.\"",
+    "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"test accuracy of 45.4% in movie review excerpts dataset\"; evidence_id=\"A12\"; evidence=\"Our network achieves test accuracy of 45.4% in this dataset, which is a better performance than some other neural network model like Recursive Neural Network (RNN) and Matrix-Vector Recursive Neural Network (MV-RNN).\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

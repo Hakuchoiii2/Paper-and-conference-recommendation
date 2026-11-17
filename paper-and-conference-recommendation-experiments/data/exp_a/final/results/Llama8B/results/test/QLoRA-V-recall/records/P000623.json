@@ -1,0 +1,523 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.128623910999522,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1421,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.41322199699971,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3139,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.848555372000192,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"network structure\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1913,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 871,
+            "output_tokens": 126
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "collective classification approach",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification model outperforms a local model using only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "structural and linguistic features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "network structure",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Inferring users’ stance",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 57.39040127999942,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000623",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5431,
+        "output_tokens": 465
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.128623910999522,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1421,
+            "output_tokens": 169
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.41322199699971,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000623\", \"problem\": [], \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"4FORUMS\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"collective classification approach\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification model outperforms a local model using only linguistic information\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3139,
+            "output_tokens": 170
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "collective classification approach",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification model outperforms a local model using only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "structural and linguistic features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Inferring users’ stance",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.54184590799923,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1912,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4560,
+        "output_tokens": 339
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.128623910999522,
+        "inherited": false,
+        "messages_sha256": "5212fbd504d89a79719158262fa5e41cd871adc8085cd67f88e3780f8c52fffa",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1911,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1421,
+          "output_tokens": 169
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.41322199699971,
+        "inherited": false,
+        "messages_sha256": "e1d329f9da1a51e79c4602be0b1d94d721cdd635e201d25f041e073b5de12e0b",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000623",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 1912,
+        "usage": {
+          "input_tokens": 3139,
+          "output_tokens": 170
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.848555372000192,
+        "inherited": false,
+        "messages_sha256": "225e6dc4825299521543e4045e349094e70b009c44921eb5337dd681fa54e0e5",
+        "reached_token_limit": false,
+        "seed": 1913,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 871,
+          "output_tokens": 126
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "network structure",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "collective classification approach",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification model outperforms a local model using only linguistic information",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "4FORUMS",
+            "evidence_id": "A6"
+          }
+        ],
+        "method": [
+          {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "structural and linguistic features",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P000623",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Inferring users’ stance",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Inferring users’ stance",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "Collective Stance Classification",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "probabilistic soft logic",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "structural and linguistic features",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "collective classification",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.848555372000192,
+      "messages_sha256": "225e6dc4825299521543e4045e349094e70b009c44921eb5337dd681fa54e0e5",
+      "raw_output": "{\"paper_id\": \"P000623\", \"task\": [{\"concept\": \"Inferring users’ stance\", \"evidence_id\": \"A1\"}, {\"concept\": \"Collective Stance Classification\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"probabilistic soft logic\", \"evidence_id\": \"A5\"}, {\"concept\": \"structural and linguistic features\", \"evidence_id\": \"A3\"}, {\"concept\": \"collective classification\", \"evidence_id\": \"A3\"}, {\"concept\": \"network structure\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 871,
+        "output_tokens": 126
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "b73adf9cf93b8b60f68f39446d352521d7e68efd90ba903aff0cdeedd1c949c5",
+    "facets": {
+      "contribution": [
+        "collective classification approach",
+        "collective classification model outperforms a local model using only linguistic information"
+      ],
+      "dataset": [
+        "4FORUMS"
+      ],
+      "method": [
+        "probabilistic soft logic",
+        "structural and linguistic features",
+        "collective classification",
+        "network structure"
+      ],
+      "paper_id": "P000623",
+      "problem": [],
+      "task": [
+        "Inferring users’ stance",
+        "Collective Stance Classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 57.39040127999942,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 57.39040127999942,
+      "input_tokens": 5431,
+      "output_tokens": 465
+    },
+    "paper_id": "P000623",
+    "source_sha256": "a92f4db40123138c7532e8d87e013ab02373ff29706fc01141301c4cedbed872",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5431,
+      "output_tokens": 465
+    }
+  },
+  "record_sha256": "2deda827ac15773a06aa85c5f0cccbfc2514d1a5a12c3ca50e30d8cd286a01a5",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

@@ -1,0 +1,72 @@
+Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.3), please consider upgrading to the latest version (2.2.5)
+[{"stream_name":"stderr","time":31.199927179,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":31.199966167,"data":"gradio 6.26.0 requires huggingface-hub\u003c2.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":31.199970863,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":31.199973712,"data":"diffusers 0.40.0 requires huggingface-hub\u003c2.0,\u003e=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":54.817310405,"data":"PREFLIGHT Qwen14B: 40c069824f4251a91eefaf281ebe4c544efd3e18; public tokenizer/access OK\n"}
+,{"stream_name":"stderr","time":80.952466841,"data":"`torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":200.964334287,"data":"\rFetching 8 files:   0%|          | 0/8 [00:00\u003c?, ?it/s]\rFetching 8 files:  12%|█▎        | 1/8 [01:35\u003c11:08, 95.51s/it]\rFetching 8 files:  25%|██▌       | 2/8 [01:56\u003c05:11, 51.85s/it]\rFetching 8 files: 100%|██████████| 8/8 [01:56\u003c00:00, 14.60s/it]\n"}
+,{"stream_name":"stderr","time":336.873831299,"data":"\rLoading checkpoint shards:   0%|          | 0/8 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  12%|█▎        | 1/8 [00:13\u003c01:33, 13.41s/it]\rLoading checkpoint shards:  25%|██▌       | 2/8 [00:25\u003c01:14, 12.43s/it]\rLoading checkpoint shards:  38%|███▊      | 3/8 [00:41\u003c01:10, 14.09s/it]\rLoading checkpoint shards:  50%|█████     | 4/8 [00:59\u003c01:02, 15.58s/it]\rLoading checkpoint shards:  62%|██████▎   | 5/8 [01:17\u003c00:49, 16.44s/it]\rLoading checkpoint shards:  75%|███████▌  | 6/8 [01:35\u003c00:33, 16.98s/it]\rLoading checkpoint shards:  88%|████████▊ | 7/8 [01:53\u003c00:17, 17.32s/it]\rLoading checkpoint shards: 100%|██████████| 8/8 [02:00\u003c00:00, 14.32s/it]\rLoading checkpoint shards: 100%|██████████| 8/8 [02:00\u003c00:00, 15.12s/it]\n"}
+,{"stream_name":"stderr","time":337.69375897,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":337.694459031,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 168, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":337.694479816,"data":"    main()\n"}
+,{"stream_name":"stderr","time":337.694484696,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":337.694488973,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 156, in main\n"}
+,{"stream_name":"stderr","time":337.694494021,"data":"    train(root, settings, old, compat)\n"}
+,{"stream_name":"stderr","time":337.694498991,"data":"    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":337.694503784,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 77, in train\n"}
+,{"stream_name":"stderr","time":337.694508911,"data":"    metadata = helper.train(root, config)\n"}
+,{"stream_name":"stderr","time":337.694513517,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/train.py\", line 270, in train\n"}
+,{"stream_name":"stderr","time":337.694518485,"data":"    model = prepare_adapter(model, config)\n"}
+,{"stream_name":"stderr","time":337.694523486,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/train.py\", line 168, in prepare_adapter\n"}
+,{"stream_name":"stderr","time":337.694528194,"data":"    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True,\n"}
+,{"stream_name":"stderr","time":337.694533789,"data":"        gradient_checkpointing_kwargs={'use_reentrant': False})\n"}
+,{"stream_name":"stderr","time":337.694553376,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/utils/other.py\", line 175, in prepare_model_for_kbit_training\n"}
+,{"stream_name":"stderr","time":337.694558035,"data":"    param.data = param.data.to(torch.float32)\n"}
+,{"stream_name":"stderr","time":337.694564185,"data":"                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":337.694570781,"data":"torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.90 GiB. GPU 0 has a total capacity of 14.56 GiB of which 2.17 GiB is free. Including non-PyTorch memory, this process has 12.39 GiB memory in use. Of the allocated memory 10.72 GiB is allocated by PyTorch, and 1.56 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"}
+,{"stream_name":"stderr","time":342.672450313,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":342.673186472,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 168, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":342.673206965,"data":"    main()\n"}
+,{"stream_name":"stderr","time":342.673210949,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":342.673226975,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 164, in main\n"}
+,{"stream_name":"stderr","time":342.673230922,"data":"    run(root, settings, old)\n"}
+,{"stream_name":"stderr","time":342.673233998,"data":"    ~~~^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.673237268,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py\", line 109, in run\n"}
+,{"stream_name":"stderr","time":342.673240726,"data":"    old.require(old.command(root, '--train').wait() == 0, 'Training failed; checkpoints retained')\n"}
+,{"stream_name":"stderr","time":342.673244581,"data":"    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.673248327,"data":"  File \"/kaggle/working/exp_a_qwen14b/Qwen14B/frozen_runtime.py\", line 41, in require\n"}
+,{"stream_name":"stderr","time":342.673251871,"data":"    raise ValueError(message)\n"}
+,{"stream_name":"stderr","time":342.673255636,"data":"ValueError: Training failed; checkpoints retained\n"}
+,{"stream_name":"stderr","time":343.035656459,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":343.037319796,"data":"  File \"/kaggle/working/exp_a_qwen14b/batch.py\", line 93, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":343.037341769,"data":"    run_models(Path(__file__).resolve().parent)\n"}
+,{"stream_name":"stderr","time":343.037346568,"data":"    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.037350894,"data":"  File \"/kaggle/working/exp_a_qwen14b/batch.py\", line 84, in run_models\n"}
+,{"stream_name":"stderr","time":343.037355459,"data":"    execute(model_root)\n"}
+,{"stream_name":"stderr","time":343.0373715,"data":"    ~~~~~~~^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.037375718,"data":"  File \"/kaggle/working/exp_a_qwen14b/batch.py\", line 55, in execute_model\n"}
+,{"stream_name":"stderr","time":343.037379722,"data":"    subprocess.run([sys.executable, '-B', str(root/'runtime.py')], cwd=root, env=env, check=True)\n"}
+,{"stream_name":"stderr","time":343.037384305,"data":"    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.037401665,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n"}
+,{"stream_name":"stderr","time":343.037405689,"data":"    raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":343.037409788,"data":"                             output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":343.037413637,"data":"subprocess.CalledProcessError: Command '['/usr/bin/python3', '-B', '/kaggle/working/exp_a_qwen14b/Qwen14B/runtime.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":343.051519423,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":343.052292903,"data":"  File \"/kaggle/src/script.py\", line 216, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":343.052318793,"data":"    main()\n"}
+,{"stream_name":"stderr","time":343.052324193,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":343.05232792,"data":"  File \"/kaggle/src/script.py\", line 212, in main\n"}
+,{"stream_name":"stderr","time":343.05233216,"data":"    subprocess.run([sys.executable, '-B', str(PROJECT/'batch.py')], cwd=PROJECT, check=True)\n"}
+,{"stream_name":"stderr","time":343.052335457,"data":"    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.052338859,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n"}
+,{"stream_name":"stderr","time":343.052342318,"data":"    raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":343.052345725,"data":"                             output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":343.052349489,"data":"subprocess.CalledProcessError: Command '['/usr/bin/python3', '-B', '/kaggle/working/exp_a_qwen14b/batch.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":346.281355466,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":346.281395899,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":346.574192902,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":346.574232234,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":347.423114285,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":348.487770443,"data":"[NbConvertApp] Writing 535798 bytes to __results__.html\n"}
+]

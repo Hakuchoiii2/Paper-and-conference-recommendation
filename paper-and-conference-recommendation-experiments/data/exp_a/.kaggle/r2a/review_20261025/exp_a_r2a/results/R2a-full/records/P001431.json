@@ -1,0 +1,184 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001431\",\n  \"problem\": [\n    {\n      \"concept\": \"no standard definition\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"no standard definition, and there are several different classification schema\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine the different classification schema\",\n      \"evidence_id\": \"A10\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"classification schema based on four characteristics\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"examples of each type of community\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"important implications for the design and management of online communities\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 18.55347874400013,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001431\",\n  \"problem\": [\n    {\n      \"concept\": \"no standard definition\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"no standard definition, and there are several different classification schema\",\n      \"evidence_id\": \"A8\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine the different classification schema\",\n      \"evidence_id\": \"A10\"\n    }\n  ],\n  \"method\": [],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"classification schema based on four characteristics\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"examples of each type of community\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"important implications for the design and management of online communities\",\n      \"evidence_id\": \"A3\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 75.881,
+          "seed": 4335,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2751,
+            "output_tokens": 212
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 1,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "classification schema based on four characteristics",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "examples of each type of community",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "important implications for the design and management of online communities",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [],
+        "paper_id": "P001431",
+        "problem": [
+          {
+            "concept": "no standard definition",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "no standard definition, and there are several different classification schema",
+            "evidence_id": "A8"
+          }
+        ],
+        "task": [
+          {
+            "concept": "examine the different classification schema",
+            "evidence_id": "A10"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 18.55347874400013,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001431",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 4335,
+      "selected_score": 75.881,
+      "self_review_completed": false,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 2751,
+        "output_tokens": 212
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "e086f041242b2b25aac99be5cf05a0cf9b4c4c26fd065939811053fd4e687ab0",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 4335
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 0,
+    "facets": {
+      "contribution": [
+        "classification schema based on four characteristics",
+        "examples of each type of community",
+        "important implications for the design and management of online communities"
+      ],
+      "dataset": [],
+      "method": [],
+      "paper_id": "P001431",
+      "problem": [
+        "no standard definition",
+        "no standard definition, and there are several different classification schema"
+      ],
+      "task": [
+        "examine the different classification schema"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 18.55347874400013,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 0,
+      "generation_seconds": 0
+    },
+    "paper_id": "P001431",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2
+      ],
+      "dataset": [],
+      "method": [],
+      "problem": [
+        0,
+        1
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 2751,
+      "output_tokens": 212
+    }
+  },
+  "record_sha256": "e272a2048bc9e2a6a5f2605f51f962846dcab8579986c929ed6f329d3fe92cbf",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

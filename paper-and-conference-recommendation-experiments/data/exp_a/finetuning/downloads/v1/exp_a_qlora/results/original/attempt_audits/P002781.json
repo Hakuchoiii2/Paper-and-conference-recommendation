@@ -1,0 +1,65 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P002781\",\n  \"problem\": [\n    {\"concept\": \"using specialized models for different verticals is not scalable and expensive to deploy\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"learning one unified embedding model for multiple object verticals without sacrificing accuracy\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"learning unified embedding for apparel recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"triplet loss\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"L2 loss\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"using output from specialized models as learning targets\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a unified model which can achieve the same retrieval accuracy as a number of separate specialized models\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"effectiveness of the approach is shown in experiments\", \"evidence_id\": \"A10\"}\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 22.828047863000393,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002781\",\n  \"problem\": [\n    {\"concept\": \"using specialized models for different verticals is not scalable and expensive to deploy\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"learning one unified embedding model for multiple object verticals without sacrificing accuracy\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"learning unified embedding for apparel recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"triplet loss\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"L2 loss\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"using output from specialized models as learning targets\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a unified model which can achieve the same retrieval accuracy as a number of separate specialized models\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"effectiveness of the approach is shown in experiments\", \"evidence_id\": \"A10\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 84.1806,
+      "seed": 8385,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2543,
+        "output_tokens": 245
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"effectiveness of the approach is shown in experiments\"; evidence_id=\"A10\"; evidence=\"The effectiveness of our approach is shown in experiments.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P002781\", \"problem\": [{\"concept\": \"using specialized models for different verticals is not scalable and expensive to deploy\", \"evidence_id\": \"A3\"}, {\"concept\": \"learning one unified embedding model for multiple object verticals without sacrificing accuracy\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"learning unified embedding for apparel recognition\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"triplet loss\", \"evidence_id\": \"A6\"}, {\"concept\": \"L2 loss\", \"evidence_id\": \"A7\"}, {\"concept\": \"using output from specialized models as learning targets\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a unified model which can achieve the same retrieval accuracy as a number of separate specialized models\", \"evidence_id\": \"A9\"}, {\"concept\": \"effectiveness of our approach is shown in experiments\", \"evidence_id\": \"A10\"}]}",
+      "attempt": 2,
+      "generation_seconds": 25.673478410000826,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P002781\",\n  \"problem\": [\n    {\"concept\": \"using specialized models for different verticals is not scalable and expensive to deploy\", \"evidence_id\": \"A3\"},\n    {\"concept\": \"learning one unified embedding model for multiple object verticals without sacrificing accuracy\", \"evidence_id\": \"A4\"}\n  ],\n  \"task\": [\n    {\"concept\": \"learning unified embedding for apparel recognition\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"triplet loss\", \"evidence_id\": \"A6\"},\n    {\"concept\": \"L2 loss\", \"evidence_id\": \"A7\"},\n    {\"concept\": \"using output from specialized models as learning targets\", \"evidence_id\": \"A7\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"a unified model which can achieve the same retrieval accuracy as a number of separate specialized models\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"effectiveness of our approach is shown in experiments\", \"evidence_id\": \"A10\"}\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 87.9306,
+      "seed": 8386,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4233,
+        "output_tokens": 245
+      },
+      "validation_errors": []
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P002781",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 2,
+  "selected_score": 87.9306,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

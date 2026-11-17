@@ -1,0 +1,499 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.67087275999984,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6066,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1437,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.858841323999513,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6067,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3155,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 24.08088378100001,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002008\",\"task\":[{\"concept\":\"Assessing the Factuality Degree of Events in Text\",\"evidence_id\":\"T0\"},{\"concept\":\"event factuality\",\"evidence_id\":\"A4\"},{\"concept\":\"event factuality is articulated in natural language\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"linguistic-oriented computational model\",\"evidence_id\":\"A6\"},{\"concept\":\"algorithm articulating the effect of factuality relations across levels of syntactic embedding\",\"evidence_id\":\"A6\"},{\"concept\":\"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\",\"evidence_id\":\"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6068,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 865,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "event factuality",
+              "evidence": "On the other, it has to do with degrees of certainty (e.g., possible, probable), an information level generally subsumed under the category of epistemic modality.",
+              "facet": "task",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "algorithm articulating the effect of factuality relations across levels of syntactic embedding",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Assessing the Factuality Degree of Events in Text",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "event factuality",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "event factuality is articulated in natural language",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 82.61059786499936,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P002008",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5457,
+        "output_tokens": 477
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "event factuality",
+          "evidence": "On the other, it has to do with degrees of certainty (e.g., possible, probable), an information level generally subsumed under the category of epistemic modality.",
+          "facet": "task",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 27.67087275999984,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6066,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1437,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 30.858841323999513,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002008\", \"problem\": [], \"task\": [{\"concept\": \"Assessing the Factuality Degree of Events in Text\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"linguistic-oriented computational model\", \"evidence_id\": \"A6\"}, {\"concept\": \"algorithm articulating the effect of factuality relations across levels of syntactic embedding\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"De Facto\", \"evidence_id\": \"A7\"}, {\"concept\": \"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6067,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3155,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "algorithm articulating the effect of factuality relations across levels of syntactic embedding",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Assessing the Factuality Degree of Events in Text",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 58.52971408399935,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6067,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4592,
+        "output_tokens": 330
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 27.67087275999984,
+        "inherited": false,
+        "messages_sha256": "3bcc5994e60d9bc1a7fac8ccd64805ce96c53831ff8e0b8b41d406dcd646497a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6066,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1437,
+          "output_tokens": 165
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 30.858841323999513,
+        "inherited": false,
+        "messages_sha256": "346488790f850ae0455a4d49095f023701d1e481c970b7bf1af422db691a8c52",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002008",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 6067,
+        "usage": {
+          "input_tokens": 3155,
+          "output_tokens": 165
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 24.08088378100001,
+        "inherited": false,
+        "messages_sha256": "fb3b35b0ee45be2f482a239c92304b50b475270ecb8c6275c4c83c37064d2bf8",
+        "reached_token_limit": false,
+        "seed": 6068,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 865,
+          "output_tokens": 147
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "event factuality",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "task",
+          "item": {
+            "concept": "event factuality is articulated in natural language",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "accepted_count": 3,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "De Facto",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "algorithm articulating the effect of factuality relations across levels of syntactic embedding",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P002008",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Assessing the Factuality Degree of Events in Text",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Assessing the Factuality Degree of Events in Text",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "linguistic-oriented computational model",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "algorithm articulating the effect of factuality relations across levels of syntactic embedding",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 24.08088378100001,
+      "messages_sha256": "fb3b35b0ee45be2f482a239c92304b50b475270ecb8c6275c4c83c37064d2bf8",
+      "raw_output": "{\"paper_id\":\"P002008\",\"task\":[{\"concept\":\"Assessing the Factuality Degree of Events in Text\",\"evidence_id\":\"T0\"},{\"concept\":\"event factuality\",\"evidence_id\":\"A4\"},{\"concept\":\"event factuality is articulated in natural language\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"linguistic-oriented computational model\",\"evidence_id\":\"A6\"},{\"concept\":\"algorithm articulating the effect of factuality relations across levels of syntactic embedding\",\"evidence_id\":\"A6\"},{\"concept\":\"F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)\",\"evidence_id\":\"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 865,
+        "output_tokens": 147
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "b0f734363a8f855404f4c5faa6bf319da25cd194a6f6e0ba51f99d0008e4274e",
+    "facets": {
+      "contribution": [
+        "De Facto",
+        "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)"
+      ],
+      "dataset": [],
+      "method": [
+        "linguistic-oriented computational model",
+        "algorithm articulating the effect of factuality relations across levels of syntactic embedding",
+        "F1 of 0.70 (macro-averaging) and 0.80 (micro-averaging)"
+      ],
+      "paper_id": "P002008",
+      "problem": [],
+      "task": [
+        "Assessing the Factuality Degree of Events in Text",
+        "event factuality",
+        "event factuality is articulated in natural language"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 82.61059786499936,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 82.61059786499936,
+      "input_tokens": 5457,
+      "output_tokens": 477
+    },
+    "paper_id": "P002008",
+    "source_sha256": "ebd68e4fc6c1a3e3d9ae66ec4e8057a3c2405cf3101216494a30fde913703432",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5457,
+      "output_tokens": 477
+    }
+  },
+  "record_sha256": "c6d12ef5090970615659c85e6496d7338da41ebd9e4efa3f79ac16950672a5b2",
+  "signature": "66ce482a53cb54944d2c40316d8a22778a406c9508e352f7e73841dbb52e697b"
+}

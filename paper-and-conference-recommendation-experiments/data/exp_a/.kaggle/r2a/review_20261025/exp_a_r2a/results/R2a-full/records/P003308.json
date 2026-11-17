@@ -1,0 +1,266 @@
+{
+  "record": {
+    "arm": "R2a-full",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003308\",\n  \"problem\": [\n    {\n      \"concept\": \"challenges the traditional techniques to extract the useful knowledge\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Minimum spanning tree (MST) based Classification model\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"MapReduce programming framework\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"real world data from UCI repository\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"synthetic data\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 25.435310974999993,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P003308\",\n  \"problem\": [\n    {\n      \"concept\": \"challenges the traditional techniques to extract the useful knowledge\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Minimum spanning tree (MST) based Classification model\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"MapReduce programming framework\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"real world data from UCI repository\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"synthetic data\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability\",\n      \"evidence_id\": \"A5\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 84.25,
+          "seed": 9966,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2449,
+            "output_tokens": 308
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"challenges the traditional techniques to extract the useful knowledge\"; evidence_id=\"A0\"; evidence=\"Rapid growth of data has provided us with more information, yet challenges the tradition techniques to extract the useful knowledge.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003308\", \"problem\": [{\"concept\": \"challenges the tradition techniques to extract the useful knowledge\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Minimum spanning tree (MST) based Classification model\", \"evidence_id\": \"A1\"}, {\"concept\": \"MapReduce programming framework\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"real world data from UCI repository\", \"evidence_id\": \"A4\"}, {\"concept\": \"synthetic data\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation\", \"evidence_id\": \"A1\"}, {\"concept\": \"model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 7.178382029999739,
+          "operations": [
+            {
+              "before": {
+                "concept": "challenges the traditional techniques to extract the useful knowledge",
+                "evidence_id": "A0"
+              },
+              "concept": "challenges the tradition techniques to extract the useful knowledge",
+              "evidence_id": "A0",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P003308\",\"edits\":[{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"challenges the tradition techniques to extract the useful knowledge\",\"evidence_id\":\"A0\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 9967,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2725,
+            "output_tokens": 55
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "real world data from UCI repository",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "synthetic data",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Minimum spanning tree (MST) based Classification model",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "MapReduce programming framework",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003308",
+        "problem": [
+          {
+            "concept": "challenges the tradition techniques to extract the useful knowledge",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 32.61369300499973,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003308",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "synthetic data",
+            "evidence": "We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": true
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 9967,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5174,
+        "output_tokens": 363
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "787d91b2957b6d09017494b93f865de3c2f24ef85dc74b6b8a472f14605cefab",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 9966
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "229efd17ff613433eb96f680eaeb8864efdb06dfffcd6bff6845a3d9d044b43f",
+        "operations": [
+          {
+            "before": {
+              "concept": "challenges the traditional techniques to extract the useful knowledge",
+              "evidence_id": "A0"
+            },
+            "concept": "challenges the tradition techniques to extract the useful knowledge",
+            "evidence_id": "A0",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 9967
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 2,
+    "facets": {
+      "contribution": [
+        "MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation",
+        "model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability"
+      ],
+      "dataset": [
+        "real world data from UCI repository"
+      ],
+      "method": [
+        "Minimum spanning tree (MST) based Classification model",
+        "MapReduce programming framework"
+      ],
+      "paper_id": "P003308",
+      "problem": [
+        "challenges the tradition techniques to extract the useful knowledge"
+      ],
+      "task": [
+        "propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 32.61369300499973,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": true
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 7.178382029999739,
+      "input_tokens": 2725,
+      "output_tokens": 55
+    },
+    "paper_id": "P003308",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [
+        0,
+        1
+      ],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5174,
+      "output_tokens": 363
+    }
+  },
+  "record_sha256": "1240b6df122ad31209f2ed0753c85dd915e3abd30390cfb8d0032d5ed76f5527",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

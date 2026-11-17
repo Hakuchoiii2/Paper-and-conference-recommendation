@@ -1,0 +1,557 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.127421526000035,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 474,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1384,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+              "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+              "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.08129109100082,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 475,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3103,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+              "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+              "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 7.872121300000799,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000144\", \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\"}, {\"concept\": \"analyze six large data sets containing file metadata\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 476,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 807,
+            "output_tokens": 63
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+              "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+              "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysing six large data sets containing file metadata",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000144",
+        "problem": [
+          {
+            "concept": "lack of representative data sets",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess the status of these files with regard to copyright infringement",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 50.080833917001655,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000144",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5294,
+        "output_tokens": 400
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+          "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+          "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 21.127421526000035,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 474,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1384,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+              "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+              "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.08129109100082,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 475,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3103,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+              "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+              "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysing six large data sets containing file metadata",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000144",
+        "problem": [
+          {
+            "concept": "lack of representative data sets",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess the status of these files with regard to copyright infringement",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.208712617000856,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 475,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4487,
+        "output_tokens": 337
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.127421526000035,
+        "inherited": false,
+        "messages_sha256": "9f245efa303538d8491f7a75c29dd89d334604eb717ed42835470feca80b7868",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 474,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1384,
+          "output_tokens": 177
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.08129109100082,
+        "inherited": false,
+        "messages_sha256": "7f7b1ffd51e67c4bd71a5dd93387cbee4c80da0e42d780da7655653e982ab274",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000144",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 475,
+        "usage": {
+          "input_tokens": 3103,
+          "output_tokens": 160
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 7.872121300000799,
+        "inherited": false,
+        "messages_sha256": "b2858baf7f5e698dac828022cffe5f369ad369079e52b5f15e1992d4f35abf9e",
+        "reached_token_limit": false,
+        "seed": 476,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 807,
+          "output_tokens": 63
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "analysing six large data sets containing file metadata",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P000144",
+        "problem": [
+          {
+            "concept": "lack of representative data sets",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess the status of these files with regard to copyright infringement",
+            "evidence_id": "A6"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 7.872121300000799,
+      "messages_sha256": "b2858baf7f5e698dac828022cffe5f369ad369079e52b5f15e1992d4f35abf9e",
+      "raw_output": "{\"paper_id\": \"P000144\", \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\"}, {\"concept\": \"analyze six large data sets containing file metadata\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\"}]}",
+      "reached_token_limit": false,
+      "rejected": [
+        {
+          "error": "Expected concept/evidence_id only",
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "assess the status of these files with regard to copyright infringement"
+          }
+        },
+        {
+          "error": "Expected concept/evidence_id only",
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "analyze six large data sets containing file metadata"
+          }
+        },
+        {
+          "error": "Expected concept/evidence_id only",
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "analysing six large data sets containing file metadata"
+          }
+        }
+      ],
+      "usage": {
+        "input_tokens": 807,
+        "output_tokens": 63
+      }
+    },
+    "coverage_fallback": true,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "2b2a7907c47875ea60f22a6c6fc47fa78da1996c15fe77b1365ffdaf5afbe5eb",
+    "facets": {
+      "contribution": [
+        "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+        "Megaupload has the second highest proportion of legitimate files in the study"
+      ],
+      "dataset": [],
+      "method": [
+        "analysing six large data sets containing file metadata"
+      ],
+      "paper_id": "P000144",
+      "problem": [
+        "lack of representative data sets"
+      ],
+      "task": [
+        "assess the status of these files with regard to copyright infringement"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 50.080833917001655,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 50.080833917001655,
+      "input_tokens": 5294,
+      "output_tokens": 400
+    },
+    "paper_id": "P000144",
+    "source_sha256": "b47b16a1bf0182b1cc109eae58773a50405c84c858278f4f9cf3245e80856bda",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5294,
+      "output_tokens": 400
+    }
+  },
+  "record_sha256": "17d1621acafb59982a2d45227a127769eb6cd8467e9e1a2673d48fddbaa91adb",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

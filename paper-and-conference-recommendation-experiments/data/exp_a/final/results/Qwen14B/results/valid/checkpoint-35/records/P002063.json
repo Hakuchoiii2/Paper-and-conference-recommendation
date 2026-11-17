@@ -1,0 +1,476 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+    "annotation_fallback": false,
+    "arm": "checkpoint-35",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.763655320000908,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6231,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1360,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.841754610000862,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6232,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3065,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 10.495804988999225,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P002063\",\"task\":[{\"concept\":\"relation extraction\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"factor graph\",\"evidence_id\":\"A4\"},{\"concept\":\"constraint-driven semi-supervision\",\"evidence_id\":\"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6233,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 783,
+            "output_tokens": 59
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "novel approach to distant supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns that hurt precision",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 67.101214919001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P002063",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5208,
+        "output_tokens": 379
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "e5ec0b50cc8b4da644d58b20ee643da6d1d879eb560cb05b57598b36333e1937",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.763655320000908,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6231,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1360,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 29.841754610000862,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns that hurt precision\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"novel approach to distant supervision\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6232,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3065,
+            "output_tokens": 160
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "novel approach to distant supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns that hurt precision",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 56.60540993000177,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6232,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4425,
+        "output_tokens": 320
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 26.763655320000908,
+        "inherited": false,
+        "messages_sha256": "75c689315a0a275e3fab7f68e86cb60e9ba889d51ec50ef452a33536be6219f9",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6231,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1360,
+          "output_tokens": 160
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.841754610000862,
+        "inherited": false,
+        "messages_sha256": "e5d2efbf5489099cd9be4387e02784a900122c5c464d7f4179a8b33c3fd1f2c4",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002063",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 6232,
+        "usage": {
+          "input_tokens": 3065,
+          "output_tokens": 160
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 10.495804988999225,
+        "inherited": false,
+        "messages_sha256": "dd2fc2c3ab56bd02dca00216e9b6789e4ed0fd3da209b730260aa9ae7ce3f8bb",
+        "reached_token_limit": false,
+        "seed": 6233,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 783,
+          "output_tokens": 59
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "novel approach to distant supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns that hurt precision",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 10.495804988999225,
+      "messages_sha256": "dd2fc2c3ab56bd02dca00216e9b6789e4ed0fd3da209b730260aa9ae7ce3f8bb",
+      "raw_output": "{\"paper_id\":\"P002063\",\"task\":[{\"concept\":\"relation extraction\",\"evidence_id\":\"A1\"}],\"method\":[{\"concept\":\"factor graph\",\"evidence_id\":\"A4\"},{\"concept\":\"constraint-driven semi-supervision\",\"evidence_id\":\"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 783,
+        "output_tokens": 59
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "859f368af5b9287fb6086b9523b48ca70fc91a3087fd75bdd0de229ad089dfeb",
+    "facets": {
+      "contribution": [
+        "novel approach to distant supervision"
+      ],
+      "dataset": [
+        "New York Times",
+        "Freebase"
+      ],
+      "method": [
+        "factor graph",
+        "constraint-driven semi-supervision"
+      ],
+      "paper_id": "P002063",
+      "problem": [
+        "noisy patterns that hurt precision"
+      ],
+      "task": [
+        "relation extraction"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 67.101214919001,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 67.101214919001,
+      "input_tokens": 5208,
+      "output_tokens": 379
+    },
+    "paper_id": "P002063",
+    "source_sha256": "e8f4fe9fc7b5d7e2c02c62a72bdb04edecb22a32ee154bc75de25ab5be53b37c",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5208,
+      "output_tokens": 379
+    }
+  },
+  "record_sha256": "3e40e5e01bc59e420faab9efcefa0bbd8558eb40448edb8fcf528e4936b1ca19",
+  "signature": "66ce482a53cb54944d2c40316d8a22778a406c9508e352f7e73841dbb52e697b"
+}

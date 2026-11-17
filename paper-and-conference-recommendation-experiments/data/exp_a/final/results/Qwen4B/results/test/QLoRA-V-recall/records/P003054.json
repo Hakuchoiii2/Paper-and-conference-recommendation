@@ -1,0 +1,481 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003054\", \"problem\": [{\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.879325588999563,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003054\", \"problem\": [{\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9204,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1326,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003054\", \"problem\": [], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.90312621799967,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003054\", \"problem\": [], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9205,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3064,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.442864327998905,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003054\", \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9206,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 752,
+            "output_tokens": 92
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Few-Shot Relation Classification Dataset",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "few-shot relation classification remains an open problem",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "FewRel",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "distant supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdworkers",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003054",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Few-Shot Relation Classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 60.22531613499814,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P003054",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5142,
+        "output_tokens": 440
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003054\", \"problem\": [{\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.879325588999563,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003054\", \"problem\": [{\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9204,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1326,
+            "output_tokens": 185
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003054\", \"problem\": [], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.90312621799967,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003054\", \"problem\": [], \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"FewRel\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"Few-Shot Relation Classification Dataset\", \"evidence_id\": \"A0\"}, {\"concept\": \"few-shot relation classification remains an open problem\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9205,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3064,
+            "output_tokens": 163
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Few-Shot Relation Classification Dataset",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "few-shot relation classification remains an open problem",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "FewRel",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "distant supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdworkers",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003054",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Few-Shot Relation Classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 47.782451806999234,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9205,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4390,
+        "output_tokens": 348
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.879325588999563,
+        "inherited": false,
+        "messages_sha256": "f6728f2c77a542d4afe510795a4fb715561d7f58daf15f697659521191564dfc",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 9204,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1326,
+          "output_tokens": 185
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.90312621799967,
+        "inherited": false,
+        "messages_sha256": "913fdf32e6df4664bdd2071f11d15d242dc1864025b58c0d268176289eaccbf8",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003054",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 9205,
+        "usage": {
+          "input_tokens": 3064,
+          "output_tokens": 163
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.442864327998905,
+        "inherited": false,
+        "messages_sha256": "6cbdbcdca3a4525a74b8b9bd06b9247538cdbd09c8d52a07c8cef0986b640d92",
+        "reached_token_limit": false,
+        "seed": 9206,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 752,
+          "output_tokens": 92
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Few-Shot Relation Classification Dataset",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "few-shot relation classification remains an open problem",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "FewRel",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "distant supervision",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "crowdworkers",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "few-shot learning",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003054",
+        "problem": [],
+        "task": [
+          {
+            "concept": "Few-Shot Relation Classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "Few-Shot Relation Classification",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "distant supervision",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "crowdworkers",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "few-shot learning",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.442864327998905,
+      "messages_sha256": "6cbdbcdca3a4525a74b8b9bd06b9247538cdbd09c8d52a07c8cef0986b640d92",
+      "raw_output": "{\"paper_id\": \"P003054\", \"task\": [{\"concept\": \"Few-Shot Relation Classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"distant supervision\", \"evidence_id\": \"A1\"}, {\"concept\": \"crowdworkers\", \"evidence_id\": \"A1\"}, {\"concept\": \"few-shot learning\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 752,
+        "output_tokens": 92
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "0a79a5a00549d150b1071500da1100c4a16e85033917e52f6ecc8d16b357224f",
+    "facets": {
+      "contribution": [
+        "Few-Shot Relation Classification Dataset",
+        "few-shot relation classification remains an open problem"
+      ],
+      "dataset": [
+        "FewRel"
+      ],
+      "method": [
+        "distant supervision",
+        "crowdworkers",
+        "few-shot learning"
+      ],
+      "paper_id": "P003054",
+      "problem": [],
+      "task": [
+        "Few-Shot Relation Classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 60.22531613499814,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 60.22531613499814,
+      "input_tokens": 5142,
+      "output_tokens": 440
+    },
+    "paper_id": "P003054",
+    "source_sha256": "92adaab2795a5277464ec732f5904b61d414e3ad1d7ca2afd4cb32b6f8786101",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5142,
+      "output_tokens": 440
+    }
+  },
+  "record_sha256": "caf12b4bab34ee1dfafe6d9864a28edb6627ff66e351fda1386e860a66511204",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

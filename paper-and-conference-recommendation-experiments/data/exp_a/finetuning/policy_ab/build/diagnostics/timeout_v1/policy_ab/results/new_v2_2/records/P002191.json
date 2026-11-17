@@ -1,0 +1,288 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "new_v2_2",
+    "audit": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "generation_seconds": 62.30822600200008,
+          "raw_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"cannot fully represent the original biomedical data\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"extract fine-grained and complex relations\", \"evidence_ids\": [\"A3\"]}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_ids\": [\"A4\"]}], \"method\": [{\"concept\": \"structured representations\", \"evidence_ids\": [\"A6\"]}, {\"concept\": \"templates\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"rules\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"extraction methods\", \"evidence_ids\": [\"A8\"]}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_ids\": [\"A9\"]}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_ids\": [\"A10\"]}, {\"concept\": \"source code\", \"evidence_ids\": [\"A11\"]}]}\n\n{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"cannot fully represent the original biomedical data\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"extract fine-grained and complex relations\", \"evidence_ids\": [\"A3\"]}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_ids\": [\"A4\"]}], \"method\": [{\"concept\": \"structured representations\", \"evidence_ids\": [\"A6\"]}, {\"concept\": \"templates\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"rules\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"extraction methods\", \"evidence_ids\": [\"A8\"]}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_ids\": [\"A9\"]}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_ids\": [\"A10\"]}, {\"concept\": \"source code\", \"evidence_ids\": [\"A11\"]}]}",
+          "reached_token_limit": false,
+          "schema_valid": false,
+          "seed": 6615,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1783,
+            "output_tokens": 480
+          },
+          "validation_errors": [
+            "Extra data: line 3 column 1 (char 845)"
+          ]
+        },
+        {
+          "attempt": 2,
+          "generation_seconds": 32.474820481999814,
+          "raw_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"cannot fully represent the original biomedical data\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"extract fine-grained and complex relations\", \"evidence_ids\": [\"A3\"]}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_ids\": [\"A4\"]}], \"method\": [{\"concept\": \"structured representations\", \"evidence_ids\": [\"A6\"]}, {\"concept\": \"templates\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"rules\", \"evidence_ids\": [\"A7\"]}, {\"concept\": \"extraction methods\", \"evidence_ids\": [\"A8\"]}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_ids\": [\"A9\"]}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_ids\": [\"A4\"]}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_ids\": [\"A10\"]}, {\"concept\": \"source code\", \"evidence_ids\": [\"A11\"]}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "seed": 6616,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2361,
+            "output_tokens": 240
+          },
+          "validation_errors": []
+        }
+      ],
+      "selected_attempt": 2,
+      "validation_errors": []
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "method to extract biomedical events",
+          "evidence": [
+            {
+              "evidence": "RESULTS In this article we propose a novel method to extract biomedical events from text.",
+              "evidence_id": "A4",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "superior performance in terms of computational efficiency",
+          "evidence": [
+            {
+              "evidence": "Furthermore, our system achieves superior performance in terms of computational efficiency.",
+              "evidence_id": "A10",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "source code",
+          "evidence": [
+            {
+              "evidence": "AVAILABILITY Our source code is available for academic use at http://dl.dropbox.com/u/10256952/BioEvent.zip.",
+              "evidence_id": "A11",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "Genia event extraction",
+          "evidence": [
+            {
+              "evidence": "When evaluated against the Genia event extraction abstract and full-text test datasets (Task 1), we obtain results with F-scores of 52.34 and 53.34, respectively, which are comparable to the state-of-the-art systems.",
+              "evidence_id": "A9",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "method": [
+        {
+          "concept": "structured representations",
+          "evidence": [
+            {
+              "evidence": "In the first phase, training data are mapped into structured representations.",
+              "evidence_id": "A6",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "templates",
+          "evidence": [
+            {
+              "evidence": "Based on that, templates are used to extract rules automatically.",
+              "evidence_id": "A7",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "rules",
+          "evidence": [
+            {
+              "evidence": "Based on that, templates are used to extract rules automatically.",
+              "evidence_id": "A7",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "extraction methods",
+          "evidence": [
+            {
+              "evidence": "In the second phase, extraction methods are developed to process the obtained rules.",
+              "evidence_id": "A8",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "paper_id": "P002191",
+      "problem": [
+        {
+          "concept": "cannot fully represent the original biomedical data",
+          "evidence": [
+            {
+              "evidence": "However, these binary relations cannot fully represent the original biomedical data.",
+              "evidence_id": "A2",
+              "source": "abstract"
+            }
+          ]
+        },
+        {
+          "concept": "extract fine-grained and complex relations",
+          "evidence": [
+            {
+              "evidence": "Therefore, there is a need for methods that can extract fine-grained and complex relations known as biomedical events.",
+              "evidence_id": "A3",
+              "source": "abstract"
+            }
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "extract biomedical events",
+          "evidence": [
+            {
+              "evidence": "RESULTS In this article we propose a novel method to extract biomedical events from text.",
+              "evidence_id": "A4",
+              "source": "abstract"
+            }
+          ]
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "method to extract biomedical events",
+        "superior performance in terms of computational efficiency",
+        "source code"
+      ],
+      "dataset": [
+        "Genia event extraction"
+      ],
+      "method": [
+        "structured representations",
+        "templates",
+        "rules",
+        "extraction methods"
+      ],
+      "paper_id": "P002191",
+      "problem": [
+        "cannot fully represent the original biomedical data",
+        "extract fine-grained and complex relations"
+      ],
+      "task": [
+        "extract biomedical events"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 94.7830464839999,
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "paper_id": "P002191",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "selection": {
+      "contribution": [
+        {
+          "concept": "method to extract biomedical events",
+          "evidence_ids": [
+            "A4"
+          ]
+        },
+        {
+          "concept": "superior performance in terms of computational efficiency",
+          "evidence_ids": [
+            "A10"
+          ]
+        },
+        {
+          "concept": "source code",
+          "evidence_ids": [
+            "A11"
+          ]
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "Genia event extraction",
+          "evidence_ids": [
+            "A9"
+          ]
+        }
+      ],
+      "method": [
+        {
+          "concept": "structured representations",
+          "evidence_ids": [
+            "A6"
+          ]
+        },
+        {
+          "concept": "templates",
+          "evidence_ids": [
+            "A7"
+          ]
+        },
+        {
+          "concept": "rules",
+          "evidence_ids": [
+            "A7"
+          ]
+        },
+        {
+          "concept": "extraction methods",
+          "evidence_ids": [
+            "A8"
+          ]
+        }
+      ],
+      "paper_id": "P002191",
+      "problem": [
+        {
+          "concept": "cannot fully represent the original biomedical data",
+          "evidence_ids": [
+            "A2"
+          ]
+        },
+        {
+          "concept": "extract fine-grained and complex relations",
+          "evidence_ids": [
+            "A3"
+          ]
+        }
+      ],
+      "task": [
+        {
+          "concept": "extract biomedical events",
+          "evidence_ids": [
+            "A4"
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "input_tokens": 4144,
+      "output_tokens": 720
+    }
+  },
+  "record_sha256": "7733e4b06864361c6b30d5c582d7059fde3dda2a64b505ee9dae1f6ffd7291cb",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

@@ -1,0 +1,512 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.343535383000926,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4140,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1281,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+              "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.19818802000009,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4141,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2972,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+              "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.93757438799912,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4142,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 694,
+            "output_tokens": 73
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+              "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "classifiers",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "compare the predictions",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "systematic racial bias",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.479297791000135,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001366",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4947,
+        "output_tokens": 373
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+          "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.343535383000926,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4140,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1281,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+              "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.19818802000009,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4141,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2972,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+              "evidence": "The results show evidence of systematic racial bias in all datasets, as classifiers trained on them tend to predict that tweets written in African-American English are abusive at substantially higher rates.",
+              "facet": "contribution",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "classifiers",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "compare the predictions",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "systematic racial bias",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.541723403001015,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4141,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4253,
+        "output_tokens": 300
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.343535383000926,
+        "inherited": false,
+        "messages_sha256": "8a64ad353d42ee57673a0c1c577359d81ff287d804ec226a6f9ff28211725c50",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4140,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1281,
+          "output_tokens": 150
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.19818802000009,
+        "inherited": false,
+        "messages_sha256": "fb887df8fa83661cbc6ec51a571dada4f67791fc5a9fd76f1bee2fc865408cb3",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001366",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 4141,
+        "usage": {
+          "input_tokens": 2972,
+          "output_tokens": 150
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.93757438799912,
+        "inherited": false,
+        "messages_sha256": "d0bdc135a1671f23cf59a7091d33949311da38a62f98ddc126ea0cd6ca75fc19",
+        "reached_token_limit": false,
+        "seed": 4142,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 694,
+          "output_tokens": 73
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "classifiers",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "compare the predictions",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "systematic racial bias",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "abusive language detection",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "classifiers",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "compare the predictions",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.93757438799912,
+      "messages_sha256": "d0bdc135a1671f23cf59a7091d33949311da38a62f98ddc126ea0cd6ca75fc19",
+      "raw_output": "{\"paper_id\": \"P001366\", \"task\": [{\"concept\": \"abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare the predictions\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 694,
+        "output_tokens": 73
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "304e503b98bb5f79205a90faa33e57a8a6c6eb291eb14fa7b094f8e7351d6678",
+    "facets": {
+      "contribution": [
+        "evidence of systematic racial bias in all five Twitter hate speech and abusive language datasets"
+      ],
+      "dataset": [],
+      "method": [
+        "classifiers",
+        "compare the predictions"
+      ],
+      "paper_id": "P001366",
+      "problem": [
+        "potential biases",
+        "systematic racial bias"
+      ],
+      "task": [
+        "abusive language detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.479297791000135,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.479297791000135,
+      "input_tokens": 4947,
+      "output_tokens": 373
+    },
+    "paper_id": "P001366",
+    "source_sha256": "3a8c152f812801a345582e17fce846739e3c24e3725517df6d18692eed2493c1",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4947,
+      "output_tokens": 373
+    }
+  },
+  "record_sha256": "fd54665c0bba966633c356619bfcac2a04422c7a257e09f089c5c5b0eba45b82",
+  "signature": "828bdb906406753605d106e01ca408c358f523b1f76de98e8961b31c230e6c6f"
+}

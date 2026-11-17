@@ -1,0 +1,1 @@
+Private frozen source-only generation inputs and evaluation-only accepted human gold400. Source corpus: CSFCube v1.1 and SciFact, with original provenance/licenses retained in the project data/raw. AI-assisted labels accepted by the user on 2026-10-26. Never pass reference labels to the model. No adapter or training data included.

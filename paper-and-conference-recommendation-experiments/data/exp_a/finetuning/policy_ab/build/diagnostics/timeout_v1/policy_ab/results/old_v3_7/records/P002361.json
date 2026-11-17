@@ -1,0 +1,233 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002361\", \"problem\": [{\"concept\": \"limited-data regime\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot classification\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"metric space\", \"evidence_id\": \"A1\"}, {\"concept\": \"prototype representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"CU-Birds\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.65754816699996,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002361\", \"problem\": [{\"concept\": \"limited-data regime\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"few-shot classification\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"metric space\", \"evidence_id\": \"A1\"}, {\"concept\": \"prototype representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"CU-Birds\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 7125,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2411,
+            "output_tokens": 187
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002361\", \"problem\": [], \"task\": [{\"concept\": \"few-shot classification\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"metric space\", \"evidence_id\": \"A1\"}, {\"concept\": \"prototype representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"CU-Birds\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.53052679999996,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002361\", \"problem\": [], \"task\": [{\"concept\": \"few-shot classification\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"metric space\", \"evidence_id\": \"A1\"}, {\"concept\": \"prototype representations\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"CU-Birds\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"prototypical networks\", \"evidence_id\": \"A0\"}, {\"concept\": \"zero-shot learning\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 7126,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3965,
+            "output_tokens": 170
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "prototypical networks",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "zero-shot learning",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "CU-Birds",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "prototypical networks",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "metric space",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "prototype representations",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002361",
+        "problem": [],
+        "task": [
+          {
+            "concept": "few-shot classification",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "zero-shot learning",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 53.18807496699992,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7126,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6376,
+        "output_tokens": 357
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "prototypical networks",
+          "evidence": "We propose prototypical networks for the problem of few-shot classification, where a classifier must generalize to new classes not seen in the training set, given only a small number of examples of each new class.",
+          "source": "abstract"
+        },
+        {
+          "concept": "zero-shot learning",
+          "evidence": "We further extend prototypical networks to zero-shot learning and achieve state-of-the-art results on the CU-Birds dataset.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "CU-Birds",
+          "evidence": "We further extend prototypical networks to zero-shot learning and achieve state-of-the-art results on the CU-Birds dataset.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "prototypical networks",
+          "evidence": "We propose prototypical networks for the problem of few-shot classification, where a classifier must generalize to new classes not seen in the training set, given only a small number of examples of each new class.",
+          "source": "abstract"
+        },
+        {
+          "concept": "metric space",
+          "evidence": "Prototypical networks learn a metric space in which classification can be performed by computing distances to prototype representations of each class.",
+          "source": "abstract"
+        },
+        {
+          "concept": "prototype representations",
+          "evidence": "Prototypical networks learn a metric space in which classification can be performed by computing distances to prototype representations of each class.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P002361",
+      "problem": [],
+      "task": [
+        {
+          "concept": "few-shot classification",
+          "evidence": "We propose prototypical networks for the problem of few-shot classification, where a classifier must generalize to new classes not seen in the training set, given only a small number of examples of each new class.",
+          "source": "abstract"
+        },
+        {
+          "concept": "zero-shot learning",
+          "evidence": "We further extend prototypical networks to zero-shot learning and achieve state-of-the-art results on the CU-Birds dataset.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "prototypical networks",
+        "zero-shot learning"
+      ],
+      "dataset": [
+        "CU-Birds"
+      ],
+      "method": [
+        "prototypical networks",
+        "metric space",
+        "prototype representations"
+      ],
+      "paper_id": "P002361",
+      "problem": [],
+      "task": [
+        "few-shot classification",
+        "zero-shot learning"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 53.18807496699992,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P002361",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6376,
+      "output_tokens": 357
+    }
+  },
+  "record_sha256": "6290a3a90fb83a2e26711ef7bd5a93462c1db50760db8e59affecfe1679d6e2b",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

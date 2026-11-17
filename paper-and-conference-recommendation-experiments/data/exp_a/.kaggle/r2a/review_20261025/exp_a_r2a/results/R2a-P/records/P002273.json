@@ -1,0 +1,382 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002273\",\n  \"problem\": [\n    {\n      \"concept\": \"loss of phoneme contrasts over the course of language change\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"predict patterns of contrast loss within a diverse set of languages\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"measure of functional load\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"syntactic category and frequency relationships\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"a simple measure of functional load predicts patterns of contrast loss\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"lemma rather than surface-form count of minimal pairs is more predictive of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"properties of individual utterances influence long-term language change\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 29.742568442999982,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P002273\",\n  \"problem\": [\n    {\n      \"concept\": \"loss of phoneme contrasts over the course of language change\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"predict patterns of contrast loss within a diverse set of languages\",\n      \"evidence_id\": \"A3\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"measure of functional load\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"syntactic category and frequency relationships\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"a simple measure of functional load predicts patterns of contrast loss\",\n      \"evidence_id\": \"A3\"\n    },\n    {\n      \"concept\": \"lemma rather than surface-form count of minimal pairs is more predictive of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"properties of individual utterances influence long-term language change\",\n      \"evidence_id\": \"A6\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 66.9231,
+          "seed": 6861,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2576,
+            "output_tokens": 357
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"loss of phoneme contrasts over the course of language change\"; evidence_id=\"A1\"; evidence=\"Despite their central role in communication, these \\\"phoneme\\\" contrasts can be lost over the course of language change.\"",
+            "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"measure of functional load\"; evidence_id=\"A2\"; evidence=\"The century-old functional load hypothesis proposes that loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words.\"",
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"syntactic category and frequency relationships\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002273\", \"problem\": [{\"concept\": \"these \\\"phoneme\\\" contrasts can be lost over the course of language change\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"predict patterns of contrast loss within a diverse set of languages\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words\", \"evidence_id\": \"A2\"}, {\"concept\": \"count of minimal lemma pairs\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a simple measure of functional load predicts patterns of contrast loss\", \"evidence_id\": \"A3\"}, {\"concept\": \"lemma rather than surface-form count of minimal pairs is more predictive of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"properties of individual utterances influence long-term language change\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 16.01819031299999,
+          "operations": [
+            {
+              "before": {
+                "concept": "measure of functional load",
+                "evidence_id": "A2"
+              },
+              "concept": "loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words",
+              "evidence_id": "A2",
+              "facet": "method",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "syntactic category and frequency relationships",
+                "evidence_id": "A5"
+              },
+              "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            },
+            {
+              "before": {
+                "concept": "loss of phoneme contrasts over the course of language change",
+                "evidence_id": "A1"
+              },
+              "concept": "these \"phoneme\" contrasts can be lost over the course of language change",
+              "evidence_id": "A1",
+              "facet": "problem",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002273\",\"edits\":[{\"op\":\"replace\",\"facet\":\"method\",\"index\":0,\"concept\":\"loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words\",\"evidence_id\":\"A2\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"method\",\"index\":2,\"concept\":\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"},{\"op\":\"replace\",\"facet\":\"problem\",\"index\":0,\"concept\":\"these \\\"phoneme\\\" contrasts can be lost over the course of language change\",\"evidence_id\":\"A1\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 84.9231,
+          "seed": 6862,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3166,
+            "output_tokens": 153
+          },
+          "validation_errors": [
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002273\", \"problem\": [{\"concept\": \"these \\\"phoneme\\\" contrasts can be lost over the course of language change\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"predict patterns of contrast loss within a diverse set of languages\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words\", \"evidence_id\": \"A2\"}, {\"concept\": \"count of minimal lemma pairs\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"a simple measure of functional load predicts patterns of contrast loss\", \"evidence_id\": \"A3\"}, {\"concept\": \"lemma rather than surface-form count of minimal pairs is more predictive of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger\", \"evidence_id\": \"A5\"}, {\"concept\": \"properties of individual utterances influence long-term language change\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 8.238117009000007,
+          "operations": [
+            {
+              "before": {
+                "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+                "evidence_id": "A5"
+              },
+              "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+              "evidence_id": "A5",
+              "facet": "method",
+              "index": 2,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P002273\",\"edits\":[{\"op\":\"replace\",\"facet\":\"method\",\"index\":2,\"concept\":\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\",\"evidence_id\":\"A5\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 84.9231,
+          "seed": 6863,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3000,
+            "output_tokens": 62
+          },
+          "validation_errors": [
+            "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "a simple measure of functional load predicts patterns of contrast loss",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "lemma rather than surface-form count of minimal pairs is more predictive of merger",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "properties of individual utterances influence long-term language change",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "count of minimal lemma pairs",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P002273",
+        "problem": [
+          {
+            "concept": "these \"phoneme\" contrasts can be lost over the course of language change",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "predict patterns of contrast loss within a diverse set of languages",
+            "evidence_id": "A3"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 53.99887576499998,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P002273",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 6863,
+      "selected_score": 84.9231,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 8742,
+        "output_tokens": 572
+      },
+      "validation_errors": [
+        "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "baseline_record_sha256": "a031941839c46be124b69afcfbd0d77602d1e904b537eba1bdabe0a439acdf28",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 6861
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "4561b0e1de853a4cc9b31e27596cb49646b3063474268711c49d54dacd8a533b",
+        "operations": [
+          {
+            "before": {
+              "concept": "measure of functional load",
+              "evidence_id": "A2"
+            },
+            "concept": "loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words",
+            "evidence_id": "A2",
+            "facet": "method",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "syntactic category and frequency relationships",
+              "evidence_id": "A5"
+            },
+            "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          },
+          {
+            "before": {
+              "concept": "loss of phoneme contrasts over the course of language change",
+              "evidence_id": "A1"
+            },
+            "concept": "these \"phoneme\" contrasts can be lost over the course of language change",
+            "evidence_id": "A1",
+            "facet": "problem",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 6862
+      },
+      {
+        "attempt": 3,
+        "inherited": false,
+        "messages_sha256": "0fcb448fa36718578814673300dbe26ab0d12e1a47dd588d1972ccb522dea42d",
+        "operations": [
+          {
+            "before": {
+              "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+              "evidence_id": "A5"
+            },
+            "concept": "count of minimal lemma pairs that share a syntactic category and have members of similar frequency",
+            "evidence_id": "A5",
+            "facet": "method",
+            "index": 2,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 6863
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\""
+        ],
+        "valid": false
+      },
+      "scoped": {
+        "errors": [
+          "method[2]: concept must use source words in their original order; no invented synonyms; concept=\"count of minimal lemma pairs that share a syntactic category and have members of similar frequency\"; evidence_id=\"A5\"; evidence=\"We present evidence that (a) the lemma rather than surface-form count of minimal pairs is more predictive of merger; (b) the count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger than the count of those with divergent syntactic categories, and (c) that the count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger than that of those with more divergent frequencies.\""
+        ],
+        "valid": false
+      }
+    },
+    "draft_items_removed_or_reworded": 3,
+    "facets": {
+      "contribution": [
+        "a simple measure of functional load predicts patterns of contrast loss",
+        "lemma rather than surface-form count of minimal pairs is more predictive of merger",
+        "count of minimal lemma pairs that share a syntactic category is a stronger predictor of merger",
+        "count of minimal lemma pairs with members of similar frequency is a stronger predictor of merger",
+        "properties of individual utterances influence long-term language change"
+      ],
+      "dataset": [],
+      "method": [
+        "loss of a phoneme contrast will be inhibited in relation to the work that it does in distinguishing words",
+        "count of minimal lemma pairs",
+        "count of minimal lemma pairs that share a syntactic category and have members of similar frequency"
+      ],
+      "paper_id": "P002273",
+      "problem": [
+        "these \"phoneme\" contrasts can be lost over the course of language change"
+      ],
+      "task": [
+        "predict patterns of contrast loss within a diverse set of languages"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 53.99887576499998,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 24.256307321999998,
+      "input_tokens": 6166,
+      "output_tokens": 215
+    },
+    "paper_id": "P002273",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": true,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1,
+        2
+      ],
+      "problem": [
+        0
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 8742,
+      "output_tokens": 572
+    }
+  },
+  "record_sha256": "d29bc4d6f8106e0ffcba87b68be41aa421881ec5766657f9cf13d0f363b7c1af",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

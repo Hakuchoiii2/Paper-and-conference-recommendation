@@ -1,0 +1,471 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.466547320000245,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1539,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1442,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 37.65095490699969,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1540,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3245,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 14.062122050003381,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000499\", \"task\": [], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"compare with and outperform several state-of-the-art baselines\", \"evidence_id\": \"A10\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1541,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 887,
+            "output_tokens": 73
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "non-negative matrix factorization (NMF) based model",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "using the social context information is most useful when faced with topics that are particularly difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "non-negative matrix factorization",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "incorporates both the textual information and social context information",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "compare with and outperform several state-of-the-art baselines",
+            "evidence_id": "A10"
+          }
+        ],
+        "paper_id": "P000499",
+        "problem": [
+          {
+            "concept": "difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Topic discovery and evolution",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 84.17962427700331,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000499",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5574,
+        "output_tokens": 427
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 1,
+          "generation_seconds": 32.466547320000245,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1539,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1442,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 37.65095490699969,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000499\", \"problem\": [{\"concept\": \"difficult to detect\", \"evidence_id\": \"A11\"}], \"task\": [{\"concept\": \"Topic discovery and evolution\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"incorporates both the textual information and social context information\", \"evidence_id\": \"A8\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"non-negative matrix factorization (NMF) based model\", \"evidence_id\": \"A8\"}, {\"concept\": \"using the social context information is most useful when faced with topics that are particularly difficult to detect\", \"evidence_id\": \"A11\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 1540,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3245,
+            "output_tokens": 177
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "non-negative matrix factorization (NMF) based model",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "using the social context information is most useful when faced with topics that are particularly difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "non-negative matrix factorization",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "incorporates both the textual information and social context information",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P000499",
+        "problem": [
+          {
+            "concept": "difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Topic discovery and evolution",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 70.11750222699993,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 1540,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4687,
+        "output_tokens": 354
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 32.466547320000245,
+        "inherited": false,
+        "messages_sha256": "9886aa941489b6c28a01273d38c9b847b9d888f9d9cb01dd64ccff3d3e5543cd",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 1539,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1442,
+          "output_tokens": 177
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 37.65095490699969,
+        "inherited": false,
+        "messages_sha256": "74ea84d34adff246d1dc90bdd08f04b403b25ead71fb3fcb94c0abc935d77f54",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000499",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11"
+          ]
+        },
+        "seed": 1540,
+        "usage": {
+          "input_tokens": 3245,
+          "output_tokens": 177
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 14.062122050003381,
+        "inherited": false,
+        "messages_sha256": "ff917e815b045e7456b2c433c19b9c5ed1f4bf311120584e3263cc2f58eaedc0",
+        "reached_token_limit": false,
+        "seed": 1541,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 887,
+          "output_tokens": 73
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "compare with and outperform several state-of-the-art baselines",
+            "evidence_id": "A10"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "non-negative matrix factorization (NMF) based model",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "using the social context information is most useful when faced with topics that are particularly difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "non-negative matrix factorization",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "incorporates both the textual information and social context information",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P000499",
+        "problem": [
+          {
+            "concept": "difficult to detect",
+            "evidence_id": "A11"
+          }
+        ],
+        "task": [
+          {
+            "concept": "Topic discovery and evolution",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "non-negative matrix factorization",
+            "evidence_id": "A8"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 14.062122050003381,
+      "messages_sha256": "ff917e815b045e7456b2c433c19b9c5ed1f4bf311120584e3263cc2f58eaedc0",
+      "raw_output": "{\"paper_id\": \"P000499\", \"task\": [], \"method\": [{\"concept\": \"non-negative matrix factorization\", \"evidence_id\": \"A8\"}, {\"concept\": \"compare with and outperform several state-of-the-art baselines\", \"evidence_id\": \"A10\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 887,
+        "output_tokens": 73
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "781881e09988c31e7697301f7b393c98e094ca933e7ec5fd20b3485a8010dd30",
+    "facets": {
+      "contribution": [
+        "non-negative matrix factorization (NMF) based model",
+        "using the social context information is most useful when faced with topics that are particularly difficult to detect"
+      ],
+      "dataset": [],
+      "method": [
+        "non-negative matrix factorization",
+        "incorporates both the textual information and social context information",
+        "compare with and outperform several state-of-the-art baselines"
+      ],
+      "paper_id": "P000499",
+      "problem": [
+        "difficult to detect"
+      ],
+      "task": [
+        "Topic discovery and evolution"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 84.17962427700331,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 84.17962427700331,
+      "input_tokens": 5574,
+      "output_tokens": 427
+    },
+    "paper_id": "P000499",
+    "source_sha256": "4e02d46e9a071e3c75a144d4264d2da63f0314f58f082518fb67837ccc1cf86b",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5574,
+      "output_tokens": 427
+    }
+  },
+  "record_sha256": "930dc72a84e4adbbf61dea4e1bdfd8dc61c34126d407096a19be4470ec0b818c",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

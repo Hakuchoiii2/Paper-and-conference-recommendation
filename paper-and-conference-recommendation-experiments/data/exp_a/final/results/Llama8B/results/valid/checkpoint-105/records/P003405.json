@@ -1,0 +1,576 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}, {\"concept\": \"random effects across multiple days\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.763347144000363,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}, {\"concept\": \"random effects across multiple days\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10257,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1417,
+            "output_tokens": 246
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+              "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.803145874999245,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10258,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3212,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+              "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.634073506998902,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003405\", \"task\": [{\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}, {\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10259,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 907,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+              "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Kmeans -- based representation learning achieves 97% classification accuracy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Kmeans",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "data augmentation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "feature extraction with multiple patch sizes",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "concatenating features",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003405",
+        "problem": [
+          {
+            "concept": "limited intra-as well as inter-class diversity",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "unsupervised feature learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "bio-detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 68.20056652599851,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P003405",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5536,
+        "output_tokens": 560
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+          "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}, {\"concept\": \"random effects across multiple days\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 28.763347144000363,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}, {\"concept\": \"random effects across multiple days\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10257,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1417,
+            "output_tokens": 246
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+              "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.803145874999245,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003405\", \"problem\": [{\"concept\": \"limited intra-as well as inter-class diversity\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"unsupervised feature learning\", \"evidence_id\": \"A0\"}, {\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}, {\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Kmeans -- based representation learning achieves 97% classification accuracy\", \"evidence_id\": \"A4\"}, {\"concept\": \"Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 10258,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3212,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+              "evidence": "This compares very favorably to 56% accuracy achieved by deep learning and 74% accuracy achieved by handcrafted features.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Kmeans -- based representation learning achieves 97% classification accuracy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Kmeans",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "data augmentation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "feature extraction with multiple patch sizes",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "concatenating features",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003405",
+        "problem": [
+          {
+            "concept": "limited intra-as well as inter-class diversity",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "unsupervised feature learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "bio-detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 55.56649301899961,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10258,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4629,
+        "output_tokens": 455
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 28.763347144000363,
+        "inherited": false,
+        "messages_sha256": "cb6da3bf7f4a8e376938d082723d2055fb75ba2e88f4c6c7275a7fdf1a78014e",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 10257,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1417,
+          "output_tokens": 246
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 26.803145874999245,
+        "inherited": false,
+        "messages_sha256": "b4e0859f1f7cede6d51b5aafcf0b97055bb72f64b377486210aa85e3d30275f6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003405",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 10258,
+        "usage": {
+          "input_tokens": 3212,
+          "output_tokens": 209
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.634073506998902,
+        "inherited": false,
+        "messages_sha256": "74ae5bc87d7e7349597dad71a6439e794fd1cc79d7a60944c9c6c4b584cafc0d",
+        "reached_token_limit": false,
+        "seed": 10259,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 907,
+          "output_tokens": 105
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Kmeans -- based representation learning achieves 97% classification accuracy",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Kmeans",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "data augmentation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "feature extraction with multiple patch sizes",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "concatenating features",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003405",
+        "problem": [
+          {
+            "concept": "limited intra-as well as inter-class diversity",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "unsupervised feature learning",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "bio-detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "bio-detection",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "data augmentation",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "feature extraction with multiple patch sizes",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "concatenating features",
+            "evidence_id": "A6"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 3,
+          "item": {
+            "concept": "Kmeans",
+            "evidence_id": "A0"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.634073506998902,
+      "messages_sha256": "74ae5bc87d7e7349597dad71a6439e794fd1cc79d7a60944c9c6c4b584cafc0d",
+      "raw_output": "{\"paper_id\": \"P003405\", \"task\": [{\"concept\": \"bio-detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"data augmentation\", \"evidence_id\": \"A1\"}, {\"concept\": \"feature extraction with multiple patch sizes\", \"evidence_id\": \"A1\"}, {\"concept\": \"concatenating features\", \"evidence_id\": \"A6\"}, {\"concept\": \"Kmeans\", \"evidence_id\": \"A0\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 907,
+        "output_tokens": 105
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "bbd94dabae252a639428f468963620d7dd8a4cce69460b46f4049d7738e28d49",
+    "facets": {
+      "contribution": [
+        "Kmeans -- based representation learning achieves 97% classification accuracy",
+        "Kmeans -- based representation learning significantly outperforms deep learning and handcrafted features on this small, low-diversity bio-detection dataset"
+      ],
+      "dataset": [],
+      "method": [
+        "Kmeans",
+        "data augmentation",
+        "feature extraction with multiple patch sizes",
+        "concatenating features"
+      ],
+      "paper_id": "P003405",
+      "problem": [
+        "limited intra-as well as inter-class diversity"
+      ],
+      "task": [
+        "unsupervised feature learning",
+        "bio-detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 68.20056652599851,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 68.20056652599851,
+      "input_tokens": 5536,
+      "output_tokens": 560
+    },
+    "paper_id": "P003405",
+    "source_sha256": "d4435f671e8e6af4f17e5d7db37188c552f17b0333ae4f8944a194c821f7d2d7",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5536,
+      "output_tokens": 560
+    }
+  },
+  "record_sha256": "2ed3e66e00c4a5b944087877d804e1edbbbcc069d73db61e623c52eed871ae81",
+  "signature": "0607e0b146eeed5d4d2fe44eb5bcde929d29cc9e051683e7318148f8ade02414"
+}

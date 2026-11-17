@@ -1,0 +1,49 @@
+{
+  "record": {
+    "arm": "base",
+    "decoder": "sampling",
+    "policy": "new_v2_2",
+    "paper_id": "P000962",
+    "seed": 2928,
+    "stage": "draft",
+    "status": "measured",
+    "runtime": {
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "gpu": "Tesla T4",
+      "adapter_enabled": false,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "use_cache": true
+    },
+    "probe_signature": "5ad1db912e956ceaab446bb5698401324f0d1d6c7cbda0f0c2d9b5decbfffb88",
+    "messages_sha256": "ce6c1254db82f619603cc1d96412bb4ba04e94e7842d4ac9f3bd1cb7c124f60c",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "raw_output": "{\n  \"paper_id\": \"P000962\",\n  \"problem\": [\n    {\n      \"concept\": \"Privacy-sensitive and large-scale data distribution challenges\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Developing a decentralized learning framework for mobile devices\",\n      \"evidence_ids\": [\"A3\", \"A4\", \"A5\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Federated Learning with iterative model averaging\",\n      \"evidence_ids\": [\"A4\", \"A5\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Five different model architectures and four datasets\",\n      \"evidence_ids\": [\"A5\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"A practical method for federated learning of deep networks\",\n      \"evidence_ids\": [\"A5\"]\n    },\n    {\n      \"concept\": \"Empirical evaluation showing robustness to non-IID data distributions\",\n      \"evidence_ids\": [\"A6\"]\n    },\n    {\n      \"concept\": \"Reduction in communication costs by 10-100x compared to synchronized stochastic gradient descent\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ]\n}",
+    "schema_valid": true,
+    "validation_errors": [
+      "problem[0]: Concept must use selected source words in source order",
+      "task[0]: Concept must use selected source words in source order",
+      "method[0]: Concept must use selected source words in source order",
+      "contribution[1]: Concept must use selected source words in source order",
+      "contribution[2]: Concept must use selected source words in source order"
+    ],
+    "usage": {
+      "input_tokens": 1733,
+      "output_tokens": 278
+    },
+    "generation_seconds": 21.930582,
+    "stop_reason": "json_complete",
+    "reached_token_limit": false,
+    "bounded_stop": false,
+    "duplicate": null,
+    "raw_output_untrimmed": "{\n  \"paper_id\": \"P000962\",\n  \"problem\": [\n    {\n      \"concept\": \"Privacy-sensitive and large-scale data distribution challenges\",\n      \"evidence_ids\": [\"A2\"]\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"Developing a decentralized learning framework for mobile devices\",\n      \"evidence_ids\": [\"A3\", \"A4\", \"A5\"]\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Federated Learning with iterative model averaging\",\n      \"evidence_ids\": [\"A4\", \"A5\"]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Five different model architectures and four datasets\",\n      \"evidence_ids\": [\"A5\"]\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"A practical method for federated learning of deep networks\",\n      \"evidence_ids\": [\"A5\"]\n    },\n    {\n      \"concept\": \"Empirical evaluation showing robustness to non-IID data distributions\",\n      \"evidence_ids\": [\"A6\"]\n    },\n    {\n      \"concept\": \"Reduction in communication costs by 10-100x compared to synchronized stochastic gradient descent\",\n      \"evidence_ids\": [\"A7\"]\n    }\n  ]\n}",
+    "discarded_suffix_chars": 0
+  },
+  "record_sha256": "adde8538f8a2d6e4f46733eb7efda9d1bc4efbdfe0318db36cd7fe23cc19d34c"
+}

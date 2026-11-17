@@ -1,0 +1,476 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.733854818005057,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1440,
+            "output_tokens": 173
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.67371997999726,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3225,
+            "output_tokens": 173
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.072326746994804,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"task\": [], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7913,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 881,
+            "output_tokens": 56
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions (n = 65)",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "imprecise measurement",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "conceptual inconsistency",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess momentary distinct emotions",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 79.47990154499712,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P002623",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5546,
+        "output_tokens": 402
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.733854818005057,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7911,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1440,
+            "output_tokens": 173
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 36.67371997999726,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002623\", \"problem\": [{\"concept\": \"imprecise measurement\", \"evidence_id\": \"T0\"}, {\"concept\": \"conceptual inconsistency\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"assess momentary distinct emotions\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"researchers assess many purportedly distinct emotions (n = 65)\", \"evidence_id\": \"A4\"}, {\"concept\": \"majority of scales used include only a single item\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 7912,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3225,
+            "output_tokens": 173
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions (n = 65)",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "imprecise measurement",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "conceptual inconsistency",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess momentary distinct emotions",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 68.40757479800232,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7912,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4665,
+        "output_tokens": 346
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 31.733854818005057,
+        "inherited": false,
+        "messages_sha256": "68cee4d5a266dcd603a1086033b2bcbc678548dabb4c0a642a3adcd24d627404",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 7911,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1440,
+          "output_tokens": 173
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 36.67371997999726,
+        "inherited": false,
+        "messages_sha256": "c49fac5aadec4bdf09212ac80aee4a102b6f6a5bab819b580b4786667a8021d4",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002623",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 7912,
+        "usage": {
+          "input_tokens": 3225,
+          "output_tokens": 173
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.072326746994804,
+        "inherited": false,
+        "messages_sha256": "a44ad9ab1ecf2664eaf81a7798cbaaf3630debd4828d6b70a805450fea11729e",
+        "reached_token_limit": false,
+        "seed": 7913,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 881,
+          "output_tokens": 56
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "researchers assess many purportedly distinct emotions (n = 65)",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "majority of scales used include only a single item",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "coding",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P002623",
+        "problem": [
+          {
+            "concept": "imprecise measurement",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "conceptual inconsistency",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "assess momentary distinct emotions",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "coding",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "quantitative review",
+            "evidence_id": "A3"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.072326746994804,
+      "messages_sha256": "a44ad9ab1ecf2664eaf81a7798cbaaf3630debd4828d6b70a805450fea11729e",
+      "raw_output": "{\"paper_id\": \"P002623\", \"task\": [], \"method\": [{\"concept\": \"coding\", \"evidence_id\": \"A2\"}, {\"concept\": \"quantitative review\", \"evidence_id\": \"A3\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 881,
+        "output_tokens": 56
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "800fd6aec191ae6fcdf5b1de2b85db329c5b9365b6059dd6c86a8b2d6064dd5a",
+    "facets": {
+      "contribution": [
+        "researchers assess many purportedly distinct emotions (n = 65)",
+        "majority of scales used include only a single item"
+      ],
+      "dataset": [],
+      "method": [
+        "coding",
+        "quantitative review"
+      ],
+      "paper_id": "P002623",
+      "problem": [
+        "imprecise measurement",
+        "conceptual inconsistency"
+      ],
+      "task": [
+        "assess momentary distinct emotions"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 79.47990154499712,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 79.47990154499712,
+      "input_tokens": 5546,
+      "output_tokens": 402
+    },
+    "paper_id": "P002623",
+    "source_sha256": "fd5b3e675c4269dd5ba1e3e7c84e56b444c47458fe45b0a119fb34a0792295a5",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5546,
+      "output_tokens": 402
+    }
+  },
+  "record_sha256": "e3d61dd397cff4aa62fb11a606145542f7066235ff0b8c2f12339704c40146b6",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

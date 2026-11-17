@@ -1,0 +1,220 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001636\", \"problem\": [], \"task\": [{\"concept\": \"analyze the structure of attention\", \"evidence_id\": \"A1\"}, {\"concept\": \"extract exemplar sentences\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"visualize attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"analyze the interaction between attention and syntax\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"attention targets different parts of speech at different layer depths\", \"evidence_id\": \"A3\"}, {\"concept\": \"attention aligns with dependency relations most strongly in the middle layers\", \"evidence_id\": \"A3\"}, {\"concept\": \"deepest layers of the model capture the most distant relationships\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.324002549999932,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001636\", \"problem\": [], \"task\": [{\"concept\": \"analyze the structure of attention\", \"evidence_id\": \"A1\"}, {\"concept\": \"extract exemplar sentences\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"visualize attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"analyze the interaction between attention and syntax\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"attention targets different parts of speech at different layer depths\", \"evidence_id\": \"A3\"}, {\"concept\": \"attention aligns with dependency relations most strongly in the middle layers\", \"evidence_id\": \"A3\"}, {\"concept\": \"deepest layers of the model capture the most distant relationships\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 4950,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2413,
+            "output_tokens": 185
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001636\", \"problem\": [], \"task\": [{\"concept\": \"analyze the structure of attention\", \"evidence_id\": \"A1\"}, {\"concept\": \"extract exemplar sentences\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"visualize attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"analyze the interaction between attention and syntax\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"attention targets different parts of speech at different layer depths\", \"evidence_id\": \"A3\"}, {\"concept\": \"attention aligns with dependency relations most strongly in the middle layers\", \"evidence_id\": \"A3\"}, {\"concept\": \"deepest layers of the model capture the most distant relationships\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 28.101628842000082,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001636\", \"problem\": [], \"task\": [{\"concept\": \"analyze the structure of attention\", \"evidence_id\": \"A1\"}, {\"concept\": \"extract exemplar sentences\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"visualize attention\", \"evidence_id\": \"A2\"}, {\"concept\": \"analyze the interaction between attention and syntax\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"attention targets different parts of speech at different layer depths\", \"evidence_id\": \"A3\"}, {\"concept\": \"attention aligns with dependency relations most strongly in the middle layers\", \"evidence_id\": \"A3\"}, {\"concept\": \"deepest layers of the model capture the most distant relationships\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 4951,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3977,
+            "output_tokens": 185
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "attention targets different parts of speech at different layer depths",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "attention aligns with dependency relations most strongly in the middle layers",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "deepest layers of the model capture the most distant relationships",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "visualize attention",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "analyze the interaction between attention and syntax",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001636",
+        "problem": [],
+        "task": [
+          {
+            "concept": "analyze the structure of attention",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "extract exemplar sentences",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 54.425631392000014,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4951,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6390,
+        "output_tokens": 370
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "attention targets different parts of speech at different layer depths",
+          "evidence": "We find that attention targets different parts of speech at different layer depths within the model, and that attention aligns with dependency relations most strongly in the middle layers.",
+          "source": "abstract"
+        },
+        {
+          "concept": "attention aligns with dependency relations most strongly in the middle layers",
+          "evidence": "We find that attention targets different parts of speech at different layer depths within the model, and that attention aligns with dependency relations most strongly in the middle layers.",
+          "source": "abstract"
+        },
+        {
+          "concept": "deepest layers of the model capture the most distant relationships",
+          "evidence": "We also find that the deepest layers of the model capture the most distant relationships.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "visualize attention",
+          "evidence": "We visualize attention for individual instances and analyze the interaction between attention and syntax over a large corpus.",
+          "source": "abstract"
+        },
+        {
+          "concept": "analyze the interaction between attention and syntax",
+          "evidence": "We visualize attention for individual instances and analyze the interaction between attention and syntax over a large corpus.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001636",
+      "problem": [],
+      "task": [
+        {
+          "concept": "analyze the structure of attention",
+          "evidence": "In this paper, we analyze the structure of attention in a Transformer language model, the GPT-2 small pretrained model.",
+          "source": "abstract"
+        },
+        {
+          "concept": "extract exemplar sentences",
+          "evidence": "Finally, we extract exemplar sentences that reveal highly specific patterns targeted by particular attention heads.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "attention targets different parts of speech at different layer depths",
+        "attention aligns with dependency relations most strongly in the middle layers",
+        "deepest layers of the model capture the most distant relationships"
+      ],
+      "dataset": [],
+      "method": [
+        "visualize attention",
+        "analyze the interaction between attention and syntax"
+      ],
+      "paper_id": "P001636",
+      "problem": [],
+      "task": [
+        "analyze the structure of attention",
+        "extract exemplar sentences"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 54.425631392000014,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001636",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6390,
+      "output_tokens": 370
+    }
+  },
+  "record_sha256": "48904398a38a57d97959fa938a4b322189e5dcc010b61755d5dc5b2a45c5bb2c",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

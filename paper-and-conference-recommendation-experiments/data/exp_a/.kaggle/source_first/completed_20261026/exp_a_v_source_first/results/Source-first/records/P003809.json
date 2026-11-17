@@ -1,0 +1,237 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 18.112317556000107,
+          "messages_sha256": "0c1af8564efc39522627fe8f39b85bab2dd3b7b7266a47c0514e496c6c371756",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003809\", \"problem\": [{\"concept\": \"local minimum problem with progressive alignment\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"test iteration strategies on alignment test cases\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"iteration strategies\", \"evidence_id\": \"A2\"}, {\"concept\": \"progressive alignment scheme\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"alignment test cases\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"iteration improves accuracy of alignments\", \"evidence_id\": \"A4\"}, {\"concept\": \"iteration improves ClustalW accuracy by over 6%\", \"evidence_id\": \"A5\"}, {\"concept\": \"iteration reduces complexity of T-Coffee without losing accuracy\", \"evidence_id\": \"A9\"}, {\"concept\": \"iteration can be used to improve subalignments in progressive alignment\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 74.3704,
+          "seed": 11471,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2440,
+            "output_tokens": 221
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"iteration improves accuracy of alignments\"; evidence_id=\"A4\"; evidence=\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"iteration improves ClustalW accuracy by over 6%\"; evidence_id=\"A5\"; evidence=\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"iteration reduces complexity of T-Coffee without losing accuracy\"; evidence_id=\"A9\"; evidence=\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\"",
+            "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"iteration can be used to improve subalignments in progressive alignment\"; evidence_id=\"A7\"; evidence=\"Here, iteration was used to improve subalignments at each step of progressive alignment.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "iteration improves accuracy of alignments",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "iteration improves ClustalW accuracy by over 6%",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "iteration reduces complexity of T-Coffee without losing accuracy",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "iteration can be used to improve subalignments in progressive alignment",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "alignment test cases",
+            "evidence_id": "A2"
+          }
+        ],
+        "method": [
+          {
+            "concept": "iteration strategies",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "progressive alignment scheme",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003809",
+        "problem": [
+          {
+            "concept": "local minimum problem with progressive alignment",
+            "evidence_id": "A8"
+          }
+        ],
+        "task": [
+          {
+            "concept": "test iteration strategies on alignment test cases",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 92.18503377999969,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003809",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "alignment test cases",
+            "evidence": "In this paper, we systematically test several different iteration strategies by comparing the results on sets of alignment test cases.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 74.3704,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3947,
+        "output_tokens": 1227
+      },
+      "validation_errors": [
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"iteration improves accuracy of alignments\"; evidence_id=\"A4\"; evidence=\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"iteration improves ClustalW accuracy by over 6%\"; evidence_id=\"A5\"; evidence=\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"iteration reduces complexity of T-Coffee without losing accuracy\"; evidence_id=\"A9\"; evidence=\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\"",
+        "contribution[3]: concept must use source words in their original order; no invented synonyms; concept=\"iteration can be used to improve subalignments in progressive alignment\"; evidence_id=\"A7\"; evidence=\"Here, iteration was used to improve subalignments at each step of progressive alignment.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 37.004148904999965,
+        "messages_sha256": "43b0981d2a40d5d6f88dff03494dcb3ed20189fd60660e3b262b654560ba9e2d",
+        "raw_output": "{\"paper_id\":\"P003809\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Iteration has been used a number of times as an optimization method to produce multiple alignments, either alone or in combination with other methods.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Iteration has a great advantage in that it is often very simple both in terms of coding the algorithms and the complexity of the time and memory requirements.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we systematically test several different iteration strategies by comparing the results on sets of alignment test cases.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"RESULTS We tested three schemes where iteration is used to improve an existing alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Iteration was found to be even more powerful when it was directly incorporated into a progressive alignment scheme.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Here, iteration was used to improve subalignments at each step of progressive alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"The beneficial effects of iteration come, in part, from the ability to get round the usual local minimum problem with progressive alignment.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Alignments can be generated, using T-Coffee, to align subgroups of sequences, which can then be iteratively improved and merged.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"AVAILABILITY All of the scripts are freely available on the web at http://www.bioinf.ucd.ie/people/iain/iteration.html\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11469,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 743,
+          "output_tokens": 503
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 37.06856731899961,
+        "messages_sha256": "043eb5f41d02b93b28ace5c4bdb5f093645a05a90fc2af5c25899f5f4cacc849",
+        "raw_output": "{\"paper_id\":\"P003809\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Iteration has been used a number of times as an optimization method to produce multiple alignments, either alone or in combination with other methods.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Iteration has a great advantage in that it is often very simple both in terms of coding the algorithms and the complexity of the time and memory requirements.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we systematically test several different iteration strategies by comparing the results on sets of alignment test cases.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"RESULTS We tested three schemes where iteration is used to improve an existing alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Iteration was found to be even more powerful when it was directly incorporated into a progressive alignment scheme.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Here, iteration was used to improve subalignments at each step of progressive alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"The beneficial effects of iteration come, in part, from the ability to get round the usual local minimum problem with progressive alignment.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Alignments can be generated, using T-Coffee, to align subgroups of sequences, which can then be iteratively improved and merged.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"AVAILABILITY All of the scripts are freely available on the web at http://www.bioinf.ucd.ie/people/iain/iteration.html\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11470,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 764,
+          "output_tokens": 503
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.112317556000107,
+        "messages_sha256": "0c1af8564efc39522627fe8f39b85bab2dd3b7b7266a47c0514e496c6c371756",
+        "raw_output": "{\"paper_id\": \"P003809\", \"problem\": [{\"concept\": \"local minimum problem with progressive alignment\", \"evidence_id\": \"A8\"}], \"task\": [{\"concept\": \"test iteration strategies on alignment test cases\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"iteration strategies\", \"evidence_id\": \"A2\"}, {\"concept\": \"progressive alignment scheme\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"alignment test cases\", \"evidence_id\": \"A2\"}], \"contribution\": [{\"concept\": \"iteration improves accuracy of alignments\", \"evidence_id\": \"A4\"}, {\"concept\": \"iteration improves ClustalW accuracy by over 6%\", \"evidence_id\": \"A5\"}, {\"concept\": \"iteration reduces complexity of T-Coffee without losing accuracy\", \"evidence_id\": \"A9\"}, {\"concept\": \"iteration can be used to improve subalignments in progressive alignment\", \"evidence_id\": \"A7\"}]}",
+        "reached_token_limit": false,
+        "seed": 11471,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2440,
+          "output_tokens": 221
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "iteration improves accuracy of alignments",
+        "iteration improves ClustalW accuracy by over 6%",
+        "iteration reduces complexity of T-Coffee without losing accuracy",
+        "iteration can be used to improve subalignments in progressive alignment"
+      ],
+      "dataset": [],
+      "method": [
+        "iteration strategies",
+        "progressive alignment scheme"
+      ],
+      "paper_id": "P003809",
+      "problem": [
+        "local minimum problem with progressive alignment"
+      ],
+      "task": [
+        "test iteration strategies on alignment test cases"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 92.18503377999969,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 37.004148904999965,
+        "messages_sha256": "43b0981d2a40d5d6f88dff03494dcb3ed20189fd60660e3b262b654560ba9e2d",
+        "raw_output": "{\"paper_id\":\"P003809\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Iteration has been used a number of times as an optimization method to produce multiple alignments, either alone or in combination with other methods.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Iteration has a great advantage in that it is often very simple both in terms of coding the algorithms and the complexity of the time and memory requirements.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we systematically test several different iteration strategies by comparing the results on sets of alignment test cases.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"RESULTS We tested three schemes where iteration is used to improve an existing alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Iteration was found to be even more powerful when it was directly incorporated into a progressive alignment scheme.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Here, iteration was used to improve subalignments at each step of progressive alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"The beneficial effects of iteration come, in part, from the ability to get round the usual local minimum problem with progressive alignment.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Alignments can be generated, using T-Coffee, to align subgroups of sequences, which can then be iteratively improved and merged.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"AVAILABILITY All of the scripts are freely available on the web at http://www.bioinf.ucd.ie/people/iain/iteration.html\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11469,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 743,
+          "output_tokens": 503
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 37.06856731899961,
+        "messages_sha256": "043eb5f41d02b93b28ace5c4bdb5f093645a05a90fc2af5c25899f5f4cacc849",
+        "raw_output": "{\"paper_id\":\"P003809\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Iteration has been used a number of times as an optimization method to produce multiple alignments, either alone or in combination with other methods.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Iteration has a great advantage in that it is often very simple both in terms of coding the algorithms and the complexity of the time and memory requirements.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"In this paper, we systematically test several different iteration strategies by comparing the results on sets of alignment test cases.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"RESULTS We tested three schemes where iteration is used to improve an existing alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"This was found to be remarkably effective and could induce a significant improvement in the accuracy of alignments from most packages.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"For example the average accuracy of ClustalW was improved by over 6% on the hardest test cases.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"Iteration was found to be even more powerful when it was directly incorporated into a progressive alignment scheme.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Here, iteration was used to improve subalignments at each step of progressive alignment.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"The beneficial effects of iteration come, in part, from the ability to get round the usual local minimum problem with progressive alignment.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"This ability can also be used to help reduce the complexity of T-Coffee, without losing accuracy.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Alignments can be generated, using T-Coffee, to align subgroups of sequences, which can then be iteratively improved and merged.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"AVAILABILITY All of the scripts are freely available on the web at http://www.bioinf.ucd.ie/people/iain/iteration.html\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 11470,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 764,
+          "output_tokens": 503
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 92.18503377999969,
+      "input_tokens": 3947,
+      "output_tokens": 1227
+    },
+    "paper_id": "P003809",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3947,
+      "output_tokens": 1227
+    }
+  },
+  "record_sha256": "3f321da804abb1c66be36d5a626ed5b650ef5d8ee3cc63ba9a8529feefabeda2",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

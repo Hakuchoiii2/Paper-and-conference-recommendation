@@ -1,0 +1,237 @@
+{
+  "record": {
+    "adapter_manifest_sha256": null,
+    "arm": "original",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002508\",\n  \"problem\": [\n    {\n      \"concept\": \"limited data for inducing task-based dialogue systems\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"insufficient robustness of existing models to dialogue transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from minimal data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Reinforcement Learning (RL)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Facebook AI bAbI dataset\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"bAbI+\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"model that processes 65% of bAbI+\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 32.94441691100292,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002508\",\n  \"problem\": [\n    {\n      \"concept\": \"limited data for inducing task-based dialogue systems\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"insufficient robustness of existing models to dialogue transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from minimal data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Reinforcement Learning (RL)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Facebook AI bAbI dataset\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"bAbI+\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"model that processes 65% of bAbI+\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 46.0,
+          "seed": 7566,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2551,
+            "output_tokens": 361
+          },
+          "validation_errors": [
+            "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"limited data for inducing task-based dialogue systems\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+            "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"insufficient robustness of existing models to dialogue transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\"",
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"inducing task-based dialogue systems from minimal data\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 74% of the bAbI dataset with only 0.13% of the data\"; evidence_id=\"A4\"; evidence=\"Our experiments show that our model can process 74% of the Facebook AI bAbI dataset even when trained on only 0.13% of the data (5 dialogues).\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 65% of bAbI+\"; evidence_id=\"A5\"; evidence=\"It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of poor robustness of MemN2N to bAbI+ transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002508\", \"problem\": [{\"concept\": \"inducing task-based dialogue systems from small amounts of unannotated dialogue data\", \"evidence_id\": \"A0\"}, {\"concept\": \"MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"inducing task-based dialogue systems from minimal data\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\", \"evidence_id\": \"A1\"}, {\"concept\": \"Reinforcement Learning (RL)\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Facebook AI bAbI dataset\", \"evidence_id\": \"A4\"}, {\"concept\": \"bAbI+\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\", \"evidence_id\": \"A4\"}, {\"concept\": \"model that processes 65% of bAbI+\", \"evidence_id\": \"A5\"}, {\"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 40.564697861998866,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002508\",\n  \"problem\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from small amounts of unannotated dialogue data\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from minimal data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Reinforcement Learning (RL)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Facebook AI bAbI dataset\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"bAbI+\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"model that processes 65% of bAbI+\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7567,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4743,
+            "output_tokens": 384
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"inducing task-based dialogue systems from minimal data\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 74% of the bAbI dataset with only 0.13% of the data\"; evidence_id=\"A4\"; evidence=\"Our experiments show that our model can process 74% of the Facebook AI bAbI dataset even when trained on only 0.13% of the data (5 dialogues).\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 65% of bAbI+\"; evidence_id=\"A5\"; evidence=\"It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of poor robustness of MemN2N to bAbI+ transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002508\", \"problem\": [{\"concept\": \"inducing task-based dialogue systems from small amounts of unannotated dialogue data\", \"evidence_id\": \"A0\"}, {\"concept\": \"MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"inducing task-based dialogue systems from minimal data\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\", \"evidence_id\": \"A1\"}, {\"concept\": \"Reinforcement Learning (RL)\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Facebook AI bAbI dataset\", \"evidence_id\": \"A4\"}, {\"concept\": \"bAbI+\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\", \"evidence_id\": \"A4\"}, {\"concept\": \"model that processes 65% of bAbI+\", \"evidence_id\": \"A5\"}, {\"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 3,
+          "generation_seconds": 39.549822393000795,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002508\",\n  \"problem\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from small amounts of unannotated dialogue data\",\n      \"evidence_id\": \"A0\"\n    },\n    {\n      \"concept\": \"MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset\",\n      \"evidence_id\": \"A7\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"inducing task-based dialogue systems from minimal data\",\n      \"evidence_id\": \"A0\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"Dynamic Syntax and Type Theory with Records (DS-TTR)\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"Reinforcement Learning (RL)\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"dataset\": [\n    {\n      \"concept\": \"Facebook AI bAbI dataset\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"bAbI+\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"contribution\": [\n    {\n      \"concept\": \"model that processes 74% of the bAbI dataset with only 0.13% of the data\",\n      \"evidence_id\": \"A4\"\n    },\n    {\n      \"concept\": \"model that processes 65% of bAbI+\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"demonstration of poor robustness of MemN2N to bAbI+ transformations\",\n      \"evidence_id\": \"A7\"\n    }\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7568,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4549,
+            "output_tokens": 384
+          },
+          "validation_errors": [
+            "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"inducing task-based dialogue systems from minimal data\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 74% of the bAbI dataset with only 0.13% of the data\"; evidence_id=\"A4\"; evidence=\"Our experiments show that our model can process 74% of the Facebook AI bAbI dataset even when trained on only 0.13% of the data (5 dialogues).\"",
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 65% of bAbI+\"; evidence_id=\"A5\"; evidence=\"It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.\"",
+            "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of poor robustness of MemN2N to bAbI+ transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "model that processes 74% of the bAbI dataset with only 0.13% of the data",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "model that processes 65% of bAbI+",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "demonstration of poor robustness of MemN2N to bAbI+ transformations",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Facebook AI bAbI dataset",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "bAbI+",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Dynamic Syntax and Type Theory with Records (DS-TTR)",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "Reinforcement Learning (RL)",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002508",
+        "problem": [
+          {
+            "concept": "inducing task-based dialogue systems from small amounts of unannotated dialogue data",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "inducing task-based dialogue systems from minimal data",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 113.05893716600258,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "bAbI+",
+            "evidence": "It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7568,
+      "selected_score": 64.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 11843,
+        "output_tokens": 1129
+      },
+      "validation_errors": [
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"inducing task-based dialogue systems from minimal data\"; evidence_id=\"A0\"; evidence=\"We investigate an end-to-end method for automatically inducing task-based dialogue systems from small amounts of unannotated dialogue data.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 74% of the bAbI dataset with only 0.13% of the data\"; evidence_id=\"A4\"; evidence=\"Our experiments show that our model can process 74% of the Facebook AI bAbI dataset even when trained on only 0.13% of the data (5 dialogues).\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"model that processes 65% of bAbI+\"; evidence_id=\"A5\"; evidence=\"It can in addition process 65% of bAbI+, a corpus we created by systematically adding incremental dialogue phenomena such as restarts and self-corrections to bAbI.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"demonstration of poor robustness of MemN2N to bAbI+ transformations\"; evidence_id=\"A7\"; evidence=\"We find that, in terms of semantic accuracy, MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset.\"",
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "facets": {
+      "contribution": [
+        "model that processes 74% of the bAbI dataset with only 0.13% of the data",
+        "model that processes 65% of bAbI+",
+        "demonstration of poor robustness of MemN2N to bAbI+ transformations"
+      ],
+      "dataset": [
+        "Facebook AI bAbI dataset"
+      ],
+      "method": [
+        "Dynamic Syntax and Type Theory with Records (DS-TTR)",
+        "Reinforcement Learning (RL)"
+      ],
+      "paper_id": "P002508",
+      "problem": [
+        "inducing task-based dialogue systems from small amounts of unannotated dialogue data",
+        "MemN2N shows very poor robustness to the bAbI+ transformations even when trained on the full bAbI dataset"
+      ],
+      "task": [
+        "inducing task-based dialogue systems from minimal data"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 113.05893716600258,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "paper_id": "P002508",
+    "usage": {
+      "input_tokens": 11843,
+      "output_tokens": 1129
+    }
+  },
+  "record_sha256": "1e89400faa68bf727fba02d3a69dd496641a5e4b99cf4c6078cfa8ec63f16d02",
+  "signature": "462c10dd432670fbf61accd8589bc79641d3d7794830a98fb7315fab741c244b"
+}

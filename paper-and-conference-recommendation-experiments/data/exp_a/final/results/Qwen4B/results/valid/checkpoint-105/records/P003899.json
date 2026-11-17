@@ -1,0 +1,505 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003899\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.88991949099909,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003899\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11739,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1492,
+            "output_tokens": 186
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P00399\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.06927121300032,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P00399\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": false,
+          "score": 90.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11740,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3263,
+            "output_tokens": 185
+          },
+          "validation_errors": [
+            "wrong paper_id; output uses the supplied paper_id"
+          ],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 15.008481376000418,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P003899\",\"task\":[{\"concept\":\"describing Data Driven Models of Neurons and Networks\",\"evidence_id\":\"T0\"},{\"concept\":\"develop an highly detailed cortical network model\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"XML\",\"evidence_id\":\"A2\"},{\"concept\":\"Open Source software approach\",\"evidence_id\":\"A2\"},{\"concept\":\"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\",\"evidence_id\":\"A6\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11741,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 941,
+            "output_tokens": 111
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "NeuroML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "XML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Open Source software approach",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P003899",
+        "problem": [
+          {
+            "concept": "specialized languages they employ are generally not interoperable",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "limits to model interoperability",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "describing Data Driven Models of Neurons and Networks",
+            "evidence_id": "T0"
+          },
+          {
+            "concept": "develop an highly detailed cortical network model",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 65.96767207999983,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P003899",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5696,
+        "output_tokens": 482
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 1,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003899\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.88991949099909,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003899\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11739,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1492,
+            "output_tokens": 186
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P00399\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 26.06927121300032,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P00399\", \"problem\": [{\"concept\": \"specialized languages they employ are generally not interoperable\", \"evidence_id\": \"A1\"}, {\"concept\": \"limits to model interoperability\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"describing Data Driven Models of Neurons and Networks\", \"evidence_id\": \"T0\"}], \"method\": [{\"concept\": \"XML\", \"evidence_id\": \"A2\"}, {\"concept\": \"Open Source software approach\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"NeuroML\", \"evidence_id\": \"A2\"}, {\"concept\": \"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": false,
+          "score": 90.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 11740,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3263,
+            "output_tokens": 185
+          },
+          "validation_errors": [
+            "wrong paper_id; output uses the supplied paper_id"
+          ],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "NeuroML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "XML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Open Source software approach",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003899",
+        "problem": [
+          {
+            "concept": "specialized languages they employ are generally not interoperable",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "limits to model interoperability",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "describing Data Driven Models of Neurons and Networks",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": true,
+      "generation_seconds": 50.95919070399941,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 11739,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4755,
+        "output_tokens": 371
+      },
+      "validation_errors": [
+        "No valid self-review within the attempt budget; best available output requires review"
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.88991949099909,
+        "inherited": false,
+        "messages_sha256": "84eeb9f9e97182d4b11177f786b4bbbdade6b0f710306ef309b8381a68a3a8fe",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 11739,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1492,
+          "output_tokens": 186
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 26.06927121300032,
+        "inherited": false,
+        "messages_sha256": "73ec3d8782a1befbec2b0fd2001c100d3461818f70143105046a25ae1c4d5be8",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003899",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 11740,
+        "usage": {
+          "input_tokens": 3263,
+          "output_tokens": 185
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 15.008481376000418,
+        "inherited": false,
+        "messages_sha256": "bec4f556b665d2dd42f257aee44cec51a8701c19145cec4a80fb6941de869fd2",
+        "reached_token_limit": false,
+        "seed": 11741,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 941,
+          "output_tokens": 111
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "develop an highly detailed cortical network model",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators",
+            "evidence_id": "A6"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "NeuroML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "XML",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Open Source software approach",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P003899",
+        "problem": [
+          {
+            "concept": "specialized languages they employ are generally not interoperable",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "limits to model interoperability",
+            "evidence_id": "A7"
+          }
+        ],
+        "task": [
+          {
+            "concept": "describing Data Driven Models of Neurons and Networks",
+            "evidence_id": "T0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "describing Data Driven Models of Neurons and Networks",
+            "evidence_id": "T0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "XML",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Open Source software approach",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 15.008481376000418,
+      "messages_sha256": "bec4f556b665d2dd42f257aee44cec51a8701c19145cec4a80fb6941de869fd2",
+      "raw_output": "{\"paper_id\":\"P003899\",\"task\":[{\"concept\":\"describing Data Driven Models of Neurons and Networks\",\"evidence_id\":\"T0\"},{\"concept\":\"develop an highly detailed cortical network model\",\"evidence_id\":\"A5\"}],\"method\":[{\"concept\":\"XML\",\"evidence_id\":\"A2\"},{\"concept\":\"Open Source software approach\",\"evidence_id\":\"A2\"},{\"concept\":\"NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators\",\"evidence_id\":\"A6\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 941,
+        "output_tokens": 111
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "46f0d7ca718a84537954987258a07ea111f977db4bcca69ec87ad92eede9517a",
+    "facets": {
+      "contribution": [
+        "NeuroML",
+        "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators"
+      ],
+      "dataset": [],
+      "method": [
+        "XML",
+        "Open Source software approach",
+        "NeuroML-based model descriptions were validated by demonstrating similar model behavior across five independently developed simulators"
+      ],
+      "paper_id": "P003899",
+      "problem": [
+        "specialized languages they employ are generally not interoperable",
+        "limits to model interoperability"
+      ],
+      "task": [
+        "describing Data Driven Models of Neurons and Networks",
+        "develop an highly detailed cortical network model"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 65.96767207999983,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 65.96767207999983,
+      "input_tokens": 5696,
+      "output_tokens": 482
+    },
+    "paper_id": "P003899",
+    "source_sha256": "d87352cfacce56d7706f63b167af5f97857cc51fba77da08c35eed32b914bf31",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5696,
+      "output_tokens": 482
+    }
+  },
+  "record_sha256": "67d68e4415cb090e84c622ff84bec9a0fe23b80b239118d9f0758cba4ccc136a",
+  "signature": "e4fd28a144a597acf96ed937f950fe55c1110e4522a85d3238f1853c8763d5c1"
+}

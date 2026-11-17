@@ -1,0 +1,515 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"not directly related\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.063913365998815,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"not directly related\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6231,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1373,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.411190806000377,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6232,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3119,
+            "output_tokens": 188
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 8.849543626000013,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"task\": [{\"concept\": \"extract relations\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6233,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 824,
+            "output_tokens": 70
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "31% error reduction",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times corpus",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "extract relations",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 57.324647797999205,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P002063",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5316,
+        "output_tokens": 463
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "ce45d1c6a313c466865b43c11588f4d74886b163265f471c23ba8c35bbb059d0",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"not directly related\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.063913365998815,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}, {\"concept\": \"not directly related\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6231,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1373,
+            "output_tokens": 205
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.411190806000377,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002063\", \"problem\": [{\"concept\": \"noisy patterns\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"relation extraction\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"New York Times corpus\", \"evidence_id\": \"A5\"}, {\"concept\": \"Freebase\", \"evidence_id\": \"A5\"}], \"contribution\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}, {\"concept\": \"31% error reduction\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6232,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3119,
+            "output_tokens": 188
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "31% error reduction",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times corpus",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 48.47510417199919,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6232,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4492,
+        "output_tokens": 393
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.063913365998815,
+        "inherited": false,
+        "messages_sha256": "75c689315a0a275e3fab7f68e86cb60e9ba889d51ec50ef452a33536be6219f9",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6231,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1373,
+          "output_tokens": 205
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 24.411190806000377,
+        "inherited": false,
+        "messages_sha256": "c5b8339a1218fead3b7dae6ec679c637c2b5d91fd899d1c067443b57159430aa",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002063",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "seed": 6232,
+        "usage": {
+          "input_tokens": 3119,
+          "output_tokens": 188
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 8.849543626000013,
+        "inherited": false,
+        "messages_sha256": "4f7e641b941f1cea86efbb022dab9d2431355bd45b42f991ff6d3e6ddff6cc67",
+        "reached_token_limit": false,
+        "seed": 6233,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 824,
+          "output_tokens": 70
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "extract relations",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "31% error reduction",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "New York Times corpus",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "Freebase",
+            "evidence_id": "A5"
+          }
+        ],
+        "method": [
+          {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002063",
+        "problem": [
+          {
+            "concept": "noisy patterns",
+            "evidence_id": "A3"
+          }
+        ],
+        "task": [
+          {
+            "concept": "relation extraction",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "factor graph",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "constraint-driven semi-supervision",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 8.849543626000013,
+      "messages_sha256": "4f7e641b941f1cea86efbb022dab9d2431355bd45b42f991ff6d3e6ddff6cc67",
+      "raw_output": "{\"paper_id\": \"P002063\", \"task\": [{\"concept\": \"extract relations\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"factor graph\", \"evidence_id\": \"A4\"}, {\"concept\": \"constraint-driven semi-supervision\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 824,
+        "output_tokens": 70
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "4f5bab888d225900c5cafd93009564c4032d3558cde2ab748c4e1beaafff6127",
+    "facets": {
+      "contribution": [
+        "factor graph",
+        "constraint-driven semi-supervision",
+        "31% error reduction"
+      ],
+      "dataset": [
+        "New York Times corpus",
+        "Freebase"
+      ],
+      "method": [
+        "factor graph",
+        "constraint-driven semi-supervision"
+      ],
+      "paper_id": "P002063",
+      "problem": [
+        "noisy patterns"
+      ],
+      "task": [
+        "relation extraction",
+        "extract relations"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 57.324647797999205,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 57.324647797999205,
+      "input_tokens": 5316,
+      "output_tokens": 463
+    },
+    "paper_id": "P002063",
+    "source_sha256": "e8f4fe9fc7b5d7e2c02c62a72bdb04edecb22a32ee154bc75de25ab5be53b37c",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5316,
+      "output_tokens": 463
+    }
+  },
+  "record_sha256": "b8fa30c6490ae3c78aa9a2e797e3c7c62d1f998fa1a322fc18d7cf39cf4758be",
+  "signature": "30b74f349733b3472e77d44e1714cb2630c638fc3e3ab13f025f7f748ada4987"
+}

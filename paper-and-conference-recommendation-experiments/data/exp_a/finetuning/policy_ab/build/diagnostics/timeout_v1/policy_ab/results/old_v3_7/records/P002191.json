@@ -1,0 +1,236 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"binary relations cannot fully represent the original biomedical data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"structured representations\", \"evidence_id\": \"A6\"}, {\"concept\": \"templates\", \"evidence_id\": \"A7\"}, {\"concept\": \"rules\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_id\": \"A4\"}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 1,
+          "generation_seconds": 26.069977124000047,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"binary relations cannot fully represent the original biomedical data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"structured representations\", \"evidence_id\": \"A6\"}, {\"concept\": \"templates\", \"evidence_id\": \"A7\"}, {\"concept\": \"rules\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_id\": \"A4\"}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 6615,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2552,
+            "output_tokens": 181
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"binary relations cannot fully represent the original biomedical data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"structured representations\", \"evidence_id\": \"A6\"}, {\"concept\": \"templates\", \"evidence_id\": \"A7\"}, {\"concept\": \"rules\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_id\": \"A4\"}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_id\": \"A10\"}]}",
+          "attempt": 2,
+          "generation_seconds": 28.36520965300008,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002191\", \"problem\": [{\"concept\": \"binary relations cannot fully represent the original biomedical data\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"extract biomedical events\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"structured representations\", \"evidence_id\": \"A6\"}, {\"concept\": \"templates\", \"evidence_id\": \"A7\"}, {\"concept\": \"rules\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Genia event extraction\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"method to extract biomedical events\", \"evidence_id\": \"A4\"}, {\"concept\": \"superior performance in terms of computational efficiency\", \"evidence_id\": \"A10\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 6616,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4097,
+            "output_tokens": 181
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "method to extract biomedical events",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "superior performance in terms of computational efficiency",
+            "evidence_id": "A10"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Genia event extraction",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "structured representations",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "templates",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "rules",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P002191",
+        "problem": [
+          {
+            "concept": "binary relations cannot fully represent the original biomedical data",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "extract biomedical events",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 54.435186777000126,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6616,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6649,
+        "output_tokens": 362
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "method to extract biomedical events",
+          "evidence": "RESULTS In this article we propose a novel method to extract biomedical events from text.",
+          "source": "abstract"
+        },
+        {
+          "concept": "superior performance in terms of computational efficiency",
+          "evidence": "Furthermore, our system achieves superior performance in terms of computational efficiency.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "Genia event extraction",
+          "evidence": "When evaluated against the Genia event extraction abstract and full-text test datasets (Task 1), we obtain results with F-scores of 52.34 and 53.34, respectively, which are comparable to the state-of-the-art systems.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "structured representations",
+          "evidence": "In the first phase, training data are mapped into structured representations.",
+          "source": "abstract"
+        },
+        {
+          "concept": "templates",
+          "evidence": "Based on that, templates are used to extract rules automatically.",
+          "source": "abstract"
+        },
+        {
+          "concept": "rules",
+          "evidence": "Based on that, templates are used to extract rules automatically.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P002191",
+      "problem": [
+        {
+          "concept": "binary relations cannot fully represent the original biomedical data",
+          "evidence": "However, these binary relations cannot fully represent the original biomedical data.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "extract biomedical events",
+          "evidence": "RESULTS In this article we propose a novel method to extract biomedical events from text.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "method to extract biomedical events",
+        "superior performance in terms of computational efficiency"
+      ],
+      "dataset": [
+        "Genia event extraction"
+      ],
+      "method": [
+        "structured representations",
+        "templates",
+        "rules"
+      ],
+      "paper_id": "P002191",
+      "problem": [
+        "binary relations cannot fully represent the original biomedical data"
+      ],
+      "task": [
+        "extract biomedical events"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 54.435186777000126,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P002191",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6649,
+      "output_tokens": 362
+    }
+  },
+  "record_sha256": "1350f149417c1c7a6922af58a7e5ed7859553b97c3b4640d6b791210173e2d61",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

@@ -1,0 +1,105 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+      "attempt": 1,
+      "generation_seconds": 21.127421526000035,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}, {\"concept\": \"partisan arguments\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 474,
+      "semantic_entailment_verified": false,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 1384,
+        "output_tokens": 177
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+          "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+          "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+      "attempt": 2,
+      "generation_seconds": 21.08129109100082,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P000144\", \"problem\": [{\"concept\": \"lack of representative data sets\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"assess the status of these files with regard to copyright infringement\", \"evidence_id\": \"A6\"}], \"method\": [{\"concept\": \"analysing six large data sets containing file metadata\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"at least 26 % to 79 % of OCH file metadata are potentially infringing\", \"evidence_id\": \"A6\"}, {\"concept\": \"Megaupload has the second highest proportion of legitimate files in the study\", \"evidence_id\": \"A7\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 475,
+      "semantic_entailment_verified": false,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3103,
+        "output_tokens": 160
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "concept": "at least 26 % to 79 % of OCH file metadata are potentially infringing",
+          "evidence": "We assess the status of these files with regard to copyright infringement and show that at least 26 % to 79 % of them are potentially infringing.",
+          "facet": "contribution",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "Megaupload has the second highest proportion of legitimate files in the study",
+          "evidence": "Perhaps surprising after the shutdown by the FBI for alleged copyright infringement, we found Megaupload to have the second highest proportion of legitimate files in our study.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    }
+  ],
+  "fallback_used": false,
+  "paper_id": "P000144",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 2,
+  "selected_score": 100.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [],
+  "validation_passed": true
+}

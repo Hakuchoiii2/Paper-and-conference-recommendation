@@ -1,0 +1,529 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}, {\"concept\": \"online spam filtering performance gains have yet to be demonstrated for SVMs\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.922850028999164,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}, {\"concept\": \"online spam filtering performance gains have yet to be demonstrated for SVMs\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12351,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1366,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "online spam filtering performance gains have yet to be demonstrated for SVMs",
+              "evidence": "However, similar performance gains have yet to be demonstrated for online spam filtering.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.319223124999553,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12352,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3121,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.239744151000195,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004103\", \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12353,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 811,
+            "output_tokens": 104
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "online SVMs give state-of-the-art classification performance on online spam filtering",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Support Vector Machines",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "Bayesian methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004103",
+        "problem": [
+          {
+            "concept": "high cost of SVMs",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "online spam filtering",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "splog detection",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 58.48181730499891,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P004103",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5298,
+        "output_tokens": 478
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}, {\"concept\": \"online spam filtering performance gains have yet to be demonstrated for SVMs\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.922850028999164,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}, {\"concept\": \"online spam filtering performance gains have yet to be demonstrated for SVMs\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12351,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1366,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "online spam filtering performance gains have yet to be demonstrated for SVMs",
+              "evidence": "However, similar performance gains have yet to be demonstrated for online spam filtering.",
+              "facet": "problem",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 21.319223124999553,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004103\", \"problem\": [{\"concept\": \"high cost of SVMs\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"online SVMs give state-of-the-art classification performance on online spam filtering\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12352,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3121,
+            "output_tokens": 165
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "online SVMs give state-of-the-art classification performance on online spam filtering",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Support Vector Machines",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "Bayesian methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004103",
+        "problem": [
+          {
+            "concept": "high cost of SVMs",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "online spam filtering",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "splog detection",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 46.24207315399872,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12352,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4487,
+        "output_tokens": 374
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.922850028999164,
+        "inherited": false,
+        "messages_sha256": "0e2421b858e02ef49936a6a6dc6759dc44fd59185a438482f52dc85499fe8b8a",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12351,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1366,
+          "output_tokens": 209
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 21.319223124999553,
+        "inherited": false,
+        "messages_sha256": "31a84bcc4b0258bf7900f843fb54d5a4e1fd897ffd2afb2f41702a8c0c2675ed",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004103",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ]
+        },
+        "seed": 12352,
+        "usage": {
+          "input_tokens": 3121,
+          "output_tokens": 165
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.239744151000195,
+        "inherited": false,
+        "messages_sha256": "e5c9159f88aff19279051791216a0179b702b342b50bf3865a418cd63bbe1e93",
+        "reached_token_limit": false,
+        "seed": 12353,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 811,
+          "output_tokens": 104
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "online SVMs give state-of-the-art classification performance on online spam filtering",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "Support Vector Machines",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "Bayesian methods",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004103",
+        "problem": [
+          {
+            "concept": "high cost of SVMs",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "online spam filtering",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "splog detection",
+            "evidence_id": "A8"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "online spam filtering",
+            "evidence_id": "A3"
+          }
+        },
+        {
+          "facet": "task",
+          "index": 1,
+          "item": {
+            "concept": "splog detection",
+            "evidence_id": "A8"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "Support Vector Machines",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "Relaxed Online SVM",
+            "evidence_id": "A7"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 2,
+          "item": {
+            "concept": "Bayesian methods",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.239744151000195,
+      "messages_sha256": "e5c9159f88aff19279051791216a0179b702b342b50bf3865a418cd63bbe1e93",
+      "raw_output": "{\"paper_id\": \"P004103\", \"task\": [{\"concept\": \"online spam filtering\", \"evidence_id\": \"A3\"}, {\"concept\": \"splog detection\", \"evidence_id\": \"A8\"}], \"method\": [{\"concept\": \"Support Vector Machines\", \"evidence_id\": \"A2\"}, {\"concept\": \"Relaxed Online SVM\", \"evidence_id\": \"A7\"}, {\"concept\": \"Bayesian methods\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 811,
+        "output_tokens": 104
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "88b15e9d552bc63740e55470967d6c05bfd1343008fd377e0012054a2c74e654",
+    "facets": {
+      "contribution": [
+        "Relaxed Online SVM",
+        "online SVMs give state-of-the-art classification performance on online spam filtering"
+      ],
+      "dataset": [],
+      "method": [
+        "Support Vector Machines",
+        "Relaxed Online SVM",
+        "Bayesian methods"
+      ],
+      "paper_id": "P004103",
+      "problem": [
+        "high cost of SVMs"
+      ],
+      "task": [
+        "online spam filtering",
+        "splog detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 58.48181730499891,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 58.48181730499891,
+      "input_tokens": 5298,
+      "output_tokens": 478
+    },
+    "paper_id": "P004103",
+    "source_sha256": "d43744479aba9c87845ebc8053d39b268b163d99e614ea4eb9cc3520a1a093f8",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5298,
+      "output_tokens": 478
+    }
+  },
+  "record_sha256": "dea0a4a90863c2868a16b53a4529d32e6233ef677d3cfedea7167fd660a96517",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

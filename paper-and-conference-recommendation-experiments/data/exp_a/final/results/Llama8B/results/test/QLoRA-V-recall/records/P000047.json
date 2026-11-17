@@ -1,0 +1,475 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a suitable benchmark\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.500324602000546,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a suitable benchmark\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 183,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1321,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.368493616000706,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 184,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3049,
+            "output_tokens": 168
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 6.879173634999461,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000047\", \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 185,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 752,
+            "output_tokens": 56
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "existing models have surpassed the performance ceiling of the standard evaluation dataset",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Stanford Contextual Word Similarity",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "annotations curated by experts",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000047",
+        "problem": [
+          {
+            "concept": "dynamic nature of words' semantics",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "generic evaluation of context-sensitive representations",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 51.74799185300071,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P000047",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5122,
+        "output_tokens": 411
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a suitable benchmark\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 22.500324602000546,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a suitable benchmark\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 183,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1321,
+            "output_tokens": 187
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.368493616000706,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000047\", \"problem\": [{\"concept\": \"dynamic nature of words' semantics\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"Stanford Contextual Word Similarity\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"WiC\", \"evidence_id\": \"A4\"}, {\"concept\": \"existing models have surpassed the performance ceiling of the standard evaluation dataset\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 184,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3049,
+            "output_tokens": 168
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "existing models have surpassed the performance ceiling of the standard evaluation dataset",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Stanford Contextual Word Similarity",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "annotations curated by experts",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000047",
+        "problem": [
+          {
+            "concept": "dynamic nature of words' semantics",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "generic evaluation of context-sensitive representations",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 44.86881821800125,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 184,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4370,
+        "output_tokens": 355
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 22.500324602000546,
+        "inherited": false,
+        "messages_sha256": "09cb9a6d94d69d6433cfb6fc27d09d363b029bb9eedf53e914ae43d69f5a34db",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 183,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1321,
+          "output_tokens": 187
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 22.368493616000706,
+        "inherited": false,
+        "messages_sha256": "50f259ef2c3e3dac376ff7208ae7d199f9c99c3c32f9a8f687609a7c69d9a7e6",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000047",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 184,
+        "usage": {
+          "input_tokens": 3049,
+          "output_tokens": 168
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 6.879173634999461,
+        "inherited": false,
+        "messages_sha256": "8ddade9c6876eb0aeba78d20b62e9805e906babbd59e6676ad0a5ce684b33f06",
+        "reached_token_limit": false,
+        "seed": 185,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 752,
+          "output_tokens": 56
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "existing models have surpassed the performance ceiling of the standard evaluation dataset",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "WiC",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "Stanford Contextual Word Similarity",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "annotations curated by experts",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P000047",
+        "problem": [
+          {
+            "concept": "dynamic nature of words' semantics",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "generic evaluation of context-sensitive representations",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "generic evaluation of context-sensitive representations",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "annotations curated by experts",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 6.879173634999461,
+      "messages_sha256": "8ddade9c6876eb0aeba78d20b62e9805e906babbd59e6676ad0a5ce684b33f06",
+      "raw_output": "{\"paper_id\": \"P000047\", \"task\": [{\"concept\": \"generic evaluation of context-sensitive representations\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"annotations curated by experts\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 752,
+        "output_tokens": 56
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "97599a429baaad83fa1866c14b6cd211664e2c220479b33536ffbfb3932e4e64",
+    "facets": {
+      "contribution": [
+        "WiC",
+        "existing models have surpassed the performance ceiling of the standard evaluation dataset"
+      ],
+      "dataset": [
+        "WiC",
+        "Stanford Contextual Word Similarity"
+      ],
+      "method": [
+        "annotations curated by experts"
+      ],
+      "paper_id": "P000047",
+      "problem": [
+        "dynamic nature of words' semantics"
+      ],
+      "task": [
+        "generic evaluation of context-sensitive representations"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 51.74799185300071,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 51.74799185300071,
+      "input_tokens": 5122,
+      "output_tokens": 411
+    },
+    "paper_id": "P000047",
+    "source_sha256": "2bc9e79c9629084ce9cb5faadf806609ea9157aec9ed228fd8276f7ab2872981",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5122,
+      "output_tokens": 411
+    }
+  },
+  "record_sha256": "2e6a5004cdc44cee54086eb353ffb5da48f8f18437abd05970fdee9ccd744fe5",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

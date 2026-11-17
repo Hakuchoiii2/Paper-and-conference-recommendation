@@ -1,0 +1,515 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 15.379942167999616,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4140,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1295,
+            "output_tokens": 123
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "hate speech and abusive language detection",
+              "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 15.173076928998853,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4141,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2955,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "hate speech and abusive language detection",
+              "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.675194618001115,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare predictions on African-American English vs Standard American English\", \"evidence_id\": \"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4142,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 663,
+            "output_tokens": 79
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "hate speech and abusive language detection",
+              "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "compare predictions on African-American English vs Standard American English",
+              "evidence": "We train classifiers on these datasets and compare the predictions of these classifiers on tweets written in African-American English with those written in Standard American English.",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "systematic racial bias in all datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "train classifiers",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "compare predictions on African-American English vs Standard American English",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "hate speech and abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 40.22821371499958,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "paper_id": "P001366",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4913,
+        "output_tokens": 307
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "hate speech and abusive language detection",
+          "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "compare predictions on African-American English vs Standard American English",
+          "evidence": "We train classifiers on these datasets and compare the predictions of these classifiers on tweets written in African-American English with those written in Standard American English.",
+          "facet": "method",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "7185c4cdf67aa3d98788e33fd38459f3c3d8b783721820f0907102b0cc6236e6",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 15.379942167999616,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}, {\"concept\": \"systematic racial bias\", \"evidence_id\": \"A3\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4140,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1295,
+            "output_tokens": 123
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "hate speech and abusive language detection",
+              "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 15.173076928998853,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001366\", \"problem\": [{\"concept\": \"potential biases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"systematic racial bias in all datasets\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4141,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2955,
+            "output_tokens": 105
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "hate speech and abusive language detection",
+              "evidence": "Technologies for abusive language detection are being developed and applied with little consideration of their potential biases.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "systematic racial bias in all datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "train classifiers",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "hate speech and abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 30.55301909699847,
+      "gpu_name": "Tesla T4",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4141,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        128009
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4250,
+        "output_tokens": 228
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 15.379942167999616,
+        "inherited": false,
+        "messages_sha256": "8a64ad353d42ee57673a0c1c577359d81ff287d804ec226a6f9ff28211725c50",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4140,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1295,
+          "output_tokens": 123
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 15.173076928998853,
+        "inherited": false,
+        "messages_sha256": "a742d04fb20751e998444d3565099c9e77a04bc9bbdf7c994fa6736d95547758",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001366",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 4141,
+        "usage": {
+          "input_tokens": 2955,
+          "output_tokens": 105
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.675194618001115,
+        "inherited": false,
+        "messages_sha256": "1420790427ae1b4aff91f89badc99340f7826e0fbcca1eddc3e259589c29b224",
+        "reached_token_limit": false,
+        "seed": 4142,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 663,
+          "output_tokens": 79
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "compare predictions on African-American English vs Standard American English",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "accepted_count": 1,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "systematic racial bias in all datasets",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "train classifiers",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001366",
+        "problem": [
+          {
+            "concept": "potential biases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "hate speech and abusive language detection",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "hate speech and abusive language detection",
+            "evidence_id": "A0"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "train classifiers",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.675194618001115,
+      "messages_sha256": "1420790427ae1b4aff91f89badc99340f7826e0fbcca1eddc3e259589c29b224",
+      "raw_output": "{\"paper_id\": \"P001366\", \"task\": [{\"concept\": \"hate speech and abusive language detection\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"train classifiers\", \"evidence_id\": \"A2\"}, {\"concept\": \"compare predictions on African-American English vs Standard American English\", \"evidence_id\": \"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 663,
+        "output_tokens": 79
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "6c18360650725a49696ed5349b09d72d9b6d6662aa7b4800a0740a7a87b39a60",
+    "facets": {
+      "contribution": [
+        "systematic racial bias in all datasets"
+      ],
+      "dataset": [],
+      "method": [
+        "train classifiers",
+        "compare predictions on African-American English vs Standard American English"
+      ],
+      "paper_id": "P001366",
+      "problem": [
+        "potential biases"
+      ],
+      "task": [
+        "hate speech and abusive language detection"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 40.22821371499958,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 40.22821371499958,
+      "input_tokens": 4913,
+      "output_tokens": 307
+    },
+    "paper_id": "P001366",
+    "source_sha256": "3a8c152f812801a345582e17fce846739e3c24e3725517df6d18692eed2493c1",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4913,
+      "output_tokens": 307
+    }
+  },
+  "record_sha256": "4f98fd7e214d837ad4ec496197546b119e7bf0febe86f1af81327981c659168b",
+  "signature": "ab50c5e8f9f17e43737a52175da25958275d172297b41f144c64537306fcb447"
+}

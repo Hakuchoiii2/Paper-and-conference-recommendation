@@ -1,0 +1,193 @@
+{
+  "record": {
+    "arm": "R1",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 14.729006073000164,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 64.0,
+          "seed": 7182,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2648,
+            "output_tokens": 162
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002380\", \"problem\": [], \"task\": [], \"method\": [{\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"}, {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}], \"dataset\": [{\"concept\": \"Pascal\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"}, {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"}, {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 22.299716051999894,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P002380\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"language design based on semantic principles\", \"evidence_id\": \"T0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"correspondence between parametric and declarative mechanisms\", \"evidence_id\": \"A1\"},\n    {\"concept\": \"principle of abstraction for programming languages adapted from set theory\", \"evidence_id\": \"A1\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"Pascal\", \"evidence_id\": \"A0\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"several useful extensions and generalizations of Pascal\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"solution to the array parameter problem\", \"evidence_id\": \"A2\"},\n    {\"concept\": \"modularization facility\", \"evidence_id\": \"A2\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 7183,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4174,
+            "output_tokens": 204
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "several useful extensions and generalizations of Pascal",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "solution to the array parameter problem",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "modularization facility",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Pascal",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "correspondence between parametric and declarative mechanisms",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "principle of abstraction for programming languages adapted from set theory",
+            "evidence_id": "A1"
+          }
+        ],
+        "paper_id": "P002380",
+        "problem": [],
+        "task": []
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 37.02872212500006,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Pascal",
+            "evidence": "Two language design methods based on principles derived from the denotational approach to programming language semantics are described and illustrated by an application to the language Pascal.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 7183,
+      "selected_score": 76.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6822,
+        "output_tokens": 366
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "288b021efa1f52c630083988826db5d776e95d249d6232e85815a3f87ba24d1c",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": false,
+        "messages_sha256": "88768c4b578292b7a1ce477170a4113ba90ccbdba2efb3971beea05afdf41aba",
+        "repair_packet": null,
+        "seed": 7182
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "7d55872cc3ccd33258203f4c11e7e44bf6f70a331fd5e0f1853d39bac25f288f",
+        "repair_packet": null,
+        "seed": 7183
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "several useful extensions and generalizations of Pascal",
+        "solution to the array parameter problem",
+        "modularization facility"
+      ],
+      "dataset": [],
+      "method": [
+        "correspondence between parametric and declarative mechanisms",
+        "principle of abstraction for programming languages adapted from set theory"
+      ],
+      "paper_id": "P002380",
+      "problem": [],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 37.02872212500006,
+    "instruction_sha256": "e154398ed4976b8a39d6e0c8e55f325e4f0dd64f196d0c6a65232d998bac3993",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 37.02872212500006,
+      "input_tokens": 6822,
+      "output_tokens": 366
+    },
+    "paper_id": "P002380",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 6822,
+      "output_tokens": 366
+    }
+  },
+  "record_sha256": "f2ff0250a0fb3ac432896093fee98d5a4bb38b09158b761fcf00b0e78a1c6696",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

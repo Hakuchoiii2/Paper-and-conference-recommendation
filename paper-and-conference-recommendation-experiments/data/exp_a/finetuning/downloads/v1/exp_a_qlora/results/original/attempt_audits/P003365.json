@@ -1,0 +1,107 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\n  \"paper_id\": \"P003365\",\n  \"problem\": [\n    {\n      \"concept\": \"precise mechanisms by which LSA and Word2vec acquire new semantic relations between words remain unclear\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"signal to noise ratio may weaken if corpus size grows in topics not specific to the domain of interest\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine and distinguish alternative hypotheses about the effect of corpus specificity and size in word-embeddings\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"show that Word2vec can take advantage of all documents and performs best with the whole corpus\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"show that LSA specialization (removal of out-of-domain documents) with decreased dimensionality can increase word-representation quality and speed up processing time\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"show that LSA specialization without decreased dimensionality can produce strong performance reduction in specific tasks\",\n      \"evidence_id\": \"A10\"\n    },\n    {\n      \"concept\": \"point out that LSA's word-knowledge acquisition may not efficiently exploit higher-order co-occurrences and global relations, whereas Word2vec does\",\n      \"evidence_id\": \"A11\"\n    }\n  ]\n}",
+      "attempt": 1,
+      "generation_seconds": 31.878363555999385,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003365\",\n  \"problem\": [\n    {\n      \"concept\": \"precise mechanisms by which LSA and Word2vec acquire new semantic relations between words remain unclear\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"signal to noise ratio may weaken if corpus size grows in topics not specific to the domain of interest\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine and distinguish alternative hypotheses about the effect of corpus specificity and size in word-embeddings\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"show that Word2vec can take advantage of all documents and performs best with the whole corpus\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"show that LSA specialization (removal of out-of-domain documents) with decreased dimensionality can increase word-representation quality and speed up processing time\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"show that LSA specialization without decreased dimensionality can produce strong performance reduction in specific tasks\",\n      \"evidence_id\": \"A10\"\n    },\n    {\n      \"concept\": \"point out that LSA's word-knowledge acquisition may not efficiently exploit higher-order co-occurrences and global relations, whereas Word2vec does\",\n      \"evidence_id\": \"A11\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 25.7228,
+      "seed": 10137,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 2617,
+        "output_tokens": 377
+      },
+      "validation_errors": [
+        "problem[0]: concept must use source words in their original order; no invented synonyms; concept=\"precise mechanisms by which LSA and Word2vec acquire new semantic relations between words remain unclear\"; evidence_id=\"A1\"; evidence=\"Despite the popularity of these techniques, the precise mechanisms by which they acquire new semantic relations between words remain unclear.\"",
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"signal to noise ratio may weaken if corpus size grows in topics not specific to the domain of interest\"; evidence_id=\"A4\"; evidence=\"However, if corpus size grow in topics which are not specific to the domain of interest, signal to noise ratio may weaken.\"",
+        "task[0]: concept must use source words in their original order; no invented synonyms; concept=\"examine and distinguish alternative hypotheses about the effect of corpus specificity and size in word-embeddings\"; evidence_id=\"A5\"; evidence=\"Here we set to examine and distinguish these alternative hypothesis.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"progressive elimination of documents (random vs. unrelated to a specific task)\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+        "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"show that Word2vec can take advantage of all documents and performs best with the whole corpus\"; evidence_id=\"A8\"; evidence=\"We show that Word2vec can take advantage of all the documents, obtaining its best performance when it is trained with the whole corpus.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that LSA specialization (removal of out-of-domain documents) with decreased dimensionality can increase word-representation quality and speed up processing time\"; evidence_id=\"A9\"; evidence=\"On the contrary, the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time.\"",
+        "contribution[2]: concept must use source words in their original order; no invented synonyms; concept=\"show that LSA specialization without decreased dimensionality can produce strong performance reduction in specific tasks\"; evidence_id=\"A10\"; evidence=\"Furthermore, we show that the specialization without the decrease in LSA dimensionality can produce a strong performance reduction in specific tasks.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P003365\", \"problem\": [{\"concept\": \"precise mechanisms by which they acquire new semantic relations between words remain unclear\", \"evidence_id\": \"A1\"}, {\"concept\": \"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"examine and distinguish these alternative hypothesis\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"show that Word2vec can take advantage of all the documents, obtaining its best performance when it is trained with the whole corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\", \"evidence_id\": \"A9\"}, {\"concept\": \"show that the specialization without the decrease in LSA dimensionality can produce a strong performance reduction in specific tasks\", \"evidence_id\": \"A10\"}, {\"concept\": \"point out that LSA's word-knowledge acquisitions may not be efficiently exploiting higher-order co-occurrences and global relations, whereas Word2vec does\", \"evidence_id\": \"A11\"}]}",
+      "attempt": 2,
+      "generation_seconds": 40.945707639999455,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003365\",\n  \"problem\": [\n    {\n      \"concept\": \"precise mechanisms by which they acquire new semantic relations between words remain unclear\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine and distinguish these alternative hypothesis\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"show that Word2vec can take advantage of all the documents, obtaining its best performance when it is trained with the whole corpus\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"show that the specialization without the decrease in LSA dimensionality can produce a strong performance reduction in specific tasks\",\n      \"evidence_id\": \"A10\"\n    },\n    {\n      \"concept\": \"point out that LSA's word-knowledge acquisitions may not be efficiently exploiting higher-order co-occurrences and global relations, whereas Word2vec does\",\n      \"evidence_id\": \"A11\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 64.75,
+      "seed": 10138,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4895,
+        "output_tokens": 385
+      },
+      "validation_errors": [
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\"; evidence_id=\"A4\"; evidence=\"However, if corpus size grow in topics which are not specific to the domain of interest, signal to noise ratio may weaken.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"progressive elimination of documents (random vs. unrelated to a specific task)\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\"; evidence_id=\"A9\"; evidence=\"On the contrary, the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time.\""
+      ]
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P003365\", \"problem\": [{\"concept\": \"precise mechanisms by which they acquire new semantic relations between words remain unclear\", \"evidence_id\": \"A1\"}, {\"concept\": \"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"examine and distinguish these alternative hypothesis\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"show that Word2vec can take advantage of all the documents, obtaining its best performance when it is trained with the whole corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\", \"evidence_id\": \"A9\"}, {\"concept\": \"show that the specialization without the decrease in LSA dimensionality can produce a strong performance reduction in specific tasks\", \"evidence_id\": \"A10\"}, {\"concept\": \"point out that LSA's word-knowledge acquisitions may not be efficiently exploiting higher-order co-occurrences and global relations, whereas Word2vec does\", \"evidence_id\": \"A11\"}]}",
+      "attempt": 3,
+      "generation_seconds": 39.36535843399906,
+      "parseable": true,
+      "raw_output": "{\n  \"paper_id\": \"P003365\",\n  \"problem\": [\n    {\n      \"concept\": \"precise mechanisms by which they acquire new semantic relations between words remain unclear\",\n      \"evidence_id\": \"A1\"\n    },\n    {\n      \"concept\": \"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\",\n      \"evidence_id\": \"A4\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"examine and distinguish these alternative hypothesis\",\n      \"evidence_id\": \"A5\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"progressive elimination of documents (random vs. unrelated to a specific task)\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"show that Word2vec can take advantage of all the documents, obtaining its best performance when it is trained with the whole corpus\",\n      \"evidence_id\": \"A8\"\n    },\n    {\n      \"concept\": \"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\",\n      \"evidence_id\": \"A9\"\n    },\n    {\n      \"concept\": \"show that the specialization without the decrease in LSA dimensionality can produce a strong performance reduction in specific tasks\",\n      \"evidence_id\": \"A10\"\n    },\n    {\n      \"concept\": \"point out that LSA's word-knowledge acquisitions may not be efficiently exploiting higher-order co-occurrences and global relations, whereas Word2vec does\",\n      \"evidence_id\": \"A11\"\n    }\n  ]\n}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 64.75,
+      "seed": 10139,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 4572,
+        "output_tokens": 385
+      },
+      "validation_errors": [
+        "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\"; evidence_id=\"A4\"; evidence=\"However, if corpus size grow in topics which are not specific to the domain of interest, signal to noise ratio may weaken.\"",
+        "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"progressive elimination of documents (random vs. unrelated to a specific task)\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\"; evidence_id=\"A9\"; evidence=\"On the contrary, the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time.\""
+      ]
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P003365",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 3,
+  "selected_score": 64.75,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "problem[1]: concept must use source words in their original order; no invented synonyms; concept=\"signal to noise ratio may weaken if corpus size grow in topics which are not specific to the domain of interest\"; evidence_id=\"A4\"; evidence=\"However, if corpus size grow in topics which are not specific to the domain of interest, signal to noise ratio may weaken.\"",
+    "method[0]: concept must use source words in their original order; no invented synonyms; concept=\"progressive elimination of documents (random vs. unrelated to a specific task)\"; evidence_id=\"A6\"; evidence=\"To investigate the effect of corpus specificity and size in word-embeddings we study two ways for progressive elimination of documents: the elimination of random documents vs.\"",
+    "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"show that the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time\"; evidence_id=\"A9\"; evidence=\"On the contrary, the specialization (removal of out-of-domain documents) of the training corpus, accompanied by a decrease of dimensionality, can increase LSA word-representation quality while speeding up the processing time.\"",
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

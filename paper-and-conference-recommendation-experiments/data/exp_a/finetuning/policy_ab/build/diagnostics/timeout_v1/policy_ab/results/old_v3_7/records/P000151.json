@@ -1,0 +1,213 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000151\", \"problem\": [], \"task\": [{\"concept\": \"question classification\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_id\": \"A1\"}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 1,
+          "generation_seconds": 23.09263238199992,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000151\", \"problem\": [], \"task\": [{\"concept\": \"question classification\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_id\": \"A1\"}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 495,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2387,
+            "output_tokens": 160
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000151\", \"problem\": [], \"task\": [{\"concept\": \"question classification\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_id\": \"A1\"}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_id\": \"A3\"}]}",
+          "attempt": 2,
+          "generation_seconds": 24.811182899000187,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000151\", \"problem\": [], \"task\": [{\"concept\": \"question classification\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_id\": \"A2\"}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_id\": \"A1\"}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_id\": \"A3\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 496,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3914,
+            "output_tokens": 160
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "machine learning approach to question classification",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "accurate results on a large collection of free-form questions used in TREC 10",
+            "evidence_id": "A3"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "TREC 10",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "hierarchical classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "layered semantic hierarchy of answer types",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P000151",
+        "problem": [],
+        "task": [
+          {
+            "concept": "question classification",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 47.90381528100011,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 496,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 6301,
+        "output_tokens": 320
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "machine learning approach to question classification",
+          "evidence": "These constraints may include a semantic classification of the sought after answer and may even suggest using different strategies when looking for and verifying a candidate answer.This paper presents a machine learning approach to question classification.",
+          "source": "abstract"
+        },
+        {
+          "concept": "accurate results on a large collection of free-form questions used in TREC 10",
+          "evidence": "We show accurate results on a large collection of free-form questions used in TREC 10.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [
+        {
+          "concept": "TREC 10",
+          "evidence": "We show accurate results on a large collection of free-form questions used in TREC 10.",
+          "source": "abstract"
+        }
+      ],
+      "method": [
+        {
+          "concept": "hierarchical classifier",
+          "evidence": "We learn a hierarchical classifier that is guided by a layered semantic hierarchy of answer types, and eventually classifies questions into fine-grained classes.",
+          "source": "abstract"
+        },
+        {
+          "concept": "layered semantic hierarchy of answer types",
+          "evidence": "We learn a hierarchical classifier that is guided by a layered semantic hierarchy of answer types, and eventually classifies questions into fine-grained classes.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P000151",
+      "problem": [],
+      "task": [
+        {
+          "concept": "question classification",
+          "evidence": "These constraints may include a semantic classification of the sought after answer and may even suggest using different strategies when looking for and verifying a candidate answer.This paper presents a machine learning approach to question classification.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "machine learning approach to question classification",
+        "accurate results on a large collection of free-form questions used in TREC 10"
+      ],
+      "dataset": [
+        "TREC 10"
+      ],
+      "method": [
+        "hierarchical classifier",
+        "layered semantic hierarchy of answer types"
+      ],
+      "paper_id": "P000151",
+      "problem": [],
+      "task": [
+        "question classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 47.90381528100011,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P000151",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 6301,
+      "output_tokens": 320
+    }
+  },
+  "record_sha256": "d3facdf01df8e9925a373edaf0b896401b9fdf3ee38dd2b90dd4be02c2c88158",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

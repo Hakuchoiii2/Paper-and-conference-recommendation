@@ -1,0 +1,223 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 18.725163084000087,
+          "messages_sha256": "c067ebc15cce5c21e166e7fe0611cea1eb163e957abcaf05caa0eda7805c4c43",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003308\", \"problem\": [{\"concept\": \"challenges the tradition techniques to extract the useful knowledge\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"classification model for Massive data\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Minimum spanning tree (MST) based Classification model\", \"evidence_id\": \"A1\"}, {\"concept\": \"MapReduce programming framework\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"real world data from UCI repository\", \"evidence_id\": \"A4\"}, {\"concept\": \"synthetic data\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation\", \"evidence_id\": \"A1\"}, {\"concept\": \"model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "seed": 9968,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2294,
+            "output_tokens": 228
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "real world data from UCI repository",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "synthetic data",
+            "evidence_id": "A4"
+          }
+        ],
+        "method": [
+          {
+            "concept": "Minimum spanning tree (MST) based Classification model",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "MapReduce programming framework",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003308",
+        "problem": [
+          {
+            "concept": "challenges the tradition techniques to extract the useful knowledge",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "classification model for Massive data",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 69.49963893199993,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003308",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "synthetic data",
+            "evidence": "We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 100.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3509,
+        "output_tokens": 917
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.514053650999813,
+        "messages_sha256": "52660da4fe1a9b957549112b00e8a62856860ab9463fd3f05b8a00a6ba6883a3",
+        "raw_output": "{\"paper_id\":\"P003308\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Rapid growth of data has provided us with more information, yet challenges the tradition techniques to extract the useful knowledge.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"It can be viewed as an intermediate model between the traditional K nearest neighbor method and cluster based classification method, aiming to overcome their disadvantages and cope with large amount of data.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Our model is implemented on Hadoop platform, using its MapReduce programming framework, which is particular suitable for cloud computing.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"The results show that our model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9966,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 597,
+          "output_tokens": 292
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.260422197000025,
+        "messages_sha256": "9a690d1d6da081a00115568ac2e10a6dcbe82b0381645d45e564d3057669d059",
+        "raw_output": "{\n  \"paper_id\": \"P003308\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rapid growth of data has provided us with more information, yet challenges the tradition techniques to extract the useful knowledge.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In this paper, we propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"It can be viewed as an intermediate model between the traditional K nearest neighbor method and cluster based classification method, aiming to overcome their disadvantages and cope with large amount of data.\",\n      \"roles\": [\"problem\", \"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Our model is implemented on Hadoop platform, using its MapReduce programming framework, which is particular suitable for cloud computing.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The results show that our model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 9967,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 618,
+          "output_tokens": 397
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 18.725163084000087,
+        "messages_sha256": "c067ebc15cce5c21e166e7fe0611cea1eb163e957abcaf05caa0eda7805c4c43",
+        "raw_output": "{\"paper_id\": \"P003308\", \"problem\": [{\"concept\": \"challenges the tradition techniques to extract the useful knowledge\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"classification model for Massive data\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"Minimum spanning tree (MST) based Classification model\", \"evidence_id\": \"A1\"}, {\"concept\": \"MapReduce programming framework\", \"evidence_id\": \"A3\"}], \"dataset\": [{\"concept\": \"real world data from UCI repository\", \"evidence_id\": \"A4\"}, {\"concept\": \"synthetic data\", \"evidence_id\": \"A4\"}], \"contribution\": [{\"concept\": \"MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation\", \"evidence_id\": \"A1\"}, {\"concept\": \"model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 9968,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2294,
+          "output_tokens": 228
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation",
+        "model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability"
+      ],
+      "dataset": [
+        "real world data from UCI repository"
+      ],
+      "method": [
+        "Minimum spanning tree (MST) based Classification model",
+        "MapReduce programming framework"
+      ],
+      "paper_id": "P003308",
+      "problem": [
+        "challenges the tradition techniques to extract the useful knowledge"
+      ],
+      "task": [
+        "classification model for Massive data"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 69.49963893199993,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 21.514053650999813,
+        "messages_sha256": "52660da4fe1a9b957549112b00e8a62856860ab9463fd3f05b8a00a6ba6883a3",
+        "raw_output": "{\"paper_id\":\"P003308\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Rapid growth of data has provided us with more information, yet challenges the tradition techniques to extract the useful knowledge.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"In this paper, we propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation.\",\"roles\":[\"contribution\",\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"It can be viewed as an intermediate model between the traditional K nearest neighbor method and cluster based classification method, aiming to overcome their disadvantages and cope with large amount of data.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Our model is implemented on Hadoop platform, using its MapReduce programming framework, which is particular suitable for cloud computing.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"The results show that our model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9966,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 597,
+          "output_tokens": 292
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 29.260422197000025,
+        "messages_sha256": "9a690d1d6da081a00115568ac2e10a6dcbe82b0381645d45e564d3057669d059",
+        "raw_output": "{\n  \"paper_id\": \"P003308\",\n  \"units\": [\n    {\n      \"evidence_id\": \"A0\",\n      \"span\": \"Rapid growth of data has provided us with more information, yet challenges the tradition techniques to extract the useful knowledge.\",\n      \"roles\": [\"problem\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A1\",\n      \"span\": \"In this paper, we propose MCMM, a Minimum spanning tree (MST) based Classification model for Massive data with MapReduce implementation.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A2\",\n      \"span\": \"It can be viewed as an intermediate model between the traditional K nearest neighbor method and cluster based classification method, aiming to overcome their disadvantages and cope with large amount of data.\",\n      \"roles\": [\"problem\", \"task\"],\n      \"origin\": \"prior\"\n    },\n    {\n      \"evidence_id\": \"A3\",\n      \"span\": \"Our model is implemented on Hadoop platform, using its MapReduce programming framework, which is particular suitable for cloud computing.\",\n      \"roles\": [\"method\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A4\",\n      \"span\": \"We have done experiments on several data sets including real world data from UCI repository and synthetic data, using Downing 4000 clusters, installed with Hadoop.\",\n      \"roles\": [\"dataset\"],\n      \"origin\": \"current\"\n    },\n    {\n      \"evidence_id\": \"A5\",\n      \"span\": \"The results show that our model outperforms KNN and some other classification methods on a general basis with respect to accuracy and scalability.\",\n      \"roles\": [\"contribution\"],\n      \"origin\": \"current\"\n    }\n  ]\n}",
+        "reached_token_limit": false,
+        "seed": 9967,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 618,
+          "output_tokens": 397
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 69.49963893199993,
+      "input_tokens": 3509,
+      "output_tokens": 917
+    },
+    "paper_id": "P003308",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3509,
+      "output_tokens": 917
+    }
+  },
+  "record_sha256": "2bf3f27847ebfce96b1879e36d608512bbdc50b1a2a9cfadfed2aa8290023d33",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

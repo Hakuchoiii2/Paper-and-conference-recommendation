@@ -1,0 +1,618 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 51.20958863799751,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12189,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1309,
+            "output_tokens": 283
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+              "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 56.48171558199829,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12190,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3195,
+            "output_tokens": 283
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+              "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.839694543996302,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"task\": [], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12191,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 860,
+            "output_tokens": 61
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+              "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "features that model whether phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "idiom detection in sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 119.5309987639921,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P004049",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5364,
+        "output_tokens": 627
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+          "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+          "facet": "contribution",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        },
+        {
+          "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+          "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+          "facet": "contribution",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 51.20958863799751,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12189,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1309,
+            "output_tokens": 283
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+              "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 56.48171558199829,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P004049\", \"problem\": [{\"concept\": \"incomplete source of idiomatic phrases\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"automatically identifying idiomatic dictionary entries\", \"evidence_id\": \"A1\"}, {\"concept\": \"idiom detection in sentences\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"features that model whether phrase meanings are constructed compositionally\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wiktionary\", \"evidence_id\": \"A0\"}], \"contribution\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%\", \"evidence_id\": \"A3\"}, {\"concept\": \"idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 12190,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3195,
+            "output_tokens": 283
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+              "evidence": "Experiments demonstrate that the learned classifier can provide high quality idiom labels, more than doubling the number of idiomatic entries from 7,764 to 18,155 at precision levels of over 65%.",
+              "facet": "contribution",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            },
+            {
+              "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+              "evidence": "In a set of Wiktionary definition example sentences, the more complete set of idioms boosts detection recall by over 28 percentage points.",
+              "facet": "contribution",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "features that model whether phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "idiom detection in sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 107.6913042199958,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 12190,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4504,
+        "output_tokens": 566
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 51.20958863799751,
+        "inherited": false,
+        "messages_sha256": "34e7c4787cae70ed2c7eb53e377298487432360b5cb3fc36a51a64310c84ebda",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 12189,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1309,
+          "output_tokens": 283
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 56.48171558199829,
+        "inherited": false,
+        "messages_sha256": "1a18e80c21ec64fb0c533925ee72bbc0097911f243012d7b8f41a0375b2b0720",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P004049",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 12190,
+        "usage": {
+          "input_tokens": 3195,
+          "output_tokens": 283
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.839694543996302,
+        "inherited": false,
+        "messages_sha256": "a505a5908799dca2cdd5464799c22e1712e2e498114940518eb2af0c457df4f3",
+        "reached_token_limit": false,
+        "seed": 12191,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 860,
+          "output_tokens": 61
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wiktionary",
+            "evidence_id": "A0"
+          }
+        ],
+        "method": [
+          {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "features that model whether phrase meanings are constructed compositionally",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P004049",
+        "problem": [
+          {
+            "concept": "incomplete source of idiomatic phrases",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "automatically identifying idiomatic dictionary entries",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "idiom detection in sentences",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "idiom classifier",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "word sense disambiguation algorithms",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.839694543996302,
+      "messages_sha256": "a505a5908799dca2cdd5464799c22e1712e2e498114940518eb2af0c457df4f3",
+      "raw_output": "{\"paper_id\": \"P004049\", \"task\": [], \"method\": [{\"concept\": \"idiom classifier\", \"evidence_id\": \"A2\"}, {\"concept\": \"word sense disambiguation algorithms\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 860,
+        "output_tokens": 61
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "d2cd2269044bd14ee849f14488e724ddd4c67f12e1a43a0dc9dd30040d269a37",
+    "facets": {
+      "contribution": [
+        "idiom classifier",
+        "learned classifier more than doubles Wiktionary idiomatic entries from 7,764 to 18,155 at precision levels of over 65%",
+        "idiom detection in sentences is boosted by over 28 percentage points using known word-sense disambiguation algorithms with the more complete set of idioms"
+      ],
+      "dataset": [
+        "Wiktionary"
+      ],
+      "method": [
+        "idiom classifier",
+        "features that model whether phrase meanings are constructed compositionally",
+        "word sense disambiguation algorithms"
+      ],
+      "paper_id": "P004049",
+      "problem": [
+        "incomplete source of idiomatic phrases"
+      ],
+      "task": [
+        "automatically identifying idiomatic dictionary entries",
+        "idiom detection in sentences"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 119.5309987639921,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 119.5309987639921,
+      "input_tokens": 5364,
+      "output_tokens": 627
+    },
+    "paper_id": "P004049",
+    "source_sha256": "e82490130c6c0a27e42b83616831b17a8c258a614614f5c523a6a307fa0e0723",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5364,
+      "output_tokens": 627
+    }
+  },
+  "record_sha256": "27e4f7ea1e75607e9d0aa0fe97d4af1135fcab9f79174a1b83e34715e79186fe",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

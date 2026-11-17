@@ -1,0 +1,475 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}, {\"concept\": \"Communication costs are the principal constraint\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.12070037600279,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}, {\"concept\": \"Communication costs are the principal constraint\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2928,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1356,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.841344070999185,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2929,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3182,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.53425259100186,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"task\": [], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2930,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 804,
+            "output_tokens": 61
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Federated Learning",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "iterative model averaging",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000962",
+        "problem": [
+          {
+            "concept": "privacy sensitive",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "large in quantity",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "federated learning of deep networks",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 82.49629703800383,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P000962",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5342,
+        "output_tokens": 423
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}, {\"concept\": \"Communication costs are the principal constraint\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 37.12070037600279,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}, {\"concept\": \"Communication costs are the principal constraint\", \"evidence_id\": \"A7\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2928,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1356,
+            "output_tokens": 200
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 33.841344070999185,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P000962\", \"problem\": [{\"concept\": \"privacy sensitive\", \"evidence_id\": \"A2\"}, {\"concept\": \"large in quantity\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"federated learning of deep networks\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"Federated Learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 2929,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3182,
+            "output_tokens": 162
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "Federated Learning",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "iterative model averaging",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000962",
+        "problem": [
+          {
+            "concept": "privacy sensitive",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "large in quantity",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "federated learning of deep networks",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 70.96204444700197,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 2929,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4538,
+        "output_tokens": 362
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 37.12070037600279,
+        "inherited": false,
+        "messages_sha256": "d9eed9e370bed235ac1cf6fa25f842675b2fe000cf1eb6f51260527cf217a4a2",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 2928,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1356,
+          "output_tokens": 200
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 33.841344070999185,
+        "inherited": false,
+        "messages_sha256": "14cd14bbc2939cc8b6e8d7a111dc68ff3d4939b5b7a242bebea41e523a8cf140",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P000962",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 2929,
+        "usage": {
+          "input_tokens": 3182,
+          "output_tokens": 162
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.53425259100186,
+        "inherited": false,
+        "messages_sha256": "ffd82cc0e0a092c8bb672ca0c5b9a84a8ef1fbff55f6c54486114b340135206e",
+        "reached_token_limit": false,
+        "seed": 2930,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 804,
+          "output_tokens": 61
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "Federated Learning",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "iterative model averaging",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P000962",
+        "problem": [
+          {
+            "concept": "privacy sensitive",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "large in quantity",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "federated learning of deep networks",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "iterative model averaging",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "synchronized stochastic gradient descent",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 11.53425259100186,
+      "messages_sha256": "ffd82cc0e0a092c8bb672ca0c5b9a84a8ef1fbff55f6c54486114b340135206e",
+      "raw_output": "{\"paper_id\": \"P000962\", \"task\": [], \"method\": [{\"concept\": \"iterative model averaging\", \"evidence_id\": \"A5\"}, {\"concept\": \"synchronized stochastic gradient descent\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 804,
+        "output_tokens": 61
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "53068607706afb9901ecc25e7a9cdbce423b0f58a42d6a9d889008c7c1ab0fc8",
+    "facets": {
+      "contribution": [
+        "Federated Learning",
+        "reduction in required communication rounds by 10-100x compared to synchronized stochastic gradient descent"
+      ],
+      "dataset": [],
+      "method": [
+        "iterative model averaging",
+        "synchronized stochastic gradient descent"
+      ],
+      "paper_id": "P000962",
+      "problem": [
+        "privacy sensitive",
+        "large in quantity"
+      ],
+      "task": [
+        "federated learning of deep networks"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 82.49629703800383,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 82.49629703800383,
+      "input_tokens": 5342,
+      "output_tokens": 423
+    },
+    "paper_id": "P000962",
+    "source_sha256": "9086fa6fa2e6584149e63de1b8119178a8f7b0e47d27df16c673ea08e90562b0",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5342,
+      "output_tokens": 423
+    }
+  },
+  "record_sha256": "6a4483f668bcb6964cd2f0302f033e521bcd41ee630883b284bb9ad89d0332ac",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

@@ -1,0 +1,267 @@
+{
+  "record": {
+    "annotation_fallback": true,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 41.33447665099993,
+          "messages_sha256": "13727dd53af8f540b2de0ec4256767f4c13dcc9f4759d3f3b2c9f0e6cbeffd12",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001604\", \"problem\": [{\"concept\": \"accurate TC of Microposts is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"topic classification (TC) of Microposts\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"generation of different weighted semantic meta-graphs extracted from linked KSs\", \"evidence_id\": \"A4\"}, {\"concept\": \"introduce a new semantic graph, called category meta-graph\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts\", \"evidence_id\": \"A8\"}, {\"concept\": \"introduce and evaluate novel topic similarity measures\", \"evidence_id\": \"A9\"}], \"dataset\": [{\"concept\": \"linked knowledge sources (KSs)\", \"evidence_id\": \"A2\"}, {\"concept\": \"Twitter data\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"new semantic graph, called category meta-graph\", \"evidence_id\": \"A5\"}, {\"concept\": \"category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features\", \"evidence_id\": \"A6\"}, {\"concept\": \"category meta-graph features effectively improve the performance of a topic classifier of Microposts\", \"evidence_id\": \"A7\"}, {\"concept\": \"approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts\", \"evidence_id\": \"A8\"}, {\"concept\": \"novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level\", \"evidence_id\": \"A9\"}, {\"concept\": \"our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure\", \"evidence_id\": \"A9\"}, {\"concept\": \"new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs\", \"evidence_id\": \"A10\"}, {\"concept\": \"accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures\", \"evidence_id\": \"A11\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 98.113,
+          "seed": 4856,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2628,
+            "output_tokens": 518
+          },
+          "validation_errors": [
+            "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features\"; evidence_id=\"A6\"; evidence=\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\""
+          ]
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new semantic graph, called category meta-graph",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features",
+            "evidence_id": "A6"
+          },
+          {
+            "concept": "category meta-graph features effectively improve the performance of a topic classifier of Microposts",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "linked knowledge sources (KSs)",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "Twitter data",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "generation of different weighted semantic meta-graphs extracted from linked KSs",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "introduce a new semantic graph, called category meta-graph",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "introduce and evaluate novel topic similarity measures",
+            "evidence_id": "A9"
+          }
+        ],
+        "paper_id": "P001604",
+        "problem": [
+          {
+            "concept": "accurate TC of Microposts is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "topic classification (TC) of Microposts",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 125.42893302199991,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001604",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "Twitter data",
+            "evidence": "We introduce and evaluate novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level, considering the enriched representation of these documents.Extensive evaluation in the context of Emergency Response (ER) and Violence Detection (VD) revealed that our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure.",
+            "index": 1,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 98.113,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4511,
+        "output_tokens": 1636
+      },
+      "validation_errors": [
+        "contribution[1]: concept must use source words in their original order; no invented synonyms; concept=\"category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features\"; evidence_id=\"A6\"; evidence=\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\""
+      ],
+      "validation_passed": false
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 41.88875247500005,
+        "messages_sha256": "df16cd653f74ae0860d8beb3f2b6653f575bf7ff3eaa58b7482e666d78ffeed3",
+        "raw_output": "{\"paper_id\":\"P001604\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Short text messages a.k.a Microposts (e.g. Tweets) have proven to be an effective channel for revealing information about trends and events, ranging from those related to Disaster (e.g. hurricane Sandy) to those related to Violence (e.g. Egyptian revolution).\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Being informed about such events as they occur could be extremely important to authorities and emergency professionals by allowing such parties to immediately respond.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"The accurate TC of Microposts however is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Traditional TC techniques enrich the content of Microposts with features extracted only from the Microposts content.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"In contrast our approach relies on the generation of different weighted semantic meta-graphs extracted from linked KSs.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence\":\"A5\",\"span\":\"We introduce a new semantic graph, called category meta-graph.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Our findings show that such category meta-graph features effectively improve the performance of a topic classifier of Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"For this reason we propose an approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"We introduce and evaluate novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level, considering the enriched representation of these documents.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Our main findings indicate that the new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"Furthermore our results also indicate that the accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 4854,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 931,
+          "output_tokens": 559
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 42.20570389599993,
+        "messages_sha256": "677ce15b8c76f69cc82dcf38e25b0071607c94b72f2190832c66acaf66a6f02c",
+        "raw_output": "{\"paper_id\":\"P001604\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Short text messages a.k.a Microposts (e.g. Tweets) have proven to be an effective channel for revealing information about trends and events, ranging from those related to Disaster (e.g. hurricane Sandy) to those related to Violence (e.g. Egyptian revolution).\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Being informed about such events as they occur could be extremely important to authorities and emergency professionals by allowing such parties to immediately respond.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"The accurate TC of Microposts however is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Traditional TC techniques enrich the content of Microposts with features extracted only from the Microposts content.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"In contrast our approach relies on the generation of different weighted semantic meta-graphs extracted from linked KSs.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence\":\"A5\",\"span\":\"We introduce a new semantic graph, called category meta-graph.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Our findings show that such category meta-graph features effectively improve the performance of a topic classifier of Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"For this reason we propose an approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"We introduce and evaluate novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level, considering the enriched representation of these documents.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Our main findings indicate that the new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"Furthermore our results also indicate that the accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 4855,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 952,
+          "output_tokens": 559
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 41.33447665099993,
+        "messages_sha256": "13727dd53af8f540b2de0ec4256767f4c13dcc9f4759d3f3b2c9f0e6cbeffd12",
+        "raw_output": "{\"paper_id\": \"P001604\", \"problem\": [{\"concept\": \"accurate TC of Microposts is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"topic classification (TC) of Microposts\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"generation of different weighted semantic meta-graphs extracted from linked KSs\", \"evidence_id\": \"A4\"}, {\"concept\": \"introduce a new semantic graph, called category meta-graph\", \"evidence_id\": \"A5\"}, {\"concept\": \"automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts\", \"evidence_id\": \"A8\"}, {\"concept\": \"introduce and evaluate novel topic similarity measures\", \"evidence_id\": \"A9\"}], \"dataset\": [{\"concept\": \"linked knowledge sources (KSs)\", \"evidence_id\": \"A2\"}, {\"concept\": \"Twitter data\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"new semantic graph, called category meta-graph\", \"evidence_id\": \"A5\"}, {\"concept\": \"category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features\", \"evidence_id\": \"A6\"}, {\"concept\": \"category meta-graph features effectively improve the performance of a topic classifier of Microposts\", \"evidence_id\": \"A7\"}, {\"concept\": \"approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts\", \"evidence_id\": \"A8\"}, {\"concept\": \"novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level\", \"evidence_id\": \"A9\"}, {\"concept\": \"our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure\", \"evidence_id\": \"A9\"}, {\"concept\": \"new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs\", \"evidence_id\": \"A10\"}, {\"concept\": \"accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures\", \"evidence_id\": \"A11\"}]}",
+        "reached_token_limit": false,
+        "seed": 4856,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2628,
+          "output_tokens": 518
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "new semantic graph, called category meta-graph",
+        "category meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features",
+        "category meta-graph features effectively improve the performance of a topic classifier of Microposts",
+        "approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts",
+        "novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level",
+        "our approach outperforms previous approaches using single KS without linked data and Twitter data only up to 31.4% in terms of F1 measure",
+        "new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs",
+        "accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures"
+      ],
+      "dataset": [
+        "linked knowledge sources (KSs)"
+      ],
+      "method": [
+        "generation of different weighted semantic meta-graphs extracted from linked KSs",
+        "introduce a new semantic graph, called category meta-graph",
+        "automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts",
+        "introduce and evaluate novel topic similarity measures"
+      ],
+      "paper_id": "P001604",
+      "problem": [
+        "accurate TC of Microposts is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information"
+      ],
+      "task": [
+        "topic classification (TC) of Microposts"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 125.42893302199991,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 41.88875247500005,
+        "messages_sha256": "df16cd653f74ae0860d8beb3f2b6653f575bf7ff3eaa58b7482e666d78ffeed3",
+        "raw_output": "{\"paper_id\":\"P001604\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Short text messages a.k.a Microposts (e.g. Tweets) have proven to be an effective channel for revealing information about trends and events, ranging from those related to Disaster (e.g. hurricane Sandy) to those related to Violence (e.g. Egyptian revolution).\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Being informed about such events as they occur could be extremely important to authorities and emergency professionals by allowing such parties to immediately respond.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"The accurate TC of Microposts however is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Traditional TC techniques enrich the content of Microposts with features extracted only from the Microposts content.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"In contrast our approach relies on the generation of different weighted semantic meta-graphs extracted from linked KSs.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence\":\"A5\",\"span\":\"We introduce a new semantic graph, called category meta-graph.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Our findings show that such category meta-graph features effectively improve the performance of a topic classifier of Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"For this reason we propose an approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"We introduce and evaluate novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level, considering the enriched representation of these documents.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Our main findings indicate that the new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"Furthermore our results also indicate that the accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 4854,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 931,
+          "output_tokens": 559
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 42.20570389599993,
+        "messages_sha256": "677ce15b8c76f69cc82dcf38e25b0071607c94b72f2190832c66acaf66a6f02c",
+        "raw_output": "{\"paper_id\":\"P001604\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Short text messages a.k.a Microposts (e.g. Tweets) have proven to be an effective channel for revealing information about trends and events, ranging from those related to Disaster (e.g. hurricane Sandy) to those related to Violence (e.g. Egyptian revolution).\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A1\",\"span\":\"Being informed about such events as they occur could be extremely important to authorities and emergency professionals by allowing such parties to immediately respond.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A2\",\"span\":\"The accurate TC of Microposts however is a challenging task since the limited number of tokens in a post often implies a lack of sufficient contextual information.\",\"roles\":[\"problem\"],\"origin\":\"prior\"},{\"evidence_id\":\"A3\",\"span\":\"Traditional TC techniques enrich the content of Microposts with features extracted only from the Microposts content.\",\"roles\":[\"method\"],\"origin\":\"prior\"},{\"evidence_id\":\"A4\",\"span\":\"In contrast our approach relies on the generation of different weighted semantic meta-graphs extracted from linked KSs.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence\":\"A5\",\"span\":\"We introduce a new semantic graph, called category meta-graph.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A6\",\"span\":\"This novel meta-graph provides a more fine grained categorisation of concepts providing a set of novel semantic features.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A7\",\"span\":\"Our findings show that such category meta-graph features effectively improve the performance of a topic classifier of Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A8\",\"span\":\"For this reason we propose an approach for automatic estimation of accuracy loss of a topic classifier on new, unseen Microposts.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A9\",\"span\":\"We introduce and evaluate novel topic similarity measures, which capture the similarity between the KS documents and Microposts at a conceptual level, considering the enriched representation of these documents.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A10\",\"span\":\"Our main findings indicate that the new category graph contains useful information for TC and achieves comparable results to previously used semantic graphs.\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A11\",\"span\":\"Furthermore our results also indicate that the accuracy of a topic classifier can be accurately predicted using the enhanced text representation, outperforming previous approaches considering content-based similarity measures.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 4855,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 952,
+          "output_tokens": 559
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 125.42893302199991,
+      "input_tokens": 4511,
+      "output_tokens": 1636
+    },
+    "paper_id": "P001604",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 4511,
+      "output_tokens": 1636
+    }
+  },
+  "record_sha256": "0f6be6b224d0ffa0b37a6c23e6288b6c00fc64203dfed833733dcb0793e0a22e",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

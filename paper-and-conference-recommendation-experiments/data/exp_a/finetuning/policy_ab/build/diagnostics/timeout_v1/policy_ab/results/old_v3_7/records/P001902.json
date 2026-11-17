@@ -1,0 +1,300 @@
+{
+  "record": {
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "arm": "old_v3_7",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 31.737350036999942,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5748,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2559,
+            "output_tokens": 222
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 2,
+          "generation_seconds": 38.326208767000026,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": false,
+          "score": 75.5,
+          "seed": 5749,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4152,
+            "output_tokens": 260
+          },
+          "validation_errors": [
+            "method[2]: wrong concept/evidence_id keys",
+            "method[2]: unknown evidence_id",
+            "method[2]: evidence must be an exact source sentence; concept=\"secondary loss\"; evidence_id=null; evidence=\"\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge\", \"evidence_id\": \"A6\"}]}",
+          "attempt": 3,
+          "generation_seconds": 38.74360671900013,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001902\", \"problem\": [{\"concept\": \"lacks annotated data\", \"evidence_id\": \"A0\"}, {\"concept\": \"low-resource languages\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"language identification\", \"evidence_id\": \"A2\"}, {\"concept\": \"named entity recognition\", \"evidence_id\": \"A5\"}, {\"concept\": \"part-of-speech tagging\", \"evidence_id\": \"A5\"}], \"method\": [{\"concept\": \"transfer learning\", \"evidence_id\": \"A2\"}, {\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"ELMo\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"hierarchical attention mechanism\", \"evidence_id\": \"A2\"}, {\"concept\": \"secondary loss\", \"evidence_id\": \"A2\"}, {\"concept\": \"retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge\", \"evidence_id\": \"A6\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 5750,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4243,
+            "output_tokens": 261
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "hierarchical attention mechanism",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "secondary loss",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge",
+            "evidence_id": "A6"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "transfer learning",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "hierarchical attention mechanism",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "secondary loss",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "ELMo",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001902",
+        "problem": [
+          {
+            "concept": "lacks annotated data",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "low-resource languages",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "language identification",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "named entity recognition",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "part-of-speech tagging",
+            "evidence_id": "A5"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 108.8071655230001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 5750,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 10954,
+        "output_tokens": 743
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "evidence": {
+      "contribution": [
+        {
+          "concept": "hierarchical attention mechanism",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "secondary loss",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge",
+          "evidence": "We show that our retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge.",
+          "source": "abstract"
+        }
+      ],
+      "dataset": [],
+      "method": [
+        {
+          "concept": "transfer learning",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "hierarchical attention mechanism",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "secondary loss",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "ELMo",
+          "evidence": "We use the bottom layers of the ELMo architecture to learn these morphological clues by essentially recognizing what is and what is not English.",
+          "source": "abstract"
+        }
+      ],
+      "paper_id": "P001902",
+      "problem": [
+        {
+          "concept": "lacks annotated data",
+          "evidence": "Code-switching is still an understudied phenomenon in natural language processing mainly because of two related challenges: it lacks annotated data, and it combines a vast diversity of low-resource languages.",
+          "source": "abstract"
+        },
+        {
+          "concept": "low-resource languages",
+          "evidence": "Code-switching is still an understudied phenomenon in natural language processing mainly because of two related challenges: it lacks annotated data, and it combines a vast diversity of low-resource languages.",
+          "source": "abstract"
+        }
+      ],
+      "task": [
+        {
+          "concept": "language identification",
+          "evidence": "In the first part of this paper, we use transfer learning from English to English-paired code-switched languages for the language identification (LID) task by applying two simple yet effective techniques: 1) a hierarchical attention mechanism that enhances morphological clues from character n-grams, and 2) a secondary loss that forces the model to learn n-gram representations that are particular to the languages involved.",
+          "source": "abstract"
+        },
+        {
+          "concept": "named entity recognition",
+          "evidence": "In the second part of the paper, we use our best LID models for the tasks of Spanish-English named entity recognition and Hindi-English part-of-speech tagging by replacing their inference layers and retraining them.",
+          "source": "abstract"
+        },
+        {
+          "concept": "part-of-speech tagging",
+          "evidence": "In the second part of the paper, we use our best LID models for the tasks of Spanish-English named entity recognition and Hindi-English part-of-speech tagging by replacing their inference layers and retraining them.",
+          "source": "abstract"
+        }
+      ]
+    },
+    "facets": {
+      "contribution": [
+        "hierarchical attention mechanism",
+        "secondary loss",
+        "retrained models are capable of using the code-switching information on both tasks to outperform models that do not have such knowledge"
+      ],
+      "dataset": [],
+      "method": [
+        "transfer learning",
+        "hierarchical attention mechanism",
+        "secondary loss",
+        "ELMo"
+      ],
+      "paper_id": "P001902",
+      "problem": [
+        "lacks annotated data",
+        "low-resource languages"
+      ],
+      "task": [
+        "language identification",
+        "named entity recognition",
+        "part-of-speech tagging"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 108.8071655230001,
+    "instruction_sha256": "8c65c6cb27a22233322b6b7b4184b8c56ea88aa2aa3e8ed3578fb06bc70d092e",
+    "paper_id": "P001902",
+    "runtime": {
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "quantization": "nf4_double",
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6"
+    },
+    "usage": {
+      "input_tokens": 10954,
+      "output_tokens": 743
+    }
+  },
+  "record_sha256": "ed96f5165b18503e1fae44c5752e8f7e42d2b5bb7b14acda42efbd78a953dc87",
+  "signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427"
+}

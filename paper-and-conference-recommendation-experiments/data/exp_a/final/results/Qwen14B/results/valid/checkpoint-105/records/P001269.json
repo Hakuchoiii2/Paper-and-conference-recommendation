@@ -1,0 +1,496 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.089569489002315,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3849,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1241,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.676015954999457,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3850,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2922,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.288959830999374,
+          "parseable": true,
+          "raw_output": "{\"paper_id\":\"P001269\",\"task\":[{\"concept\":\"identifying audio patterns\",\"evidence_id\":\"A1\"},{\"concept\":\"recognizing noise segments\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"recognition system\",\"evidence_id\":\"A4\"},{\"concept\":\"manual annotation of noise segments\",\"evidence_id\":\"A2\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3851,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 651,
+            "output_tokens": 75
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "recognizing noise segments",
+              "evidence": "We trained a recognition system using 5.6 hours of manually labeled data, and present recognition results.",
+              "facet": "task",
+              "index": 2,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "labels describe distinct noise units",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "highly unstructured nature of the data",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "identifying audio patterns",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "recognizing noise segments",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 64.05454527500115,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "paper_id": "P001269",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4814,
+        "output_tokens": 369
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "recognizing noise segments",
+          "evidence": "We trained a recognition system using 5.6 hours of manually labeled data, and present recognition results.",
+          "facet": "task",
+          "index": 2,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "f92c1f0e705f31bfa953e9487c94dbb8f303f879caa3c5487e8e6f3b06de323e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.089569489002315,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3849,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1241,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "attempt": 2,
+          "generation_seconds": 27.676015954999457,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001269\", \"problem\": [{\"concept\": \"highly unstructured nature of the data\", \"evidence_id\": \"A0\"}], \"task\": [{\"concept\": \"manual annotation of noise segments\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"recognition system\", \"evidence_id\": \"A4\"}, {\"concept\": \"labels describe distinct noise units\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"noisemes\", \"evidence_id\": \"A2\"}, {\"concept\": \"42 distinct labels\", \"evidence_id\": \"A2\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 3850,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2922,
+            "output_tokens": 147
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "labels describe distinct noise units",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "highly unstructured nature of the data",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 51.76558544400177,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 3850,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4163,
+        "output_tokens": 294
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.089569489002315,
+        "inherited": false,
+        "messages_sha256": "af5ea87a97b3e2debb26f3adfea462aab275deb39c96d52518b5b531c1784bf4",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 3849,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1241,
+          "output_tokens": 147
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 27.676015954999457,
+        "inherited": false,
+        "messages_sha256": "67d45edad91e5d513f596336a35eb7f2900bc06a205ef3f16bb58ba015156132",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001269",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "seed": 3850,
+        "usage": {
+          "input_tokens": 2922,
+          "output_tokens": 147
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.288959830999374,
+        "inherited": false,
+        "messages_sha256": "1ec9a0d7cecd85f726bb79f264b90118ee426ff7456a24147a21f5ecf1f7345c",
+        "reached_token_limit": false,
+        "seed": 3851,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 651,
+          "output_tokens": 75
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "identifying audio patterns",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "task",
+          "item": {
+            "concept": "recognizing noise segments",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        }
+      ],
+      "accepted_count": 3,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "noisemes",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "42 distinct labels",
+            "evidence_id": "A2"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "labels describe distinct noise units",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P001269",
+        "problem": [
+          {
+            "concept": "highly unstructured nature of the data",
+            "evidence_id": "A0"
+          }
+        ],
+        "task": [
+          {
+            "concept": "manual annotation of noise segments",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "recognition system",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.288959830999374,
+      "messages_sha256": "1ec9a0d7cecd85f726bb79f264b90118ee426ff7456a24147a21f5ecf1f7345c",
+      "raw_output": "{\"paper_id\":\"P001269\",\"task\":[{\"concept\":\"identifying audio patterns\",\"evidence_id\":\"A1\"},{\"concept\":\"recognizing noise segments\",\"evidence_id\":\"A4\"}],\"method\":[{\"concept\":\"recognition system\",\"evidence_id\":\"A4\"},{\"concept\":\"manual annotation of noise segments\",\"evidence_id\":\"A2\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 651,
+        "output_tokens": 75
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "ab528dbc4da860b500535ebe76a4c0af754bbb08ad12ef10ecc38aeb649d991b",
+    "facets": {
+      "contribution": [
+        "noisemes",
+        "42 distinct labels"
+      ],
+      "dataset": [],
+      "method": [
+        "recognition system",
+        "labels describe distinct noise units",
+        "manual annotation of noise segments"
+      ],
+      "paper_id": "P001269",
+      "problem": [
+        "highly unstructured nature of the data"
+      ],
+      "task": [
+        "manual annotation of noise segments",
+        "identifying audio patterns",
+        "recognizing noise segments"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 64.05454527500115,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 64.05454527500115,
+      "input_tokens": 4814,
+      "output_tokens": 369
+    },
+    "paper_id": "P001269",
+    "source_sha256": "165f32b6826a562eecd728a0825ba73156a2cd57a9cb1a3f8d902fb39c1f2c2f",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 4814,
+      "output_tokens": 369
+    }
+  },
+  "record_sha256": "ef737c7bff6296ce9d3b0d6ba69e118c6c6b3678cd94acb13e0b6c90e2bc931c",
+  "signature": "d6a189434536ddd6406715a700026b2ff5c8849d50699394c5d64c14de105878"
+}

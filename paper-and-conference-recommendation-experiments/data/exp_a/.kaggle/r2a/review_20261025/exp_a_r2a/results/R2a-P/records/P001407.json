@@ -1,0 +1,250 @@
+{
+  "record": {
+    "arm": "R2a-P",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P001407\",\n  \"problem\": [\n    {\n      \"concept\": \"terms may have multiple senses hampering automatic placement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"techniques in isolation often do not suffice for a particular task\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"refine results of automatic lexical discovery technique\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistically-based syntactic similarity measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"termsimilarity determination technique\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"union of two corpus-based methods is promising but only partially successful\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"preliminary results and suggestions for improving the technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 21.238126047999913,
+          "operations": [],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\n  \"paper_id\": \"P001407\",\n  \"problem\": [\n    {\n      \"concept\": \"terms may have multiple senses hampering automatic placement\",\n      \"evidence_id\": \"A5\"\n    },\n    {\n      \"concept\": \"techniques in isolation often do not suffice for a particular task\",\n      \"evidence_id\": \"A1\"\n    }\n  ],\n  \"task\": [\n    {\n      \"concept\": \"refine results of automatic lexical discovery technique\",\n      \"evidence_id\": \"A2\"\n    }\n  ],\n  \"method\": [\n    {\n      \"concept\": \"statistically-based syntactic similarity measure\",\n      \"evidence_id\": \"A2\"\n    },\n    {\n      \"concept\": \"termsimilarity determination technique\",\n      \"evidence_id\": \"A6\"\n    }\n  ],\n  \"dataset\": [],\n  \"contribution\": [\n    {\n      \"concept\": \"union of two corpus-based methods is promising but only partially successful\",\n      \"evidence_id\": \"A7\"\n    },\n    {\n      \"concept\": \"preliminary results and suggestions for improving the technique\",\n      \"evidence_id\": \"A8\"\n    }\n  ]\n}",
+          "response_format": "annotation",
+          "schema_valid": true,
+          "score": 83.1227,
+          "seed": 4263,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2532,
+            "output_tokens": 254
+          },
+          "validation_errors": [
+            "contribution[0]: concept must use source words in their original order; no invented synonyms; concept=\"union of two corpus-based methods is promising but only partially successful\"; evidence_id=\"A7\"; evidence=\"The union of these two corpus-based methods is promising, although only partially successful in the experiments run so far.\""
+          ]
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001407\", \"problem\": [{\"concept\": \"terms may have multiple senses hampering automatic placement\", \"evidence_id\": \"A5\"}, {\"concept\": \"techniques in isolation often do not suffice for a particular task\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"refine results of automatic lexical discovery technique\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"statistically-based syntactic similarity measure\", \"evidence_id\": \"A2\"}, {\"concept\": \"termsimilarity determination technique\", \"evidence_id\": \"A6\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"union of these two corpus-based methods is promising, although only partially successful\", \"evidence_id\": \"A7\"}, {\"concept\": \"preliminary results and suggestions for improving the technique\", \"evidence_id\": \"A8\"}]}",
+          "attempt": 2,
+          "generation_seconds": 7.482799275000048,
+          "operations": [
+            {
+              "before": {
+                "concept": "union of two corpus-based methods is promising but only partially successful",
+                "evidence_id": "A7"
+              },
+              "concept": "union of these two corpus-based methods is promising, although only partially successful",
+              "evidence_id": "A7",
+              "facet": "contribution",
+              "index": 0,
+              "op": "replace",
+              "reason": "source-based explanation"
+            }
+          ],
+          "parseable": true,
+          "patch_error": null,
+          "raw_output": "{\"paper_id\":\"P001407\",\"edits\":[{\"op\":\"replace\",\"facet\":\"contribution\",\"index\":0,\"concept\":\"union of these two corpus-based methods is promising, although only partially successful\",\"evidence_id\":\"A7\",\"reason\":\"source-based explanation\"}]}",
+          "response_format": "indexed_patch_v1",
+          "schema_valid": true,
+          "score": 87.4084,
+          "seed": 4264,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 2767,
+            "output_tokens": 60
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "union of these two corpus-based methods is promising, although only partially successful",
+            "evidence_id": "A7"
+          },
+          {
+            "concept": "preliminary results and suggestions for improving the technique",
+            "evidence_id": "A8"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "statistically-based syntactic similarity measure",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "termsimilarity determination technique",
+            "evidence_id": "A6"
+          }
+        ],
+        "paper_id": "P001407",
+        "problem": [
+          {
+            "concept": "terms may have multiple senses hampering automatic placement",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "techniques in isolation often do not suffice for a particular task",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": [
+          {
+            "concept": "refine results of automatic lexical discovery technique",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 28.72092532299996,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001407",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "indexed_patch_v1",
+        "scoped_negation": false
+      },
+      "review_kind": "validator_targeted_patch_not_semantic_certification",
+      "seed": 4264,
+      "selected_score": 87.4084,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5299,
+        "output_tokens": 314
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "15a381584dd8e80f6d9a6887ac17be2aeec6d2b9353be0a25f76d4775f21d7f0",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": true,
+        "seed": 4263
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "4eb76f5b2e54f280568f74794d377848343b8c6760720e977e978a0313fa7a24",
+        "operations": [
+          {
+            "before": {
+              "concept": "union of two corpus-based methods is promising but only partially successful",
+              "evidence_id": "A7"
+            },
+            "concept": "union of these two corpus-based methods is promising, although only partially successful",
+            "evidence_id": "A7",
+            "facet": "contribution",
+            "index": 0,
+            "op": "replace",
+            "reason": "source-based explanation"
+          }
+        ],
+        "patch_error": null,
+        "seed": 4264
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "common_gate": {
+      "original": {
+        "errors": [],
+        "valid": true
+      },
+      "scoped": {
+        "errors": [],
+        "valid": true
+      }
+    },
+    "draft_items_removed_or_reworded": 1,
+    "facets": {
+      "contribution": [
+        "union of these two corpus-based methods is promising, although only partially successful",
+        "preliminary results and suggestions for improving the technique"
+      ],
+      "dataset": [],
+      "method": [
+        "statistically-based syntactic similarity measure",
+        "termsimilarity determination technique"
+      ],
+      "paper_id": "P001407",
+      "problem": [
+        "terms may have multiple senses hampering automatic placement",
+        "techniques in isolation often do not suffice for a particular task"
+      ],
+      "task": [
+        "refine results of automatic lexical discovery technique"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 28.72092532299996,
+    "instruction_sha256": "c978b487163e2b818a1a6dd7a85c2f8d6aba2e51142bef97eb6792b507c4b411",
+    "intervention": {
+      "coverage_added": false,
+      "indexed_patch": true,
+      "scoped_validator": false
+    },
+    "new_cost": {
+      "calls": 1,
+      "generation_seconds": 7.482799275000048,
+      "input_tokens": 2767,
+      "output_tokens": 60
+    },
+    "paper_id": "P001407",
+    "protected_items_changed": 0,
+    "protection_scope": "patch application before unchanged named-dataset postfilter; V is unrestricted review",
+    "repair_transitions": {
+      "draft_invalid": true,
+      "final_invalid": false,
+      "invalid_to_valid": true,
+      "valid_to_invalid": false
+    },
+    "selected_item_origins": {
+      "contribution": [
+        0,
+        1
+      ],
+      "dataset": [],
+      "method": [
+        0,
+        1
+      ],
+      "problem": [
+        0,
+        1
+      ],
+      "task": [
+        0
+      ]
+    },
+    "usage": {
+      "input_tokens": 5299,
+      "output_tokens": 314
+    }
+  },
+  "record_sha256": "1c4daa956b19c0412d7dde7d6c5e9961118947ddd4a76c08420af1039d76eb5d",
+  "signature": "f65d9490b390333b34c0e5bd70dad10b456d6163b36b1a43ac9938f46e67af67"
+}

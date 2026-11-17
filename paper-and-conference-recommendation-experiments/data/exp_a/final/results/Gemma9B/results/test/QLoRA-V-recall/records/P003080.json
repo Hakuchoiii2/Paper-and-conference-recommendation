@@ -1,0 +1,498 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+    "annotation_fallback": false,
+    "arm": "QLoRA-V-recall",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"few convincing demonstrations of this\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 38.53937795499951,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"few convincing demonstrations of this\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9282,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1315,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 40.60472504400241,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9283,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3127,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 11.167847319993598,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003080\", \"task\": [], \"method\": [{\"concept\": \"automatic metrics\", \"evidence_id\": \"A5\"}, {\"concept\": \"human evaluations\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9284,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 773,
+            "output_tokens": 57
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "large dataset with conversations directly grounded with knowledge retrieved from Wikipedia",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "new benchmark",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "sequence to sequence models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "retrieving knowledge",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reading and conditioning on it",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "automatic metrics",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "human evaluations",
+            "evidence_id": "A5"
+          }
+        ],
+        "paper_id": "P003080",
+        "problem": [
+          {
+            "concept": "lack of a supervised learning benchmark task",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "open-domain dialogue",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 90.31195031899551,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "paper_id": "P003080",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5215,
+        "output_tokens": 456
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "dca269fe3fe62165384896b2b43b67ef20e0f12e1ce29de5b111bcdba76fdf3e",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"few convincing demonstrations of this\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 1,
+          "generation_seconds": 38.53937795499951,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"few convincing demonstrations of this\", \"evidence_id\": \"A0\"}, {\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9282,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1315,
+            "output_tokens": 209
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "attempt": 2,
+          "generation_seconds": 40.60472504400241,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003080\", \"problem\": [{\"concept\": \"lack of a supervised learning benchmark task\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"open-domain dialogue\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"sequence to sequence models\", \"evidence_id\": \"A1\"}, {\"concept\": \"retrieving knowledge\", \"evidence_id\": \"A4\"}, {\"concept\": \"reading and conditioning on it\", \"evidence_id\": \"A4\"}], \"dataset\": [{\"concept\": \"Wikipedia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"large dataset with conversations directly grounded with knowledge retrieved from Wikipedia\", \"evidence_id\": \"A3\"}, {\"concept\": \"new benchmark\", \"evidence_id\": \"A5\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 9283,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3127,
+            "output_tokens": 190
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "eager",
+      "chat_adapter": "native_llama_or_folded_gemma2_v1",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "large dataset with conversations directly grounded with knowledge retrieved from Wikipedia",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "new benchmark",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "sequence to sequence models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "retrieving knowledge",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reading and conditioning on it",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003080",
+        "problem": [
+          {
+            "concept": "lack of a supervised learning benchmark task",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "open-domain dialogue",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 79.14410299900192,
+      "gpu_name": "Tesla T4",
+      "model": "google/gemma-2-9b-it",
+      "model_revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 9283,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "stop_token_ids": [
+        1,
+        107
+      ],
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4442,
+        "output_tokens": 399
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 38.53937795499951,
+        "inherited": false,
+        "messages_sha256": "aebf50cae20dd4c88bc937abe0f4adb3b5b52e4cc8f216d252f8cae5d55d2f69",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 9282,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1315,
+          "output_tokens": 209
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 40.60472504400241,
+        "inherited": false,
+        "messages_sha256": "7b0ca7fc11b7e59afb9e6acd70af8f80184b670c1fb58b143a6f9aff4b422bd0",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P003080",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "seed": 9283,
+        "usage": {
+          "input_tokens": 3127,
+          "output_tokens": 190
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.167847319993598,
+        "inherited": false,
+        "messages_sha256": "0e9566c87db7bc841c075c0540a51804ca38a182a9e9ae99041023b06f8d9b77",
+        "reached_token_limit": false,
+        "seed": 9284,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 773,
+          "output_tokens": 57
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "method",
+          "item": {
+            "concept": "automatic metrics",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "human evaluations",
+            "evidence_id": "A5"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "large dataset with conversations directly grounded with knowledge retrieved from Wikipedia",
+            "evidence_id": "A3"
+          },
+          {
+            "concept": "new benchmark",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Wikipedia",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "sequence to sequence models",
+            "evidence_id": "A1"
+          },
+          {
+            "concept": "retrieving knowledge",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "reading and conditioning on it",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P003080",
+        "problem": [
+          {
+            "concept": "lack of a supervised learning benchmark task",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "open-domain dialogue",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "duplicates": [],
+      "errors": [],
+      "generation_seconds": 11.167847319993598,
+      "messages_sha256": "0e9566c87db7bc841c075c0540a51804ca38a182a9e9ae99041023b06f8d9b77",
+      "raw_output": "{\"paper_id\": \"P003080\", \"task\": [], \"method\": [{\"concept\": \"automatic metrics\", \"evidence_id\": \"A5\"}, {\"concept\": \"human evaluations\", \"evidence_id\": \"A5\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 773,
+        "output_tokens": 57
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "057cf74a68ba87d99c76c7318baaa5c2fbb70795c70eaf239075bffb6a52692b",
+    "facets": {
+      "contribution": [
+        "large dataset with conversations directly grounded with knowledge retrieved from Wikipedia",
+        "new benchmark"
+      ],
+      "dataset": [
+        "Wikipedia"
+      ],
+      "method": [
+        "sequence to sequence models",
+        "retrieving knowledge",
+        "reading and conditioning on it",
+        "automatic metrics",
+        "human evaluations"
+      ],
+      "paper_id": "P003080",
+      "problem": [
+        "lack of a supervised learning benchmark task"
+      ],
+      "task": [
+        "open-domain dialogue"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 90.31195031899551,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 90.31195031899551,
+      "input_tokens": 5215,
+      "output_tokens": 456
+    },
+    "paper_id": "P003080",
+    "source_sha256": "9fd1c6f74c5e9a7d7c2e1f205e15173655a211292ee779940edadf1b233f06c1",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5215,
+      "output_tokens": 456
+    }
+  },
+  "record_sha256": "2518eaa464e05dd9d3db4f4813b213270cfb6dec73c0b5eb57456578bee39f4e",
+  "signature": "69abfbde8935c6cd9e261f421a3118d668ad21dde8a38329db99380a911b4231"
+}

@@ -1,0 +1,192 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "attempt": 3,
+          "generation_seconds": 11.059186301999944,
+          "messages_sha256": "dce64bcf37bbcff249665218b1d34120f12eafb68c3c0f2eb99320cd2296176a",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P003002\", \"problem\": [], \"task\": [{\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"}, {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 76.0,
+          "seed": 9050,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2238,
+            "output_tokens": 122
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "method can rival supervised learning techniques while requiring few or no annotated training examples",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "reinforcement learning approach",
+            "evidence_id": "A0"
+          },
+          {
+            "concept": "policy gradient algorithm",
+            "evidence_id": "A3"
+          }
+        ],
+        "paper_id": "P003002",
+        "problem": [],
+        "task": [
+          {
+            "concept": "mapping natural language instructions to sequences of executable actions",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "fallback_used": true,
+      "generation_seconds": 45.76497672200003,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P003002",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 76.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 583
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 17.54905066399988,
+        "messages_sha256": "ca748bd21dcc799adda9a058191c7f133ee46e7fa605d4912eb2dca53c60ebaf",
+        "raw_output": "{\"paper_id\":\"P003002\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Reinforcement Learning for Mapping Instructions to Actions\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We assume access to a reward function that defines the quality of the executed actions.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"During training, the learner repeatedly constructs action sequences for a set of documents, executes those actions, and observes the resulting reward.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We use a policy gradient algorithm to estimate the parameters of a log-linear model for action selection.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We apply our method to interpret instructions in two domains --- Windows troubleshooting guides and game tutorials.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9048,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 541,
+          "output_tokens": 233
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.156739756000206,
+        "messages_sha256": "9a659aae63820d3c85c6b1608c764e3633628c8368251cf717af48f308e9f680",
+        "raw_output": "{\"paper_id\":\"P003002\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Reinforcement Learning for Mapping Instructions to Actions\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We assume access to a reward function that defines the quality of the executed actions.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"During training, the learner repeatedly constructs action sequences for a set of documents, executes those actions, and observes the resulting reward.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We use a policy gradient algorithm to estimate the parameters of a log-linear model for action selection.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We apply our method to interpret instructions in two domains --- Windows troubleshooting guides and game tutorials.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9049,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 228
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 11.059186301999944,
+        "messages_sha256": "dce64bcf37bbcff249665218b1d34120f12eafb68c3c0f2eb99320cd2296176a",
+        "raw_output": "{\"paper_id\": \"P003002\", \"problem\": [], \"task\": [{\"concept\": \"mapping natural language instructions to sequences of executable actions\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"reinforcement learning approach\", \"evidence_id\": \"A0\"}, {\"concept\": \"policy gradient algorithm\", \"evidence_id\": \"A3\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"method can rival supervised learning techniques while requiring few or no annotated training examples\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 9050,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2238,
+          "output_tokens": 122
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 0,
+    "facets": {
+      "contribution": [
+        "method can rival supervised learning techniques while requiring few or no annotated training examples"
+      ],
+      "dataset": [],
+      "method": [
+        "reinforcement learning approach",
+        "policy gradient algorithm"
+      ],
+      "paper_id": "P003002",
+      "problem": [],
+      "task": [
+        "mapping natural language instructions to sequences of executable actions"
+      ]
+    },
+    "fallback_used": true,
+    "generation_seconds": 45.76497672200003,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 17.54905066399988,
+        "messages_sha256": "ca748bd21dcc799adda9a058191c7f133ee46e7fa605d4912eb2dca53c60ebaf",
+        "raw_output": "{\"paper_id\":\"P003002\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Reinforcement Learning for Mapping Instructions to Actions\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We assume access to a reward function that defines the quality of the executed actions.\",\"roles\":[\"problem\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"During training, the learner repeatedly constructs action sequences for a set of documents, executes those actions, and observes the resulting reward.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We use a policy gradient algorithm to estimate the parameters of a log-linear model for action selection.\",\"roles\":[\"method\",\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We apply our method to interpret instructions in two domains --- Windows troubleshooting guides and game tutorials.\",\"roles\":[\"dataset\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9048,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 541,
+          "output_tokens": 233
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 17.156739756000206,
+        "messages_sha256": "9a659aae63820d3c85c6b1608c764e3633628c8368251cf717af48f308e9f680",
+        "raw_output": "{\"paper_id\":\"P003002\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"Reinforcement Learning for Mapping Instructions to Actions\",\"roles\":[\"contribution\"],\"origin\":\"current\"},{\"evidence_id\":\"A1\",\"span\":\"We assume access to a reward function that defines the quality of the executed actions.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A2\",\"span\":\"During training, the learner repeatedly constructs action sequences for a set of documents, executes those actions, and observes the resulting reward.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A3\",\"span\":\"We use a policy gradient algorithm to estimate the parameters of a log-linear model for action selection.\",\"roles\":[\"method\"],\"origin\":\"current\"},{\"evidence_id\":\"A4\",\"span\":\"We apply our method to interpret instructions in two domains --- Windows troubleshooting guides and game tutorials.\",\"roles\":[\"task\"],\"origin\":\"current\"},{\"evidence_id\":\"A5\",\"span\":\"Our results demonstrate that this method can rival supervised learning techniques while requiring few or no annotated training examples.\",\"roles\":[\"contribution\"],\"origin\":\"current\"}]}",
+        "reached_token_limit": false,
+        "seed": 9049,
+        "stage": "inventory_retry",
+        "usage": {
+          "input_tokens": 562,
+          "output_tokens": 228
+        },
+        "validation_errors": [
+          "unit 0: wrong keys"
+        ]
+      }
+    ],
+    "inventory_errors": [
+      "unit 0: wrong keys"
+    ],
+    "inventory_valid": false,
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 45.76497672200003,
+      "input_tokens": 3341,
+      "output_tokens": 583
+    },
+    "paper_id": "P003002",
+    "source_inventory": [],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3341,
+      "output_tokens": 583
+    }
+  },
+  "record_sha256": "23dc5897b186631b2e7ef44f71f4e73de5dbfa54a528b283daad23355f3e8119",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}

@@ -1,0 +1,482 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+    "annotation_fallback": false,
+    "arm": "checkpoint-70",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.084559564999836,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6666,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1337,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.930967350000174,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6667,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3040,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 12.216500477999944,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}, {\"concept\": \"speaker recognition\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"large scale voiceprint corpus\", \"evidence_id\": \"A4\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6668,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 750,
+            "output_tokens": 91
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "large scale voiceprint corpus",
+              "evidence": "In this paper, we try to introduce a deep nonlinear metric learning based speaker identification algorithm and construct a larger scale of voiceprint corpus consisting of about 440 thousand people.",
+              "facet": "method",
+              "index": 1,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "deep nonlinear metric learning based speaker identification algorithm",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "voiceprint corpus consisting of about 440 thousand people",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "deep nonlinear metric learning",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "large scale voiceprint corpus",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002208",
+        "problem": [
+          {
+            "concept": "evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speaker identification",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "speaker recognition",
+            "evidence_id": "A2"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 53.23202739299995,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P002208",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5127,
+        "output_tokens": 391
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "large scale voiceprint corpus",
+          "evidence": "In this paper, we try to introduce a deep nonlinear metric learning based speaker identification algorithm and construct a larger scale of voiceprint corpus consisting of about 440 thousand people.",
+          "facet": "method",
+          "index": 1,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "070787d57b2d8fdef47140e7d2ef6117978fdbea99a4e2727cf7511e7bda293b",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 1,
+          "generation_seconds": 20.084559564999836,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6666,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1337,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "attempt": 2,
+          "generation_seconds": 20.930967350000174,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P002208\", \"problem\": [{\"concept\": \"evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus\", \"evidence_id\": \"A2\"}], \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}], \"dataset\": [], \"contribution\": [{\"concept\": \"deep nonlinear metric learning based speaker identification algorithm\", \"evidence_id\": \"A4\"}, {\"concept\": \"voiceprint corpus consisting of about 440 thousand people\", \"evidence_id\": \"A4\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 6667,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3040,
+            "output_tokens": 150
+          },
+          "validation_errors": [],
+          "validation_warnings": [],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "deep nonlinear metric learning based speaker identification algorithm",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "voiceprint corpus consisting of about 440 thousand people",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "deep nonlinear metric learning",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002208",
+        "problem": [
+          {
+            "concept": "evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speaker identification",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 41.01552691500001,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 6667,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4377,
+        "output_tokens": 300
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 20.084559564999836,
+        "inherited": false,
+        "messages_sha256": "dbda076c53f8b44e29670258f57a54b3ce6e38bc98b625f193880d8ca1809632",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 6666,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1337,
+          "output_tokens": 150
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 20.930967350000174,
+        "inherited": false,
+        "messages_sha256": "58400f90b97762e8f5a5c47b00c363be4d7d5572cb12a8a546e8b6ceb90a9f16",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P002208",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "seed": 6667,
+        "usage": {
+          "input_tokens": 3040,
+          "output_tokens": 150
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 12.216500477999944,
+        "inherited": false,
+        "messages_sha256": "15e7023c465328573bbff9d145be60904b030ecfe566246d8652d82652809282",
+        "reached_token_limit": false,
+        "seed": 6668,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 750,
+          "output_tokens": 91
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [
+        {
+          "facet": "task",
+          "item": {
+            "concept": "speaker recognition",
+            "evidence_id": "A2"
+          }
+        },
+        {
+          "facet": "method",
+          "item": {
+            "concept": "large scale voiceprint corpus",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "accepted_count": 2,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "deep nonlinear metric learning based speaker identification algorithm",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "voiceprint corpus consisting of about 440 thousand people",
+            "evidence_id": "A4"
+          }
+        ],
+        "dataset": [],
+        "method": [
+          {
+            "concept": "deep nonlinear metric learning",
+            "evidence_id": "A4"
+          }
+        ],
+        "paper_id": "P002208",
+        "problem": [
+          {
+            "concept": "evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus",
+            "evidence_id": "A2"
+          }
+        ],
+        "task": [
+          {
+            "concept": "speaker identification",
+            "evidence_id": "A4"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "speaker identification",
+            "evidence_id": "A4"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "deep nonlinear metric learning",
+            "evidence_id": "A4"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 12.216500477999944,
+      "messages_sha256": "15e7023c465328573bbff9d145be60904b030ecfe566246d8652d82652809282",
+      "raw_output": "{\"paper_id\": \"P002208\", \"task\": [{\"concept\": \"speaker identification\", \"evidence_id\": \"A4\"}, {\"concept\": \"speaker recognition\", \"evidence_id\": \"A2\"}], \"method\": [{\"concept\": \"deep nonlinear metric learning\", \"evidence_id\": \"A4\"}, {\"concept\": \"large scale voiceprint corpus\", \"evidence_id\": \"A4\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 750,
+        "output_tokens": 91
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "ad0f32b7745f05dca1dfcafcac374162cffc1824c727ea39e018f0f8c444af9b",
+    "facets": {
+      "contribution": [
+        "deep nonlinear metric learning based speaker identification algorithm",
+        "voiceprint corpus consisting of about 440 thousand people"
+      ],
+      "dataset": [],
+      "method": [
+        "deep nonlinear metric learning",
+        "large scale voiceprint corpus"
+      ],
+      "paper_id": "P002208",
+      "problem": [
+        "evaluations on speaker recognition algorithms are always performed on a small or middle scale of voiceprint corpus"
+      ],
+      "task": [
+        "speaker identification",
+        "speaker recognition"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 53.23202739299995,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 53.23202739299995,
+      "input_tokens": 5127,
+      "output_tokens": 391
+    },
+    "paper_id": "P002208",
+    "source_sha256": "b60932a947a987efe7025d84d1e21525d71edeaec10a3593a22178a3120e121b",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5127,
+      "output_tokens": 391
+    }
+  },
+  "record_sha256": "884ee0098f9ee4830ad46a635967643199169ac6e9dba24597fef981934a5a66",
+  "signature": "92e05be08d5cef64b24efa1fe72c2ec75197bf4db7ba04f6c1db5025cee48eaf"
+}

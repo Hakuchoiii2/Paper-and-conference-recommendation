@@ -1,0 +1,75 @@
+{
+  "attempt_scores": [
+    {
+      "applied_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"Amazon AWS Comprehend\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 1,
+      "generation_seconds": 23.8652693920003,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P003164\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"Amazon AWS Comprehend\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+      "review_facets": [
+        "problem",
+        "task",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": true,
+      "score": 100.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 9534,
+      "semantic_entailment_verified": false,
+      "stage": "extract",
+      "usage": {
+        "input_tokens": 1464,
+        "output_tokens": 174
+      },
+      "validation_errors": [],
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    {
+      "applied_output": "{\"paper_id\": \"P00364\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"Amazon AWS Comprehend\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+      "attempt": 2,
+      "generation_seconds": 24.956553201999668,
+      "parseable": true,
+      "raw_output": "{\"paper_id\": \"P00364\", \"problem\": [{\"concept\": \"security vulnerabilities of DLTU\", \"evidence_id\": \"A1\"}], \"task\": [{\"concept\": \"generating adversarial texts\", \"evidence_id\": \"A3\"}], \"method\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"Amazon AWS Comprehend\", \"evidence_id\": \"A6\"}], \"dataset\": [{\"concept\": \"IMDB\", \"evidence_id\": \"A6\"}], \"contribution\": [{\"concept\": \"TextBugger\", \"evidence_id\": \"A3\"}, {\"concept\": \"TextBugger achieves 100\\\\% success rate on the IMDB dataset\", \"evidence_id\": \"A6\"}]}",
+      "review_facets": [
+        "problem",
+        "method",
+        "dataset",
+        "contribution"
+      ],
+      "schema_valid": false,
+      "score": 90.0,
+      "score_kind": "structural_source_consistency_not_semantic_confidence",
+      "seed": 9535,
+      "semantic_entailment_verified": false,
+      "stage": "review",
+      "usage": {
+        "input_tokens": 3191,
+        "output_tokens": 173
+      },
+      "validation_errors": [
+        "wrong paper_id; output uses the supplied paper_id"
+      ],
+      "validation_warnings": [],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    }
+  ],
+  "fallback_used": true,
+  "paper_id": "P003164",
+  "postprocessing": {
+    "policy": "named_resource_v3_2",
+    "removed": []
+  },
+  "selected_attempt": 1,
+  "selected_score": 100.0,
+  "source_quality": {
+    "issues": [],
+    "status": "no_flag_detected"
+  },
+  "validation_errors": [
+    "No valid self-review within the attempt budget; best available output requires review"
+  ],
+  "validation_passed": false
+}

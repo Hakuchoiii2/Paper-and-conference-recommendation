@@ -1,0 +1,546 @@
+{
+  "record": {
+    "adapter_enabled": true,
+    "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+    "annotation_fallback": false,
+    "arm": "checkpoint-105",
+    "audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 3,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.46664431499994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4638,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1363,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "text summarization",
+              "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.887730132000797,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4639,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3099,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "text summarization",
+              "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "attempt": 3,
+          "generation_seconds": 9.908390462998796,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001532\", \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4640,
+          "semantic_entailment_verified": false,
+          "stage": "coverage",
+          "usage": {
+            "input_tokens": 808,
+            "output_tokens": 73
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "text summarization",
+              "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 3,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new semi-supervised algorithms",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Reuters news-wire corpus",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "Computation and Language (cmp_lg)",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "semi-supervised algorithms",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "classification models",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P001532",
+        "problem": [
+          {
+            "concept": "costly process",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "limitations on the applicability",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text summarization",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "fallback_used": false,
+      "generation_seconds": 60.26276490999953,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "paper_id": "P001532",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "review_kind": "one_original_V_review_then_add_only_task_method_coverage",
+      "semantic_entailment_verified": false,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 5270,
+        "output_tokens": 437
+      },
+      "validation_errors": [],
+      "validation_passed": true,
+      "validation_warnings": [
+        {
+          "concept": "text summarization",
+          "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+          "facet": "task",
+          "index": 0,
+          "kind": "lexical_or_scope_review",
+          "message": "concept must use source words in their original order; no invented synonyms"
+        }
+      ],
+      "validator_policy": "source_attributed_paraphrase_v1"
+    },
+    "base_review_audit": {
+      "adapter_enabled": true,
+      "adapter_sha256": "625d21eac735433ecc380ec97c635455419c84ff280985b703387d360fc89141",
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 1,
+          "generation_seconds": 24.46664431499994,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4638,
+          "semantic_entailment_verified": false,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 1363,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "text summarization",
+              "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "attempt": 2,
+          "generation_seconds": 25.887730132000797,
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001532\", \"problem\": [{\"concept\": \"costly process\", \"evidence_id\": \"A4\"}, {\"concept\": \"limitations on the applicability\", \"evidence_id\": \"A4\"}], \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}], \"dataset\": [{\"concept\": \"Reuters news-wire corpus\", \"evidence_id\": \"A8\"}, {\"concept\": \"Computation and Language (cmp_lg)\", \"evidence_id\": \"A8\"}], \"contribution\": [{\"concept\": \"new semi-supervised algorithms\", \"evidence_id\": \"A7\"}]}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 100.0,
+          "score_kind": "structural_source_consistency_not_semantic_confidence",
+          "seed": 4639,
+          "semantic_entailment_verified": false,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 3099,
+            "output_tokens": 182
+          },
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "concept": "text summarization",
+              "evidence": "The use of machine learning techniques for this task allows one to adapt summaries to the user needs and to the corpus characteristics.",
+              "facet": "task",
+              "index": 0,
+              "kind": "lexical_or_scope_review",
+              "message": "concept must use source words in their original order; no invented synonyms"
+            }
+          ],
+          "validator_policy": "source_attributed_paraphrase_v1"
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "new semi-supervised algorithms",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Reuters news-wire corpus",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "Computation and Language (cmp_lg)",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "semi-supervised algorithms",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "classification models",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P001532",
+        "problem": [
+          {
+            "concept": "costly process",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "limitations on the applicability",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text summarization",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 50.35437444700074,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 2,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 4639,
+      "selected_score": 100.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 4462,
+        "output_tokens": 364
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.46664431499994,
+        "inherited": false,
+        "messages_sha256": "dc579f90156e2c3c69678b21c8e307d824719b6beb7c165d0b9502f1fe5bd884",
+        "reached_token_limit": false,
+        "repair_packet": null,
+        "seed": 4638,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 1363,
+          "output_tokens": 182
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 25.887730132000797,
+        "inherited": false,
+        "messages_sha256": "3bebd3c9e25dc4cbafd16a878ce92d90f6357b78b0d4ed6e0fed99c4497c3932",
+        "reached_token_limit": false,
+        "repair_packet": {
+          "global_errors": [],
+          "invalid_items": [],
+          "paper_id": "P001532",
+          "valid_evidence_ids": [
+            "T0",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ]
+        },
+        "seed": 4639,
+        "usage": {
+          "input_tokens": 3099,
+          "output_tokens": 182
+        }
+      },
+      {
+        "attempt": 3,
+        "generation_seconds": 9.908390462998796,
+        "inherited": false,
+        "messages_sha256": "8498b1e20c81a810468494260b0e950977d3a6aede3c5a59af7d41807a9951ec",
+        "reached_token_limit": false,
+        "seed": 4640,
+        "stage": "coverage",
+        "usage": {
+          "input_tokens": 808,
+          "output_tokens": 73
+        }
+      }
+    ],
+    "coverage": {
+      "accepted": [],
+      "accepted_count": 0,
+      "base_annotation": {
+        "contribution": [
+          {
+            "concept": "new semi-supervised algorithms",
+            "evidence_id": "A7"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "Reuters news-wire corpus",
+            "evidence_id": "A8"
+          },
+          {
+            "concept": "Computation and Language (cmp_lg)",
+            "evidence_id": "A8"
+          }
+        ],
+        "method": [
+          {
+            "concept": "semi-supervised algorithms",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "classification models",
+            "evidence_id": "A7"
+          }
+        ],
+        "paper_id": "P001532",
+        "problem": [
+          {
+            "concept": "costly process",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "limitations on the applicability",
+            "evidence_id": "A4"
+          }
+        ],
+        "task": [
+          {
+            "concept": "text summarization",
+            "evidence_id": "A1"
+          }
+        ]
+      },
+      "duplicates": [
+        {
+          "facet": "task",
+          "index": 0,
+          "item": {
+            "concept": "text summarization",
+            "evidence_id": "A1"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 0,
+          "item": {
+            "concept": "semi-supervised algorithms",
+            "evidence_id": "A5"
+          }
+        },
+        {
+          "facet": "method",
+          "index": 1,
+          "item": {
+            "concept": "classification models",
+            "evidence_id": "A7"
+          }
+        }
+      ],
+      "errors": [],
+      "generation_seconds": 9.908390462998796,
+      "messages_sha256": "8498b1e20c81a810468494260b0e950977d3a6aede3c5a59af7d41807a9951ec",
+      "raw_output": "{\"paper_id\": \"P001532\", \"task\": [{\"concept\": \"text summarization\", \"evidence_id\": \"A1\"}], \"method\": [{\"concept\": \"semi-supervised algorithms\", \"evidence_id\": \"A5\"}, {\"concept\": \"classification models\", \"evidence_id\": \"A7\"}]}",
+      "reached_token_limit": false,
+      "rejected": [],
+      "usage": {
+        "input_tokens": 808,
+        "output_tokens": 73
+      }
+    },
+    "coverage_fallback": false,
+    "draft_origin": "fresh_same_model",
+    "draft_record_sha256": "10d04a4b5f40320278c41e38e9b2e8b18b138aeb6b108e9802f080ab641782df",
+    "facets": {
+      "contribution": [
+        "new semi-supervised algorithms"
+      ],
+      "dataset": [
+        "Reuters news-wire corpus",
+        "Computation and Language (cmp_lg)"
+      ],
+      "method": [
+        "semi-supervised algorithms",
+        "classification models"
+      ],
+      "paper_id": "P001532",
+      "problem": [
+        "costly process",
+        "limitations on the applicability"
+      ],
+      "task": [
+        "text summarization"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 60.26276490999953,
+    "inherited_calls": 0,
+    "instruction_sha256": "1a883d56b2552d48bc8a8ba90dcfa1c636d59d44db239380cd8d1ca4fa8128e3",
+    "new_cost": {
+      "calls": 3,
+      "generation_seconds": 60.26276490999953,
+      "input_tokens": 5270,
+      "output_tokens": 437
+    },
+    "paper_id": "P001532",
+    "source_sha256": "243d37025dc8c22af3dd207c7540d566826b1a2572f81650230c784be12aed8e",
+    "training_performed": true,
+    "usage": {
+      "input_tokens": 5270,
+      "output_tokens": 437
+    }
+  },
+  "record_sha256": "72233dec8c7c98aca346eaef3f35ae085de91765d1c8f2e911b6b5835740a0d3",
+  "signature": "e4fd28a144a597acf96ed937f950fe55c1110e4522a85d3238f1853c8763d5c1"
+}

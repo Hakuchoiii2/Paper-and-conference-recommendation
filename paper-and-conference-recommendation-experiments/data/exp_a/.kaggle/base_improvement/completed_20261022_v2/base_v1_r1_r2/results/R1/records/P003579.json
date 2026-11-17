@@ -1,0 +1,194 @@
+{
+  "record": {
+    "arm": "R1",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "applied_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "attempt": 1,
+          "generation_seconds": 19.229534463000164,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "task",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10779,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2820,
+            "output_tokens": 205
+          },
+          "validation_errors": []
+        },
+        {
+          "applied_output": "{\"paper_id\": \"P003579\", \"problem\": [], \"task\": [{\"concept\": \"text classification\", \"evidence_id\": \"A0\"}], \"method\": [{\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"}, {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}], \"dataset\": [{\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"}, {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}], \"contribution\": [{\"concept\": \"proposed model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"}, {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}]}",
+          "attempt": 2,
+          "generation_seconds": 23.699301558000116,
+          "parseable": true,
+          "raw_output": "{\n  \"paper_id\": \"P003579\",\n  \"problem\": [],\n  \"task\": [\n    {\"concept\": \"text classification\", \"evidence_id\": \"A0\"}\n  ],\n  \"method\": [\n    {\"concept\": \"attention mechanism\", \"evidence_id\": \"A5\"},\n    {\"concept\": \"softmax classifier\", \"evidence_id\": \"A8\"}\n  ],\n  \"dataset\": [\n    {\"concept\": \"NLPCC2014\", \"evidence_id\": \"A9\"},\n    {\"concept\": \"Reuters\", \"evidence_id\": \"A9\"}\n  ],\n  \"contribution\": [\n    {\"concept\": \"proposed model achieves F-values by 88.5% and 51.8% on the two datasets\", \"evidence_id\": \"A10\"},\n    {\"concept\": \"method outperforms all the traditional baseline systems\", \"evidence_id\": \"A11\"}\n  ]\n}",
+          "review_facets": [
+            "problem",
+            "method",
+            "dataset",
+            "contribution"
+          ],
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 10780,
+          "stage": "review",
+          "usage": {
+            "input_tokens": 4401,
+            "output_tokens": 205
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "proposed model achieves F-values by 88.5% and 51.8% on the two datasets",
+            "evidence_id": "A10"
+          },
+          {
+            "concept": "method outperforms all the traditional baseline systems",
+            "evidence_id": "A11"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "NLPCC2014",
+            "evidence_id": "A9"
+          },
+          {
+            "concept": "Reuters",
+            "evidence_id": "A9"
+          }
+        ],
+        "method": [
+          {
+            "concept": "attention mechanism",
+            "evidence_id": "A5"
+          },
+          {
+            "concept": "softmax classifier",
+            "evidence_id": "A8"
+          }
+        ],
+        "paper_id": "P003579",
+        "problem": [],
+        "task": [
+          {
+            "concept": "text classification",
+            "evidence_id": "A0"
+          }
+        ]
+      },
+      "extraction_protocol": "two_pass_v3",
+      "fallback_used": false,
+      "generation_seconds": 42.92883602100028,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": []
+      },
+      "quantization": "nf4_double",
+      "request_parameters": {
+        "dataset_resource_filter": true,
+        "do_sample": false,
+        "extraction_policy_version": "3.1",
+        "extraction_prompt_version": "3.7",
+        "max_attempts": 3,
+        "max_new_tokens": 2048,
+        "review_application": "coverage_preserving_v3_7",
+        "score_kind": "source_support_heuristic",
+        "self_review": true,
+        "source_grounding": "ordered_source_words"
+      },
+      "seed": 10780,
+      "selected_score": 88.0,
+      "self_review_completed": true,
+      "source_quality": {
+        "issues": [],
+        "status": "no_flag_detected"
+      },
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 7221,
+        "output_tokens": 410
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "baseline_record_sha256": "4fe62a8059fe1ecc61dd0c58877029d6a5e7f5ad3c966deb1081190d42e02d53",
+    "call_trace": [
+      {
+        "attempt": 1,
+        "inherited": false,
+        "messages_sha256": "9d970fdc77aaca349ef2c5f815daa774104be3f483d169f697375c94513a8fec",
+        "repair_packet": null,
+        "seed": 10779
+      },
+      {
+        "attempt": 2,
+        "inherited": false,
+        "messages_sha256": "76728690264a4f2757323cfbbf1a3bc71c46a627432a144c70d81ed93b74154c",
+        "repair_packet": null,
+        "seed": 10780
+      }
+    ],
+    "facets": {
+      "contribution": [
+        "proposed model achieves F-values by 88.5% and 51.8% on the two datasets",
+        "method outperforms all the traditional baseline systems"
+      ],
+      "dataset": [
+        "NLPCC2014",
+        "Reuters"
+      ],
+      "method": [
+        "attention mechanism",
+        "softmax classifier"
+      ],
+      "paper_id": "P003579",
+      "problem": [],
+      "task": [
+        "text classification"
+      ]
+    },
+    "fallback_used": false,
+    "generation_seconds": 42.92883602100028,
+    "instruction_sha256": "e154398ed4976b8a39d6e0c8e55f325e4f0dd64f196d0c6a65232d998bac3993",
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 42.92883602100028,
+      "input_tokens": 7221,
+      "output_tokens": 410
+    },
+    "paper_id": "P003579",
+    "repair_transitions": {
+      "draft_invalid": false,
+      "final_invalid": false,
+      "invalid_to_valid": false,
+      "valid_to_invalid": false
+    },
+    "usage": {
+      "input_tokens": 7221,
+      "output_tokens": 410
+    }
+  },
+  "record_sha256": "2f6e6e4ae1f5d75905ee6d0a8e911c05622e11a434ff1870fa104ddb0d3f14f8",
+  "signature": "cd8f92fdd30a58c762a03864c495533d13b04269b211f402ddd1667b310f625c"
+}

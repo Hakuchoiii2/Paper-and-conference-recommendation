@@ -1,0 +1,242 @@
+{
+  "record": {
+    "annotation_fallback": false,
+    "arm": "Source-first",
+    "audit": {
+      "attempt": 2,
+      "attempt_scores": [
+        {
+          "attempt": 2,
+          "generation_seconds": 19.394603609999876,
+          "messages_sha256": "b17759c9f5d9ad66901ab262d0e78f179e341fc8a365e07088928a25ed406dd5",
+          "parseable": true,
+          "raw_output": "{\"paper_id\": \"P001996\", \"problem\": [{\"concept\": \"considering the size of the exposed population is a vital component of understanding rumoring\", \"evidence_id\": \"A1\"}], \"task\": [], \"method\": [{\"concept\": \"three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"case study of rumoring on Twitter during a hostage crisis in Sydney, Australia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation\", \"evidence_id\": \"A2\"}, {\"concept\": \"demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics\", \"evidence_id\": \"A4\"}, {\"concept\": \"have implications for emergency responders and official use of social media during crisis management\", \"evidence_id\": \"A5\"}]}",
+          "reached_token_limit": false,
+          "schema_valid": true,
+          "score": 88.0,
+          "seed": 6031,
+          "stage": "extract",
+          "usage": {
+            "input_tokens": 2673,
+            "output_tokens": 227
+          },
+          "validation_errors": []
+        }
+      ],
+      "attempts_used": 2,
+      "attention_implementation": "matrix_efficient_no_gqa",
+      "enable_thinking": false,
+      "evidence_selection": {
+        "contribution": [
+          {
+            "concept": "discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation",
+            "evidence_id": "A2"
+          },
+          {
+            "concept": "demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics",
+            "evidence_id": "A4"
+          },
+          {
+            "concept": "have implications for emergency responders and official use of social media during crisis management",
+            "evidence_id": "A5"
+          }
+        ],
+        "dataset": [
+          {
+            "concept": "case study of rumoring on Twitter during a hostage crisis in Sydney, Australia",
+            "evidence_id": "A3"
+          }
+        ],
+        "method": [
+          {
+            "concept": "three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production",
+            "evidence_id": "A0"
+          }
+        ],
+        "paper_id": "P001996",
+        "problem": [
+          {
+            "concept": "considering the size of the exposed population is a vital component of understanding rumoring",
+            "evidence_id": "A1"
+          }
+        ],
+        "task": []
+      },
+      "fallback_used": false,
+      "generation_seconds": 43.94160395699987,
+      "gpu_name": "Tesla T4",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "paper_id": "P001996",
+      "postprocessing": {
+        "policy": "named_resource_v3_2",
+        "removed": [
+          {
+            "concept": "case study of rumoring on Twitter during a hostage crisis in Sydney, Australia",
+            "evidence": "Using a case study of rumoring on Twitter during a hostage crisis in Sydney, Australia, we apply a mixed-methods framework to explore rumoring and its consequences through these three lenses, focusing on the added dimension of exposure in particular.",
+            "index": 0,
+            "reason": "dataset requires an explicit named resource; language names and generic collections are not resource names",
+            "source": "abstract"
+          }
+        ]
+      },
+      "quantization": "nf4_double",
+      "review_kind": "source_inventory_then_annotation_not_semantic_certification",
+      "selected_score": 88.0,
+      "torch_version": "2.11.0+cu128",
+      "transformers_version": "4.57.6",
+      "usage": {
+        "input_tokens": 3277,
+        "output_tokens": 556
+      },
+      "validation_errors": [],
+      "validation_passed": true
+    },
+    "call_trace": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.547000346999994,
+        "messages_sha256": "8a3054942a037812454595354b224fe4ad5d1ddec40e4de630ff359c6c8de149",
+        "raw_output": "{\"paper_id\":\"P001996\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Expanding upon prior work, which has focused on rumor volume, we argue that considering the size of the exposed population is a vital component of understanding rumoring.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A2\",\"span\":\"Additionally, by combining all three approaches we discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A3\",\"span\":\"Using a case study of rumoring on Twitter during a hostage crisis in Sydney, Australia, we apply a mixed-methods framework to explore rumoring and its consequences through these three lenses, focusing on the added dimension of exposure in particular.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A4\",\"span\":\"Our approach demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A5\",\"span\":\"These results have implications for emergency responders and official use of social media during crisis management.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]}]}",
+        "reached_token_limit": false,
+        "seed": 6030,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 604,
+          "output_tokens": 329
+        }
+      },
+      {
+        "attempt": 2,
+        "generation_seconds": 19.394603609999876,
+        "messages_sha256": "b17759c9f5d9ad66901ab262d0e78f179e341fc8a365e07088928a25ed406dd5",
+        "raw_output": "{\"paper_id\": \"P001996\", \"problem\": [{\"concept\": \"considering the size of the exposed population is a vital component of understanding rumoring\", \"evidence_id\": \"A1\"}], \"task\": [], \"method\": [{\"concept\": \"three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production\", \"evidence_id\": \"A0\"}], \"dataset\": [{\"concept\": \"case study of rumoring on Twitter during a hostage crisis in Sydney, Australia\", \"evidence_id\": \"A3\"}], \"contribution\": [{\"concept\": \"discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation\", \"evidence_id\": \"A2\"}, {\"concept\": \"demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics\", \"evidence_id\": \"A4\"}, {\"concept\": \"have implications for emergency responders and official use of social media during crisis management\", \"evidence_id\": \"A5\"}]}",
+        "reached_token_limit": false,
+        "seed": 6031,
+        "stage": "extract",
+        "usage": {
+          "input_tokens": 2673,
+          "output_tokens": 227
+        }
+      }
+    ],
+    "common_dataset_filter_removed": 1,
+    "facets": {
+      "contribution": [
+        "discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation",
+        "demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics",
+        "have implications for emergency responders and official use of social media during crisis management"
+      ],
+      "dataset": [],
+      "method": [
+        "three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production"
+      ],
+      "paper_id": "P001996",
+      "problem": [
+        "considering the size of the exposed population is a vital component of understanding rumoring"
+      ],
+      "task": []
+    },
+    "fallback_used": false,
+    "generation_seconds": 43.94160395699987,
+    "instruction_sha256": "01d36dd8f66180a135a98b871ffd884f65c5587c6fcbe8901e75ace92fbd3be4",
+    "inventory_attempts": [
+      {
+        "attempt": 1,
+        "generation_seconds": 24.547000346999994,
+        "messages_sha256": "8a3054942a037812454595354b224fe4ad5d1ddec40e4de630ff359c6c8de149",
+        "raw_output": "{\"paper_id\":\"P001996\",\"units\":[{\"evidence_id\":\"A0\",\"span\":\"three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production.\",\"roles\":[\"method\"],\"origin\":\"current\",\"context_ids\":[]},{\"evidence_id\":\"A1\",\"span\":\"Expanding upon prior work, which has focused on rumor volume, we argue that considering the size of the exposed population is a vital component of understanding rumoring.\",\"roles\":[\"problem\"],\"origin\":\"prior\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A2\",\"span\":\"Additionally, by combining all three approaches we discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A3\",\"span\":\"Using a case study of rumoring on Twitter during a hostage crisis in Sydney, Australia, we apply a mixed-methods framework to explore rumoring and its consequences through these three lenses, focusing on the added dimension of exposure in particular.\",\"roles\":[\"dataset\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A4\",\"span\":\"Our approach demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]},{\"evidence_id\":\"A5\",\"span\":\"These results have implications for emergency responders and official use of social media during crisis management.\",\"roles\":[\"contribution\"],\"origin\":\"current\",\"context_ids\":[\"A0\"]}]}",
+        "reached_token_limit": false,
+        "seed": 6030,
+        "stage": "inventory",
+        "usage": {
+          "input_tokens": 604,
+          "output_tokens": 329
+        },
+        "validation_errors": []
+      }
+    ],
+    "inventory_errors": [],
+    "inventory_valid": true,
+    "new_cost": {
+      "calls": 2,
+      "generation_seconds": 43.94160395699987,
+      "input_tokens": 3277,
+      "output_tokens": 556
+    },
+    "paper_id": "P001996",
+    "source_inventory": [
+      {
+        "context_ids": [],
+        "evidence_id": "A0",
+        "origin": "current",
+        "roles": [
+          "method"
+        ],
+        "span": "three distinct approaches to studying rumor dynamicsâvolume, exposure, and content production."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A1",
+        "origin": "prior",
+        "roles": [
+          "problem"
+        ],
+        "span": "Expanding upon prior work, which has focused on rumor volume, we argue that considering the size of the exposed population is a vital component of understanding rumoring."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A2",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "Additionally, by combining all three approaches we discover subtle features of rumoring behavior that would have been missed by applying each approach in isolation."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A3",
+        "origin": "current",
+        "roles": [
+          "dataset"
+        ],
+        "span": "Using a case study of rumoring on Twitter during a hostage crisis in Sydney, Australia, we apply a mixed-methods framework to explore rumoring and its consequences through these three lenses, focusing on the added dimension of exposure in particular."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A4",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "Our approach demonstrates the importance of considering both rumor content and the people engaging with rumor content to arrive at a more holistic understanding of communication dynamics."
+      },
+      {
+        "context_ids": [
+          "A0"
+        ],
+        "evidence_id": "A5",
+        "origin": "current",
+        "roles": [
+          "contribution"
+        ],
+        "span": "These results have implications for emergency responders and official use of social media during crisis management."
+      }
+    ],
+    "training_performed": false,
+    "usage": {
+      "input_tokens": 3277,
+      "output_tokens": 556
+    }
+  },
+  "record_sha256": "85cf9c8088d63d7af11b0a8ab73d784e4fc31ba9e8c9eea32862ea4578180a37",
+  "signature": "89365bfe76d4f163eb96da2c1c9981d5fb320a348dfa3ee59f17c382468e117e"
+}
