@@ -74,9 +74,9 @@ Check vẫn có cặp đúng bị bỏ như `convolution kernels ... deep parses
 
 Pair F1 ở đây **không phải extraction F1 của 400 bài**. Đây là review AI trong cùng cuộc hội thoại, chưa độc lập hoặc được người xác nhận; chưa thể coi 0.85 là ngưỡng semantic equivalence đã được kiểm chứng.
 
-## File hiện hành, lịch sử và kiểm tra
+## File kết quả lịch sử và kiểm tra
 
-- [embedding_400_revised/report.md](../../../data/exp_a/evaluation/embedding_400_revised/report.md): kết quả hiện hành; `per_paper.jsonl` có matched/rejected pairs và lý do.
+- [embedding_400_revised/report.md](../../../data/exp_a/evaluation/embedding_400_revised/report.md): kết quả lịch sử chấm trên reference AI v2; `per_paper.jsonl` có matched/rejected pairs và lý do.
 - [matcher_calibration/summary.json](../../../data/exp_a/evaluation/matcher_calibration/summary.json): sweep, check, provenance, hash và ba mốc chạy 400 bài.
 - [reference_revision/changes.jsonl](../../../data/exp_a/evaluation/reference_revision/changes.jsonl): nhãn/evidence trước–sau theo paper/facet.
 - `embedding_400/` giữ mốc cũ; `reference_only_400/` giữ lượt kiểm soát reference. Các thư mục lịch sử có manifest gắn đúng hash reference/code tại thời điểm chạy.
