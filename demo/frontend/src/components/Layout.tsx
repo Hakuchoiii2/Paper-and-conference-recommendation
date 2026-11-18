@@ -6,7 +6,7 @@ import { SystemDrawer } from './SystemDrawer';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const { apiMode, runtime, setDrawerOpen } = useSystem();
+  const { runtime, setDrawerOpen } = useSystem();
 
   const isCompare = location.pathname.startsWith('/compare');
 
@@ -55,21 +55,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="flex items-center gap-2.5">
-            {apiMode === 'mock' ? (
-              <span className="hidden sm:inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-800">
-                Chế độ mẫu (Mock)
-              </span>
-            ) : (
+            <button
+              type="button"
+              onClick={() => setDrawerOpen(true)}
+              className={`hidden sm:inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium transition ${
+                runtime?.connected
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                  : 'border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100'
+              }`}
+            >
               <span
-                className={`hidden sm:inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${
-                  runtime?.connected
-                    ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
-                    : 'border-rose-200 bg-rose-50 text-rose-700'
+                className={`h-1.5 w-1.5 rounded-full ${
+                  runtime?.connected ? 'bg-emerald-500' : 'bg-rose-500'
                 }`}
-              >
-                {runtime?.connected ? 'API Đã kết nối' : 'API Mất kết nối'}
-              </span>
-            )}
+              />
+              {runtime?.connected
+                ? runtime.loaded_model_key
+                  ? `Sẵn sàng • ${runtime.loaded_model_key}`
+                  : 'API Sẵn sàng'
+                : 'Chưa kết nối API'}
+            </button>
 
             <button
               type="button"

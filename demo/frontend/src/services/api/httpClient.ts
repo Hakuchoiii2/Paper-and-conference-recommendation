@@ -42,25 +42,45 @@ export class HttpApiClient implements ApiClient {
     const base = this.getBaseUrl().replace(/\/+$/, '');
     const url = `${base}${path}`;
 
-    const res = await fetch(url, {
-      ...init,
-      headers: {
-        'Content-Type': 'application/json',
-        ...(init?.headers || {}),
-      },
-    });
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        ...init,
+        headers: {
+          'Content-Type': 'application/json',
+          ...(init?.headers || {}),
+        },
+      });
+    } catch {
+      throw new HttpApiError(
+        `Không thể kết nối tới backend (${base}). Vui lòng kiểm tra server hoặc cấu hình lại địa chỉ API trong bảng Hệ thống.`,
+        0,
+        'NETWORK_ERROR'
+      );
+    }
 
+    const contentType = res.headers.get('content-type') || '';
     if (!res.ok) {
-      let detail = `HTTP ${res.status}`;
+      let detail = `Lỗi HTTP ${res.status}`;
       let code: string | undefined;
-      try {
-        const body = await res.json();
-        detail = body.detail || body.message || detail;
-        code = body.code;
-      } catch {
-        // ignore JSON parse error
+      if (contentType.includes('application/json')) {
+        try {
+          const body = await res.json();
+          detail = body.detail || body.message || detail;
+          code = body.code;
+        } catch {
+          // ignore JSON parse error
+        }
       }
       throw new HttpApiError(detail, res.status, code);
+    }
+
+    if (!contentType.includes('application/json')) {
+      throw new HttpApiError(
+        'Phản hồi từ server không phải JSON hợp lệ (có thể đường dẫn API đang trỏ nhầm vào trang HTML).',
+        res.status,
+        'INVALID_CONTENT_TYPE'
+      );
     }
 
     return (await res.json()) as T;

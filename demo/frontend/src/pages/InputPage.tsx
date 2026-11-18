@@ -10,7 +10,8 @@ import {
   Layers,
   Loader2,
   Play,
-  Sparkles,
+  ServerOff,
+  Settings2,
 } from 'lucide-react';
 import { useSystem } from '../context/SystemContext';
 import type { AnalysisMode, ExampleSummary } from '../types/api';
@@ -18,7 +19,14 @@ import type { AnalysisMode, ExampleSummary } from '../types/api';
 export function InputPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { apiClient, apiMode, models, runtime, triggerLoadModel, isSwitchingModel } = useSystem();
+  const {
+    apiClient,
+    models,
+    runtime,
+    triggerLoadModel,
+    isSwitchingModel,
+    setDrawerOpen,
+  } = useSystem();
 
   const navState = (location.state as { title?: string; abstract?: string } | null) || null;
 
@@ -26,23 +34,30 @@ export function InputPage() {
   const [abstract, setAbstract] = useState(navState?.abstract || '');
   const [examples, setExamples] = useState<ExampleSummary[]>([]);
   const [selectedExampleId, setSelectedExampleId] = useState<string>('');
-  const [selectedModel, setSelectedModel] = useState<string>('Qwen3-8B');
-  const [runMode, setRunMode] = useState<AnalysisMode>('precomputed');
+  const [selectedModel, setSelectedModel] = useState<string>('');
+  const [runMode, setRunMode] = useState<AnalysisMode>('live');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!runtime?.connected) {
+      setExamples([]);
+      return;
+    }
     apiClient
       .getExamples()
       .then(setExamples)
       .catch(() => setExamples([]));
-  }, [apiClient]);
+  }, [apiClient, runtime?.connected]);
 
   useEffect(() => {
     if (runtime?.loaded_model_key) {
       setSelectedModel(runtime.loaded_model_key);
+    } else if (models.length > 0 && !selectedModel) {
+      const firstSupported = models.find((m) => m.supported);
+      if (firstSupported) setSelectedModel(firstSupported.model_key);
     }
-  }, [runtime?.loaded_model_key]);
+  }, [models, runtime?.loaded_model_key, selectedModel]);
 
   const handleSelectExample = async (exampleId: string) => {
     setSelectedExampleId(exampleId);
@@ -55,7 +70,9 @@ export function InputPage() {
       if (detail.default_model_key) {
         setSelectedModel(detail.default_model_key);
       }
-      setRunMode('precomputed');
+      if (Object.keys(detail.precomputed_analyses || {}).length > 0) {
+        setRunMode('precomputed');
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Không tải được bài mẫu.');
     }
@@ -73,15 +90,24 @@ export function InputPage() {
   const titleTooLong = title.length > maxTitle;
   const abstractTooLong = abstract.length > maxAbstract;
 
-  const isSelectedModelReady = runtime?.loaded_model_key === selectedModel;
-  const needsModelLoad = runMode === 'live' && !isSelectedModelReady;
+  const isSelectedModelReady =
+    Boolean(selectedModel) && runtime?.loaded_model_key === selectedModel;
+  const needsModelLoad = runMode === 'live' && Boolean(selectedModel) && !isSelectedModelReady;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
+    if (!runtime?.connected) {
+      setError('Chưa kết nối được với Backend API. Vui lòng kiểm tra cấu hình trong Hệ thống.');
+      return;
+    }
     if (!title.trim() || !abstract.trim()) {
       setError('Vui lòng nhập đầy đủ cả Title và Abstract của manuscript.');
+      return;
+    }
+    if (!selectedModel) {
+      setError('Vui lòng chọn một extractor.');
       return;
     }
     if (titleTooLong || abstractTooLong) {
@@ -105,7 +131,9 @@ export function InputPage() {
         mode: runMode,
         idempotency_key: idempotencyKey,
       });
-      navigate(`/analyses/${encodeURIComponent(res.analysis_id)}?job_id=${encodeURIComponent(res.job_id)}`);
+      navigate(
+        `/analyses/${encodeURIComponent(res.analysis_id)}?job_id=${encodeURIComponent(res.job_id)}`
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Không thể tạo tác vụ phân tích.');
     } finally {
@@ -126,16 +154,28 @@ export function InputPage() {
               Nhập Title và Abstract để trích xuất năm facet khoa học có dẫn chứng nguồn, xếp hạng bài báo liên quan và gợi ý hội nghị phù hợp.
             </p>
           </div>
-          <div className="flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50/70 px-3 py-1.5 text-xs text-blue-800">
-            <Sparkles className="h-4 w-4 text-blue-600" />
-            <span>
-              {apiMode === 'mock'
-                ? 'Đang chạy với dữ liệu giả lập cục bộ (Mock)'
-                : 'Đang kết nối Backend API'}
-            </span>
-          </div>
         </div>
       </div>
+
+      {/* Backend connection alert when offline */}
+      {runtime && !runtime.connected && (
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          <div className="flex items-center gap-2.5">
+            <ServerOff className="h-4.5 w-4.5 shrink-0 text-amber-600" />
+            <span>
+              Chưa kết nối được tới Backend API. Khởi chạy FastAPI hoặc cấu hình địa chỉ máy chủ trong bảng <strong>Hệ thống</strong>.
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-semibold text-amber-900 hover:bg-amber-100"
+          >
+            <Settings2 className="h-3.5 w-3.5" />
+            Cấu hình Hệ thống
+          </button>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Main Form */}
@@ -146,16 +186,24 @@ export function InputPage() {
           {/* Example selector + clear */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
             <div className="flex items-center gap-2 flex-1 min-w-[240px]">
-              <label htmlFor="example-select" className="text-xs font-semibold text-slate-600 whitespace-nowrap">
+              <label
+                htmlFor="example-select"
+                className="text-xs font-semibold text-slate-600 whitespace-nowrap"
+              >
                 Bài mẫu:
               </label>
               <select
                 id="example-select"
                 value={selectedExampleId}
                 onChange={(e) => handleSelectExample(e.target.value)}
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 focus:border-blue-500 focus:outline-none"
+                disabled={examples.length === 0}
+                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 focus:border-blue-500 focus:outline-none disabled:bg-slate-50 disabled:text-slate-400"
               >
-                <option value="">-- Chọn bài mẫu để điền nhanh --</option>
+                <option value="">
+                  {examples.length > 0
+                    ? '-- Chọn bài mẫu để điền nhanh --'
+                    : '-- Chưa có bài mẫu từ backend --'}
+                </option>
                 {examples.map((ex) => (
                   <option key={ex.example_id} value={ex.example_id}>
                     {ex.short_label}
@@ -179,7 +227,9 @@ export function InputPage() {
               <label htmlFor="manuscript-title" className="text-sm font-semibold text-slate-800">
                 Title <span className="text-rose-500">*</span>
               </label>
-              <span className={`text-xs ${titleTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}>
+              <span
+                className={`text-xs ${titleTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}
+              >
                 {title.length}/{maxTitle} ký tự
               </span>
             </div>
@@ -199,7 +249,9 @@ export function InputPage() {
               <label htmlFor="manuscript-abstract" className="text-sm font-semibold text-slate-800">
                 Abstract <span className="text-rose-500">*</span>
               </label>
-              <span className={`text-xs ${abstractTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}>
+              <span
+                className={`text-xs ${abstractTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}
+              >
                 {abstract.length}/{maxAbstract} ký tự
               </span>
             </div>
@@ -216,33 +268,44 @@ export function InputPage() {
           {/* Extractor & Mode */}
           <div className="grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <label htmlFor="extractor-select" className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <label
+                htmlFor="extractor-select"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-500"
+              >
                 Chọn Extractor
               </label>
               <select
                 id="extractor-select"
                 value={selectedModel}
                 onChange={(e) => setSelectedModel(e.target.value)}
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-800 focus:border-blue-500 focus:outline-none"
+                disabled={models.length === 0}
+                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-800 focus:border-blue-500 focus:outline-none disabled:bg-slate-100 disabled:text-slate-400"
               >
-                {models.map((m) => (
-                  <option key={m.model_key} value={m.model_key} disabled={!m.supported}>
-                    {m.display_name} ({m.parameter_size})
-                  </option>
-                ))}
+                {models.length === 0 ? (
+                  <option value="">Chưa có danh sách model</option>
+                ) : (
+                  models.map((m) => (
+                    <option key={m.model_key} value={m.model_key} disabled={!m.supported}>
+                      {m.display_name} ({m.parameter_size})
+                    </option>
+                  ))
+                )}
               </select>
 
               <div className="flex items-center justify-between pt-1 text-xs">
-                {isSelectedModelReady ? (
+                {!runtime?.connected ? (
+                  <span className="text-slate-400">Chưa kết nối backend</span>
+                ) : isSelectedModelReady ? (
                   <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
                     <CheckCircle2 className="h-3.5 w-3.5" /> Model đang sẵn sàng
                   </span>
                 ) : (
                   <span className="inline-flex items-center gap-1 text-amber-700">
-                    <Cpu className="h-3.5 w-3.5" /> Chưa nạp (hiện tại: {runtime?.loaded_model_key || 'trống'})
+                    <Cpu className="h-3.5 w-3.5" /> Chưa nạp (hiện tại:{' '}
+                    {runtime?.loaded_model_key || 'trống'})
                   </span>
                 )}
-                {needsModelLoad && (
+                {needsModelLoad && runtime?.connected && (
                   <button
                     type="button"
                     disabled={isSwitchingModel}
@@ -262,17 +325,6 @@ export function InputPage() {
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
-                  onClick={() => setRunMode('precomputed')}
-                  className={`rounded-lg border px-2.5 py-2 text-xs font-medium transition ${
-                    runMode === 'precomputed'
-                      ? 'border-blue-600 bg-blue-50 text-blue-800'
-                      : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
-                  }`}
-                >
-                  Mẫu có sẵn
-                </button>
-                <button
-                  type="button"
                   onClick={() => setRunMode('live')}
                   className={`rounded-lg border px-2.5 py-2 text-xs font-medium transition ${
                     runMode === 'live'
@@ -281,6 +333,17 @@ export function InputPage() {
                   }`}
                 >
                   Chạy trực tiếp
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRunMode('precomputed')}
+                  className={`rounded-lg border px-2.5 py-2 text-xs font-medium transition ${
+                    runMode === 'precomputed'
+                      ? 'border-blue-600 bg-blue-50 text-blue-800'
+                      : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+                  }`}
+                >
+                  Mẫu có sẵn
                 </button>
               </div>
               <p className="text-[11px] text-slate-500 pt-0.5">

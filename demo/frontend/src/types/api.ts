@@ -1,7 +1,5 @@
 export type FacetKey = 'problem' | 'task' | 'method' | 'dataset' | 'contribution';
 
-export type ApiMode = 'mock' | 'http';
-
 export type AnalysisMode = 'live' | 'precomputed';
 
 export type AnalysisSource = 'live' | 'cache' | 'precomputed';
