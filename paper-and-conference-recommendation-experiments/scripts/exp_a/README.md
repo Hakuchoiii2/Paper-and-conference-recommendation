@@ -44,8 +44,7 @@ python -B -m unittest discover -s scripts/exp_a -t . -v
 ```
 
 Output/evaluation pilot v3.1–v3.4 và test riêng v3.4 đã xóa; giữ từ v3.5 trở đi.
-Báo cáo/audit cũ đã gom vào [file lưu trữ](docs/archive/README.md); xem
-[cleanup manifest](../../data/exp_a/cleanup_manifest_2026-10-16.json).
+Báo cáo/audit cũ đã gom vào [kho lưu trữ](docs/archive/README.md).
 Baseline `data/exp_a/generated/` còn dùng bởi pilot builder và B–E nên vẫn giữ.
 
 `evaluate_exp_a.py` đọc silver đã lưu, không chạy Qwen trích xuất lại.

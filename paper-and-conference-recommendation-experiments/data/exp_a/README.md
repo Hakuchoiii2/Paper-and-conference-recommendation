@@ -40,8 +40,8 @@ settings và launcher pilot; `.kaggle/matrix/` chứa matrix/policy builder, run
 và launcher matrix. `build_exp_a.py`, `extraction_v3.py` và evaluator vẫn dùng chung.
 
 Chỉ giữ output pilot từ v3.5 trở đi. Output/evaluation v3.1–v3.4 và test riêng
-v3.4 đã xóa; báo cáo/audit lịch sử vẫn giữ. Danh sách tại
-[cleanup manifest](cleanup_manifest_2026-10-16.json). `generated/` vẫn giữ vì
+v3.4 đã xóa. Báo cáo/audit cũ nằm trong [kho lưu trữ](../../scripts/exp_a/docs/archive/README.md).
+`generated/` vẫn giữ vì
 builder pilot và các thực nghiệm B–E dùng baseline này; corpus, reference và
 model cache cũng giữ nguyên. Các script xác minh lịch sử replay bằng source đã
 gửi trong snapshot; checksum bundle/audit giữ nguyên. Các phần chạy nhóm ở dưới

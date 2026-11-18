@@ -29,7 +29,7 @@
 
 ### Task 1: Source confirmation and safe cleanup
 
-**Files:** v2/review/confirmation12/*; data/exp_a/cleanup_manifest_2026-10-19.json.
+**Files:** v2/review/confirmation12/*.
 **Interfaces:** Source-only review queue -> independent sealed annotations/audits -> source-adjudicated policy confirmation; cleanup -> counts/bytes and protected-hash evidence.
 - [ ] Two authors independently annotate/ground/cover all12 and seal before cross-review.
 - [ ] Resolve differences from source; write per-facet decisions and independent acceptance.
