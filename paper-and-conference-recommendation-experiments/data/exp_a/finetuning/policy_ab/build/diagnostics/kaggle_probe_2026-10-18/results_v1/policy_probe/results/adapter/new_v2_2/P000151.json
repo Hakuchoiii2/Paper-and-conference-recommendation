@@ -1,0 +1,44 @@
+{
+  "record": {
+    "arm": "adapter",
+    "policy": "new_v2_2",
+    "paper_id": "P000151",
+    "seed": 495,
+    "stage": "draft",
+    "runtime": {
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "adapter_enabled": true,
+      "quantization": "nf4_double_fp16",
+      "attention": "matrix_efficient_no_gqa"
+    },
+    "probe_signature": "ff31f91cc35e56d017bc7d00a19b6a26b5bd3a5984c2743047188c39f6a20fa0",
+    "source_signature": "825fecb2556d886d754af96fffe2f70f08d3209a9b30f63bc7bfc0f8d4188427",
+    "adapter_manifest_sha256": "c0cbd8227fa0881410f6e277ca1391660b08f9e2a6b8bd7ea74ad462195e36cc",
+    "instruction_sha256": "9880b174b0a934d06e18845ad7ed9404380922c5a00dda34f90b71759489c1fa",
+    "messages_sha256": "3b7223d0732144a197cb154c33db07752146f58250f0ddb039ebcbaf0127e0e4",
+    "limits": {
+      "max_new_tokens": 1024,
+      "seconds_per_call": 90,
+      "worker_seconds": 1500
+    },
+    "status": "measured",
+    "raw_output": "{\"paper_id\": \"P000151\", \"problem\": [{\"concept\": \"free form factual question\", \"evidence_ids\": [\"A0\"]}, {\"concept\": \"constraints the question imposes on a possible answer\", \"evidence_ids\": [\"A0\"]}], \"task\": [{\"concept\": \"question classification\", \"evidence_ids\": [\"A1\"]}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_ids\": [\"A2\"]}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_ids\": [\"A3\"]}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_ids\": [\"A1\"]}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_ids\": [\"A3\"]}]}\n\n{\"paper_id\": \"P000151\", \"problem\": [{\"concept\": \"free form factual question\", \"evidence_ids\": [\"A0\"]}, {\"concept\": \"constraints the question imposes on a possible answer\", \"evidence_ids\": [\"A0\"]}], \"task\": [{\"concept\": \"question classification\", \"evidence_ids\": [\"A1\"]}], \"method\": [{\"concept\": \"hierarchical classifier\", \"evidence_ids\": [\"A2\"]}, {\"concept\": \"layered semantic hierarchy of answer types\", \"evidence_ids\": [\"A2\"]}], \"dataset\": [{\"concept\": \"TREC 10\", \"evidence_ids\": [\"A3\"]}], \"contribution\": [{\"concept\": \"machine learning approach to question classification\", \"evidence_ids\": [\"A1\"]}, {\"concept\": \"accurate results on a large collection of free-form questions used in TREC 10\", \"evidence_ids\": [\"A3\"]}]}",
+    "stop_reason": "eos",
+    "duplicate": null,
+    "generation_seconds": 53.52815804599993,
+    "usage": {
+      "input_tokens": 1618,
+      "output_tokens": 406
+    },
+    "schema_valid": false,
+    "validation_errors": [
+      "Extra data: line 3 column 1 (char 722)"
+    ],
+    "bounded_stop": false
+  },
+  "record_sha256": "5e471f16e0ff5908ee7717a888a51be6e20d83ed4d5949d7c3dbb7ed35481155"
+}
