@@ -6,6 +6,8 @@ from pydantic import BaseModel, Field
 FacetKey = Literal["problem", "task", "method", "dataset", "contribution"]
 AnalysisMode = Literal["live", "precomputed"]
 AnalysisSource = Literal["live", "cache", "precomputed"]
+PaperRankingMethod = Literal["whole_text", "equal_facets", "weighted_facets"]
+ConferenceRankingMethod = Literal["whole_text_knn", "flat_facet_knn", "gated_knn"]
 JobStatusType = Literal["queued", "running", "completed", "failed"]
 JobStage = Literal[
     "queued",
@@ -133,6 +135,9 @@ class CreateAnalysisRequest(BaseModel):
     abstract: str
     model_key: str
     mode: AnalysisMode = "live"
+    embedding_model: Optional[str] = "tfidf"
+    paper_ranking_method: PaperRankingMethod = "whole_text"
+    conference_ranking_method: ConferenceRankingMethod = "whole_text_knn"
     idempotency_key: Optional[str] = None
 
 

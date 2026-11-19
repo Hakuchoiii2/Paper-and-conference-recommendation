@@ -51,6 +51,17 @@ export function SystemDrawer() {
     }
   }, [models, runtime?.intended_model_key, runtime?.loaded_model_key, selectedModel]);
 
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setDrawerOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [drawerOpen, setDrawerOpen]);
+
   if (!drawerOpen) return null;
 
   const handleLoadModel = async () => {
@@ -69,8 +80,14 @@ export function SystemDrawer() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/35 backdrop-blur-[1px]">
-      <div className="flex h-full w-full max-w-md flex-col bg-white shadow-2xl border-l border-slate-200">
+    <div
+      onClick={() => setDrawerOpen(false)}
+      className="fixed inset-0 z-50 flex justify-end bg-slate-900/35 backdrop-blur-[1px]"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="flex h-full w-full max-w-md flex-col bg-white shadow-2xl border-l border-slate-200"
+      >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
           <div className="flex items-center gap-2.5">
@@ -259,6 +276,12 @@ export function SystemDrawer() {
               </div>
             )}
 
+            {selectedModel && !models.find((m) => m.model_key === selectedModel)?.supported && (
+              <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                ⚠️ Model {selectedModel} chưa được tải về máy cục bộ. Môi trường hiện tại chỉ hỗ trợ Qwen3-4B-Instruct.
+              </div>
+            )}
+
             <button
               type="button"
               onClick={handleLoadModel}
@@ -266,7 +289,8 @@ export function SystemDrawer() {
                 isSwitchingModel ||
                 !runtime?.connected ||
                 !selectedModel ||
-                runtime?.loaded_model_key === selectedModel
+                runtime?.loaded_model_key === selectedModel ||
+                !models.find((m) => m.model_key === selectedModel)?.supported
               }
               className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300"
             >
@@ -274,9 +298,11 @@ export function SystemDrawer() {
                 ? 'Đang nạp model...'
                 : !selectedModel
                   ? 'Chọn model để nạp'
-                  : runtime?.loaded_model_key === selectedModel
-                    ? `${selectedModel} đã sẵn sàng`
-                    : `Nạp model ${selectedModel}`}
+                  : !models.find((m) => m.model_key === selectedModel)?.supported
+                    ? `${selectedModel} chưa được tải về máy`
+                    : runtime?.loaded_model_key === selectedModel
+                      ? `${selectedModel} đã sẵn sàng`
+                      : `Nạp model ${selectedModel}`}
             </button>
           </section>
 

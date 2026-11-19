@@ -21,6 +21,7 @@ import { FacetBadge } from '../components/FacetBadge';
 import { type ActiveEvidenceHighlight, HighlightedText } from '../components/HighlightedText';
 import { FACET_META, FACET_ORDER } from '../constants/facets';
 import { useSystem } from '../context/SystemContext';
+import { saveAnalysisHistory } from '../utils/history';
 import type {
   AnalysisDetail,
   AnalysisSource,
@@ -64,6 +65,13 @@ export function AnalysisResultPage() {
         setNetworkError(null);
         const detail = await apiClient.getAnalysis(analysisId);
         setAnalysis(detail);
+        saveAnalysisHistory({
+          analysis_id: detail.analysis_id,
+          title: detail.title,
+          model_name: detail.provenance?.model_display_name || 'Qwen3-4B',
+          source: detail.provenance?.source || 'live',
+          created_at: detail.provenance?.created_at || new Date().toISOString(),
+        });
 
         if (detail.extraction_status === 'completed') {
           const [papersRes, confsRes] = await Promise.allSettled([
@@ -253,10 +261,18 @@ export function AnalysisResultPage() {
                   <span className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-medium text-slate-700">
                     Extractor: {analysis.provenance.model_display_name}
                   </span>
-                  {analysis.timings.extraction_ms != null && (
-                    <span className="inline-flex items-center gap-1 text-xs text-slate-500">
-                      <Clock className="h-3.5 w-3.5" />
-                      Extraction: {(analysis.timings.extraction_ms / 1000).toFixed(2)}s
+                  {analysis.timings && (
+                    <span className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-0.5 text-xs text-slate-600 shadow-2xs">
+                      <Clock className="h-3.5 w-3.5 text-blue-600" />
+                      <span>
+                        Tổng thời gian:{' '}
+                        <strong className="text-slate-800 font-semibold">
+                          {(((analysis.timings.extraction_ms || 0) + (analysis.timings.ranking_ms || 0)) / 1000).toFixed(2)}s
+                        </strong>
+                      </span>
+                      <span className="text-slate-400 font-normal">
+                        (Trích xuất: {analysis.timings.extraction_ms ? (analysis.timings.extraction_ms / 1000).toFixed(2) : '0.00'}s • Xếp hạng: {analysis.timings.ranking_ms ? (analysis.timings.ranking_ms / 1000).toFixed(2) : '0.00'}s)
+                      </span>
                     </span>
                   )}
                 </div>
@@ -275,7 +291,12 @@ export function AnalysisResultPage() {
                   type="button"
                   onClick={() =>
                     navigate('/', {
-                      state: { title: analysis.title, abstract: analysis.abstract },
+                      state: {
+                        title: analysis.title,
+                        abstract: analysis.abstract,
+                        fromAnalysisId: analysis.analysis_id,
+                        mode: analysis.provenance.source === 'precomputed' ? 'precomputed' : 'live',
+                      },
                     })
                   }
                   className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50"
@@ -508,9 +529,12 @@ export function AnalysisResultPage() {
                       </div>
                     ) : (
                       <>
-                        <div className="flex items-center justify-between text-xs text-slate-500 px-1">
-                          <span>{paperRanking.scorer_note}</span>
-                          <span className="font-mono text-[11px] bg-slate-100 px-2 py-0.5 rounded">
+                        <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-3 rounded-xl border border-blue-100 bg-blue-50/60 px-3.5 py-2.5 text-xs text-blue-950">
+                          <div className="flex items-start gap-2 min-w-0 leading-relaxed">
+                            <Info className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                            <span>{paperRanking.scorer_note}</span>
+                          </div>
+                          <span className="shrink-0 whitespace-nowrap rounded-md border border-blue-200/80 bg-white/90 px-2 py-0.5 font-mono text-[11px] text-blue-700">
                             {paperRanking.score_unit}
                           </span>
                         </div>
@@ -589,9 +613,14 @@ export function AnalysisResultPage() {
                       </div>
                     ) : (
                       <>
-                        <div className="flex items-start gap-2 rounded-lg border border-indigo-100 bg-indigo-50/70 px-3 py-2 text-xs text-indigo-900">
-                          <Info className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
-                          <span>{confRanking.disclaimer}</span>
+                        <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-3 rounded-xl border border-indigo-100 bg-indigo-50/60 px-3.5 py-2.5 text-xs text-indigo-950">
+                          <div className="flex items-start gap-2 min-w-0 leading-relaxed">
+                            <Info className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                            <span>{confRanking.disclaimer}</span>
+                          </div>
+                          <span className="shrink-0 whitespace-nowrap rounded-md border border-indigo-200/80 bg-white/90 px-2 py-0.5 font-mono text-[11px] text-indigo-700">
+                            {confRanking.score_unit}
+                          </span>
                         </div>
 
                         <div className="divide-y divide-slate-100">
@@ -627,9 +656,7 @@ export function AnalysisResultPage() {
                                   <div className="text-sm font-bold text-indigo-700">
                                     {conf.match_score.toFixed(3)}
                                   </div>
-                                  <div className="text-[10px] text-slate-400">
-                                    {conf.score_unit}
-                                  </div>
+                                  <div className="text-[10px] text-slate-400">điểm phù hợp</div>
                                 </div>
                               </div>
 
@@ -661,12 +688,25 @@ export function AnalysisResultPage() {
               </div>
 
               {analysis.extraction_status === 'completed' && (
-                <div className="flex items-center gap-2 text-xs text-slate-500 px-1">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                  <span>
-                    Analysis ID: <code>{analysis.analysis_id}</code> • Prompt:{' '}
-                    <code>{analysis.provenance.prompt_version}</code>
-                  </span>
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 px-1 pt-1 border-t border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+                    <span>
+                      Analysis ID: <code>{analysis.analysis_id}</code> • Prompt:{' '}
+                      <code>{analysis.provenance.prompt_version}</code>
+                    </span>
+                  </div>
+                  {analysis.timings && (
+                    <div className="flex items-center gap-1.5 text-slate-500">
+                      <Clock className="h-3.5 w-3.5 text-slate-400" />
+                      <span>
+                        Tổng thời gian phân tích:{' '}
+                        <strong className="text-slate-700">
+                          {(((analysis.timings.extraction_ms || 0) + (analysis.timings.ranking_ms || 0)) / 1000).toFixed(2)}s
+                        </strong>
+                      </span>
+                    </div>
+                  )}
                 </div>
               )}
             </section>

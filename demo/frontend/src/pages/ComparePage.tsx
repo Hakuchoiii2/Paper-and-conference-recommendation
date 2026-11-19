@@ -4,10 +4,12 @@ import {
   AlertCircle,
   CheckCircle2,
   Clock,
+  Eraser,
   ExternalLink,
   GitCompare,
   Loader2,
   Play,
+  Search,
   ServerOff,
 } from 'lucide-react';
 import { FacetBadge } from '../components/FacetBadge';
@@ -31,6 +33,7 @@ export function ComparePage() {
   const navState = (location.state as { title?: string; abstract?: string } | null) || null;
 
   const [examples, setExamples] = useState<ExampleSummary[]>([]);
+  const [exampleSearch, setExampleSearch] = useState<string>('');
   const [selectedExampleId, setSelectedExampleId] = useState<string>('');
   const [title, setTitle] = useState(navState?.title || '');
   const [abstract, setAbstract] = useState(navState?.abstract || '');
@@ -73,15 +76,39 @@ export function ComparePage() {
 
   const handleSelectExample = async (exampleId: string) => {
     setSelectedExampleId(exampleId);
+    setGlobalError(null);
     if (!exampleId) return;
     try {
       const detail = await apiClient.getExample(exampleId);
       setTitle(detail.title);
       setAbstract(detail.abstract);
-    } catch {
-      // ignore
+    } catch (err) {
+      setGlobalError(err instanceof Error ? err.message : 'Không tải được bài mẫu.');
     }
   };
+
+  const handleClear = () => {
+    setTitle('');
+    setAbstract('');
+    setSelectedExampleId('');
+    setExampleSearch('');
+    setGlobalError(null);
+  };
+
+  const filteredExamples = examples.filter((ex) => {
+    if (!exampleSearch.trim()) return true;
+    const kw = exampleSearch.trim().toLowerCase();
+    return (
+      ex.title.toLowerCase().includes(kw) ||
+      ex.short_label.toLowerCase().includes(kw) ||
+      ex.example_id.toLowerCase().includes(kw)
+    );
+  });
+
+  const maxTitle = runtime?.limits.max_title_chars ?? 400;
+  const maxAbstract = runtime?.limits.max_abstract_chars ?? 4000;
+  const titleTooLong = title.length > maxTitle;
+  const abstractTooLong = abstract.length > maxAbstract;
 
   const toggleModel = (modelKey: string) => {
     setSelectedModels((prev) => {
@@ -101,6 +128,10 @@ export function ComparePage() {
     }
     if (!title.trim() || !abstract.trim()) {
       setGlobalError('Vui lòng nhập hoặc chọn bài mẫu có đầy đủ Title và Abstract.');
+      return;
+    }
+    if (titleTooLong || abstractTooLong) {
+      setGlobalError('Nội dung vượt quá giới hạn ký tự khuyến nghị. Vui lòng rút gọn trước khi so sánh.');
       return;
     }
     if (selectedModels.length < 2) {
@@ -216,7 +247,7 @@ export function ComparePage() {
         </div>
       )}
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-4">
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
@@ -229,25 +260,52 @@ export function ComparePage() {
           </div>
         </div>
 
-        {/* Input selector */}
-        <div className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/80 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2 flex-1 min-w-[240px]">
-              <label className="text-xs font-semibold text-slate-600 whitespace-nowrap">
-                Nạp bài mẫu:
-              </label>
+        {/* Example selector + Search + Clear */}
+        <div className="space-y-2.5 pt-2 pb-3 border-t border-b border-slate-100">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Chọn bài mẫu từ Corpus ({examples.length} bài sẵn có)
+            </span>
+            <button
+              type="button"
+              onClick={handleClear}
+              disabled={running}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-medium text-slate-600 hover:bg-slate-50 disabled:opacity-50"
+            >
+              <Eraser className="h-3.5 w-3.5" />
+              Xóa nội dung
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
+            {/* Ô tìm kiếm nhanh */}
+            <div className="md:col-span-2 relative">
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-slate-400 pointer-events-none" />
+              <input
+                type="text"
+                value={exampleSearch}
+                onChange={(e) => setExampleSearch(e.target.value)}
+                disabled={running}
+                placeholder="Lọc bài mẫu (VD: NLP, neural, ACL...)"
+                className="w-full rounded-lg border border-slate-300 bg-white pl-8 pr-3 py-1.5 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none disabled:bg-slate-50"
+              />
+            </div>
+
+            {/* Dropdown danh sách bài mẫu đã lọc */}
+            <div className="md:col-span-3">
               <select
+                id="compare-example-select"
                 value={selectedExampleId}
                 onChange={(e) => handleSelectExample(e.target.value)}
-                disabled={examples.length === 0}
-                className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm disabled:bg-slate-100 disabled:text-slate-400"
+                disabled={running || filteredExamples.length === 0}
+                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-800 focus:border-blue-500 focus:outline-none disabled:bg-slate-50 disabled:text-slate-400"
               >
                 <option value="">
-                  {examples.length > 0
-                    ? '-- Tùy chỉnh hoặc chọn bài mẫu --'
-                    : '-- Chưa có bài mẫu từ backend --'}
+                  {filteredExamples.length > 0
+                    ? `-- Chọn bài mẫu (${filteredExamples.length} bài khớp) --`
+                    : '-- Không tìm thấy bài mẫu khớp từ khóa --'}
                 </option>
-                {examples.map((ex) => (
+                {filteredExamples.map((ex) => (
                   <option key={ex.example_id} value={ex.example_id}>
                     {ex.short_label}
                   </option>
@@ -255,20 +313,51 @@ export function ComparePage() {
               </select>
             </div>
           </div>
+        </div>
 
+        {/* Title */}
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between">
+            <label htmlFor="compare-manuscript-title" className="text-sm font-semibold text-slate-800">
+              Title <span className="text-rose-500">*</span>
+            </label>
+            <span
+              className={`text-xs ${titleTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}
+            >
+              {title.length}/{maxTitle} ký tự
+            </span>
+          </div>
           <input
+            id="compare-manuscript-title"
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title manuscript..."
-            className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium"
+            disabled={running}
+            placeholder="Ví dụ: Facet-Aware Scientific Paper Recommendation via Grounded Concept Extraction"
+            className="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none disabled:bg-slate-50"
           />
+        </div>
+
+        {/* Abstract */}
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between">
+            <label htmlFor="compare-manuscript-abstract" className="text-sm font-semibold text-slate-800">
+              Abstract <span className="text-rose-500">*</span>
+            </label>
+            <span
+              className={`text-xs ${abstractTooLong ? 'font-semibold text-rose-600' : 'text-slate-400'}`}
+            >
+              {abstract.length}/{maxAbstract} ký tự
+            </span>
+          </div>
           <textarea
-            rows={4}
+            id="compare-manuscript-abstract"
+            rows={6}
             value={abstract}
             onChange={(e) => setAbstract(e.target.value)}
-            placeholder="Abstract manuscript..."
-            className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700"
+            disabled={running}
+            placeholder="Dán hoặc nhập toàn bộ abstract của manuscript vào đây..."
+            className="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none disabled:bg-slate-50"
           />
         </div>
 
@@ -284,17 +373,19 @@ export function ComparePage() {
               <div className="flex flex-wrap gap-2">
                 {models.map((m) => {
                   const checked = selectedModels.includes(m.model_key);
+                  const isBlocked = mode === 'live' && !m.supported;
                   return (
                     <button
                       key={m.model_key}
                       type="button"
-                      disabled={running || !m.supported}
+                      disabled={running || isBlocked}
                       onClick={() => toggleModel(m.model_key)}
+                      title={isBlocked ? 'Model chưa tải về máy để chạy trực tiếp (hãy chọn Xem kết quả mẫu)' : undefined}
                       className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
                         checked
-                          ? 'border-blue-600 bg-blue-50 text-blue-800'
+                          ? 'border-blue-600 bg-blue-50 text-blue-800 font-semibold'
                           : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
-                      } disabled:opacity-50`}
+                      } ${isBlocked ? 'opacity-40 cursor-not-allowed' : ''}`}
                     >
                       {m.model_key}
                     </button>

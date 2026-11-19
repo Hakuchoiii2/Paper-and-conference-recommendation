@@ -124,11 +124,17 @@ export interface AnalysisDetail {
   timings: AnalysisTimings;
 }
 
+export type PaperRankingMethod = 'whole_text' | 'equal_facets' | 'weighted_facets';
+export type ConferenceRankingMethod = 'whole_text_knn' | 'flat_facet_knn' | 'gated_knn';
+
 export interface CreateAnalysisRequest {
   title: string;
   abstract: string;
   model_key: string;
   mode: AnalysisMode;
+  embedding_model?: string;
+  paper_ranking_method?: PaperRankingMethod;
+  conference_ranking_method?: ConferenceRankingMethod;
   idempotency_key?: string;
 }
 

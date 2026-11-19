@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpenCheck, GitCompare, Settings2 } from 'lucide-react';
+import { BookOpenCheck, GitCompare, History, Settings2 } from 'lucide-react';
 import { useSystem } from '../context/SystemContext';
 import { SystemDrawer } from './SystemDrawer';
+import { HistoryDrawer } from './HistoryDrawer';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const { runtime, setDrawerOpen } = useSystem();
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   const isCompare = location.pathname.startsWith('/compare');
 
@@ -78,6 +80,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             <button
               type="button"
+              onClick={() => setHistoryOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 shadow-2xs hover:bg-slate-50 transition"
+              title="Lịch sử phân tích"
+            >
+              <History className="h-4 w-4 text-blue-600" />
+              <span className="hidden sm:inline">Lịch sử</span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setDrawerOpen(true)}
               className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-xs hover:bg-slate-50"
             >
@@ -91,6 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-6">{children}</main>
 
       <SystemDrawer />
+      <HistoryDrawer open={historyOpen} onClose={() => setHistoryOpen(false)} />
     </div>
   );
 }

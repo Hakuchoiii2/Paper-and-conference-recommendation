@@ -3,14 +3,18 @@ from __future__ import annotations
 import asyncio
 import json
 import math
+import os
 import re
 import time
 import uuid
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import numpy as np
+
+from model_runner import ModelRunnerManager
 from schemas import (
     AnalysisDetail,
     AnalysisProvenance,
@@ -30,6 +34,7 @@ from schemas import (
     FacetKey,
     FacetOutput,
     HealthResponse,
+    JobError,
     JobResponse,
     LoadModelResponse,
     ModelInfo,
@@ -44,13 +49,53 @@ from schemas import (
 )
 
 FACETS: List[FacetKey] = ["problem", "task", "method", "dataset", "contribution"]
+FIELDS: List[str] = ["whole_text", *FACETS]
+
+# Chuẩn Exp B (configs/exp_b.json)
 FIXED_WEIGHTS: Dict[FacetKey, float] = {
-    "problem": 0.25,
+    "problem": 0.40,
     "task": 0.20,
-    "method": 0.25,
-    "dataset": 0.15,
-    "contribution": 0.15,
+    "method": 0.20,
+    "dataset": 0.10,
+    "contribution": 0.10,
 }
+
+# Chuẩn Gated 5-Facet k-NN (configs/conference_recommendation/config.json)
+CONF_GATE_TAU: float = 0.45
+CONF_GATE_KAPPA: float = 10.0
+CONF_KNN_K: int = 10
+CONF_SOLUTION_WEIGHTS: Dict[FacetKey, float] = {
+    "task": 0.30,
+    "method": 0.30,
+    "dataset": 0.20,
+    "contribution": 0.20,
+}
+
+
+def load_dotenv_file(env_path: Path) -> Dict[str, str]:
+    env: Dict[str, str] = {}
+    if not env_path.exists():
+        return env
+    for raw in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        env[k.strip()] = v.strip().strip('"').strip("'")
+    return env
+
+
+def resolve_path(base_dir: Path, raw_path: str) -> Path:
+    p = Path(raw_path)
+    return p if p.is_absolute() else (base_dir / p).resolve()
+
+
+def sigmoid(z: float) -> float:
+    if z >= 20.0:
+        return 1.0
+    if z <= -20.0:
+        return 0.0
+    return 1.0 / (1.0 + math.exp(-z))
 
 
 def python_idx_to_utf16_offset(text: str, py_idx: int) -> int:
@@ -60,7 +105,9 @@ def python_idx_to_utf16_offset(text: str, py_idx: int) -> int:
 
 def make_evidence_span(text: str, quote: str, source_field: str) -> EvidenceSpan:
     idx = text.find(quote)
-    if idx == -1:
+    if idx == -1 and quote:
+        idx = text.lower().find(quote.lower())
+    if idx == -1 or not quote:
         return EvidenceSpan(
             quote=quote,
             source_field=source_field,  # type: ignore[arg-type]
@@ -68,10 +115,11 @@ def make_evidence_span(text: str, quote: str, source_field: str) -> EvidenceSpan
             end_offset=None,
             verified=False,
         )
+    actual_quote = text[idx : idx + len(quote)]
     start_u16 = python_idx_to_utf16_offset(text, idx)
-    end_u16 = python_idx_to_utf16_offset(text, idx + len(quote))
+    end_u16 = python_idx_to_utf16_offset(text, idx + len(actual_quote))
     return EvidenceSpan(
-        quote=quote,
+        quote=actual_quote,
         source_field=source_field,  # type: ignore[arg-type]
         start_offset=start_u16,
         end_offset=end_u16,
@@ -80,7 +128,28 @@ def make_evidence_span(text: str, quote: str, source_field: str) -> EvidenceSpan
 
 
 def tokenize(text: str) -> List[str]:
-    return re.findall(r"[a-z0-9]+", text.lower())
+    return [t for t in re.findall(r"[a-z0-9]+", text.lower()) if len(t) >= 2]
+
+
+def build_tfidf_vector(text: str, idf: Dict[str, float], default_idf: float) -> Dict[str, float]:
+    toks = tokenize(text)
+    if not toks:
+        return {}
+    counts = Counter(toks)
+    vec = {t: c * idf.get(t, default_idf) for t, c in counts.items()}
+    norm = math.sqrt(sum(v * v for v in vec.values()))
+    if norm == 0.0:
+        return {}
+    return {t: v / norm for t, v in vec.items()}
+
+
+def sparse_cosine(vec_a: Dict[str, float], vec_b: Dict[str, float]) -> float:
+    if not vec_a or not vec_b:
+        return 0.0
+    if len(vec_a) > len(vec_b):
+        vec_a, vec_b = vec_b, vec_a
+    dot = sum(val * vec_b[t] for t, val in vec_a.items() if t in vec_b)
+    return round(max(0.0, min(1.0, dot)), 4)
 
 
 def tfidf_cosine(text_a: str, text_b: str) -> float:
@@ -104,6 +173,10 @@ def tfidf_cosine(text_a: str, text_b: str) -> float:
 class DemoBackendService:
     def __init__(self) -> None:
         self.session_id = f"sess_{uuid.uuid4().hex[:8]}"
+        self.demo_dir = Path(__file__).resolve().parent.parent
+        self.env = load_dotenv_file(self.demo_dir / ".env")
+        self.model_runner = ModelRunnerManager()
+
         self.models: List[ModelInfo] = [
             ModelInfo(
                 model_key="Qwen3-4B",
@@ -119,199 +192,323 @@ class DemoBackendService:
                 display_name="Qwen3-8B-Instruct",
                 family="Qwen3",
                 parameter_size="8B",
-                supported=True,
+                supported=False,
                 precomputed_available=True,
                 ranking_artifacts_ready=True,
+                unavailable_reason="Model Qwen3-8B chưa được tải về máy. Môi trường cục bộ hiện chỉ có Qwen3-4B (chế độ Mẫu có sẵn vẫn hỗ trợ đầy đủ 168 bài Test).",
             ),
             ModelInfo(
                 model_key="Qwen3-14B",
                 display_name="Qwen3-14B-Instruct",
                 family="Qwen3",
                 parameter_size="14B",
-                supported=True,
+                supported=False,
                 precomputed_available=True,
                 ranking_artifacts_ready=True,
+                unavailable_reason="Model Qwen3-14B chưa được tải về máy. Môi trường cục bộ hiện chỉ có Qwen3-4B (chế độ Mẫu có sẵn vẫn hỗ trợ đầy đủ 168 bài Test).",
             ),
             ModelInfo(
                 model_key="Llama3.1-8B",
                 display_name="Llama-3.1-8B-Instruct",
                 family="Llama 3.1",
                 parameter_size="8B",
-                supported=True,
+                supported=False,
                 precomputed_available=True,
                 ranking_artifacts_ready=True,
+                unavailable_reason="Model Llama-3.1-8B chưa được tải về máy. Môi trường cục bộ hiện chỉ có Qwen3-4B (chế độ Mẫu có sẵn vẫn hỗ trợ đầy đủ 168 bài Test).",
             ),
             ModelInfo(
                 model_key="Gemma2-9B",
                 display_name="Gemma-2-9B-IT",
                 family="Gemma 2",
                 parameter_size="9B",
-                supported=True,
+                supported=False,
                 precomputed_available=True,
                 ranking_artifacts_ready=True,
+                unavailable_reason="Model Gemma-2-9B chưa được tải về máy. Môi trường cục bộ hiện chỉ có Qwen3-4B (chế độ Mẫu có sẵn vẫn hỗ trợ đầy đủ 168 bài Test).",
             ),
         ]
 
         self.runtime = RuntimeStatus(
             connected=True,
-            loaded_model_key="Qwen3-8B",
-            intended_model_key="Qwen3-8B",
+            loaded_model_key="Qwen3-4B",
+            intended_model_key="Qwen3-4B",
             worker_busy=False,
             current_task=None,
             ranking_ready=True,
-            device_summary="FastAPI Adapter (CPU TF-IDF Scorer; sẵn sàng gắn GPU worker)",
+            device_summary=(
+                f"GPU {self.model_runner.device.upper()} (Real 4-bit LoRA LLM + BGE-small)"
+                if self.model_runner.enable_real_llm
+                else "CPU Adapter (Heuristic Live + Real Precomputed 5 LLMs)"
+            ),
             limits=RuntimeLimits(),
         )
 
+        # Core data stores (strictly loaded from _local/demo_artifacts)
         self.papers: Dict[str, PaperDetail] = {}
+        self.paper_facets: Dict[str, Dict[FacetKey, List[str]]] = {}
+        self.corpus_pids: List[str] = []
+
         self.conferences: Dict[str, ConferenceDetail] = {}
+        self.conf_cids: List[str] = []
+        self.conf_top_keywords: Dict[str, Dict[FacetKey, List[str]]] = {}
+
+        # Strictly 602 Train papers for Conference Recommendation (zero leakage)
+        self.conf_train_pool: List[Dict] = []
+
+        # Strictly 168 Clean Test papers as Demo Examples (all 5 real LLM outputs)
         self.examples: Dict[str, ExampleDetail] = {}
+        self.example_precomputed_facets: Dict[str, Dict[str, Dict[str, List[Dict]]]] = {}
+        self.example_ground_truth: Dict[str, Dict[str, str]] = {}
+
+        # Runtime caches
         self.analyses: Dict[str, AnalysisDetail] = {}
+        self.analysis_meta: Dict[str, Dict[str, str]] = {}
         self.jobs: Dict[str, JobResponse] = {}
         self.idempotency_map: Dict[str, CreateAnalysisResponse] = {}
         self.paper_rankings_cache: Dict[str, List[PaperRecommendationItem]] = {}
         self.conf_rankings_cache: Dict[str, List[ConferenceRecommendationItem]] = {}
+        self.conf_voting_neighbors: Dict[str, Dict[str, List[Tuple[float, Dict]]]] = {}
 
-        self._load_corpus_and_fixtures()
+        # Sparse TF-IDF precomputed vectors (6 fields)
+        self.idf: Dict[str, float] = {}
+        self.default_idf: float = 1.0
+        self.corpus_tfidf: Dict[str, List[Dict[str, float]]] = {}
+        self.conf_train_tfidf: Dict[str, List[Dict[str, float]]] = {}
 
-    def _find_repo_root(self) -> Optional[Path]:
-        here = Path(__file__).resolve()
-        for parent in [here.parent, *here.parents]:
-            cand1 = parent / "paper-and-conference-recommendation-experiments"
-            if cand1.exists():
-                return cand1
-            cand2 = parent / "Paper-and-conference-recommendation" / "paper-and-conference-recommendation-experiments"
-            if cand2.exists():
-                return cand2
-        return None
+        # Dense BGE-small precomputed vectors (6 fields + masks)
+        self.corpus_bge: Dict[str, np.ndarray] = {}
+        self.corpus_bge_mask: Dict[str, np.ndarray] = {}
+        self.conf_train_bge: Dict[str, np.ndarray] = {}
+        self.conf_train_bge_mask: Dict[str, np.ndarray] = {}
+        self.conf_centroids_bge: Dict[str, np.ndarray] = {}
+        self._bge_model = None
 
-    def _load_corpus_and_fixtures(self) -> None:
-        repo_root = self._find_repo_root()
-        if repo_root:
-            papers_path = repo_root / "data" / "processed" / "papers.jsonl"
-            if papers_path.exists():
-                with papers_path.open("r", encoding="utf-8") as f:
-                    for idx, line in enumerate(f):
-                        if idx >= 400:
-                            break
-                        row = json.loads(line)
-                        pid = row["paper_id"]
-                        self.papers[pid] = PaperDetail(
-                            paper_id=pid,
-                            title=row.get("title", ""),
-                            abstract=row.get("abstract", ""),
-                            authors=row.get("authors"),
-                            year=row.get("year"),
-                            venue=row.get("source", "").upper() if row.get("source") else None,
-                            source=row.get("source"),
-                            in_corpus=True,
-                        )
+        self._load_demo_artifacts()
 
-        # Ensure fallback papers exist if corpus file wasn't found
-        if not self.papers:
-            self.papers["P000001"] = PaperDetail(
-                paper_id="P000001",
-                title="And That's A Fact: Distinguishing Factual and Emotional Argumentation in Online Dialogue",
-                abstract=(
-                    'We investigate the characteristics of factual and emotional argumentation styles observed in online debates. '
-                    'Using an annotated set of "factual" and "feeling" debate forum posts, we extract patterns that are highly correlated '
-                    'with factual and emotional arguments, and then apply a bootstrapping methodology to find new patterns in a larger pool of unannotated forum posts.'
-                ),
-                year=2017,
-                venue="ACL",
-                source="csfcube",
-                in_corpus=True,
+    def _cfg_path(self, key: str, default: str) -> Path:
+        val = os.environ.get(key) or self.env.get(key) or default
+        return resolve_path(self.demo_dir, val)
+
+    def _get_bge_model(self):
+        if self._bge_model is None:
+            import torch
+            from sentence_transformers import SentenceTransformer
+
+            model_path = self._cfg_path("BGE_MODEL_PATH", "../_local/models/bge-small-en-v1.5")
+            # Nhường toàn bộ VRAM cho LLM 4-bit trên GPU <= 6GB để tránh tràn sang Shared RAM
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            if device == "cuda" and self.model_runner.enable_real_llm:
+                try:
+                    vram_gb = torch.cuda.get_device_properties(0).total_memory / (1024**3)
+                    if vram_gb <= 6.5:
+                        device = "cpu"
+                except Exception:
+                    device = "cpu"
+
+            if model_path.exists():
+                self._bge_model = SentenceTransformer(
+                    str(model_path),
+                    device=device,
+                    model_kwargs={"local_files_only": True},
+                )
+            else:
+                self._bge_model = SentenceTransformer("BAAI/bge-small-en-v1.5", device=device)
+        return self._bge_model
+
+    def _load_demo_artifacts(self) -> None:
+        artifacts_dir = self._cfg_path("DEMO_ARTIFACTS_DIR", "../_local/demo_artifacts")
+        corpus_path = artifacts_dir / "paper_corpus.jsonl"
+        conf_catalog_path = artifacts_dir / "conference_catalog.json"
+        conf_train_path = artifacts_dir / "conference_train_pool.jsonl"
+        examples_path = artifacts_dir / "demo_examples.json"
+
+        if not corpus_path.exists() or not examples_path.exists():
+            raise RuntimeError(
+                f"Không tìm thấy bộ artifacts demo mới tại {artifacts_dir}. "
+                "Vui lòng chạy: python demo/backend/scripts/build_demo_artifacts.py"
             )
 
-        self.conferences = {
-            "conf_acl": ConferenceDetail(
-                conference_id="conf_acl",
-                name="Annual Meeting of the Association for Computational Linguistics",
-                acronym="ACL",
-                url="https://aclanthology.org/venues/acl/",
-                topic_profile_description="Hồ sơ chủ đề xây dựng từ các bài báo lịch sử về Computational Linguistics, NLP, Argumentation và Information Extraction.",
-                profile_built_from="Hồ sơ tổng hợp từ các bài báo lịch sử trong corpus DS300",
-                historical_paper_count=142,
-                year_range="2015–2024",
-                cutoff_note="Dữ liệu hồ sơ tính đến cutoff 2024.",
-                coverage_note="Độ phủ facet 96.5%.",
-            ),
-            "conf_emnlp": ConferenceDetail(
-                conference_id="conf_emnlp",
-                name="Conference on Empirical Methods in Natural Language Processing",
-                acronym="EMNLP",
-                url="https://aclanthology.org/venues/emnlp/",
-                topic_profile_description="Hồ sơ chủ đề tập trung vào phương pháp thực nghiệm NLP, bootstrapping, phân tích ngôn ngữ và đánh giá LLM.",
-                profile_built_from="Hồ sơ tổng hợp từ các bài báo lịch sử trong corpus DS300",
-                historical_paper_count=118,
-                year_range="2016–2024",
-                cutoff_note="Dữ liệu hồ sơ tính đến cutoff 2024.",
-                coverage_note="Độ phủ facet 94.9%.",
-            ),
-            "conf_sigir": ConferenceDetail(
-                conference_id="conf_sigir",
-                name="International ACM SIGIR Conference on Research and Development in Information Retrieval",
-                acronym="SIGIR",
-                url="https://sigir.org/",
-                topic_profile_description="Hồ sơ chủ đề về truy xuất thông tin khoa học, xếp hạng tài liệu theo facet và hệ thống gợi ý.",
-                profile_built_from="Hồ sơ tổng hợp từ các bài báo lịch sử trong corpus DS300",
-                historical_paper_count=47,
-                year_range="2018–2024",
-                cutoff_note="Dữ liệu hồ sơ tính đến cutoff 2024.",
-                coverage_note="Độ phủ facet 91.5%.",
-                sparse_profile_warning="Số lượng bài lịch sử trong tập hội nghị này ở mức trung bình (47 bài).",
-            ),
-        }
+        # 1. Load paper_corpus.jsonl (4,210 papers + real 5 facets)
+        with corpus_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                p = json.loads(line)
+                pid = p["paper_id"]
+                self.corpus_pids.append(pid)
+                self.papers[pid] = PaperDetail(
+                    paper_id=pid,
+                    title=p.get("title", ""),
+                    abstract=p.get("abstract", ""),
+                    authors=p.get("authors") or [],
+                    year=p.get("year"),
+                    venue=p.get("venue"),
+                    source=p.get("source"),
+                    in_corpus=True,
+                )
+                raw_f = p.get("facets") or {}
+                self.paper_facets[pid] = {
+                    f_key: [str(x).strip() for x in (raw_f.get(f_key) or []) if str(x).strip()]
+                    for f_key in FACETS
+                }
 
-        ex1_title = "And That's A Fact: Distinguishing Factual and Emotional Argumentation in Online Dialogue"
-        ex1_abs = (
-            'We investigate the characteristics of factual and emotional argumentation styles observed in online debates. '
-            'Using an annotated set of "factual" and "feeling" debate forum posts, we extract patterns that are highly correlated '
-            'with factual and emotional arguments, and then apply a bootstrapping methodology to find new patterns in a larger pool '
-            'of unannotated forum posts. This process automatically produces a large set of patterns representing linguistic expressions '
-            'that are highly correlated with factual and emotional language. Finally, we analyze the most discriminating patterns to better '
-            'understand the defining characteristics of factual and emotional arguments.'
-        )
+        # 2. Load conference_catalog.json (30 conferences)
+        confs_data = json.loads(conf_catalog_path.read_text(encoding="utf-8"))
+        for c in confs_data:
+            cid = c["conference_id"]
+            self.conf_cids.append(cid)
+            self.conferences[cid] = ConferenceDetail(
+                conference_id=cid,
+                name=c.get("canonical_name", ""),
+                acronym=c.get("acronym", ""),
+                url=c.get("url"),
+                topic_profile_description=c.get("topic_profile_description", ""),
+                profile_built_from=c.get("coverage_note", "Hồ sơ tổng hợp từ 602 bài Train (1982–2015)"),
+                historical_paper_count=int(c.get("historical_paper_count", 0)),
+                year_range=c.get("year_range", "1982–2015"),
+                cutoff_note=c.get("cutoff_note"),
+                coverage_note=c.get("coverage_note"),
+                sparse_profile_warning=c.get("sparse_profile_warning"),
+            )
+            kw_map = c.get("top_keywords_by_facet") or {}
+            self.conf_top_keywords[cid] = {
+                f_key: list(kw_map.get(f_key) or []) for f_key in FACETS
+            }
 
-        self.examples["ex_csfcube_argumentation"] = ExampleDetail(
-            example_id="ex_csfcube_argumentation",
-            title=ex1_title,
-            short_label="Argumentation Style Detection (CSFCube P000001)",
-            domain="Natural Language Processing",
-            available_models=["Qwen3-4B", "Qwen3-8B", "Qwen3-14B", "Llama3.1-8B", "Gemma2-9B"],
-            abstract=ex1_abs,
-            default_model_key="Qwen3-8B",
-            precomputed_analyses={
-                "Qwen3-8B": "analysis_ex1_qwen8b",
-                "Qwen3-4B": "analysis_ex1_qwen8b",
-                "Qwen3-14B": "analysis_ex1_qwen8b",
-                "Llama3.1-8B": "analysis_ex1_qwen8b",
-                "Gemma2-9B": "analysis_ex1_qwen8b",
-            },
-        )
+        # 3. Load conference_train_pool.jsonl (602 train papers strictly)
+        with conf_train_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    self.conf_train_pool.append(json.loads(line))
 
-        self.analyses["analysis_ex1_qwen8b"] = AnalysisDetail(
-            analysis_id="analysis_ex1_qwen8b",
-            title=ex1_title,
-            abstract=ex1_abs,
-            extraction_status="completed",
-            paper_ranking_status="completed",
-            conference_ranking_status="completed",
-            facets=self._extract_heuristic_facets(ex1_title, ex1_abs),
-            provenance=AnalysisProvenance(
-                model_key="Qwen3-8B",
-                model_display_name="Qwen3-8B-Instruct",
-                source="precomputed",
-                prompt_version="v3.7-source-first",
-                adapter_version="ds300-fastapi-1.0",
-                session_id=self.session_id,
-                created_at=datetime.now(timezone.utc).isoformat(),
-            ),
-            timings=AnalysisTimings(extraction_ms=1420, ranking_ms=64),
-        )
-        self._compute_rankings("analysis_ex1_qwen8b")
+        # 4. Load demo_examples.json (168 clean test papers × 5 real LLMs)
+        examples_data = json.loads(examples_path.read_text(encoding="utf-8"))
+        for ex in examples_data:
+            ex_id = ex["example_id"]
+            avail_models = list(ex.get("available_models") or [])
+            pre_map = ex.get("precomputed_facets") or {}
+            self.example_precomputed_facets[ex_id] = pre_map
+            self.example_ground_truth[ex_id] = {
+                "conference_id": ex.get("ground_truth_venue_id", ""),
+                "acronym": ex.get("ground_truth_venue_acronym", ""),
+                "name": ex.get("ground_truth_venue_name", ""),
+            }
+            self.examples[ex_id] = ExampleDetail(
+                example_id=ex_id,
+                title=ex.get("title", ""),
+                short_label=ex.get("short_label", ""),
+                domain=ex.get("domain", "Computer Science"),
+                available_models=avail_models,
+                abstract=ex.get("abstract", ""),
+                default_model_key=ex.get("default_model_key", "Qwen3-4B"),
+                precomputed_analyses={mk: f"ana_pre_{ex_id}_{mk}" for mk in avail_models},
+            )
+
+        # 5. Load precomputed 6-field BGE-small dense matrices
+        corpus_bge_path = artifacts_dir / "corpus_bge_small_6fields.npz"
+        train_bge_path = artifacts_dir / "conf_train_bge_small_6fields.npz"
+        centroids_bge_path = artifacts_dir / "conf_centroids_bge_small.npz"
+
+        if corpus_bge_path.exists():
+            npz = np.load(corpus_bge_path)
+            for field in FIELDS:
+                self.corpus_bge[field] = npz[field].astype(np.float32)
+                self.corpus_bge_mask[field] = npz[f"mask_{field}"].astype(bool)
+
+        if train_bge_path.exists():
+            npz = np.load(train_bge_path)
+            for field in FIELDS:
+                self.conf_train_bge[field] = npz[field].astype(np.float32)
+                self.conf_train_bge_mask[field] = npz[f"mask_{field}"].astype(bool)
+
+        if centroids_bge_path.exists():
+            npz = np.load(centroids_bge_path)
+            for field in FIELDS:
+                self.conf_centroids_bge[field] = npz[field].astype(np.float32)
+
+        # 6. Build shared IDF + sparse TF-IDF vectors for all 6 fields (fast in-memory)
+        self._build_tfidf_indices()
+
+    def _build_tfidf_indices(self) -> None:
+        df: Counter = Counter()
+        total_docs = 0
+
+        # Compute shared IDF over corpus whole_text + 5 facet docs (matches Exp B)
+        for pid in self.corpus_pids:
+            p = self.papers[pid]
+            docs = [f"{p.title} {p.abstract}"]
+            f_map = self.paper_facets.get(pid, {})
+            for f_key in FACETS:
+                txt = " ".join(f_map.get(f_key, []))
+                if txt:
+                    docs.append(txt)
+            for doc in docs:
+                toks = set(tokenize(doc))
+                if toks:
+                    total_docs += 1
+                    for t in toks:
+                        df[t] += 1
+
+        self.default_idf = math.log((1 + total_docs) / 1.0) + 1.0
+        self.idf = {t: math.log((1 + total_docs) / (1 + cnt)) + 1.0 for t, cnt in df.items()}
+
+        self.corpus_tfidf = {field: [] for field in FIELDS}
+        for pid in self.corpus_pids:
+            p = self.papers[pid]
+            f_map = self.paper_facets.get(pid, {})
+            self.corpus_tfidf["whole_text"].append(
+                build_tfidf_vector(f"{p.title} {p.abstract}", self.idf, self.default_idf)
+            )
+            for f_key in FACETS:
+                txt = " ".join(f_map.get(f_key, []))
+                self.corpus_tfidf[f_key].append(
+                    build_tfidf_vector(txt, self.idf, self.default_idf) if txt else {}
+                )
+
+        self.conf_train_tfidf = {field: [] for field in FIELDS}
+        for r in self.conf_train_pool:
+            f_map = r.get("facets") or {}
+            self.conf_train_tfidf["whole_text"].append(
+                build_tfidf_vector(f"{r.get('title', '')} {r.get('abstract', '')}", self.idf, self.default_idf)
+            )
+            for f_key in FACETS:
+                txt = " ".join(f_map.get(f_key, []))
+                self.conf_train_tfidf[f_key].append(
+                    build_tfidf_vector(txt, self.idf, self.default_idf) if txt else {}
+                )
+
+    def _hydrate_precomputed_facets(
+        self, raw_model_facets: Dict[str, List[Dict]], title: str, abstract: str
+    ) -> Dict[FacetKey, FacetOutput]:
+        result: Dict[FacetKey, FacetOutput] = {}
+        for f_key in FACETS:
+            raw_items = raw_model_facets.get(f_key) or []
+            concepts: List[FacetConcept] = []
+            for entry in raw_items:
+                concept_text = str(entry.get("concept", "")).strip()
+                if not concept_text:
+                    continue
+                ev_spans: List[EvidenceSpan] = []
+                for ev in entry.get("evidences") or []:
+                    quote = str(ev.get("quote", "")).strip()
+                    src = ev.get("source_field", "abstract")
+                    if src not in ("title", "abstract"):
+                        src = "abstract"
+                    target_text = title if src == "title" else abstract
+                    if quote:
+                        ev_spans.append(make_evidence_span(target_text, quote, src))
+                concepts.append(FacetConcept(concept=concept_text, evidences=ev_spans))
+            result[f_key] = FacetOutput(
+                status="ok" if concepts else "empty",
+                items=concepts,
+            )
+        return result
 
     def _extract_heuristic_facets(self, title: str, abstract: str) -> Dict[FacetKey, FacetOutput]:
+        """Fallback only for LIVE mode when GPU LLM worker is not enabled."""
         sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", abstract) if s.strip()]
         s0 = sentences[0] if sentences else abstract[:140]
         s1 = sentences[1] if len(sentences) > 1 else ""
@@ -365,14 +562,110 @@ class DemoBackendService:
             ),
         }
 
-    def _compute_rankings(self, analysis_id: str) -> None:
+    def _query_facet_texts(self, analysis: AnalysisDetail) -> Dict[str, str]:
+        out: Dict[str, str] = {
+            "whole_text": f"{analysis.title.strip()}. {analysis.abstract.strip()}".strip(". ")
+        }
+        for f_key in FACETS:
+            f_out = analysis.facets.get(f_key)
+            if f_out and f_out.items:
+                out[f_key] = "; ".join(item.concept.strip() for item in f_out.items if item.concept.strip())
+            else:
+                out[f_key] = ""
+        return out
+
+    def _compute_rankings(
+        self,
+        analysis_id: str,
+        embedding_model: str = "tfidf",
+        paper_method: str = "whole_text",
+        conf_method: str = "whole_text_knn",
+    ) -> None:
         analysis = self.analyses[analysis_id]
-        query_text = f"{analysis.title} {analysis.abstract}"
+        q_title_norm = analysis.title.strip().lower()
+        q_texts = self._query_facet_texts(analysis)
+        has_any_facet = any(bool(q_texts[f]) for f in FACETS)
+
+        use_bge = (
+            "bge" in (embedding_model or "").lower()
+            and bool(self.corpus_bge)
+            and bool(self.conf_train_bge)
+        )
+
+        if use_bge:
+            try:
+                self._compute_rankings_bge(
+                    analysis_id, q_title_norm, q_texts, has_any_facet, paper_method, conf_method
+                )
+                return
+            except Exception:
+                pass
+
+        self._compute_rankings_tfidf(
+            analysis_id, q_title_norm, q_texts, has_any_facet, paper_method, conf_method
+        )
+
+    def _compute_rankings_bge(
+        self,
+        analysis_id: str,
+        q_title_norm: str,
+        q_texts: Dict[str, str],
+        has_any_facet: bool,
+        paper_method: str,
+        conf_method: str,
+    ) -> None:
+        bge = self._get_bge_model()
+        q_vecs: Dict[str, Optional[np.ndarray]] = {}
+        non_empty_fields = [f for f in FIELDS if q_texts.get(f)]
+        if non_empty_fields:
+            embs = bge.encode(
+                [q_texts[f] for f in non_empty_fields],
+                normalize_embeddings=True,
+                show_progress_bar=False,
+                convert_to_numpy=True,
+            )
+            for idx, f in enumerate(non_empty_fields):
+                q_vecs[f] = embs[idx].astype(np.float32)
+        for f in FIELDS:
+            q_vecs.setdefault(f, None)
+
+        # 1. Paper Recommendation
+        n_papers = len(self.corpus_pids)
+        per_facet_sims: Dict[FacetKey, np.ndarray] = {f: np.zeros(n_papers, dtype=np.float32) for f in FACETS}
+        if paper_method == "whole_text" or not has_any_facet:
+            qv = q_vecs["whole_text"]
+            total_scores = np.clip(self.corpus_bge["whole_text"] @ qv, 0.0, 1.0) if qv is not None else np.zeros(n_papers, dtype=np.float32)
+            paper_score_unit = "whole_text_bge_cosine (0–1)"
+        else:
+            weights = {f: 0.20 for f in FACETS} if paper_method == "equal_facets" else FIXED_WEIGHTS
+            total_scores = np.zeros(n_papers, dtype=np.float32)
+            for f_key in FACETS:
+                qv = q_vecs.get(f_key)
+                if qv is not None:
+                    raw = np.clip(self.corpus_bge[f_key] @ qv, 0.0, 1.0)
+                    sims = np.where(self.corpus_bge_mask[f_key], raw, 0.0)
+                else:
+                    sims = np.zeros(n_papers, dtype=np.float32)
+                per_facet_sims[f_key] = sims
+                total_scores += weights[f_key] * sims
+            paper_score_unit = (
+                "equal_5facet_bge_cosine (0–1)"
+                if paper_method == "equal_facets"
+                else "weighted_5facet_bge_cosine (0–1)"
+            )
 
         paper_items: List[Tuple[float, PaperRecommendationItem]] = []
-        for pid, p in self.papers.items():
-            target_text = f"{p.title} {p.abstract}"
-            sim = tfidf_cosine(query_text, target_text)
+        for i, pid in enumerate(self.corpus_pids):
+            p = self.papers[pid]
+            if p.title.strip().lower() == q_title_norm:
+                continue
+            sim = float(total_scores[i])
+            supporting = sorted(
+                [f for f in FACETS if per_facet_sims[f][i] > 0.15],
+                key=lambda f: -float(per_facet_sims[f][i]),
+            )[:3]
+            if not supporting:
+                supporting = ["problem", "task", "method"]
             paper_items.append(
                 (
                     sim,
@@ -383,13 +676,12 @@ class DemoBackendService:
                         authors=p.authors,
                         year=p.year,
                         venue=p.venue,
-                        total_score=sim,
-                        score_unit="weighted_facet_cosine (0–1)",
-                        supporting_facets=["problem", "task", "method"],
+                        total_score=round(sim, 4),
+                        score_unit=paper_score_unit,
+                        supporting_facets=supporting,
                     ),
                 )
             )
-
         paper_items.sort(key=lambda x: (-x[0], x[1].paper_id))
         ranked_papers: List[PaperRecommendationItem] = []
         for i, (_, item) in enumerate(paper_items[:50], start=1):
@@ -397,33 +689,243 @@ class DemoBackendService:
             ranked_papers.append(item)
         self.paper_rankings_cache[analysis_id] = ranked_papers
 
-        # Conferences
-        conf_keywords = {
-            "conf_acl": "computational linguistics natural language processing argumentation dialogue discourse",
-            "conf_emnlp": "empirical methods natural language processing bootstrapping patterns text classification",
-            "conf_sigir": "information retrieval document ranking faceted search recommendation",
+        # 2. Conference Recommendation on 602 Train papers
+        n_train = len(self.conf_train_pool)
+        train_whole_sims = (
+            np.clip(self.conf_train_bge["whole_text"] @ q_vecs["whole_text"], 0.0, 1.0)
+            if q_vecs["whole_text"] is not None
+            else np.zeros(n_train, dtype=np.float32)
+        )
+        train_facet_sims: Dict[FacetKey, np.ndarray] = {}
+        for f_key in FACETS:
+            qv = q_vecs.get(f_key)
+            if qv is not None:
+                raw = np.clip(self.conf_train_bge[f_key] @ qv, 0.0, 1.0)
+                train_facet_sims[f_key] = np.where(self.conf_train_bge_mask[f_key], raw, -1.0)
+            else:
+                train_facet_sims[f_key] = np.full(n_train, -1.0, dtype=np.float32)
+
+        self._rank_conferences_knn(
+            analysis_id,
+            conf_method=conf_method,
+            train_whole_sims=train_whole_sims,
+            train_facet_sims=train_facet_sims,
+            emb_label="bge",
+        )
+        self.analysis_meta[analysis_id] = {
+            "embedding": "bge-small",
+            "paper_method": paper_method,
+            "conf_method": conf_method,
+            "paper_scorer": f"paper_{paper_method}_bge_small",
+            "conf_scorer": f"conf_{conf_method}_bge_small",
         }
-        conf_scores: List[Tuple[float, ConferenceRecommendationItem]] = []
-        for cid, conf in self.conferences.items():
-            sim = tfidf_cosine(query_text, conf_keywords.get(cid, conf.topic_profile_description))
-            conf_scores.append(
+
+    def _compute_rankings_tfidf(
+        self,
+        analysis_id: str,
+        q_title_norm: str,
+        q_texts: Dict[str, str],
+        has_any_facet: bool,
+        paper_method: str,
+        conf_method: str,
+    ) -> None:
+        q_vecs: Dict[str, Dict[str, float]] = {
+            field: build_tfidf_vector(q_texts.get(field, ""), self.idf, self.default_idf)
+            for field in FIELDS
+        }
+
+        # 1. Paper Recommendation
+        use_whole = paper_method == "whole_text" or not has_any_facet
+        weights = {f: 0.20 for f in FACETS} if paper_method == "equal_facets" else FIXED_WEIGHTS
+        paper_score_unit = (
+            "whole_text_tfidf_cosine (0–1)"
+            if use_whole
+            else (
+                "equal_5facet_tfidf_cosine (0–1)"
+                if paper_method == "equal_facets"
+                else "weighted_5facet_tfidf_cosine (0–1)"
+            )
+        )
+
+        paper_items: List[Tuple[float, PaperRecommendationItem]] = []
+        for i, pid in enumerate(self.corpus_pids):
+            p = self.papers[pid]
+            if p.title.strip().lower() == q_title_norm:
+                continue
+            if use_whole:
+                score = sparse_cosine(q_vecs["whole_text"], self.corpus_tfidf["whole_text"][i])
+                supporting = ["problem", "task", "method"]
+            else:
+                score = 0.0
+                facet_scores: Dict[FacetKey, float] = {}
+                for f_key in FACETS:
+                    s_f = sparse_cosine(q_vecs[f_key], self.corpus_tfidf[f_key][i])
+                    facet_scores[f_key] = s_f
+                    score += weights[f_key] * s_f
+                supporting = sorted(
+                    [f for f in FACETS if facet_scores[f] > 0.0],
+                    key=lambda f: -facet_scores[f],
+                )[:3]
+
+            paper_items.append(
                 (
-                    sim,
+                    score,
+                    PaperRecommendationItem(
+                        rank=0,
+                        paper_id=pid,
+                        title=p.title,
+                        authors=p.authors,
+                        year=p.year,
+                        venue=p.venue,
+                        total_score=round(score, 4),
+                        score_unit=paper_score_unit,
+                        supporting_facets=supporting or ["problem", "task", "method"],
+                    ),
+                )
+            )
+        paper_items.sort(key=lambda x: (-x[0], x[1].paper_id))
+        ranked_papers: List[PaperRecommendationItem] = []
+        for i, (_, item) in enumerate(paper_items[:50], start=1):
+            item.rank = i
+            ranked_papers.append(item)
+        self.paper_rankings_cache[analysis_id] = ranked_papers
+
+        # 2. Conference Recommendation on 602 Train papers
+        n_train = len(self.conf_train_pool)
+        train_whole_sims = np.zeros(n_train, dtype=np.float32)
+        if q_vecs["whole_text"]:
+            for i in range(n_train):
+                train_whole_sims[i] = sparse_cosine(q_vecs["whole_text"], self.conf_train_tfidf["whole_text"][i])
+
+        train_facet_sims: Dict[FacetKey, np.ndarray] = {}
+        for f_key in FACETS:
+            qv = q_vecs[f_key]
+            arr = np.full(n_train, -1.0, dtype=np.float32)
+            if qv:
+                for i in range(n_train):
+                    pv = self.conf_train_tfidf[f_key][i]
+                    if pv:
+                        arr[i] = sparse_cosine(qv, pv)
+            train_facet_sims[f_key] = arr
+
+        self._rank_conferences_knn(
+            analysis_id,
+            conf_method=conf_method,
+            train_whole_sims=train_whole_sims,
+            train_facet_sims=train_facet_sims,
+            emb_label="tfidf",
+        )
+        self.analysis_meta[analysis_id] = {
+            "embedding": "tfidf",
+            "paper_method": paper_method,
+            "conf_method": conf_method,
+            "paper_scorer": f"paper_{paper_method}_tfidf",
+            "conf_scorer": f"conf_{conf_method}_tfidf",
+        }
+
+    def _rank_conferences_knn(
+        self,
+        analysis_id: str,
+        conf_method: str,
+        train_whole_sims: np.ndarray,
+        train_facet_sims: Dict[FacetKey, np.ndarray],
+        emb_label: str,
+    ) -> None:
+        """Supports whole_text_knn, flat_facet_knn (equal 5-facet), and gated_knn (Problem gate)."""
+        n_train = len(self.conf_train_pool)
+        score_unit = f"{conf_method}_{emb_label} (0–1)"
+        neighbor_scores: List[Tuple[float, Dict, List[FacetKey]]] = []
+
+        for i in range(n_train):
+            if conf_method == "whole_text_knn":
+                sim = float(train_whole_sims[i])
+                top_f: List[FacetKey] = ["problem", "task", "method"]
+            elif conf_method == "flat_facet_knn":
+                vals = []
+                contrib_facets: List[Tuple[float, FacetKey]] = []
+                for f_key in FACETS:
+                    s_f = float(train_facet_sims[f_key][i])
+                    if s_f >= 0.0:
+                        vals.append(s_f)
+                        if s_f > 0.0:
+                            contrib_facets.append((s_f, f_key))
+                sim = (sum(vals) / len(vals)) if vals else float(train_whole_sims[i])
+                top_f = [f for _, f in sorted(contrib_facets, key=lambda x: -x[0])[:3]] or ["problem", "task", "method"]
+            else:
+                # gated_knn (Problem gate × 4 solution facets)
+                prob_sim = float(train_facet_sims["problem"][i])
+                gate = 0.5 if prob_sim < 0.0 else sigmoid(CONF_GATE_KAPPA * (prob_sim - CONF_GATE_TAU))
+                obs_w = 0.0
+                w_sum = 0.0
+                contrib_facets = []
+                for f_key, w in CONF_SOLUTION_WEIGHTS.items():
+                    s_f = float(train_facet_sims[f_key][i])
+                    if s_f >= 0.0:
+                        w_sum += w * s_f
+                        obs_w += w
+                        if s_f > 0.0:
+                            contrib_facets.append((s_f * w, f_key))
+                weighted_sol = (w_sum / obs_w) if obs_w > 0.0 else 0.0
+                sim = gate * weighted_sol
+                top_f = [f for _, f in sorted(contrib_facets, key=lambda x: -x[0])[:3]]
+                if prob_sim > CONF_GATE_TAU and "problem" not in top_f:
+                    top_f = ["problem", *top_f[:2]]
+                if not top_f:
+                    top_f = ["problem", "task", "method"]
+
+            neighbor_scores.append((sim, self.conf_train_pool[i], top_f))
+
+        neighbor_scores.sort(key=lambda x: (-x[0], x[1]["paper_id"]))
+        top_k_neighbors = neighbor_scores[:CONF_KNN_K]
+
+        vote_totals: Dict[str, float] = defaultdict(float)
+        vote_facets: Dict[str, Counter] = defaultdict(Counter)
+        neighbors_by_conf: Dict[str, List[Tuple[float, Dict]]] = defaultdict(list)
+
+        for sim, row, top_f in top_k_neighbors:
+            cid = row["conference_id"]
+            vote_totals[cid] += sim
+            neighbors_by_conf[cid].append((sim, row))
+            for f_key in top_f:
+                vote_facets[cid][f_key] += 1
+
+        all_by_conf: Dict[str, List[Tuple[float, Dict]]] = defaultdict(list)
+        for sim, row, _ in neighbor_scores:
+            cid = row["conference_id"]
+            if len(all_by_conf[cid]) < 10:
+                all_by_conf[cid].append((sim, row))
+        self.conf_voting_neighbors[analysis_id] = {
+            cid: (neighbors_by_conf[cid] if neighbors_by_conf[cid] else all_by_conf[cid])
+            for cid in self.conf_cids
+        }
+
+        total_vote_mass = sum(vote_totals.values())
+        c_items: List[Tuple[float, ConferenceRecommendationItem]] = []
+        for cid in self.conf_cids:
+            conf = self.conferences[cid]
+            raw_vote = vote_totals.get(cid, 0.0)
+            norm_score = (raw_vote / total_vote_mass) if total_vote_mass > 0.0 else 0.0
+            best_in_venue = all_by_conf[cid][0][0] if all_by_conf[cid] else 0.0
+            display_score = norm_score if raw_vote > 0.0 else round(best_in_venue * 0.1, 4)
+            prominent = [f for f, _ in vote_facets[cid].most_common(3)] or ["problem", "task", "method"]
+            c_items.append(
+                (
+                    display_score,
                     ConferenceRecommendationItem(
                         rank=0,
                         conference_id=cid,
                         name=conf.name,
                         acronym=conf.acronym,
-                        match_score=sim,
-                        score_unit="weighted_facet_centroid_cosine (0–1)",
-                        prominent_facets=["problem", "task", "method"],
+                        match_score=round(display_score, 4),
+                        score_unit=score_unit,
+                        prominent_facets=prominent,
                         historical_paper_count=conf.historical_paper_count,
                     ),
                 )
             )
-        conf_scores.sort(key=lambda x: (-x[0], x[1].conference_id))
+        c_items.sort(key=lambda x: (-x[0], x[1].conference_id))
         ranked_confs: List[ConferenceRecommendationItem] = []
-        for i, (_, item) in enumerate(conf_scores, start=1):
+        for i, (_, item) in enumerate(c_items, start=1):
             item.rank = i
             ranked_confs.append(item)
         self.conf_rankings_cache[analysis_id] = ranked_confs
@@ -443,8 +945,11 @@ class DemoBackendService:
         return self.runtime
 
     async def start_load_model(self, model_key: str) -> LoadModelResponse:
-        if not any(m.model_key == model_key for m in self.models):
+        model = next((m for m in self.models if m.model_key == model_key), None)
+        if not model:
             raise ValueError(f"Model không hợp lệ: {model_key}")
+        if not model.supported:
+            raise ValueError(model.unavailable_reason or f"Model {model_key} chưa được tải về máy cục bộ.")
         job_id = f"job_load_{uuid.uuid4().hex[:8]}"
         self.runtime.intended_model_key = model_key
         self.runtime.worker_busy = True
@@ -459,18 +964,32 @@ class DemoBackendService:
         )
 
         async def _finish_load() -> None:
-            await asyncio.sleep(0.8)
-            self.runtime.loaded_model_key = model_key
-            self.runtime.worker_busy = False
-            self.runtime.current_task = None
-            self.jobs[job_id] = JobResponse(
-                job_id=job_id,
-                job_type="load_model",
-                status="completed",
-                stage="completed",
-                stage_label=f"Đã nạp {model_key}",
-                model_key=model_key,
-            )
+            try:
+                await asyncio.to_thread(self.model_runner.load_model, model_key)
+                self.runtime.loaded_model_key = model_key
+                self.runtime.last_error = None
+                self.jobs[job_id] = JobResponse(
+                    job_id=job_id,
+                    job_type="load_model",
+                    status="completed",
+                    stage="completed",
+                    stage_label=f"Đã nạp {model_key} lên GPU",
+                    model_key=model_key,
+                )
+            except Exception as exc:
+                self.runtime.last_error = str(exc)
+                self.jobs[job_id] = JobResponse(
+                    job_id=job_id,
+                    job_type="load_model",
+                    status="failed",
+                    stage="failed",
+                    stage_label=f"Lỗi nạp {model_key}",
+                    model_key=model_key,
+                    error=JobError(code="LOAD_MODEL_FAILED", message=str(exc), retryable=True),
+                )
+            finally:
+                self.runtime.worker_busy = False
+                self.runtime.current_task = None
 
         asyncio.create_task(_finish_load())
         return LoadModelResponse(job_id=job_id, intended_model_key=model_key, status="queued")
@@ -488,7 +1007,12 @@ class DemoBackendService:
         ]
 
     def get_example(self, example_id: str) -> Optional[ExampleDetail]:
-        return self.examples.get(example_id)
+        if example_id in self.examples:
+            return self.examples[example_id]
+        alt_id = f"ex_{example_id.lower()}"
+        if alt_id in self.examples:
+            return self.examples[alt_id]
+        return None
 
     async def create_analysis(self, req: CreateAnalysisRequest) -> CreateAnalysisResponse:
         if req.idempotency_key and req.idempotency_key in self.idempotency_map:
@@ -499,31 +1023,82 @@ class DemoBackendService:
         if not title or not abstract:
             raise ValueError("Title và Abstract đều bắt buộc.")
 
-        if req.mode == "precomputed":
-            for ex in self.examples.values():
-                if ex.title.strip() == title and ex.abstract.strip() == abstract:
-                    ana_id = ex.precomputed_analyses.get(req.model_key, "analysis_ex1_qwen8b")
-                    job_id = f"job_pre_{uuid.uuid4().hex[:8]}"
-                    self.jobs[job_id] = JobResponse(
-                        job_id=job_id,
-                        job_type="analysis",
-                        status="completed",
-                        stage="completed",
-                        stage_label="Hoàn tất (mẫu có sẵn)",
-                        analysis_id=ana_id,
-                        model_key=req.model_key,
-                    )
-                    resp = CreateAnalysisResponse(
-                        analysis_id=ana_id,
-                        job_id=job_id,
-                        status="completed",
-                    )
-                    if req.idempotency_key:
-                        self.idempotency_map[req.idempotency_key] = resp
-                    return resp
-            raise ValueError("Chế độ Mẫu có sẵn chỉ áp dụng cho bài mẫu khớp nguyên văn.")
+        embedding_model = getattr(req, "embedding_model", "tfidf") or "tfidf"
+        paper_method = getattr(req, "paper_ranking_method", "whole_text") or "whole_text"
+        conf_method = getattr(req, "conference_ranking_method", "whole_text_knn") or "whole_text_knn"
+        needs_facets = not (paper_method == "whole_text" and conf_method == "whole_text_knn")
 
-        if self.runtime.loaded_model_key != req.model_key:
+        if req.mode == "precomputed":
+            matched_ex = None
+            for ex in self.examples.values():
+                if ex.title.strip().lower() == title.lower() and ex.abstract.strip().lower() == abstract.lower():
+                    matched_ex = ex
+                    break
+            if not matched_ex:
+                raise ValueError(
+                    "Chế độ Mẫu có sẵn chỉ áp dụng cho 168 bài mẫu Test khớp nguyên văn (không dùng dữ liệu giả lập)."
+                )
+
+            raw_model_facets = self.example_precomputed_facets.get(matched_ex.example_id, {}).get(req.model_key)
+            if raw_model_facets is None:
+                raise ValueError(
+                    f"Chưa có kết quả tính trước từ LLM thật cho model {req.model_key} với bài mẫu này."
+                )
+
+            emb_tag = "bge" if "bge" in embedding_model.lower() else "tfidf"
+            ana_id = f"ana_pre_{matched_ex.example_id}_{req.model_key}_{emb_tag}_{paper_method}_{conf_method}"
+            if ana_id not in self.analyses:
+                t_r0 = time.perf_counter()
+                facets = self._hydrate_precomputed_facets(raw_model_facets, title, abstract)
+                model_info = next((m for m in self.models if m.model_key == req.model_key), None)
+                self.analyses[ana_id] = AnalysisDetail(
+                    analysis_id=ana_id,
+                    title=title,
+                    abstract=abstract,
+                    extraction_status="completed",
+                    paper_ranking_status="completed",
+                    conference_ranking_status="completed",
+                    facets=facets,
+                    provenance=AnalysisProvenance(
+                        model_key=req.model_key,
+                        model_display_name=model_info.display_name if model_info else req.model_key,
+                        source="precomputed",
+                        prompt_version="exp_a_qlora_real",
+                        adapter_version="ds300-demo-artifacts-2.0",
+                        session_id=self.session_id,
+                        created_at=datetime.now(timezone.utc).isoformat(),
+                    ),
+                    timings=AnalysisTimings(model_load_ms=0, extraction_ms=0, ranking_ms=0),
+                )
+                self._compute_rankings(
+                    ana_id,
+                    embedding_model=embedding_model,
+                    paper_method=paper_method,
+                    conf_method=conf_method,
+                )
+                self.analyses[ana_id].timings.ranking_ms = max(1, int((time.perf_counter() - t_r0) * 1000))
+
+            job_id = f"job_pre_{uuid.uuid4().hex[:8]}"
+            self.jobs[job_id] = JobResponse(
+                job_id=job_id,
+                job_type="analysis",
+                status="completed",
+                stage="completed",
+                stage_label=f"Hoàn tất (dữ liệu LLM thật: {req.model_key})",
+                analysis_id=ana_id,
+                model_key=req.model_key,
+            )
+            resp = CreateAnalysisResponse(
+                analysis_id=ana_id,
+                job_id=job_id,
+                status="completed",
+            )
+            if req.idempotency_key:
+                self.idempotency_map[req.idempotency_key] = resp
+            return resp
+
+        # Live mode (only require loaded LLM model when facet extraction is needed)
+        if needs_facets and self.runtime.loaded_model_key != req.model_key:
             raise ValueError(
                 f"Model {req.model_key} chưa được nạp (hiện tại: {self.runtime.loaded_model_key})."
             )
@@ -536,16 +1111,20 @@ class DemoBackendService:
             analysis_id=analysis_id,
             title=title,
             abstract=abstract,
-            extraction_status="running",
+            extraction_status="running" if needs_facets else "completed",
             paper_ranking_status="pending",
             conference_ranking_status="pending",
             facets={f: FacetOutput(status="not_analyzed", items=[]) for f in FACETS},
             provenance=AnalysisProvenance(
-                model_key=req.model_key,
-                model_display_name=model_info.display_name if model_info else req.model_key,
+                model_key=req.model_key if needs_facets else "Whole-Text (No LLM)",
+                model_display_name=(
+                    (model_info.display_name if model_info else req.model_key)
+                    if needs_facets
+                    else "Toàn văn (Không trích Facet)"
+                ),
                 source="live",
-                prompt_version="v3.7-source-first",
-                adapter_version="ds300-fastapi-1.0",
+                prompt_version="v3.7-source-first" if needs_facets else "whole-text-direct",
+                adapter_version="ds300-demo-artifacts-2.0",
                 session_id=self.session_id,
                 created_at=datetime.now(timezone.utc).isoformat(),
             ),
@@ -563,50 +1142,101 @@ class DemoBackendService:
         )
 
         async def _run_pipeline() -> None:
-            t0 = time.perf_counter()
-            self.jobs[job_id] = JobResponse(
-                job_id=job_id,
-                job_type="analysis",
-                status="running",
-                stage="extracting",
-                stage_label="Đang trích xuất 5 facet...",
-                analysis_id=analysis_id,
-                model_key=req.model_key,
-            )
-            await asyncio.sleep(0.5)
-            facets = self._extract_heuristic_facets(title, abstract)
-            t_ext = int((time.perf_counter() - t0) * 1000)
-
             ana = self.analyses[analysis_id]
-            ana.facets = facets
-            ana.extraction_status = "completed"
-            ana.timings.extraction_ms = t_ext
+            self.runtime.worker_busy = True
+            self.runtime.current_task = f"Đang phân tích ({req.model_key})"
+            try:
+                if needs_facets:
+                    if self.model_runner.enable_real_llm and (
+                        self.model_runner.model is None
+                        or self.model_runner.loaded_model_key != req.model_key
+                    ):
+                        t_l0 = time.perf_counter()
+                        self.jobs[job_id] = JobResponse(
+                            job_id=job_id,
+                            job_type="analysis",
+                            status="running",
+                            stage="loading_model",
+                            stage_label=f"Đang nạp LLM {req.model_key} (4-bit LoRA) lên GPU...",
+                            analysis_id=analysis_id,
+                            model_key=req.model_key,
+                        )
+                        await asyncio.to_thread(self.model_runner.load_model, req.model_key)
+                        self.runtime.loaded_model_key = req.model_key
+                        ana.timings.model_load_ms = int((time.perf_counter() - t_l0) * 1000)
 
-            self.jobs[job_id] = JobResponse(
-                job_id=job_id,
-                job_type="analysis",
-                status="running",
-                stage="ranking",
-                stage_label="Hoàn tất extraction — đang xếp hạng bài báo & hội nghị...",
-                analysis_id=analysis_id,
-                model_key=req.model_key,
-            )
-            t_r0 = time.perf_counter()
-            await asyncio.sleep(0.25)
-            self._compute_rankings(analysis_id)
-            ana.paper_ranking_status = "completed"
-            ana.conference_ranking_status = "completed"
-            ana.timings.ranking_ms = int((time.perf_counter() - t_r0) * 1000)
+                    t0 = time.perf_counter()
+                    self.jobs[job_id] = JobResponse(
+                        job_id=job_id,
+                        job_type="analysis",
+                        status="running",
+                        stage="extracting",
+                        stage_label=(
+                            f"Đang chạy {req.model_key} trên GPU trích xuất 5 facet..."
+                            if self.model_runner.enable_real_llm
+                            else "Đang trích xuất 5 facet..."
+                        ),
+                        analysis_id=analysis_id,
+                        model_key=req.model_key,
+                    )
+                    facets = await asyncio.to_thread(
+                        self.model_runner.extract_facets, title, abstract, req.model_key
+                    )
+                    ana.facets = facets
+                    ana.extraction_status = "completed"
+                    ana.timings.extraction_ms = int((time.perf_counter() - t0) * 1000)
+                else:
+                    ana.timings.extraction_ms = 0
 
-            self.jobs[job_id] = JobResponse(
-                job_id=job_id,
-                job_type="analysis",
-                status="completed",
-                stage="completed",
-                stage_label="Hoàn tất phân tích và xếp hạng",
-                analysis_id=analysis_id,
-                model_key=req.model_key,
-            )
+                self.jobs[job_id] = JobResponse(
+                    job_id=job_id,
+                    job_type="analysis",
+                    status="running",
+                    stage="ranking",
+                    stage_label="Đang xếp hạng bài báo & hội nghị...",
+                    analysis_id=analysis_id,
+                    model_key=req.model_key,
+                )
+                t_r0 = time.perf_counter()
+                await asyncio.to_thread(
+                    self._compute_rankings,
+                    analysis_id,
+                    embedding_model,
+                    paper_method,
+                    conf_method,
+                )
+                ana.paper_ranking_status = "completed"
+                ana.conference_ranking_status = "completed"
+                ana.timings.ranking_ms = max(1, int((time.perf_counter() - t_r0) * 1000))
+
+                self.jobs[job_id] = JobResponse(
+                    job_id=job_id,
+                    job_type="analysis",
+                    status="completed",
+                    stage="completed",
+                    stage_label="Hoàn tất phân tích và xếp hạng",
+                    analysis_id=analysis_id,
+                    model_key=req.model_key,
+                )
+            except Exception as exc:
+                self.runtime.last_error = str(exc)
+                ana.extraction_status = "failed"
+                ana.extraction_error = str(exc)
+                ana.paper_ranking_status = "failed"
+                ana.conference_ranking_status = "failed"
+                self.jobs[job_id] = JobResponse(
+                    job_id=job_id,
+                    job_type="analysis",
+                    status="failed",
+                    stage="failed",
+                    stage_label=f"Lỗi xử lý: {exc}",
+                    analysis_id=analysis_id,
+                    model_key=req.model_key,
+                    error=JobError(code="ANALYSIS_FAILED", message=str(exc), retryable=True),
+                )
+            finally:
+                self.runtime.worker_busy = False
+                self.runtime.current_task = None
 
         asyncio.create_task(_run_pipeline())
         resp = CreateAnalysisResponse(analysis_id=analysis_id, job_id=job_id, status="queued")
@@ -624,12 +1254,20 @@ class DemoBackendService:
         if analysis_id not in self.analyses:
             return None
         items = self.paper_rankings_cache.get(analysis_id, [])
+        meta = self.analysis_meta.get(analysis_id, {})
+        emb = meta.get("embedding", "tfidf")
+        p_method = meta.get("paper_method", "whole_text")
+        notes = {
+            "whole_text": f"Toàn văn (Whole-Text): so sánh trực tiếp Title + Abstract trên 4,210 bài corpus ({emb}).",
+            "equal_facets": f"5-Facet Trọng số đều (Equal 0.2 × 5) trên 4,210 bài corpus ({emb}).",
+            "weighted_facets": f"5-Facet Có trọng số (problem 0.4, task 0.2, method 0.2, dataset 0.1, contribution 0.1) trên 4,210 bài corpus ({emb}).",
+        }
         return PaperRankingResponse(
             analysis_id=analysis_id,
             status=self.analyses[analysis_id].paper_ranking_status,
-            scorer_name="exp_b_weighted_facets_tfidf",
-            score_unit="weighted_facet_cosine (0–1)",
-            scorer_note="Điểm số tính bằng cosine TF-IDF theo cấu hình thực nghiệm B.",
+            scorer_name=meta.get("paper_scorer", f"paper_{p_method}_{emb}"),
+            score_unit=f"{p_method}_{emb}_cosine (0–1)",
+            scorer_note=notes.get(p_method, notes["whole_text"]),
             top_k=top_k,
             total_available=len(items),
             items=items[:top_k],
@@ -641,12 +1279,20 @@ class DemoBackendService:
         if analysis_id not in self.analyses:
             return None
         items = self.conf_rankings_cache.get(analysis_id, [])
+        meta = self.analysis_meta.get(analysis_id, {})
+        emb = meta.get("embedding", "tfidf")
+        c_method = meta.get("conf_method", "whole_text_knn")
+        disclaimers = {
+            "whole_text_knn": "Toàn văn k-NN (Top-10 bỏ phiếu theo Title + Abstract từ 602 bài Train 1982–2015). Điểm biểu diễn mức phù hợp nội dung, không phải xác suất nhận bài.",
+            "flat_facet_knn": "5-Facet Trọng số đều k-NN (cộng phẳng 5 facet, Top-10 bỏ phiếu từ 602 bài Train 1982–2015). Điểm biểu diễn mức phù hợp nội dung, không phải xác suất nhận bài.",
+            "gated_knn": "Gated 5-Facet k-NN (cổng Problem τ=0.45, κ=10; Top-10 bỏ phiếu từ 602 bài Train 1982–2015). Điểm biểu diễn mức phù hợp nội dung, không phải xác suất nhận bài.",
+        }
         return ConferenceRankingResponse(
             analysis_id=analysis_id,
             status=self.analyses[analysis_id].conference_ranking_status,
-            scorer_name="venue_weighted_centroid_tfidf",
-            score_unit="weighted_facet_centroid_cosine (0–1)",
-            disclaimer="Điểm biểu diễn mức phù hợp nội dung với hồ sơ lịch sử hội nghị, không phải xác suất nhận bài.",
+            scorer_name=meta.get("conf_scorer", f"conf_{c_method}_{emb}"),
+            score_unit=f"{c_method}_{emb} (0–1)",
+            disclaimer=disclaimers.get(c_method, disclaimers["whole_text_knn"]),
             top_k=top_k,
             total_available=len(items),
             items=items[:top_k],
@@ -665,50 +1311,49 @@ class DemoBackendService:
 
         ranked = self.paper_rankings_cache.get(analysis_id, [])
         rec = next((r for r in ranked if r.paper_id == paper_id), None)
-        total = rec.total_score if rec else tfidf_cosine(
-            f"{ana.title} {ana.abstract}", f"{paper.title} {paper.abstract}"
-        )
+        target_f_map = self.paper_facets.get(paper_id, {})
+        meta = self.analysis_meta.get(analysis_id, {})
 
         breakdowns: List[FacetAlignmentBreakdown] = []
-        for f in FACETS:
-            q_out = ana.facets[f]
-            q_text = " ".join(c.concept for c in q_out.items) or ana.abstract[:120]
-            sim = tfidf_cosine(q_text, f"{paper.title} {paper.abstract}")
-            w = FIXED_WEIGHTS[f]
+        calc_total = 0.0
+        for f_key in FACETS:
+            q_out = ana.facets[f_key]
+            q_text = " ".join(c.concept for c in q_out.items)
+            t_concepts_raw = target_f_map.get(f_key, [])
+            t_text = " ".join(t_concepts_raw)
+            q_vec = build_tfidf_vector(q_text, self.idf, self.default_idf) if q_text else {}
+            t_vec = build_tfidf_vector(t_text, self.idf, self.default_idf) if t_text else {}
+            sim = sparse_cosine(q_vec, t_vec) if (q_vec and t_vec) else 0.0
+            w = FIXED_WEIGHTS[f_key]
+            contrib = round(sim * w, 4)
+            calc_total += contrib
+
+            target_concepts = [
+                FacetConcept(concept=c, evidences=[])
+                for c in t_concepts_raw[:5]
+            ]
             breakdowns.append(
                 FacetAlignmentBreakdown(
-                    facet=f,
+                    facet=f_key,
                     query_concepts=q_out.items,
-                    target_concepts=[
-                        FacetConcept(
-                            concept=f"Nội dung liên quan {f} trong bài báo đích",
-                            evidences=[
-                                make_evidence_span(
-                                    paper.abstract,
-                                    paper.abstract[:120],
-                                    "abstract",
-                                )
-                            ],
-                        )
-                    ]
-                    if paper.abstract
-                    else [],
+                    target_concepts=target_concepts,
                     query_status=q_out.status,
-                    target_status="ok" if paper.abstract else "empty",
+                    target_status="ok" if target_concepts else "empty",
                     similarity_score=sim,
                     weight=w,
-                    contribution_score=round(sim * w, 4),
+                    contribution_score=contrib,
                 )
             )
 
+        total = rec.total_score if rec else round(calc_total, 4)
         return PaperExplanationResponse(
             analysis_id=analysis_id,
             paper_id=paper_id,
             total_score=total,
-            score_unit="weighted_facet_cosine (0–1)",
-            scorer_name="exp_b_weighted_facets_tfidf",
-            formula_description="Tổng có trọng số độ tương đồng cosine TF-IDF trên 5 facet.",
-            summary_explanation=f'Bài báo "{paper.title}" đạt điểm tổng {total:.3f} (thang 0–1) dựa trên mức độ tương đồng nội dung với manuscript.',
+            score_unit=rec.score_unit if rec else "weighted_facet_tfidf_cosine (0–1)",
+            scorer_name=meta.get("paper_scorer", "exp_b_weighted_facets_tfidf"),
+            formula_description="Tổng có trọng số độ tương đồng trên 5 facet (problem 0.4, task 0.2, method 0.2, dataset 0.1, contribution 0.1).",
+            summary_explanation=f'Bài báo "{paper.title}" đạt điểm tổng {total:.3f} (thang 0–1) từ đối chiếu 5 facet thực tế.',
             facet_breakdowns=breakdowns,
         )
 
@@ -725,32 +1370,51 @@ class DemoBackendService:
 
         ranked = self.conf_rankings_cache.get(analysis_id, [])
         rec = next((r for r in ranked if r.conference_id == conference_id), None)
-        score = rec.match_score if rec else 0.35
+        score = rec.match_score if rec else 0.0
+        meta = self.analysis_meta.get(analysis_id, {})
+        kw_map = self.conf_top_keywords.get(conference_id, {})
 
         facet_scores: List[ConferenceFacetScore] = []
-        for f in FACETS:
-            w = FIXED_WEIGHTS[f]
-            sim = round(min(1.0, score * (0.9 + w)), 4)
+        for f_key in FACETS:
+            q_out = ana.facets[f_key]
+            q_text = " ".join(c.concept for c in q_out.items)
+            profile_kws = kw_map.get(f_key, [])[:6]
+            p_text = " ".join(profile_kws)
+            q_vec = build_tfidf_vector(q_text, self.idf, self.default_idf) if q_text else {}
+            p_vec = build_tfidf_vector(p_text, self.idf, self.default_idf) if p_text else {}
+            sim = sparse_cosine(q_vec, p_vec) if (q_vec and p_vec) else 0.0
+            w = CONF_SOLUTION_WEIGHTS.get(f_key, 0.0) if f_key != "problem" else 1.0
             facet_scores.append(
                 ConferenceFacetScore(
-                    facet=f,
-                    query_concepts=ana.facets[f].items,
-                    profile_keywords=[conf.acronym.lower(), "nlp", "scientific text"],
+                    facet=f_key,
+                    query_concepts=q_out.items,
+                    profile_keywords=profile_kws,
                     similarity_score=sim,
                     weight=w,
                     contribution_score=round(sim * w, 4),
                 )
             )
 
+        c_method = meta.get("conf_method", "whole_text_knn")
+        formula_map = {
+            "whole_text_knn": "Toàn văn k-NN: So sánh trực tiếp Title + Abstract với 602 bài Train (1982–2015), lấy Top-10 láng giềng gần nhất bỏ phiếu có trọng số.",
+            "flat_facet_knn": "5-Facet Trọng số đều k-NN: Trung bình đều độ tương đồng trên 5 facet (không cổng ngữ cảnh), lấy Top-10 bài Train bỏ phiếu có trọng số.",
+            "gated_knn": "Gated 5-Facet k-NN: Cổng Problem σ(10·(cos_prob - 0.45)) × tổng trọng số 4 facet giải pháp (task 0.3, method 0.3, dataset 0.2, contribution 0.2), bỏ phiếu Top-10 từ 602 bài Train.",
+        }
+        method_label_map = {
+            "whole_text_knn": "Toàn văn k-NN",
+            "flat_facet_knn": "5-Facet Trọng số đều k-NN",
+            "gated_knn": "Gated 5-Facet k-NN",
+        }
         return ConferenceExplanationResponse(
             analysis_id=analysis_id,
             conference_id=conference_id,
             match_score=score,
-            score_unit="weighted_facet_centroid_cosine (0–1)",
-            scorer_name="venue_weighted_centroid_tfidf",
-            formula_description="Đo độ tương đồng cosine giữa vector facet manuscript và tâm hồ sơ lịch sử hội nghị.",
-            disclaimer="Điểm số biểu diễn mức độ phù hợp nội dung, KHÔNG phải xác suất nhận bài.",
-            summary_explanation=f"Manuscript khớp ở mức {score:.3f} với hồ sơ chủ đề {conf.acronym}.",
+            score_unit=rec.score_unit if rec else f"{c_method} (0–1)",
+            scorer_name=meta.get("conf_scorer", f"conf_{c_method}_tfidf"),
+            formula_description=formula_map.get(c_method, formula_map["whole_text_knn"]),
+            disclaimer="Điểm số biểu diễn tỷ trọng phiếu bầu mức phù hợp nội dung, KHÔNG phải xác suất nhận bài.",
+            summary_explanation=f"Hội nghị {conf.acronym} đạt điểm phù hợp {score:.3f} dựa trên bỏ phiếu láng giềng {method_label_map.get(c_method, c_method)} trong tập 602 bài Train.",
             sparse_profile_warning=conf.sparse_profile_warning,
             facet_scores=facet_scores,
         )
@@ -761,27 +1425,31 @@ class DemoBackendService:
         if analysis_id not in self.analyses or conference_id not in self.conferences:
             return None
 
+        neighbors = self.conf_voting_neighbors.get(analysis_id, {}).get(conference_id, [])
         items: List[RepresentativePaperItem] = []
-        for p in list(self.papers.values())[:limit]:
+        for sim, row in neighbors[:limit]:
+            pid = row["paper_id"]
+            p = self.papers.get(pid)
+            abstract = row.get("abstract") or (p.abstract if p else "")
             items.append(
                 RepresentativePaperItem(
-                    paper_id=p.paper_id,
-                    in_corpus=p.in_corpus,
-                    title=p.title,
-                    year=p.year,
-                    authors=p.authors,
-                    url=p.url,
-                    abstract=p.abstract,
-                    supporting_facets=["problem", "method"],
-                    evidences=[make_evidence_span(p.abstract, p.abstract[:140], "abstract")],
-                    selection_rule="nearest_query_neighbor",
+                    paper_id=pid,
+                    in_corpus=pid in self.papers,
+                    title=row.get("title") or (p.title if p else ""),
+                    year=row.get("year") or (p.year if p else None),
+                    authors=p.authors if p else [],
+                    url=p.url if p else None,
+                    abstract=abstract,
+                    supporting_facets=["problem", "task", "method"],
+                    evidences=[make_evidence_span(abstract, abstract[:160], "abstract")] if abstract else [],
+                    selection_rule=f"gated_5facet_knn_neighbor (sim={sim:.3f})",
                 )
             )
 
         return RepresentativePapersResponse(
             analysis_id=analysis_id,
             conference_id=conference_id,
-            selection_rule="top_nearest_to_query_in_venue_profile",
-            note="Các bài báo lịch sử dưới đây được chọn để minh họa cho hồ sơ chủ đề hội nghị.",
+            selection_rule="top_gated_5facet_knn_train_neighbors",
+            note="Các bài báo lịch sử dưới đây thuộc tập 602 bài Train (1982–2015) của chính hội nghị này, được chọn vì có độ tương đồng Gated 5-Facet cao nhất với manuscript.",
             items=items,
         )
