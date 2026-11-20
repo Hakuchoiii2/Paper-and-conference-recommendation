@@ -7,6 +7,7 @@ Công cụ giao diện dòng lệnh (CLI) tương tác giúp con người duyệ
 
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -33,15 +34,21 @@ def load_data():
     
     corrections = {}
     if CORR_PATH.exists():
-        for line in open(CORR_PATH, encoding="utf-8"):
+        for line_no, line in enumerate(open(CORR_PATH, encoding="utf-8"), 1):
             try:
-                r = json.loads(line)
-                corrections[(r["paper_id"], r["facet"])] = r
-            except Exception:
-                pass
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"{CORR_PATH}:{line_no}: invalid JSON: {exc}") from exc
+            if row.get("review_source") not in {"cli", "web_ui", "spreadsheet_import"}:
+                row["human_decision"] = "PENDING"
+            corrections[(row["paper_id"], row["facet"])] = row
     return queue, corrections
 
-def save_correction(corr_dict):
+def save_correction(corr_dict, reviewed_key=None):
+    if reviewed_key is not None:
+        correction = corr_dict[reviewed_key]
+        correction["review_source"] = "cli"
+        correction["reviewed_at"] = datetime.now(timezone.utc).isoformat()
     # Ghi lại toàn bộ corrections
     with open(CORR_PATH, "w", encoding="utf-8") as f:
         for r in corr_dict.values():
@@ -132,7 +139,7 @@ def main():
     print("="*70)
     print("Phím tắt lệnh:")
     print("  [1] hoặc [A] : ACCEPT  (Chấp nhận silver facet hiện tại)")
-    print("  [2] hoặc [R] : REJECT  (Bác bỏ facet - chuyển thành rỗng/NOT_MENTIONED)")
+    print("  [2] hoặc [R] : REJECT  (Bác bỏ nội dung facet hiện tại)")
     print("  [3] hoặc [Q] : USE QWEN (Sử dụng đề xuất sửa của Qwen)")
     print("  [4] hoặc [E] : REVISE  (Tự nhập nội dung sửa mới)")
     print("  [S]          : SKIP    (Bỏ qua để xem mục tiếp theo)")
@@ -157,7 +164,8 @@ def main():
         if choice.lower() in ('1', 'a', 'accept'):
             corrections[key]["human_decision"] = "ACCEPT"
             corrections[key]["human_revised_facet"] = item.get("current_concepts", [])
-            save_correction(corrections)
+            corrections[key].pop("human_facet_status", None)
+            save_correction(corrections, key)
             print("-> Đã lưu: ACCEPT")
             current_idx += 1
 
@@ -167,7 +175,21 @@ def main():
             note = input("Ghi chú lý do bác bỏ (Enter để bỏ qua): ").strip()
             if note:
                 corrections[key]["human_notes"] = note
-            save_correction(corrections)
+            status_choice = input(
+                "Trạng thái cuối [N] NOT_MENTIONED / [S] SOURCE_MISSING / "
+                "[T] TRUNCATED / [E] EXTRACTION_FAILED / Enter để suy ra: "
+            ).strip().lower()
+            status_by_choice = {
+                "n": "NOT_MENTIONED",
+                "s": "SOURCE_MISSING",
+                "t": "TRUNCATED",
+                "e": "EXTRACTION_FAILED",
+            }
+            if status_choice in status_by_choice:
+                corrections[key]["human_facet_status"] = status_by_choice[status_choice]
+            else:
+                corrections[key].pop("human_facet_status", None)
+            save_correction(corrections, key)
             print("-> Đã lưu: REJECT (Facet sẽ bị loại bỏ)")
             current_idx += 1
 
@@ -178,7 +200,8 @@ def main():
                 continue
             corrections[key]["human_decision"] = "REVISE"
             corrections[key]["human_revised_facet"] = [q_rev] if isinstance(q_rev, str) else q_rev
-            save_correction(corrections)
+            corrections[key].pop("human_facet_status", None)
+            save_correction(corrections, key)
             print(f"-> Đã lưu: REVISE (sử dụng đề xuất của Qwen: {q_rev})")
             current_idx += 1
 
@@ -190,10 +213,11 @@ def main():
             concepts = [c.strip() for c in new_text.split(",") if c.strip()]
             corrections[key]["human_decision"] = "REVISE"
             corrections[key]["human_revised_facet"] = concepts
+            corrections[key].pop("human_facet_status", None)
             note = input("Ghi chú bổ sung (Enter để bỏ qua): ").strip()
             if note:
                 corrections[key]["human_notes"] = note
-            save_correction(corrections)
+            save_correction(corrections, key)
             print(f"-> Đã lưu: REVISE với nội dung: {concepts}")
             current_idx += 1
 

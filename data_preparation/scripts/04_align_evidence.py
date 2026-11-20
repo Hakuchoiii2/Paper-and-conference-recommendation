@@ -1,136 +1,153 @@
-"""04_align_evidence.py
-Bước 2: Evidence Alignment (all-MiniLM-L6-v2)
-So sánh từng facet Silver với các câu trong title và abstract để tìm câu bằng chứng hỗ trợ.
-Output:
-- data_preparation/intermediate/evidence_candidates.jsonl
-- data_preparation/intermediate/embedding_audit.jsonl
+"""Step 2: Retrieve sentence-level evidence candidates with all-MiniLM-L6-v2.
+
+Cosine similarity ranks candidates only; it is not used as a correctness
+threshold. Qwen performs the semantic support judgment in step 05.
 """
 
 import json
 from pathlib import Path
+import sys
+
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from data_preparation.pipeline_scope import filter_by_scope
+
 INPUT_DIR = PROJECT_ROOT / "data_preparation" / "input"
 INTERMEDIATE_DIR = PROJECT_ROOT / "data_preparation" / "intermediate"
 
 FACETS = ("problem", "task", "method", "dataset", "contribution")
-MIN_ALIGNMENT_THRESHOLD = 0.35  # Ngưỡng cosine tối thiểu để coi một câu là có hỗ trợ
+MODEL_NAME = "all-MiniLM-L6-v2"
+TOP_K_CANDIDATES = 3
+
+
+def read_jsonl(path):
+    with open(path, "r", encoding="utf-8") as file:
+        return [json.loads(line) for line in file]
+
+
+def index_by_paper(rows, path):
+        indexed = {}
+        for line_no, row in enumerate(rows, 1):
+            paper_id = row.get("paper_id")
+            if not paper_id:
+                raise ValueError(f"{path}:{line_no}: missing paper_id")
+            if paper_id in indexed:
+                raise ValueError(f"{path}:{line_no}: duplicate paper_id {paper_id}")
+            indexed[paper_id] = row
+        return indexed
+
 
 def main():
     INTERMEDIATE_DIR.mkdir(parents=True, exist_ok=True)
     sentences_path = INTERMEDIATE_DIR / "source_sentences.jsonl"
     silver_path = INPUT_DIR / "silver_facets.jsonl"
 
-    print("--> Đang tải dữ liệu câu nguồn và silver facets...")
-    with open(sentences_path, "r", encoding="utf-8") as f:
-        sentences_by_paper = {row["paper_id"]: row["sentences"] for row in (json.loads(line) for line in f)}
+    sentences_by_paper = {
+        paper_id: row["sentences"]
+        for paper_id, row in index_by_paper(
+            filter_by_scope(read_jsonl(sentences_path)), sentences_path
+        ).items()
+    }
+    silver_by_paper = index_by_paper(filter_by_scope(read_jsonl(silver_path)), silver_path)
+    print(f"Loaded source sentences for {len(sentences_by_paper)} papers.")
 
-    with open(silver_path, "r", encoding="utf-8") as f:
-        silver_by_paper = {row["paper_id"]: row for row in (json.loads(line) for line in f)}
-
-    print(f"--> Đã nạp {len(sentences_by_paper)} bài báo.")
-
-    print("--> Đang khởi tạo SentenceTransformer('all-MiniLM-L6-v2')...")
     try:
-        encoder = SentenceTransformer("all-MiniLM-L6-v2", local_files_only=True)
-    except Exception:
-        encoder = SentenceTransformer("all-MiniLM-L6-v2")
+        encoder = SentenceTransformer(MODEL_NAME, local_files_only=True)
+    except Exception as exc:
+        raise RuntimeError(
+            f"The {MODEL_NAME} embedding model is not available locally. "
+            "Run data_preparation\\setup_semantic_models.ps1 to prepare the models."
+        ) from exc
 
-    # Gom toàn bộ câu và facet text cần mã hóa theo từng paper
-    print("--> Đang tiến hành Evidence Alignment trên từng bài báo...")
     evidence_records = []
     audit_records = []
+    paper_ids = sorted(sentences_by_paper)
+    for index, paper_id in enumerate(paper_ids, 1):
+        sentences = sentences_by_paper[paper_id]
+        silver_row = silver_by_paper.get(paper_id, {})
+        evidence = {}
+        max_similarities = {}
+        candidate_details = {}
+        audit_flags = {}
 
-    total_papers = len(sentences_by_paper)
-    matched_facets_count = 0
-    total_present_facets = 0
-
-    paper_ids = sorted(sentences_by_paper.keys())
-    
-    # Để tối ưu tốc độ CPU, xử lý theo từng batch bài báo
-    BATCH_SIZE = 100
-    for b_start in range(0, total_papers, BATCH_SIZE):
-        batch_pids = paper_ids[b_start: b_start + BATCH_SIZE]
-        
-        for pid in batch_pids:
-            sents = sentences_by_paper[pid]
-            s_row = silver_by_paper.get(pid, {})
-            
-            if not sents:
-                evidence_records.append({"paper_id": pid, "evidence": {f: [] for f in FACETS}})
-                audit_records.append({"paper_id": pid, "similarities": {f: 0.0 for f in FACETS}, "status": "NO_SENTENCES"})
-                continue
-
-            sent_texts = [s["text"] for s in sents]
-            # Mã hóa các câu của bài báo
-            sent_embs = encoder.encode(sent_texts, normalize_embeddings=True, show_progress_bar=False)
-
-            paper_evidence = {}
-            paper_sims = {}
-            paper_audit = {}
-
-            for f in FACETS:
-                concepts = s_row.get(f, [])
-                if not concepts:
-                    paper_evidence[f] = []
-                    paper_sims[f] = 0.0
-                    paper_audit[f] = "EMPTY"
-                    continue
-
-                total_present_facets += 1
-                facet_text = " ".join(concepts)
-                f_emb = encoder.encode(facet_text, normalize_embeddings=True, show_progress_bar=False)
-
-                # Tính cosine similarity với tất cả các câu trong bài
-                sims = np.dot(sent_embs, f_emb)
-                best_idx = int(np.argmax(sims))
-                best_sim = float(sims[best_idx])
-                best_sent_id = sents[best_idx]["sentence_id"]
-
-                paper_sims[f] = round(best_sim, 4)
-
-                if best_sim >= MIN_ALIGNMENT_THRESHOLD:
-                    paper_evidence[f] = [best_sent_id]
-                    paper_audit[f] = "ALIGNED"
-                    matched_facets_count += 1
+        if not sentences:
+            for facet in FACETS:
+                evidence[facet] = []
+                max_similarities[facet] = None
+                candidate_details[facet] = []
+                audit_flags[facet] = "NO_SENTENCES"
+        else:
+            sentence_texts = [row["text"] for row in sentences]
+            sentence_embeddings = encoder.encode(
+                sentence_texts,
+                normalize_embeddings=True,
+                show_progress_bar=False,
+            )
+            populated_facets = []
+            facet_texts = []
+            for facet in FACETS:
+                concepts = silver_row.get(facet, [])
+                if not isinstance(concepts, list) or any(not isinstance(item, str) for item in concepts):
+                    raise ValueError(f"Silver facet {paper_id}/{facet} must be a list of strings")
+                if concepts:
+                    populated_facets.append(facet)
+                    facet_texts.append(" ".join(concepts))
                 else:
-                    paper_evidence[f] = []
-                    paper_audit[f] = "WEAK_EVIDENCE"
+                    evidence[facet] = []
+                    max_similarities[facet] = None
+                    candidate_details[facet] = []
+                    audit_flags[facet] = "EMPTY_FACET"
 
-            evidence_records.append({
-                "paper_id": pid,
-                "evidence": paper_evidence
-            })
+            facet_embeddings = encoder.encode(
+                facet_texts,
+                normalize_embeddings=True,
+                show_progress_bar=False,
+            ) if facet_texts else []
 
-            audit_records.append({
-                "paper_id": pid,
-                "similarities": paper_sims,
-                "audit_flags": paper_audit
-            })
+            for facet, facet_embedding in zip(populated_facets, facet_embeddings):
+                similarities = np.dot(sentence_embeddings, facet_embedding)
+                ranked_indices = np.argsort(similarities)[::-1][:TOP_K_CANDIDATES]
+                candidates = [
+                    {
+                        "sentence_id": sentences[int(sentence_index)]["sentence_id"],
+                        "text": sentences[int(sentence_index)]["text"],
+                        "similarity": round(float(similarities[sentence_index]), 4),
+                    }
+                    for sentence_index in ranked_indices
+                ]
+                evidence[facet] = [candidate["sentence_id"] for candidate in candidates]
+                max_similarities[facet] = candidates[0]["similarity"] if candidates else None
+                candidate_details[facet] = candidates
+                audit_flags[facet] = "CANDIDATES_AVAILABLE" if candidates else "NO_SENTENCES"
 
-        if (b_start + BATCH_SIZE) % 500 == 0 or (b_start + BATCH_SIZE) >= total_papers:
-            processed = min(b_start + BATCH_SIZE, total_papers)
-            print(f"    Đã xử lý {processed}/{total_papers} bài ({processed/total_papers*100:.1f}%)...")
+        evidence_records.append({"paper_id": paper_id, "evidence": evidence})
+        audit_records.append({
+            "paper_id": paper_id,
+            "model": MODEL_NAME,
+            "similarities": max_similarities,
+            "candidate_details": candidate_details,
+            "audit_flags": audit_flags,
+        })
+        if index % 500 == 0 or index == len(paper_ids):
+            print(f"Aligned {index}/{len(paper_ids)} papers.")
 
-    # Lưu kết quả
-    ev_path = INTERMEDIATE_DIR / "evidence_candidates.jsonl"
-    with open(ev_path, "w", encoding="utf-8") as f:
-        for r in evidence_records:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    evidence_path = INTERMEDIATE_DIR / "evidence_candidates.jsonl"
+    with open(evidence_path, "w", encoding="utf-8") as output:
+        for record in evidence_records:
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     audit_path = INTERMEDIATE_DIR / "embedding_audit.jsonl"
-    with open(audit_path, "w", encoding="utf-8") as f:
-        for r in audit_records:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    with open(audit_path, "w", encoding="utf-8") as output:
+        for record in audit_records:
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    print("\n==================== KẾT QUẢ EVIDENCE ALIGNMENT ====================")
-    print(f"Tổng số facet có mặt: {total_present_facets}")
-    print(f"Số facet tìm thấy câu bằng chứng hỗ trợ tốt (Cosine >= {MIN_ALIGNMENT_THRESHOLD}): {matched_facets_count} ({matched_facets_count/total_present_facets*100:.1f}%)")
-    print(f"Số facet bằng chứng yếu hoặc nghi ngờ: {total_present_facets - matched_facets_count} ({(total_present_facets - matched_facets_count)/total_present_facets*100:.1f}%)")
-    print(f"-> Đã lưu danh sách bằng chứng tại: {ev_path}")
-    print(f"-> Đã lưu báo cáo tương đồng tại: {audit_path}")
+    print(f"Saved top-{TOP_K_CANDIDATES} evidence candidates to {evidence_path}")
+    print(f"Saved embedding similarities and candidate details to {audit_path}")
+
 
 if __name__ == "__main__":
     main()

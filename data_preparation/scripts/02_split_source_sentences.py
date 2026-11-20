@@ -8,8 +8,13 @@ Output: data_preparation/intermediate/source_sentences.jsonl
 import json
 import re
 from pathlib import Path
+import sys
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from data_preparation.pipeline_scope import get_scope_ids
+
 INPUT_DIR = PROJECT_ROOT / "data_preparation" / "input"
 INTERMEDIATE_DIR = PROJECT_ROOT / "data_preparation" / "intermediate"
 
@@ -33,11 +38,14 @@ def main():
     print(f"--> Đang đọc {papers_path}...")
     records = []
     total_sentences = 0
+    scope_ids = get_scope_ids()
 
     with open(papers_path, "r", encoding="utf-8") as f:
         for line in f:
             row = json.loads(line)
             pid = row["paper_id"]
+            if scope_ids is not None and pid not in scope_ids:
+                continue
             title = row.get("title", "").strip()
             abstract = row.get("abstract", "").strip()
 

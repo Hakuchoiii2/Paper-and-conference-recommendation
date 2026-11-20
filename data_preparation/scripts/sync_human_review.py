@@ -12,6 +12,7 @@ Sử dụng:
 import csv
 import json
 import argparse
+from datetime import datetime, timezone
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -60,6 +61,8 @@ def export_to_csv():
             pid = item["paper_id"]
             facet = item["facet"]
             corr = corrections.get((pid, facet), {})
+            if corr.get("review_source") not in {"cli", "web_ui", "spreadsheet_import"}:
+                corr = {}
 
             row = {
                 "paper_id": pid,
@@ -121,7 +124,9 @@ def import_from_csv():
                     "facet": facet,
                     "human_decision": decision,
                     "human_revised_facet": revised,
-                    "human_notes": notes
+                    "human_notes": notes,
+                    "review_source": "spreadsheet_import",
+                    "reviewed_at": datetime.now(timezone.utc).isoformat(),
                 }
                 updated_count += 1
 

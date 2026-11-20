@@ -1,194 +1,401 @@
-"""08_merge_validated_silver.py
-Bước 6: Merge Validated Silver
-Hợp nhất dữ liệu đã qua kiểm tra cấu trúc, alignment và semantic audit theo đúng Mục 2.5 & 3:
-- Nguyên tắc vàng Mục 2.5: Qwen được đề xuất nhưng không tự ý ghi đè; chỉ nội dung được rule chấp nhận
-  hoặc con người xác nhận (từ human_corrections.jsonl hoặc human_gold.jsonl) mới được vào Validated Silver.
-- Facet REJECTED được tách riêng lưu vào rejected_facets.jsonl.
-- Ghi rõ trạng thái (facet_status), quyết định (audit_decision), câu bằng chứng (evidence) và nguồn gốc (provenance).
-
-Output:
-- data_preparation/output/validated_silver.jsonl
-- data_preparation/output/rejected_facets.jsonl
-- data_preparation/output/data_quality_report.json
-"""
+"""Merge accepted facets and retain pending facet text for review."""
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
-from datetime import datetime
+import sys
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from data_preparation.pipeline_scope import get_scope_ids
+
 INTERMEDIATE_DIR = PROJECT_ROOT / "data_preparation" / "intermediate"
 OUTPUT_DIR = PROJECT_ROOT / "data_preparation" / "output"
 INPUT_DIR = PROJECT_ROOT / "data_preparation" / "input"
 HUMAN_DIR = PROJECT_ROOT / "data_preparation" / "human_review"
 
 FACETS = ("problem", "task", "method", "dataset", "contribution")
+FACET_STATUSES = {
+    "PRESENT",
+    "NOT_MENTIONED",
+    "SOURCE_MISSING",
+    "TRUNCATED",
+    "EXTRACTION_FAILED",
+    "NOT_REVIEWED",
+}
+HUMAN_REVIEW_SOURCES = {"cli", "web_ui", "spreadsheet_import"}
+
+
+def load_jsonl(path):
+    with open(path, "r", encoding="utf-8") as file:
+        rows = []
+        for line_no, line in enumerate(file, 1):
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"{path}:{line_no}: invalid JSON: {exc}") from exc
+    return rows
+
+
+def normalize_revised_facet(value, paper_id, facet):
+    if isinstance(value, str):
+        concepts = [value.strip()] if value.strip() else []
+    elif isinstance(value, list) and all(isinstance(item, str) for item in value):
+        concepts = [item.strip() for item in value if item.strip()]
+    else:
+        raise ValueError(f"Invalid human_revised_facet for {paper_id}/{facet}")
+    return concepts
+
 
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    silver_by_id = {row["paper_id"]: row for row in load_jsonl(INPUT_DIR / "silver_facets.jsonl")}
+    decisions_by_id = {
+        row["paper_id"]: row for row in load_jsonl(INTERMEDIATE_DIR / "automated_decisions.jsonl")
+    }
+    scope_ids = get_scope_ids()
+    if scope_ids is not None:
+        decisions_by_id = {
+            paper_id: row for paper_id, row in decisions_by_id.items() if paper_id in scope_ids
+        }
+    audit_by_id = {
+        row["paper_id"]: row for row in load_jsonl(INTERMEDIATE_DIR / "qwen_audit.jsonl")
+    }
+    corrections_path = HUMAN_DIR / "human_corrections.jsonl"
+    correction_by_key = {}
+    if corrections_path.exists():
+        for correction in load_jsonl(corrections_path):
+            key = (correction.get("paper_id"), correction.get("facet"))
+            if not all(key):
+                raise ValueError(f"Invalid correction record without paper_id/facet: {correction}")
+            if correction.get("review_source") not in HUMAN_REVIEW_SOURCES:
+                continue
+            if correction.get("human_decision") in ("ACCEPT", "REJECT", "REVISE"):
+                correction_by_key[key] = correction
 
-    silver_path = INPUT_DIR / "silver_facets.jsonl"
-    decisions_path = INTERMEDIATE_DIR / "automated_decisions.jsonl"
-    ev_path = INTERMEDIATE_DIR / "evidence_candidates.jsonl"
-    gold_path = INPUT_DIR / "gold_facets_400.jsonl"
-    human_corr_path = HUMAN_DIR / "human_corrections.jsonl"
-
-    print("--> Đang tải dữ liệu để tiến hành Merge Validated Silver theo Mục 2.5...")
-    silver_by_pid = {r["paper_id"]: r for r in (json.loads(line) for line in open(silver_path, encoding="utf-8"))}
-    dec_by_pid = {r["paper_id"]: r for r in (json.loads(line) for line in open(decisions_path, encoding="utf-8"))}
-    ev_by_pid = {r["paper_id"]: r["evidence"] for r in (json.loads(line) for line in open(ev_path, encoding="utf-8"))}
-    gold_by_pid = {r["paper_id"]: r for r in (json.loads(line) for line in open(gold_path, encoding="utf-8"))} if gold_path.exists() else {}
-
-    # Đọc sửa đổi thủ công từ con người nếu có
-    human_corrections = {}
-    if human_corr_path.exists():
-        for line in open(human_corr_path, encoding="utf-8"):
-            r = json.loads(line)
-            if r.get("human_decision") in ("ACCEPT", "REJECT", "REVISE"):
-                human_corrections[(r["paper_id"], r["facet"])] = r
-
+    generated_at = datetime.now(timezone.utc).isoformat()
     validated_records = []
     rejected_records = []
-
+    needs_review_records = []
     stats = {
-        "generated_at": datetime.now().isoformat(),
-        "total_records": len(dec_by_pid),
+        "generated_at": generated_at,
+        "total_records": len(decisions_by_id),
         "validated_papers": 0,
         "needs_review_papers": 0,
         "rejected_papers": 0,
-        "human_verified_papers": 0,
-        "facet_coverage": {f: {"present": 0, "not_mentioned": 0, "evidence_grounded": 0, "rejected": 0} for f in FACETS}
+        "human_reviewed_papers": 0,
+        "ignored_unverified_corrections": 0,
+        "facet_coverage": {
+            facet: {
+                "present": 0,
+                "not_mentioned": 0,
+                "source_missing": 0,
+                "not_reviewed": 0,
+                "evidence_grounded": 0,
+                "rejected": 0,
+            }
+            for facet in FACETS
+        },
     }
 
-    for pid in sorted(dec_by_pid.keys()):
-        dec_row = dec_by_pid[pid]
-        s_row = silver_by_pid.get(pid, {})
-        ev_row = dict(ev_by_pid.get(pid, {}))
-        g_row = gold_by_pid.get(pid)
+    if corrections_path.exists():
+        for correction in load_jsonl(corrections_path):
+            if (
+                correction.get("human_decision") in ("ACCEPT", "REJECT", "REVISE")
+                and correction.get("review_source") not in HUMAN_REVIEW_SOURCES
+            ):
+                stats["ignored_unverified_corrections"] += 1
 
-        f_status = dict(dec_row["facet_status"])
-        a_dec = dict(dec_row["audit_decision"])
-        paper_status = dec_row["paper_validation_status"]
+    for paper_id in sorted(decisions_by_id):
+        decision = decisions_by_id[paper_id]
+        silver = silver_by_id.get(paper_id, {})
+        model_provenance = decision.get("qwen_provenance", {})
+        audit_record = audit_by_id.get(paper_id, {})
+        if audit_record.get("provenance") != model_provenance:
+            raise ValueError(f"Qwen audit provenance mismatch for {paper_id}")
 
-        human_reviewed = False
-        audit_model = "Qwen3-4B-Instruct"
-
-        # Nếu bài thuộc tập 400 Gold đã được người thẩm định
-        if g_row and g_row.get("review_status") == "reviewed":
-            human_reviewed = True
-            audit_model = "Human_Gold_Verified"
-
+        facet_status = dict(decision["facet_status"])
+        audit_decision = dict(decision["audit_decision"])
+        if audit_record.get("audit_status") in (
+            "SKIPPED_SOURCE_MISSING",
+            "SKIPPED_SOURCE_TRUNCATED",
+        ):
+            expected_status = (
+                "SOURCE_MISSING"
+                if audit_record["audit_status"] == "SKIPPED_SOURCE_MISSING"
+                else "TRUNCATED"
+            )
+            if (
+                model_provenance.get("engine") != "not_run"
+                or model_provenance.get("model") is not None
+                or any(status != expected_status for status in facet_status.values())
+            ):
+                raise ValueError(f"Invalid skipped-audit provenance for {paper_id}")
+        elif (
+            audit_record.get("audit_status") != "COMPLETED"
+            or model_provenance.get("engine") != "ollama"
+            or model_provenance.get("model") != "qwen3:4b"
+        ):
+            raise ValueError(f"Missing mandatory Qwen provenance for {paper_id}")
+        qwen_facets = decision.get("qwen_audit", {})
+        evidence = dict(decision.get("evidence", {}))
         final_facets = {}
+        human_reviewed_facets = []
 
-        for f in FACETS:
-            original_concepts = list(s_row.get(f, []))
-            current_concepts = list(original_concepts)
-            corr = human_corrections.get((pid, f))
+        for facet in FACETS:
+            concepts = silver.get(facet, [])
+            original_concepts = list(concepts) if isinstance(concepts, list) else []
+            correction = correction_by_key.get((paper_id, facet))
+            accepted_concepts = None
 
-            # 1. Nếu có sửa đổi của con người trong Bước 5
-            if corr:
-                human_reviewed = True
-                h_decision = corr["human_decision"]
-                if h_decision == "ACCEPT":
-                    a_dec[f] = "AUTO_ACCEPT"
-                    f_status[f] = "PRESENT"
-                elif h_decision == "REJECT":
-                    a_dec[f] = "REJECTED"
-                    f_status[f] = "NOT_MENTIONED"
-                    current_concepts = []
-                elif h_decision == "REVISE":
-                    a_dec[f] = "AUTO_ACCEPT"
-                    f_status[f] = "PRESENT"
-                    rev = corr.get("human_revised_facet")
-                    current_concepts = [rev] if isinstance(rev, str) else rev
-
-            # 2. Xử lý trường hợp REJECTED theo đúng Mục 2.5
-            if a_dec[f] == "REJECTED":
-                stats["facet_coverage"][f]["rejected"] += 1
-                rejected_records.append({
-                    "paper_id": pid,
-                    "facet": f,
-                    "rejected_concepts": original_concepts,
-                    "reason": "Unsupported by source evidence (Qwen Semantic Audit / Low Alignment / Non-informative filler)"
-                })
-                # Theo Mục 2.5: Không dùng nội dung bị reject, chuyển thành NOT_MENTIONED
-                final_facets[f] = ""
-                f_status[f] = "NOT_MENTIONED"
-                ev_row[f] = []
+            if correction:
+                human_reviewed_facets.append(facet)
+                human_status = correction.get("human_facet_status")
+                if human_status is not None and human_status not in FACET_STATUSES:
+                    raise ValueError(f"Invalid human_facet_status for {paper_id}/{facet}: {human_status}")
+                human_decision = correction["human_decision"]
+                if human_decision == "ACCEPT":
+                    if (
+                        facet == "problem"
+                        and not any(
+                            isinstance(concept, str) and concept.strip()
+                            for concept in original_concepts
+                        )
+                        and audit_record.get("audit_status") == "COMPLETED"
+                    ):
+                        raise ValueError(
+                            f"An empty problem facet cannot be ACCEPTed for {paper_id}; "
+                            "provide a source-grounded revision."
+                        )
+                    if human_status is not None and human_status not in ("PRESENT", "NOT_MENTIONED"):
+                        raise ValueError(
+                            f"ACCEPT requires PRESENT or NOT_MENTIONED status for {paper_id}/{facet}"
+                        )
+                    if original_concepts and human_status in (
+                        "NOT_MENTIONED",
+                        "SOURCE_MISSING",
+                        "TRUNCATED",
+                        "EXTRACTION_FAILED",
+                    ):
+                        raise ValueError(
+                            f"ACCEPT conflicts with human_facet_status for {paper_id}/{facet}"
+                        )
+                    if not original_concepts and human_status == "PRESENT":
+                        raise ValueError(f"Empty facet cannot be PRESENT for {paper_id}/{facet}")
+                    accepted_concepts = original_concepts
+                    if human_status:
+                        facet_status[facet] = human_status
+                    elif original_concepts:
+                        facet_status[facet] = "PRESENT"
+                    elif qwen_facets.get(facet, {}).get("support_status") == "NOT_MENTIONED":
+                        facet_status[facet] = "NOT_MENTIONED"
+                    else:
+                        facet_status[facet] = "NOT_REVIEWED"
+                        audit_decision[facet] = "NEEDS_REVIEW"
+                    if facet_status[facet] in ("PRESENT", "NOT_MENTIONED"):
+                        audit_decision[facet] = "AUTO_ACCEPT"
+                elif human_decision == "REVISE":
+                    accepted_concepts = normalize_revised_facet(
+                        correction.get("human_revised_facet"), paper_id, facet
+                    )
+                    if not accepted_concepts:
+                        raise ValueError(f"REVISE must provide facet content for {paper_id}/{facet}")
+                    facet_status[facet] = "PRESENT"
+                    audit_decision[facet] = "AUTO_ACCEPT"
+                elif human_decision == "REJECT":
+                    if (
+                        facet == "problem"
+                        and not any(
+                            isinstance(concept, str) and concept.strip()
+                            for concept in original_concepts
+                        )
+                        and audit_record.get("audit_status") == "COMPLETED"
+                    ):
+                        raise ValueError(
+                            f"An empty problem facet cannot be REJECTed for {paper_id}; "
+                            "provide a source-grounded revision."
+                        )
+                    if human_status == "PRESENT":
+                        raise ValueError(f"REJECT conflicts with PRESENT status for {paper_id}/{facet}")
+                    accepted_concepts = []
+                    if human_status:
+                        facet_status[facet] = human_status
+                    elif qwen_facets.get(facet, {}).get("support_status") == "NOT_MENTIONED":
+                        facet_status[facet] = "NOT_MENTIONED"
+                    else:
+                        facet_status[facet] = "NOT_REVIEWED"
+                    audit_decision[facet] = "REJECTED"
+            elif audit_decision[facet] == "AUTO_ACCEPT":
+                if facet == "problem" and not any(
+                    isinstance(concept, str) and concept.strip()
+                    for concept in original_concepts
+                ):
+                    qwen = qwen_facets.get(facet, {})
+                    cited_ids = qwen.get("relevant_sentences")
+                    if (
+                        audit_record.get("problem_requery", {}).get("auto_accept_eligible") is not True
+                        or qwen.get("support_status") not in ("SUPPORTED", "PARTIALLY_SUPPORTED")
+                        or qwen.get("detected_issues") != "missing"
+                        or not isinstance(cited_ids, list)
+                        or not cited_ids
+                    ):
+                        raise ValueError(
+                            f"Empty problem facet lacks a grounded Qwen requery for {paper_id}"
+                        )
+                    accepted_concepts = normalize_revised_facet(
+                        qwen.get("proposed_revision"), paper_id, facet
+                    )
+                    evidence[facet] = cited_ids
+                else:
+                    accepted_concepts = original_concepts
+            elif audit_decision[facet] == "NEEDS_REVIEW":
+                qwen = qwen_facets.get(facet, {})
+                proposal = qwen.get("proposed_revision")
+                if isinstance(proposal, str) and proposal.strip():
+                    accepted_concepts = [proposal.strip()]
+                    evidence[facet] = qwen.get("relevant_sentences", [])
+                else:
+                    usable_original = [
+                        concept.strip() for concept in original_concepts
+                        if isinstance(concept, str) and concept.strip()
+                    ]
+                    if (
+                        usable_original
+                        and facet_status[facet] == "PRESENT"
+                        and qwen.get("support_status") == "SUPPORTED"
+                        and qwen.get("detected_issues") == "none"
+                    ):
+                        accepted_concepts = usable_original
+                    else:
+                        accepted_concepts = []
+                        evidence[facet] = []
+                        needs_review_records.append({
+                            "paper_id": paper_id,
+                            "facet": facet,
+                            "current_concepts": original_concepts,
+                            "facet_status": facet_status[facet],
+                            "audit_decision": "NEEDS_REVIEW",
+                            "qwen_proposed_revision": None,
+                            "qwen_support_status": qwen.get("support_status"),
+                            "qwen_detected_issues": qwen.get("detected_issues"),
+                            "qwen_relevant_sentence_ids": qwen.get("relevant_sentences", []),
+                            "qwen_explanation": qwen.get("explanation"),
+                        })
             else:
-                final_facets[f] = "; ".join(current_concepts) if current_concepts else ""
+                accepted_concepts = []
+                if audit_decision[facet] == "REJECTED":
+                    qwen = qwen_facets.get(facet, {})
+                    rejected_records.append({
+                        "paper_id": paper_id,
+                        "facet": facet,
+                        "rejected_concepts": original_concepts,
+                        "reason": qwen.get("explanation", "Rejected by semantic audit; awaiting human review"),
+                        "human_reviewed": False,
+                    })
+                    if facet_status[facet] not in ("NOT_MENTIONED", "SOURCE_MISSING"):
+                        facet_status[facet] = "NOT_REVIEWED"
 
-            # Thống kê độ phủ
-            if f_status[f] == "PRESENT":
-                stats["facet_coverage"][f]["present"] += 1
-                if ev_row.get(f):
-                    stats["facet_coverage"][f]["evidence_grounded"] += 1
+            if audit_decision[facet] == "REJECTED":
+                if correction:
+                    rejected_records.append({
+                        "paper_id": paper_id,
+                        "facet": facet,
+                        "rejected_concepts": original_concepts,
+                        "reason": correction.get("human_notes", "Rejected by human reviewer"),
+                        "human_reviewed": True,
+                    })
+                evidence[facet] = []
+
+            final_facets[facet] = "; ".join(accepted_concepts or [])
+            coverage = stats["facet_coverage"][facet]
+            if audit_decision[facet] == "NEEDS_REVIEW" and facet_status[facet] == "PRESENT":
+                coverage["not_reviewed"] += 1
+            elif facet_status[facet] == "PRESENT" and final_facets[facet]:
+                coverage["present"] += 1
+                if evidence.get(facet):
+                    coverage["evidence_grounded"] += 1
+            elif facet_status[facet] == "NOT_MENTIONED":
+                coverage["not_mentioned"] += 1
+            elif facet_status[facet] == "SOURCE_MISSING":
+                coverage["source_missing"] += 1
             else:
-                stats["facet_coverage"][f]["not_mentioned"] += 1
+                coverage["not_reviewed"] += 1
+            if audit_decision[facet] == "REJECTED":
+                coverage["rejected"] += 1
 
-        # Xác định trạng thái của toàn bộ paper:
-        # Nếu mọi facet đều đã được duyệt chấp nhận (AUTO_ACCEPT) hoặc đã được con người xử lý (REJECT/REVISE)
-        unresolved_facets = [f for f in FACETS if a_dec[f] == "NEEDS_REVIEW" and (pid, f) not in human_corrections]
-        if not unresolved_facets:
-            paper_status = "VALIDATED"
-        else:
+        unresolved = [
+            facet for facet in FACETS
+            if audit_decision[facet] != "AUTO_ACCEPT"
+            and (paper_id, facet) not in correction_by_key
+        ]
+        unresolved_statuses = {"SOURCE_MISSING", "TRUNCATED", "EXTRACTION_FAILED", "NOT_REVIEWED"}
+        if unresolved or any(status in unresolved_statuses for status in facet_status.values()):
+            paper_status = (
+                "REJECTED"
+                if all(audit_decision[facet] == "REJECTED" for facet in FACETS)
+                else "NEEDS_REVIEW"
+            )
+        elif any(audit_decision[facet] == "NEEDS_REVIEW" for facet in FACETS):
             paper_status = "NEEDS_REVIEW"
-
-        if paper_status == "VALIDATED":
-            stats["validated_papers"] += 1
-        elif paper_status == "NEEDS_REVIEW":
-            stats["needs_review_papers"] += 1
         else:
-            stats["rejected_papers"] += 1
+            paper_status = "VALIDATED"
+        if paper_status == "VALIDATED" and not final_facets.get("problem", "").strip():
+            raise ValueError(
+                f"Validated paper {paper_id} has an empty problem facet; refusing to merge."
+            )
 
-        if human_reviewed:
-            stats["human_verified_papers"] += 1
+        stats_key = {
+            "VALIDATED": "validated_papers",
+            "NEEDS_REVIEW": "needs_review_papers",
+            "REJECTED": "rejected_papers",
+        }[paper_status]
+        stats[stats_key] += 1
+        if human_reviewed_facets:
+            stats["human_reviewed_papers"] += 1
 
-        rec = {
-            "paper_id": pid,
+        validated_records.append({
+            "paper_id": paper_id,
             "facets": final_facets,
-            "facet_status": f_status,
-            "audit_decision": a_dec,
-            "evidence": ev_row,
+            "facet_status": facet_status,
+            "audit_decision": audit_decision,
+            "evidence": evidence,
             "paper_validation_status": paper_status,
             "provenance": {
                 "source": "exp_a_silver",
                 "embedding_model": "all-MiniLM-L6-v2",
-                "audit_model": audit_model,
-                "human_reviewed": human_reviewed,
-                "review_version": "data_preparation_v1",
-                "timestamp": stats["generated_at"]
-            }
-        }
-        validated_records.append(rec)
+                "audit_engine": model_provenance["engine"],
+                "audit_model": model_provenance["model"],
+                "audit_prompt_version": model_provenance.get("prompt_version"),
+                "human_reviewed": bool(human_reviewed_facets),
+                "human_reviewed_facets": human_reviewed_facets,
+                "review_version": "data_preparation_v2",
+                "timestamp": generated_at,
+            },
+        })
 
-    out_file = OUTPUT_DIR / "validated_silver.jsonl"
-    with open(out_file, "w", encoding="utf-8") as f:
-        for r in validated_records:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    output_path = OUTPUT_DIR / "validated_silver.jsonl"
+    with open(output_path, "w", encoding="utf-8") as output:
+        for record in validated_records:
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
+    rejected_path = OUTPUT_DIR / "rejected_facets.jsonl"
+    with open(rejected_path, "w", encoding="utf-8") as output:
+        for record in rejected_records:
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
+    needs_review_path = OUTPUT_DIR / "needs_review.jsonl"
+    with open(needs_review_path, "w", encoding="utf-8") as output:
+        for record in needs_review_records:
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
+    report_path = OUTPUT_DIR / "data_quality_report.json"
+    with open(report_path, "w", encoding="utf-8") as output:
+        json.dump(stats, output, indent=2, ensure_ascii=False)
 
-    rej_file = OUTPUT_DIR / "rejected_facets.jsonl"
-    with open(rej_file, "w", encoding="utf-8") as f:
-        for r in rejected_records:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    print(f"Merge report: {stats}")
+    print(f"Saved validated Silver to {output_path}")
+    print(f"Saved rejected facet history to {rejected_path}")
+    print(f"Saved {len(needs_review_records)} unresolved facets to {needs_review_path}")
+    print(f"Saved quality report to {report_path}")
 
-    report_file = OUTPUT_DIR / "data_quality_report.json"
-    with open(report_file, "w", encoding="utf-8") as f:
-        json.dump(stats, f, indent=2, ensure_ascii=False)
-
-    print(f"\n==================== KẾT QUẢ MERGE VALIDATED SILVER (CHUẨN MỤC 2.5 & 3) ====================")
-    print(f"Tổng số bài xuất xưởng: {len(validated_records)}")
-    print(f"  - Bài VALIDATED (sạch & có căn cứ bằng chứng): {stats['validated_papers']} ({stats['validated_papers']/len(validated_records)*100:.1f}%)")
-    print(f"  - Bài NEEDS_REVIEW (chờ kiểm duyệt): {stats['needs_review_papers']} ({stats['needs_review_papers']/len(validated_records)*100:.1f}%)")
-    print(f"  - Bài được con người xác thực (Human Verified): {stats['human_verified_papers']} bài (tập Gold 400 bài)")
-    print(f"  - Số facet bị REJECTED (tách riêng): {len(rejected_records)}")
-    print("\nChi tiết độ phủ từng khía cạnh:")
-    for f in FACETS:
-        cov = stats["facet_coverage"][f]
-        print(f"  - {f:12s}: {cov['present']:4d} PRESENT (Bằng chứng: {cov['evidence_grounded']:4d}) | {cov['not_mentioned']:4d} NOT_MENTIONED | {cov['rejected']:2d} REJECTED")
-    print(f"\n-> Đã lưu tập dữ liệu chuẩn tại: {out_file}")
-    print(f"-> Đã lưu danh sách facet bị loại tại: {rej_file}")
-    print(f"-> Đã lưu báo cáo chất lượng tại: {report_file}")
 
 if __name__ == "__main__":
     main()

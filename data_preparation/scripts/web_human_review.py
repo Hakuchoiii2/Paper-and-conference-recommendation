@@ -12,6 +12,7 @@ import http.server
 import socketserver
 import json
 import urllib.parse
+from datetime import datetime, timezone
 from pathlib import Path
 import sys
 
@@ -28,14 +29,18 @@ def load_data():
         for line in open(CORR_PATH, encoding="utf-8"):
             try:
                 r = json.loads(line)
-                corrections[(r["paper_id"], r["facet"])] = r
-            except Exception:
-                pass
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"{CORR_PATH}: invalid JSON: {exc}") from exc
+            if r.get("review_source") not in {"cli", "web_ui", "spreadsheet_import"}:
+                r["human_decision"] = "PENDING"
+            corrections[(r["paper_id"], r["facet"])] = r
     return queue, corrections
 
 def save_single_correction(record):
     queue, corrections = load_data()
     key = (record["paper_id"], record["facet"])
+    record["review_source"] = "web_ui"
+    record["reviewed_at"] = datetime.now(timezone.utc).isoformat()
     corrections[key] = record
 
     # Ghi lại file
@@ -175,6 +180,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         <h4 class="text-sm font-bold text-slate-800">Quyết định của Người duyệt (Human Quality Control)</h4>
                         <span id="currentDecisionStatus" class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100"></span>
                     </div>
+                    <label class="block text-xs text-slate-600 mb-3">
+                        Trạng thái nội dung sau khi duyệt (tùy chọn; dùng khi bác bỏ facet):
+                        <select id="humanFacetStatus" class="ml-2 border rounded px-2 py-1">
+                            <option value="">Suy ra từ đánh giá</option>
+                            <option value="NOT_MENTIONED">NOT_MENTIONED</option>
+                            <option value="SOURCE_MISSING">SOURCE_MISSING</option>
+                            <option value="TRUNCATED">TRUNCATED</option>
+                            <option value="EXTRACTION_FAILED">EXTRACTION_FAILED</option>
+                            <option value="NOT_REVIEWED">NOT_REVIEWED</option>
+                        </select>
+                    </label>
 
                     <div class="grid grid-cols-4 gap-3 mb-4">
                         <!-- Option 1: Accept -->
@@ -391,8 +407,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 : '<span class="italic text-slate-400">Không có concept (rỗng)</span>';
 
             document.getElementById('evidenceInfo').innerHTML = evTexts.length > 0 
-                ? `<strong>Bằng chứng MiniLM:</strong> Tìm thấy ${evTexts.length} câu hỗ trợ.`
-                : `<strong class="text-rose-600">MiniLM Warning:</strong> Độ tương đồng thấp (&lt; 0.35), không có câu bằng chứng rõ ràng.`;
+                ? `<strong>Candidates MiniLM:</strong> Có ${evTexts.length} câu ứng viên; đây chưa phải kết luận đúng/sai.`
+                : `<strong class="text-rose-600">MiniLM:</strong> Không có câu ứng viên cho facet này.`;
 
             // Qwen
             const qStatus = document.getElementById('qwenStatusBadge');
@@ -426,6 +442,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             else decStatus.className = "text-xs font-semibold px-2.5 py-0.5 rounded bg-slate-100 text-slate-500";
 
             document.getElementById('noteInput').value = corr.human_notes || "";
+            document.getElementById('humanFacetStatus').value = corr.human_facet_status || "";
             const revFacets = Array.isArray(corr.human_revised_facet) ? corr.human_revised_facet.join(", ") : (corr.human_revised_facet || "");
             document.getElementById('customFacetInput').value = revFacets || (item.qwen_proposed_revision || (item.current_concepts || []).join(", "));
         }
@@ -460,6 +477,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 human_revised_facet: revised,
                 human_notes: note
             };
+            const humanFacetStatus = document.getElementById('humanFacetStatus').value;
+            if (decision === 'REJECT' && humanFacetStatus) payload.human_facet_status = humanFacetStatus;
 
             corrections[key] = payload;
             updateStats();
