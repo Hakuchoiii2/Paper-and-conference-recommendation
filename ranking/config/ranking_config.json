@@ -1,0 +1,79 @@
+{
+  "project": "DS300 - Exp B Ranking Pipeline",
+  "version": "v1.0.0",
+  "description": "Cấu hình chuẩn cho 3 phương pháp Ranking và đánh giá bằng Human Qrels",
+  "model": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "batch_size": 64,
+    "normalize_embeddings": true
+  },
+  "facets": [
+    "problem",
+    "task",
+    "method",
+    "dataset",
+    "contribution"
+  ],
+  "weight_configurations": {
+    "method_2_equal_weight": {
+      "name": "Equal-weight Facet Ranking",
+      "weights": {
+        "problem": 0.2,
+        "task": 0.2,
+        "method": 0.2,
+        "dataset": 0.2,
+        "contribution": 0.2
+      }
+    },
+    "method_3_weighted": {
+      "name": "Weighted Facet Ranking",
+      "weights": {
+        "problem": 0.4,
+        "task": 0.2,
+        "method": 0.2,
+        "dataset": 0.1,
+        "contribution": 0.1
+      }
+    }
+  },
+  "evaluation": {
+    "primary_metric": "nDCG@10",
+    "metrics": [
+      "nDCG@5",
+      "nDCG@10",
+      "P@5",
+      "P@10",
+      "MRR",
+      "Recall@10",
+      "Recall@20"
+    ],
+    "relevance_grades": {
+      "0": "Không liên quan",
+      "1": "Có liên quan nhẹ, giá trị sử dụng hạn chế",
+      "2": "Có liên quan đáng kể",
+      "3": "Rất liên quan, có giá trị tham khảo trực tiếp"
+    },
+    "binary_relevance_threshold": 2
+  },
+  "query_splits": {
+    "dev_count": 15,
+    "test_count": 35,
+    "total_queries": 50
+  },
+  "paths": {
+    "validated_silver": "ranking/input/validated_silver.jsonl",
+    "papers": "data_preparation/input/papers.jsonl",
+    "query_split": "ranking/input/query_split.json",
+    "human_qrels": "ranking/input/human_qrels.jsonl",
+    "intermediate_paper_emb": "ranking/intermediate/paper_embeddings",
+    "intermediate_facet_emb": "ranking/intermediate/facet_embeddings",
+    "output_fulltext": "ranking/output/fulltext_ranking.jsonl",
+    "output_equal_weight": "ranking/output/equal_weight_ranking.jsonl",
+    "output_weighted": "ranking/output/weighted_ranking.jsonl",
+    "output_final": "ranking/output/final_ranking_results.jsonl",
+    "report_metrics": "ranking/reports/ranking_metrics.json",
+    "report_comparison": "ranking/reports/ranking_comparison.csv",
+    "report_analysis": "ranking/reports/RANKING_ANALYSIS.md"
+  }
+}
