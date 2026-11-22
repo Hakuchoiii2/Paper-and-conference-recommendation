@@ -86,6 +86,14 @@ def main():
                     pass
         print(f"[+] Đã tìm thấy {len(existing_judgments)} đánh giá sẵn có từ trước. Sẽ bảo tồn các đánh giá này.")
 
+    initial_qrels = {}
+    with resolve_path(paths["initial_qrels"]).open(encoding="utf-8") as file:
+        for line in file:
+            row = json.loads(line)
+            initial_qrels[(row["query_id"], row["candidate_id"])] = {
+                **row, "human_grade": row["grade"],
+            }
+
     print("--> Đang ghép nối thông tin Query và Candidate...")
     review_queue = []
     template_judgments = []
@@ -106,6 +114,8 @@ def main():
 
             key = (qid, cid)
             prev_judgment = existing_judgments.get(key)
+            if not prev_judgment or prev_judgment.get("human_grade") in ("UNJUDGED", None, ""):
+                prev_judgment = initial_qrels.get(key)
 
             review_item = {
                 "query_id": qid,
@@ -121,11 +131,10 @@ def main():
                 "candidate_facets": c_facets,
                 "current_judgment": prev_judgment.get("human_grade", "UNJUDGED") if prev_judgment else "UNJUDGED"
             }
-            review_queue.append(review_item)
-
             if prev_judgment and prev_judgment.get("human_grade") not in ("UNJUDGED", None):
                 template_judgments.append(prev_judgment)
             else:
+                review_queue.append(review_item)
                 template_judgments.append({
                     "query_id": qid,
                     "candidate_id": cid,

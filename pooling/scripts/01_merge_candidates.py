@@ -13,7 +13,7 @@ Output:
 import json
 import argparse
 from pathlib import Path
-from collections import defaultdict
+from collections import Counter
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 POOLING_DIR = PROJECT_ROOT / "pooling"
@@ -105,16 +105,26 @@ def main():
 
     all_raw_candidates = []
     source_stats = {}
+    split_file = resolve_path(paths["query_split"])
+    test_ids = set(json.loads(split_file.read_text(encoding="utf-8"))["test"])
+    if len(test_ids) != 35:
+        raise ValueError("Pooling requires 35 distinct TEST queries")
 
     for source_name, fpath, top_k in sources:
         if fpath.exists():
-            items = parse_ranking_file(fpath, source_name, top_k)
+            items = [
+                row for row in parse_ranking_file(fpath, source_name, top_k)
+                if row["query_id"] in test_ids
+            ]
+            counts = Counter(row["query_id"] for row in items)
+            if counts != dict.fromkeys(test_ids, top_k):
+                raise ValueError(f"Incomplete TEST coverage in {fpath}")
             all_raw_candidates.extend(items)
             source_stats[source_name] = len(items)
             print(f"[+] {source_name:36} (Top {top_k:3}): Thu thập được {len(items):5} cặp từ {fpath.name}")
         else:
             print(f"[!] {source_name:36}: Chưa tìm thấy tệp tại {fpath.name}")
-            source_stats[source_name] = 0
+            raise FileNotFoundError(fpath)
 
     print(f"\n--> Tổng số bản ghi Candidate thu thập được từ tất cả các nguồn: {len(all_raw_candidates)}")
 

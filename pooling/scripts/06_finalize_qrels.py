@@ -84,12 +84,15 @@ def main():
                     "query_id": qid,
                     "candidate_id": cid,
                     "grade": g_int,
+                    "label_source": r.get("label_source", "HUMAN"),
                     "notes": notes
                 })
             else:
                 unjudged_count += 1
 
     total_pairs = len(final_qrels) + unjudged_count
+    if unjudged_count:
+        raise ValueError(f"{unjudged_count} pairs are still UNJUDGED")
 
     # 1. Lưu final_human_qrels.jsonl
     final_qrels_file.parent.mkdir(parents=True, exist_ok=True)

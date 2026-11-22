@@ -106,7 +106,12 @@ def import_from_csv():
         return
 
     updated_count = 0
-    records = []
+    records = {}
+    if judgments_file.exists():
+        with judgments_file.open(encoding="utf-8") as file:
+            for line in file:
+                judgment = json.loads(line)
+                records[(judgment["query_id"], judgment["candidate_id"])] = judgment
     with open(csv_file, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -119,17 +124,17 @@ def import_from_csv():
                 grade_val = int(raw_grade)
                 updated_count += 1
             else:
-                grade_val = "UNJUDGED"
+                continue
 
-            records.append({
+            records[(qid, cid)] = {
                 "query_id": qid,
                 "candidate_id": cid,
                 "human_grade": grade_val,
                 "notes": notes
-            })
+            }
 
     with open(judgments_file, "w", encoding="utf-8") as f:
-        for r in records:
+        for r in records.values():
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
     print(f"[+] Đã cập nhật thành công {len(records)} dòng ({updated_count} đã chấm) vào {judgments_file.name}")

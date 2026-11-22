@@ -29,12 +29,13 @@ def run_step(step_name, script_path, extra_args=None):
     res = subprocess.run(cmd)
     if res.returncode != 0:
         print(f"\n[!] LỖI tại {step_name} (Exit code: {res.returncode})")
-        return False
+        raise SystemExit(res.returncode)
     return True
 
 def main():
     parser = argparse.ArgumentParser(description="Điều phối Pooling Pipeline (Exp B)")
     parser.add_argument("--check-only", action="store_true", help="Chỉ kiểm tra cấu hình và tính sẵn sàng, không chạy quy trình đầy đủ")
+    parser.add_argument("--finalize", action="store_true", help="Publish qrels after all TEST pairs are graded")
     args = parser.parse_args()
 
     print("*"*80)
@@ -63,6 +64,10 @@ def main():
 
     # Bước 4: Export Human Review
     if not run_step("Bước 4: Chuẩn bị Hàng đợi Đánh giá Human Review", SCRIPTS_DIR / "04_export_human_review.py"):
+        return
+
+    if not args.finalize:
+        print("TEST review queue is ready. Run again with --finalize after grading.")
         return
 
     # Bước 5: Merge Judgments
