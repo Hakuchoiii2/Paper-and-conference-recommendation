@@ -48,9 +48,8 @@ Các lỗi rõ vẫn bỏ sót gồm generic resource bị gán dataset (P003211
 
 ## Hồ sơ và kiểm tra
 
-- [Script spike](../semantic_review_local/spike.py) và [README](../semantic_review_local/README.md).
-- [Manifest](../semantic_review_local/run_20261025_v1/manifest.json), [input packets](../semantic_review_local/run_20261025_v1/packets.json), [prompt](../semantic_review_local/run_20261025_v1/prompt.txt), [runtime log](../semantic_review_local/run_20261025_v1/runtime.log).
-- [Ghi chú nguồn lập trước inference](../semantic_review_local/run_20261025_v1/source_first_notes.json): 58 supported, 11 issue, 5 ambiguous; không phải human gold. Các ca known có lịch sử đã được xem trước, nên không coi phép thử là đánh giá mù hoàn toàn.
-- [Summary](../semantic_review_local/run_20261025_v1/summary.json), [diagnostic warnings](../semantic_review_local/run_20261025_v1/diagnostic_warnings.json), [đối chiếu từng lý do](../semantic_review_local/run_20261025_v1/rationale_adjudication.json).
+Script và thư mục output `semantic_review_local/` đã được dọn. Báo cáo này lưu kết quả của lượt thử.
+
+Ghi chú nguồn lập trước inference gồm 58 nhãn có hỗ trợ, 11 nhãn có vấn đề và 5 nhãn còn mơ hồ. Các ca đã biết từng được xem trước khi chạy.
 
 Đã chạy self-check cho schema, item identity và exact quote; xác minh đủ 8 reply, không truncation, ghi chú nguồn bao phủ đủ 74 item không trùng nhóm, hash đầu vào giữ nguyên. Không đánh giá sửa annotation vì phép thử không tạo bản sửa; không có kiểm định thống kê hoặc đánh giá human độc lập.

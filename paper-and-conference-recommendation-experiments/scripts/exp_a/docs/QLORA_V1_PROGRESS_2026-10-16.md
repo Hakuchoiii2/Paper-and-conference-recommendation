@@ -6,7 +6,7 @@ split plus GPT-reviewed corpus expansion to preserve100 test papers.
 - Data audit complete:400 AI-reviewed,395 source-cleared,364 whole-paper current
   grounding-compatible; allsourcehashes verified, zero pilot50 overlap.
 - Cleanup complete: matrix/pilot code grouped, pre3.5 experiment outputs removed
-  according to cleanup_manifest_2026-10-16.json; shared live baseline retained.
+  and the shared baseline was retained.
 - Trainer and data preparation implemented. Root orchestration, deterministic
   bundler, independent-review aggregation and output/adapter collector implemented.
 - Verification:126ExpA tests and88project tests PASS, including actual tinyQwen3

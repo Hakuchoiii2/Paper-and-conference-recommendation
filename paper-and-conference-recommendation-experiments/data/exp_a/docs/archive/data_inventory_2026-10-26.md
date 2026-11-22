@@ -1,5 +1,7 @@
 # Dữ liệu exp_A hiện có — 26/10/2026
 
+> Ảnh chụp trước khi chấp nhận Gold400 v3. Xem [README exp_A](../../README.md) để biết trạng thái hiện tại.
+
 Kiểm kê từ các JSONL và manifest đang nằm trên máy; không chạy model và không thay dữ liệu.
 
 | Nhóm | Nội dung/quy mô thực tế | Vị trí chính |

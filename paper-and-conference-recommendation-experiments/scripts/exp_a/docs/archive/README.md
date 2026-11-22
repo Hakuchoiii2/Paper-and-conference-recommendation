@@ -30,3 +30,8 @@ Tài liệu đang dùng: [bố trí thư mục](../FOLDER_LAYOUT.md), [kết qu�
 | `data/exp_a/finetuning/policy_ab/build/diagnostics/local_repro_2026-10-18/LOCAL_TEST_2026-10-18.md` | Chẩn đoán trước đó / thử local |
 
 README trước khi rút gọn liên kết được giữ trong `readme_backups/` của cùng ZIP. Không nén trọng số model vào file lịch sử.
+
+## Báo cáo dữ liệu Exp A
+
+- [Kiểm kê trước Gold400 v3](../../../../data/exp_a/docs/archive/data_inventory_2026-10-26.md).
+- [Thử reviewer ngữ nghĩa local](../../../../data/exp_a/docs/archive/2026-10-25-local-semantic-review-spike.md).

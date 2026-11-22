@@ -79,7 +79,7 @@ Gói Drive là adapter PEFT cùng tokenizer/metadata, không phải toàn bộ t
 
 Cùng train280/valid60/test60, seed42; 3 epochs/105 optimizer steps, learning rate1e-4, effective batch8, LoRA rank16/alpha32/dropout0,05, NF4 double/FP16 và completion-only loss. Chọn một trong ba epoch checkpoint bằng **validation V-recall micro-F1**, rồi recall và epoch sớm hơn nếu hòa; dùng adapter đã chọn để đánh giá test60.
 
-V-recall dùng ba lượt: trích năm facet → review/sửa có kiểm tra nguồn → bổ sung task/method. Giữ greedy decoding, `enable_thinking=False`, tối đa2.048 token/lượt và matching embedding threshold0,85. Dùng chat template phù hợp từng model; Qwen14B train một process chia model lên hai GPU T4. Xem các README điều phối để biết khác biệt runtime theo model.
+V-recall dùng ba lượt: trích năm facet → review/sửa có kiểm tra nguồn → bổ sung task/method. Giữ greedy decoding, `enable_thinking=False`, tối đa 2048 token/lượt và matching embedding threshold0,85. Dùng chat template phù hợp từng model; Qwen14B train một process chia model lên hai GPU T4. Xem các README điều phối để biết khác biệt runtime theo model.
 
 | Model | Checkpoint đã chọn | Precision | Recall | Micro F1 | Macro F1 | Fallback |
 |---|---|---:|---:|---:|---:|---:|

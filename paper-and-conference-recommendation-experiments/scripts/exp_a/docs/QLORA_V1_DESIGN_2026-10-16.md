@@ -64,5 +64,4 @@ reports paired evaluation. An incomplete/failed run must not publish an adapter.
 
 Execution uses the existing checkout: essential experiment files are untracked
 and would be absent from a new worktree. No broad git commit/reset is authorized
-or needed. Cleanup deletion paths are checked inside this project and listed in
-data/exp_a/cleanup_manifest_2026-10-16.json.
+or needed. The cleanup checked deletion paths inside this project.
