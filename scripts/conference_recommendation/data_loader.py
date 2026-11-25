@@ -19,7 +19,7 @@ def get_repo_root() -> Path:
     """Xác định đường dẫn thư mục gốc của repository."""
     current = Path(__file__).resolve()
     for parent in current.parents:
-        if (parent / "configs").exists() and (parent / "data").exists():
+        if (parent / ".git").exists() or ((parent / "configs").exists() and (parent / "data").exists()):
             return parent
     return current.parents[2]
 
@@ -86,14 +86,24 @@ def load_dataset(
 
     split_dir = Path(split_dir)
     if not split_dir.is_absolute():
-        split_dir = repo_root / split_dir
+        if (repo_root / split_dir).exists():
+            split_dir = repo_root / split_dir
+        elif split_dir.exists():
+            split_dir = split_dir.resolve()
+        else:
+            split_dir = repo_root / split_dir
 
     if facets_path is None:
         facets_path = repo_root / "data/exp_a/generated/facets_silver.jsonl"
     else:
         facets_path = Path(facets_path)
         if not facets_path.is_absolute():
-            facets_path = repo_root / facets_path
+            if (repo_root / facets_path).exists():
+                facets_path = repo_root / facets_path
+            elif facets_path.exists():
+                facets_path = facets_path.resolve()
+            else:
+                facets_path = repo_root / facets_path
 
     # 1. Đọc nhãn và catalog
     train_file = split_dir / "train.jsonl"
@@ -119,7 +129,12 @@ def load_dataset(
     if test_facets_path is not None:
         test_facets_path = Path(test_facets_path)
         if not test_facets_path.is_absolute():
-            test_facets_path = repo_root / test_facets_path
+            if (repo_root / test_facets_path).exists():
+                test_facets_path = repo_root / test_facets_path
+            elif test_facets_path.exists():
+                test_facets_path = test_facets_path.resolve()
+            else:
+                test_facets_path = repo_root / test_facets_path
         test_facets_dict = load_facets(test_facets_path)
 
     train_ids = [r["paper_id"] for r in train_raw]
