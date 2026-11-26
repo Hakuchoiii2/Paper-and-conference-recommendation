@@ -1,0 +1,9 @@
+{"step": "01_validate_structure", "status": "SUCCESS", "records_in": 4210, "records_out": 4210, "clean_papers": 4045, "sparse_papers": 164, "timestamp": "2026-11-17T09:29:32"}
+{"step": "02_split_source_sentences", "status": "SUCCESS", "papers_in": 4210, "sentences_out": 33243, "avg_sentences_per_paper": 7.9, "timestamp": "2026-11-17T09:29:55"}
+{"step": "03_generate_embeddings", "status": "SUCCESS", "model": "all-MiniLM-L6-v2", "dimension": 384, "timestamp": "2026-11-17T20:14:23"}
+{"step": "04_align_evidence", "status": "SUCCESS", "total_facets": 14928, "aligned_facets": 14314, "alignment_rate": 0.959, "timestamp": "2026-11-17T09:33:42"}
+{"step": "05_qwen_semantic_audit", "status": "SUCCESS", "audited_facets": 21050, "supported": 14058, "partially_supported": 868, "unsupported": 2, "not_mentioned": 6122, "timestamp": "2026-11-17T20:08:07"}
+{"step": "06_make_decisions", "status": "SUCCESS", "total_papers": 4210, "validated_papers": 3455, "needs_review_papers": 755, "rejected_papers": 0, "timestamp": "2026-11-17T20:08:50"}
+{"step": "07_export_human_review", "status": "SUCCESS", "review_queue_count": 1572, "rejected_count": 2, "needs_review_count": 868, "qc_sample_count": 702, "timestamp": "2026-11-17T20:10:19"}
+{"step": "08_merge_validated_silver", "status": "SUCCESS", "output_file": "validated_silver.jsonl", "total_records": 4210, "validated_papers": 3455, "needs_review_papers": 755, "timestamp": "2026-11-17T20:10:53"}
+{"step": "09_evaluate_audit", "status": "SUCCESS", "gold_records": 400, "calibration_split": 280, "heldout_split": 120, "overall_accuracy": 0.8917, "overall_recall": 0.9905, "overall_f1": 0.9411, "timestamp": "2026-11-17T20:11:00"}
