@@ -1,0 +1,35 @@
+{
+  "dataset_version": "5_mapping_reviewed",
+  "dev_split_created": false,
+  "failed_conference": "exclude_entire_conference_from_both_splits",
+  "input_text_fields": [
+    "title",
+    "abstract"
+  ],
+  "min_matched_per_conference": 5,
+  "min_test_per_conference": 1,
+  "min_train_per_conference": 3,
+  "missing_or_conflicting_year": "exclude",
+  "numeric_label_order": "conference_id ascending",
+  "numeric_target": "label_index",
+  "outside_test_upper_bound": "exclude",
+  "profile_data": "train_only",
+  "random_sampling": false,
+  "require_review_usable_for_split": true,
+  "required_mapping_status": "matched",
+  "same_year_tie_breaker": "paper_id",
+  "sort_order": [
+    "conference_id",
+    "year",
+    "paper_id"
+  ],
+  "split_name": "temporal_2015_2016_2019",
+  "target": "conference_id",
+  "test_usage": "evaluation_only",
+  "test_year_max": 2019,
+  "test_year_min": 2016,
+  "total_threshold_basis": "all_reviewed_matched_before_year_filter",
+  "train_year_max": 2015,
+  "year_field": "paper_conference_links.year",
+  "year_origin": "csfcube_raw.metadata.year"
+}

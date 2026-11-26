@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0.1",
+  "dataset_version": "2.0.1",
+  "source": "csfcube",
+  "generated_at": "2026-10-30T10:40:00.150486+00:00",
+  "network_requests": 0,
+  "llm_calls": 0,
+  "human_paper_review_performed": false,
+  "old_labels_used": false,
+  "external_legacy_code_used": false,
+  "input_paths": {
+    "raw": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\abstracts-csfcube-preds.jsonl",
+    "source_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\source_manifest.json",
+    "papers": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\papers.jsonl",
+    "id_map": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\id_map.jsonl",
+    "mapping": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\2_mapping_enriched\\venue_mapping.csv",
+    "metadata_cache": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\2_mapping_enriched\\cache\\metadata.jsonl",
+    "cache_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\2_mapping_enriched\\cache\\manifest.json",
+    "script": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\2_mapping_enriched\\preprocess_cube.py"
+  },
+  "input_hashes": {
+    "raw": "5128d311b6a1f975614fcb98c3c4fd025d3a9c7b39d1b9a41d5a0e47b0e35732",
+    "source_manifest": "1d624510f2cbf0846706383f2edaa5f3700c74f4525d816f89ed4771a1927225",
+    "papers": "6aa27158f22f99d3b4d6f0850cd49e3d788fd63a9cfdf6c8df10238912faccfe",
+    "id_map": "15848e223382fce8b027df5de882ee1be3e0390a3977832f4e18bd35efcc2903",
+    "mapping": "659af8086d3a39d4080d542d2f308c2369ed0a7fc4d76829f1b0612a52c2e0a6",
+    "metadata_cache": "42d08bf0a07c7d986aa8c3ce795a30110f0f020c09b90972873e6249b539a9ca",
+    "cache_manifest": "17452115ac76e74f3472d1b9df0313bdba64fc44f8a2c8885dbc9b3511bb1e0b",
+    "script": "3799f080df3138851e250af08fa2a1e17fbe8bf628c92ea58c3b4080fcc92dcc"
+  },
+  "counts": {
+    "raw_records": 4207,
+    "canonical_papers": 4182,
+    "conferences": 74,
+    "statuses": {
+      "excluded": 985,
+      "unresolved": 2047,
+      "matched": 1150
+    },
+    "year_statuses": {
+      "available": 4173,
+      "conflicting": 7,
+      "missing": 2
+    },
+    "matched_with_year": 1149,
+    "baseline_statuses": {
+      "unresolved": 2489,
+      "excluded": 809,
+      "matched": 884
+    },
+    "expanded_raw_statuses": {
+      "unresolved": 2333,
+      "excluded": 809,
+      "matched": 1040
+    },
+    "verification_levels": {
+      "metadata_checked": 2508,
+      "raw_mapping": 1365,
+      "metadata_review": 309
+    },
+    "reasons": {
+      "identifier_metadata_consensus": 1723,
+      "consistent_raw_aliases": 412,
+      "missing_or_preprint_only": 799,
+      "identifier_identity_review": 309,
+      "publication_metadata_review": 785,
+      "unresolved_alias_venue": 154
+    },
+    "added_conference": 420,
+    "removed_conference": 154,
+    "changed_conference_id": 17
+  },
+  "checks": {
+    "self_tests_passed": 72,
+    "source_and_alias_integrity": true,
+    "inputs_unchanged": true,
+    "local_cache_hash_verified": true,
+    "all_stages_recomputed": true,
+    "semantic_label_accuracy": "not_measured"
+  },
+  "output_hashes": {
+    "paper_conference_links.jsonl": "9c2fb47e3d8d3efc9f312b4701a44fce6c84681b3b859695010016b6de8c5575",
+    "conference_catalog.jsonl": "876f1c5640af564b01a6e8f7ed54d2ceaf7ceee7bc08f3eb97c12bb23e6cf789",
+    "conference_papers.jsonl": "1aa4e4bd467ad5c4475926ae56e16d35b772594d2622a4772ad45c9c649781e8",
+    "report.md": "127d7eb7a0266e2d675e5f35d129df5927fd4c5ffa3e7481fb7125f45a80fd00",
+    "comparison.csv": "35493267241f31da0e6e814ee189a728f29c394e331bbad21e199e13b0190f83"
+  }
+}
