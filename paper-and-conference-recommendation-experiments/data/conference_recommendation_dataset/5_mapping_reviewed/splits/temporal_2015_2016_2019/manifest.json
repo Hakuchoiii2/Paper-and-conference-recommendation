@@ -1,0 +1,97 @@
+{
+  "checks": {
+    "all_records_accounted_for": true,
+    "deterministic_rebuild": true,
+    "minimums_per_conference": true,
+    "no_normalized_abstract_overlap": true,
+    "no_normalized_title_overlap": true,
+    "no_paper_overlap": true,
+    "no_source_alias_overlap": true,
+    "only_reviewed_matched": true,
+    "raw_years_preserved": true,
+    "review_integrity": true,
+    "temporal_order": true,
+    "text_unchanged": true
+  },
+  "config": {
+    "dataset_version": "5_mapping_reviewed",
+    "dev_split_created": false,
+    "failed_conference": "exclude_entire_conference_from_both_splits",
+    "input_text_fields": [
+      "title",
+      "abstract"
+    ],
+    "min_matched_per_conference": 5,
+    "min_test_per_conference": 1,
+    "min_train_per_conference": 3,
+    "missing_or_conflicting_year": "exclude",
+    "numeric_label_order": "conference_id ascending",
+    "numeric_target": "label_index",
+    "outside_test_upper_bound": "exclude",
+    "profile_data": "train_only",
+    "random_sampling": false,
+    "require_review_usable_for_split": true,
+    "required_mapping_status": "matched",
+    "same_year_tie_breaker": "paper_id",
+    "sort_order": [
+      "conference_id",
+      "year",
+      "paper_id"
+    ],
+    "split_name": "temporal_2015_2016_2019",
+    "target": "conference_id",
+    "test_usage": "evaluation_only",
+    "test_year_max": 2019,
+    "test_year_min": 2016,
+    "total_threshold_basis": "all_reviewed_matched_before_year_filter",
+    "train_year_max": 2015,
+    "year_field": "paper_conference_links.year",
+    "year_origin": "csfcube_raw.metadata.year"
+  },
+  "counts": {
+    "canonical_papers": 4182,
+    "conferences_with_at_least_5_matched": 40,
+    "excluded_from_split": 3394,
+    "exclusion_reasons": {
+      "conference_below_min_test": 97,
+      "conference_below_min_total": 8,
+      "conference_below_min_total;conference_below_min_test": 23,
+      "conference_below_min_total;conference_below_min_train": 67,
+      "conference_below_min_total;conference_below_min_train;conference_below_min_test": 89,
+      "conference_below_min_train": 17,
+      "mapping_excluded": 1119,
+      "mapping_unresolved": 1973,
+      "year_conflicting": 1
+    },
+    "matched_conferences": 163,
+    "reviewed_matched": 1090,
+    "selected_conferences": 30,
+    "selected_papers": 788,
+    "test": 186,
+    "train": 602
+  },
+  "dataset_version": "5_mapping_reviewed",
+  "generated_at_utc": "2026-10-31T10:27:59.021286+00:00",
+  "human_gold": false,
+  "input_hashes": {
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\5_mapping_reviewed\\METHOD_REVIEW_V5.md": "7da163a70e3d57ab568efd419a61a563bbaf265aad53faf36b7c7115243e41a4",
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\5_mapping_reviewed\\output\\conference_catalog.jsonl": "5f2e58b212d05beda104b62c1f7cff9a6845435b6064ebcc8a4248fd65c08ac4",
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\5_mapping_reviewed\\output\\manifest.json": "06b1961ce9f5ef0631ee382d8f764b90f78484d2cc5cbae5f7e5ac41c3ac4e87",
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\5_mapping_reviewed\\output\\paper_conference_links.jsonl": "c00b99ef6e8a3e424c75acdbd6ba49272e60c25426d6228684d8da43ecfb160c",
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\5_mapping_reviewed\\split_temporal.py": "198c1fe8436828802fc093e80bf9ef351d5b464c73aabfdb511155b683ce640d",
+    "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\papers.jsonl": "6aa27158f22f99d3b4d6f0850cd49e3d788fd63a9cfdf6c8df10238912faccfe"
+  },
+  "network_requests": 0,
+  "output_hashes": {
+    "README.md": "0b822da05d35843bdd2f76a0597f4564141b3c50d54c48b81922edc60dba35f4",
+    "conference_catalog.jsonl": "82ed2910edabb5ffaa4254b95b700ad07abc5e4692239ed5b2ee68ff559816a6",
+    "conference_split_statistics.csv": "25c9784fea2a1e45c39ce6562cbf0607d10afeb6677bb8769cf325a5a37f17f5",
+    "excluded_from_split.csv": "2ec80fd702b059506f87a6bb90100689bdfaec2d7adcf34ab4922e28f34e69ff",
+    "label_map.json": "78aa80afcfc442fe02190e0d2a5e23a9db3f429a1ec83fc7770161049ebfbb98",
+    "split_config.json": "e13e209189329fcf32b16c3d55d569f67785f48c91dd558a46047855aaec105e",
+    "test.jsonl": "90b59e78af7c3eacb0f2f59431ed4d3b202677f0336fcbe346e85bbdc73c0d65",
+    "train.jsonl": "14736649f2b4b3cc17eb8b06123c0615adfebc514e41063e5a719f72d9187676"
+  },
+  "review_method": "../../METHOD_REVIEW_V5.md",
+  "schema_version": "1.0"
+}

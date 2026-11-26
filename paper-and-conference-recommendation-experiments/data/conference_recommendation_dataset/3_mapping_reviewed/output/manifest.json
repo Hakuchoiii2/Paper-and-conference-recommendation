@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.1.1",
+  "dataset_version": "1.1.1",
+  "source": "csfcube",
+  "generated_at": "2026-10-30T10:40:08.566373+00:00",
+  "verification_level": "mixed_raw_mapping_and_source_corrections",
+  "network_requests": 0,
+  "llm_calls": 0,
+  "human_paper_review_performed": false,
+  "input_paths": {
+    "raw": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\abstracts-csfcube-preds.jsonl",
+    "source_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\raw\\csfcube\\source_manifest.json",
+    "papers": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\papers.jsonl",
+    "id_map": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\processed\\id_map.jsonl",
+    "review_overrides": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\3_mapping_reviewed\\review\\paper_review_overrides.csv",
+    "review_manifest": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\3_mapping_reviewed\\review\\manifest.json",
+    "review_cache": "E:\\08_Project\\Paper-and-conference-recommendation\\paper-and-conference-recommendation-experiments\\data\\conference_recommendation_dataset\\3_mapping_reviewed\\review\\source_cache.jsonl"
+  },
+  "input_hashes": {
+    "raw": "5128d311b6a1f975614fcb98c3c4fd025d3a9c7b39d1b9a41d5a0e47b0e35732",
+    "source_manifest": "1d624510f2cbf0846706383f2edaa5f3700c74f4525d816f89ed4771a1927225",
+    "papers": "6aa27158f22f99d3b4d6f0850cd49e3d788fd63a9cfdf6c8df10238912faccfe",
+    "id_map": "15848e223382fce8b027df5de882ee1be3e0390a3977832f4e18bd35efcc2903",
+    "review_overrides": "55c61f7ae342288386396008365e56ceafc3c006b409e9cd1c00211142ca3ced",
+    "review_manifest": "0219ae073b9d01f45cbd38a0618acdcb63f00ca62ff177f1f6b75ea7010d54fe",
+    "review_cache": "29aed0490a2d29229009572edeeddafc6823d10360f86623320a5da40591bf8e"
+  },
+  "code_and_mapping_hashes": {
+    "mapping": "627cd5478ed93620c548c62cab7da978db0c77fad2c846d310475165474f3659",
+    "script": "3397c1ff67ad36913218691d45fb1fbe51ecf108f9bb06fba0492328780403e5"
+  },
+  "counts": {
+    "raw_records": 4207,
+    "canonical_papers": 4182,
+    "source_aliases": 4207,
+    "duplicate_excess": 25,
+    "venue_mapping_rows": 1646,
+    "conferences": 36,
+    "statuses": {
+      "unresolved": 2490,
+      "excluded": 810,
+      "matched": 882
+    },
+    "venue_types": {
+      "unknown": 1372,
+      "workshop": 150,
+      "journal": 646,
+      "preprint": 1118,
+      "conference": 882,
+      "auxiliary": 14
+    },
+    "year_statuses": {
+      "available": 4173,
+      "conflicting": 7,
+      "missing": 2
+    },
+    "matched_with_year": 881,
+    "reasons": {
+      "unresolved_alias_venue": 1124,
+      "consistent_raw_aliases": 1690,
+      "missing_or_preprint_only": 1364,
+      "source_audit_publication_conflict_review": 1,
+      "source_audit_outside_main": 1,
+      "source_audit_different_conference": 1,
+      "conflicting_alias_venues": 1
+    },
+    "mapping_review_statuses": {
+      "unreviewed": 1423,
+      "rule_reviewed": 223
+    },
+    "paper_source_corrections": 3,
+    "verification_levels": {
+      "raw_mapping": 4179,
+      "source_checked": 3
+    }
+  },
+  "checks": {
+    "source_and_alias_integrity": true,
+    "raw_evidence_preserved": true,
+    "grouping_consistent": true,
+    "inputs_unchanged": true,
+    "self_tests_passed": 47,
+    "semantic_label_accuracy": "not_measured"
+  },
+  "output_hashes": {
+    "paper_conference_links.jsonl": "a33c1873f3f6f9a498ee94bd90a48de5352d0030c79bed7551a82e0695a586ba",
+    "conference_catalog.jsonl": "c120316724884ad896742a916fd2304d54645c6b256825587268a3dab92d92c4",
+    "conference_papers.jsonl": "4483ed7eeefba082e6d9be0939530cb15cab77b953ddd8c53e8a1f09b5fa1a89",
+    "report.md": "49953c7daa2ab4211f2def277fc02db0cba406734d9790a6fe884a6c37919d6a"
+  }
+}
