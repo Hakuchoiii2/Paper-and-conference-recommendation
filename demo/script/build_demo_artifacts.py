@@ -215,7 +215,7 @@ def main() -> None:
     args = parser.parse_args()
 
     t_start = time.perf_counter()
-    demo_dir = Path(__file__).resolve().parents[2]
+    demo_dir = Path(__file__).resolve().parents[1]
     env = load_dotenv_file(demo_dir / ".env")
 
     def cfg(key: str, default: str, fallbacks: Optional[List[str]] = None) -> Path:

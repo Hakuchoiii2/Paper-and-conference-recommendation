@@ -305,7 +305,7 @@ class DemoBackendService:
         if not corpus_path.exists() or not examples_path.exists():
             raise RuntimeError(
                 f"Không tìm thấy bộ artifacts demo mới tại {artifacts_dir}. "
-                "Vui lòng chạy: python demo/backend/scripts/build_demo_artifacts.py"
+                "Vui lòng chạy: python demo/script/build_demo_artifacts.py"
             )
 
         # 1. Load paper_corpus.jsonl (4,210 papers + real 5 facets)

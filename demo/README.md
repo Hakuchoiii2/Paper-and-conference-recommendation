@@ -40,13 +40,13 @@ demo/
 │   │   ├── services/api/   # HttpApiClient kết nối trực tiếp /api/v1/*
 │   │   └── types/          # TypeScript interfaces chuẩn API contract
 │   └── dist/               # Bản build tĩnh sau khi chạy build
-└── backend/                # Server FastAPI phục vụ /api/v1/* và giao diện tĩnh
-    ├── main.py             # 16 endpoints API + Single Page App fallback
-    ├── schemas.py          # Pydantic schemas khớp 1:1 với Frontend
-    ├── service.py          # Service nạp _local/demo_artifacts/ & chạy các phương pháp Ranking
-    ├── scripts/
-    │   └── build_demo_artifacts.py  # Script tái tạo bộ dữ liệu demo & embedding 6 trường
-    └── requirements.txt    # Danh sách thư viện Python
+├── backend/                # Server FastAPI phục vụ /api/v1/* và giao diện tĩnh
+│   ├── main.py             # 16 endpoints API + Single Page App fallback
+│   ├── schemas.py          # Pydantic schemas khớp 1:1 với Frontend
+│   ├── service.py          # Service nạp _local/demo_artifacts/ & chạy các phương pháp Ranking
+│   └── requirements.txt    # Danh sách thư viện Python
+└── script/
+    └── build_demo_artifacts.py  # Script tái tạo bộ dữ liệu demo & embedding 6 trường
 ```
 
 ---
@@ -72,7 +72,7 @@ pip install -r demo\backend\requirements.txt
 # (Tùy chọn) Chỉ cài thêm nếu máy có GPU NVIDIA và muốn bật ENABLE_REAL_LLM=true:
 # pip install -r demo\backend\requirements-llm.txt
 
-python demo\backend\scripts\build_demo_artifacts.py
+python demo\script\build_demo_artifacts.py
 ```
 Script sẽ tự động đọc dữ liệu gốc từ `paper-and-conference-recommendation-experiments/data/` và sinh ra `_local/demo_artifacts/` gồm:
 - `paper_corpus.jsonl`: 4,210 bài báo kèm 5 facets thật từ Exp A (kho ứng viên cho Khuyến nghị Bài báo).
@@ -158,17 +158,17 @@ Vì Kaggle không mở trực tiếp cổng mạng ra Internet, giải pháp là
 
 ### Bước 2: Chạy các Cell Code
 
-* **Cell 1: Tải source code nhánh `feat/demo`**
+* **Cell 1: Tải source code nhánh `feat/demo_v2`**
   ```python
   !git clone https://github.com/Hakuchoiii2/Paper-and-conference-recommendation.git
   %cd Paper-and-conference-recommendation
-  !git checkout feat/demo
+  !git checkout feat/demo_v2
   ```
 
 * **Cell 2: Cài đặt thư viện Python, sinh dữ liệu Demo & công cụ Tunnel**
   ```python
   !pip install -q fastapi uvicorn pydantic sentence-transformers pycloudflared
-  !python demo/backend/scripts/build_demo_artifacts.py
+  !python demo/script/build_demo_artifacts.py
   ```
 
 * **Cell 3: Build giao diện Frontend tĩnh**
