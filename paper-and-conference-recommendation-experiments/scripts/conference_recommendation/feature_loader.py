@@ -1,19 +1,24 @@
-"""
+r"""
 Module: feature_loader.py
 Nhiệm vụ:
   1. Trích xuất chuỗi văn bản cho Toàn văn (Title + Abstract) và từng Facet độc lập (Problem, Task, Method, Dataset, Contribution).
+     - Với TF-IDF: dùng normalize_text() (Unicode NFKC, casefold, lọc token \b\w\w+\b).
+     - Với Dense Encoders (BERT, SPECTER2, BGE...): giữ nguyên văn bản tự nhiên theo đúng chuẩn Exp B:
+       * whole_text = f"{title}. {abstract}".strip()
+       * facet text = "; ".join(concepts)
   2. Khái quát hóa không gian vector (Vector Space) hỗ trợ đa mô hình Embedding:
-     - TF-IDF Sparse Vector (Mặc định - Siêu nhẹ trên CPU, không cần tải model nặng).
-     - Dense Embeddings: SPECTER2, SciBERT, BGE, SentenceTransformers (Hỗ trợ mô hình học sâu học thuật).
-     - Precomputed Embeddings: Nạp trực tiếp từ file vector đã tính toán trước (.npz, .npy, .jsonl).
-     - Custom Embedding: Dễ dàng cắm hàm nhúng tùy biến của người dùng.
-  3. Cung cấp hàm đo khoảng cách Cosine Similarity tổng quát (hỗ trợ cả Sparse Dict lẫn Dense Numpy/List).
+     - 'tfidf': TF-IDF Sparse Vector thuần CPU.
+     - 'bert': google-bert/bert-base-uncased (mean pooling, 768d, L2-normalized) đồng nhất 100% với Exp B.
+     - 'specter2': allenai/specter2_base (Exp C1 Encoder Robustness Check).
+     - 'bge-base': BAAI/bge-base-en-v1.5 (Exp C1 alternative).
+     - 'specter', 'bge-small', 'sentence_transformers', 'precomputed', CustomCallableBackend.
+  3. Cung cấp hàm đo khoảng cách Cosine Similarity tổng quát.
 """
 
 from abc import ABC, abstractmethod
 import collections
+import hashlib
 import math
-import os
 from pathlib import Path
 import re
 import unicodedata
@@ -24,11 +29,11 @@ FIELD_NAMES = ("whole_text", "problem", "task", "method", "dataset", "contributi
 
 
 # ==============================================================================
-# 1. TIỀN XỬ LÝ VĂN BẢN & CHUẨN HÓA ĐỘ ĐÀI VECTOR
+# 1. TIỀN XỬ LÝ VĂN BẢN & CHUẨN HÓA ĐỘ DÀI VECTOR
 # ==============================================================================
 
 def normalize_text(text: Any) -> str:
-    """Chuẩn hóa chuỗi văn bản về Unicode NFKC, viết thường và giữ token hợp lệ."""
+    """Chuẩn hóa chuỗi văn bản về Unicode NFKC, viết thường và giữ token hợp lệ (dùng cho TF-IDF)."""
     if not text:
         return ""
     if isinstance(text, list):
@@ -36,6 +41,25 @@ def normalize_text(text: Any) -> str:
     text_nfkc = unicodedata.normalize("NFKC", str(text)).casefold()
     tokens = re.findall(r"\b\w\w+\b", text_nfkc)
     return " ".join(tokens)
+
+
+def format_dense_whole_text(title: Any, abstract: Any) -> str:
+    """Giữ nguyên văn bản tự nhiên theo đúng hợp đồng Exp B (02_prepare_embeddings.py)."""
+    t = str(title or "").strip()
+    a = str(abstract or "").strip()
+    if t and a:
+        return f"{t}. {a}".strip()
+    return (t or a).strip()
+
+
+def format_dense_facet_text(value: Any) -> str:
+    """Nối danh sách concept của một facet bằng '; ' mà không cắt dấu câu/chữ hoa."""
+    if not value:
+        return ""
+    if isinstance(value, list):
+        parts = [str(item).strip() for item in value if item is not None and str(item).strip()]
+        return "; ".join(parts)
+    return str(value).strip()
 
 
 def unit_vector_sparse(vec: Dict[str, float]) -> Dict[str, float]:
@@ -67,13 +91,7 @@ def unit_vector_dense(vec: Any) -> Any:
 
 
 def cosine_similarity(v1: Any, v2: Any) -> float:
-    """
-    Tính Cosine Similarity tổng quát giữa 2 vector v1 và v2.
-    Tự động nhận diện và xử lý:
-      - Hai vector thưa (Sparse Dictionary: Dict[str, float])
-      - Hai vector đặc (Dense Numpy Array hoặc List[float])
-      - Vector rỗng / None (trả về 0.0)
-    """
+    """Tính Cosine Similarity tổng quát giữa 2 vector v1 và v2."""
     if v1 is None or v2 is None:
         return 0.0
 
@@ -120,10 +138,7 @@ class BaseEmbeddingBackend(ABC):
 
     @abstractmethod
     def encode_batch(self, texts: List[str]) -> List[Any]:
-        """
-        Mã hóa một danh sách các chuỗi văn bản thành các vector đã chuẩn hóa L2.
-        Trả về: Danh sách các vector (Dict thưa hoặc Numpy/List đặc).
-        """
+        """Mã hóa danh sách chuỗi văn bản thành các vector đã chuẩn hóa L2."""
         pass
 
     def encode_single(self, text: str) -> Any:
@@ -132,10 +147,7 @@ class BaseEmbeddingBackend(ABC):
 
 
 class TfidfEmbeddingBackend(BaseEmbeddingBackend):
-    """
-    Backend TF-IDF mặc định (Thuần Python CPU - Zero Dependencies).
-    Học IDF từ toàn bộ corpus và xuất vector thưa chuẩn hóa L2.
-    """
+    """Backend TF-IDF mặc định (Thuần Python CPU - Zero Dependencies)."""
 
     def __init__(self, corpus_texts: Optional[List[str]] = None):
         self.idf_dict: Dict[str, float] = {}
@@ -143,7 +155,6 @@ class TfidfEmbeddingBackend(BaseEmbeddingBackend):
             self.fit(corpus_texts)
 
     def fit(self, corpus_texts: List[str]) -> None:
-        """Tính toán bảng trọng số IDF từ tập văn bản huấn luyện."""
         doc_count = len(corpus_texts)
         doc_freq = collections.Counter()
 
@@ -152,7 +163,6 @@ class TfidfEmbeddingBackend(BaseEmbeddingBackend):
             for t in tokens:
                 doc_freq[t] += 1
 
-        # Smooth IDF: log((1 + N) / (1 + df)) + 1
         self.idf_dict = {
             t: math.log((1.0 + doc_count) / (1.0 + count)) + 1.0
             for t, count in doc_freq.items()
@@ -175,20 +185,20 @@ class TfidfEmbeddingBackend(BaseEmbeddingBackend):
 class SentenceTransformerBackend(BaseEmbeddingBackend):
     """
     Backend cho các mô hình Dense Embedding của HuggingFace / SentenceTransformers.
-    Mặc định hỗ trợ:
-      - 'allenai/specter2_base' (Chuyên biệt cho bài báo khoa học)
-      - 'allenai/scibert_scivocab_uncased'
-      - 'BAAI/bge-small-en-v1.5'
-      - Bất kỳ mô hình HuggingFace nào khác.
+    Hỗ trợ pooling="mean" tường minh (khớp 100% với data/exp_b/ranking/scripts/02_prepare_embeddings.py)
+    cho google-bert/bert-base-uncased, cũng như allenai/specter2_base, BAAI/bge-base-en-v1.5...
     """
 
     def __init__(
         self,
-        model_name: str = "sentence-transformers/allenai-specter",
+        model_name: str = "google-bert/bert-base-uncased",
         device: Optional[str] = None,
-        batch_size: int = 64,
+        batch_size: int = 16,
+        pooling: Optional[str] = None,
+        cache_dir: Optional[Union[str, Path]] = None,
     ):
         self.model_name = model_name
+        self.pooling = pooling
         if device is None:
             try:
                 import torch
@@ -198,40 +208,92 @@ class SentenceTransformerBackend(BaseEmbeddingBackend):
         else:
             self.device = device
         self.batch_size = batch_size
+        self.cache_dir = Path(cache_dir) if cache_dir is not None else None
         self._model = None
+        self._mem_cache: Dict[str, Any] = {}
 
     def _load_model(self):
         if self._model is None:
             try:
-                from sentence_transformers import SentenceTransformer
+                from sentence_transformers import SentenceTransformer, models
             except ImportError:
                 raise ImportError(
                     "Thư viện 'sentence-transformers' chưa được cài đặt. "
                     "Vui lòng chạy: pip install sentence-transformers torch "
                     "để sử dụng backend Dense Embedding."
                 )
-            print(f"[*] Đang tải mô hình Dense Embedding: {self.model_name}...")
-            self._model = SentenceTransformer(self.model_name, device=self.device)
+            print(f"[*] Đang tải mô hình Dense Embedding: {self.model_name} (pooling={self.pooling or 'default'})...")
+            if self.pooling == "mean":
+                encoder = models.Transformer(self.model_name)
+                pool = models.Pooling(encoder.get_word_embedding_dimension(), pooling_mode="mean")
+                self._model = SentenceTransformer(modules=[encoder, pool], device=self.device)
+            else:
+                self._model = SentenceTransformer(self.model_name, device=self.device)
         return self._model
 
+    def _cache_file(self, texts: List[str]) -> Optional[Path]:
+        if self.cache_dir is None:
+            return None
+        key = hashlib.sha256(
+            f"{self.model_name}|{self.pooling}|".encode("utf-8")
+            + "\n".join(texts).encode("utf-8")
+        ).hexdigest()[:24]
+        safe_model = re.sub(r"[^a-zA-Z0-9._-]+", "_", self.model_name)
+        return self.cache_dir / f"{safe_model}_{self.pooling or 'default'}_{key}.npz"
+
     def encode_batch(self, texts: List[str]) -> List[Any]:
-        model = self._load_model()
-        # Thay thế chuỗi rỗng bằng chuỗi giả để tránh lỗi tensor rỗng
-        clean_texts = [t if t.strip() else " " for t in texts]
-        embeddings = model.encode(
-            clean_texts,
-            batch_size=self.batch_size,
-            show_progress_bar=False,
-            normalize_embeddings=True,
-        )
-        return [embeddings[i] if texts[i].strip() else None for i in range(len(texts))]
+        import numpy as np
+
+        cache_path = self._cache_file(texts)
+        if cache_path is not None and cache_path.exists():
+            data = np.load(cache_path)
+            embs = data["embeddings"]
+            mask = data["mask"]
+            return [embs[i].astype(np.float32) if bool(mask[i]) else None for i in range(len(texts))]
+
+        non_empty_indices = [i for i, t in enumerate(texts) if t and t.strip()]
+        results: List[Any] = [None] * len(texts)
+
+        if non_empty_indices:
+            # Reuse in-memory cache for identical texts within the same process
+            to_encode_idx = []
+            to_encode_texts = []
+            for idx in non_empty_indices:
+                txt = texts[idx]
+                if txt in self._mem_cache:
+                    results[idx] = self._mem_cache[txt]
+                else:
+                    to_encode_idx.append(idx)
+                    to_encode_texts.append(txt)
+
+            if to_encode_texts:
+                model = self._load_model()
+                encoded = model.encode(
+                    to_encode_texts,
+                    batch_size=self.batch_size,
+                    show_progress_bar=False,
+                    normalize_embeddings=True,
+                )
+                for idx, txt, vec in zip(to_encode_idx, to_encode_texts, encoded):
+                    arr = np.asarray(vec, dtype=np.float32)
+                    self._mem_cache[txt] = arr
+                    results[idx] = arr
+
+        if cache_path is not None and non_empty_indices:
+            dim = len(results[non_empty_indices[0]])
+            embs = np.zeros((len(texts), dim), dtype=np.float32)
+            mask = np.zeros(len(texts), dtype=bool)
+            for idx in non_empty_indices:
+                embs[idx] = results[idx]
+                mask[idx] = True
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            np.savez_compressed(cache_path, embeddings=embs, mask=mask)
+
+        return results
 
 
 class PrecomputedEmbeddingBackend(BaseEmbeddingBackend):
-    """
-    Backend nạp vector Dense đã được tính toán và lưu sẵn trên đĩa (.npz hoặc .jsonl).
-    Cấu trúc mong đợi: Dict[(paper_id, field) -> vector].
-    """
+    """Backend nạp vector Dense đã được tính toán và lưu sẵn trên đĩa (.npz hoặc .jsonl)."""
 
     def __init__(self, precomputed_path: Union[str, Path]):
         self.precomputed_path = Path(precomputed_path)
@@ -247,16 +309,12 @@ class PrecomputedEmbeddingBackend(BaseEmbeddingBackend):
         print(f"[*] Đang nạp precomputed embeddings từ {self.precomputed_path}...")
 
         if suffix == ".npz":
-            try:
-                import numpy as np
-                data = np.load(self.precomputed_path)
-                for k in data.files:
-                    # Giả định key có dạng 'paper_id__field'
-                    if "__" in k:
-                        pid, field = k.split("__", 1)
-                        self.cached_vectors[(pid, field)] = unit_vector_dense(data[k])
-            except ImportError:
-                raise ImportError("Cần cài đặt thư viện 'numpy' để đọc file .npz.")
+            import numpy as np
+            data = np.load(self.precomputed_path)
+            for k in data.files:
+                if "__" in k:
+                    pid, field = k.split("__", 1)
+                    self.cached_vectors[(pid, field)] = unit_vector_dense(data[k])
         elif suffix in (".jsonl", ".json"):
             import json
             with open(self.precomputed_path, "r", encoding="utf-8") as f:
@@ -275,7 +333,6 @@ class PrecomputedEmbeddingBackend(BaseEmbeddingBackend):
         return self.cached_vectors.get((paper_id, field))
 
     def encode_batch(self, texts: List[str]) -> List[Any]:
-        # Precomputed backend không encode text runtime, trả về None nếu không có trong cache
         return [None] * len(texts)
 
 
@@ -287,7 +344,7 @@ class CustomCallableBackend(BaseEmbeddingBackend):
 
     def encode_batch(self, texts: List[str]) -> List[Any]:
         raw_vecs = self.encode_fn(texts)
-        return [unit_vector_dense(v) for v in raw_vecs]
+        return [unit_vector_dense(v) if v is not None else None for v in raw_vecs]
 
 
 # ==============================================================================
@@ -297,12 +354,12 @@ class CustomCallableBackend(BaseEmbeddingBackend):
 class FacetFeatureStore:
     """
     Kho lưu trữ và tính toán vector cho bài báo khoa học trên Toàn văn và 5 Facets.
-    Hỗ trợ chuyển đổi linh hoạt qua tham số backend:
-      - 'tfidf': TF-IDF Sparse Vector thuần CPU (Mặc định).
-      - 'specter2' / 'specter': Dense Transformer chuyên biệt cho bài báo.
-      - 'sentence_transformers': Bất kỳ mô hình SentenceTransformer nào.
-      - 'precomputed': Vector tính sẵn từ tệp .npz / .jsonl.
-      - Hoặc truyền trực tiếp một instance của BaseEmbeddingBackend.
+    Hỗ trợ:
+      - 'tfidf': TF-IDF Sparse Vector thuần CPU (áp dụng normalize_text).
+      - 'bert': google-bert/bert-base-uncased (pooling='mean', 768d, giữ nguyên văn bản gốc).
+      - 'specter2': allenai/specter2_base (Exp C1).
+      - 'bge-base': BAAI/bge-base-en-v1.5 (Exp C1).
+      - 'specter', 'bge-small', 'sentence_transformers', 'precomputed', BaseEmbeddingBackend.
     """
 
     def __init__(
@@ -319,9 +376,13 @@ class FacetFeatureStore:
         if len(pids) != len(set(pids)):
             raise ValueError("Duplicate paper_id or overlapping train/query sets")
         self.backend_config = backend_config or {}
+        self.use_tfidf_norm = (
+            (isinstance(backend, str) and backend.lower().strip() in ("tfidf", "sparse"))
+            or isinstance(backend, TfidfEmbeddingBackend)
+        )
 
-        # 1. Trích xuất văn bản phẳng cho toàn văn và 5 facets
-        self.text_store = self._build_text_store()
+        # 1. Trích xuất văn bản cho toàn văn và 5 facets (tách biệt quy tắc TF-IDF vs Dense)
+        self.text_store = self._build_text_store(use_tfidf_norm=self.use_tfidf_norm)
 
         # 2. Khởi tạo Backend Embedding theo cấu hình
         self.backend = self._init_backend(backend)
@@ -329,7 +390,7 @@ class FacetFeatureStore:
         # 3. Vector hóa toàn bộ bài báo
         self.vector_store = self._vectorize_all()
 
-    def _build_text_store(self) -> Dict[str, Dict[str, str]]:
+    def _build_text_store(self, use_tfidf_norm: bool = True) -> Dict[str, Dict[str, str]]:
         """Tạo từ điển [paper_id -> {whole_text, problem, task, method, dataset, contribution}]."""
         store = {}
         for p in self.all_papers:
@@ -338,14 +399,24 @@ class FacetFeatureStore:
             title = p.get("title", "")
             abstract = p.get("abstract", "")
 
-            store[pid] = {
-                "whole_text": normalize_text(f"{title} {abstract}"),
-                "problem": normalize_text(facets.get("problem", [])),
-                "task": normalize_text(facets.get("task", [])),
-                "method": normalize_text(facets.get("method", [])),
-                "dataset": normalize_text(facets.get("dataset", [])),
-                "contribution": normalize_text(facets.get("contribution", [])),
-            }
+            if use_tfidf_norm:
+                store[pid] = {
+                    "whole_text": normalize_text(f"{title} {abstract}"),
+                    "problem": normalize_text(facets.get("problem", [])),
+                    "task": normalize_text(facets.get("task", [])),
+                    "method": normalize_text(facets.get("method", [])),
+                    "dataset": normalize_text(facets.get("dataset", [])),
+                    "contribution": normalize_text(facets.get("contribution", [])),
+                }
+            else:
+                store[pid] = {
+                    "whole_text": format_dense_whole_text(title, abstract),
+                    "problem": format_dense_facet_text(facets.get("problem", [])),
+                    "task": format_dense_facet_text(facets.get("task", [])),
+                    "method": format_dense_facet_text(facets.get("method", [])),
+                    "dataset": format_dense_facet_text(facets.get("dataset", [])),
+                    "contribution": format_dense_facet_text(facets.get("contribution", [])),
+                }
         return store
 
     def _init_backend(
@@ -356,40 +427,72 @@ class FacetFeatureStore:
             return backend
 
         backend_str = str(backend).lower().strip()
+        device = self.backend_config.get("device")
+        cache_dir = self.backend_config.get("cache_dir")
 
         if backend_str in ("tfidf", "sparse"):
-            # Fit only the reference partition, never validation or test queries.
             corpus_texts = [self.text_store[p["paper_id"]]["whole_text"] for p in self.train_papers]
             return TfidfEmbeddingBackend(corpus_texts=corpus_texts)
 
-        elif backend_str in ("specter2", "specter"):
+        elif backend_str in ("bert", "bert-base-uncased", "bert_base_uncased"):
+            model_name = self.backend_config.get("model_name", "google-bert/bert-base-uncased")
+            batch_size = self.backend_config.get("batch_size", 16)
+            pooling = self.backend_config.get("pooling", "mean")
+            return SentenceTransformerBackend(
+                model_name=model_name,
+                device=device,
+                batch_size=batch_size,
+                pooling=pooling,
+                cache_dir=cache_dir,
+            )
+
+        elif backend_str in ("specter2", "specter2_base"):
+            model_name = self.backend_config.get("model_name", "allenai/specter2_base")
+            batch_size = self.backend_config.get("batch_size", 32)
+            pooling = self.backend_config.get("pooling")
+            return SentenceTransformerBackend(
+                model_name=model_name,
+                device=device,
+                batch_size=batch_size,
+                pooling=pooling,
+                cache_dir=cache_dir,
+            )
+
+        elif backend_str == "specter":
             model_name = self.backend_config.get(
                 "model_name", "sentence-transformers/allenai-specter"
             )
-            device = self.backend_config.get("device")
             batch_size = self.backend_config.get("batch_size", 64)
             return SentenceTransformerBackend(
-                model_name=model_name, device=device, batch_size=batch_size
+                model_name=model_name, device=device, batch_size=batch_size, cache_dir=cache_dir
+            )
+
+        elif backend_str in ("bge-base", "bge_base"):
+            model_name = self.backend_config.get("model_name", "BAAI/bge-base-en-v1.5")
+            batch_size = self.backend_config.get("batch_size", 32)
+            return SentenceTransformerBackend(
+                model_name=model_name, device=device, batch_size=batch_size, cache_dir=cache_dir
             )
 
         elif backend_str in ("bge", "bge-small", "bge_small"):
             model_name = self.backend_config.get(
                 "model_name", "BAAI/bge-small-en-v1.5"
             )
-            device = self.backend_config.get("device")
             batch_size = self.backend_config.get("batch_size", 64)
             return SentenceTransformerBackend(
-                model_name=model_name, device=device, batch_size=batch_size
+                model_name=model_name, device=device, batch_size=batch_size, cache_dir=cache_dir
             )
 
         elif backend_str in ("sentence_transformers", "dense", "hf"):
-            model_name = self.backend_config.get(
-                "model_name", "all-MiniLM-L6-v2"
-            )
-            device = self.backend_config.get("device")
+            model_name = self.backend_config.get("model_name", "all-MiniLM-L6-v2")
             batch_size = self.backend_config.get("batch_size", 32)
+            pooling = self.backend_config.get("pooling")
             return SentenceTransformerBackend(
-                model_name=model_name, device=device, batch_size=batch_size
+                model_name=model_name,
+                device=device,
+                batch_size=batch_size,
+                pooling=pooling,
+                cache_dir=cache_dir,
             )
 
         elif backend_str in ("precomputed", "file"):
@@ -401,13 +504,12 @@ class FacetFeatureStore:
         else:
             raise ValueError(
                 f"Backend '{backend}' không được hỗ trợ. "
-                "Chọn trong: ['tfidf', 'specter2', 'sentence_transformers', 'precomputed'] "
-                "hoặc truyền instance của BaseEmbeddingBackend."
+                "Chọn trong: ['tfidf', 'bert', 'specter2', 'bge-base', 'specter', 'bge-small', "
+                "'sentence_transformers', 'precomputed'] hoặc truyền instance của BaseEmbeddingBackend."
             )
 
     def _vectorize_all(self) -> Dict[str, Dict[str, Any]]:
         """Mã hóa văn bản thành các vector biểu diễn tương ứng."""
-        # Nếu là precomputed backend, lấy trực tiếp từ cache
         if isinstance(self.backend, PrecomputedEmbeddingBackend):
             vector_store = {}
             for pid in self.text_store:
@@ -417,7 +519,6 @@ class FacetFeatureStore:
                 }
             return vector_store
 
-        # Thu thập theo batch theo từng field để tối ưu tốc độ encoding của Transformer / TF-IDF
         vector_store = {pid: {} for pid in self.text_store}
         self.field_backends = {}
         for field in FIELD_NAMES:
@@ -425,7 +526,6 @@ class FacetFeatureStore:
             texts = [self.text_store[pid][field] for pid in pids]
             encoder = self.backend
             if isinstance(encoder, TfidfEmbeddingBackend):
-                # Separate vocabularies keep Whole-Text independent of LLM facets.
                 encoder = TfidfEmbeddingBackend([
                     self.text_store[p["paper_id"]][field] for p in self.train_papers
                 ])

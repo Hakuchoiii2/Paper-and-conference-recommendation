@@ -22,9 +22,15 @@ def load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
+REPO_ROOT = PROJECT_ROOT.parents[1]
+
 def resolve_path(p_str):
     p = Path(p_str)
-    return p if p.is_absolute() else PROJECT_ROOT / p
+    if p.is_absolute():
+        return p
+    if (REPO_ROOT / p).exists():
+        return REPO_ROOT / p
+    return PROJECT_ROOT / p
 
 def get_sentence_transformer(model_name, pooling=None):
     from sentence_transformers import SentenceTransformer, models

@@ -1,23 +1,23 @@
 """
 Module: baselines.py
-Cài đặt các mô hình đối chứng (Baselines) để chứng minh tính vượt trội
-của phương pháp Gated 5-Facet k-NN Reranker:
-  1. WholeTextKNNReranker: Dùng toàn văn Title + Abstract (không chia facet, không cổng).
-  2. FlatFacetKNNReranker: Dùng 5 facets nhưng cộng phẳng (không có Cổng Ngữ Cảnh Problem).
-  3. RandomReranker: Xếp hạng ngẫu nhiên làm mốc sàn đối chứng.
+Cài đặt 3 phương pháp chuẩn đồng bộ với Exp B (Method 1, Method 2, Method 3) và mốc Random:
+  1. WholeTextKNNReranker (Method 1: Full-text Embedding).
+  2. FlatFacetKNNReranker (Method 2: Equal-weight Facet & Method 3: Weighted Facet với
+     tái chuẩn hóa mẫu số động theo Exp B hoặc Zero-Imputation đối chứng cho Exp C3).
+  3. RandomReranker (Mốc sàn ngẫu nhiên).
 """
 
 import random
 from typing import Any, Dict, List, Optional, Tuple
 from .feature_loader import FacetFeatureStore, cosine_similarity
-from .ranking import observed, validate_weights, rank_neighbors
+from .ranking import observed, validate_weights, rank_neighbors, aggregate_venue_scores
 
 ALL_FACETS = ("problem", "task", "method", "dataset", "contribution")
 
 
 class WholeTextKNNReranker:
     """
-    Baseline 1: Whole-Text k-NN Reranker.
+    Method 1: Full-text Embedding Reranker.
     Tính Cosine trên chuỗi toàn văn (Title + Abstract) giữa bài test và bài train.
     """
 
@@ -26,9 +26,11 @@ class WholeTextKNNReranker:
         feature_store: FacetFeatureStore,
         train_papers: List[Dict],
         k: int = 10,
+        aggregation_config: Optional[Dict[str, Any]] = None,
     ):
         self.feature_store = feature_store
         self.k = k
+        self.aggregation_config = aggregation_config or {"aggregation": "sum_knn", "k": k}
         self.train_pids = [p["paper_id"] for p in train_papers]
         self.train_venues = [p["conference_id"] for p in train_papers]
 
@@ -38,19 +40,22 @@ class WholeTextKNNReranker:
         q_vec = self.feature_store.get_vectors(q_pid).get("whole_text")
 
         scores = []
-        for p_pid, venue in zip(self.train_pids, self.train_venues):
+        for p_pid in self.train_pids:
             p_vec = self.feature_store.get_vectors(p_pid).get("whole_text")
-            sim = cosine_similarity(q_vec, p_vec)
-            scores.append((venue, sim))
+            scores.append(cosine_similarity(q_vec, p_vec))
 
-        return rank_neighbors(self.train_pids, self.train_venues,
-                              [s for _, s in scores], candidate_venues, self.k)
+        cfg = {**self.aggregation_config, "k": self.k}
+        return aggregate_venue_scores(
+            self.train_pids, self.train_venues, scores, candidate_venues, cfg
+        )
 
 
 class FlatFacetKNNReranker:
     """
-    Baseline 2: Flat 5-Facet k-NN Reranker (Không Cổng Ngữ Cảnh).
-    Tính trung bình Cosine có trọng số trên 5 Facets quan sát được, không có Cổng G_problem.
+    Method 2 (Equal-weight Facet) & Method 3 (Weighted Facet) — Đồng bộ 100% Exp B.
+    - missing_policy="renormalize": Chia cho tổng trọng số của các facet cùng có mặt V(q, p),
+      và loại bỏ các cặp có denominator == 0 (khớp valid_pairs = denominator > 0 của Exp B).
+    - missing_policy="zero_impute": Giữ mẫu số = 1.0, gán cosine = 0 cho facet khuyết (Exp C3).
     """
 
     def __init__(
@@ -59,19 +64,28 @@ class FlatFacetKNNReranker:
         train_papers: List[Dict],
         k: int = 10,
         weights: Optional[Dict[str, float]] = None,
+        missing_policy: str = "renormalize",
+        aggregation_config: Optional[Dict[str, Any]] = None,
     ):
+        if missing_policy not in ("renormalize", "zero_impute"):
+            raise ValueError(f"Unsupported missing_policy: {missing_policy}")
         self.feature_store = feature_store
         self.k = k
-        self.weights = validate_weights(weights if weights is not None else dict.fromkeys(ALL_FACETS, 0.2), ALL_FACETS)
+        self.weights = validate_weights(
+            weights if weights is not None else dict.fromkeys(ALL_FACETS, 0.2),
+            ALL_FACETS,
+        )
+        self.missing_policy = missing_policy
+        self.aggregation_config = aggregation_config or {"aggregation": "sum_knn", "k": k}
         self.train_pids = [p["paper_id"] for p in train_papers]
         self.train_venues = [p["conference_id"] for p in train_papers]
 
-    def compute_flat_similarity(self, q_pid: str, p_pid: str) -> float:
+    def compute_flat_similarity_with_validity(self, q_pid: str, p_pid: str) -> Tuple[float, bool]:
         q_vecs = self.feature_store.get_vectors(q_pid)
         p_vecs = self.feature_store.get_vectors(p_pid)
 
-        total_sim = 0.0
-        count = 0.0
+        numerator = 0.0
+        denominator = 0.0
         for f in ALL_FACETS:
             qv = q_vecs.get(f)
             pv = p_vecs.get(f)
@@ -80,26 +94,42 @@ class FlatFacetKNNReranker:
                     continue
                 if isinstance(pv, dict) and not pv:
                     continue
-                total_sim += self.weights[f] * cosine_similarity(qv, pv)
-                count += self.weights[f]
-        return (total_sim / count) if count > 0 else 0.0
+                numerator += self.weights[f] * cosine_similarity(qv, pv)
+                denominator += self.weights[f]
+
+        if self.missing_policy == "zero_impute":
+            return numerator, True
+        if denominator > 0.0:
+            return numerator / denominator, True
+        return float("-inf"), False
+
+    def compute_flat_similarity(self, q_pid: str, p_pid: str) -> float:
+        score, valid = self.compute_flat_similarity_with_validity(q_pid, p_pid)
+        return score if valid else 0.0
 
     def predict(
         self, q_pid: str, candidate_venues: List[str]
     ) -> List[Tuple[str, float]]:
         scores = []
-        for p_pid, venue in zip(self.train_pids, self.train_venues):
-            sim = self.compute_flat_similarity(q_pid, p_pid)
-            scores.append((venue, sim))
+        valid_mask = []
+        for p_pid in self.train_pids:
+            sim, valid = self.compute_flat_similarity_with_validity(q_pid, p_pid)
+            scores.append(sim)
+            valid_mask.append(valid)
 
-        return rank_neighbors(self.train_pids, self.train_venues,
-                              [s for _, s in scores], candidate_venues, self.k)
+        cfg = {**self.aggregation_config, "k": self.k}
+        return aggregate_venue_scores(
+            self.train_pids,
+            self.train_venues,
+            scores,
+            candidate_venues,
+            cfg,
+            valid_mask=valid_mask,
+        )
 
 
 class RandomReranker:
-    """
-    Baseline 3: Random Baseline (Xếp hạng ngẫu nhiên).
-    """
+    """Baseline sàn: Xếp hạng ngẫu nhiên."""
 
     def __init__(self, seed: int = 42):
         self.rng = random.Random(seed)
