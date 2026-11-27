@@ -1,0 +1,426 @@
+import { useEffect, useRef, useState } from 'react';
+import {
+  Activity,
+  AlertCircle,
+  AlertTriangle,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  Cpu,
+  RefreshCw,
+  RotateCcw,
+  Server,
+  X,
+} from 'lucide-react';
+import { useSystem } from '../context/SystemContext';
+
+export function SystemDrawer() {
+  const {
+    baseUrl,
+    models,
+    runtime,
+    isLoadingRuntime,
+    isSwitchingModel,
+    switchModelMessage,
+    drawerOpen,
+    setDrawerOpen,
+    setBaseUrl,
+    resetBaseUrl,
+    refreshRuntime,
+    triggerLoadModel,
+  } = useSystem();
+
+  const [selectedModel, setSelectedModel] = useState<string>(
+    runtime?.intended_model_key || runtime?.loaded_model_key || ''
+  );
+  const [urlInput, setUrlInput] = useState(baseUrl);
+  const [showDetails, setShowDetails] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMsg(msg);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => {
+      setToastMsg(null);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    setUrlInput(baseUrl);
+  }, [baseUrl]);
+
+  useEffect(() => {
+    if (runtime?.intended_model_key) {
+      setSelectedModel(runtime.intended_model_key);
+    } else if (runtime?.loaded_model_key) {
+      setSelectedModel(runtime.loaded_model_key);
+    } else if (models.length > 0) {
+      const firstSupported = models.find((m) => m.supported);
+      if (firstSupported) setSelectedModel(firstSupported.model_key);
+    }
+  }, [models, runtime?.intended_model_key, runtime?.loaded_model_key]);
+
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setDrawerOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [drawerOpen, setDrawerOpen]);
+
+  if (!drawerOpen) return null;
+
+  const handleLoadModel = async () => {
+    if (!selectedModel) return;
+    setLoadError(null);
+    try {
+      await triggerLoadModel(selectedModel);
+    } catch (err) {
+      setLoadError(err instanceof Error ? err.message : String(err));
+    }
+  };
+
+  const handleApplyUrl = () => {
+    const trimmed = urlInput.trim() || '/api/v1';
+    setBaseUrl(trimmed);
+  };
+
+  return (
+    <div
+      onClick={() => setDrawerOpen(false)}
+      className="fixed inset-0 z-50 flex justify-end bg-slate-900/35 backdrop-blur-[1px]"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative flex h-full w-full max-w-md flex-col bg-white shadow-2xl border-l border-slate-200"
+      >
+        {/* Auto-dismissing Toast Notification */}
+        {toastMsg && (
+          <div className="fixed top-5 right-5 z-[60] flex max-w-sm items-start gap-2.5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900 shadow-lg">
+            <AlertTriangle className="h-4 w-4 shrink-0 text-amber-600 mt-0.5" />
+            <span className="leading-relaxed flex-1">{toastMsg}</span>
+            <button
+              type="button"
+              onClick={() => setToastMsg(null)}
+              className="shrink-0 rounded p-0.5 text-amber-600 hover:bg-amber-100"
+              aria-label="Đóng thông báo"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        )}
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+          <div className="flex items-center gap-2.5">
+            <Server className="h-5 w-5 text-blue-600" />
+            <div>
+              <h2 className="text-base font-semibold text-slate-900">Hệ thống & Model Runtime</h2>
+              <p className="text-xs text-slate-500">Quản lý kết nối Backend API và extractor đang nạp</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(false)}
+            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+            aria-label="Đóng bảng hệ thống"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="flex-1 overflow-y-auto p-5 space-y-6">
+          {/* Backend URL Config (Dev mode) */}
+          <section className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Địa chỉ Backend API (Phát triển)
+              </label>
+              <button
+                type="button"
+                onClick={resetBaseUrl}
+                className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-500 hover:text-slate-800"
+              >
+                <RotateCcw className="h-3 w-3" />
+                Mặc định (/api/v1)
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={urlInput}
+                onChange={(e) => setUrlInput(e.target.value)}
+                placeholder="/api/v1 hoặc http://localhost:8000/api/v1"
+                className="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:outline-none"
+              />
+              <button
+                type="button"
+                onClick={handleApplyUrl}
+                className="rounded-lg bg-slate-800 px-3 py-1.5 text-xs font-medium text-white hover:bg-slate-700"
+              >
+                Áp dụng
+              </button>
+            </div>
+            <p className="text-[11px] text-slate-500">
+              Khi triển khai cùng máy chủ (Kaggle / Production), giữ mặc định <code>/api/v1</code>.
+            </p>
+          </section>
+
+          {/* Runtime Status */}
+          <section className="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Trạng thái Runtime
+              </span>
+              <button
+                type="button"
+                onClick={refreshRuntime}
+                disabled={isLoadingRuntime}
+                className="inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-700 disabled:opacity-50"
+              >
+                <RefreshCw className={`h-3.5 w-3.5 ${isLoadingRuntime ? 'animate-spin' : ''}`} />
+                Làm mới
+              </button>
+            </div>
+
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-slate-600">Kết nối backend:</span>
+                {runtime?.connected ? (
+                  <span className="inline-flex items-center gap-1 font-medium text-emerald-700">
+                    <CheckCircle2 className="h-4 w-4" /> Sẵn sàng
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 font-medium text-rose-600">
+                    <AlertCircle className="h-4 w-4" /> Chưa kết nối
+                  </span>
+                )}
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span className="text-slate-600">Model thực sự đang nạp:</span>
+                <span className="font-semibold text-slate-900">
+                  {runtime?.loaded_model_key || 'Chưa nạp'}
+                </span>
+              </div>
+
+              {runtime?.intended_model_key &&
+                runtime.intended_model_key !== runtime.loaded_model_key && (
+                  <div className="flex items-center justify-between text-amber-700">
+                    <span>Model dự kiến chọn:</span>
+                    <span className="font-medium">{runtime.intended_model_key} (chưa nạp xong)</span>
+                  </div>
+                )}
+
+              <div className="flex items-center justify-between">
+                <span className="text-slate-600">Trạng thái worker:</span>
+                <span className="inline-flex items-center gap-1.5 text-slate-800">
+                  <Activity className="h-3.5 w-3.5 text-blue-600" />
+                  {runtime?.worker_busy
+                    ? runtime.current_task || 'Đang xử lý tác vụ'
+                    : runtime?.connected
+                      ? 'Đang rảnh'
+                      : 'Không khả dụng'}
+                </span>
+              </div>
+            </div>
+          </section>
+
+          {/* Model Selector */}
+          <section className="space-y-3">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Chọn & Nạp Extractor (1 model/lần)
+            </label>
+            <p className="text-xs text-slate-500">
+              Hệ thống chỉ giữ một extractor trong bộ nhớ để tối ưu GPU VRAM. Chọn model rồi bấm Nạp model khi cần chạy trực tiếp.
+            </p>
+
+            {models.length === 0 ? (
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-center text-xs text-slate-500">
+                {runtime?.connected
+                  ? 'Không có danh sách model nào từ backend.'
+                  : 'Chưa kết nối được backend để tải danh sách model.'}
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {models.map((m) => {
+                  const isLoaded = runtime?.loaded_model_key === m.model_key;
+                  const isSelected = selectedModel === m.model_key;
+                  const residentGpu = runtime?.resident_models?.[m.model_key];
+                  const isResident = typeof residentGpu === 'number';
+                  return (
+                    <label
+                      key={m.model_key}
+                      onClick={(e) => {
+                        if (!m.supported) {
+                          e.preventDefault();
+                          showToast(
+                            m.unavailable_reason ||
+                              `Model ${m.display_name} hiện chưa khả dụng trên máy này.`
+                          );
+                        }
+                      }}
+                      className={`flex cursor-pointer items-center justify-between gap-2 rounded-lg border p-3 transition ${
+                        isSelected
+                          ? 'border-blue-600 bg-blue-50/50'
+                          : 'border-slate-200 hover:bg-slate-50'
+                      } ${!m.supported ? 'opacity-60' : ''}`}
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <input
+                          type="radio"
+                          name="system_model"
+                          value={m.model_key}
+                          checked={isSelected}
+                          onChange={() => {
+                            if (m.supported) {
+                              setSelectedModel(m.model_key);
+                            }
+                          }}
+                          className="text-blue-600 focus:ring-blue-500 shrink-0"
+                        />
+                        <div className="min-w-0">
+                          <div className="text-sm font-medium text-slate-900">{m.display_name}</div>
+                          <div className="text-xs text-slate-500">
+                            {m.family} • {m.parameter_size}
+                            {!m.supported && m.unavailable_reason
+                              ? ` — ${m.unavailable_reason}`
+                              : ''}
+                          </div>
+                        </div>
+                      </div>
+                      {isLoaded ? (
+                        <span className="shrink-0 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-medium text-emerald-800">
+                          Đang dùng{isResident ? ` • GPU ${residentGpu}` : ''}
+                        </span>
+                      ) : isResident ? (
+                        <span className="shrink-0 rounded-full bg-sky-100 px-2.5 py-0.5 text-[11px] font-medium text-sky-800">
+                          Sẵn sàng (0s) • GPU {residentGpu}
+                        </span>
+                      ) : m.supported ? (
+                        <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-600">
+                          Chưa nạp
+                        </span>
+                      ) : null}
+                    </label>
+                  );
+                })}
+              </div>
+            )}
+
+            {switchModelMessage && (
+              <div className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-xs text-blue-800">
+                {switchModelMessage}
+              </div>
+            )}
+
+            {loadError && (
+              <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+                {loadError}
+              </div>
+            )}
+
+            {selectedModel && !models.find((m) => m.model_key === selectedModel)?.supported && (
+              <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                ⚠️{' '}
+                {models.find((m) => m.model_key === selectedModel)?.unavailable_reason ||
+                  `Model ${selectedModel} chưa khả dụng trên máy này.`}
+              </div>
+            )}
+
+            {selectedModel &&
+              models.find((m) => m.model_key === selectedModel)?.supported &&
+              runtime?.loaded_model_key !== selectedModel &&
+              typeof runtime?.resident_models?.[selectedModel] !== 'number' &&
+              Object.keys(runtime?.resident_models || {}).length > 0 && (
+                <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
+                  💡 <strong>{selectedModel}</strong> chưa nằm trong VRAM. Nếu GPU mục tiêu không đủ chỗ trống, hệ thống sẽ tự động giải phóng model ít dùng nhất (LRU) trên đúng GPU đó.
+                </div>
+              )}
+
+            <button
+              type="button"
+              onClick={handleLoadModel}
+              disabled={
+                isSwitchingModel ||
+                !runtime?.connected ||
+                !selectedModel ||
+                runtime?.loaded_model_key === selectedModel ||
+                !models.find((m) => m.model_key === selectedModel)?.supported
+              }
+              className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300"
+            >
+              {isSwitchingModel
+                ? 'Đang nạp model...'
+                : !selectedModel
+                  ? 'Chọn model để nạp'
+                  : !models.find((m) => m.model_key === selectedModel)?.supported
+                    ? `${selectedModel} không khả dụng trên máy này`
+                    : runtime?.loaded_model_key === selectedModel
+                      ? `${selectedModel} đang được sử dụng`
+                      : typeof runtime?.resident_models?.[selectedModel] === 'number'
+                        ? `Chuyển nhanh sang ${selectedModel} (0s)`
+                        : `Nạp model ${selectedModel}`}
+            </button>
+          </section>
+
+          {/* Expandable resource details */}
+          <section className="border-t border-slate-200 pt-3">
+            <button
+              type="button"
+              onClick={() => setShowDetails(!showDetails)}
+              className="flex w-full items-center justify-between text-xs font-medium text-slate-600 hover:text-slate-900"
+            >
+              <span className="inline-flex items-center gap-1.5">
+                <Cpu className="h-3.5 w-3.5" />
+                Thông tin tài nguyên & chẩn đoán
+              </span>
+              {showDetails ? (
+                <ChevronUp className="h-4 w-4" />
+              ) : (
+                <ChevronDown className="h-4 w-4" />
+              )}
+            </button>
+
+            {showDetails && (
+              <div className="mt-3 rounded-lg bg-slate-100 p-3 text-xs text-slate-700 space-y-1.5">
+                <div>
+                  <span className="font-medium">Endpoint:</span> <code>{baseUrl}</code>
+                </div>
+                <div>
+                  <span className="font-medium">Thiết bị:</span>{' '}
+                  {runtime?.device_summary || 'Không có thông tin'}
+                </div>
+                <div>
+                  <span className="font-medium">Ranking artifacts:</span>{' '}
+                  {runtime?.ranking_ready ? 'Sẵn sàng' : 'Chưa sẵn sàng'}
+                </div>
+                <div>
+                  <span className="font-medium">Giới hạn đầu vào:</span> Title ≤{' '}
+                  {runtime?.limits.max_title_chars ?? 400} ký tự, Abstract ≤{' '}
+                  {runtime?.limits.max_abstract_chars ?? 4000} ký tự
+                </div>
+                {runtime?.last_error && (
+                  <div className="text-rose-700 break-words">
+                    <span className="font-medium">Lỗi kết nối/runtime:</span> {runtime.last_error}
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
