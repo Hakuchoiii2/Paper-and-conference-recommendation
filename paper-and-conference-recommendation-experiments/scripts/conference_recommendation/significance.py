@@ -360,10 +360,11 @@ def rank_correlation_matrix(
                     "kendall_p": None,
                 }
                 continue
-            if has_scipy:
+            if has_scipy and len(shared_models) > 8:
                 rho, rho_p = _scipy_spearmanr(vec_a, vec_d)
                 tau, tau_p = _scipy_kendalltau(vec_a, vec_d)
             else:
+                # For small n (e.g. n=5 Raw LLMs => 5! = 120 permutations), always use exact permutation p-values
                 rho, rho_p = _spearman_fallback(vec_a, vec_d)
                 tau, tau_p = _kendall_fallback(vec_a, vec_d)
             matrix[a_key][d_key] = {
@@ -373,3 +374,118 @@ def rank_correlation_matrix(
                 "kendall_p": None if tau_p is None or math.isnan(tau_p) else float(tau_p),
             }
     return matrix
+
+
+def mann_whitney_u_test(
+    values_win: Sequence[float],
+    values_loss: Sequence[float],
+) -> Dict[str, Any]:
+    """Two-sided Mann-Whitney U test comparing Win vs Loss query feature distributions."""
+    arr_w = np.asarray(values_win, dtype=np.float64)
+    arr_l = np.asarray(values_loss, dtype=np.float64)
+    n_w, n_l = len(arr_w), len(arr_l)
+    if n_w == 0 or n_l == 0:
+        return {
+            "n_win": int(n_w),
+            "n_loss": int(n_l),
+            "win_mean": float(np.mean(arr_w)) if n_w > 0 else 0.0,
+            "win_median": float(np.median(arr_w)) if n_w > 0 else 0.0,
+            "loss_mean": float(np.mean(arr_l)) if n_l > 0 else 0.0,
+            "loss_median": float(np.median(arr_l)) if n_l > 0 else 0.0,
+            "u_stat": 0.0,
+            "p_value": 1.0,
+            "significant_005": False,
+        }
+
+    u_stat = 0.0
+    p_val = 1.0
+    try:
+        from scipy.stats import mannwhitneyu
+        res = mannwhitneyu(arr_w, arr_l, alternative="two-sided")
+        u_stat = float(res.statistic)
+        p_val = 1.0 if math.isnan(float(res.pvalue)) else float(res.pvalue)
+    except ImportError:
+        # Normal approximation fallback with tie correction
+        combined = np.concatenate([arr_w, arr_l])
+        ranks = _average_ranks(combined)
+        r_w = float(np.sum(ranks[:n_w]))
+        u_stat = r_w - 0.5 * n_w * (n_w + 1)
+        mean_u = 0.5 * n_w * n_l
+        _, counts = np.unique(combined, return_counts=True)
+        n_tot = n_w + n_l
+        tie_term = float(np.sum(counts ** 3 - counts)) / (n_tot * (n_tot - 1)) if n_tot > 1 else 0.0
+        var_u = (n_w * n_l / 12.0) * ((n_tot + 1.0) - tie_term)
+        if var_u <= 1e-12:
+            p_val = 1.0
+        else:
+            z = abs(u_stat - mean_u) / math.sqrt(var_u)
+            p_val = float(math.erfc(z / math.sqrt(2.0)))
+
+    return {
+        "n_win": int(n_w),
+        "n_loss": int(n_l),
+        "win_mean": float(np.mean(arr_w)),
+        "win_median": float(np.median(arr_w)),
+        "loss_mean": float(np.mean(arr_l)),
+        "loss_median": float(np.median(arr_l)),
+        "u_stat": float(u_stat),
+        "p_value": float(min(1.0, max(0.0, p_val))),
+        "significant_005": bool(p_val < 0.05),
+    }
+
+
+def tier_contingency_test(
+    win_tiers: Dict[str, int],
+    loss_tiers: Dict[str, int],
+) -> Dict[str, Any]:
+    """Chi-square homogeneity test and Head-vs-NonHead Fisher's exact test for Win vs Loss venue tiers."""
+    tiers = ("head", "mid", "tail")
+    w_counts = [int(win_tiers.get(t, 0)) for t in tiers]
+    l_counts = [int(loss_tiers.get(t, 0)) for t in tiers]
+    tot_w = sum(w_counts)
+    tot_l = sum(l_counts)
+
+    chi2_stat = 0.0
+    chi2_p = 1.0
+    fisher_odds = 1.0
+    fisher_p = 1.0
+
+    if tot_w > 0 and tot_l > 0:
+        try:
+            from scipy.stats import chi2_contingency, fisher_exact
+
+            # Filter columns with positive marginal sum for chi2_contingency
+            table_rows = []
+            for wc, lc in zip(w_counts, l_counts):
+                if (wc + lc) > 0:
+                    table_rows.append([wc, lc])
+            if len(table_rows) >= 2:
+                c_stat, c_p, _, _ = chi2_contingency(np.asarray(table_rows, dtype=np.float64))
+                chi2_stat = float(c_stat)
+                chi2_p = 1.0 if math.isnan(float(c_p)) else float(c_p)
+
+            # 2x2 Fisher exact test: Head vs Non-Head (Mid + Tail)
+            w_head, w_non = w_counts[0], w_counts[1] + w_counts[2]
+            l_head, l_non = l_counts[0], l_counts[1] + l_counts[2]
+            odds, f_p = fisher_exact([[w_head, w_non], [l_head, l_non]], alternative="two-sided")
+            fisher_odds = 0.0 if math.isnan(float(odds)) or math.isinf(float(odds)) else float(odds)
+            fisher_p = 1.0 if math.isnan(float(f_p)) else float(f_p)
+        except ImportError:
+            pass
+
+    return {
+        "win_counts": {t: int(win_tiers.get(t, 0)) for t in tiers},
+        "win_pcts": {
+            t: round(100.0 * int(win_tiers.get(t, 0)) / tot_w, 2) if tot_w > 0 else 0.0 for t in tiers
+        },
+        "loss_counts": {t: int(loss_tiers.get(t, 0)) for t in tiers},
+        "loss_pcts": {
+            t: round(100.0 * int(loss_tiers.get(t, 0)) / tot_l, 2) if tot_l > 0 else 0.0 for t in tiers
+        },
+        "chi2_stat": chi2_stat,
+        "chi2_p_value": chi2_p,
+        "fisher_head_vs_nonhead_odds_ratio": fisher_odds,
+        "fisher_head_vs_nonhead_p_value": fisher_p,
+        "p_value": chi2_p if chi2_p < 1.0 else fisher_p,
+        "significant_005": bool(min(chi2_p, fisher_p) < 0.05),
+    }

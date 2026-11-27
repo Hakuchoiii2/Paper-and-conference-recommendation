@@ -27,14 +27,27 @@ from .feature_loader import (
     cosine_similarity,
     format_dense_facet_text,
 )
-from .metrics import evaluate_predictions_detailed
-from .ranking import aggregate_venue_scores, observed, rank_neighbors, validate_weights
+from .metrics import VENUE_DISCIPLINE_MAP, classify_venue_tier, evaluate_predictions_detailed
+from .ranking import (
+    LOCKED_EXP_B_WEIGHTS,
+    aggregate_venue_scores,
+    compute_active_weight_mass,
+    compute_adaptive_fusion_scores,
+    compute_facet_first_venue_scores,
+    observed,
+    rank_neighbors,
+    rank_venues_from_score_matrix,
+    rerank_coarse_to_fine_batch,
+    validate_weights,
+)
 from .significance import (
     holm_bonferroni,
+    mann_whitney_u_test,
     mcnemar_exact_test,
     paired_bootstrap_ci,
     paired_permutation_test,
     rank_correlation_matrix,
+    tier_contingency_test,
     win_tie_loss,
 )
 
@@ -234,12 +247,18 @@ class PairMatrices:
         self.candidates = sorted(candidates)
         self.train_venue_counts = dict(Counter(p["conference_id"] for p in train))
         self.sim, self.obs = {}, {}
+        self.mask_q, self.mask_r = {}, {}
+        self.vecs_q, self.vecs_r = {}, {}
         self.embedding_dim = 0
         for field in ("whole_text",) + FACET_KEYS:
             left = [store.get_vectors(p["paper_id"]).get(field) for p in queries]
             right = [store.get_vectors(p["paper_id"]).get(field) for p in train]
             mask_l = np.array([observed(v) for v in left], dtype=bool)
             mask_r = np.array([observed(v) for v in right], dtype=bool)
+            self.mask_q[field] = mask_l
+            self.mask_r[field] = mask_r
+            self.vecs_q[field] = left
+            self.vecs_r[field] = right
             self.obs[field] = mask_l[:, None] & mask_r[None, :]
             matrix = np.zeros((len(left), len(right)), dtype=np.float64)
             sample = next((v for v in left + right if observed(v)), None)
@@ -272,6 +291,10 @@ class PairMatrices:
         ix = np.ix_(query_indices, train_indices)
         result.sim = {f: m[ix] for f, m in self.sim.items()}
         result.obs = {f: m[ix] for f, m in self.obs.items()}
+        result.mask_q = {f: m[query_indices] for f, m in self.mask_q.items()}
+        result.mask_r = {f: m[train_indices] for f, m in self.mask_r.items()}
+        result.vecs_q = {f: [v[i] for i in query_indices] for f, v in self.vecs_q.items()}
+        result.vecs_r = {f: [v[i] for i in train_indices] for f, v in self.vecs_r.items()}
         return result
 
     def scores_with_validity(self, config):
@@ -428,6 +451,106 @@ class PairMatrices:
         res["retrieval_ms_per_query"] = round(elapsed_ms / n_q, 4)
         return res
 
+    def facet_query_masks(self):
+        return {f: self.mask_q[f] for f in FACET_KEYS}
+
+    def facet_ref_masks(self):
+        return {f: self.mask_r[f] for f in FACET_KEYS}
+
+    def paper_first_activation_stats(self, valid_mask=None):
+        n_q = len(self.queries)
+        n_r = len(self.train)
+        stats = {
+            "n_queries": int(n_q),
+            "n_ref": int(n_r),
+            "valid_pair_rate": (
+                float(np.mean(valid_mask))
+                if (valid_mask is not None and (n_q * n_r) > 0)
+                else 1.0
+            ),
+            "valid_query_rate": (
+                float(np.mean(np.any(valid_mask, axis=1)))
+                if (valid_mask is not None and n_q > 0 and n_r > 0)
+                else 1.0
+            ),
+            "per_facet_pair_activation_rate": {},
+            "per_facet_query_activation_rate": {},
+        }
+        for f in FACET_KEYS:
+            pair_rate = float(np.mean(self.obs[f])) if (n_q * n_r) > 0 else 0.0
+            q_rate = float(np.mean(self.mask_q[f])) if n_q > 0 else 0.0
+            stats[f"{f}_activation_rate"] = pair_rate
+            stats[f"{f}_query_activation_rate"] = q_rate
+            stats["per_facet_pair_activation_rate"][f] = pair_rate
+            stats["per_facet_query_activation_rate"][f] = q_rate
+        return stats
+
+    def paper_first_venue_matrix(self, config):
+        mat, valid_mask = self.scores_with_validity(config)
+        ev = self.evaluate_scores(mat, config, valid_mask=valid_mask)
+        preds = ev["predictions"]
+        n_q = len(self.queries)
+        n_v = len(self.candidates)
+        venue_to_col = {v: idx for idx, v in enumerate(self.candidates)}
+        scores_mat = np.full((n_q, n_v), -np.inf, dtype=np.float64)
+        for q_idx, p in enumerate(self.queries):
+            for venue, sc in preds[p["paper_id"]]:
+                scores_mat[q_idx, venue_to_col[venue]] = float(sc)
+        act_stats = self.paper_first_activation_stats(valid_mask=valid_mask)
+        return scores_mat, ev, act_stats
+
+    def facet_first_venue_matrix(self, mode="top_m", top_m=3, weights=None):
+        ref_venues = [p["conference_id"] for p in self.train]
+        ref_pids = [p["paper_id"] for p in self.train]
+        return compute_facet_first_venue_scores(
+            ref_venues=ref_venues,
+            candidate_venues=self.candidates,
+            weights=weights or LOCKED_EXP_B_WEIGHTS,
+            mode=mode,
+            top_m=int(top_m),
+            facet_sims={f: self.sim[f] for f in FACET_KEYS},
+            query_masks={f: self.mask_q[f] for f in FACET_KEYS},
+            ref_masks={f: self.mask_r[f] for f in FACET_KEYS},
+            query_embeddings={f: self.vecs_q[f] for f in FACET_KEYS},
+            ref_embeddings={f: self.vecs_r[f] for f in FACET_KEYS},
+            ref_pids=ref_pids,
+            facets=FACET_KEYS,
+        )
+
+    def evaluate_venue_predictions(self, predictions, query_subset_pids=None):
+        if query_subset_pids is not None:
+            subset_set = set(query_subset_pids)
+            sub_preds = {pid: ranked for pid, ranked in predictions.items() if pid in subset_set}
+            truth = {
+                p["paper_id"]: p["conference_id"]
+                for p in self.queries
+                if p["paper_id"] in subset_set
+            }
+        else:
+            sub_preds = predictions
+            truth = {p["paper_id"]: p["conference_id"] for p in self.queries}
+        detailed = evaluate_predictions_detailed(
+            sub_preds, truth, self.candidates, train_venue_counts=self.train_venue_counts
+        )
+        return {**detailed, "predictions": sub_preds}
+
+    def evaluate_facet_first(self, mode="top_m", top_m=3, weights=None):
+        t0 = time.perf_counter()
+        scores_mat, valid_mask, act_stats = self.facet_first_venue_matrix(
+            mode=mode, top_m=top_m, weights=weights
+        )
+        q_pids = [p["paper_id"] for p in self.queries]
+        preds = rank_venues_from_score_matrix(
+            scores_mat, q_pids, self.candidates, valid_mask=valid_mask
+        )
+        ev = self.evaluate_venue_predictions(preds)
+        elapsed_ms = (time.perf_counter() - t0) * 1000.0
+        ev["retrieval_ms_per_query"] = round(elapsed_ms / max(1, len(q_pids)), 4)
+        ev["scores_matrix"] = scores_mat
+        ev["valid_mask"] = valid_mask
+        ev["activation_stats"] = act_stats
+        return ev
+
 
 class Experiment:
     def __init__(
@@ -575,7 +698,16 @@ class Experiment:
                 -row["cv"][metric],
                 -row["cv"]["mrr"],
                 -row["cv"]["macro_hit@3"],
-                row["config"].get("k", row["config"].get("m", 0)),
+                row["config"].get(
+                    "k",
+                    row["config"].get(
+                        "m",
+                        row["config"].get(
+                            "top_m",
+                            row["config"].get("beta", row["config"].get("top_c", 0)),
+                        ),
+                    ),
+                ),
                 digest(row["config"]),
             )
         )
@@ -897,8 +1029,12 @@ class Experiment:
         return payload
 
     def _select_primary_weighted_config(self, tuning):
-        """Choose the locked primary Weighted Facet operating point from Train CV."""
+        """Choose the locked primary Weighted Facet operating point (w_exp_b) from Train CV."""
         ieee = tuning.get("ieee_methods", {})
+        if "weighted_facet_a" in ieee:
+            candidates = [rec["best"] for rec in ieee["weighted_facet_a"].values()]
+            self._sort_records(candidates, tuning.get("selection_metric", "hit@3"))
+            return candidates[0]["config"]
         if "weighted_facet_cv" in ieee:
             candidates = [rec["best"] for rec in ieee["weighted_facet_cv"].values()]
             self._sort_records(candidates, tuning.get("selection_metric", "hit@3"))
@@ -1223,6 +1359,1048 @@ class Experiment:
         save_json(self.path("benchmark"), payload, overwrite)
         return payload
 
+    def _get_or_tune_paper_first_baselines(
+        self,
+        cv_pairs,
+        ks=(5, 10, 15, 20, 25, 30),
+        agg_taus=(0.02, 0.05, 0.10, 0.20),
+        alphas=(0.5, 1.0),
+        ms=(1, 2, 3),
+        metric="hit@3",
+    ):
+        """Read Paper-First CV winners from tuning_{backend}.json if available, else evaluate on cv_pairs."""
+        tuning_path = self.path("tuning")
+        if tuning_path.exists():
+            try:
+                saved = json.loads(tuning_path.read_text(encoding="utf-8"))
+                saved_meta = saved.get("metadata", {})
+                if (
+                    saved_meta.get("train_digest") == self.metadata["train_digest"]
+                    and saved_meta.get("candidates") == self.metadata["candidates"]
+                    and "ieee_methods" in saved
+                ):
+                    ieee = saved["ieee_methods"]
+                    if all(k in ieee for k in ("fulltext", "equal_weight_facet", "weighted_facet_a")):
+                        return ieee
+            except Exception:
+                pass
+
+        specs = {
+            "fulltext": [{"method": "whole_text"}],
+            "equal_weight_facet": [
+                {"method": "flat_5_facet", "preset": "flat_equal", "weights": FLAT_5_FACET_PRESETS["flat_equal"]}
+            ],
+            "weighted_facet_a": [
+                {
+                    "method": "flat_5_facet",
+                    "preset": "exp_b_weighted_a",
+                    "weights": dict(LOCKED_EXP_B_WEIGHTS),
+                }
+            ],
+        }
+        ieee_methods = {}
+        for m_name, base_list in specs.items():
+            ieee_methods[m_name] = {}
+            for agg in AGGREGATIONS:
+                agg_configs = []
+                for base in base_list:
+                    if agg == "sum_knn":
+                        for k in ks:
+                            agg_configs.append({**base, "aggregation": "sum_knn", "k": int(k)})
+                    elif agg == "temp_softmax":
+                        for k, at in itertools.product(ks, agg_taus):
+                            agg_configs.append(
+                                {**base, "aggregation": "temp_softmax", "k": int(k), "agg_tau": float(at)}
+                            )
+                    elif agg == "prior_norm":
+                        for k, at, alpha in itertools.product(ks, agg_taus, alphas):
+                            agg_configs.append(
+                                {
+                                    **base,
+                                    "aggregation": "prior_norm",
+                                    "k": int(k),
+                                    "agg_tau": float(at),
+                                    "alpha": float(alpha),
+                                }
+                            )
+                    elif agg == "per_venue_top_m":
+                        for m_val in ms:
+                            agg_configs.append({**base, "aggregation": "per_venue_top_m", "m": int(m_val)})
+                recs = self._eval_cv_configs(cv_pairs, agg_configs, metric)
+                ieee_methods[m_name][agg] = {"best": recs[0], "n_configs": len(recs)}
+        return ieee_methods
+
+    def tune_exp_d(
+        self,
+        ks=(5, 10, 15, 20, 25, 30),
+        top_ms=(1, 2, 3),
+        betas=(0.1, 0.2, 0.3, 0.5, 0.7),
+        top_cs=(5, 10),
+        metric="hit@3",
+        overwrite=False,
+    ):
+        """5-Fold Stratified Train CV tuning for Facet-First (top_m), Adaptive Fusion (beta), and Coarse-to-Fine (top_c).
+
+        Strictly locks Exp B weights w_exp_b = (0.40, 0.20, 0.20, 0.10, 0.10). Never tunes 5D facet weights.
+        """
+        target = self.path("tuning_d")
+        if target.exists() and not overwrite:
+            raise FileExistsError(f"{target} already exists; use --overwrite")
+
+        cv_pairs = self.build_cv()
+        ieee_paper_first = self._get_or_tune_paper_first_baselines(
+            cv_pairs, ks=ks, ms=top_ms, metric=metric
+        )
+
+        # 1. Select CV-locked Full-text winner across all aggregations
+        ft_candidates = [copy.deepcopy(rec["best"]) for rec in ieee_paper_first["fulltext"].values()]
+        self._sort_records(ft_candidates, metric)
+        fulltext_winner = ft_candidates[0]
+
+        # 2. Mechanism 1: Facet-First Venue Aggregation on 5-Fold Train CV (Equal-weight & locked w_exp_b)
+        weight_schemes = {
+            "equal_weight_facet": dict(FLAT_5_FACET_PRESETS["flat_equal"]),
+            "weighted_facet_a": dict(LOCKED_EXP_B_WEIGHTS),
+        }
+        facet_first_cv = {}
+        for scheme_name, weights in weight_schemes.items():
+            top_m_records = []
+            for m_val in top_ms:
+                cfg = {
+                    "mechanism": "facet_first",
+                    "mode": "top_m",
+                    "top_m": int(m_val),
+                    "preset": scheme_name,
+                    "weights": dict(weights),
+                }
+                fold_metrics = [
+                    pair.evaluate_facet_first(mode="top_m", top_m=int(m_val), weights=weights)["metrics"]
+                    for pair in cv_pairs
+                ]
+                top_m_records.append({"config": cfg, "cv": aggregate_folds(fold_metrics)})
+            self._sort_records(top_m_records, metric)
+
+            centroid_cfg = {
+                "mechanism": "facet_first",
+                "mode": "centroid",
+                "preset": scheme_name,
+                "weights": dict(weights),
+            }
+            centroid_folds = [
+                pair.evaluate_facet_first(mode="centroid", weights=weights)["metrics"]
+                for pair in cv_pairs
+            ]
+            centroid_record = {"config": centroid_cfg, "cv": aggregate_folds(centroid_folds)}
+
+            all_ff = copy.deepcopy(top_m_records + [centroid_record])
+            self._sort_records(all_ff, metric)
+            facet_first_cv[scheme_name] = {
+                "top_m_best": top_m_records[0],
+                "top_m_all": top_m_records,
+                "centroid": centroid_record,
+                "best": all_ff[0],
+            }
+
+        facet_first_winner = facet_first_cv["weighted_facet_a"]["best"]
+        ff_win_cfg = facet_first_winner["config"]
+
+        # Precompute per-fold base matrices for Full-text winner and Facet-First winner (under locked w_exp_b)
+        fold_full_mats = []
+        fold_full_preds = []
+        fold_facet_mats = []
+        fold_facet_vms = []
+        fold_q_masks = []
+        for pair in cv_pairs:
+            f_mat, f_ev, _ = pair.paper_first_venue_matrix(fulltext_winner["config"])
+            fold_full_mats.append(f_mat)
+            fold_full_preds.append(f_ev["predictions"])
+
+            ff_mat, ff_vm, _ = pair.facet_first_venue_matrix(
+                mode=ff_win_cfg["mode"],
+                top_m=ff_win_cfg.get("top_m", 3),
+                weights=LOCKED_EXP_B_WEIGHTS,
+            )
+            fold_facet_mats.append(ff_mat)
+            fold_facet_vms.append(ff_vm)
+            fold_q_masks.append(pair.facet_query_masks())
+
+        # 3. Mechanism 2: Coverage-Aware Adaptive Fusion on 5-Fold Train CV (beta in {0.1, 0.2, 0.3, 0.5, 0.7})
+        adaptive_records = []
+        for beta_val in betas:
+            b_float = float(beta_val)
+            cfg = {
+                "mechanism": "adaptive_fusion",
+                "beta": b_float,
+                "base_fulltext": fulltext_winner["config"],
+                "base_facet_first": ff_win_cfg,
+                "weights": dict(LOCKED_EXP_B_WEIGHTS),
+            }
+            fold_metrics = []
+            for pair, f_mat, ff_mat, ff_vm, q_masks in zip(
+                cv_pairs, fold_full_mats, fold_facet_mats, fold_facet_vms, fold_q_masks
+            ):
+                fused_mat, _ = compute_adaptive_fusion_scores(
+                    f_mat,
+                    ff_mat,
+                    q_masks,
+                    beta=b_float,
+                    facet_valid_mask=ff_vm,
+                    weights=LOCKED_EXP_B_WEIGHTS,
+                )
+                q_pids = [p["paper_id"] for p in pair.queries]
+                preds = rank_venues_from_score_matrix(fused_mat, q_pids, pair.candidates)
+                fold_metrics.append(pair.evaluate_venue_predictions(preds)["metrics"])
+            adaptive_records.append({"config": cfg, "cv": aggregate_folds(fold_metrics)})
+        self._sort_records(adaptive_records, metric)
+        adaptive_winner = adaptive_records[0]
+        best_beta = float(adaptive_winner["config"]["beta"])
+
+        # Precompute per-fold adaptive fusion matrices at best_beta for Stage-2 Coarse-to-Fine CV
+        fold_adaptive_mats = []
+        for f_mat, ff_mat, ff_vm, q_masks in zip(
+            fold_full_mats, fold_facet_mats, fold_facet_vms, fold_q_masks
+        ):
+            fused_mat, _ = compute_adaptive_fusion_scores(
+                f_mat,
+                ff_mat,
+                q_masks,
+                beta=best_beta,
+                facet_valid_mask=ff_vm,
+                weights=LOCKED_EXP_B_WEIGHTS,
+            )
+            fold_adaptive_mats.append(fused_mat)
+
+        # 4. Mechanism 3: Coarse-to-Fine Facet Reranking on 5-Fold Train CV (top_c in {5, 10})
+        c2f_cv = {}
+        for stage2_name in ("facet_first", "adaptive_fusion"):
+            c_records = []
+            for c_val in top_cs:
+                c_int = int(c_val)
+                cfg = {
+                    "mechanism": "coarse_to_fine",
+                    "top_c": c_int,
+                    "stage2": stage2_name,
+                    "stage1_fulltext": fulltext_winner["config"],
+                    "stage2_config": ff_win_cfg if stage2_name == "facet_first" else adaptive_winner["config"],
+                    "weights": dict(LOCKED_EXP_B_WEIGHTS),
+                }
+                fold_metrics = []
+                for idx, pair in enumerate(cv_pairs):
+                    q_pids = [p["paper_id"] for p in pair.queries]
+                    s1_preds = fold_full_preds[idx]
+                    if stage2_name == "facet_first":
+                        s2_mat = fold_facet_mats[idx]
+                        s2_vm = fold_facet_vms[idx]
+                    else:
+                        s2_mat = fold_adaptive_mats[idx]
+                        s2_vm = None
+                    c2f_preds = rerank_coarse_to_fine_batch(
+                        s1_preds,
+                        q_pids,
+                        s2_mat,
+                        pair.candidates,
+                        top_c=c_int,
+                        stage2_valid_mask=s2_vm,
+                    )
+                    fold_metrics.append(pair.evaluate_venue_predictions(c2f_preds)["metrics"])
+                c_records.append({"config": cfg, "cv": aggregate_folds(fold_metrics)})
+            by_c = {int(r["config"]["top_c"]): copy.deepcopy(r) for r in c_records}
+            self._sort_records(c_records, metric)
+            c2f_cv[stage2_name] = {
+                "best": c_records[0],
+                "all": c_records,
+                "by_top_c": {str(k): v for k, v in by_c.items()},
+            }
+
+        payload = {
+            "metadata": self.metadata,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "selection_metric": metric,
+            "selection_rule": f"max {metric}, max MRR, max macro-Hit@3, min top_m/beta/top_c, config SHA256 asc",
+            "locked_exp_b_weights": dict(LOCKED_EXP_B_WEIGHTS),
+            "search_space": {
+                "top_m": [int(m) for m in top_ms],
+                "beta": [float(b) for b in betas],
+                "top_c": [int(c) for c in top_cs],
+            },
+            "paper_first_baselines": ieee_paper_first,
+            "fulltext_winner": fulltext_winner,
+            "facet_first": facet_first_cv,
+            "facet_first_winner": facet_first_winner,
+            "adaptive_fusion": {
+                "best": adaptive_winner,
+                "all": adaptive_records,
+            },
+            "coarse_to_fine": c2f_cv,
+        }
+        payload["tuning_id"] = digest(payload)
+        save_json(target, payload, overwrite)
+        return payload
+
+    def load_tuning_d(self):
+        path = self.path("tuning_d")
+        if not path.exists():
+            raise FileNotFoundError(f"Run --stage exp_d (or tune_exp_d) first: {path}")
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        saved = payload.get("metadata", {})
+        current = self.metadata
+        for key in current:
+            if saved.get(key) != current[key]:
+                raise ValueError(f"Exp D tuning provenance mismatch: {key}; run tune_exp_d again")
+        unsigned = {k: v for k, v in payload.items() if k != "tuning_id"}
+        if payload.get("tuning_id") != digest(unsigned):
+            raise ValueError("Exp D tuning artifact checksum mismatch")
+        return payload
+
+    def run_exp_d(
+        self,
+        extractor_queries=None,
+        overwrite=False,
+        n_resamples=10000,
+        ks=(5, 10, 15, 20, 25, 30),
+        top_ms=(1, 2, 3),
+        betas=(0.1, 0.2, 0.3, 0.5, 0.7),
+        top_cs=(5, 10),
+        metric="hit@3",
+    ):
+        """Execute all 4 diagnostic experiments (Exp D1-D4) on the 168 clean Test papers."""
+        target = self.path("exp_d")
+        if target.exists() and not overwrite:
+            raise FileExistsError(f"{target} already exists; use --overwrite")
+
+        if not self.path("tuning_d").exists() or overwrite:
+            tuning_d = self.tune_exp_d(
+                ks=ks, top_ms=top_ms, betas=betas, top_cs=top_cs, metric=metric, overwrite=overwrite
+            )
+        else:
+            tuning_d = self.load_tuning_d()
+
+        if extractor_queries is None:
+            extractor_queries = {"Qwen-8B": self.test}
+
+        base_ids = {p["paper_id"] for p in self.test}
+        for name, queries in extractor_queries.items():
+            if {p["paper_id"] for p in queries} != base_ids or len(queries) != len(base_ids):
+                raise ValueError(f"Extractor {name}: test IDs differ from frozen split")
+
+        final = self.build_final()
+        q_pids = [p["paper_id"] for p in self.test]
+        truth = {p["paper_id"]: p["conference_id"] for p in self.test}
+        n_boot = min(int(n_resamples), 10000)
+
+        pf_cv = tuning_d["paper_first_baselines"]
+        ff_cv = tuning_d["facet_first"]
+        ft_win_rec = tuning_d["fulltext_winner"]
+        ff_win_rec = tuning_d["facet_first_winner"]
+        af_win_rec = tuning_d["adaptive_fusion"]["best"]
+        best_beta = float(af_win_rec["config"]["beta"])
+
+        # Evaluate Full-text winner on Test
+        ft_scores_mat, ft_win_ev, ft_act_stats = final.paper_first_venue_matrix(ft_win_rec["config"])
+
+        def _compare_eval(ev_a, ev_b, label_b, compute_boot=True):
+            sig = {
+                "vs_baseline": label_b,
+                "mcnemar_hit@1": mcnemar_exact_test(ev_a["per_query"]["hit@1"], ev_b["per_query"]["hit@1"]),
+                "mcnemar_hit@3": mcnemar_exact_test(ev_a["per_query"]["hit@3"], ev_b["per_query"]["hit@3"]),
+                "mcnemar_hit@5": mcnemar_exact_test(ev_a["per_query"]["hit@5"], ev_b["per_query"]["hit@5"]),
+                "permutation_mrr": paired_permutation_test(
+                    ev_a["per_query"]["rr"], ev_b["per_query"]["rr"], n_resamples=n_resamples, seed=self.seed
+                ),
+                "win_tie_loss": win_tie_loss(ev_a["per_query"]["true_rank"], ev_b["per_query"]["true_rank"]),
+                "delta_hit@1": float(ev_a["metrics"]["hit@1"] - ev_b["metrics"]["hit@1"]),
+                "delta_hit@3": float(ev_a["metrics"]["hit@3"] - ev_b["metrics"]["hit@3"]),
+                "delta_mrr": float(ev_a["metrics"]["mrr"] - ev_b["metrics"]["mrr"]),
+            }
+            if compute_boot:
+                sig["bootstrap_ci"] = paired_bootstrap_ci(
+                    ev_a["predictions"],
+                    ev_b["predictions"],
+                    truth,
+                    self.candidates,
+                    n_boot=n_boot,
+                    seed=self.seed,
+                )
+            return sig
+
+        # ======================================================================
+        # EXP D1: Paper-First vs Facet-First + 5 Raw LLMs
+        # ======================================================================
+        d1_rows = []
+
+        # Full-text reference rows
+        for ft_agg_key, ft_label in [
+            ("best", f"Full-text ({ft_win_rec['config']['aggregation']} Winner)"),
+            ("sum_knn", "Full-text (Sum-kNN)"),
+            ("per_venue_top_m", "Full-text (Per-Venue Top-m)"),
+        ]:
+            rec = ft_win_rec if ft_agg_key == "best" else pf_cv["fulltext"][ft_agg_key]["best"]
+            _, ev, act = final.paper_first_venue_matrix(rec["config"])
+            boot = paired_bootstrap_ci(
+                ev["predictions"], None, truth, self.candidates, n_boot=n_boot, seed=self.seed
+            )
+            d1_rows.append(
+                {
+                    "row_key": f"fulltext__{ft_agg_key}",
+                    "weight_scheme": "fulltext",
+                    "paradigm": "Full-text",
+                    "aggregation": rec["config"]["aggregation"],
+                    "label": ft_label,
+                    "config": rec["config"],
+                    "cv": rec["cv"],
+                    "metrics": ev["metrics"],
+                    "tier_metrics": ev["tier_metrics"],
+                    "per_query": ev["per_query"],
+                    "activation_stats": act,
+                    "bootstrap_ci": boot,
+                }
+            )
+
+        # Paper-First vs Facet-First under Equal-weight and locked w_exp_b
+        pf_sum_evals = {}
+        for scheme_key, scheme_label, weights in [
+            ("equal_weight_facet", "Equal-weight (0.2 x 5)", FLAT_5_FACET_PRESETS["flat_equal"]),
+            ("weighted_facet_a", "Locked w_ExpB (0.4/0.2/0.2/0.1/0.1)", LOCKED_EXP_B_WEIGHTS),
+        ]:
+            # Paper-First: Sum-kNN
+            pf_sum_rec = pf_cv[scheme_key]["sum_knn"]["best"]
+            _, pf_sum_ev, pf_sum_act = final.paper_first_venue_matrix(pf_sum_rec["config"])
+            pf_sum_evals[scheme_key] = pf_sum_ev
+            d1_rows.append(
+                {
+                    "row_key": f"{scheme_key}__paper_first_sum_knn",
+                    "weight_scheme": scheme_key,
+                    "weight_label": scheme_label,
+                    "paradigm": "Paper-First",
+                    "aggregation": "sum_knn",
+                    "label": f"Paper-First: Sum-kNN ({scheme_label})",
+                    "config": pf_sum_rec["config"],
+                    "cv": pf_sum_rec["cv"],
+                    "metrics": pf_sum_ev["metrics"],
+                    "tier_metrics": pf_sum_ev["tier_metrics"],
+                    "per_query": pf_sum_ev["per_query"],
+                    "activation_stats": pf_sum_act,
+                    "vs_fulltext": _compare_eval(pf_sum_ev, ft_win_ev, "fulltext_winner"),
+                }
+            )
+
+            # Paper-First: Per-Venue Top-m
+            pf_topm_rec = pf_cv[scheme_key]["per_venue_top_m"]["best"]
+            _, pf_topm_ev, pf_topm_act = final.paper_first_venue_matrix(pf_topm_rec["config"])
+            d1_rows.append(
+                {
+                    "row_key": f"{scheme_key}__paper_first_per_venue_top_m",
+                    "weight_scheme": scheme_key,
+                    "weight_label": scheme_label,
+                    "paradigm": "Paper-First",
+                    "aggregation": "per_venue_top_m",
+                    "label": f"Paper-First: Per-Venue Top-m ({scheme_label})",
+                    "config": pf_topm_rec["config"],
+                    "cv": pf_topm_rec["cv"],
+                    "metrics": pf_topm_ev["metrics"],
+                    "tier_metrics": pf_topm_ev["tier_metrics"],
+                    "per_query": pf_topm_ev["per_query"],
+                    "activation_stats": pf_topm_act,
+                    "vs_fulltext": _compare_eval(pf_topm_ev, ft_win_ev, "fulltext_winner"),
+                    "vs_paper_first_sum_knn": _compare_eval(
+                        pf_topm_ev, pf_sum_ev, f"{scheme_key}__paper_first_sum_knn", compute_boot=False
+                    ),
+                }
+            )
+
+            # Facet-First: Per-Facet Venue Top-m
+            ff_topm_rec = ff_cv[scheme_key]["top_m_best"]
+            ff_topm_ev = final.evaluate_facet_first(
+                mode="top_m", top_m=ff_topm_rec["config"]["top_m"], weights=weights
+            )
+            d1_rows.append(
+                {
+                    "row_key": f"{scheme_key}__facet_first_top_m",
+                    "weight_scheme": scheme_key,
+                    "weight_label": scheme_label,
+                    "paradigm": "Facet-First",
+                    "aggregation": "per_facet_top_m",
+                    "label": f"Facet-First: Per-Facet Venue Top-m ({scheme_label})",
+                    "config": ff_topm_rec["config"],
+                    "cv": ff_topm_rec["cv"],
+                    "metrics": ff_topm_ev["metrics"],
+                    "tier_metrics": ff_topm_ev["tier_metrics"],
+                    "per_query": ff_topm_ev["per_query"],
+                    "activation_stats": ff_topm_ev["activation_stats"],
+                    "vs_fulltext": _compare_eval(ff_topm_ev, ft_win_ev, "fulltext_winner"),
+                    "vs_paper_first_sum_knn": _compare_eval(
+                        ff_topm_ev, pf_sum_ev, f"{scheme_key}__paper_first_sum_knn", compute_boot=False
+                    ),
+                }
+            )
+
+            # Facet-First: Per-Facet Venue Centroid
+            ff_cent_rec = ff_cv[scheme_key]["centroid"]
+            ff_cent_ev = final.evaluate_facet_first(mode="centroid", weights=weights)
+            d1_rows.append(
+                {
+                    "row_key": f"{scheme_key}__facet_first_centroid",
+                    "weight_scheme": scheme_key,
+                    "weight_label": scheme_label,
+                    "paradigm": "Facet-First",
+                    "aggregation": "per_facet_centroid",
+                    "label": f"Facet-First: Per-Facet Venue Centroid ({scheme_label})",
+                    "config": ff_cent_rec["config"],
+                    "cv": ff_cent_rec["cv"],
+                    "metrics": ff_cent_ev["metrics"],
+                    "tier_metrics": ff_cent_ev["tier_metrics"],
+                    "per_query": ff_cent_ev["per_query"],
+                    "activation_stats": ff_cent_ev["activation_stats"],
+                    "vs_fulltext": _compare_eval(ff_cent_ev, ft_win_ev, "fulltext_winner"),
+                    "vs_paper_first_sum_knn": _compare_eval(
+                        ff_cent_ev, pf_sum_ev, f"{scheme_key}__paper_first_sum_knn", compute_boot=False
+                    ),
+                }
+            )
+
+        # Cross-LLM Evaluation for Exp D1 & Exp D2 across the 5 Raw LLMs
+        ff_win_cfg = ff_win_rec["config"]
+        ff_topm_locked_m = int(ff_cv["weighted_facet_a"]["top_m_best"]["config"]["top_m"])
+        pf_w_sum_cfg = pf_cv["weighted_facet_a"]["sum_knn"]["best"]["config"]
+
+        d1_llm_rows_by_mode = {
+            "facet_first_winner": [],
+            "facet_first_top_m": [],
+            "facet_first_centroid": [],
+            "paper_first_sum_knn": [],
+        }
+        d2_by_llm = {}
+
+        for ext_name, queries in extractor_queries.items():
+            sorted_queries = sorted(queries, key=lambda p: p["paper_id"])
+            pairs_ext = final if (ext_name == "Qwen-8B" and queries is self.test) else self.build_final(sorted_queries)
+            q_stats = compute_query_facet_stats(sorted_queries)
+            q_masks_ext = pairs_ext.facet_query_masks()
+            g_q_ext = compute_active_weight_mass(q_masks_ext, weights=LOCKED_EXP_B_WEIGHTS)
+            exp_a_info = EXP_A_RAW_METRICS.get(ext_name, {})
+
+            # Evaluate Paper-First Sum-kNN (w_exp_b) on this LLM
+            _, pf_ext_ev, pf_ext_act = pairs_ext.paper_first_venue_matrix(pf_w_sum_cfg)
+            # Evaluate Facet-First Top-m (w_exp_b) on this LLM
+            ff_topm_ext_ev = pairs_ext.evaluate_facet_first(
+                mode="top_m", top_m=ff_topm_locked_m, weights=LOCKED_EXP_B_WEIGHTS
+            )
+            # Evaluate Facet-First Centroid (w_exp_b) on this LLM
+            ff_cent_ext_ev = pairs_ext.evaluate_facet_first(
+                mode="centroid", weights=LOCKED_EXP_B_WEIGHTS
+            )
+            # CV-locked Facet-First winner on this LLM
+            ff_win_ext_ev = (
+                ff_topm_ext_ev if ff_win_cfg["mode"] == "top_m" else ff_cent_ext_ev
+            )
+
+            # Evaluate Adaptive Fusion (CV-locked beta*) on this LLM
+            af_scores_ext, _ = compute_adaptive_fusion_scores(
+                ft_scores_mat,
+                ff_win_ext_ev["scores_matrix"],
+                q_masks_ext,
+                beta=best_beta,
+                facet_valid_mask=ff_win_ext_ev["valid_mask"],
+                weights=LOCKED_EXP_B_WEIGHTS,
+            )
+            af_preds_ext = rank_venues_from_score_matrix(af_scores_ext, q_pids, self.candidates)
+            af_ext_ev = pairs_ext.evaluate_venue_predictions(af_preds_ext)
+
+            for mode_key, ev_obj, cfg_obj, act_obj in [
+                ("facet_first_winner", ff_win_ext_ev, ff_win_cfg, ff_win_ext_ev["activation_stats"]),
+                (
+                    "facet_first_top_m",
+                    ff_topm_ext_ev,
+                    ff_cv["weighted_facet_a"]["top_m_best"]["config"],
+                    ff_topm_ext_ev["activation_stats"],
+                ),
+                (
+                    "facet_first_centroid",
+                    ff_cent_ext_ev,
+                    ff_cv["weighted_facet_a"]["centroid"]["config"],
+                    ff_cent_ext_ev["activation_stats"],
+                ),
+                ("paper_first_sum_knn", pf_ext_ev, pf_w_sum_cfg, pf_ext_act),
+            ]:
+                vs_pf = (
+                    {"win": 0, "tie": len(self.test), "loss": 0}
+                    if mode_key == "paper_first_sum_knn"
+                    else _compare_eval(ev_obj, pf_ext_ev, f"{ext_name}__paper_first_sum_knn", compute_boot=False)
+                )
+                d1_llm_rows_by_mode[mode_key].append(
+                    {
+                        "extractor": ext_name,
+                        "mode_key": mode_key,
+                        "config": cfg_obj,
+                        "exp_a": exp_a_info,
+                        "facet_stats": q_stats,
+                        "avg_active_weight_mass_g": float(np.mean(g_q_ext)),
+                        "problem_activation_rate": act_obj["problem_activation_rate"],
+                        "dataset_activation_rate": act_obj["dataset_activation_rate"],
+                        "problem_query_activation_rate": act_obj["problem_query_activation_rate"],
+                        "dataset_query_activation_rate": act_obj["dataset_query_activation_rate"],
+                        "activation_stats": act_obj,
+                        "metrics": ev_obj["metrics"],
+                        "tier_metrics": ev_obj["tier_metrics"],
+                        "per_query": ev_obj["per_query"],
+                        "vs_paper_first_same_llm": vs_pf,
+                        "vs_fulltext": _compare_eval(ev_obj, ft_win_ev, "fulltext_winner", compute_boot=False),
+                    }
+                )
+
+            # ==================================================================
+            # EXP D2: Query Coverage Stratification for this LLM
+            # High-Cov: mask_problem(q) == 1 and g(q) >= 0.80
+            # Low-Cov: not (mask_problem(q) == 1 and g(q) >= 0.80)
+            # ==================================================================
+            high_cov_pids = []
+            low_cov_pids = []
+            high_g_vals = []
+            low_g_vals = []
+            for idx, p in enumerate(sorted_queries):
+                has_prob = bool(q_masks_ext["problem"][idx])
+                g_val = float(g_q_ext[idx])
+                if has_prob and g_val >= 0.80 - 1e-9:
+                    high_cov_pids.append(p["paper_id"])
+                    high_g_vals.append(g_val)
+                else:
+                    low_cov_pids.append(p["paper_id"])
+                    low_g_vals.append(g_val)
+
+            strata_results = {}
+            for stratum_key, stratum_pids, g_list in [
+                ("all", q_pids, list(g_q_ext)),
+                ("high_cov", high_cov_pids, high_g_vals),
+                ("low_cov", low_cov_pids, low_g_vals),
+            ]:
+                if not stratum_pids:
+                    strata_results[stratum_key] = {
+                        "n": 0,
+                        "paper_ids": [],
+                        "mean_g_q": 0.0,
+                        "methods": {},
+                    }
+                    continue
+                ft_sub = pairs_ext.evaluate_venue_predictions(
+                    ft_win_ev["predictions"], query_subset_pids=stratum_pids
+                )
+                pf_sub = pairs_ext.evaluate_venue_predictions(
+                    pf_ext_ev["predictions"], query_subset_pids=stratum_pids
+                )
+                ff_sub = pairs_ext.evaluate_venue_predictions(
+                    ff_win_ext_ev["predictions"], query_subset_pids=stratum_pids
+                )
+                ff_topm_sub = pairs_ext.evaluate_venue_predictions(
+                    ff_topm_ext_ev["predictions"], query_subset_pids=stratum_pids
+                )
+                ff_cent_sub = pairs_ext.evaluate_venue_predictions(
+                    ff_cent_ext_ev["predictions"], query_subset_pids=stratum_pids
+                )
+                af_sub = pairs_ext.evaluate_venue_predictions(
+                    af_preds_ext, query_subset_pids=stratum_pids
+                )
+
+                methods_sub = {
+                    "fulltext": {
+                        "metrics": ft_sub["metrics"],
+                        "tier_metrics": ft_sub["tier_metrics"],
+                    },
+                    "paper_first_sum_knn": {
+                        "metrics": pf_sub["metrics"],
+                        "tier_metrics": pf_sub["tier_metrics"],
+                        "vs_fulltext": _compare_eval(pf_sub, ft_sub, "fulltext", compute_boot=False),
+                    },
+                    "facet_first": {
+                        "metrics": ff_sub["metrics"],
+                        "tier_metrics": ff_sub["tier_metrics"],
+                        "vs_fulltext": _compare_eval(ff_sub, ft_sub, "fulltext", compute_boot=False),
+                        "vs_paper_first": _compare_eval(ff_sub, pf_sub, "paper_first_sum_knn", compute_boot=False),
+                    },
+                    "facet_first_top_m": {
+                        "metrics": ff_topm_sub["metrics"],
+                        "tier_metrics": ff_topm_sub["tier_metrics"],
+                        "vs_fulltext": _compare_eval(ff_topm_sub, ft_sub, "fulltext", compute_boot=False),
+                    },
+                    "facet_first_centroid": {
+                        "metrics": ff_cent_sub["metrics"],
+                        "tier_metrics": ff_cent_sub["tier_metrics"],
+                        "vs_fulltext": _compare_eval(ff_cent_sub, ft_sub, "fulltext", compute_boot=False),
+                    },
+                    "adaptive_fusion": {
+                        "metrics": af_sub["metrics"],
+                        "tier_metrics": af_sub["tier_metrics"],
+                        "vs_fulltext": _compare_eval(af_sub, ft_sub, "fulltext", compute_boot=False),
+                    },
+                }
+                strata_results[stratum_key] = {
+                    "n": len(stratum_pids),
+                    "paper_ids": stratum_pids,
+                    "mean_g_q": float(np.mean(g_list)) if g_list else 0.0,
+                    "methods": methods_sub,
+                }
+
+            d2_by_llm[ext_name] = {
+                "extractor": ext_name,
+                "n_total": len(sorted_queries),
+                "n_high_cov": len(high_cov_pids),
+                "n_low_cov": len(low_cov_pids),
+                "high_cov_share_pct": round(100.0 * len(high_cov_pids) / max(1, len(sorted_queries)), 2),
+                "low_cov_share_pct": round(100.0 * len(low_cov_pids) / max(1, len(sorted_queries)), 2),
+                "strata": strata_results,
+            }
+
+        # Pairwise vs Qwen-8B and exact Spearman/Kendall permutation correlations (n=5, 120 permutations) in Exp D1
+        d1_rank_correlations = {}
+        for mode_key, m_rows in d1_llm_rows_by_mode.items():
+            ref_row = next((r for r in m_rows if r["extractor"] == "Qwen-8B"), None)
+            if ref_row is not None:
+                for r in m_rows:
+                    if r["extractor"] == "Qwen-8B":
+                        r["vs_qwen8b"] = {"win": 0, "tie": len(self.test), "loss": 0}
+                    else:
+                        r["vs_qwen8b"] = {
+                            **win_tie_loss(r["per_query"]["true_rank"], ref_row["per_query"]["true_rank"]),
+                            "mcnemar_hit@3": mcnemar_exact_test(
+                                r["per_query"]["hit@3"], ref_row["per_query"]["hit@3"]
+                            ),
+                            "permutation_mrr": paired_permutation_test(
+                                r["per_query"]["rr"],
+                                ref_row["per_query"]["rr"],
+                                n_resamples=n_resamples,
+                                seed=self.seed,
+                            ),
+                        }
+            exp_a_vec_map = {}
+            down_vec_map = {}
+            for r in m_rows:
+                ext = r["extractor"]
+                if ext in EXP_A_RAW_METRICS:
+                    exp_a_vec_map[ext] = {
+                        **{k: v for k, v in EXP_A_RAW_METRICS[ext].items() if k != "exp_a_wall_seconds"},
+                        "test_facet_coverage_pct": r["facet_stats"]["avg_facet_coverage_pct"],
+                        "avg_facet_words": r["facet_stats"]["avg_facet_words"],
+                        "problem_activation_rate": r["problem_activation_rate"],
+                        "dataset_activation_rate": r["dataset_activation_rate"],
+                        "avg_active_weight_mass_g": r["avg_active_weight_mass_g"],
+                    }
+                    down_vec_map[ext] = {
+                        k: r["metrics"][k]
+                        for k in ("hit@1", "hit@3", "hit@5", "mrr", "macro_hit@3", "macro_mrr", "discipline_hit@1")
+                        if k in r["metrics"]
+                    }
+            d1_rank_correlations[mode_key] = rank_correlation_matrix(exp_a_vec_map, down_vec_map)
+
+        # ======================================================================
+        # EXP D3: Complementary Signal & Intra-Discipline Disambiguation
+        # ======================================================================
+        q_masks_base = final.facet_query_masks()
+        ff_win_base_ev = final.evaluate_facet_first(
+            mode=ff_win_cfg["mode"],
+            top_m=ff_win_cfg.get("top_m", 3),
+            weights=LOCKED_EXP_B_WEIGHTS,
+        )
+        af_scores_base, g_q_base = compute_adaptive_fusion_scores(
+            ft_scores_mat,
+            ff_win_base_ev["scores_matrix"],
+            q_masks_base,
+            beta=best_beta,
+            facet_valid_mask=ff_win_base_ev["valid_mask"],
+            weights=LOCKED_EXP_B_WEIGHTS,
+        )
+        af_preds_base = rank_venues_from_score_matrix(af_scores_base, q_pids, self.candidates)
+        af_base_ev = final.evaluate_venue_predictions(af_preds_base)
+
+        # Coarse-to-Fine predictions for C in {5, 10} x Stage-2 in {facet_first, adaptive_fusion}
+        c2f_evals = {}
+        for stage2_name, s2_mat, s2_vm in [
+            ("facet_first", ff_win_base_ev["scores_matrix"], ff_win_base_ev["valid_mask"]),
+            ("adaptive_fusion", af_scores_base, None),
+        ]:
+            for c_val in top_cs:
+                c_int = int(c_val)
+                key = f"c2f_{stage2_name}_c{c_int}"
+                preds_c = rerank_coarse_to_fine_batch(
+                    ft_win_ev["predictions"],
+                    q_pids,
+                    s2_mat,
+                    self.candidates,
+                    top_c=c_int,
+                    stage2_valid_mask=s2_vm,
+                )
+                c2f_evals[key] = final.evaluate_venue_predictions(preds_c)
+
+        d3_method_specs = [
+            ("fulltext", f"Full-text Baseline ({ft_win_rec['config']['aggregation']})", ft_win_rec["config"], ft_win_rec["cv"], ft_win_ev),
+            ("facet_first", f"Facet-First ({ff_win_cfg['mode']})", ff_win_cfg, ff_win_rec["cv"], ff_win_base_ev),
+            ("adaptive_fusion", f"Coverage-Aware Adaptive Fusion (beta={best_beta})", af_win_rec["config"], af_win_rec["cv"], af_base_ev),
+        ]
+        for stage2_name, stage2_label in [("facet_first", "Facet-First"), ("adaptive_fusion", "Adaptive Fusion")]:
+            for c_val in top_cs:
+                c_int = int(c_val)
+                key = f"c2f_{stage2_name}_c{c_int}"
+                c_rec = tuning_d["coarse_to_fine"][stage2_name]["by_top_c"][str(c_int)]
+                d3_method_specs.append(
+                    (
+                        key,
+                        f"Coarse-to-Fine Reranking (C={c_int}, Stage-2: {stage2_label})",
+                        c_rec["config"],
+                        c_rec["cv"],
+                        c2f_evals[key],
+                    )
+                )
+
+        d3_rows = []
+        d3_p_hit1 = {}
+        d3_p_hit3 = {}
+        d3_p_mrr = {}
+        for m_key, m_label, cfg_obj, cv_obj, ev_obj in d3_method_specs:
+            if m_key == "fulltext":
+                boot = paired_bootstrap_ci(
+                    ev_obj["predictions"], None, truth, self.candidates, n_boot=n_boot, seed=self.seed
+                )
+                sig = {}
+            else:
+                sig = _compare_eval(ev_obj, ft_win_ev, "fulltext", compute_boot=True)
+                boot = sig.pop("bootstrap_ci")
+                d3_p_hit1[m_key] = sig["mcnemar_hit@1"]["p_value"]
+                d3_p_hit3[m_key] = sig["mcnemar_hit@3"]["p_value"]
+                d3_p_mrr[m_key] = sig["permutation_mrr"]["p_value"]
+            d3_rows.append(
+                {
+                    "method_key": m_key,
+                    "label": m_label,
+                    "config": cfg_obj,
+                    "cv": cv_obj,
+                    "metrics": ev_obj["metrics"],
+                    "tier_metrics": ev_obj["tier_metrics"],
+                    "per_query": ev_obj["per_query"],
+                    "bootstrap_ci": boot,
+                    "significance_vs_fulltext": sig,
+                }
+            )
+
+        holm_d3_hit1 = holm_bonferroni(d3_p_hit1, alpha=0.05)
+        holm_d3_hit3 = holm_bonferroni(d3_p_hit3, alpha=0.05)
+        holm_d3_mrr = holm_bonferroni(d3_p_mrr, alpha=0.05)
+        for row in d3_rows:
+            mk = row["method_key"]
+            if mk in holm_d3_hit3:
+                row["significance_vs_fulltext"]["holm_hit@1"] = holm_d3_hit1[mk]
+                row["significance_vs_fulltext"]["holm_hit@3"] = holm_d3_hit3[mk]
+                row["significance_vs_fulltext"]["holm_mrr"] = holm_d3_mrr[mk]
+
+        # Intra-Discipline Ambiguous Subset: Full-text's Top-3 predicted venues all belong to the exact same discipline
+        intra_ambiguous_pids = []
+        cross_disc_top3_pids = []
+        intra_discipline_breakdown = defaultdict(int)
+        for pid in q_pids:
+            top3_v = [v for v, _ in ft_win_ev["predictions"][pid][:3]]
+            top3_d = [VENUE_DISCIPLINE_MAP.get(v) for v in top3_v]
+            if len(top3_v) >= 3 and all(d is not None for d in top3_d) and len(set(top3_d)) == 1:
+                intra_ambiguous_pids.append(pid)
+                intra_discipline_breakdown[str(top3_d[0])] += 1
+            else:
+                cross_disc_top3_pids.append(pid)
+
+        def _eval_d3_subset(subset_pids):
+            if not subset_pids:
+                return {"n": 0, "paper_ids": [], "rows": []}
+            ft_sub = final.evaluate_venue_predictions(
+                ft_win_ev["predictions"], query_subset_pids=subset_pids
+            )
+            sub_rows = []
+            for m_key, m_label, cfg_obj, _, ev_obj in d3_method_specs:
+                ev_sub = final.evaluate_venue_predictions(
+                    ev_obj["predictions"], query_subset_pids=subset_pids
+                )
+                sig_sub = (
+                    {}
+                    if m_key == "fulltext"
+                    else _compare_eval(ev_sub, ft_sub, "fulltext", compute_boot=False)
+                )
+                sub_rows.append(
+                    {
+                        "method_key": m_key,
+                        "label": m_label,
+                        "n": len(subset_pids),
+                        "metrics": ev_sub["metrics"],
+                        "tier_metrics": ev_sub["tier_metrics"],
+                        "significance_vs_fulltext": sig_sub,
+                    }
+                )
+            return {
+                "n": len(subset_pids),
+                "paper_ids": subset_pids,
+                "rows": sub_rows,
+            }
+
+        intra_subset_eval = _eval_d3_subset(intra_ambiguous_pids)
+        intra_subset_eval["discipline_distribution"] = dict(intra_discipline_breakdown)
+        cross_subset_eval = _eval_d3_subset(cross_disc_top3_pids)
+
+        # ======================================================================
+        # EXP D4: Win/Loss Case Stratification
+        # ======================================================================
+        # Precompute 4 diagnostic features for each of the 168 Test queries
+        query_features = []
+        whole_sim = final.sim["whole_text"]
+        k_nov = min(10, whole_sim.shape[1]) if whole_sim.ndim == 2 else 0
+        for idx, p in enumerate(self.test):
+            pid = p["paper_id"]
+            abs_words = len(str(p.get("abstract", "")).split())
+            g_val = float(g_q_base[idx])
+            active_cnt = int(sum(bool(q_masks_base[f][idx]) for f in FACET_KEYS))
+            true_v = p["conference_id"]
+            v_tier = classify_venue_tier(final.train_venue_counts.get(true_v, 0))
+            if k_nov > 0:
+                top_sims = np.sort(whole_sim[idx])[-k_nov:]
+                novelty = float(1.0 - np.mean(top_sims))
+            else:
+                novelty = 1.0
+            query_features.append(
+                {
+                    "paper_id": pid,
+                    "true_venue": true_v,
+                    "venue_tier": v_tier,
+                    "abstract_word_count": float(abs_words),
+                    "active_weight_mass": g_val,
+                    "active_facet_count": float(active_cnt),
+                    "lexical_novelty_proxy": novelty,
+                    "has_problem": bool(q_masks_base["problem"][idx]),
+                    "has_dataset": bool(q_masks_base["dataset"][idx]),
+                }
+            )
+
+        def _stratify_win_loss(ev_new, comparison_label):
+            ranks_full = ft_win_ev["per_query"]["true_rank"]
+            ranks_new = ev_new["per_query"]["true_rank"]
+            groups = {"win": [], "tie": [], "loss": []}
+            for idx, (rf, rn) in enumerate(zip(ranks_full, ranks_new)):
+                rec = {
+                    **query_features[idx],
+                    "rank_full": int(rf),
+                    "rank_new": int(rn),
+                    "rank_improvement": int(rf - rn),
+                }
+                if rn < rf:
+                    groups["win"].append(rec)
+                elif rn == rf:
+                    groups["tie"].append(rec)
+                else:
+                    groups["loss"].append(rec)
+
+            cont_keys = (
+                "abstract_word_count",
+                "active_weight_mass",
+                "active_facet_count",
+                "lexical_novelty_proxy",
+            )
+            group_summaries = {}
+            for g_name, items in groups.items():
+                tier_cnts = Counter(it["venue_tier"] for it in items)
+                n_g = len(items)
+                feat_summary = {}
+                for ck in cont_keys:
+                    vals = [it[ck] for it in items]
+                    feat_summary[ck] = {
+                        "mean": float(np.mean(vals)) if vals else 0.0,
+                        "median": float(np.median(vals)) if vals else 0.0,
+                        "std": float(np.std(vals, ddof=1)) if len(vals) > 1 else 0.0,
+                    }
+                group_summaries[g_name] = {
+                    "n": int(n_g),
+                    "share_pct": round(100.0 * n_g / max(1, len(self.test)), 2),
+                    "continuous_features": feat_summary,
+                    "venue_tier_dist": {
+                        "counts": {t: int(tier_cnts.get(t, 0)) for t in ("head", "mid", "tail")},
+                        "pcts": {
+                            t: round(100.0 * int(tier_cnts.get(t, 0)) / n_g, 2) if n_g > 0 else 0.0
+                            for t in ("head", "mid", "tail")
+                        },
+                    },
+                }
+
+            mw_tests = {}
+            for ck in cont_keys:
+                w_vals = [it[ck] for it in groups["win"]]
+                l_vals = [it[ck] for it in groups["loss"]]
+                mw_tests[ck] = mann_whitney_u_test(w_vals, l_vals)
+
+            tier_test = tier_contingency_test(
+                group_summaries["win"]["venue_tier_dist"]["counts"],
+                group_summaries["loss"]["venue_tier_dist"]["counts"],
+            )
+
+            top_wins = sorted(
+                groups["win"], key=lambda r: (-r["rank_improvement"], r["rank_new"], r["paper_id"])
+            )[:10]
+            top_losses = sorted(
+                groups["loss"], key=lambda r: (r["rank_improvement"], -r["rank_new"], r["paper_id"])
+            )[:10]
+
+            return {
+                "label": comparison_label,
+                "n_total": len(self.test),
+                "n_win": len(groups["win"]),
+                "n_tie": len(groups["tie"]),
+                "n_loss": len(groups["loss"]),
+                "groups": group_summaries,
+                "mann_whitney_win_vs_loss": mw_tests,
+                "venue_tier_test_win_vs_loss": tier_test,
+                "top_win_examples": top_wins,
+                "top_loss_examples": top_losses,
+            }
+
+        c2f_af_c5_ev = c2f_evals.get(f"c2f_adaptive_fusion_c{int(top_cs[0])}", af_base_ev)
+        c2f_ff_c5_ev = c2f_evals.get(f"c2f_facet_first_c{int(top_cs[0])}", ff_win_base_ev)
+        d4_comparisons = {
+            "facet_first_vs_fulltext": _stratify_win_loss(
+                ff_win_base_ev, "Facet-First vs Full-text"
+            ),
+            "adaptive_fusion_vs_fulltext": _stratify_win_loss(
+                af_base_ev, "Coverage-Aware Adaptive Fusion vs Full-text"
+            ),
+            "c2f_adaptive_c5_vs_fulltext": _stratify_win_loss(
+                c2f_af_c5_ev, f"Coarse-to-Fine (C={int(top_cs[0])}, Adaptive Fusion) vs Full-text"
+            ),
+            "c2f_facet_c5_vs_fulltext": _stratify_win_loss(
+                c2f_ff_c5_ev, f"Coarse-to-Fine (C={int(top_cs[0])}, Facet-First) vs Full-text"
+            ),
+        }
+
+        payload = {
+            "metadata": self.metadata,
+            "tuning_id": tuning_d["tuning_id"],
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "locked_exp_b_weights": dict(LOCKED_EXP_B_WEIGHTS),
+            "selected_configs": {
+                "fulltext_winner": ft_win_rec["config"],
+                "facet_first_winner": ff_win_rec["config"],
+                "adaptive_fusion_winner": af_win_rec["config"],
+                "coarse_to_fine_facet_first_winner": tuning_d["coarse_to_fine"]["facet_first"]["best"]["config"],
+                "coarse_to_fine_adaptive_fusion_winner": tuning_d["coarse_to_fine"]["adaptive_fusion"]["best"]["config"],
+            },
+            "exp_d1": {
+                "paradigm_rows": d1_rows,
+                "cross_llm_by_mode": d1_llm_rows_by_mode,
+                "rank_correlations": d1_rank_correlations,
+            },
+            "exp_d2": {
+                "criterion": "High-Cov: mask_problem(q) == 1 and g(q) >= 0.80; Low-Cov: complement",
+                "by_extractor": d2_by_llm,
+            },
+            "exp_d3": {
+                "all_test_rows": d3_rows,
+                "intra_discipline_ambiguous_subset": intra_subset_eval,
+                "cross_discipline_top3_subset": cross_subset_eval,
+            },
+            "exp_d4": {
+                "comparisons": d4_comparisons,
+            },
+        }
+        save_json(target, payload, overwrite)
+        return payload
+
 
 def numeric_list(text, kind=float):
     try:
@@ -1236,7 +2414,11 @@ def numeric_list(text, kind=float):
 
 def parser(default_stage="tune"):
     result = argparse.ArgumentParser(description="Leakage-free IEEE conference experiments and 4-table report")
-    result.add_argument("--stage", choices=["tune", "test", "analyze", "benchmark", "report", "all"], default=default_stage)
+    result.add_argument(
+        "--stage",
+        choices=["tune", "test", "analyze", "benchmark", "exp_d", "report", "all"],
+        default=default_stage,
+    )
     result.add_argument("--embedding-backend", choices=[*BACKENDS, "all"], default="tfidf")
     result.add_argument("--split-dir", default=DEFAULT_SPLIT)
     result.add_argument("--facets-path", default=DEFAULT_FACETS, help="Reference Qwen-8B Raw facets (never validated_silver.jsonl)")
@@ -1267,8 +2449,9 @@ def main(default_stage="tune", argv=None):
 
     output = resolve(args.output_dir)
     if args.stage == "report":
-        from .report_experiments import write_report
+        from .report_experiments import write_exp_d_report, write_report
         write_report(output, resolve(args.report_path), args.overwrite)
+        write_exp_d_report(output, overwrite=args.overwrite)
         return
     ks = numeric_list(args.k_list, int)
     kappas = numeric_list(args.kappa_list)
@@ -1276,7 +2459,7 @@ def main(default_stage="tune", argv=None):
         raise ValueError("k, kappa and batch size must be positive")
     train, test, catalog, _ = load_dataset(args.split_dir, args.facets_path, root, require_coverage=True)
     extractors = None
-    if args.stage in ("benchmark", "all"):
+    if args.stage in ("benchmark", "exp_d", "all"):
         manifest = {
             "Qwen-8B": args.facets_path,
             **{
@@ -1331,6 +2514,18 @@ def main(default_stage="tune", argv=None):
             experiment.analyze(args.overwrite)
         if args.stage in ("benchmark", "all"):
             experiment.benchmark(extractors, args.overwrite)
+        if args.stage in ("exp_d", "all"):
+            n_res = 200 if len(test) < 20 else 10000
+            experiment.run_exp_d(
+                extractors,
+                overwrite=args.overwrite,
+                n_resamples=n_res,
+                ks=ks,
+                metric=args.metric,
+            )
+    if args.stage in ("exp_d", "all"):
+        from .report_experiments import write_exp_d_report
+        write_exp_d_report(output, overwrite=True if args.overwrite else False)
     if args.stage == "all":
         from .report_experiments import write_report
         write_report(output, resolve(args.report_path), args.overwrite)

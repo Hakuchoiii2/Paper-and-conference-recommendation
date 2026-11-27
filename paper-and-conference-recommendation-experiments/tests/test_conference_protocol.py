@@ -42,19 +42,27 @@ from scripts.conference_recommendation.metrics import (
     evaluate_predictions_detailed,
 )
 from scripts.conference_recommendation.ranking import (
+    LOCKED_EXP_B_WEIGHTS,
+    compute_active_weight_mass,
+    compute_adaptive_fusion_scores,
+    compute_facet_first_venue_scores,
     rank_neighbors,
+    rank_venues_from_score_row,
     rank_venues_per_venue_top_m,
     rank_venues_prior_norm,
     rank_venues_temp_softmax,
+    rerank_coarse_to_fine,
 )
-from scripts.conference_recommendation.report_experiments import write_report
+from scripts.conference_recommendation.report_experiments import write_exp_d_report, write_report
 from scripts.conference_recommendation.reranker import GatedFacetKNNReranker
 from scripts.conference_recommendation.significance import (
     holm_bonferroni,
+    mann_whitney_u_test,
     mcnemar_exact_test,
     paired_bootstrap_ci,
     paired_permutation_test,
     rank_correlation_matrix,
+    tier_contingency_test,
     win_tie_loss,
 )
 
@@ -528,6 +536,387 @@ class IEEEStandardTests(unittest.TestCase):
         corr = rank_correlation_matrix(EXP_A_RAW_METRICS, dummy_down)
         self.assertAlmostEqual(corr["macro_f1"]["hit@3"]["spearman_rho"], 1.0, places=6)
         self.assertAlmostEqual(corr["macro_f1"]["hit@3"]["kendall_tau"], 1.0, places=6)
+        self.assertAlmostEqual(corr["macro_f1"]["hit@3"]["spearman_p"], 2.0 / 120.0, places=6)
+
+
+class ExpDDiagnosticTests(unittest.TestCase):
+    """6 unit tests verifying the 3 venue aggregation mechanisms and Exp D1-D4 diagnostics."""
+
+    def test_mechanism1_facet_first_compositional_matching_and_renormalization(self):
+        # Venue v_comp has two disjoint single-facet papers:
+        #   R1 has ONLY problem ("p_match"), R2 has ONLY method ("m_match").
+        # Venue v_single has one paper R3 with both problem ("p_weak") and method ("m_weak").
+        # Venue v_empty has R4 with ONLY contribution ("c_only"), while Query Q1 lacks contribution.
+        # Query Q1 has problem ("p_match"), method ("m_match"), and dataset ("d_query"),
+        # where NO reference paper in v_comp has dataset (|P_{v_comp, dataset}| == 0).
+        q1 = dict(
+            paper_id="Q1",
+            title="T",
+            abstract="A",
+            conference_id="v_comp",
+            split="test",
+            facets={"problem": ["p_match"], "task": [], "method": ["m_match"], "dataset": ["d_query"], "contribution": []},
+        )
+        r1 = dict(
+            paper_id="R1",
+            title="T",
+            abstract="A",
+            conference_id="v_comp",
+            split="train",
+            facets={"problem": ["p_match"], "task": [], "method": [], "dataset": [], "contribution": []},
+        )
+        r2 = dict(
+            paper_id="R2",
+            title="T",
+            abstract="A",
+            conference_id="v_comp",
+            split="train",
+            facets={"problem": [], "task": [], "method": ["m_match"], "dataset": [], "contribution": []},
+        )
+        r3 = dict(
+            paper_id="R3",
+            title="T",
+            abstract="A",
+            conference_id="v_single",
+            split="train",
+            facets={"problem": ["p_weak"], "task": [], "method": ["m_weak"], "dataset": [], "contribution": []},
+        )
+        r4 = dict(
+            paper_id="R4",
+            title="T",
+            abstract="A",
+            conference_id="v_empty",
+            split="train",
+            facets={"problem": [], "task": [], "method": [], "dataset": [], "contribution": ["c_only"]},
+        )
+
+        vec_map = {
+            "p_match": np.array([1.0, 0.0, 0.0]),
+            "m_match": np.array([0.0, 1.0, 0.0]),
+            "d_query": np.array([0.0, 0.0, 1.0]),
+            "p_weak": np.array([0.6, 0.8, 0.0]),
+            "m_weak": np.array([0.8, 0.6, 0.0]),
+            "c_only": np.array([0.0, 0.0, 1.0]),
+        }
+
+        def encode(texts):
+            return [vec_map.get(t, np.array([1.0, 0.0, 0.0]) if t.strip() else None) for t in texts]
+
+        candidates = ["v_comp", "v_empty", "v_single"]
+        store = FacetFeatureStore([r1, r2, r3, r4], [q1], backend=CustomCallableBackend(encode))
+        pairs = PairMatrices(store, [r1, r2, r3, r4], [q1], candidates)
+
+        # In Paper-First (Per-Venue Top-1), R1 only matches problem (sim=1.0) and R2 only matches method (sim=1.0),
+        # never combining both facets in a single venue prototype; in Facet-First, v_comp pools R1 for problem
+        # and R2 for method with dynamic denominator w_problem + w_method = 0.40 + 0.20 = 0.60 (excluding dataset).
+        for mode in ("top_m", "centroid"):
+            scores_mat, valid_mask, act_stats = pairs.facet_first_venue_matrix(
+                mode=mode, top_m=2, weights=LOCKED_EXP_B_WEIGHTS
+            )
+            self.assertEqual(scores_mat.shape, (1, 3))
+            # v_comp (col 0) and v_single (col 2) are valid; v_empty (col 1) has V_venue = empty -> False, -inf
+            self.assertTrue(bool(valid_mask[0, 0]))
+            self.assertFalse(bool(valid_mask[0, 1]))
+            self.assertTrue(bool(valid_mask[0, 2]))
+            self.assertTrue(math.isinf(scores_mat[0, 1]) and scores_mat[0, 1] < 0)
+
+            # v_comp compositional score: (0.40 * 1.0 + 0.20 * 1.0) / (0.40 + 0.20) = 1.0
+            self.assertAlmostEqual(float(scores_mat[0, 0]), 1.0, places=5)
+            # v_single score: (0.40 * 0.6 + 0.20 * 0.6) / (0.40 + 0.20) = 0.6
+            self.assertAlmostEqual(float(scores_mat[0, 2]), 0.6, places=5)
+            # Activation rates: problem active in 2/3 venues (v_comp, v_single), dataset active in 0/3 venues
+            self.assertAlmostEqual(act_stats["problem_activation_rate"], 2.0 / 3.0, places=6)
+            self.assertAlmostEqual(act_stats["dataset_activation_rate"], 0.0, places=6)
+            self.assertAlmostEqual(act_stats["problem_query_activation_rate"], 1.0, places=6)
+            self.assertAlmostEqual(act_stats["dataset_query_activation_rate"], 1.0, places=6)
+
+    def test_mechanism1_per_facet_venue_centroid_zero_cv_leakage(self):
+        train, test, venues = fixture()
+
+        def encode(texts):
+            out = []
+            for t in texts:
+                if not t or not t.strip():
+                    out.append(None)
+                else:
+                    out.append(
+                        np.array(
+                            [
+                                float(t.count("alpha") + 0.1 * len(t)),
+                                float(t.count("beta") + 0.2 * ("problem" in t)),
+                                float(1.0 + t.count("poison")),
+                            ],
+                            dtype=np.float64,
+                        )
+                    )
+            return out
+
+        exp = Experiment(
+            train,
+            test,
+            venues,
+            backend=CustomCallableBackend(encode),
+            n_splits=3,
+            seed=42,
+        )
+        cv_pairs = exp.build_cv()
+
+        for fold_idx, pair in enumerate(cv_pairs):
+            val_ids = {p["paper_id"] for p in pair.queries}
+            ref_ids = {p["paper_id"] for p in pair.train}
+            self.assertTrue(val_ids.isdisjoint(ref_ids))
+
+            base_scores, base_vm, _ = pair.facet_first_venue_matrix(
+                mode="centroid", weights=LOCKED_EXP_B_WEIGHTS
+            )
+
+            # Corrupt every other validation paper in the training corpus and rebuild fold pair for query 0
+            poisoned_train = copy.deepcopy(train)
+            target_q_pid = pair.queries[0]["paper_id"]
+            for p in poisoned_train:
+                if p["paper_id"] in val_ids and p["paper_id"] != target_q_pid:
+                    p["facets"] = {f: ["poison " * 50] for f in FACET_KEYS}
+
+            val_indices = exp.folds[fold_idx]
+            ref_indices = [i for i in range(len(train)) if i not in set(val_indices)]
+            store_poison = FacetFeatureStore(
+                [poisoned_train[i] for i in ref_indices],
+                [poisoned_train[i] for i in val_indices],
+                backend=CustomCallableBackend(encode),
+            )
+            pair_poison = PairMatrices(
+                store_poison,
+                [poisoned_train[i] for i in ref_indices],
+                [poisoned_train[i] for i in val_indices],
+                venues,
+            )
+            poison_scores, poison_vm, _ = pair_poison.facet_first_venue_matrix(
+                mode="centroid", weights=LOCKED_EXP_B_WEIGHTS
+            )
+            # Query 0's centroid scores against reference pool P_{v, f} must be 100% invariant to other validation papers
+            np.testing.assert_allclose(base_scores[0], poison_scores[0], atol=1e-12)
+            np.testing.assert_array_equal(base_vm[0], poison_vm[0])
+
+    def test_mechanism2_adaptive_fusion_zero_coverage_fallback_and_zero_variance(self):
+        # 3 queries x 4 venues:
+        # Query 0: g(q) == 0 (all 5 facets missing, facet_scores = -inf, facet_valid_mask = False)
+        # Query 1: g(q) == 1.0, but facet_scores has zero variance across valid venues ([0.5, 0.5, 0.5, 0.5])
+        # Query 2: g(q) == 0.6, partial validity (venue 3 invalid -> filled with min(valid_z) - 1.0)
+        candidates = ["v1", "v2", "v3", "v4"]
+        full_scores = np.array(
+            [
+                [0.20, 0.80, 0.50, 0.10],
+                [0.90, 0.40, 0.60, 0.30],
+                [0.30, 0.40, 0.50, 0.60],
+            ],
+            dtype=np.float64,
+        )
+        facet_scores = np.array(
+            [
+                [-np.inf, -np.inf, -np.inf, -np.inf],
+                [0.50, 0.50, 0.50, 0.50],
+                [0.90, 0.60, 0.30, -np.inf],
+            ],
+            dtype=np.float64,
+        )
+        facet_valid_mask = np.array(
+            [
+                [False, False, False, False],
+                [True, True, True, True],
+                [True, True, True, False],
+            ],
+            dtype=bool,
+        )
+        query_masks = {
+            "problem": [False, True, True],
+            "task": [False, True, True],
+            "method": [False, True, False],
+            "dataset": [False, True, False],
+            "contribution": [False, True, False],
+        }
+
+        for beta in (0.1, 0.3, 0.7):
+            fused, g_q = compute_adaptive_fusion_scores(
+                full_scores,
+                facet_scores,
+                query_masks,
+                beta=beta,
+                facet_valid_mask=facet_valid_mask,
+                weights=LOCKED_EXP_B_WEIGHTS,
+            )
+            self.assertTrue(np.all(np.isfinite(fused)))
+            self.assertAlmostEqual(float(g_q[0]), 0.0, places=12)
+            self.assertAlmostEqual(float(g_q[1]), 1.0, places=12)
+            self.assertAlmostEqual(float(g_q[2]), 0.6, places=12)
+
+            # Query 0 (g(q) == 0) and Query 1 (zero variance facet scores) must preserve exact Full-text venue order
+            for q_idx in (0, 1):
+                ft_order = [v for v, _ in rank_venues_from_score_row(full_scores[q_idx], candidates)]
+                af_order = [v for v, _ in rank_venues_from_score_row(fused[q_idx], candidates)]
+                self.assertEqual(af_order, ft_order)
+
+    def test_mechanism3_coarse_to_fine_preserves_tail_ranks_and_tie_breaks(self):
+        # 30 candidate venues sorted by Stage-1 score descending
+        venues_30 = [f"CONF_{i:02d}" for i in range(1, 31)]
+        stage1_ranked = [(v, round(1.0 - 0.02 * idx, 4)) for idx, v in enumerate(venues_30)]
+
+        # Stage-2 scores reverse the top-10, put a tie between CONF_03 and CONF_02, and mark CONF_01 invalid
+        stage2_scores = {v: float(idx) for idx, v in enumerate(venues_30)}
+        stage2_scores["CONF_02"] = 50.0
+        stage2_scores["CONF_03"] = 50.0  # tie with CONF_02 -> CONF_02 must win by conference_id asc
+        stage2_valid = {v: True for v in venues_30}
+        stage2_valid["CONF_01"] = False  # invalid -> treated as -np.inf, placed at rank top_c
+
+        for top_c in (5, 10):
+            reranked = rerank_coarse_to_fine(
+                stage1_ranked,
+                stage2_scores,
+                top_c=top_c,
+                stage2_valid_mask=stage2_valid,
+            )
+            self.assertEqual(len(reranked), 30)
+            # Tail ranks > top_c (indices top_c..29) must be 100% untouched in venue ID and score
+            self.assertEqual(reranked[top_c:], stage1_ranked[top_c:])
+            # Within top_c, CONF_02 and CONF_03 tied at 50.0 must be 1st and 2nd in alphabetical order
+            self.assertEqual(reranked[0][0], "CONF_02")
+            self.assertEqual(reranked[1][0], "CONF_03")
+            # Invalid CONF_01 must drop to the last slot of the top_c window (index top_c - 1) with score -inf
+            self.assertEqual(reranked[top_c - 1][0], "CONF_01")
+            self.assertTrue(math.isinf(reranked[top_c - 1][1]) and reranked[top_c - 1][1] < 0)
+
+    def test_exp_d2_coverage_stratification_mutual_exclusivity_and_completeness_168(self):
+        # Build a 168-query Test split across 4 coverage patterns:
+        # 1) problem=1, all facets present -> g(q)=1.00 >= 0.80 -> High-Cov
+        # 2) problem=1, task=1, method=1 -> g(q)=0.80 >= 0.80 -> High-Cov
+        # 3) problem=1, task=1 only -> g(q)=0.60 < 0.80 -> Low-Cov
+        # 4) problem=0, task=1, method=1, dataset=1, contrib=1 -> g(q)=0.60, problem=0 -> Low-Cov
+        venues = ["CONF_ACL", "CONF_CVPR", "CONF_KDD"]
+        train = []
+        for idx in range(15):
+            v = venues[idx % 3]
+            train.append(
+                dict(
+                    paper_id=f"tr_{idx:03d}",
+                    title=f"{v} title {idx}",
+                    abstract=f"abstract text for {v} paper {idx}",
+                    conference_id=v,
+                    split="train",
+                    facets={f: [f"{v}_{f}"] for f in FACET_KEYS},
+                )
+            )
+        test = []
+        for idx in range(168):
+            v = venues[idx % 3]
+            mod = idx % 4
+            if mod == 0:
+                facets = {f: [f"{v}_{f}"] for f in FACET_KEYS}
+            elif mod == 1:
+                facets = {"problem": [f"{v}_problem"], "task": [f"{v}_task"], "method": [f"{v}_method"], "dataset": [], "contribution": []}
+            elif mod == 2:
+                facets = {"problem": [f"{v}_problem"], "task": [f"{v}_task"], "method": [], "dataset": [], "contribution": []}
+            else:
+                facets = {"problem": [], "task": [f"{v}_task"], "method": [f"{v}_method"], "dataset": [f"{v}_dataset"], "contribution": [f"{v}_contribution"]}
+            test.append(
+                dict(
+                    paper_id=f"te_{idx:03d}",
+                    title=f"{v} test {idx}",
+                    abstract="word " * (20 + (idx % 30)) + f" {v}",
+                    conference_id=v,
+                    split="test",
+                    facets=facets,
+                )
+            )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            exp = Experiment(train, test, venues, backend="tfidf", n_splits=3, output_dir=Path(tmp))
+            d_payload = exp.run_exp_d({"Qwen-8B": test}, overwrite=True, n_resamples=100, ks=(3, 5))
+            d2_qwen = d_payload["exp_d2"]["by_extractor"]["Qwen-8B"]
+            n_high = d2_qwen["n_high_cov"]
+            n_low = d2_qwen["n_low_cov"]
+            self.assertEqual(n_high + n_low, 168)
+            self.assertEqual(n_high, 84)  # mod 0 and mod 1 (2/4 of 168)
+            self.assertEqual(n_low, 84)   # mod 2 and mod 3 (2/4 of 168)
+            high_ids = set(d2_qwen["strata"]["high_cov"]["paper_ids"])
+            low_ids = set(d2_qwen["strata"]["low_cov"]["paper_ids"])
+            self.assertTrue(high_ids.isdisjoint(low_ids))
+            self.assertEqual(len(high_ids | low_ids), 168)
+
+    def test_exp_d4_win_tie_loss_sum_168_and_mann_whitney_u_validity(self):
+        venues = ["CONF_ACL", "CONF_EMNLP", "CONF_CVPR", "CONF_KDD"]
+        # Train counts: CONF_ACL=20 (head), CONF_EMNLP=8 (mid), CONF_CVPR=3 (tail), CONF_KDD=3 (tail)
+        train_specs = [("CONF_ACL", 20), ("CONF_EMNLP", 8), ("CONF_CVPR", 3), ("CONF_KDD", 3)]
+        train = []
+        for v, count in train_specs:
+            for i in range(count):
+                train.append(
+                    dict(
+                        paper_id=f"tr_{v}_{i:02d}",
+                        title=f"{v} study {i}",
+                        abstract=f"shared research in {v} topic {i}",
+                        conference_id=v,
+                        split="train",
+                        facets={f: [f"{v}_{f}"] for f in FACET_KEYS},
+                    )
+                )
+
+        test = []
+        for idx in range(168):
+            v = venues[idx % 4]
+            # Vary abstract word count, facet coverage, and lexical content so Win, Tie, and Loss all occur
+            if idx % 3 == 0:
+                # Facets match true venue v while abstract mentions a distractor venue
+                distractor = venues[(idx + 1) % 4]
+                abstract_text = (f"{distractor} " * (10 + idx % 15)).strip()
+                facets = {f: [f"{v}_{f}"] for f in FACET_KEYS}
+            elif idx % 3 == 1:
+                # Abstract slightly favors true venue v over distractor, while all 5 facets strongly match distractor
+                distractor = venues[(idx + 1) % 4]
+                abstract_text = f"{v} {v} " + (f"{distractor} " * 2).strip() + (" filler" * (10 + idx % 15))
+                facets = {f: [f"{distractor}_{f}"] for f in FACET_KEYS}
+            else:
+                # Both match true venue v -> Tie
+                abstract_text = (f"{v} " * 12).strip()
+                facets = {f: [f"{v}_{f}"] for f in FACET_KEYS}
+            test.append(
+                dict(
+                    paper_id=f"te_{idx:03d}",
+                    title=f"Paper {idx}",
+                    abstract=abstract_text,
+                    conference_id=v,
+                    split="test",
+                    facets=facets,
+                )
+            )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out_dir = Path(tmp)
+            exp = Experiment(train, test, venues, backend="tfidf", n_splits=3, output_dir=out_dir)
+            d_payload = exp.run_exp_d({"Qwen-8B": test}, overwrite=True, n_resamples=100, ks=(3, 5))
+            for comp_key in ("facet_first_vs_fulltext", "adaptive_fusion_vs_fulltext"):
+                comp = d_payload["exp_d4"]["comparisons"][comp_key]
+                self.assertEqual(comp["n_win"] + comp["n_tie"] + comp["n_loss"], 168)
+                self.assertGreater(comp["n_win"], 0)
+                self.assertGreater(comp["n_loss"], 0)
+                for feat_key in (
+                    "abstract_word_count",
+                    "active_weight_mass",
+                    "active_facet_count",
+                    "lexical_novelty_proxy",
+                ):
+                    mw = comp["mann_whitney_win_vs_loss"][feat_key]
+                    self.assertTrue(math.isfinite(mw["u_stat"]) and mw["u_stat"] >= 0.0)
+                    self.assertTrue(0.0 <= mw["p_value"] <= 1.0)
+                tt = comp["venue_tier_test_win_vs_loss"]
+                self.assertTrue(0.0 <= tt["chi2_p_value"] <= 1.0)
+                self.assertTrue(0.0 <= tt["fisher_head_vs_nonhead_p_value"] <= 1.0)
+
+            rep_path = write_exp_d_report(out_dir, overwrite=True)
+            self.assertIsNotNone(rep_path)
+            self.assertTrue(rep_path.exists())
+            self.assertTrue((out_dir / "report_tables/exp_d1_paradigm_comparison.csv").exists())
+            self.assertTrue((out_dir / "report_tables/exp_d2_coverage_stratification.csv").exists())
+            self.assertTrue((out_dir / "report_tables/exp_d3_complementary_all_test.csv").exists())
+            self.assertTrue((out_dir / "report_tables/exp_d4_win_loss_stratification.csv").exists())
 
 
 if __name__ == "__main__":

@@ -17,3 +17,40 @@ models/
 /data/exp_*/evaluation/
 /results/
 /.test-tmp/
+
+# Ignore generated tables, LaTeX files, and exports
+*.csv
+!data/**/*.csv
+*.tex
+report_tables/
+
+# Ignore heavy binary data, embeddings, checkpoints and models
+*.npz
+*.npy
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.parquet
+*.h5
+*.hdf5
+*.feather
+*.pkl
+*.pickle
+*.sqlite3*
+*.db
+
+# Archives and logs
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar
+*.log
+
+# Embedding and temporary caches
+.embedding_cache/
+*.embedding_cache/
+temp/
+tmp/
